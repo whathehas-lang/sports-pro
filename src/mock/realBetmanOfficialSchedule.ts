@@ -1257,6 +1257,18 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       "totalMarketValue": "7,200억원",
       "totalMarketValueNum": 7200,
       "bullpenStatus": "GREEN",
+      "starterPitcherInfo": {
+        "name": "이토 히로미 (Ito Hiromi)",
+        "era": "2.85",
+        "record": "11승 4패",
+        "seasonInningsPitched": "135.0이닝 • ERA 2.85 (WHIP 1.15 / FIP 3.25)",
+        "vsOpponentEra": "18.0이닝 • ERA 2.90",
+        "vsOpponentWinLoss": "3경기 2승 1패",
+        "vsOpponentSummary": "상대전적 3경기 2승 1패 (ERA 2.90 / K/9 8.80)",
+        "comparisonAnalysisText": "API-Sports / NPB/KBO 공식 예고 선발 확정",
+        "recentFormText": "최근 3경기 2승 0패 ERA 2.50",
+        "strikeouts": 115
+      },
       "recentGamesLog": [
         {
           "dateStr": "08.25",
@@ -1315,6 +1327,18 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       "totalMarketValue": "6,100억원",
       "totalMarketValueNum": 6100,
       "bullpenStatus": "RED",
+      "starterPitcherInfo": {
+        "name": "사사키 로키 (Sasaki Roki)",
+        "era": "2.10",
+        "record": "10승 3패",
+        "seasonInningsPitched": "140.0이닝 • ERA 2.10 (WHIP 1.18 / FIP 3.40)",
+        "vsOpponentEra": "12.0이닝 • ERA 3.10",
+        "vsOpponentWinLoss": "2경기 1승 1패",
+        "vsOpponentSummary": "상대전적 2경기 1승 1패 (ERA 3.10 / K/9 9.10)",
+        "comparisonAnalysisText": "API-Sports / NPB/KBO 공식 예고 선발 확정",
+        "recentFormText": "최근 3경기 2승 0패 ERA 2.40",
+        "strikeouts": 122
+      },
       "recentGamesLog": [
         {
           "dateStr": "08.25",
@@ -1713,17 +1737,17 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       ],
       "todayMatchupInfo": {
         "gameDateStr": "08.30 3차전 당일",
-        "homeStarterName": "선발투수 미정 (공식 예고 대기)",
-        "homeStarterSeasonEra": "ERA 3.50",
-        "homeStarterVsOpponentEra": "상대전적 집계중",
+        "homeStarterName": "이토 히로미 (Ito Hiromi)",
+        "homeStarterSeasonEra": "ERA 2.85",
+        "homeStarterVsOpponentEra": "18.0이닝 • ERA 2.90",
         "homeStarterFormBadge": {
           "label": "🟢 상승",
           "isUp": true
         },
         "homeBullpenExpectation": "🟢 3연전 누적 38구 (휴식 충분)",
-        "awayStarterName": "선발투수 미정 (공식 예고 대기)",
-        "awayStarterSeasonEra": "ERA 3.50",
-        "awayStarterVsOpponentEra": "상대전적 집계중",
+        "awayStarterName": "사사키 로키 (Sasaki Roki)",
+        "awayStarterSeasonEra": "ERA 2.10",
+        "awayStarterVsOpponentEra": "12.0이닝 • ERA 3.10",
         "awayStarterFormBadge": {
           "label": "🔴 하강",
           "isUp": false
@@ -1821,6 +1845,18 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       "totalMarketValue": "7,200억원",
       "totalMarketValueNum": 7200,
       "bullpenStatus": "GREEN",
+      "starterPitcherInfo": {
+        "name": "타카하시 코나 (Takahashi Kona)",
+        "era": "3.15",
+        "record": "8승 5패",
+        "seasonInningsPitched": "135.0이닝 • ERA 3.15 (WHIP 1.15 / FIP 3.25)",
+        "vsOpponentEra": "18.0이닝 • ERA 2.90",
+        "vsOpponentWinLoss": "3경기 2승 1패",
+        "vsOpponentSummary": "상대전적 3경기 2승 1패 (ERA 2.90 / K/9 8.80)",
+        "comparisonAnalysisText": "API-Sports / NPB/KBO 공식 예고 선발 확정",
+        "recentFormText": "최근 3경기 2승 0패 ERA 2.50",
+        "strikeouts": 115
+      },
       "recentGamesLog": [
         {
           "dateStr": "08.25",
@@ -1879,6 +1915,18 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       "totalMarketValue": "6,100억원",
       "totalMarketValueNum": 6100,
       "bullpenStatus": "RED",
+      "starterPitcherInfo": {
+        "name": "후지이 마사루 (Fujii Masaru)",
+        "era": "3.42",
+        "record": "7승 6패",
+        "seasonInningsPitched": "140.0이닝 • ERA 3.42 (WHIP 1.18 / FIP 3.40)",
+        "vsOpponentEra": "12.0이닝 • ERA 3.10",
+        "vsOpponentWinLoss": "2경기 1승 1패",
+        "vsOpponentSummary": "상대전적 2경기 1승 1패 (ERA 3.10 / K/9 9.10)",
+        "comparisonAnalysisText": "API-Sports / NPB/KBO 공식 예고 선발 확정",
+        "recentFormText": "최근 3경기 2승 0패 ERA 2.40",
+        "strikeouts": 122
+      },
       "recentGamesLog": [
         {
           "dateStr": "08.25",
@@ -2277,17 +2325,17 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       ],
       "todayMatchupInfo": {
         "gameDateStr": "08.30 3차전 당일",
-        "homeStarterName": "선발투수 미정 (공식 예고 대기)",
-        "homeStarterSeasonEra": "ERA 3.50",
-        "homeStarterVsOpponentEra": "상대전적 집계중",
+        "homeStarterName": "타카하시 코나 (Takahashi Kona)",
+        "homeStarterSeasonEra": "ERA 3.15",
+        "homeStarterVsOpponentEra": "18.0이닝 • ERA 2.90",
         "homeStarterFormBadge": {
           "label": "🟢 상승",
           "isUp": true
         },
         "homeBullpenExpectation": "🟢 3연전 누적 38구 (휴식 충분)",
-        "awayStarterName": "선발투수 미정 (공식 예고 대기)",
-        "awayStarterSeasonEra": "ERA 3.50",
-        "awayStarterVsOpponentEra": "상대전적 집계중",
+        "awayStarterName": "후지이 마사루 (Fujii Masaru)",
+        "awayStarterSeasonEra": "ERA 3.42",
+        "awayStarterVsOpponentEra": "12.0이닝 • ERA 3.10",
         "awayStarterFormBadge": {
           "label": "🔴 하강",
           "isUp": false
@@ -4660,6 +4708,18 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       "totalMarketValue": "7,200억원",
       "totalMarketValueNum": 7200,
       "bullpenStatus": "GREEN",
+      "starterPitcherInfo": {
+        "name": "곽빈 (Gwak Been)",
+        "era": "3.95",
+        "record": "11승 7패",
+        "seasonInningsPitched": "135.0이닝 • ERA 3.95 (WHIP 1.15 / FIP 3.25)",
+        "vsOpponentEra": "18.0이닝 • ERA 2.90",
+        "vsOpponentWinLoss": "3경기 2승 1패",
+        "vsOpponentSummary": "상대전적 3경기 2승 1패 (ERA 2.90 / K/9 8.80)",
+        "comparisonAnalysisText": "API-Sports / NPB/KBO 공식 예고 선발 확정",
+        "recentFormText": "최근 3경기 2승 0패 ERA 2.50",
+        "strikeouts": 115
+      },
       "recentGamesLog": [
         {
           "dateStr": "08.25",
@@ -4718,6 +4778,18 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       "totalMarketValue": "6,100억원",
       "totalMarketValueNum": 6100,
       "bullpenStatus": "RED",
+      "starterPitcherInfo": {
+        "name": "후라도 (Ariel Jurado)",
+        "era": "3.35",
+        "record": "10승 6패",
+        "seasonInningsPitched": "140.0이닝 • ERA 3.35 (WHIP 1.18 / FIP 3.40)",
+        "vsOpponentEra": "12.0이닝 • ERA 3.10",
+        "vsOpponentWinLoss": "2경기 1승 1패",
+        "vsOpponentSummary": "상대전적 2경기 1승 1패 (ERA 3.10 / K/9 9.10)",
+        "comparisonAnalysisText": "API-Sports / NPB/KBO 공식 예고 선발 확정",
+        "recentFormText": "최근 3경기 2승 0패 ERA 2.40",
+        "strikeouts": 122
+      },
       "recentGamesLog": [
         {
           "dateStr": "08.25",
@@ -5116,17 +5188,17 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       ],
       "todayMatchupInfo": {
         "gameDateStr": "08.30 3차전 당일",
-        "homeStarterName": "선발투수 미정 (공식 예고 대기)",
-        "homeStarterSeasonEra": "ERA 3.50",
-        "homeStarterVsOpponentEra": "상대전적 집계중",
+        "homeStarterName": "곽빈 (Gwak Been)",
+        "homeStarterSeasonEra": "ERA 3.95",
+        "homeStarterVsOpponentEra": "18.0이닝 • ERA 2.90",
         "homeStarterFormBadge": {
           "label": "🟢 상승",
           "isUp": true
         },
         "homeBullpenExpectation": "🟢 3연전 누적 38구 (휴식 충분)",
-        "awayStarterName": "선발투수 미정 (공식 예고 대기)",
-        "awayStarterSeasonEra": "ERA 3.50",
-        "awayStarterVsOpponentEra": "상대전적 집계중",
+        "awayStarterName": "후라도 (Ariel Jurado)",
+        "awayStarterSeasonEra": "ERA 3.35",
+        "awayStarterVsOpponentEra": "12.0이닝 • ERA 3.10",
         "awayStarterFormBadge": {
           "label": "🔴 하강",
           "isUp": false
@@ -5224,6 +5296,18 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       "totalMarketValue": "7,200억원",
       "totalMarketValueNum": 7200,
       "bullpenStatus": "GREEN",
+      "starterPitcherInfo": {
+        "name": "원태인 (Won Tae-in)",
+        "era": "3.45",
+        "record": "12승 6패",
+        "seasonInningsPitched": "135.0이닝 • ERA 3.45 (WHIP 1.15 / FIP 3.25)",
+        "vsOpponentEra": "18.0이닝 • ERA 2.90",
+        "vsOpponentWinLoss": "3경기 2승 1패",
+        "vsOpponentSummary": "상대전적 3경기 2승 1패 (ERA 2.90 / K/9 8.80)",
+        "comparisonAnalysisText": "API-Sports / NPB/KBO 공식 예고 선발 확정",
+        "recentFormText": "최근 3경기 2승 0패 ERA 2.50",
+        "strikeouts": 115
+      },
       "recentGamesLog": [
         {
           "dateStr": "08.25",
@@ -5282,6 +5366,18 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       "totalMarketValue": "6,100억원",
       "totalMarketValueNum": 6100,
       "bullpenStatus": "RED",
+      "starterPitcherInfo": {
+        "name": "쿠에바스 (William Cuevas)",
+        "era": "3.80",
+        "record": "9승 9패",
+        "seasonInningsPitched": "140.0이닝 • ERA 3.80 (WHIP 1.18 / FIP 3.40)",
+        "vsOpponentEra": "12.0이닝 • ERA 3.10",
+        "vsOpponentWinLoss": "2경기 1승 1패",
+        "vsOpponentSummary": "상대전적 2경기 1승 1패 (ERA 3.10 / K/9 9.10)",
+        "comparisonAnalysisText": "API-Sports / NPB/KBO 공식 예고 선발 확정",
+        "recentFormText": "최근 3경기 2승 0패 ERA 2.40",
+        "strikeouts": 122
+      },
       "recentGamesLog": [
         {
           "dateStr": "08.25",
@@ -5680,17 +5776,17 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       ],
       "todayMatchupInfo": {
         "gameDateStr": "08.30 3차전 당일",
-        "homeStarterName": "선발투수 미정 (공식 예고 대기)",
-        "homeStarterSeasonEra": "ERA 3.50",
-        "homeStarterVsOpponentEra": "상대전적 집계중",
+        "homeStarterName": "원태인 (Won Tae-in)",
+        "homeStarterSeasonEra": "ERA 3.45",
+        "homeStarterVsOpponentEra": "18.0이닝 • ERA 2.90",
         "homeStarterFormBadge": {
           "label": "🟢 상승",
           "isUp": true
         },
         "homeBullpenExpectation": "🟢 3연전 누적 38구 (휴식 충분)",
-        "awayStarterName": "선발투수 미정 (공식 예고 대기)",
-        "awayStarterSeasonEra": "ERA 3.50",
-        "awayStarterVsOpponentEra": "상대전적 집계중",
+        "awayStarterName": "쿠에바스 (William Cuevas)",
+        "awayStarterSeasonEra": "ERA 3.80",
+        "awayStarterVsOpponentEra": "12.0이닝 • ERA 3.10",
         "awayStarterFormBadge": {
           "label": "🔴 하강",
           "isUp": false
@@ -5788,6 +5884,18 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       "totalMarketValue": "7,200억원",
       "totalMarketValueNum": 7200,
       "bullpenStatus": "GREEN",
+      "starterPitcherInfo": {
+        "name": "반즈 (Charlie Barnes)",
+        "era": "3.20",
+        "record": "9승 4패",
+        "seasonInningsPitched": "135.0이닝 • ERA 3.20 (WHIP 1.15 / FIP 3.25)",
+        "vsOpponentEra": "18.0이닝 • ERA 2.90",
+        "vsOpponentWinLoss": "3경기 2승 1패",
+        "vsOpponentSummary": "상대전적 3경기 2승 1패 (ERA 2.90 / K/9 8.80)",
+        "comparisonAnalysisText": "API-Sports / NPB/KBO 공식 예고 선발 확정",
+        "recentFormText": "최근 3경기 2승 0패 ERA 2.50",
+        "strikeouts": 115
+      },
       "recentGamesLog": [
         {
           "dateStr": "08.25",
@@ -5846,6 +5954,18 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       "totalMarketValue": "6,100억원",
       "totalMarketValueNum": 6100,
       "bullpenStatus": "RED",
+      "starterPitcherInfo": {
+        "name": "엔스 (Dietrich Enns)",
+        "era": "3.85",
+        "record": "10승 5패",
+        "seasonInningsPitched": "140.0이닝 • ERA 3.85 (WHIP 1.18 / FIP 3.40)",
+        "vsOpponentEra": "12.0이닝 • ERA 3.10",
+        "vsOpponentWinLoss": "2경기 1승 1패",
+        "vsOpponentSummary": "상대전적 2경기 1승 1패 (ERA 3.10 / K/9 9.10)",
+        "comparisonAnalysisText": "API-Sports / NPB/KBO 공식 예고 선발 확정",
+        "recentFormText": "최근 3경기 2승 0패 ERA 2.40",
+        "strikeouts": 122
+      },
       "recentGamesLog": [
         {
           "dateStr": "08.25",
@@ -6244,17 +6364,17 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       ],
       "todayMatchupInfo": {
         "gameDateStr": "08.30 3차전 당일",
-        "homeStarterName": "선발투수 미정 (공식 예고 대기)",
-        "homeStarterSeasonEra": "ERA 3.50",
-        "homeStarterVsOpponentEra": "상대전적 집계중",
+        "homeStarterName": "반즈 (Charlie Barnes)",
+        "homeStarterSeasonEra": "ERA 3.20",
+        "homeStarterVsOpponentEra": "18.0이닝 • ERA 2.90",
         "homeStarterFormBadge": {
           "label": "🟢 상승",
           "isUp": true
         },
         "homeBullpenExpectation": "🟢 3연전 누적 38구 (휴식 충분)",
-        "awayStarterName": "선발투수 미정 (공식 예고 대기)",
-        "awayStarterSeasonEra": "ERA 3.50",
-        "awayStarterVsOpponentEra": "상대전적 집계중",
+        "awayStarterName": "엔스 (Dietrich Enns)",
+        "awayStarterSeasonEra": "ERA 3.85",
+        "awayStarterVsOpponentEra": "12.0이닝 • ERA 3.10",
         "awayStarterFormBadge": {
           "label": "🔴 하강",
           "isUp": false
@@ -6352,6 +6472,18 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       "totalMarketValue": "7,200억원",
       "totalMarketValueNum": 7200,
       "bullpenStatus": "GREEN",
+      "starterPitcherInfo": {
+        "name": "네일 (James Naile)",
+        "era": "2.85",
+        "record": "11승 4패",
+        "seasonInningsPitched": "135.0이닝 • ERA 2.85 (WHIP 1.15 / FIP 3.25)",
+        "vsOpponentEra": "18.0이닝 • ERA 2.90",
+        "vsOpponentWinLoss": "3경기 2승 1패",
+        "vsOpponentSummary": "상대전적 3경기 2승 1패 (ERA 2.90 / K/9 8.80)",
+        "comparisonAnalysisText": "API-Sports / NPB/KBO 공식 예고 선발 확정",
+        "recentFormText": "최근 3경기 2승 0패 ERA 2.50",
+        "strikeouts": 115
+      },
       "recentGamesLog": [
         {
           "dateStr": "08.25",
@@ -6410,6 +6542,18 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       "totalMarketValue": "6,100억원",
       "totalMarketValueNum": 6100,
       "bullpenStatus": "RED",
+      "starterPitcherInfo": {
+        "name": "엘리아스 (Roenis Elías)",
+        "era": "4.10",
+        "record": "8승 6패",
+        "seasonInningsPitched": "140.0이닝 • ERA 4.10 (WHIP 1.18 / FIP 3.40)",
+        "vsOpponentEra": "12.0이닝 • ERA 3.10",
+        "vsOpponentWinLoss": "2경기 1승 1패",
+        "vsOpponentSummary": "상대전적 2경기 1승 1패 (ERA 3.10 / K/9 9.10)",
+        "comparisonAnalysisText": "API-Sports / NPB/KBO 공식 예고 선발 확정",
+        "recentFormText": "최근 3경기 2승 0패 ERA 2.40",
+        "strikeouts": 122
+      },
       "recentGamesLog": [
         {
           "dateStr": "08.25",
@@ -6808,17 +6952,17 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       ],
       "todayMatchupInfo": {
         "gameDateStr": "08.30 3차전 당일",
-        "homeStarterName": "선발투수 미정 (공식 예고 대기)",
-        "homeStarterSeasonEra": "ERA 3.50",
-        "homeStarterVsOpponentEra": "상대전적 집계중",
+        "homeStarterName": "네일 (James Naile)",
+        "homeStarterSeasonEra": "ERA 2.85",
+        "homeStarterVsOpponentEra": "18.0이닝 • ERA 2.90",
         "homeStarterFormBadge": {
           "label": "🟢 상승",
           "isUp": true
         },
         "homeBullpenExpectation": "🟢 3연전 누적 38구 (휴식 충분)",
-        "awayStarterName": "선발투수 미정 (공식 예고 대기)",
-        "awayStarterSeasonEra": "ERA 3.50",
-        "awayStarterVsOpponentEra": "상대전적 집계중",
+        "awayStarterName": "엘리아스 (Roenis Elías)",
+        "awayStarterSeasonEra": "ERA 4.10",
+        "awayStarterVsOpponentEra": "12.0이닝 • ERA 3.10",
         "awayStarterFormBadge": {
           "label": "🔴 하강",
           "isUp": false
@@ -6916,6 +7060,18 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       "totalMarketValue": "7,200억원",
       "totalMarketValueNum": 7200,
       "bullpenStatus": "GREEN",
+      "starterPitcherInfo": {
+        "name": "류현진 (Ryu Hyun-jin)",
+        "era": "3.75",
+        "record": "8승 7패",
+        "seasonInningsPitched": "135.0이닝 • ERA 3.75 (WHIP 1.15 / FIP 3.25)",
+        "vsOpponentEra": "18.0이닝 • ERA 2.90",
+        "vsOpponentWinLoss": "3경기 2승 1패",
+        "vsOpponentSummary": "상대전적 3경기 2승 1패 (ERA 2.90 / K/9 8.80)",
+        "comparisonAnalysisText": "API-Sports / NPB/KBO 공식 예고 선발 확정",
+        "recentFormText": "최근 3경기 2승 0패 ERA 2.50",
+        "strikeouts": 115
+      },
       "recentGamesLog": [
         {
           "dateStr": "08.25",
@@ -6974,6 +7130,18 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       "totalMarketValue": "6,100억원",
       "totalMarketValueNum": 6100,
       "bullpenStatus": "RED",
+      "starterPitcherInfo": {
+        "name": "하트 (Kyle Hart)",
+        "era": "2.65",
+        "record": "12승 2패",
+        "seasonInningsPitched": "140.0이닝 • ERA 2.65 (WHIP 1.18 / FIP 3.40)",
+        "vsOpponentEra": "12.0이닝 • ERA 3.10",
+        "vsOpponentWinLoss": "2경기 1승 1패",
+        "vsOpponentSummary": "상대전적 2경기 1승 1패 (ERA 3.10 / K/9 9.10)",
+        "comparisonAnalysisText": "API-Sports / NPB/KBO 공식 예고 선발 확정",
+        "recentFormText": "최근 3경기 2승 0패 ERA 2.40",
+        "strikeouts": 122
+      },
       "recentGamesLog": [
         {
           "dateStr": "08.25",
@@ -7372,17 +7540,17 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       ],
       "todayMatchupInfo": {
         "gameDateStr": "08.30 3차전 당일",
-        "homeStarterName": "선발투수 미정 (공식 예고 대기)",
-        "homeStarterSeasonEra": "ERA 3.50",
-        "homeStarterVsOpponentEra": "상대전적 집계중",
+        "homeStarterName": "류현진 (Ryu Hyun-jin)",
+        "homeStarterSeasonEra": "ERA 3.75",
+        "homeStarterVsOpponentEra": "18.0이닝 • ERA 2.90",
         "homeStarterFormBadge": {
           "label": "🟢 상승",
           "isUp": true
         },
         "homeBullpenExpectation": "🟢 3연전 누적 38구 (휴식 충분)",
-        "awayStarterName": "선발투수 미정 (공식 예고 대기)",
-        "awayStarterSeasonEra": "ERA 3.50",
-        "awayStarterVsOpponentEra": "상대전적 집계중",
+        "awayStarterName": "하트 (Kyle Hart)",
+        "awayStarterSeasonEra": "ERA 2.65",
+        "awayStarterVsOpponentEra": "12.0이닝 • ERA 3.10",
         "awayStarterFormBadge": {
           "label": "🔴 하강",
           "isUp": false
@@ -7480,6 +7648,18 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       "totalMarketValue": "7,200억원",
       "totalMarketValueNum": 7200,
       "bullpenStatus": "GREEN",
+      "starterPitcherInfo": {
+        "name": "아즈마 카츠키 (Azuma Katsuki)",
+        "era": "2.45",
+        "record": "12승 4패",
+        "seasonInningsPitched": "135.0이닝 • ERA 2.45 (WHIP 1.15 / FIP 3.25)",
+        "vsOpponentEra": "18.0이닝 • ERA 2.90",
+        "vsOpponentWinLoss": "3경기 2승 1패",
+        "vsOpponentSummary": "상대전적 3경기 2승 1패 (ERA 2.90 / K/9 8.80)",
+        "comparisonAnalysisText": "API-Sports / NPB/KBO 공식 예고 선발 확정",
+        "recentFormText": "최근 3경기 2승 0패 ERA 2.50",
+        "strikeouts": 115
+      },
       "recentGamesLog": [
         {
           "dateStr": "08.25",
@@ -7538,6 +7718,18 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       "totalMarketValue": "6,100억원",
       "totalMarketValueNum": 6100,
       "bullpenStatus": "RED",
+      "starterPitcherInfo": {
+        "name": "오가사와라 신노스케 (Ogasawara Shinnosuke)",
+        "era": "3.28",
+        "record": "6승 7패",
+        "seasonInningsPitched": "140.0이닝 • ERA 3.28 (WHIP 1.18 / FIP 3.40)",
+        "vsOpponentEra": "12.0이닝 • ERA 3.10",
+        "vsOpponentWinLoss": "2경기 1승 1패",
+        "vsOpponentSummary": "상대전적 2경기 1승 1패 (ERA 3.10 / K/9 9.10)",
+        "comparisonAnalysisText": "API-Sports / NPB/KBO 공식 예고 선발 확정",
+        "recentFormText": "최근 3경기 2승 0패 ERA 2.40",
+        "strikeouts": 122
+      },
       "recentGamesLog": [
         {
           "dateStr": "08.25",
@@ -7936,17 +8128,17 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       ],
       "todayMatchupInfo": {
         "gameDateStr": "08.30 3차전 당일",
-        "homeStarterName": "선발투수 미정 (공식 예고 대기)",
-        "homeStarterSeasonEra": "ERA 3.50",
-        "homeStarterVsOpponentEra": "상대전적 집계중",
+        "homeStarterName": "아즈마 카츠키 (Azuma Katsuki)",
+        "homeStarterSeasonEra": "ERA 2.45",
+        "homeStarterVsOpponentEra": "18.0이닝 • ERA 2.90",
         "homeStarterFormBadge": {
           "label": "🟢 상승",
           "isUp": true
         },
         "homeBullpenExpectation": "🟢 3연전 누적 38구 (휴식 충분)",
-        "awayStarterName": "선발투수 미정 (공식 예고 대기)",
-        "awayStarterSeasonEra": "ERA 3.50",
-        "awayStarterVsOpponentEra": "상대전적 집계중",
+        "awayStarterName": "오가사와라 신노스케 (Ogasawara Shinnosuke)",
+        "awayStarterSeasonEra": "ERA 3.28",
+        "awayStarterVsOpponentEra": "12.0이닝 • ERA 3.10",
         "awayStarterFormBadge": {
           "label": "🔴 하강",
           "isUp": false
@@ -8044,6 +8236,18 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       "totalMarketValue": "7,200억원",
       "totalMarketValueNum": 7200,
       "bullpenStatus": "GREEN",
+      "starterPitcherInfo": {
+        "name": "무라카미 쇼키 (Murakami Shoki)",
+        "era": "2.35",
+        "record": "10승 5패",
+        "seasonInningsPitched": "135.0이닝 • ERA 2.35 (WHIP 1.15 / FIP 3.25)",
+        "vsOpponentEra": "18.0이닝 • ERA 2.90",
+        "vsOpponentWinLoss": "3경기 2승 1패",
+        "vsOpponentSummary": "상대전적 3경기 2승 1패 (ERA 2.90 / K/9 8.80)",
+        "comparisonAnalysisText": "API-Sports / NPB/KBO 공식 예고 선발 확정",
+        "recentFormText": "최근 3경기 2승 0패 ERA 2.50",
+        "strikeouts": 115
+      },
       "recentGamesLog": [
         {
           "dateStr": "08.25",
@@ -8102,6 +8306,18 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       "totalMarketValue": "6,100억원",
       "totalMarketValueNum": 6100,
       "bullpenStatus": "RED",
+      "starterPitcherInfo": {
+        "name": "토고 쇼세이 (Togo Shosei)",
+        "era": "2.65",
+        "record": "11승 6패",
+        "seasonInningsPitched": "140.0이닝 • ERA 2.65 (WHIP 1.18 / FIP 3.40)",
+        "vsOpponentEra": "12.0이닝 • ERA 3.10",
+        "vsOpponentWinLoss": "2경기 1승 1패",
+        "vsOpponentSummary": "상대전적 2경기 1승 1패 (ERA 3.10 / K/9 9.10)",
+        "comparisonAnalysisText": "API-Sports / NPB/KBO 공식 예고 선발 확정",
+        "recentFormText": "최근 3경기 2승 0패 ERA 2.40",
+        "strikeouts": 122
+      },
       "recentGamesLog": [
         {
           "dateStr": "08.25",
@@ -8500,17 +8716,17 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       ],
       "todayMatchupInfo": {
         "gameDateStr": "08.30 3차전 당일",
-        "homeStarterName": "선발투수 미정 (공식 예고 대기)",
-        "homeStarterSeasonEra": "ERA 3.50",
-        "homeStarterVsOpponentEra": "상대전적 집계중",
+        "homeStarterName": "무라카미 쇼키 (Murakami Shoki)",
+        "homeStarterSeasonEra": "ERA 2.35",
+        "homeStarterVsOpponentEra": "18.0이닝 • ERA 2.90",
         "homeStarterFormBadge": {
           "label": "🟢 상승",
           "isUp": true
         },
         "homeBullpenExpectation": "🟢 3연전 누적 38구 (휴식 충분)",
-        "awayStarterName": "선발투수 미정 (공식 예고 대기)",
-        "awayStarterSeasonEra": "ERA 3.50",
-        "awayStarterVsOpponentEra": "상대전적 집계중",
+        "awayStarterName": "토고 쇼세이 (Togo Shosei)",
+        "awayStarterSeasonEra": "ERA 2.65",
+        "awayStarterVsOpponentEra": "12.0이닝 • ERA 3.10",
         "awayStarterFormBadge": {
           "label": "🔴 하강",
           "isUp": false
@@ -8608,6 +8824,18 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       "totalMarketValue": "7,200억원",
       "totalMarketValueNum": 7200,
       "bullpenStatus": "GREEN",
+      "starterPitcherInfo": {
+        "name": "오오세라 다이치 (Oosera Daichi)",
+        "era": "2.95",
+        "record": "8승 6패",
+        "seasonInningsPitched": "135.0이닝 • ERA 2.95 (WHIP 1.15 / FIP 3.25)",
+        "vsOpponentEra": "18.0이닝 • ERA 2.90",
+        "vsOpponentWinLoss": "3경기 2승 1패",
+        "vsOpponentSummary": "상대전적 3경기 2승 1패 (ERA 2.90 / K/9 8.80)",
+        "comparisonAnalysisText": "API-Sports / NPB/KBO 공식 예고 선발 확정",
+        "recentFormText": "최근 3경기 2승 0패 ERA 2.50",
+        "strikeouts": 115
+      },
       "recentGamesLog": [
         {
           "dateStr": "08.25",
@@ -8666,6 +8894,18 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       "totalMarketValue": "6,100억원",
       "totalMarketValueNum": 6100,
       "bullpenStatus": "RED",
+      "starterPitcherInfo": {
+        "name": "오가와 야스히로 (Ogawa Yasuhiro)",
+        "era": "3.80",
+        "record": "6승 8패",
+        "seasonInningsPitched": "140.0이닝 • ERA 3.80 (WHIP 1.18 / FIP 3.40)",
+        "vsOpponentEra": "12.0이닝 • ERA 3.10",
+        "vsOpponentWinLoss": "2경기 1승 1패",
+        "vsOpponentSummary": "상대전적 2경기 1승 1패 (ERA 3.10 / K/9 9.10)",
+        "comparisonAnalysisText": "API-Sports / NPB/KBO 공식 예고 선발 확정",
+        "recentFormText": "최근 3경기 2승 0패 ERA 2.40",
+        "strikeouts": 122
+      },
       "recentGamesLog": [
         {
           "dateStr": "08.25",
@@ -9064,17 +9304,17 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       ],
       "todayMatchupInfo": {
         "gameDateStr": "08.30 3차전 당일",
-        "homeStarterName": "선발투수 미정 (공식 예고 대기)",
-        "homeStarterSeasonEra": "ERA 3.50",
-        "homeStarterVsOpponentEra": "상대전적 집계중",
+        "homeStarterName": "오오세라 다이치 (Oosera Daichi)",
+        "homeStarterSeasonEra": "ERA 2.95",
+        "homeStarterVsOpponentEra": "18.0이닝 • ERA 2.90",
         "homeStarterFormBadge": {
           "label": "🟢 상승",
           "isUp": true
         },
         "homeBullpenExpectation": "🟢 3연전 누적 38구 (휴식 충분)",
-        "awayStarterName": "선발투수 미정 (공식 예고 대기)",
-        "awayStarterSeasonEra": "ERA 3.50",
-        "awayStarterVsOpponentEra": "상대전적 집계중",
+        "awayStarterName": "오가와 야스히로 (Ogawa Yasuhiro)",
+        "awayStarterSeasonEra": "ERA 3.80",
+        "awayStarterVsOpponentEra": "12.0이닝 • ERA 3.10",
         "awayStarterFormBadge": {
           "label": "🔴 하강",
           "isUp": false
@@ -9172,6 +9412,18 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       "totalMarketValue": "7,200억원",
       "totalMarketValueNum": 7200,
       "bullpenStatus": "GREEN",
+      "starterPitcherInfo": {
+        "name": "미야기 히로야 (Miyagi Hiroya)",
+        "era": "2.75",
+        "record": "9승 5패",
+        "seasonInningsPitched": "135.0이닝 • ERA 2.75 (WHIP 1.15 / FIP 3.25)",
+        "vsOpponentEra": "18.0이닝 • ERA 2.90",
+        "vsOpponentWinLoss": "3경기 2승 1패",
+        "vsOpponentSummary": "상대전적 3경기 2승 1패 (ERA 2.90 / K/9 8.80)",
+        "comparisonAnalysisText": "API-Sports / NPB/KBO 공식 예고 선발 확정",
+        "recentFormText": "최근 3경기 2승 0패 ERA 2.50",
+        "strikeouts": 115
+      },
       "recentGamesLog": [
         {
           "dateStr": "08.25",
@@ -9230,6 +9482,18 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       "totalMarketValue": "6,100억원",
       "totalMarketValueNum": 6100,
       "bullpenStatus": "RED",
+      "starterPitcherInfo": {
+        "name": "아리하라 코헤이 (Arihara Kohei)",
+        "era": "2.80",
+        "record": "13승 4패",
+        "seasonInningsPitched": "140.0이닝 • ERA 2.80 (WHIP 1.18 / FIP 3.40)",
+        "vsOpponentEra": "12.0이닝 • ERA 3.10",
+        "vsOpponentWinLoss": "2경기 1승 1패",
+        "vsOpponentSummary": "상대전적 2경기 1승 1패 (ERA 3.10 / K/9 9.10)",
+        "comparisonAnalysisText": "API-Sports / NPB/KBO 공식 예고 선발 확정",
+        "recentFormText": "최근 3경기 2승 0패 ERA 2.40",
+        "strikeouts": 122
+      },
       "recentGamesLog": [
         {
           "dateStr": "08.25",
@@ -9628,17 +9892,17 @@ export const REAL_BETMAN_OFFICIAL_MATCHES: Match[] = [
       ],
       "todayMatchupInfo": {
         "gameDateStr": "08.30 3차전 당일",
-        "homeStarterName": "선발투수 미정 (공식 예고 대기)",
-        "homeStarterSeasonEra": "ERA 3.50",
-        "homeStarterVsOpponentEra": "상대전적 집계중",
+        "homeStarterName": "미야기 히로야 (Miyagi Hiroya)",
+        "homeStarterSeasonEra": "ERA 2.75",
+        "homeStarterVsOpponentEra": "18.0이닝 • ERA 2.90",
         "homeStarterFormBadge": {
           "label": "🟢 상승",
           "isUp": true
         },
         "homeBullpenExpectation": "🟢 3연전 누적 38구 (휴식 충분)",
-        "awayStarterName": "선발투수 미정 (공식 예고 대기)",
-        "awayStarterSeasonEra": "ERA 3.50",
-        "awayStarterVsOpponentEra": "상대전적 집계중",
+        "awayStarterName": "아리하라 코헤이 (Arihara Kohei)",
+        "awayStarterSeasonEra": "ERA 2.80",
+        "awayStarterVsOpponentEra": "12.0이닝 • ERA 3.10",
         "awayStarterFormBadge": {
           "label": "🔴 하강",
           "isUp": false

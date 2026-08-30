@@ -242,7 +242,7 @@ export default function App() {
         selectedFolder={selectedFolder}
         onSelectFolder={handleSelectFolder}
         selectedRound={selectedRound}
-        onSelectRound={setSelectedRound}
+        onSelectRound={(r) => setSelectedRound(r)}
         membershipTier={membershipTier}
         onChangeMembershipTier={setMembershipTier}
         viewMode={viewMode}

@@ -21,6 +21,8 @@ interface NavbarProps {
 export const Navbar = ({
   selectedFolder,
   onSelectFolder,
+  selectedRound,
+  onSelectRound,
   onToggleViewMode,
   activeTab,
   setActiveTab,
@@ -140,6 +142,26 @@ export const Navbar = ({
       {activeTab === 'home' && (
         <div className="max-w-7xl mx-auto px-2.5 sm:px-6 py-1.5 flex items-center justify-between gap-2 overflow-x-auto no-scrollbar border-t border-slate-900">
           <div className="flex items-center gap-1.5 shrink-0 overflow-x-auto no-scrollbar">
+            {/* 📌 Betman Sequential Round Pills Selector (260102 -> 260103 -> 260104 -> 260105) */}
+            <div className="flex items-center gap-1 pr-2 border-r border-slate-800 shrink-0">
+              {['260102', '260103', '260104', '260105'].map((rNum) => {
+                const isSel = selectedRound.includes(rNum);
+                return (
+                  <button
+                    key={rNum}
+                    onClick={() => onSelectRound(`프로토 승부식 ${rNum}회차 (betman.co.kr 오피셜 슬립)`)}
+                    className={`px-2 py-1 rounded-md text-[10px] font-black transition-all cursor-pointer ${
+                      isSel
+                        ? 'bg-gradient-to-r from-amber-400 to-yellow-400 text-slate-950 font-black shadow-md border border-yellow-200'
+                        : 'bg-slate-900 text-slate-300 hover:text-white border border-slate-800'
+                    }`}
+                  >
+                    🔥 {rNum}회차
+                  </button>
+                );
+              })}
+            </div>
+
             {/* 🎟️ G101 프로토 승부식 */}
             <button
               onClick={() => onSelectFolder('SEUNGBUSHIK')}
