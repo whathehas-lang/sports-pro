@@ -1,0 +1,78 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+<script type="text/javascript" class="init"></script>
+
+<!-- ?쇱씠釉뚮윭由??곸뿭  -->
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery-ui.js"></script>
+<script type="text/javascript" src="/js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="/js/jquery.dataTables.min.origin.js"></script>
+<script type="text/javascript" src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="/js/jquery.ui.monthpicker.js"></script>
+<script type="text/javascript" src="/js/jquery.history.js"></script>
+<script type="text/javascript" src="/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="/js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="/js/jszip.min.js"></script>
+<script type="text/javascript" src="/js/contents.path.js" id="contentsPath"></script>
+
+
+<!-- ?쇰툝由ъ떛? ?곸뿭 -->
+<link href="/css/ui-common.css?ver=2026082809" type="text/css" rel="stylesheet">
+
+<!-- 怨듯넻媛쒕컻? ?곸뿭 -->
+<script type="text/javascript" src="/js/requestClient.js"></script>
+<script type="text/javascript" src="/js/BUICommon.js"></script>
+<script type="text/javascript" src="/js/loading-common.js"></script>
+<script type="text/javascript" src="/js/code-common.js"></script>
+<script type="text/javascript" src="/js/serialize-common.js"></script>
+<script type="text/javascript" src="/js/grid-common.js"></script>
+<script type="text/javascript" src="/js/message-common.js"></script>
+<script type="text/javascript" src="/js/login.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+
+<!-- 吏곸젒 ?몄텧 -->
+<script type="text/javascript" src="/js/ui-common.js?ver=20260828"></script>
+
+
+<!-- BET肄붿튂 ?곸뿭 header ?쇨큵 ?곸슜 ?щ? 寃??--> 
+<link href="/js/betcoach/betcoach.style.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="/js/betcoach/betcoach.js"></script> 
+<script type="text/javascript" src="/js/betcoach/betcoach.drawer.js"></script>
+<script type="text/javascript" src="/js/betcoach/betcoach.util.js"></script>
+<script type="text/javascript" src="/js/betcoach/betcoach.on.js"></script>
+<script type="text/javascript" src="/js/betcoach/date-common.js"></script>
+
+	</head>
+	<body>
+		<div class="errorArea">
+			<div class="inner">
+				<h3 class="htit">?섏씠吏 ?ㅻ쪟 ?덈궡</h3>
+				<div class="msg">
+					<em class="ico warning"></em>
+					<div class="tit">
+						二꾩넚?⑸땲?? <br> ??젣 ?먮뒗 ?대쫫??蹂寃쎈릺???섏씠吏瑜??쒖떆?????놁뒿?덈떎.
+					</div>
+					<div class="txt">
+						?댁슜??遺덊렪???쒕젮 ??⑦엳 二꾩넚?⑸땲?? <br> ?좎떆 ???ㅼ떆 ?묒냽?섏뿬 二쇱떆湲?諛붾엻?덈떎.
+					</div>
+				</div>
+				<div class="bts">
+					<a href="javascript:history.back();" class="btn btnB sBorder">?댁쟾?붾㈃?쇰줈</a>
+					<a href="/" class="btn btnB sky">?덉쑝濡?/a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,7620 @@
+{
+  "Arizona Diamondbacks": [
+    {
+      "id": "694297",
+      "name": "Brandon Pfaadt",
+      "number": 32,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "805299",
+      "name": "Brandyn Garcia",
+      "number": 55,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "682998",
+      "name": "Corbin Carroll",
+      "number": 7,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "642701",
+      "name": "Dennis Santana",
+      "number": 59,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "571882",
+      "name": "Derek Law",
+      "number": 38,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "593958",
+      "name": "Eduardo Rodriguez",
+      "number": 57,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "672515",
+      "name": "Gabriel Moreno",
+      "number": 14,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "672695",
+      "name": "Geraldo Perdomo",
+      "number": 2,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "672629",
+      "name": "Gerardo Carrillo",
+      "number": 68,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "545121",
+      "name": "Ildemaro Vargas",
+      "number": 6,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "543510",
+      "name": "James McCann",
+      "number": 8,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "642528",
+      "name": "Jonathan Loáisiga",
+      "number": 43,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "691783",
+      "name": "Jordan Lawlar",
+      "number": 10,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "678489",
+      "name": "Jorge Barrosa",
+      "number": 1,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "703615",
+      "name": "Jose Cabrera",
+      "number": 53,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "699912",
+      "name": "Jose Fernandez",
+      "number": 11,
+      "position": "DH",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "666661",
+      "name": "Juan Morillo",
+      "number": 62,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "679885",
+      "name": "Justin Martinez",
+      "number": 63,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "656464",
+      "name": "Kevin Ginkel",
+      "number": 37,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663457",
+      "name": "Lars Nootbaar",
+      "number": 21,
+      "position": "DH",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "596146",
+      "name": "Max Kepler",
+      "number": 22,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "518876",
+      "name": "Merrill Kelly",
+      "number": 29,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "683352",
+      "name": "Mitch Bratt",
+      "number": 60,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "571448",
+      "name": "Nolan Arenado",
+      "number": 28,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "814439",
+      "name": "Ryan Waldschmidt",
+      "number": 15,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "664199",
+      "name": "Taylor Clarke",
+      "number": 45,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "694374",
+      "name": "Tim Tawa",
+      "number": 13,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "Atlanta Braves": [
+    {
+      "id": "700363",
+      "name": "AJ Smith-Shawver",
+      "number": 32,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663586",
+      "name": "Austin Riley",
+      "number": 27,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "608718",
+      "name": "Brent Suter",
+      "number": 39,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "676551",
+      "name": "Brewer Hicklen",
+      "number": 53,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "693821",
+      "name": "Bryce Elder",
+      "number": 55,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "519242",
+      "name": "Chris Sale",
+      "number": 51,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "800311",
+      "name": "Didier Fuentes",
+      "number": 72,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "642086",
+      "name": "Dominic Smith",
+      "number": 8,
+      "position": "DH",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "686948",
+      "name": "Drake Baldwin",
+      "number": 30,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "689266",
+      "name": "Dylan Dodd",
+      "number": 46,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669276",
+      "name": "Dylan Lee",
+      "number": 52,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "656550",
+      "name": "Grant Holmes",
+      "number": 66,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "673490",
+      "name": "Ha-Seong Kim",
+      "number": 7,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "657041",
+      "name": "Lane Thomas",
+      "number": 20,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "527048",
+      "name": "Martín Pérez",
+      "number": 33,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "621566",
+      "name": "Matt Olson",
+      "number": 28,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "643289",
+      "name": "Mauricio Dubón",
+      "number": 14,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "671739",
+      "name": "Michael Harris II",
+      "number": 23,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "573262",
+      "name": "Mike Yastrzemski",
+      "number": 18,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "645277",
+      "name": "Ozzie Albies",
+      "number": 1,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "628452",
+      "name": "Raisel Iglesias",
+      "number": 26,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "678061",
+      "name": "Ray Kerr",
+      "number": 62,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "660670",
+      "name": "Ronald Acuña Jr.",
+      "number": 13,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669221",
+      "name": "Sean Murphy",
+      "number": 12,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "641816",
+      "name": "Tyler Mahle",
+      "number": 54,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "682989",
+      "name": "Victor Mederos",
+      "number": 58,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "Baltimore Orioles": [
+    {
+      "id": "695380",
+      "name": "Alex Hoppe",
+      "number": 26,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "552640",
+      "name": "Andrew Kittredge",
+      "number": 39,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "689296",
+      "name": "Anthony Nunez",
+      "number": 66,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "677942",
+      "name": "Blaze Alexander",
+      "number": 23,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "687064",
+      "name": "Brandon Young",
+      "number": 63,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "676742",
+      "name": "Cam Sanders",
+      "number": 73,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "665966",
+      "name": "Carlos Narváez",
+      "number": 75,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "605135",
+      "name": "Chris Bassitt",
+      "number": 40,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "687952",
+      "name": "Christian Encarnacion-Strand",
+      "number": 32,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "681047",
+      "name": "Christian Franklin",
+      "number": 27,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "691723",
+      "name": "Coby Mayo",
+      "number": 16,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "681297",
+      "name": "Colton Cowser",
+      "number": 17,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "687637",
+      "name": "Dylan Beavers",
+      "number": 12,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "664991",
+      "name": "Grant Wolfram",
+      "number": 48,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "683002",
+      "name": "Gunnar Henderson",
+      "number": 2,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "702616",
+      "name": "Jackson Holliday",
+      "number": 7,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "677020",
+      "name": "Josh Walker",
+      "number": 61,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "680694",
+      "name": "Kyle Bradish",
+      "number": 38,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "665750",
+      "name": "Leody Taveras",
+      "number": 30,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "624413",
+      "name": "Pete Alonso",
+      "number": 25,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "670329",
+      "name": "Rico Garcia",
+      "number": 50,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "694212",
+      "name": "Samuel Basallo",
+      "number": 29,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669358",
+      "name": "Shane Baz",
+      "number": 34,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669432",
+      "name": "Trevor Rogers",
+      "number": 28,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "666974",
+      "name": "Yennier Cano",
+      "number": 78,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "650968",
+      "name": "Yohel Pozo",
+      "number": 79,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "Boston Red Sox": [
+    {
+      "id": "668939",
+      "name": "Adley Rutschman",
+      "number": 31,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "687941",
+      "name": "Alec Gamboa",
+      "number": 68,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "655316",
+      "name": "Andruw Monasterio",
+      "number": 32,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "678011",
+      "name": "Anthony Seigler",
+      "number": 48,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "547973",
+      "name": "Aroldis Chapman",
+      "number": 44,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "678394",
+      "name": "Brayan Bello",
+      "number": 66,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "702332",
+      "name": "Caleb Durbin",
+      "number": 5,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "678882",
+      "name": "Ceddanne Rafaela",
+      "number": 3,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "657136",
+      "name": "Connor Wong",
+      "number": 12,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "642201",
+      "name": "Eli White",
+      "number": 38,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669062",
+      "name": "Erik Miller",
+      "number": 67,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "676477",
+      "name": "Garrett Whitlock",
+      "number": 22,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669711",
+      "name": "Greg Weissert",
+      "number": 57,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663330",
+      "name": "Jahmai Jones",
+      "number": 37,
+      "position": "DH",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "687562",
+      "name": "Jake Bennett",
+      "number": 64,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "680776",
+      "name": "Jarren Duran",
+      "number": 16,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663558",
+      "name": "Jovani Morán",
+      "number": 47,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "681508",
+      "name": "Mickey Gasper",
+      "number": 30,
+      "position": "DH",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "686765",
+      "name": "Nick Sogard",
+      "number": 20,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663776",
+      "name": "Patrick Sandoval",
+      "number": 43,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "801139",
+      "name": "Payton Tolle",
+      "number": 70,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "624133",
+      "name": "Ranger Suarez",
+      "number": 55,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "543243",
+      "name": "Sonny Gray",
+      "number": 54,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "594027",
+      "name": "Tyron Guerrero",
+      "number": 41,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "575929",
+      "name": "Willson Contreras",
+      "number": 40,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "677800",
+      "name": "Wilyer Abreu",
+      "number": 52,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "Chicago Cubs": [
+    {
+      "id": "650644",
+      "name": "Aaron Civale",
+      "number": 38,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "608324",
+      "name": "Alex Bregman",
+      "number": 3,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "573204",
+      "name": "Caleb Thielbar",
+      "number": 24,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "608348",
+      "name": "Carson Kelly",
+      "number": 15,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "605280",
+      "name": "Clay Holmes",
+      "number": 25,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "607067",
+      "name": "Colin Rea",
+      "number": 53,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "694037",
+      "name": "Daniel Palencia",
+      "number": 48,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "656849",
+      "name": "David Peterson",
+      "number": 19,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "672356",
+      "name": "Gabriel Arias",
+      "number": 43,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "664023",
+      "name": "Ian Happ",
+      "number": 8,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "657097",
+      "name": "Jacob Webb",
+      "number": 71,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "592332",
+      "name": "Kevin Gausman",
+      "number": 12,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "807713",
+      "name": "Matt Shaw",
+      "number": 6,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "571510",
+      "name": "Matthew Boyd",
+      "number": 16,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "683737",
+      "name": "Michael Busch",
+      "number": 29,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "624424",
+      "name": "Michael Conforto",
+      "number": 20,
+      "position": "DH",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "665804",
+      "name": "Miguel Amaya",
+      "number": 9,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663538",
+      "name": "Nico Hoerner",
+      "number": 2,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "699393",
+      "name": "Pedro Ramírez",
+      "number": 75,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "691718",
+      "name": "Pete Crow-Armstrong",
+      "number": 4,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669020",
+      "name": "Ryan Rolison",
+      "number": 33,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "666171",
+      "name": "Ryan Zeferjahn",
+      "number": 56,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "673548",
+      "name": "Seiya Suzuki",
+      "number": 27,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "684007",
+      "name": "Shota Imanaga",
+      "number": 18,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663423",
+      "name": "Trent Thornton",
+      "number": 49,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "621438",
+      "name": "Tyrone Taylor",
+      "number": 55,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "Chicago White Sox": [
+    {
+      "id": "643217",
+      "name": "Andrew Benintendi",
+      "number": 23,
+      "position": "DH",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "641743",
+      "name": "Anthony Kay",
+      "number": 18,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "695731",
+      "name": "Braden Montgomery",
+      "number": 24,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "686668",
+      "name": "Brenton Doyle",
+      "number": 7,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663542",
+      "name": "Bryan Hudson",
+      "number": 60,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "805367",
+      "name": "Chase Meidroth",
+      "number": 10,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "695657",
+      "name": "Colson Montgomery",
+      "number": 12,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "691011",
+      "name": "Drew Romo",
+      "number": 36,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "607200",
+      "name": "Erick Fedde",
+      "number": 47,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "691799",
+      "name": "Grant Taylor",
+      "number": 31,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "696146",
+      "name": "Hagen Smith",
+      "number": 32,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "668670",
+      "name": "Jake Rogers",
+      "number": 28,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663855",
+      "name": "Jordan Hicks",
+      "number": 44,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "664353",
+      "name": "José Urquidy",
+      "number": 70,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "622491",
+      "name": "Luis Castillo",
+      "number": 58,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "682668",
+      "name": "Luisangel Acuña",
+      "number": 0,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "678246",
+      "name": "Miguel Vargas",
+      "number": 20,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "808959",
+      "name": "Munetaka Murakami",
+      "number": 5,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "545341",
+      "name": "Randal Grichuk",
+      "number": 34,
+      "position": "DH",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "803011",
+      "name": "Sam Antonacci",
+      "number": 17,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "680732",
+      "name": "Sean Burke",
+      "number": 59,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "656794",
+      "name": "Sean Newcomb",
+      "number": 15,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "670950",
+      "name": "Trevor Richards",
+      "number": 43,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "671976",
+      "name": "Tristan Peters",
+      "number": 29,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "699823",
+      "name": "Tyler Davis",
+      "number": 63,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "656457",
+      "name": "Tyler Gilbert",
+      "number": 40,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "Cincinnati Reds": [
+    {
+      "id": "671096",
+      "name": "Andrew Abbott",
+      "number": 41,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663903",
+      "name": "Brady Singer",
+      "number": 51,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "656271",
+      "name": "Brock Burke",
+      "number": 49,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "695505",
+      "name": "Chase Burns",
+      "number": 26,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "667472",
+      "name": "Dane Myers",
+      "number": 17,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "695490",
+      "name": "Edwin Arroyo",
+      "number": 2,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "682829",
+      "name": "Elly De La Cruz",
+      "number": 44,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "641941",
+      "name": "Emilio Pagán",
+      "number": 15,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "553993",
+      "name": "Eugenio Suárez",
+      "number": 28,
+      "position": "DH",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "699302",
+      "name": "Héctor Rodríguez",
+      "number": 43,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "671155",
+      "name": "Ivan Johnson",
+      "number": 63,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "668709",
+      "name": "JJ Bleday",
+      "number": 22,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "624431",
+      "name": "Jose Trevino",
+      "number": 35,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "670062",
+      "name": "Julian Garcia",
+      "number": 57,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "682825",
+      "name": "Luis Mey",
+      "number": 47,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "680574",
+      "name": "Matt McLain",
+      "number": 9,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "666157",
+      "name": "Nick Lodolo",
+      "number": 40,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "572955",
+      "name": "Pierce Johnson",
+      "number": 52,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "695076",
+      "name": "Rhett Lowder",
+      "number": 25,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "701398",
+      "name": "Sal Stewart",
+      "number": 27,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "594580",
+      "name": "Sam Moll",
+      "number": 50,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "670770",
+      "name": "TJ Friedl",
+      "number": 29,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "622088",
+      "name": "Tejay Antone",
+      "number": 70,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663574",
+      "name": "Tony Santillan",
+      "number": 64,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663886",
+      "name": "Tyler Stephenson",
+      "number": 37,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "677943",
+      "name": "Will Banfield",
+      "number": 60,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "Cleveland Guardians": [
+    {
+      "id": "694197",
+      "name": "Angel Genao",
+      "number": 17,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "682657",
+      "name": "Angel Martínez",
+      "number": 1,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "595978",
+      "name": "Austin Hedges",
+      "number": 27,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "677587",
+      "name": "Brayan Rocchio",
+      "number": 4,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "671922",
+      "name": "Cade Smith",
+      "number": 36,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "800050",
+      "name": "Chase DeLauter",
+      "number": 24,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "670059",
+      "name": "Colin Holderman",
+      "number": 35,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "684974",
+      "name": "Craig Yoho",
+      "number": 23,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "681807",
+      "name": "David Fry",
+      "number": 6,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "681870",
+      "name": "Erik Sabrowski",
+      "number": 62,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "656492",
+      "name": "Foster Griffin",
+      "number": 22,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "668909",
+      "name": "Gavin Williams",
+      "number": 32,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "683769",
+      "name": "Hunter Gaddis",
+      "number": 33,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "666176",
+      "name": "Jo Adell",
+      "number": 7,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "676282",
+      "name": "Joey Cantillo",
+      "number": 54,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "608070",
+      "name": "José Ramírez",
+      "number": 11,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "671106",
+      "name": "Logan Allen",
+      "number": 26,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "670036",
+      "name": "Matt Festa",
+      "number": 52,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663993",
+      "name": "Nathaniel Lowe",
+      "number": 46,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "800048",
+      "name": "Parker Messick",
+      "number": 77,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "672275",
+      "name": "Patrick Bailey",
+      "number": 16,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "690984",
+      "name": "Petey Halpin",
+      "number": 0,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "680757",
+      "name": "Steven Kwan",
+      "number": 38,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "676440",
+      "name": "Tanner Bibee",
+      "number": 28,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "682120",
+      "name": "Tim Herrin",
+      "number": 29,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "683953",
+      "name": "Travis Bazzana",
+      "number": 37,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "Colorado Rockies": [
+    {
+      "id": "657514",
+      "name": "Brennan Bernardino",
+      "number": 83,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "664954",
+      "name": "Brett Sullivan",
+      "number": 26,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "694249",
+      "name": "Cole Carrigg",
+      "number": 16,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "681393",
+      "name": "Connor Norby",
+      "number": 35,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "678662",
+      "name": "Ezequiel Tovar",
+      "number": 14,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "687312",
+      "name": "Gabriel Hughes",
+      "number": 43,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "696100",
+      "name": "Hunter Goodman",
+      "number": 15,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "677955",
+      "name": "Jaden Hill",
+      "number": 0,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "664983",
+      "name": "Jake McCarthy",
+      "number": 31,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "623474",
+      "name": "Jimmy Herget",
+      "number": 44,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "687597",
+      "name": "Jordan Beck",
+      "number": 27,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "605447",
+      "name": "Jordan Romano",
+      "number": 68,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "675848",
+      "name": "Juan Mejia",
+      "number": 47,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "815081",
+      "name": "Mark Manfredi",
+      "number": 54,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "690279",
+      "name": "Mason Adams",
+      "number": 38,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "666160",
+      "name": "Mickey Moniak",
+      "number": 22,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "693308",
+      "name": "Nick Frasso",
+      "number": 41,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663372",
+      "name": "Ryan Feltner",
+      "number": 18,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "690022",
+      "name": "Ryan Ritter",
+      "number": 8,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "681198",
+      "name": "TJ Rumfield",
+      "number": 7,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "685299",
+      "name": "Tanner Gordon",
+      "number": 29,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "608372",
+      "name": "Tomoyuki Sugano",
+      "number": 11,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "687859",
+      "name": "Troy Johnston",
+      "number": 20,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "650489",
+      "name": "Willi Castro",
+      "number": 3,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "691728",
+      "name": "Zac Veen",
+      "number": 13,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "688642",
+      "name": "Zach Agnos",
+      "number": 36,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "Detroit Tigers": [
+    {
+      "id": "808825",
+      "name": "Andrew Sears",
+      "number": 64,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "701162",
+      "name": "Ben Malgeri",
+      "number": 53,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "814430",
+      "name": "Brett Callahan",
+      "number": 34,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "690993",
+      "name": "Colt Keith",
+      "number": 33,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "667452",
+      "name": "Corey Julks",
+      "number": 44,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "693307",
+      "name": "Dillon Dingler",
+      "number": 13,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "623454",
+      "name": "Drew Anderson",
+      "number": 38,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "805427",
+      "name": "Drew Sommers",
+      "number": 51,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "680664",
+      "name": "Eduardo Valencia",
+      "number": 32,
+      "position": "DH",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "664285",
+      "name": "Framber Valdez",
+      "number": 59,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "650402",
+      "name": "Gleyber Torres",
+      "number": 25,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "701678",
+      "name": "Hao-Yu Lee",
+      "number": 50,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "695549",
+      "name": "Jackson Jobe",
+      "number": 21,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "621097",
+      "name": "Jacob Waguespack",
+      "number": 58,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "595879",
+      "name": "Javier Báez",
+      "number": 28,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "672456",
+      "name": "Keider Montero",
+      "number": 54,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "445276",
+      "name": "Kenley Jansen",
+      "number": 74,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "805808",
+      "name": "Kevin McGonigle",
+      "number": 7,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "640448",
+      "name": "Kyle Finnegan",
+      "number": 67,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "703601",
+      "name": "Max Clark",
+      "number": 15,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "679529",
+      "name": "Spencer Torkelson",
+      "number": 20,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663432",
+      "name": "Tanner Rainey",
+      "number": 56,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "675512",
+      "name": "Troy Melton",
+      "number": 52,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663947",
+      "name": "Tyler Holton",
+      "number": 87,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "641755",
+      "name": "Tyler Kinley",
+      "number": 55,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "656716",
+      "name": "Zach McKinstry",
+      "number": 39,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "Houston Astros": [
+    {
+      "id": "805123",
+      "name": "AJ Blubaugh",
+      "number": 69,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "656986",
+      "name": "Bennett Sousa",
+      "number": 62,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "650556",
+      "name": "Bryan Abreu",
+      "number": 52,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "701358",
+      "name": "Cam Smith",
+      "number": 11,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "543877",
+      "name": "Christian Vázquez",
+      "number": 2,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "572233",
+      "name": "Christian Walker",
+      "number": 8,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "664299",
+      "name": "Cristian Javier",
+      "number": 53,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "662139",
+      "name": "Daulton Varsho",
+      "number": 18,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "660853",
+      "name": "Enyel De Los Santos",
+      "number": 65,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "814490",
+      "name": "Ethan Pecko",
+      "number": 70,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669713",
+      "name": "Hayden Wesneski",
+      "number": 39,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "686613",
+      "name": "Hunter Brown",
+      "number": 58,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "670623",
+      "name": "Isaac Paredes",
+      "number": 15,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "665161",
+      "name": "Jeremy Peña",
+      "number": 3,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "514888",
+      "name": "Jose Altuve",
+      "number": 27,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "623352",
+      "name": "Josh Hader",
+      "number": 71,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "678906",
+      "name": "Kai-Wei Teng",
+      "number": 17,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "664774",
+      "name": "LaMonte Wade Jr.",
+      "number": 31,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "676369",
+      "name": "Nelson Velázquez",
+      "number": 30,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669397",
+      "name": "Nick Allen",
+      "number": 20,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663567",
+      "name": "Peter Lambert",
+      "number": 38,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "595345",
+      "name": "Steven Okert",
+      "number": 48,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "837227",
+      "name": "Tatsuya Imai",
+      "number": 45,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "666211",
+      "name": "Taylor Trammell",
+      "number": 26,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "673237",
+      "name": "Yainer Diaz",
+      "number": 21,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "670541",
+      "name": "Yordan Alvarez",
+      "number": 44,
+      "position": "DH",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "Kansas City Royals": [
+    {
+      "id": "656638",
+      "name": "Alex Lange",
+      "number": 56,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "543238",
+      "name": "Anthony Gose",
+      "number": 34,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "677951",
+      "name": "Bobby Witt Jr.",
+      "number": 7,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "695600",
+      "name": "Carter Jensen",
+      "number": 22,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "671162",
+      "name": "Connor Thomas",
+      "number": 50,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "518886",
+      "name": "Craig Kimbrel",
+      "number": 26,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663738",
+      "name": "Daniel Lynch IV",
+      "number": 41,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "686555",
+      "name": "Isaac Collins",
+      "number": 1,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "695506",
+      "name": "Jac Caglianone",
+      "number": 14,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "670231",
+      "name": "John Rave",
+      "number": 16,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "670167",
+      "name": "John Schreiber",
+      "number": 46,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "621016",
+      "name": "Jose Cuas",
+      "number": 74,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "668942",
+      "name": "Josh Rojas",
+      "number": 40,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "664728",
+      "name": "Kyle Isbel",
+      "number": 28,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "571912",
+      "name": "Luke Maile",
+      "number": 18,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "683090",
+      "name": "Matthew Lugo",
+      "number": 24,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "608379",
+      "name": "Michael Wacha",
+      "number": 52,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663878",
+      "name": "Nate Pearson",
+      "number": 61,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "679845",
+      "name": "Nick Loftin",
+      "number": 12,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "702070",
+      "name": "Noah Cameron",
+      "number": 65,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "677976",
+      "name": "Randy Dobnak",
+      "number": 62,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "521692",
+      "name": "Salvador Perez",
+      "number": 13,
+      "position": "DH",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "607625",
+      "name": "Seth Lugo",
+      "number": 67,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "674444",
+      "name": "Steven Cruz",
+      "number": 64,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "686475",
+      "name": "Tyler Tolbert",
+      "number": 2,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "686469",
+      "name": "Vinnie Pasquantino",
+      "number": 9,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "Los Angeles Angels": [
+    {
+      "id": "624428",
+      "name": "Adam Frazier",
+      "number": 20,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "690829",
+      "name": "Ben Joyce",
+      "number": 44,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "695681",
+      "name": "Christian Moore",
+      "number": 4,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "694203",
+      "name": "Denzer Guzman",
+      "number": 23,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "691946",
+      "name": "George Klassen",
+      "number": 58,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "680570",
+      "name": "Grayson Rodriguez",
+      "number": 21,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "820862",
+      "name": "José Fermin",
+      "number": 65,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "642350",
+      "name": "Jose Siri",
+      "number": 28,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "666139",
+      "name": "Josh Lowe",
+      "number": 3,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "684665",
+      "name": "Luke Murphy",
+      "number": 72,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "545361",
+      "name": "Mike Trout",
+      "number": 27,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "694208",
+      "name": "Moisés Ballesteros",
+      "number": 13,
+      "position": "DH",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "672724",
+      "name": "Oswald Peraza",
+      "number": 2,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "672282",
+      "name": "Reid Detmers",
+      "number": 48,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "696270",
+      "name": "Ryan Johnson",
+      "number": 32,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "670245",
+      "name": "Ryan Watson",
+      "number": 56,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "671111",
+      "name": "Sammy Peralta",
+      "number": 67,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "642048",
+      "name": "Tayler Saucedo",
+      "number": 55,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "518595",
+      "name": "Travis d'Arnaud",
+      "number": 25,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "694680",
+      "name": "Trevor Martin",
+      "number": 54,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "623168",
+      "name": "Tyler Heineman",
+      "number": 31,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "687093",
+      "name": "Vaughn Grissom",
+      "number": 5,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "685133",
+      "name": "Wade Meckler",
+      "number": 53,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "700712",
+      "name": "Walbert Ureña",
+      "number": 57,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "579328",
+      "name": "Yusei Kikuchi",
+      "number": 16,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "687263",
+      "name": "Zach Neto",
+      "number": 9,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "Los Angeles Dodgers": [
+    {
+      "id": "677950",
+      "name": "Alek Thomas",
+      "number": 9,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669743",
+      "name": "Alex Call",
+      "number": 12,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "681911",
+      "name": "Alex Vesia",
+      "number": 51,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "666163",
+      "name": "Ben Rortvedt",
+      "number": 47,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "605483",
+      "name": "Blake Snell",
+      "number": 7,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "592779",
+      "name": "Brock Stewart",
+      "number": 41,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "683618",
+      "name": "Edgardo Henriquez",
+      "number": 60,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "571771",
+      "name": "Enrique Hernández",
+      "number": 8,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "641778",
+      "name": "Eric Lauer",
+      "number": 33,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "623465",
+      "name": "Evan Phillips",
+      "number": 59,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "518692",
+      "name": "Freddie Freeman",
+      "number": 5,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "676439",
+      "name": "Hunter Feduccia",
+      "number": 46,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "676263",
+      "name": "Jack Dreyer",
+      "number": 86,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669165",
+      "name": "Kyle Hurt",
+      "number": 63,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663656",
+      "name": "Kyle Tucker",
+      "number": 23,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "571970",
+      "name": "Max Muncy",
+      "number": 13,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "500743",
+      "name": "Miguel Rojas",
+      "number": 72,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "605141",
+      "name": "Mookie Betts",
+      "number": 50,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "678020",
+      "name": "Seth Halvorsen",
+      "number": 56,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "660271",
+      "name": "Shohei Ohtani",
+      "number": 17,
+      "position": "TWP",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "656945",
+      "name": "Tanner Scott",
+      "number": 66,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669373",
+      "name": "Tarik Skubal",
+      "number": 29,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "606192",
+      "name": "Teoscar Hernández",
+      "number": 37,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669242",
+      "name": "Tommy Edman",
+      "number": 25,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "607192",
+      "name": "Tyler Glasnow",
+      "number": 31,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "808967",
+      "name": "Yoshinobu Yamamoto",
+      "number": 18,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "Miami Marlins": [
+    {
+      "id": "682663",
+      "name": "Agustín Ramírez",
+      "number": 50,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "640459",
+      "name": "Brian Navarreto",
+      "number": 64,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "676534",
+      "name": "Calvin Faucher",
+      "number": 53,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "690978",
+      "name": "Dax Fulton",
+      "number": 90,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "665923",
+      "name": "Esteury Ruiz",
+      "number": 3,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "691587",
+      "name": "Eury Pérez",
+      "number": 39,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "665052",
+      "name": "Griffin Conine",
+      "number": 18,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "681715",
+      "name": "Heriberto Hernández",
+      "number": 13,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "667652",
+      "name": "Jack Ralston",
+      "number": 79,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "805300",
+      "name": "Jakob Marsee",
+      "number": 87,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "676083",
+      "name": "Janson Junk",
+      "number": 26,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "691594",
+      "name": "Javier Sanoja",
+      "number": 8,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "691788",
+      "name": "Joe Mack",
+      "number": 80,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "694795",
+      "name": "Josh Ekness",
+      "number": 95,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669065",
+      "name": "Kyle Stowers",
+      "number": 28,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "677870",
+      "name": "Leo Jiménez",
+      "number": 19,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "656848",
+      "name": "Michael Petersen",
+      "number": 49,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "672640",
+      "name": "Otto Lopez",
+      "number": 6,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "683357",
+      "name": "Owen Caissie",
+      "number": 17,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "687473",
+      "name": "Ryan Gusto",
+      "number": 65,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "645261",
+      "name": "Sandy Alcantara",
+      "number": 22,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663969",
+      "name": "Tyler Phillips",
+      "number": 30,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "676604",
+      "name": "Tyler Zuber",
+      "number": 55,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "680767",
+      "name": "Victor Vodnik",
+      "number": 38,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "682790",
+      "name": "Wikelman González",
+      "number": 67,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669364",
+      "name": "Xavier Edwards",
+      "number": 9,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "Milwaukee Brewers": [
+    {
+      "id": "676879",
+      "name": "Aaron Ashby",
+      "number": 26,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "683734",
+      "name": "Andrew Vaughn",
+      "number": 28,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "622608",
+      "name": "Antonio Senzatela",
+      "number": 49,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "668930",
+      "name": "Brice Turang",
+      "number": 2,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669060",
+      "name": "Bryse Wilson",
+      "number": 41,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "694477",
+      "name": "Chad Patrick",
+      "number": 39,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "592885",
+      "name": "Christian Yelich",
+      "number": 22,
+      "position": "DH",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "806198",
+      "name": "Cooper Pratt",
+      "number": 12,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669084",
+      "name": "DL Hall",
+      "number": 37,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "666152",
+      "name": "David Hamilton",
+      "number": 6,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669160",
+      "name": "Dustin May",
+      "number": 21,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669003",
+      "name": "Garrett Mitchell",
+      "number": 5,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "596142",
+      "name": "Gary Sánchez",
+      "number": 99,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "681982",
+      "name": "Grant Anderson",
+      "number": 56,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "694192",
+      "name": "Jackson Chourio",
+      "number": 11,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "694819",
+      "name": "Jacob Misiorowski",
+      "number": 32,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "641343",
+      "name": "Jake Bauers",
+      "number": 9,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "687401",
+      "name": "Joey Ortiz",
+      "number": 3,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "690986",
+      "name": "Kyle Harrison",
+      "number": 52,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "701656",
+      "name": "Logan Henderson",
+      "number": 43,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "800325",
+      "name": "Luis Lara",
+      "number": 18,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "688107",
+      "name": "Robert Gasser",
+      "number": 54,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "686217",
+      "name": "Sal Frelick",
+      "number": 10,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "675660",
+      "name": "Shane Drohan",
+      "number": 55,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "656730",
+      "name": "Trevor Megill",
+      "number": 29,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "661388",
+      "name": "William Contreras",
+      "number": 24,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "Minnesota Twins": [
+    {
+      "id": "621345",
+      "name": "A.J. Minter",
+      "number": 33,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "656577",
+      "name": "Alex Jackson",
+      "number": 70,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "702193",
+      "name": "Andrew Morris",
+      "number": 78,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "641927",
+      "name": "Bailey Ober",
+      "number": 17,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "686797",
+      "name": "Brooks Lee",
+      "number": 22,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "621439",
+      "name": "Byron Buxton",
+      "number": 25,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "687570",
+      "name": "Connor Prielipp",
+      "number": 61,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "665152",
+      "name": "Dean Kremer",
+      "number": 13,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "656546",
+      "name": "Jeff Hoffman",
+      "number": 24,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "605137",
+      "name": "Josh Bell",
+      "number": 56,
+      "position": "DH",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "701785",
+      "name": "Kaelen Culpepper",
+      "number": 12,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "665019",
+      "name": "Kody Clemens",
+      "number": 2,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "681892",
+      "name": "Kody Funderburk",
+      "number": 57,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "807712",
+      "name": "Luke Keaschall",
+      "number": 15,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "668904",
+      "name": "Royce Lewis",
+      "number": 23,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "680777",
+      "name": "Ryan Jeffers",
+      "number": 27,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "668952",
+      "name": "Ryan Kreidler",
+      "number": 5,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "671737",
+      "name": "Taj Bradley",
+      "number": 26,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "573124",
+      "name": "Taylor Rogers",
+      "number": 55,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "667297",
+      "name": "Tommy Nance",
+      "number": 35,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "701519",
+      "name": "Travis Adams",
+      "number": 45,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663616",
+      "name": "Trevor Larnach",
+      "number": 9,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "605170",
+      "name": "Victor Caratini",
+      "number": 37,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "805805",
+      "name": "Walker Jenkins",
+      "number": 11,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "672782",
+      "name": "Yoendrys Gómez",
+      "number": 94,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "805673",
+      "name": "Zebby Matthews",
+      "number": 52,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "New York Mets": [
+    {
+      "id": "805999",
+      "name": "A.J. Ewing",
+      "number": 9,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "681810",
+      "name": "Austin Warren",
+      "number": 44,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "666182",
+      "name": "Bo Bichette",
+      "number": 19,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "683146",
+      "name": "Brett Baty",
+      "number": 7,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "701807",
+      "name": "Carson Benge",
+      "number": 3,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "606965",
+      "name": "Chris Devenski",
+      "number": 56,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "681035",
+      "name": "Christian Scott",
+      "number": 45,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "666624",
+      "name": "Christopher Morel",
+      "number": 28,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "665506",
+      "name": "Cristian Pache",
+      "number": 71,
+      "position": "OF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "650960",
+      "name": "Daniel Duarte",
+      "number": 54,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "673380",
+      "name": "Dedniel Núñez",
+      "number": 72,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "682626",
+      "name": "Francisco Alvarez",
+      "number": 4,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "596019",
+      "name": "Francisco Lindor",
+      "number": 12,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "676724",
+      "name": "Jared Young",
+      "number": 29,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "642376",
+      "name": "Jefry Yan",
+      "number": 84,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "702752",
+      "name": "Jonathan Pintaro",
+      "number": 91,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "665742",
+      "name": "Juan Soto",
+      "number": 22,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "673540",
+      "name": "Kodai Senga",
+      "number": 34,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "673357",
+      "name": "Luis Robert Jr.",
+      "number": 88,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "620443",
+      "name": "Luis Torrens",
+      "number": 13,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "543760",
+      "name": "Marcus Semien",
+      "number": 10,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "681320",
+      "name": "Nate Lavender",
+      "number": 94,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "690997",
+      "name": "Nolan McLean",
+      "number": 26,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "476594",
+      "name": "Robert Stock",
+      "number": 89,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "640455",
+      "name": "Sean Manaea",
+      "number": 59,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "804267",
+      "name": "Zac Thornton",
+      "number": 49,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "New York Yankees": [
+    {
+      "id": "645305",
+      "name": "Ali Sánchez",
+      "number": 39,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "642708",
+      "name": "Amed Rosario",
+      "number": 14,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669224",
+      "name": "Austin Wells",
+      "number": 28,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "700250",
+      "name": "Ben Rice",
+      "number": 22,
+      "position": "DH",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "687396",
+      "name": "Brent Headrick",
+      "number": 47,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "693645",
+      "name": "Cam Schlittler",
+      "number": 31,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "607074",
+      "name": "Carlos Rodón",
+      "number": 55,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "641355",
+      "name": "Cody Bellinger",
+      "number": 35,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "670280",
+      "name": "David Bednar",
+      "number": 53,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "695684",
+      "name": "Elmer Rodríguez",
+      "number": 71,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "806146",
+      "name": "George Lombard Jr.",
+      "number": 96,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "543037",
+      "name": "Gerrit Cole",
+      "number": 45,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "671218",
+      "name": "Heliot Ramos",
+      "number": 34,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "665862",
+      "name": "Jazz Chisholm Jr.",
+      "number": 13,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "676609",
+      "name": "José Caballero",
+      "number": 72,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "671277",
+      "name": "Luis García Jr.",
+      "number": 26,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "608331",
+      "name": "Max Fried",
+      "number": 54,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "605242",
+      "name": "Michael Fulmer",
+      "number": 43,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "621112",
+      "name": "Paul Blackburn",
+      "number": 58,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "502671",
+      "name": "Paul Goldschmidt",
+      "number": 48,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "642232",
+      "name": "Ryan Yarbrough",
+      "number": 33,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "682987",
+      "name": "Spencer Jones",
+      "number": 78,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "657612",
+      "name": "Tim Hill",
+      "number": 41,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663757",
+      "name": "Trent Grisham",
+      "number": 12,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "701542",
+      "name": "Will Warren",
+      "number": 29,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "660787",
+      "name": "Yerry De los Santos",
+      "number": 73,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "Oakland Athletics": [
+    {
+      "id": "675961",
+      "name": "Alika Williams",
+      "number": 12,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669620",
+      "name": "Brady Basso",
+      "number": 66,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "661531",
+      "name": "Brian Serven",
+      "number": 10,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "666126",
+      "name": "Carlos Cortes",
+      "number": 26,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "688297",
+      "name": "Chris Roycroft",
+      "number": 56,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "687231",
+      "name": "Darell Hernaiz",
+      "number": 2,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "622268",
+      "name": "Donovan Walton",
+      "number": 29,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "665660",
+      "name": "Elvis Alvarado",
+      "number": 37,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "695611",
+      "name": "Gage Jump",
+      "number": 61,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "703607",
+      "name": "Henry Bolte",
+      "number": 33,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663687",
+      "name": "Hogan Harris",
+      "number": 36,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669372",
+      "name": "J.T. Ginn",
+      "number": 35,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "678022",
+      "name": "Jack Perkins",
+      "number": 50,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "682052",
+      "name": "Jacob Lopez",
+      "number": 57,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "643446",
+      "name": "Jeff McNeil",
+      "number": 22,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "605488",
+      "name": "Jeffrey Springs",
+      "number": 59,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "641680",
+      "name": "Jonah Heim",
+      "number": 15,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "660761",
+      "name": "José Suarez",
+      "number": 54,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "695034",
+      "name": "Kade Morris",
+      "number": 67,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "671732",
+      "name": "Lawrence Butler",
+      "number": 4,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "665622",
+      "name": "Luis Medina",
+      "number": 46,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "691777",
+      "name": "Max Muncy",
+      "number": 3,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "683021",
+      "name": "Michael Stefanic",
+      "number": 17,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "656240",
+      "name": "Scott Blewett",
+      "number": 49,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "695720",
+      "name": "Tommy White",
+      "number": 47,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "680869",
+      "name": "Zack Gelof",
+      "number": 20,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "Philadelphia Phillies": [
+    {
+      "id": "605400",
+      "name": "Aaron Nola",
+      "number": 27,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "664761",
+      "name": "Alec Bohm",
+      "number": 28,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "686934",
+      "name": "Alex McFarlane",
+      "number": 71,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "691725",
+      "name": "Andrew Painter",
+      "number": 24,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669016",
+      "name": "Brandon Marsh",
+      "number": 16,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "548384",
+      "name": "Brooks Raley",
+      "number": 30,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "650559",
+      "name": "Bryan De La Cruz",
+      "number": 41,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "547180",
+      "name": "Bryce Harper",
+      "number": 3,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "681082",
+      "name": "Bryson Stott",
+      "number": 5,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663767",
+      "name": "Chase Shugart",
+      "number": 55,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "650911",
+      "name": "Cristopher Sánchez",
+      "number": 61,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "656537",
+      "name": "Derek Hill",
+      "number": 49,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "624641",
+      "name": "Edmundo Sosa",
+      "number": 33,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "596117",
+      "name": "Garrett Stubbs",
+      "number": 21,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "592663",
+      "name": "J.T. Realmuto",
+      "number": 10,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "666200",
+      "name": "Jesús Luzardo",
+      "number": 44,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "661395",
+      "name": "Jhoan Duran",
+      "number": 59,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "680742",
+      "name": "Jonathan Bowlan",
+      "number": 52,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "621237",
+      "name": "José Alvarado",
+      "number": 46,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "702222",
+      "name": "Justin Crawford",
+      "number": 2,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "656941",
+      "name": "Kyle Schwarber",
+      "number": 12,
+      "position": "DH",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "650333",
+      "name": "Luis Arraez",
+      "number": 4,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "689147",
+      "name": "Orion Kerkering",
+      "number": 50,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "641835",
+      "name": "Tim Mayza",
+      "number": 37,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "607208",
+      "name": "Trea Turner",
+      "number": 7,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "554430",
+      "name": "Zack Wheeler",
+      "number": 45,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "Pittsburgh Pirates": [
+    {
+      "id": "695257",
+      "name": "Billy Cook",
+      "number": 25,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "664040",
+      "name": "Brandon Lowe",
+      "number": 5,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "677952",
+      "name": "Braxton Ashcraft",
+      "number": 35,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "668804",
+      "name": "Bryan Reynolds",
+      "number": 10,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "696149",
+      "name": "Bubba Chandler",
+      "number": 36,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "666808",
+      "name": "Camilo Doval",
+      "number": 75,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669387",
+      "name": "Carmen Mlodzinski",
+      "number": 50,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "699013",
+      "name": "Esmerlyn Valdez",
+      "number": 55,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "681895",
+      "name": "Evan Sisk",
+      "number": 48,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "642397",
+      "name": "Gregory Soto",
+      "number": 31,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "680779",
+      "name": "Henry Davis",
+      "number": 32,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "694378",
+      "name": "Jacob Gonzalez",
+      "number": 26,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663968",
+      "name": "Jake Mangum",
+      "number": 28,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "683003",
+      "name": "Jared Jones",
+      "number": 17,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669707",
+      "name": "Jared Triolo",
+      "number": 19,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "489446",
+      "name": "Kirby Yates",
+      "number": 54,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669199",
+      "name": "Lake Bachar",
+      "number": 71,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "596133",
+      "name": "Luke Weaver",
+      "number": 18,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "682254",
+      "name": "Mason Montgomery",
+      "number": 46,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "693304",
+      "name": "Nick Gonzales",
+      "number": 3,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "694377",
+      "name": "Nick Yorke",
+      "number": 38,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "665833",
+      "name": "Oneil Cruz",
+      "number": 15,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "694973",
+      "name": "Paul Skenes",
+      "number": 30,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "804668",
+      "name": "Rafael Flores Jr.",
+      "number": 43,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "687462",
+      "name": "Spencer Horwitz",
+      "number": 2,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "670990",
+      "name": "Yohan Ramírez",
+      "number": 49,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "San Diego Padres": [
+    {
+      "id": "670970",
+      "name": "Adrian Morejon",
+      "number": 50,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669720",
+      "name": "Austin Hays",
+      "number": 15,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "699134",
+      "name": "Bradgley Rodriguez",
+      "number": 72,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663554",
+      "name": "Casey Mize",
+      "number": 32,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "688158",
+      "name": "David Morgan",
+      "number": 66,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "687957",
+      "name": "Dustin Harris",
+      "number": 29,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "665487",
+      "name": "Fernando Tatis Jr.",
+      "number": 23,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "666023",
+      "name": "Freddy Fermin",
+      "number": 54,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "657757",
+      "name": "Gavin Sheets",
+      "number": 30,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "656288",
+      "name": "Griffin Canning",
+      "number": 17,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "701538",
+      "name": "Jackson Merrill",
+      "number": 3,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "630105",
+      "name": "Jake Cronenworth",
+      "number": 9,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "687749",
+      "name": "Jase Bowen",
+      "number": 4,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "606996",
+      "name": "Kyle Hart",
+      "number": 68,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669134",
+      "name": "Luis Campusano",
+      "number": 12,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "650859",
+      "name": "Luis Rengifo",
+      "number": 21,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "592518",
+      "name": "Manny Machado",
+      "number": 13,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "695243",
+      "name": "Mason Miller",
+      "number": 22,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "650633",
+      "name": "Michael King",
+      "number": 34,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "681190",
+      "name": "Randy Vásquez",
+      "number": 98,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "592662",
+      "name": "Robbie Ray",
+      "number": 38,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "664034",
+      "name": "Ty France",
+      "number": 25,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "621111",
+      "name": "Walker Buehler",
+      "number": 10,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "593974",
+      "name": "Wandy Peralta",
+      "number": 58,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "593428",
+      "name": "Xander Bogaerts",
+      "number": 2,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "673513",
+      "name": "Yuki Matsui",
+      "number": 1,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "San Francisco Giants": [
+    {
+      "id": "668800",
+      "name": "Andrew Knizner",
+      "number": 19,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "683627",
+      "name": "Anthony Molina",
+      "number": 45,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "694918",
+      "name": "Blade Tidwell",
+      "number": 46,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "694820",
+      "name": "Braxton Roxby",
+      "number": 90,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "805811",
+      "name": "Bryce Eldridge",
+      "number": 8,
+      "position": "DH",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "693313",
+      "name": "Carson Seymour",
+      "number": 77,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "683766",
+      "name": "Christian Koss",
+      "number": 50,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "701852",
+      "name": "Drew Cavanaugh",
+      "number": 61,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "687551",
+      "name": "Drew Gilbert",
+      "number": 0,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "681916",
+      "name": "Dylan Smith",
+      "number": 66,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "687529",
+      "name": "Grant McCray",
+      "number": 58,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "671345",
+      "name": "Jason Foley",
+      "number": 64,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "813841",
+      "name": "Jonah Cox",
+      "number": 53,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "808982",
+      "name": "Jung Hoo Lee",
+      "number": 51,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "694738",
+      "name": "Landen Roupp",
+      "number": 65,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "657277",
+      "name": "Logan Webb",
+      "number": 62,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "683363",
+      "name": "Matt Wilkinson",
+      "number": 71,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "801501",
+      "name": "Nate Furman",
+      "number": 56,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "678545",
+      "name": "Osleivis Basabe",
+      "number": 39,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "646240",
+      "name": "Rafael Devers",
+      "number": 16,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "665665",
+      "name": "Reiver Sanmartin",
+      "number": 48,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "676254",
+      "name": "Ryan Walker",
+      "number": 74,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "656529",
+      "name": "Sam Hentges",
+      "number": 31,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "694376",
+      "name": "Shay Whitcomb",
+      "number": 13,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "805345",
+      "name": "Trent Harris",
+      "number": 68,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "806367",
+      "name": "Turner Hill",
+      "number": 52,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "805074",
+      "name": "Yunior Marte",
+      "number": 87,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "Seattle Mariners": [
+    {
+      "id": "662253",
+      "name": "Andrés Muñoz",
+      "number": 75,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "801126",
+      "name": "Brock Rodden",
+      "number": 90,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "693433",
+      "name": "Bryan Woo",
+      "number": 22,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "682243",
+      "name": "Bryce Miller",
+      "number": 50,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663728",
+      "name": "Cal Raleigh",
+      "number": 29,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "672841",
+      "name": "Carlos Vargas",
+      "number": 54,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "702284",
+      "name": "Cole Young",
+      "number": 2,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "686527",
+      "name": "Dominic Canzone",
+      "number": 8,
+      "position": "DH",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "660825",
+      "name": "Eduard Bazardo",
+      "number": 83,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "676106",
+      "name": "Emerson Hancock",
+      "number": 26,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "642100",
+      "name": "Gabe Speier",
+      "number": 55,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669923",
+      "name": "George Kirby",
+      "number": 68,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "641487",
+      "name": "J.P. Crawford",
+      "number": 3,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "640902",
+      "name": "Jhonny Pereda",
+      "number": 5,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "678606",
+      "name": "José A. Ferrer",
+      "number": 45,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "647304",
+      "name": "Josh Naylor",
+      "number": 12,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "677594",
+      "name": "Julio Rodríguez",
+      "number": 44,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "807739",
+      "name": "Kade Anderson",
+      "number": 13,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669302",
+      "name": "Logan Gilbert",
+      "number": 36,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "621074",
+      "name": "Michael Rucker",
+      "number": 38,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "621550",
+      "name": "Patrick Wisdom",
+      "number": 35,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "668227",
+      "name": "Randy Arozarena",
+      "number": 56,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "622554",
+      "name": "Seranthony Domínguez",
+      "number": 58,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "621493",
+      "name": "Taylor Ward",
+      "number": 27,
+      "position": "DH",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "645302",
+      "name": "Victor Robles",
+      "number": 10,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "642215",
+      "name": "Weston Wilson",
+      "number": 31,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "Tampa Bay Rays": [
+    {
+      "id": "641329",
+      "name": "Bryan Baker",
+      "number": 47,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "592155",
+      "name": "Cam Booser",
+      "number": 62,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "668984",
+      "name": "Casey Legumina",
+      "number": 67,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "656775",
+      "name": "Cedric Mullins",
+      "number": 31,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "802415",
+      "name": "Chandler Simpson",
+      "number": 14,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "656876",
+      "name": "Drew Rasmussen",
+      "number": 57,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "642547",
+      "name": "Freddy Peralta",
+      "number": 51,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "664076",
+      "name": "Garrett Cleavinger",
+      "number": 60,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "693855",
+      "name": "Ian Seymour",
+      "number": 61,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "666018",
+      "name": "Jonathan Aranda",
+      "number": 8,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "676356",
+      "name": "Jonny DeLuca",
+      "number": 21,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "622761",
+      "name": "Jorge Mateo",
+      "number": 9,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "691406",
+      "name": "Junior Caminero",
+      "number": 13,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "700652",
+      "name": "Kenny Piper",
+      "number": 50,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "687330",
+      "name": "Kevin Kelly",
+      "number": 49,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "689414",
+      "name": "Liam Hicks",
+      "number": 34,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "655889",
+      "name": "Manuel Rodríguez",
+      "number": 39,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663743",
+      "name": "Nick Fortes",
+      "number": 40,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "607259",
+      "name": "Nick Martinez",
+      "number": 28,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "680700",
+      "name": "Richie Palacios",
+      "number": 1,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "668723",
+      "name": "Ryan Vilade",
+      "number": 26,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663556",
+      "name": "Shane McClanahan",
+      "number": 18,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "571927",
+      "name": "Steven Matz",
+      "number": 32,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "670764",
+      "name": "Taylor Walls",
+      "number": 6,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669330",
+      "name": "Tyler Wells",
+      "number": 68,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "650490",
+      "name": "Yandy Díaz",
+      "number": 2,
+      "position": "DH",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "Texas Rangers": [
+    {
+      "id": "671936",
+      "name": "Adam Macko",
+      "number": 71,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "607043",
+      "name": "Brandon Nimmo",
+      "number": 24,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "615698",
+      "name": "Cal Quantrill",
+      "number": 44,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "681217",
+      "name": "Chase Silseth",
+      "number": 63,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "674003",
+      "name": "Cody Bradford",
+      "number": 61,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "683227",
+      "name": "Cody Freeman",
+      "number": 39,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "668390",
+      "name": "Cole Winn",
+      "number": 60,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "608369",
+      "name": "Corey Seager",
+      "number": 5,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "643376",
+      "name": "Danny Jansen",
+      "number": 9,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "553869",
+      "name": "Elias Díaz",
+      "number": 35,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "694497",
+      "name": "Evan Carter",
+      "number": 32,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "677649",
+      "name": "Ezequiel Duran",
+      "number": 20,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "656641",
+      "name": "Jacob Latz",
+      "number": 67,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "594798",
+      "name": "Jacob deGrom",
+      "number": 48,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669394",
+      "name": "Jake Burger",
+      "number": 21,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "596001",
+      "name": "Jakob Junis",
+      "number": 16,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "592626",
+      "name": "Joc Pederson",
+      "number": 3,
+      "position": "DH",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "656756",
+      "name": "Jordan Montgomery",
+      "number": 52,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "679822",
+      "name": "Justin Foscue",
+      "number": 14,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "677958",
+      "name": "Kumar Rocker",
+      "number": 80,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "681351",
+      "name": "Logan O'Hoppe",
+      "number": 4,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669022",
+      "name": "MacKenzie Gore",
+      "number": 1,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "670032",
+      "name": "Nicky Lopez",
+      "number": 33,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "682608",
+      "name": "Peyton Gray",
+      "number": 75,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "641302",
+      "name": "Tyler Alexander",
+      "number": 13,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "694671",
+      "name": "Wyatt Langford",
+      "number": 36,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "Toronto Blue Jays": [
+    {
+      "id": "672386",
+      "name": "Alejandro Kirk",
+      "number": 30,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "665926",
+      "name": "Andrés Giménez",
+      "number": 0,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "678218",
+      "name": "Brandon Valenzuela",
+      "number": 59,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "680755",
+      "name": "Braydon Fisher",
+      "number": 63,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663893",
+      "name": "Brendon Little",
+      "number": 54,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "703520",
+      "name": "Brett Bateman",
+      "number": 21,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "669310",
+      "name": "CJ Van Eyk",
+      "number": 58,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "807727",
+      "name": "Charles McAdoo",
+      "number": 26,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663662",
+      "name": "Daz Cameron",
+      "number": 23,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "656302",
+      "name": "Dylan Cease",
+      "number": 84,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "676391",
+      "name": "Ernie Clement",
+      "number": 22,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "543807",
+      "name": "George Springer",
+      "number": 4,
+      "position": "DH",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "660821",
+      "name": "Jesús Sánchez",
+      "number": 12,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "667755",
+      "name": "José Soriano",
+      "number": 40,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "672960",
+      "name": "Kazuma Okamoto",
+      "number": 7,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "686973",
+      "name": "Louis Varland",
+      "number": 77,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "689254",
+      "name": "Mason Fluharty",
+      "number": 68,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "453286",
+      "name": "Max Scherzer",
+      "number": 31,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "547179",
+      "name": "Michael Lorenzen",
+      "number": 55,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "664702",
+      "name": "Myles Straw",
+      "number": 3,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "664770",
+      "name": "Nathan Lukes",
+      "number": 38,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "623149",
+      "name": "Paul Sewald",
+      "number": 43,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "681293",
+      "name": "Spencer Arrighetti",
+      "number": 45,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "693686",
+      "name": "Spencer Miles",
+      "number": 62,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "643511",
+      "name": "Tyler Rogers",
+      "number": 71,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "665489",
+      "name": "Vladimir Guerrero Jr.",
+      "number": 27,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ],
+  "Washington Nationals": [
+    {
+      "id": "694673",
+      "name": "Abimelec Ortiz",
+      "number": 81,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "665953",
+      "name": "Andrés Chaparro",
+      "number": 87,
+      "position": "1B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "674841",
+      "name": "Andrew Alvarez",
+      "number": 54,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "687605",
+      "name": "Andrew Pinckney",
+      "number": 45,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "695418",
+      "name": "Brad Lord",
+      "number": 41,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "691781",
+      "name": "Brady House",
+      "number": 12,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "682928",
+      "name": "CJ Abrams",
+      "number": 5,
+      "position": "SS",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "676917",
+      "name": "Cade Cavalli",
+      "number": 24,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "690925",
+      "name": "Clayton Beeter",
+      "number": 39,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "695734",
+      "name": "Daylen Lile",
+      "number": 4,
+      "position": "LF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "686611",
+      "name": "Dylan Crews",
+      "number": 3,
+      "position": "RF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "680899",
+      "name": "Erik Tolman",
+      "number": 73,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "695670",
+      "name": "Harry Ford",
+      "number": 17,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "800600",
+      "name": "Jackson Kent",
+      "number": 25,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "696285",
+      "name": "Jacob Young",
+      "number": 30,
+      "position": "CF",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663623",
+      "name": "Jake Irvin",
+      "number": 27,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "678391",
+      "name": "Jorbit Vivas",
+      "number": 84,
+      "position": "3B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "677588",
+      "name": "José Tena",
+      "number": 8,
+      "position": "DH",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "660688",
+      "name": "Keibert Ruiz",
+      "number": 20,
+      "position": "C",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "691384",
+      "name": "Luis Perales",
+      "number": 43,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "663362",
+      "name": "Matt Waldron",
+      "number": 56,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "668820",
+      "name": "Max Kranick",
+      "number": 35,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "683083",
+      "name": "Nasim Nuñez",
+      "number": 26,
+      "position": "2B",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "687377",
+      "name": "Orlando Ribalta",
+      "number": 64,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "676680",
+      "name": "Tom Cosgrove",
+      "number": 34,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    },
+    {
+      "id": "702021",
+      "name": "Will Dion",
+      "number": 76,
+      "position": "P",
+      "marketValue": "580억원",
+      "stamina": "GREEN",
+      "minutesPlayed14d": 130,
+      "tierCategory": "1GUN_MAIN"
+    }
+  ]
+}
