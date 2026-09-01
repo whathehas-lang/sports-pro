@@ -1,0 +1,33 @@
+name: 24시간 베트맨 & API-Football 클라우드 무인 수집기
+
+on:
+  schedule:
+    - cron: '0 * * * *' # 매시간 정각 자동 실행 (24시간 무인 가동)
+  workflow_dispatch: # GitHub 웹에서 수동 즉시 실행 버튼 지원
+
+jobs:
+  scrape-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 1. repository 코드 체크아웃
+        uses: actions/checkout@v4
+
+      - name: 2. Python 환경 구축
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: 3. 수집 라이브러리 설치
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests urllib3
+
+      - name: 4. 24시간 전 종목 실시간 파이프라인 수집 실행
+        run: python scrape_betman_auto_pipeline.py
+
+      - name: 5. 갱신된 오피셜 데이터 Git 자동 커밋 (Vercel 자동 배포 트리거)
+        run: |
+          git config --global user.name "betman-auto-bot"
+          git config --global user.email "bot@betman-auto.com"
+          git add src/mock/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🚀 [24/7 Cloud Auto Sync] Real-time Betman & API-Football Data Update" && git push)
