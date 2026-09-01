@@ -1,5 +1,5 @@
 import type { Match, BetmanFolderCategory } from '../../types/sports';
-import { REAL_BETMAN_OFFICIAL_MATCHES, G011_BETMAN_MATCHES, G024_BETMAN_MATCHES, G102_BETMAN_MATCHES } from '../../mock/realBetmanOfficialSchedule';
+import { betmanLiveSyncService } from './betmanLiveSyncService';
 
 export interface BetmanGameTypeInfo {
   gmId: string;
@@ -9,87 +9,158 @@ export interface BetmanGameTypeInfo {
   roundsList: string[];
 }
 
-export const BETMAN_GAMES_METADATA: Record<string, BetmanGameTypeInfo> = {
-  G101: {
-    gmId: 'G101',
-    name: '프로토 승부식',
-    category: 'SEUNGBUSHIK',
-    defaultRoundTs: '260102',
-    roundsList: ['260102', '260103', '260104', '260105']
-  },
-  G011: {
-    gmId: 'G011',
-    name: '축구 승무패',
-    category: 'SEUNGMUBAE',
-    defaultRoundTs: '260048',
-    roundsList: ['260048', '260049', '260050']
-  },
-  G024: {
-    gmId: 'G024',
-    name: '야구 승1패',
-    category: 'SEUNG1PAE',
-    defaultRoundTs: '260063',
-    roundsList: ['260063', '260064', '260065']
-  },
-  G102: {
-    gmId: 'G102',
-    name: '프로토 기록식',
-    category: 'GIROKSIK',
-    defaultRoundTs: '89',
-    roundsList: ['89', '90', '91']
+export interface BetmanGameTypeInfo {
+  gmId: string;
+  name: string;
+  category: BetmanFolderCategory;
+  defaultRoundTs: string;
+  roundsList: string[];
+}
+
+/**
+ * Calculate dynamic Betman G101 (프로토 승부식) gmTs based on official release schedule:
+ * Updates occur 3 times a week:
+ * 1. Monday 08:00 AM KST
+ * 2. Wednesday 08:00 AM KST
+ * 3. Friday 08:00 AM KST
+ */
+export function calculateActiveSeungbushikRoundTs(refDate: Date = new Date()): number {
+  // Known reference: 2026-08-31 08:00 KST (Monday) corresponds to active round sequence 260103
+  const baseTsDate = new Date('2026-08-31T08:00:00+09:00');
+  const baseRoundNum = 260103;
+  let roundOffset = 0;
+
+  if (refDate < baseTsDate) {
+    // Reverse calculation
+    let temp = new Date(baseTsDate);
+    while (temp > refDate) {
+      const day = temp.getDay();
+      const hours = temp.getHours();
+      // Move backwards slot
+      if (day === 1 && hours >= 8) { // Monday 8am -> Friday 8am (prev week)
+        temp.setDate(temp.getDate() - 3);
+      } else if (day === 5 && hours >= 8) { // Friday 8am -> Wednesday 8am
+        temp.setDate(temp.getDate() - 2);
+      } else if (day === 3 && hours >= 8) { // Wednesday 8am -> Monday 8am
+        temp.setDate(temp.getDate() - 2);
+      } else {
+        temp.setTime(temp.getTime() - 3600 * 1000);
+      }
+      roundOffset--;
+    }
+  } else {
+    // Forward calculation counting 08:00 AM slots (Mon, Wed, Fri)
+    let temp = new Date(baseTsDate);
+    while (true) {
+      // Find next slot boundary
+      let nextSlot = new Date(temp);
+      const day = temp.getDay();
+      if (day === 1) { // Mon 8am -> Wed 8am (+2 days)
+        nextSlot.setDate(nextSlot.getDate() + 2);
+      } else if (day === 3) { // Wed 8am -> Fri 8am (+2 days)
+        nextSlot.setDate(nextSlot.getDate() + 2);
+      } else { // Fri 8am -> Mon 8am (+3 days)
+        nextSlot.setDate(nextSlot.getDate() + 3);
+      }
+      nextSlot.setHours(8, 0, 0, 0);
+
+      if (refDate >= nextSlot) {
+        temp = nextSlot;
+        roundOffset++;
+      } else {
+        break;
+      }
+    }
   }
-};
+
+  return baseRoundNum + roundOffset;
+}
+
+export function getDynamicBetmanGamesMetadata(now: Date = new Date()): Record<string, BetmanGameTypeInfo> {
+  const currentG101 = calculateActiveSeungbushikRoundTs(now);
+  const roundsListG101 = [
+    String(currentG101),
+    String(currentG101 + 1),
+    String(currentG101 + 2),
+    String(currentG101 + 3),
+    String(currentG101 + 4)
+  ];
+
+  return {
+    G101: {
+      gmId: 'G101',
+      name: '프로토 승부식',
+      category: 'SEUNGBUSHIK',
+      defaultRoundTs: String(currentG101),
+      roundsList: roundsListG101
+    },
+    G011: {
+      gmId: 'G011',
+      name: '축구 승무패',
+      category: 'SEUNGMUBAE',
+      defaultRoundTs: '260049',
+      roundsList: ['260049', '260050', '260051', '260052']
+    },
+    G024: {
+      gmId: 'G024',
+      name: '야구 승1패',
+      category: 'SEUNG1PAE',
+      defaultRoundTs: '260063',
+      roundsList: ['260063', '260064', '260065', '260066']
+    },
+    G102: {
+      gmId: 'G102',
+      name: '프로토 기록식',
+      category: 'GIROKSIK',
+      defaultRoundTs: '90',
+      roundsList: ['90', '91', '92', '93']
+    }
+  };
+}
+
+export const BETMAN_GAMES_METADATA: Record<string, BetmanGameTypeInfo> = getDynamicBetmanGamesMetadata();
 
 export class BetmanRoundRegistryService {
-  private roundsStorage: Record<string, Match[]> = {};
-
-  constructor() {
-    // 📌 Load official datasets for the 4 main Betman game codes
-    this.roundsStorage['G101_260102'] = [...REAL_BETMAN_OFFICIAL_MATCHES];
-    this.roundsStorage['G011_260048'] = [...G011_BETMAN_MATCHES];
-    this.roundsStorage['G024_260063'] = [...G024_BETMAN_MATCHES];
-    this.roundsStorage['G102_89'] = [...G102_BETMAN_MATCHES];
-  }
-
   /**
    * Get matches for a specific game code (gmId) & round sequence (gmTs)
    */
   public getMatchesByGameAndRound(gmId: string = 'G101', gmTs: string = '260102'): Match[] {
-    const key = `${gmId}_${gmTs}`;
-    if (this.roundsStorage[key] && this.roundsStorage[key].length > 0) {
-      return this.roundsStorage[key];
-    }
-
-    // 📌 Dynamic Fallback Round Generator for future rounds (260103, 260049, 260064, 90...)
-    const generatedMatches = this.generateRoundMatches(gmId, gmTs);
-    this.roundsStorage[key] = generatedMatches;
-    return generatedMatches;
+    return betmanLiveSyncService.getMatches(gmId, gmTs);
   }
 
   /**
-   * Register or update a round dataset incrementally
+   * Get enriched matches asynchronously for a specific game code (gmId) & round sequence (gmTs)
    */
-  public updateRoundMatches(gmId: string, gmTs: string, matchesList: Match[]): void {
-    const key = `${gmId}_${gmTs}`;
-    this.roundsStorage[key] = matchesList;
+  public async getMatchesByGameAndRoundAsync(gmId: string = 'G101', gmTs: string = '260102'): Promise<Match[]> {
+    return betmanLiveSyncService.getMatchesAsync(gmId, gmTs);
   }
 
-  private generateRoundMatches(gmId: string, gmTs: string): Match[] {
-    const gameMeta = BETMAN_GAMES_METADATA[gmId] || BETMAN_GAMES_METADATA['G101'];
-    const startNo = gmId === 'G011' ? 1 : gmId === 'G024' ? 1 : gmId === 'G102' ? 1 : 7121;
-    const baseMatches: Match[] = gmId === 'G011' ? [...G011_BETMAN_MATCHES] : gmId === 'G024' ? [...G024_BETMAN_MATCHES] : gmId === 'G102' ? [...G102_BETMAN_MATCHES] : [...REAL_BETMAN_OFFICIAL_MATCHES];
 
-    return baseMatches.map((m, idx) => {
-      const matchNo = startNo + idx;
-      return {
-        ...m,
-        id: `bm_${gmId}_${gmTs}_${matchNo}`,
-        betmanRound: `${gameMeta.name} ${gmTs}회차 (betman.co.kr 오피셜)`,
-        betmanMatchNo: matchNo,
-        betmanFolder: gameMeta.category
-      };
-    });
+  /**
+   * Get official Betman game slip URL for any gmId & gmTs
+   */
+  public getOfficialBetmanSlipUrl(gmId: string = 'G101', gmTs: string = '260102'): string {
+    return `https://www.betman.co.kr/main/mainPage/gamebuy/gameSlip.do?gmId=${gmId}&gmTs=${gmTs}`;
+  }
+
+  /**
+   * Get sale status label for a specific gmTs relative to current active gmTs
+   */
+  public getRoundSaleStatusStr(gmId: string, gmTs: string): { statusText: string; isLive: boolean } {
+    const meta = getDynamicBetmanGamesMetadata();
+    const activeTsStr = meta[gmId]?.defaultRoundTs || '260102';
+    const numTarget = parseInt(gmTs, 10);
+    const numActive = parseInt(activeTsStr, 10);
+
+    if (numTarget === numActive) {
+      return { statusText: '🔥 베트맨 오피셜 현재 [발매중]', isLive: true };
+    } else if (numTarget > numActive) {
+      return { statusText: `⏳ [발매예정] (${gmTs}회차는 차기 발매 회차입니다)`, isLive: false };
+    } else {
+      return { statusText: `🏁 [발매마감] (${gmTs}회차는 마감된 회차입니다)`, isLive: false };
+    }
   }
 }
 
 export const betmanRoundRegistry = new BetmanRoundRegistryService();
+

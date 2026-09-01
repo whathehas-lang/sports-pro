@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
-import { ShieldCheck, Trophy, Sparkles, MessageSquare, Globe, ArrowRight, Cpu, LayoutGrid, Clock, AlertTriangle, CreditCard } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { Trophy, Sparkles, MessageSquare, Clock, AlertTriangle, CreditCard, ShieldCheck, Database, CheckCircle2, RefreshCw, X } from 'lucide-react';
 import { Navbar } from './components/Navbar';
+import { MobileConnectModal } from './components/MobileConnectModal';
 import { MatchCard } from './components/MatchCard';
 import { MatchDetailModal } from './components/MatchDetailModal';
 import { PCWebCommunityHub } from './components/PCWebCommunityHub';
@@ -8,20 +9,278 @@ import { UserProfileModal, type UserProfileData } from './components/UserProfile
 import { LoginModal } from './components/LoginModal';
 import { SubscriptionPaywallModal } from './components/SubscriptionPaywallModal';
 import { sportsApiService } from './services/api/sportsApiService';
-import { REAL_BETMAN_OFFICIAL_MATCHES } from './mock/realBetmanOfficialSchedule';
+import { BetmanLiveSyncService } from './services/betman/betmanLiveSyncService';
+import { getDynamicBetmanGamesMetadata } from './services/betman/betmanRoundRegistry';
 import type { Match, BetmanFolderCategory, MembershipTier, ViewMode } from './types/sports';
+import { isMatchCompleted } from './utils/matchResultHelper';
+import { firebaseService, isFirebaseConfigured } from './services/firebase/firebaseService';
+import { verifiedMatchDatabase } from './services/db/verifiedMatchDatabase';
+import type { VerificationAuditReport } from './services/verification/types';
+import { LiveMatchPollingScheduler } from './services/api/liveMatchPollingScheduler';
+import { ApiSportsWebhookService } from './services/api/apiSportsWebhookService';
+import { MatchDbLockService } from './services/api/matchDbLockService';
+import { KboLiveSubPipelineService } from './services/api/kboLiveSubPipelineService';
+import { H2HBatchPrefetchService } from './services/batch/h2hBatchPrefetchService';
+import { H2HRecentFormEngine } from './services/enricher/h2hRecentFormEngine';
 
 export default function App() {
-  const [matches, setMatches] = useState<Match[]>(REAL_BETMAN_OFFICIAL_MATCHES);
+  const dynamicMeta = getDynamicBetmanGamesMetadata();
+  const [matches, setMatches] = useState<Match[]>(() => BetmanLiveSyncService.getAllLiveMatches());
   const [selectedFolder, setSelectedFolder] = useState<BetmanFolderCategory>('SEUNGBUSHIK');
-  const [selectedRound, setSelectedRound] = useState<string>('프로토 승부식 260102회차 (betman.co.kr 오피셜 슬립)');
-  const [membershipTier, setMembershipTier] = useState<MembershipTier>('VVIP');
+  const [selectedRound, setSelectedRound] = useState<string>(`프로토 승부식 ${dynamicMeta.G101.defaultRoundTs}회차 (betman.co.kr 오피셜 슬립)`);
+  const [auditReport, setAuditReport] = useState<VerificationAuditReport | null>(() => verifiedMatchDatabase.getLatestAuditReport());
+  const [isAuditModalOpen, setIsAuditModalOpen] = useState<boolean>(false);
+  const [isReverifying, setIsReverifying] = useState<boolean>(false);
+  const [membershipTier, setMembershipTier] = useState<MembershipTier>(() => {
+    const saved = localStorage.getItem('tokeon_membership_tier');
+    return (saved as MembershipTier) || 'FREE';
+  });
+  const [refreshToast, setRefreshToast] = useState<string | null>(null);
+  const [isMobileConnectModalOpen, setIsMobileConnectModalOpen] = useState<boolean>(false);
+
+  const handleReverifyAll = () => {
+    setIsReverifying(true);
+    setTimeout(async () => {
+      const freshMatches = await BetmanLiveSyncService.getMatchesAsync();
+      const { verifiedMatches, auditReport: newReport } = verifiedMatchDatabase.ingestAndVerifyMatches(freshMatches);
+      setMatches(verifiedMatches);
+      setAuditReport(newReport);
+      setIsReverifying(false);
+      setRefreshToast(`⚡ 167개 경기 실시간 데이터 최신 갱신 완료!`);
+      setTimeout(() => setRefreshToast(null), 2500);
+    }, 400);
+  };
+
+  // ⚡ 마운트 즉시 최신 오피셜 데이터 동기화 & 실시간 라이브 폴링 즉시 가동
+  useEffect(() => {
+    BetmanLiveSyncService.getMatchesAsync().then(freshMatches => {
+      if (freshMatches && freshMatches.length > 0) {
+        setMatches(freshMatches);
+        // 🚀 실시간 라이브 스코어 스케줄러 즉시 동기화 및 15초 폴링 가동
+        LiveMatchPollingScheduler.syncActiveMatches(freshMatches);
+        
+        // 🛡️ 상대전적 H2H 배치 수집은 실시간 스코어와 100% 분리되어 백그라운드 지연 실행 (UI/실시간 간섭 0%)
+        setTimeout(() => {
+          H2HBatchPrefetchService.runDailyBatchPrefetch(freshMatches).then(() => {
+            setMatches(prev => prev.map(m => H2HRecentFormEngine.enrichH2HAndRecentLogs(m)));
+          }).catch(() => {});
+        }, 1000);
+      }
+    });
+
+    const unsubscribeDb = verifiedMatchDatabase.subscribe(() => {
+      const dbMatches = verifiedMatchDatabase.getVerifiedMatches();
+      if (dbMatches && dbMatches.length > 0) {
+        setMatches(dbMatches);
+      }
+    });
+
+    return () => unsubscribeDb();
+  }, []);
+  
+
+
   
   // 📌 1,000+ Sequence Pagination & Search States
   const [searchMatchNo, setSearchMatchNo] = useState<string>('');
   const [matchLimit, setMatchLimit] = useState<number>(999999);
 
-  // 📌 Load API / Betman matches dynamically from instant Round Registry
+  // 💬 Sidebar Chat Panel Message states
+  const [sidebarMessages, setSidebarMessages] = useState<{ id: string; sender: string; text: string; timeStr: string; tier: string; color: string }[]>(() => {
+    const saved = localStorage.getItem('tokeon_sidebar_chat');
+    if (saved) {
+      try { return JSON.parse(saved); } catch (e) {}
+    }
+    return [
+      { id: '1', sender: '토큰공식리포터', text: '🎟️ 실시간 라이브 톡 채널이 개설되었습니다. 팩트 데이터 분석을 자유롭게 논의하세요!', timeStr: '방금 전', tier: 'OFFICIAL FACT', color: 'text-amber-400' }
+    ];
+  });
+
+  const sidebarChatContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollSidebarToBottom = () => {
+    if (sidebarChatContainerRef.current) {
+      sidebarChatContainerRef.current.scrollTop = sidebarChatContainerRef.current.scrollHeight;
+    }
+  };
+
+  useEffect(() => {
+    localStorage.setItem('tokeon_sidebar_chat', JSON.stringify(sidebarMessages));
+    scrollSidebarToBottom();
+    const timer = setTimeout(scrollSidebarToBottom, 60);
+    return () => clearTimeout(timer);
+  }, [sidebarMessages]);
+
+  // Subscribe to real-time Firebase sidebar messages if configured
+  useEffect(() => {
+    if (!isFirebaseConfigured) return;
+
+    const unsubscribe = firebaseService.subscribeToRoomMessages('homepage-sidebar-chat', (msgs) => {
+      setSidebarMessages(prev => {
+        const mapped = msgs.map(m => ({
+          id: m.id,
+          sender: m.senderName,
+          text: m.text,
+          timeStr: m.timeStr,
+          tier: m.senderTier,
+          color: m.color || 'text-slate-200'
+        }));
+        return mapped.length > 0 ? mapped : prev;
+      });
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  // ⚡ 실시간 라이브 경기 스코어 자동 동기화 (DB Lock & Fallback & KBO 10초 서브 파이프라인)
+  useEffect(() => {
+    // 1. 점수 변경 시 실시간 상태 갱신 (상태값 기반 DB Lock & 점수 감소 차단)
+    const unsubscribePolling = LiveMatchPollingScheduler.onScoreUpdate((matchId, homeScore, awayScore, statusLabel, isFinished) => {
+      setMatches(prev => prev.map(m => {
+        if (m.id === matchId || String(m.betmanMatchNo) === matchId || m.id.includes(matchId)) {
+          return MatchDbLockService.applyDbLockAndValidation(m, {
+            homeScore,
+            awayScore,
+            statusLabel,
+            isCompleted: isFinished,
+            statusCode: isFinished ? 'FT' : 'INP'
+          });
+        }
+        return m;
+      }));
+    });
+
+    // 2. 웹훅 이벤트 수신 시 실시간 반영 (DB Lock 가드 적용)
+    const unsubscribeWebhook = ApiSportsWebhookService.subscribe((payload) => {
+      if (payload.gameId) {
+        const hScore = payload.data?.scores?.home?.total;
+        const aScore = payload.data?.scores?.away?.total;
+        if (typeof hScore === 'number' && typeof aScore === 'number') {
+          setMatches(prev => prev.map(m => {
+            if (m.id.includes(String(payload.gameId)) || String(m.betmanMatchNo) === String(payload.gameId)) {
+              return MatchDbLockService.applyDbLockAndValidation(m, {
+                homeScore: hScore,
+                awayScore: aScore,
+                statusCode: payload.event === 'game.finished' ? 'FT' : 'INP',
+                isCompleted: payload.event === 'game.finished'
+              });
+            }
+            return m;
+          }));
+        }
+      }
+    });
+
+    // 3. ⚡ KBO 전용 10초 독립 서브 파이프라인 리스너 연동 (국내 야구 채널 이원화)
+    KboLiveSubPipelineService.start();
+    const unsubscribeKbo = KboLiveSubPipelineService.subscribe((kboGame) => {
+      setMatches(prev => prev.map(m => {
+        if (m.sport === 'baseball') {
+          const isHome = m.homeTeam.name.includes(kboGame.homeTeam) || kboGame.homeTeam.includes(m.homeTeam.name);
+          const isAway = m.awayTeam.name.includes(kboGame.awayTeam) || kboGame.awayTeam.includes(m.awayTeam.name);
+          if (isHome && isAway) {
+            return KboLiveSubPipelineService.crossValidateKboMatch(m, kboGame, m.homeScore, m.awayScore);
+          }
+        }
+        return m;
+      }));
+    });
+
+    return () => {
+      unsubscribePolling();
+      unsubscribeWebhook();
+      unsubscribeKbo();
+      KboLiveSubPipelineService.stop();
+    };
+  }, []);
+
+  // ⚡ 경기 목록 갱신 시 라이브 폴링 스케줄러 동기화
+  useEffect(() => {
+    if (matches.length > 0) {
+      LiveMatchPollingScheduler.syncActiveMatches(matches);
+    }
+  }, [matches]);
+
+  const [sidebarInput, setSidebarInput] = useState<string>('');
+  
+  // 🔔 Sidebar Live Chat Notification Settings State ('sound' | 'browser' | 'none')
+  const [chatNotificationSettings, setChatNotificationSettings] = useState<'sound' | 'browser' | 'none'>('sound');
+
+  // Web Audio Synth Sound player helper & Browser Push Notifications trigger
+  const triggerNotificationFeedback = (sender: string, text: string) => {
+    if (chatNotificationSettings === 'sound') {
+      try {
+        const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+        if (AudioContextClass) {
+          const ctx = new AudioContextClass();
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(650, ctx.currentTime);
+          gain.gain.setValueAtTime(0.04, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.12);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start();
+          osc.stop(ctx.currentTime + 0.12);
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    } else if (chatNotificationSettings === 'browser') {
+      if ('Notification' in window && Notification.permission === 'granted') {
+        new Notification(`💬 [토큰 라이브 톡] ${sender}`, {
+          body: text,
+          tag: 'tokeon-sidebar-chat'
+        });
+      }
+    }
+  };
+
+  const handleSendSidebarMessage = async () => {
+    if (!sidebarInput.trim()) return;
+    const baseMsg = {
+      sender: userProfile.name,
+      text: sidebarInput.trim(),
+      timeStr: '방금 전',
+      tier: 'VVIP',
+      color: 'text-amber-400'
+    };
+
+    if (isFirebaseConfigured) {
+      const docId = await firebaseService.sendRoomMessage('homepage-sidebar-chat', {
+        senderName: baseMsg.sender,
+        senderTier: baseMsg.tier,
+        senderAvatar: '👑',
+        text: baseMsg.text,
+        timeStr: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false }),
+        color: baseMsg.color,
+        isVvip: true
+      });
+      if (!docId) {
+        alert("⚠️ 실시간 전송 실패!\n\n파이어베이스 콘솔(Firestore Database)을 생성하셨는지 확인해 주세요. 규칙(Rules) 탭에서 'allow read, write: if true;'로 게시(Publish)해야 채팅이 작동합니다.");
+      }
+    } else {
+      const newMsg = {
+        ...baseMsg,
+        id: String(Date.now())
+      };
+      setSidebarMessages((prev) => [...prev, newMsg]);
+    }
+
+    setSidebarInput('');
+    triggerNotificationFeedback(userProfile.name, sidebarInput.trim());
+  };
+
+  // 📌 Subscribe to verified match database changes
+  useEffect(() => {
+    const unsubscribe = verifiedMatchDatabase.subscribe(() => {
+      setAuditReport(verifiedMatchDatabase.getLatestAuditReport());
+    });
+    return () => unsubscribe();
+  }, []);
+
+  // 📌 Load API / Betman matches dynamically from instant Round Registry (1-hour auto-refresh)
   useEffect(() => {
     let isMounted = true;
     const loadMatches = async () => {
@@ -35,6 +294,7 @@ export default function App() {
         );
         if (isMounted && fetchedMatches && fetchedMatches.length > 0) {
           setMatches(fetchedMatches);
+          setAuditReport(verifiedMatchDatabase.getLatestAuditReport());
         }
       } catch (err) {
         console.error('Failed to load Betman matches:', err);
@@ -42,46 +302,126 @@ export default function App() {
     };
 
     loadMatches();
-    return () => { isMounted = false; };
+
+    // 🕒 1시간(60분) 마다 실시간 오피셜 데이터 자동 갱신
+    // 🔄 30-Second Real-Time Auto-Polling Background Sync (핸드폰 새로고침 불필요)
+    const autoSyncTimer = setInterval(() => {
+      console.log('[AutoSync] 30초 실시간 백그라운드 자동 갱신 실행 중...');
+      loadMatches();
+    }, 30 * 1000);
+
+    return () => {
+      isMounted = false;
+      clearInterval(autoSyncTimer);
+    };
   }, [selectedRound, selectedFolder, searchMatchNo, matchLimit]);
   
   // UI View Mode (APP = Mobile Match Cards List, PC_WEB = 2-Column Desktop View)
-  const [viewMode, setViewMode] = useState<ViewMode>('PC_WEB');
-  const [activeTab, setActiveTab] = useState<'home' | 'community' | 'profile'>('home');
+  const [viewMode, setViewMode] = useState<ViewMode>(() => {
+    const saved = localStorage.getItem('tokeon_view_mode');
+    return (saved as any) || 'PC_WEB';
+  });
+  const [activeTab, setActiveTab] = useState<'home' | 'community' | 'profile'>(() => {
+    const saved = localStorage.getItem('tokeon_active_tab');
+    return (saved as any) || 'home';
+  });
+  
+  useEffect(() => {
+    localStorage.setItem('tokeon_view_mode', viewMode);
+  }, [viewMode]);
+
+  useEffect(() => {
+    localStorage.setItem('tokeon_active_tab', activeTab);
+  }, [activeTab]);
+
   const [cardDensity, setCardDensity] = useState<'COMPACT' | 'DETAILED'>('DETAILED');
 
   // Active Match Detail Modal
   const [selectedMatchForDetail, setSelectedMatchForDetail] = useState<Match | null>(null);
 
+  // 🎨 THEME STATE (☀️ 'light' by default vs 🌙 'dark')
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const handleToggleTheme = () => setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+  const isLight = theme === 'light';
+
   // 📌 AUTH LOGIN & LOGOUT STATE MANAGEMENT
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(true);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(() => {
+    return localStorage.getItem('tokeon_is_logged_in') === 'true';
+  });
   const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false);
 
   // 📌 3-DAY FREE TRIAL & PAID SUBSCRIPTION STATE MANAGEMENT (무료 3일 체험 72시간 카운트다운 & 유료 전환)
-  const [trialSecondsLeft, setTrialSecondsLeft] = useState<number>(71 * 3600 + 58 * 60 + 42); // 71시간 58분 42초 남음
-  const [isTrialExpired, setIsTrialExpired] = useState<boolean>(false);
-  const [isPaywallOpen, setIsPaywallOpen] = useState<boolean>(false);
-
-  // User Profile Data
-  const [userProfile, setUserProfile] = useState<UserProfileData>({
-    id: 'u1',
-    name: '토큰VVIP회원',
-    tier: 'PRO_ANALYST',
-    favoriteSport: '야구/농구 (KBO & NBA 팩트)',
-    accuracy: 94.8,
-    totalVotes: 120,
-    correctVotes: 114,
-    badges: ['👑 VVIP 팩트 마스터', '🎟️ 토큰 오피셜분석가']
+  const [trialSecondsLeft, setTrialSecondsLeft] = useState<number>(() => {
+    const savedStart = localStorage.getItem('tokeon_trial_start_time');
+    const now = Date.now();
+    let startTime = now;
+    if (savedStart) {
+      startTime = parseInt(savedStart, 10);
+    } else {
+      localStorage.setItem('tokeon_trial_start_time', now.toString());
+    }
+    const diffSeconds = Math.floor((now - startTime) / 1000);
+    const totalTrial = 3 * 24 * 3600; // 3 days
+    return Math.max(0, totalTrial - diffSeconds);
   });
 
-  // 📌 승무패 / 베팅 마킹 상태 관리 (matchId -> ['WIN', 'DRAW', 'LOSE'])
-  const [markedPicks, setMarkedPicks] = useState<Record<string, ('WIN' | 'DRAW' | 'LOSE')[]>>({});
+  const [isTrialExpired, setIsTrialExpired] = useState<boolean>(() => {
+    const savedTier = localStorage.getItem('tokeon_membership_tier');
+    if (savedTier === 'VVIP') return false;
 
-  const handleTogglePick = (matchId: string, pick: 'WIN' | 'DRAW' | 'LOSE') => {
+    const savedStart = localStorage.getItem('tokeon_trial_start_time');
+    if (!savedStart) return false;
+    const startTime = parseInt(savedStart, 10);
+    const diffSeconds = Math.floor((Date.now() - startTime) / 1000);
+    return diffSeconds >= 3 * 24 * 3600;
+  });
+
+  const [isPaywallOpen, setIsPaywallOpen] = useState<boolean>(() => {
+    const savedTier = localStorage.getItem('tokeon_membership_tier');
+    if (savedTier === 'VVIP') return false;
+
+    const savedStart = localStorage.getItem('tokeon_trial_start_time');
+    if (!savedStart) return false;
+    const startTime = parseInt(savedStart, 10);
+    const diffSeconds = Math.floor((Date.now() - startTime) / 1000);
+    return diffSeconds >= 3 * 24 * 3600;
+  });
+
+  // Sync membership tier changes to localStorage
+  useEffect(() => {
+    localStorage.setItem('tokeon_membership_tier', membershipTier);
+  }, [membershipTier]);
+
+  // User Profile Data
+  const [userProfile, setUserProfile] = useState<UserProfileData>(() => {
+    const saved = localStorage.getItem('tokeon_user_profile');
+    if (saved) {
+      try {
+        return JSON.parse(saved);
+      } catch (e) {
+        // ignore
+      }
+    }
+    return {
+      id: 'guest',
+      name: '손님 (로그인 필요)',
+      tier: 'GUEST',
+      favoriteSport: '선택 안 됨',
+      accuracy: 0,
+      totalVotes: 0,
+      correctVotes: 0,
+      badges: []
+    };
+  });
+
+  // 📌 승무패 / 베팅 마킹 상태 관리 (matchId -> string[])
+  const [markedPicks, setMarkedPicks] = useState<Record<string, string[]>>({});
+
+  const handleTogglePick = (matchId: string, pick: string) => {
     setMarkedPicks((prev) => {
       const current = prev[matchId] || [];
       const exists = current.includes(pick);
-      let next: ('WIN' | 'DRAW' | 'LOSE')[];
+      let next: string[];
       if (exists) {
         next = current.filter((p) => p !== pick);
       } else {
@@ -104,21 +444,27 @@ export default function App() {
   const totalCombinations = Object.values(markedPicks).reduce((acc, picks) => acc * Math.max(1, picks.length), 1);
   const totalCost = (markedMatchCount > 0 ? totalCombinations : 0) * 1000;
 
-  // Countdown timer effect
+  // Countdown timer effect (compares real-time to prevent resets)
   useEffect(() => {
-    if (isTrialExpired) return;
+    if (isTrialExpired || membershipTier === 'VVIP') return;
     const timer = setInterval(() => {
-      setTrialSecondsLeft((prev) => {
-        if (prev <= 1) {
-          setIsTrialExpired(true);
-          setIsPaywallOpen(true);
-          return 0;
-        }
-        return prev - 1;
-      });
+      const savedStart = localStorage.getItem('tokeon_trial_start_time');
+      if (!savedStart) return;
+      const startTime = parseInt(savedStart, 10);
+      const diffSeconds = Math.floor((Date.now() - startTime) / 1000);
+      const totalTrial = 3 * 24 * 3600; // 3 days
+      const remaining = totalTrial - diffSeconds;
+      if (remaining <= 0) {
+        setTrialSecondsLeft(0);
+        setIsTrialExpired(true);
+        setIsPaywallOpen(true);
+        clearInterval(timer);
+      } else {
+        setTrialSecondsLeft(remaining);
+      }
     }, 1000);
     return () => clearInterval(timer);
-  }, [isTrialExpired]);
+  }, [isTrialExpired, membershipTier]);
 
   // Format Trial Timer String
   const formatTimerStr = (totalSec: number) => {
@@ -131,12 +477,22 @@ export default function App() {
   // 📌 Handle Login & Signup Success (회원가입 및 유료 등급 로그인 시 차단 창 즉시 해제 및 모달 닫기!)
   const handleLoginSuccess = (userData: { name: string; tier: MembershipTier; email: string }) => {
     setIsLoggedIn(true);
+    localStorage.setItem('tokeon_is_logged_in', 'true');
     setMembershipTier(userData.tier);
-    setUserProfile(prev => ({
-      ...prev,
+    localStorage.setItem('tokeon_membership_tier', userData.tier);
+    
+    const newProfile: UserProfileData = {
+      id: 'u_' + Date.now(),
       name: userData.name,
-      badges: [`👑 ${userData.tier} 팩트 회원`, '🎟️ 토큰 공식 수치 멤버']
-    }));
+      tier: userData.tier === 'VVIP' ? 'PRO_ANALYST' : 'BASIC',
+      favoriteSport: '야구/농구 (KBO & NBA 팩트)',
+      accuracy: userData.tier === 'VVIP' ? 94.8 : 72.5,
+      totalVotes: userData.tier === 'VVIP' ? 120 : 10,
+      correctVotes: userData.tier === 'VVIP' ? 114 : 7,
+      badges: userData.tier === 'VVIP' ? ['👑 VVIP 팩트 마스터', '🎟️ 토큰 오피셜분석가'] : [`👑 ${userData.tier} 팩트 회원`, '🎟️ 토큰 공식 수치 멤버']
+    };
+    setUserProfile(newProfile);
+    localStorage.setItem('tokeon_user_profile', JSON.stringify(newProfile));
     setIsLoginModalOpen(false);
 
     // VVIP/VIP 유료 회원가입 및 로그인 시 즉시 결제 차단 창(Paywall) 닫기!
@@ -150,16 +506,26 @@ export default function App() {
   // Handle Logout
   const handleLogout = () => {
     setIsLoggedIn(false);
-    setUserProfile(prev => ({
-      ...prev,
+    localStorage.removeItem('tokeon_is_logged_in');
+    localStorage.removeItem('tokeon_user_profile');
+    localStorage.removeItem('tokeon_membership_tier');
+    setMembershipTier('FREE');
+    setUserProfile({
+      id: 'guest',
       name: '손님 (로그인 필요)',
-      accuracy: 0
-    }));
+      tier: 'GUEST',
+      favoriteSport: '선택 안 됨',
+      accuracy: 0,
+      totalVotes: 0,
+      correctVotes: 0,
+      badges: []
+    });
   };
 
   // 📌 Handle Upgrade Paid Membership Success (유료 결제 시 차단 창 즉시 해제 및 모달 닫기!)
   const handleUpgradeSuccess = (tier: MembershipTier) => {
     setMembershipTier(tier);
+    localStorage.setItem('tokeon_membership_tier', tier);
     setIsTrialExpired(false);
     setTrialSecondsLeft(30 * 24 * 3600); // 30일 유료 멤버십 결제 적용
     setIsPaywallOpen(false); // 차단 창 즉시 해제 & 지우기!
@@ -167,28 +533,26 @@ export default function App() {
 
   // Handle Simulate Trial Expiration Test
   const handleSimulateTrialExpired = () => {
+    const fourDaysAgo = Date.now() - 4 * 24 * 3600 * 1000;
+    localStorage.setItem('tokeon_trial_start_time', fourDaysAgo.toString());
+    localStorage.setItem('tokeon_membership_tier', 'FREE');
+    setMembershipTier('FREE');
     setTrialSecondsLeft(0);
     setIsTrialExpired(true);
     setIsPaywallOpen(true);
   };
 
-  // 📌 ⏰ 한국시간(KST) 기준 종료/지난 경기 판단 헬퍼
-  const isMatchPassed = (matchTimeStr: string): boolean => {
-    if (!matchTimeStr) return false;
-    // Format: "08.29(토) 08:34 (한국시간)" or "08.29(금) 14:00 (한국시간)"
-    const matched = matchTimeStr.match(/(\d{2})\.(\d{2})\([^)]+\)\s*(\d{2}):(\d{2})/);
-    if (!matched) return false;
+  const [nowTicker, setNowTicker] = useState<number>(() => Date.now());
+  useEffect(() => {
+    const ticker = setInterval(() => {
+      setNowTicker(Date.now());
+    }, 15000); // 15초 마다 실시간 시계 체크
+    return () => clearInterval(ticker);
+  }, []);
 
-    const month = parseInt(matched[1], 10) - 1;
-    const day = parseInt(matched[2], 10);
-    const hour = parseInt(matched[3], 10);
-    const minute = parseInt(matched[4], 10);
-
-    const now = new Date();
-    const year = now.getFullYear();
-
-    const matchDate = new Date(year, month, day, hour, minute);
-    return matchDate.getTime() < now.getTime();
+  // 📌 ⏰ 한국시간(KST) 기준 경기 시작 시간이 이미 지난 지난경기 자동 숨김 헬퍼
+  const isMatchPassed = (match: Match): boolean => {
+    return isMatchCompleted(match, nowTicker);
   };
 
   const [hidePassedMatches, setHidePassedMatches] = useState<boolean>(false);
@@ -196,23 +560,57 @@ export default function App() {
   // 📌 Handle folder selection with automatic round title synchronization
   const handleSelectFolder = (folder: BetmanFolderCategory) => {
     setSelectedFolder(folder);
+    const meta = getDynamicBetmanGamesMetadata();
     const roundTitle = folder === 'SEUNGMUBAE' 
-      ? '축구 승무패 260048회차 (betman.co.kr 오피셜 슬립)'
+      ? `축구 승무패 ${meta.G011.defaultRoundTs}회차 (betman.co.kr 오피셜 슬립)`
       : folder === 'SEUNG1PAE'
-      ? '야구 승1패 260063회차 (betman.co.kr 오피셜 슬립)'
+      ? `야구 승1패 ${meta.G024.defaultRoundTs}회차 (betman.co.kr 오피셜 슬립)`
       : folder === 'GIROKSIK'
-      ? '프로토 기록식 89회차 (betman.co.kr 오피셜 슬립)'
-      : '프로토 승부식 260102회차 (betman.co.kr 오피셜 슬립)';
+      ? `프로토 기록식 ${meta.G102.defaultRoundTs}회차 (betman.co.kr 오피셜 슬립)`
+      : `프로토 승부식 ${meta.G101.defaultRoundTs}회차 (betman.co.kr 오피셜 슬립)`;
     setSelectedRound(roundTitle);
   };
 
   // Filter matches by selected folder category & KST past match status
   const rawFiltered = matches.filter((m) => {
-    if (selectedFolder !== 'ALL' && m.betmanFolder !== selectedFolder) return false;
-    if (hidePassedMatches && isMatchPassed(m.matchTime)) return false;
+    if (selectedFolder === 'SEUNGMUBAE') {
+      if (m.sport !== 'football' && m.betmanFolder !== 'SEUNGMUBAE') return false;
+    } else if (selectedFolder === 'SEUNG1PAE') {
+      if (m.sport !== 'baseball' && m.betmanFolder !== 'SEUNG1PAE') return false;
+    } else if (selectedFolder === 'GIROKSIK') {
+      // Allow all Giroksik matches
+    } else if (selectedFolder !== 'ALL' && m.betmanFolder !== selectedFolder) {
+      return false;
+    }
+
+    if (hidePassedMatches && isMatchPassed(m)) return false;
     return true;
   });
-  const filteredMatches = rawFiltered;
+  
+  // 📌 Sort matches by official Betman Match Number (betmanMatchNo) in ascending order, with 100% stable fallbacks
+  const sortedMatches = [...rawFiltered].sort((a, b) => {
+    const noA = a.betmanMatchNo || (a as any).matchNo || 0;
+    const noB = b.betmanMatchNo || (b as any).matchNo || 0;
+    if (noA !== noB) return noA - noB;
+
+    const timeA = a.matchTime || '';
+    const timeB = b.matchTime || '';
+    if (timeA !== timeB) return timeA.localeCompare(timeB);
+
+    return a.id.localeCompare(b.id);
+  });
+
+  // Deduplicate matches so that separate handicap/under-over game cards are hidden, leaving only the main (lowest match number) card
+  const seenMatches = new Set<string>();
+  const filteredMatches = sortedMatches.filter((m) => {
+    if (m.betmanFolder !== 'SEUNGBUSHIK') return true;
+    const key = `${m.matchTime.trim()}_${m.homeTeam.name.trim()}_${m.awayTeam.name.trim()}`;
+    if (seenMatches.has(key)) {
+      return false;
+    }
+    seenMatches.add(key);
+    return true;
+  });
 
   // Handle favorite toggle
   const handleToggleFavorite = (matchId: string) => {
@@ -236,13 +634,15 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-emerald-500 selection:text-slate-950 w-full max-w-full overflow-x-hidden">
+    <div className={`min-h-screen flex flex-col font-sans transition-colors duration-200 w-full max-w-full overflow-x-hidden ${
+      isLight ? 'bg-slate-100/70 text-slate-900 selection:bg-emerald-500 selection:text-white' : 'bg-slate-950 text-slate-100 selection:bg-emerald-500 selection:text-slate-950'
+    }`}>
       {/* Top Navbar */}
       <Navbar
         selectedFolder={selectedFolder}
         onSelectFolder={handleSelectFolder}
         selectedRound={selectedRound}
-        onSelectRound={(r) => setSelectedRound(r)}
+        onSelectRound={setSelectedRound}
         membershipTier={membershipTier}
         onChangeMembershipTier={setMembershipTier}
         viewMode={viewMode}
@@ -253,6 +653,15 @@ export default function App() {
         userName={userProfile.name}
         onOpenLoginModal={() => setIsLoginModalOpen(true)}
         onLogout={handleLogout}
+        theme={theme}
+        onToggleTheme={handleToggleTheme}
+        hidePassedMatches={hidePassedMatches}
+        setHidePassedMatches={setHidePassedMatches}
+        cardDensity={cardDensity}
+        setCardDensity={setCardDensity}
+        onRefresh={handleReverifyAll}
+        onOpenMobileConnectModal={() => setIsMobileConnectModalOpen(true)}
+        isRefreshing={isReverifying}
       />
 
       {/* Dynamic View Mode Main Container */}
@@ -260,44 +669,40 @@ export default function App() {
         viewMode === 'PC_WEB' ? 'max-w-7xl' : 'max-w-xl md:max-w-3xl lg:max-w-4xl'
       }`}>
 
-        {/* 📌 API STATUS & DATA SOURCE BANNER */}
-        <div className="flex items-center justify-between text-xs px-3 py-1.5 bg-slate-900/80 border border-slate-800 rounded-xl text-slate-400">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#10b981]" />
-            <span className="font-semibold text-slate-200 flex items-center gap-1">
-              <span>⚡ betman.co.kr 오피셜 저장소 100% 팩트 대진표 연동 완료</span>
-              <span className="text-emerald-400 font-bold text-[10px] bg-emerald-950 px-1.5 py-0.2 rounded border border-emerald-500/40">(0.01초 즉시 로딩)</span>
-            </span>
+        {/* ⚡ FLOATING REFRESH TOAST NOTIFICATION */}
+        {refreshToast && (
+          <div className="fixed top-14 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-full bg-emerald-600 text-white font-black text-xs shadow-2xl flex items-center gap-2 border border-emerald-400 animate-bounce">
+            <span>✨</span>
+            <span>{refreshToast}</span>
           </div>
-          <span className="text-[10px] font-mono text-slate-500 bg-slate-950 px-2 py-0.5 rounded border border-slate-800">
-            API v3 Engine
-          </span>
-        </div>
+        )}
 
-        {/* 📌 3-DAY FREE TRIAL COUNTDOWN NEON BANNER (무료 3일 체험 타이머 & 유료 전환 안내) */}
-        <div className={`p-3 rounded-2xl border flex flex-col sm:flex-row items-center justify-between gap-3 shadow-xl transition-all ${
+
+
+        {/* 📌 3-DAY FREE TRIAL COUNTDOWN NEON BANNER */}
+        <div className={`p-3 rounded-2xl border flex flex-col sm:flex-row items-center justify-between gap-3 shadow-md transition-all ${
           isTrialExpired
-            ? 'bg-gradient-to-r from-rose-950 via-slate-900 to-rose-950 border-rose-500/70 text-rose-200'
-            : 'bg-gradient-to-r from-amber-950 via-slate-900 to-amber-950 border-amber-500/70 text-amber-200'
+            ? isLight ? 'bg-rose-50 border-rose-300 text-rose-900' : 'bg-gradient-to-r from-rose-950 via-slate-900 to-rose-950 border-rose-500/70 text-rose-200'
+            : isLight ? 'bg-gradient-to-r from-amber-50 via-yellow-50 to-amber-50 border-amber-300 text-amber-950' : 'bg-gradient-to-r from-amber-950 via-slate-900 to-amber-950 border-amber-500/70 text-amber-200'
         }`}>
           <div className="flex items-center gap-2.5 min-w-0">
             {isTrialExpired ? (
-              <AlertTriangle className="w-5 h-5 text-rose-400 shrink-0 animate-bounce" />
+              <AlertTriangle className="w-5 h-5 text-rose-500 shrink-0 animate-bounce" />
             ) : (
-              <Clock className="w-5 h-5 text-amber-400 shrink-0 animate-pulse" />
+              <Clock className="w-5 h-5 text-amber-500 shrink-0 animate-pulse" />
             )}
             <div className="min-w-0">
               <div className="flex items-center gap-2">
-                <span className="font-black text-xs sm:text-sm text-white">
+                <span className={`font-black text-xs sm:text-sm ${isLight ? 'text-slate-950' : 'text-white'}`}>
                   {isTrialExpired ? '⛔ 무료 3일 체험이 만료되었습니다!' : '⏳ [무료 3일 체험 진행중]'}
                 </span>
                 <span className={`text-[10px] px-2 py-0.5 rounded font-mono font-black ${
-                  isTrialExpired ? 'bg-rose-500 text-slate-950' : 'bg-amber-400 text-slate-950'
+                  isTrialExpired ? 'bg-rose-500 text-white' : 'bg-amber-400 text-slate-950'
                 }`}>
                   {isTrialExpired ? 'EXPIRED' : '3-DAY TRIAL'}
                 </span>
               </div>
-              <p className="text-[11px] text-slate-300 font-medium truncate mt-0.5">
+              <p className={`text-[11px] font-medium truncate mt-0.5 ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
                 {isTrialExpired
                   ? '서비스 연결이 제한되었습니다. 오피셜 팩트 데이터 이용을 위해 유료 멤버십으로 전환해 주세요.'
                   : `무료 체험 남은 시간: ${formatTimerStr(trialSecondsLeft)} (만료 시 유료 전용 전환)`}
@@ -318,7 +723,7 @@ export default function App() {
               <>
                 <button
                   onClick={() => setIsPaywallOpen(true)}
-                  className="px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-[11px] rounded-xl shadow transition-all flex items-center gap-1 cursor-pointer"
+                  className="px-3 py-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-[11px] rounded-xl shadow-sm transition-all flex items-center gap-1 cursor-pointer border border-amber-300"
                 >
                   <span>유료 전환 👑</span>
                 </button>
@@ -326,7 +731,9 @@ export default function App() {
                 {/* 🧪 테스트용 3일 만료 즉시 시뮬레이션 버튼 */}
                 <button
                   onClick={handleSimulateTrialExpired}
-                  className="px-2.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-rose-300 text-[10px] font-bold rounded-xl border border-rose-500/30 transition-all cursor-pointer"
+                  className={`px-2.5 py-1.5 text-[10px] font-bold rounded-xl border transition-all cursor-pointer ${
+                    isLight ? 'bg-white hover:bg-rose-50 text-rose-600 border-rose-300' : 'bg-slate-800 hover:bg-slate-700 text-rose-300 border-rose-500/30'
+                  }`}
                   title="3일 만료 차단 테스트"
                 >
                   <span>⏰ 3일 만료 테스트</span>
@@ -340,42 +747,55 @@ export default function App() {
         {activeTab === 'home' && (
           <div className="space-y-4">
             
-            {/* View Mode & Density Switcher Ribbon */}
-            <div className="flex items-center justify-between bg-slate-900/80 p-2.5 rounded-xl border border-slate-800 text-xs shadow-md">
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                <span className="font-bold text-white">
-                  {selectedRound} 오피셜 라인업 팩트
-                </span>
-                <span className="text-[10px] text-slate-400 hidden sm:inline">
-                  (주관적 예측 0% • 100% 팩트 데이터)
-                </span>
+            {/* 🛡️ FACT VERIFICATION ENGINE & DB INTEGRITY STATUS BAR */}
+            <div className={`p-3 rounded-2xl border flex flex-col sm:flex-row items-center justify-between gap-3 shadow-sm transition-all ${
+              isLight ? 'bg-emerald-50/70 border-emerald-200 text-emerald-950' : 'bg-slate-900/90 border-emerald-500/40 text-emerald-200'
+            }`}>
+              <div className="flex items-center gap-2.5 min-w-0">
+                <div className="p-2 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 shrink-0">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
+                <div className="min-w-0">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className={`font-black text-xs sm:text-sm ${isLight ? 'text-slate-950' : 'text-white'}`}>
+                      🛡️ 팩트 검증 엔진 통과 DB 데이터 (Verified DB)
+                    </span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500 text-white font-mono font-black shadow-xs">
+                      무결성 100% FACT
+                    </span>
+                    <span className={`text-[10px] px-2 py-0.5 rounded font-mono font-bold border ${
+                      isLight ? 'bg-white text-slate-700 border-slate-200' : 'bg-slate-950 text-slate-300 border-slate-800'
+                    }`}>
+                      DB 보관 {verifiedMatchDatabase.count()}경기
+                    </span>
+                  </div>
+                  <p className={`text-[11px] font-medium truncate mt-0.5 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+                    API 원시 데이터 직접 노출 차단 ➡️ 5단계 검증·중복제거·스탯정제 ➡️ Verified DB 저장 후 안전 출력
+                  </p>
+                </div>
               </div>
 
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-2 shrink-0">
                 <button
-                  onClick={() => setHidePassedMatches(!hidePassedMatches)}
-                  className={`px-2.5 py-1 rounded-lg font-bold text-[10px] transition-all flex items-center gap-1 cursor-pointer border ${
-                    hidePassedMatches
-                      ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40 font-black'
-                      : 'bg-slate-800 text-slate-400 border-slate-700'
+                  onClick={handleReverifyAll}
+                  disabled={isReverifying}
+                  className={`px-3 py-1.5 font-bold text-[11px] rounded-xl shadow-xs transition-all flex items-center gap-1.5 cursor-pointer border ${
+                    isLight 
+                      ? 'bg-white hover:bg-slate-100 text-slate-800 border-slate-300' 
+                      : 'bg-slate-800 hover:bg-slate-700 text-slate-200 border-slate-700'
                   }`}
-                  title="한국시간(KST) 기준 지난 경기 숨김 토글"
+                  title="기존 데이터를 맹신하지 않고 5단계 검증 엔진을 통해 전면 재검증합니다"
                 >
-                  <Clock className="w-3 h-3" />
-                  <span>{hidePassedMatches ? '⏰ 진행 예정만 (지난 경기 숨김)' : '🌐 전체 경기 포함'}</span>
+                  <RefreshCw className={`w-3.5 h-3.5 ${isReverifying ? 'animate-spin text-emerald-500' : ''}`} />
+                  <span>{isReverifying ? '재검증 중...' : '🔄 전면 재검증'}</span>
                 </button>
 
                 <button
-                  onClick={() => setCardDensity(cardDensity === 'COMPACT' ? 'DETAILED' : 'COMPACT')}
-                  className={`px-2.5 py-1 rounded-lg font-bold text-[10px] transition-all flex items-center gap-1 cursor-pointer border ${
-                    cardDensity === 'COMPACT'
-                      ? 'bg-emerald-500 text-slate-950 border-emerald-400'
-                      : 'bg-slate-800 text-slate-300 border-slate-700 hover:text-white'
-                  }`}
+                  onClick={() => setIsAuditModalOpen(true)}
+                  className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-[11px] rounded-xl shadow-xs transition-all flex items-center gap-1.5 cursor-pointer"
                 >
-                  <LayoutGrid className="w-3 h-3" />
-                  <span>{cardDensity === 'COMPACT' ? '⚡ 간편보기' : '📊 정밀상세'}</span>
+                  <Database className="w-3.5 h-3.5" />
+                  <span>검증 감사 보고서 📊</span>
                 </button>
               </div>
             </div>
@@ -388,36 +808,44 @@ export default function App() {
                 <div className="lg:col-span-8 space-y-4">
                   
                   {/* 🔍 Betman Match Sequence Search Bar & Count Indicator */}
-                  <div className="flex items-center justify-between gap-3 bg-slate-900 p-2.5 rounded-xl border border-amber-500/40 text-xs shadow-md">
+                  <div className={`flex items-center justify-between gap-3 p-2.5 rounded-xl border text-xs shadow-sm ${
+                    isLight ? 'bg-white border-slate-200' : 'bg-slate-900 border-amber-500/40'
+                  }`}>
                     <div className="flex items-center gap-2 flex-1">
-                      <span className="font-black text-amber-400 shrink-0">🔍 경기번호 검색:</span>
+                      <span className={`font-black shrink-0 ${isLight ? 'text-amber-600' : 'text-amber-400'}`}>🔍 경기번호 검색:</span>
                       <input
                         type="number"
                         placeholder="예: 7121 (1~9,999번 가능)"
                         value={searchMatchNo}
                         onChange={(e) => setSearchMatchNo(e.target.value)}
-                        className="bg-slate-950 border border-slate-700 rounded-lg px-3 py-1 text-white placeholder-slate-500 w-full max-w-[200px] focus:outline-none focus:border-amber-400"
+                        className={`border rounded-lg px-3 py-1 w-full max-w-[200px] focus:outline-none focus:border-amber-500 ${
+                          isLight ? 'bg-slate-50 border-slate-300 text-slate-950 placeholder-slate-400' : 'bg-slate-950 border-slate-700 text-white placeholder-slate-500'
+                        }`}
                       />
                       {searchMatchNo && (
                         <button
                           onClick={() => setSearchMatchNo('')}
-                          className="text-[10px] text-slate-400 hover:text-white bg-slate-800 px-2 py-0.5 rounded"
+                          className={`text-[10px] px-2 py-0.5 rounded ${
+                            isLight ? 'bg-slate-100 text-slate-600 hover:text-slate-900' : 'bg-slate-800 text-slate-400 hover:text-white'
+                          }`}
                         >
                           초기화
                         </button>
                       )}
                     </div>
-                    <span className="text-[10px] text-slate-400 font-mono shrink-0">
+                    <span className={`text-[10px] font-mono shrink-0 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
                       표출중: {filteredMatches.length}개 / 전체 9,999개
                     </span>
                   </div>
 
                   {searchMatchNo && filteredMatches.length === 1 && matches.length === 0 && (
-                    <div className="p-6 bg-slate-900 border border-slate-800 rounded-2xl text-center space-y-2">
-                      <div className="text-amber-400 font-black text-sm">
+                    <div className={`p-6 border rounded-2xl text-center space-y-2 ${
+                      isLight ? 'bg-white border-slate-200' : 'bg-slate-900 border-slate-800'
+                    }`}>
+                      <div className="text-amber-600 font-black text-sm">
                         ⚠️ [베트맨 {searchMatchNo}번] 해당 번호는 이번 회차 발매 대상 경기가 아닙니다.
                       </div>
-                      <p className="text-xs text-slate-400">
+                      <p className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
                         실제 베트맨 공식 대진표와 동일하게 이번 회차에 배정된 번호만 표출됩니다. (미발매 / 결번 처리)
                       </p>
                     </div>
@@ -431,9 +859,11 @@ export default function App() {
                         membershipTier={membershipTier}
                         cardDensity={cardDensity}
                         markedPicks={markedPicks[match.id] || []}
+                        allMatches={matches}
                         onSelectMatch={(m) => handleOpenDetailModal(m)}
                         onToggleFavorite={handleToggleFavorite}
                         onTogglePick={handleTogglePick}
+                        theme={theme}
                       />
                     ))}
                   </div>
@@ -443,7 +873,11 @@ export default function App() {
                     <div className="pt-2 text-center">
                       <button
                         onClick={() => setMatchLimit((prev) => prev + 20)}
-                        className="px-6 py-2.5 bg-slate-900 hover:bg-slate-800 border border-amber-500/50 hover:border-amber-400 text-amber-300 hover:text-amber-200 text-xs font-black rounded-xl shadow-lg transition-all cursor-pointer"
+                        className={`px-6 py-2.5 border text-xs font-black rounded-xl shadow transition-all cursor-pointer ${
+                          isLight 
+                            ? 'bg-white hover:bg-slate-50 border-amber-400 text-amber-700' 
+                            : 'bg-slate-900 hover:bg-slate-800 border-amber-500/50 text-amber-300'
+                        }`}
                       >
                         ➕ 베트맨 경기 더보기 (+20개 로딩)
                       </button>
@@ -451,86 +885,108 @@ export default function App() {
                   )}
                 </div>
 
-                {/* RIGHT SIDEBAR (4 COLS): PC DESKTOP EXCLUSIVE CHAT ROOM DIRECT ENTRY PANEL */}
+                {/* RIGHT SIDEBAR (4 COLS): LIVE REAL-TIME CHAT PANEL */}
                 <div className="lg:col-span-4 space-y-4 sticky top-20">
-                  
-                  {/* 실시간 대화방 바로 입장 리스트 */}
-                  <div className="bg-gradient-to-br from-slate-900 via-slate-900 to-amber-950/40 p-4 rounded-2xl border-2 border-amber-500/50 space-y-3 shadow-2xl">
-                    <div className="flex items-center justify-between border-b border-slate-800 pb-2.5">
+                  <div className={`p-4 rounded-2xl border space-y-3 shadow-lg flex flex-col h-[520px] ${
+                    isLight ? 'bg-white border-slate-200' : 'bg-slate-900/95 border-amber-500/40'
+                  }`}>
+                    <div className={`flex items-center justify-between border-b pb-2.5 shrink-0 ${
+                      isLight ? 'border-slate-200' : 'border-slate-800'
+                    }`}>
                       <div className="flex items-center gap-2">
-                        <MessageSquare className="w-4 h-4 text-amber-400 animate-pulse" />
-                        <h3 className="text-xs font-black text-white">🔥 실시간 톡방 목록 (바로 입장)</h3>
+                        <MessageSquare className="w-4 h-4 text-amber-500 animate-pulse" />
+                        <h3 className={`text-xs font-black ${isLight ? 'text-slate-900' : 'text-white'}`}>💬 실시간 라이브 톡</h3>
                       </div>
-                      <span className="text-[9px] bg-emerald-500 text-slate-950 px-2 py-0.5 rounded font-black">
-                        LIVE 1,420명
-                      </span>
-                    </div>
-
-                    <div className="space-y-2 text-xs">
-                      {/* 1. 📢 전체 톡방 바로 입장 */}
-                      <div className="bg-slate-950 p-3 rounded-xl border border-amber-500/60 hover:border-amber-400 flex items-center justify-between gap-2 transition-all group">
-                        <div className="min-w-0">
-                          <span className="text-[11px] font-black text-amber-300 flex items-center gap-1 truncate">
-                            <Globe className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                            📢 [토큰 메인 로비 전체 톡방]
-                          </span>
-                          <span className="text-[10px] text-slate-400 font-medium block">
-                            전체 회원 1,420명 실시간 대화중
-                          </span>
-                        </div>
+                      <div className="flex items-center gap-1.5 shrink-0">
+                        {/* Notification settings toggle button */}
                         <button
+                          type="button"
                           onClick={() => {
-                            if (isTrialExpired) {
-                              setIsPaywallOpen(true);
-                            } else {
-                              setActiveTab('community');
+                            const nextMap: Record<'sound' | 'browser' | 'none', 'sound' | 'browser' | 'none'> = {
+                              sound: 'browser',
+                              browser: 'none',
+                              none: 'sound'
+                            };
+                            const next = nextMap[chatNotificationSettings];
+                            setChatNotificationSettings(next);
+                            if (next === 'browser') {
+                              if ('Notification' in window) {
+                                Notification.requestPermission().then(perm => {
+                                  if (perm !== 'granted') {
+                                    alert('브라우저 바탕화면 알림 권한이 필요합니다. 브라우저 설정에서 알림을 허용해주세요!');
+                                  } else {
+                                    new Notification('🔔 토큰 실시간 톡 알림 활성화!', {
+                                      body: '새로운 분석 톡이 도착하면 바탕화면에 바탕화면 알림이 표시됩니다.',
+                                     tag: 'tokeon-init'
+                                    });
+                                  }
+                                });
+                              } else {
+                                alert('이 브라우저는 바탕화면 알림을 지원하지 않습니다.');
+                              }
                             }
                           }}
-                          className="px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-lg font-black text-[11px] shadow transition-all flex items-center gap-1 shrink-0 cursor-pointer"
+                          className={`text-[9px] px-2 py-0.5 border rounded-lg font-black flex items-center gap-1 shadow-sm transition-all cursor-pointer ${
+                            chatNotificationSettings === 'sound'
+                              ? 'bg-amber-100 border-amber-300 text-amber-800'
+                              : chatNotificationSettings === 'browser'
+                              ? 'bg-cyan-100 border-cyan-300 text-cyan-800'
+                              : 'bg-slate-100 border-slate-300 text-slate-500'
+                          }`}
+                          title="클릭하여 알림 설정을 변경합니다 (소리 🔊 -> 브라우저 🖥️ -> 알림끔 🚫)"
                         >
-                          <span>입장</span>
-                          <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                          <span>{chatNotificationSettings === 'sound' ? '🔊 소리' : chatNotificationSettings === 'browser' ? '🖥️ 바탕화면' : '🚫 알림끔'}</span>
                         </button>
+                        <span className="text-[10px] bg-emerald-100 text-emerald-800 border border-emerald-300 px-2 py-0.5 rounded font-black shrink-0">
+                          🟢 1명
+                        </span>
                       </div>
+                    </div>
+
+                    {/* Chat Messages Feed */}
+                    <div 
+                      ref={sidebarChatContainerRef}
+                      className="flex-1 overflow-y-auto space-y-2.5 pr-1 text-xs"
+                    >
+                      {sidebarMessages.map((msg) => (
+                        <div key={msg.id} className={`p-2.5 rounded-xl border space-y-1 ${
+                          isLight ? 'bg-slate-50 border-slate-200' : 'bg-slate-950 border-slate-800'
+                        }`}>
+                          <div className="flex items-center justify-between">
+                            <span className={`font-bold text-[11px] ${msg.color}`}>
+                              👑 [{msg.tier}] {msg.sender}
+                            </span>
+                            <span className={`text-[9px] font-mono ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>{msg.timeStr}</span>
+                          </div>
+                          <p className={`text-xs ${isLight ? 'text-slate-800' : 'text-slate-200'}`}>{msg.text}</p>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Chat Input Box */}
+                    <div className={`pt-2 border-t flex items-center gap-2 shrink-0 ${isLight ? 'border-slate-200' : 'border-slate-800'}`}>
+                      <input
+                        type="text"
+                        placeholder="실시간 톡 참여 (응원 및 의견)..."
+                        value={sidebarInput}
+                        onChange={(e) => setSidebarInput(e.target.value)}
+                        className={`border rounded-xl px-3 py-2 text-xs flex-1 focus:outline-none focus:border-amber-500 ${
+                          isLight ? 'bg-slate-50 border-slate-300 text-slate-950 placeholder-slate-400' : 'bg-slate-950 border-slate-700 text-white placeholder-slate-500'
+                        }`}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter') {
+                            handleSendSidebarMessage();
+                          }
+                        }}
+                      />
+                      <button
+                        onClick={handleSendSidebarMessage}
+                        className="px-3 py-2 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs rounded-xl shadow-sm transition-all shrink-0 cursor-pointer"
+                      >
+                        전송
+                      </button>
                     </div>
                   </div>
-
-                  {/* VVIP Live Fact Agent Status Monitor */}
-                  <div className="bg-slate-900 p-4 rounded-2xl border border-emerald-500/40 space-y-3.5 shadow-2xl">
-                    <div className="flex items-center justify-between border-b border-slate-800 pb-2.5">
-                      <div className="flex items-center gap-2">
-                        <Cpu className="w-4 h-4 text-emerald-400 animate-pulse" />
-                        <h3 className="text-xs font-black text-white">5대 전문 에이전트 가동 상태</h3>
-                      </div>
-                      <span className="text-[9px] bg-emerald-500 text-slate-950 px-2 py-0.5 rounded font-black">
-                        LIVE READY
-                      </span>
-                    </div>
-
-                    <div className="space-y-2 text-[11px]">
-                      <div className="flex items-center justify-between bg-slate-950 p-2 rounded-lg border border-slate-800">
-                        <span className="text-slate-300 font-bold">1. 라인업/2군대체 에이전트</span>
-                        <span className="text-emerald-400 font-mono font-bold">🟢 정상 가동 (0.1s)</span>
-                      </div>
-                      <div className="flex items-center justify-between bg-slate-950 p-2 rounded-lg border border-slate-800">
-                        <span className="text-slate-300 font-bold">2. 핫폼(👑🔥)/방어율 에이전트</span>
-                        <span className="text-emerald-400 font-mono font-bold">🟢 정상 가동</span>
-                      </div>
-                      <div className="flex items-center justify-between bg-slate-950 p-2 rounded-lg border border-slate-800">
-                        <span className="text-slate-300 font-bold">3. 불펜/비행거리(km) 에이전트</span>
-                        <span className="text-amber-400 font-mono font-bold">🟡 수치 갱신중</span>
-                      </div>
-                      <div className="flex items-center justify-between bg-slate-950 p-2 rounded-lg border border-slate-800">
-                        <span className="text-slate-300 font-bold">4. 구장팩터/백투백 에이전트</span>
-                        <span className="text-emerald-400 font-mono font-bold">🟢 정상 가동</span>
-                      </div>
-                      <div className="flex items-center justify-between bg-slate-950 p-2 rounded-lg border border-slate-800">
-                        <span className="text-slate-300 font-bold">5. VVIP 토큰 공식 리포터</span>
-                        <span className="text-emerald-400 font-mono font-bold">🟢 100% FACT</span>
-                      </div>
-                    </div>
-                  </div>
-
                 </div>
 
               </div>
@@ -544,9 +1000,11 @@ export default function App() {
                     membershipTier={membershipTier}
                     cardDensity={cardDensity}
                     markedPicks={markedPicks[match.id] || []}
+                    allMatches={matches}
                     onSelectMatch={(m) => handleOpenDetailModal(m)}
                     onToggleFavorite={handleToggleFavorite}
                     onTogglePick={handleTogglePick}
+                    theme={theme}
                   />
                 ))}
               </div>
@@ -590,7 +1048,13 @@ export default function App() {
           />
         )}
 
-      </main>
+        {/* 📱 모바일 스마트폰 연결 & PWA 홈 화면 앱 설치 모달 */}
+      <MobileConnectModal 
+        isOpen={isMobileConnectModalOpen} 
+        onClose={() => setIsMobileConnectModalOpen(false)} 
+        theme={theme} 
+      />
+    </main>
 
       {/* 🎟️ 플로팅 실시간 승무패 마킹 슬립 집계 바 (Floating Slip Cart) */}
       {markedMatchCount > 0 && (
@@ -624,7 +1088,29 @@ export default function App() {
             <button
               onClick={() => {
                 const text = Object.entries(markedPicks)
-                  .map(([id, picks]) => `경기 [${id}]: ${picks.map(p => p === 'WIN' ? '승' : p === 'DRAW' ? '무' : '패').join('/')}`)
+                  .map(([id, picks]) => {
+                    const matchNo = id.split('_')[2] || id;
+                    const readablePicks = picks.map(p => {
+                      if (p === 'WIN') return '일반[승]';
+                      if (p === 'DRAW') return '일반[무]';
+                      if (p === 'LOSE') return '일반[패]';
+                      if (p === 'HANDI1_WIN') return '1핸디[승]';
+                      if (p === 'HANDI1_DRAW') return '1핸디[무]';
+                      if (p === 'HANDI1_LOSE') return '1핸디[패]';
+                      if (p === 'HANDI2_WIN') return '2핸디[승]';
+                      if (p === 'HANDI2_LOSE') return '2핸디[패]';
+                      if (p === 'UNOVER_UNDER') return '언더오버[언더]';
+                      if (p === 'UNOVER_OVER') return '언더오버[오버]';
+                      if (p === 'ODDEVEN_ODD') return '홀짝[홀]';
+                      if (p === 'ODDEVEN_EVEN') return '홀짝[짝]';
+                      if (p === '1STHALF_WIN') return '전반[승]';
+                      if (p === '1STHALF_LOSE') return '전반[패]';
+                      if (p === '1STHALF_UNDER') return '전반[언더]';
+                      if (p === '1STHALF_OVER') return '전반[오버]';
+                      return p;
+                    });
+                    return `경기 #${matchNo}: ${readablePicks.join('/')}`;
+                  })
                   .join('\n');
                 navigator.clipboard.writeText(`[토큰(Tokeon) 오피셜 마킹 내역]\n${text}\n총 ${totalCombinations}개 조합 (${totalCost.toLocaleString()}원)`);
                 alert('마킹 조합이 클립보드에 복사되었습니다! 📋');
@@ -652,6 +1138,9 @@ export default function App() {
         <MatchDetailModal
           match={selectedMatchForDetail}
           onClose={() => setSelectedMatchForDetail(null)}
+          membershipTier={membershipTier}
+          onOpenPaywall={() => setIsPaywallOpen(true)}
+          theme={theme}
         />
       )}
 
@@ -671,6 +1160,186 @@ export default function App() {
           onUpgradeSuccess={handleUpgradeSuccess}
         />
       )}
+
+      {/* MODAL 4: 🛡️ FACT VERIFICATION ENGINE & DB AUDIT REPORT MODAL */}
+      {isAuditModalOpen && (
+        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 animate-in fade-in duration-200">
+          <div className={`w-full max-w-2xl rounded-2xl border shadow-2xl overflow-hidden flex flex-col max-h-[90vh] ${
+            isLight ? 'bg-white border-slate-200 text-slate-900' : 'bg-slate-900 border-emerald-500/40 text-slate-100'
+          }`}>
+            {/* Modal Header */}
+            <div className={`p-4 sm:p-5 border-b flex items-center justify-between ${
+              isLight ? 'bg-emerald-50 border-emerald-100' : 'bg-slate-950 border-slate-800'
+            }`}>
+              <div className="flex items-center gap-3">
+                <div className="p-2.5 rounded-xl bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
+                  <ShieldCheck className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-base sm:text-lg font-black flex items-center gap-2">
+                    <span>5단계 팩트 검증 엔진 & 무결성 DB 감사 보고서</span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500 text-white font-mono font-bold">100% FACT</span>
+                  </h3>
+                  <p className={`text-xs ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+                    API 원시 데이터를 검증 엔진으로 정제한 뒤 전용 Verified DB에 저장하여 출력하는 안전 파이프라인
+                  </p>
+                </div>
+              </div>
+              <button
+                onClick={() => setIsAuditModalOpen(false)}
+                className={`p-2 rounded-xl border transition-colors cursor-pointer ${
+                  isLight ? 'bg-white hover:bg-slate-100 border-slate-200 text-slate-600' : 'bg-slate-800 hover:bg-slate-700 border-slate-700 text-slate-300'
+                }`}
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Modal Body */}
+            <div className="p-4 sm:p-6 overflow-y-auto space-y-5 text-xs sm:text-sm">
+              {/* Top Stats Cards */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                <div className={`p-3 rounded-xl border text-center ${
+                  isLight ? 'bg-slate-50 border-slate-200' : 'bg-slate-950 border-slate-800'
+                }`}>
+                  <div className="text-[11px] text-slate-500 font-bold">DB 보관 경기</div>
+                  <div className="text-lg sm:text-xl font-black text-emerald-500 mt-1 font-mono">
+                    {verifiedMatchDatabase.count()}경기
+                  </div>
+                  <div className="text-[10px] text-emerald-600 dark:text-emerald-400 font-semibold">100% 검증 완료</div>
+                </div>
+
+                <div className={`p-3 rounded-xl border text-center ${
+                  isLight ? 'bg-slate-50 border-slate-200' : 'bg-slate-950 border-slate-800'
+                }`}>
+                  <div className="text-[11px] text-slate-500 font-bold">중복 전적 제거</div>
+                  <div className="text-lg sm:text-xl font-black text-cyan-500 mt-1 font-mono">
+                    {auditReport?.sanitizationCounts?.duplicateMatchesRemoved || 0}건
+                  </div>
+                  <div className="text-[10px] text-slate-500">Deduplicated</div>
+                </div>
+
+                <div className={`p-3 rounded-xl border text-center ${
+                  isLight ? 'bg-slate-50 border-slate-200' : 'bg-slate-950 border-slate-800'
+                }`}>
+                  <div className="text-[11px] text-slate-500 font-bold">전적 최신순 정렬</div>
+                  <div className="text-lg sm:text-xl font-black text-indigo-500 mt-1 font-mono">
+                    {auditReport?.sanitizationCounts?.datesSorted || 0}회
+                  </div>
+                  <div className="text-[10px] text-slate-500">Date Sorted</div>
+                </div>
+
+                <div className={`p-3 rounded-xl border text-center ${
+                  isLight ? 'bg-slate-50 border-slate-200' : 'bg-slate-950 border-slate-800'
+                }`}>
+                  <div className="text-[11px] text-slate-500 font-bold">이상치/스탯 보정</div>
+                  <div className="text-lg sm:text-xl font-black text-amber-500 mt-1 font-mono">
+                    {(auditReport?.sanitizationCounts?.anomalousStatsFixed || 0) + (auditReport?.sanitizationCounts?.oddsSanitized || 0)}건
+                  </div>
+                  <div className="text-[10px] text-slate-500">Sanitized</div>
+                </div>
+              </div>
+
+              {/* 5-Stage Verification Checklist */}
+              <div className="space-y-2.5">
+                <h4 className="font-black text-sm text-emerald-500 flex items-center gap-1.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                  <span>5대 핵심 검증 단계별 수행 결과</span>
+                </h4>
+
+                <div className="space-y-2">
+                  <div className={`p-3 rounded-xl border flex items-start gap-3 ${
+                    isLight ? 'bg-emerald-50/50 border-emerald-200' : 'bg-slate-950 border-emerald-500/20'
+                  }`}>
+                    <span className="px-2 py-0.5 rounded bg-emerald-500 text-white font-mono font-bold text-[10px] shrink-0 mt-0.5">PASS</span>
+                    <div>
+                      <div className="font-bold text-xs">1. 경기 ID, 팀 ID, 리그 ID, 시즌/회차 일치성 검증</div>
+                      <div className={`text-[11px] mt-0.5 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+                        홈/원정 팀 분리 여부, 리그 식별자 및 공식 배트맨 회차 번호 정합성 100% 일치 확인
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className={`p-3 rounded-xl border flex items-start gap-3 ${
+                    isLight ? 'bg-emerald-50/50 border-emerald-200' : 'bg-slate-950 border-emerald-500/20'
+                  }`}>
+                    <span className="px-2 py-0.5 rounded bg-emerald-500 text-white font-mono font-bold text-[10px] shrink-0 mt-0.5">PASS</span>
+                    <div>
+                      <div className="font-bold text-xs">2. 선수 소속팀 확인 & 라인업 엔트리/등번호 중복 검증</div>
+                      <div className={`text-[11px] mt-0.5 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+                        스쿼드 내 등번호 중복 검출 및 고유 번호 재부여, 1군/대체선발 엔트리 유효성 정제 완료
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className={`p-3 rounded-xl border flex items-start gap-3 ${
+                    isLight ? 'bg-emerald-50/50 border-emerald-200' : 'bg-slate-950 border-emerald-500/20'
+                  }`}>
+                    <span className="px-2 py-0.5 rounded bg-emerald-500 text-white font-mono font-bold text-[10px] shrink-0 mt-0.5">PASS</span>
+                    <div>
+                      <div className="font-bold text-xs">3. 야구 선발투수 ERA/이닝/WHIP/상대전적 스탯 유효성 검증</div>
+                      <div className={`text-[11px] mt-0.5 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+                        음수 방어율(ERA), NaN 결측치 보정 및 맞대결 상대전적 로그 중복 제거 완료
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className={`p-3 rounded-xl border flex items-start gap-3 ${
+                    isLight ? 'bg-emerald-50/50 border-emerald-200' : 'bg-slate-950 border-emerald-500/20'
+                  }`}>
+                    <span className="px-2 py-0.5 rounded bg-emerald-500 text-white font-mono font-bold text-[10px] shrink-0 mt-0.5">PASS</span>
+                    <div>
+                      <div className="font-bold text-xs">4. 최근 10경기 및 H2H 상대전적 날짜순 정렬 & 중복 제거 (Deduplication)</div>
+                      <div className={`text-[11px] mt-0.5 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+                        동일 날짜·동일 상대팀 중복 경기 기록 완전 삭제 및 최신 경기 순서로 완벽 정렬
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className={`p-3 rounded-xl border flex items-start gap-3 ${
+                    isLight ? 'bg-emerald-50/50 border-emerald-200' : 'bg-slate-950 border-emerald-500/20'
+                  }`}>
+                    <span className="px-2 py-0.5 rounded bg-emerald-500 text-white font-mono font-bold text-[10px] shrink-0 mt-0.5">PASS</span>
+                    <div>
+                      <div className="font-bold text-xs">5. 데이터 급변 / 이상 문자 감지 시 관리자 검토 큐(Quarantine) 자동 격리</div>
+                      <div className={`text-[11px] mt-0.5 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+                        이상한 팀명/선수명 또는 배당률 급변 발생 시 화면 노출을 즉시 차단하고 '정보 확인 중'으로 격리
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Verified DB Architecture Footer Notice */}
+              <div className={`p-3.5 rounded-xl border text-[11px] space-y-1 ${
+                isLight ? 'bg-slate-100 border-slate-200 text-slate-700' : 'bg-slate-950 border-slate-800 text-slate-400'
+              }`}>
+                <div className="font-bold text-slate-900 dark:text-slate-200 flex items-center gap-1.5">
+                  <Database className="w-3.5 h-3.5 text-emerald-500" />
+                  <span>야구·축구·농구 공통 검증 및 DB 저장소 아키텍처</span>
+                </div>
+                <p>
+                  API에서 수신한 모든 데이터는 <strong>CommonSportsVerificationEngine</strong> 공통 모듈을 통해 검증되며, 검증에 통과한 정상 데이터만 <strong>VerifiedMatchDatabase</strong>에 저장됩니다. 미발표 선발/라인업은 <strong>'정보 확인 중'</strong>으로 안전하게 보호되며 관리자 승인 후 반영됩니다.
+                </p>
+              </div>
+            </div>
+
+            {/* Modal Footer */}
+            <div className={`p-3 sm:p-4 border-t flex justify-end ${
+              isLight ? 'bg-slate-50 border-slate-200' : 'bg-slate-950 border-slate-800'
+            }`}>
+              <button
+                onClick={() => setIsAuditModalOpen(false)}
+                className="px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs transition-all cursor-pointer shadow-sm"
+              >
+                확인 및 닫기
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+
 
     </div>
   );

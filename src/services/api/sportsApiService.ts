@@ -1,26 +1,28 @@
 import { sportsApiClient } from './sportsApiClient';
 import { apiCacheService } from './apiCacheService';
-import { betmanRoundRegistry } from '../betman/betmanRoundRegistry';
+import { betmanRoundRegistry, BETMAN_GAMES_METADATA } from '../betman/betmanRoundRegistry';
 import type { Match, BetmanFolderCategory } from '../../types/sports';
 import type { RawApiMatchResponse } from './types';
 import { mapRawApiMatchToMatch } from '../mappers/matchDataMapper';
 import { INITIAL_MATCHES } from '../../mock/sportsData';
+import { verifiedMatchDatabase } from '../db/verifiedMatchDatabase';
 
 export class SportsApiService {
   /**
-   * Fetch matches from live Sports API with local caching.
+   * Fetch matches from live Sports API, pass through Verification Engine and save to Verified DB.
    */
   public async fetchMatches(leagueId?: string, season: number = 2026): Promise<Match[]> {
     const cacheKey = `matches_${leagueId || 'default'}_${season}`;
 
-    // 1. Check Cache first
+    // 1. Check verified DB / Cache first
     const cachedMatches = apiCacheService.get<Match[]>(cacheKey);
     if (cachedMatches && cachedMatches.length > 0) {
       return cachedMatches;
     }
 
     if (sportsApiClient.isMockMode()) {
-      return INITIAL_MATCHES;
+      const { verifiedMatches } = verifiedMatchDatabase.ingestAndVerifyMatches(INITIAL_MATCHES);
+      return verifiedMatches;
     }
 
     try {
@@ -36,23 +38,28 @@ export class SportsApiService {
       const response = await sportsApiClient.get<RawApiMatchResponse>(endpoint, params);
 
       if (!response || !response.response || response.response.length === 0) {
-        return INITIAL_MATCHES;
+        const { verifiedMatches } = verifiedMatchDatabase.ingestAndVerifyMatches(INITIAL_MATCHES);
+        return verifiedMatches;
       }
 
       const mappedMatches = response.response.map((raw, idx) => mapRawApiMatchToMatch(raw, idx));
 
+      // 🛡️ Pass through Verification Engine & Save to Verified DB
+      const { verifiedMatches } = verifiedMatchDatabase.ingestAndVerifyMatches(mappedMatches);
+
       // Save to cache (5 minutes TTL)
-      apiCacheService.set(cacheKey, mappedMatches);
-      return mappedMatches;
+      apiCacheService.set(cacheKey, verifiedMatches);
+      return verifiedMatches;
     } catch (error) {
-      console.error('[SportsApiService] Error fetching live matches:', error);
-      return INITIAL_MATCHES;
+      console.error('[SportsApiService] Error fetching live matches, falling back to verified initial records:', error);
+      const { verifiedMatches } = verifiedMatchDatabase.ingestAndVerifyMatches(INITIAL_MATCHES);
+      return verifiedMatches;
     }
   }
 
   /**
    * Fetch and filter Betman match sequence for a specific round & folder.
-   * Attempts live betman.co.kr sync first, with automatic fallback to sequence pipeline.
+   * Runs through Verification Engine & saves to Verified DB before returning.
    */
   public async fetchBetmanMatchesByRound(
     roundName: string,
@@ -62,11 +69,13 @@ export class SportsApiService {
   ): Promise<Match[]> {
     // 📌 Instant 0.01s retrieval from Betman Round Registry
     const gmId = folderCategory === 'SEUNGMUBAE' ? 'G011' : folderCategory === 'SEUNG1PAE' ? 'G024' : folderCategory === 'GIROKSIK' ? 'G102' : 'G101';
-    const defaultTs = gmId === 'G011' ? '260048' : gmId === 'G024' ? '260063' : gmId === 'G102' ? '89' : '260102';
+    const metadata = BETMAN_GAMES_METADATA[gmId];
+    const defaultTs = metadata?.defaultRoundTs || (gmId === 'G011' ? '260049' : gmId === 'G024' ? '260064' : gmId === 'G102' ? '89' : '260103');
     const gmTs = roundName.includes('회차') ? (roundName.match(/\d+/) || [defaultTs])[0] : defaultTs;
     
-    return betmanRoundRegistry.getMatchesByGameAndRound(gmId, gmId === 'G011' ? '260048' : gmId === 'G024' ? '260063' : gmId === 'G102' ? '89' : gmTs);
+    return betmanRoundRegistry.getMatchesByGameAndRoundAsync(gmId, gmTs);
   }
 }
+
 
 export const sportsApiService = new SportsApiService();

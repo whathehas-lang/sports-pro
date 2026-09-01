@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Send, Globe, Plus, Lock, Key, Crown, X, ShieldAlert, Activity, Sparkles } from 'lucide-react';
 import type { Match, MembershipTier } from '../types/sports';
+import { firebaseService, isFirebaseConfigured } from '../services/firebase/firebaseService';
 
 interface PCWebCommunityHubProps {
   matches: Match[];
@@ -52,7 +53,7 @@ export const PCWebCommunityHub = ({
     countryFlag: '🌐',
     status: 'SCHEDULED',
     homeTeam: { id: 'g1', name: '📢 [전체 톡방] 토큰 메인 로비 대화방', logo: '🌐', countryName: 'KR', rank: 1, homeSeasonRecord: '10승 0패', awaySeasonRecord: '10승 0패', seasonRemainingGames: '진행중', recent3Form: 'GREEN', staminaStatus: 'GREEN', minutesPlayed14d: 100, totalMarketValue: '전체유저', totalMarketValueNum: 100 },
-    awayTeam: { id: 'g2', name: '전체 유저 1,420명 참여중', logo: '💬', countryName: 'KR', rank: 1, homeSeasonRecord: '10승 0패', awaySeasonRecord: '10승 0패', seasonRemainingGames: '진행중', recent3Form: 'GREEN', staminaStatus: 'GREEN', minutesPlayed14d: 100, totalMarketValue: '전체회차', totalMarketValueNum: 100 },
+    awayTeam: { id: 'g2', name: '실시간 참여자 1명', logo: '💬', countryName: 'KR', rank: 1, homeSeasonRecord: '10승 0패', awaySeasonRecord: '10승 0패', seasonRemainingGames: '진행중', recent3Form: 'GREEN', staminaStatus: 'GREEN', minutesPlayed14d: 100, totalMarketValue: '전체회차', totalMarketValueNum: 100 },
     matchTime: '실시간 LIVE',
     closingTime: '회차 진행중',
     league: '토큰 메인 로비 전체 톡방',
@@ -72,7 +73,7 @@ export const PCWebCommunityHub = ({
     countryFlag: '⚾',
     status: 'SCHEDULED',
     homeTeam: { id: 'b1', name: '⚾ [야구 전체 톡방] KBO & MLB 라이브 팩트 대화방', logo: '⚾', countryName: 'KR', rank: 1, homeSeasonRecord: '10승', awaySeasonRecord: '10승', seasonRemainingGames: '진행중', recent3Form: 'GREEN', staminaStatus: 'GREEN', minutesPlayed14d: 100, totalMarketValue: '야구유저', totalMarketValueNum: 100 },
-    awayTeam: { id: 'b2', name: '야구 유저 520명 대화중', logo: '⚾', countryName: 'KR', rank: 1, homeSeasonRecord: '10승', awaySeasonRecord: '10승', seasonRemainingGames: '진행중', recent3Form: 'GREEN', staminaStatus: 'GREEN', minutesPlayed14d: 100, totalMarketValue: '야구전체', totalMarketValueNum: 100 },
+    awayTeam: { id: 'b2', name: '실시간 참여자 1명', logo: '⚾', countryName: 'KR', rank: 1, homeSeasonRecord: '10승', awaySeasonRecord: '10승', seasonRemainingGames: '진행중', recent3Form: 'GREEN', staminaStatus: 'GREEN', minutesPlayed14d: 100, totalMarketValue: '야구전체', totalMarketValueNum: 100 },
     matchTime: '실시간 LIVE',
     closingTime: '야구 회차 진행중',
     league: '야구 카테고리 전체 톡방',
@@ -91,7 +92,7 @@ export const PCWebCommunityHub = ({
     countryFlag: '🏀',
     status: 'SCHEDULED',
     homeTeam: { id: 'bk1', name: '🏀 [농구 전체 톡방] NBA & KBL 라이브 팩트 대화방', logo: '🏀', countryName: 'US', rank: 1, homeSeasonRecord: '10승', awaySeasonRecord: '10승', seasonRemainingGames: '진행중', recent3Form: 'GREEN', staminaStatus: 'GREEN', minutesPlayed14d: 100, totalMarketValue: '농구유저', totalMarketValueNum: 100 },
-    awayTeam: { id: 'bk2', name: '농구 유저 380명 대화중', logo: '🏀', countryName: 'US', rank: 1, homeSeasonRecord: '10승', awaySeasonRecord: '10승', seasonRemainingGames: '진행중', recent3Form: 'GREEN', staminaStatus: 'GREEN', minutesPlayed14d: 100, totalMarketValue: '농구전체', totalMarketValueNum: 100 },
+    awayTeam: { id: 'bk2', name: '실시간 참여자 1명', logo: '🏀', countryName: 'US', rank: 1, homeSeasonRecord: '10승', awaySeasonRecord: '10승', seasonRemainingGames: '진행중', recent3Form: 'GREEN', staminaStatus: 'GREEN', minutesPlayed14d: 100, totalMarketValue: '농구전체', totalMarketValueNum: 100 },
     matchTime: '실시간 LIVE',
     closingTime: '농구 회차 진행중',
     league: '농구 카테고리 전체 톡방',
@@ -110,7 +111,7 @@ export const PCWebCommunityHub = ({
     countryFlag: '⚽',
     status: 'SCHEDULED',
     homeTeam: { id: 'f1', name: '⚽ [축구 전체 톡방] EPL & 라리가 라이브 팩트 대화방', logo: '⚽', countryName: 'EU', rank: 1, homeSeasonRecord: '10승', awaySeasonRecord: '10승', seasonRemainingGames: '진행중', recent3Form: 'GREEN', staminaStatus: 'GREEN', minutesPlayed14d: 100, totalMarketValue: '축구유저', totalMarketValueNum: 100 },
-    awayTeam: { id: 'f2', name: '축구 유저 420명 대화중', logo: '⚽', countryName: 'EU', rank: 1, homeSeasonRecord: '10승', awaySeasonRecord: '10승', seasonRemainingGames: '진행중', recent3Form: 'GREEN', staminaStatus: 'GREEN', minutesPlayed14d: 100, totalMarketValue: '축구전체', totalMarketValueNum: 100 },
+    awayTeam: { id: 'f2', name: '실시간 참여자 1명', logo: '⚽', countryName: 'EU', rank: 1, homeSeasonRecord: '10승', awaySeasonRecord: '10승', seasonRemainingGames: '진행중', recent3Form: 'GREEN', staminaStatus: 'GREEN', minutesPlayed14d: 100, totalMarketValue: '축구전체', totalMarketValueNum: 100 },
     matchTime: '실시간 LIVE',
     closingTime: '축구 회차 진행중',
     league: '축구 카테고리 전체 톡방',
@@ -129,7 +130,7 @@ export const PCWebCommunityHub = ({
     countryFlag: '🏐',
     status: 'SCHEDULED',
     homeTeam: { id: 'v1', name: '🏐 [배구 전체 톡방] V-리그 & KOVO 라이브 팩트 대화방', logo: '🏐', countryName: 'KR', rank: 1, homeSeasonRecord: '10승', awaySeasonRecord: '10승', seasonRemainingGames: '진행중', recent3Form: 'GREEN', staminaStatus: 'GREEN', minutesPlayed14d: 100, totalMarketValue: '배구유저', totalMarketValueNum: 100 },
-    awayTeam: { id: 'v2', name: '배구 유저 290명 대화중', logo: '🏐', countryName: 'KR', rank: 1, homeSeasonRecord: '10승', awaySeasonRecord: '10승', seasonRemainingGames: '진행중', recent3Form: 'GREEN', staminaStatus: 'GREEN', minutesPlayed14d: 100, totalMarketValue: '배구전체', totalMarketValueNum: 100 },
+    awayTeam: { id: 'v2', name: '실시간 참여자 1명', logo: '🏐', countryName: 'KR', rank: 1, homeSeasonRecord: '10승', awaySeasonRecord: '10승', seasonRemainingGames: '진행중', recent3Form: 'GREEN', staminaStatus: 'GREEN', minutesPlayed14d: 100, totalMarketValue: '배구전체', totalMarketValueNum: 100 },
     matchTime: '실시간 LIVE',
     closingTime: '배구 회차 진행중',
     league: '배구 카테고리 전체 톡방',
@@ -150,9 +151,102 @@ export const PCWebCommunityHub = ({
   const [selectedCustomRoom, setSelectedCustomRoom] = useState<CustomVvipRoom | null>(null);
 
   const [chatInputText, setChatInputText] = useState<string>('');
+  
+
+
+  // 🔔 Community Hub Chat Notification Settings State ('sound' | 'browser' | 'none')
+  const [hubNotificationSettings, setHubNotificationSettings] = useState<'sound' | 'browser' | 'none'>('sound');
+
+  // 📌 ULTRA-HIGH DENSITY CHAT MESSAGES STREAM
+  const [chatMessages, setChatMessages] = useState<Record<string, ChatMessage[]>>(() => {
+    const saved = localStorage.getItem('tokeon_hub_chats');
+    if (saved) {
+      try { return JSON.parse(saved); } catch (e) {}
+    }
+    return {
+      'global-all-chat': [
+        { id: 'g1', senderName: '토큰공식리포터', senderTier: 'OFFICIAL FACT', senderAvatar: '🎟️', text: '📢 [전체 톡방] 토큰 라이브 대화방입니다! 모든 경기 팩트 수치를 자유롭게 공유하세요.', timeStr: '19:20', isVvip: true }
+      ],
+      'category-baseball-chat': [
+        { id: 'cb1', senderName: '토큰공식리포터', senderTier: 'OFFICIAL FACT', senderAvatar: '🎟️', text: '⚾ [야구 전체 톡방] KBO & MLB 통합 야구 실시간 소통방입니다. 선발투수 ERA, 불펜 투구수, 구장 바람 파크 팩터를 공유하세요!', timeStr: '19:20', isVvip: true }
+      ],
+      'category-basketball-chat': [
+        { id: 'cbk1', senderName: '토큰공식리포터', senderTier: 'OFFICIAL FACT', senderAvatar: '🎟️', text: '🏀 [농구 전체 톡방] NBA & KBL 통합 농구 실시간 소통방입니다. 백투백 연투 및 3,850km 대륙횡단 비행 과부하 수치를 체크하세요!', timeStr: '19:20', isVvip: true }
+      ],
+      'category-football-chat': [
+        { id: 'cf1', senderName: '토큰공식리포터', senderTier: 'OFFICIAL FACT', senderAvatar: '🎟️', text: '⚽ [축구 전체 톡방] EPL, 라리가, UCL 통합 축구 실시간 대화방입니다. 오피셜 11명 선발 포메이션 팩트를 자유롭게 논의하세요!', timeStr: '19:20', isVvip: true }
+      ],
+      'category-volleyball-chat': [
+        { id: 'cv1', senderName: '토큰공식리포터', senderTier: 'OFFICIAL FACT', senderAvatar: '🎟️', text: '🏐 [배구 전체 톡방] V-리그 남녀부 실시간 소통방입니다. 용병 몰빵 공격성공률, 범실 수치, 센터 블로킹 팩터를 공유하세요!', timeStr: '19:20', isVvip: true }
+      ],
+      'v_room_1': [
+        { id: 'vr1', senderName: '토큰공식리포터', senderTier: 'OFFICIAL FACT', senderAvatar: '👑', text: '🔐 VVIP 전용 공유방이 개설되었습니다. 팩트 데이터 기반 소통을 이어가세요.', timeStr: '19:15', isVvip: true }
+      ]
+    };
+  });
+
+  const activeRoomId = selectedCustomRoom ? selectedCustomRoom.id : selectedMatch.id;
+  const currentMatchChats = (chatMessages[activeRoomId] && chatMessages[activeRoomId].length > 0)
+    ? chatMessages[activeRoomId]
+    : [
+        { id: 'def1', senderName: '토큰공식리포터', senderTier: 'OFFICIAL FACT', senderAvatar: '🎟️', text: `[${selectedCustomRoom ? selectedCustomRoom.roomTitle : selectedMatch.homeTeam.name}] 실시간 라이브 톡을 나눠보세요!`, timeStr: '19:28', isVvip: true }
+      ];
+
+  useEffect(() => {
+    localStorage.setItem('tokeon_hub_chats', JSON.stringify(chatMessages));
+  }, [chatMessages]);
+
+  // Subscribe to real-time Firebase messages if configured
+  useEffect(() => {
+    if (!isFirebaseConfigured) return;
+
+    const unsubscribe = firebaseService.subscribeToRoomMessages(activeRoomId, (msgs) => {
+      setChatMessages(prev => {
+        const newMsgs = msgs.length > 0 ? msgs : (prev[activeRoomId] || []);
+        return {
+          ...prev,
+          [activeRoomId]: newMsgs
+        };
+      });
+    });
+
+    return () => unsubscribe();
+  }, [activeRoomId]);
+
+  // Web Audio Synth Sound player helper & Browser Push Notifications trigger for Community Hub
+  const triggerHubNotification = (sender: string, text: string) => {
+    if (hubNotificationSettings === 'sound') {
+      try {
+        const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+        if (AudioContextClass) {
+          const ctx = new AudioContextClass();
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(650, ctx.currentTime);
+          gain.gain.setValueAtTime(0.04, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.12);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start();
+          osc.stop(ctx.currentTime + 0.12);
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    } else if (hubNotificationSettings === 'browser') {
+      if ('Notification' in window && Notification.permission === 'granted') {
+        new Notification(`💬 [토큰 전체 톡방] ${sender}`, {
+          body: text,
+          tag: 'tokeon-hub-chat'
+        });
+      }
+    }
+  };
 
   // 📌 INNER CHAT BOX ONLY SCROLL CONTAINER REFERENCE (PREVENT ENTIRE WEBPAGE FROM MOVING DOWN!)
   const chatScrollContainerRef = useRef<HTMLDivElement>(null);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
   // 👑 VVIP Custom Rooms List State
   const [customVvipRooms, setCustomVvipRooms] = useState<CustomVvipRoom[]>([
@@ -163,8 +257,8 @@ export const PCWebCommunityHub = ({
       attachedMatchNo: 1,
       isPasswordProtected: true,
       passwordStr: '7777',
-      memberCount: 42,
-      maxMembers: 100,
+      memberCount: 1,
+      maxMembers: 1,
       timeStr: '19:15'
     },
     {
@@ -173,8 +267,8 @@ export const PCWebCommunityHub = ({
       creatorName: 'NBA데이터마스터',
       attachedMatchNo: 4,
       isPasswordProtected: false,
-      memberCount: 28,
-      maxMembers: 50,
+      memberCount: 1,
+      maxMembers: 1,
       timeStr: '19:20'
     }
   ]);
@@ -192,44 +286,9 @@ export const PCWebCommunityHub = ({
   const [inputPasswordAttempt, setInputPasswordAttempt] = useState<string>('');
   const [passwordErrorMsg, setPasswordErrorMsg] = useState<string>('');
 
-  // 📌 ULTRA-HIGH DENSITY CHAT MESSAGES STREAM
-  const [chatMessages, setChatMessages] = useState<Record<string, ChatMessage[]>>({
-    'global-all-chat': [
-      { id: 'g1', senderName: '토큰공식리포터', senderTier: 'OFFICIAL FACT', senderAvatar: '🎟️', text: '📢 [전체 톡방] 토큰 라이브 대화방입니다! 모든 경기 팩트 수치를 자유롭게 공유하세요.', timeStr: '19:20', isVvip: true },
-      { id: 'g2', senderName: '대구적중마스터', senderTier: 'VVIP 회원', senderAvatar: '👑', text: '오늘 야구 1번 경기 라팍 바람 5.4m/s 수치 체크하셨나요?', timeStr: '19:21', isVvip: true },
-      { id: 'g3', senderName: '야구분석가', senderTier: 'PRO 분석가', senderAvatar: '⚾', text: '네! 라팍 오버 팩트 수치에 메이저리그 오타니 선발 조합으로 잡았습니다 ㅋㅋㅋ', timeStr: '19:22' },
-      { id: 'g4', senderName: '토큰VVIP', senderTier: 'VVIP 회원', senderAvatar: '🎟️', text: '전체 톡방 들어오신 분들 환영합니다! 1번~14번 종합 조합 같이 맞혀봐요!', timeStr: '19:23', isVvip: true },
-      { id: 'g5', senderName: '맨유승리', senderTier: 'VIP 회원', senderAvatar: '⚽', text: '축구 2번 경기 맨유 호일룬 4-3-3 복귀 라인업 팩트 확인했나요?', timeStr: '19:24' },
-      { id: 'g6', senderName: 'NBA전문가', senderTier: 'PRO 분석가', senderAvatar: '🏀', text: '농구 4번 경기 골스 백투백 3,850km 비행 과부하 수치 엄청납니다 ㅋㅋㅋ', timeStr: '19:25', isVvip: true },
-      { id: 'g7', senderName: '배구마스터', senderTier: 'VVIP 회원', senderAvatar: '🏐', text: '배구 대한항공 용병 공격성공률 58.4% 팩트 확인 완료했습니다!', timeStr: '19:26', isVvip: true },
-      { id: 'g8', senderName: '삼성라이온즈팬', senderTier: 'VIP 회원', senderAvatar: '⚾', text: '원태인 1선발 6이닝 무실점 방어율 2.89 수치 아주 믿음직스럽습니다', timeStr: '19:27' },
-      { id: 'g9', senderName: '토큰VVIP회원', senderTier: 'VVIP 회원', senderAvatar: '👤', text: '초고밀도 럭셔리 라이브 톡방 환경 최고네요! 실시간 팩트 정보 잘 보고 갑니다.', timeStr: '19:28', isVvip: true }
-    ],
-    'category-baseball-chat': [
-      { id: 'cb1', senderName: '토큰공식리포터', senderTier: 'OFFICIAL FACT', senderAvatar: '🎟️', text: '⚾ [야구 전체 톡방] KBO & MLB 통합 야구 실시간 소통방입니다. 선발투수 ERA, 불펜 투구수, 구장 바람 파크 팩터를 공유하세요!', timeStr: '19:20', isVvip: true },
-      { id: 'cb2', senderName: '대구적중마스터', senderTier: 'VVIP 회원', senderAvatar: '👑', text: '오늘 삼성 원태인 상대전적 ERA 2.89 팩트 데이터 라팍 승 탑니다!', timeStr: '19:22', isVvip: true }
-    ],
-    'category-basketball-chat': [
-      { id: 'cbk1', senderName: '토큰공식리포터', senderTier: 'OFFICIAL FACT', senderAvatar: '🎟️', text: '🏀 [농구 전체 톡방] NBA & KBL 통합 농구 실시간 소통방입니다. 백투백 연투 및 3,850km 대륙횡단 비행 과부하 수치를 체크하세요!', timeStr: '19:20', isVvip: true }
-    ],
-    'category-football-chat': [
-      { id: 'cf1', senderName: '토큰공식리포터', senderTier: 'OFFICIAL FACT', senderAvatar: '🎟️', text: '⚽ [축구 전체 톡방] EPL, 라리가, UCL 통합 축구 실시간 대화방입니다. 오피셜 11명 선발 포메이션 팩트를 자유롭게 논의하세요!', timeStr: '19:20', isVvip: true }
-    ],
-    'category-volleyball-chat': [
-      { id: 'cv1', senderName: '토큰공식리포터', senderTier: 'OFFICIAL FACT', senderAvatar: '🎟️', text: '🏐 [배구 전체 톡방] V-리그 남녀부 실시간 소통방입니다. 용병 몰빵 공격성공률, 범실 수치, 센터 블로킹 팩터를 공유하세요!', timeStr: '19:20', isVvip: true },
-      { id: 'cv2', senderName: '배구분석가', senderTier: 'VVIP 회원', senderAvatar: '👑', text: '오늘 대한항공 공격성공률 58.4% 팩트 데이터라 세트스코어 3-0 승 탑니다!', timeStr: '19:25', isVvip: true }
-    ],
-    'v_room_1': [
-      { id: 'vr1', senderName: '대구적중마스터', senderTier: 'VVIP 회원', senderAvatar: '👑', text: '🔐 [비밀번호 7777] 입력 후 입장해주신 VVIP 회원분들 환영합니다! 라팍 바람 5.4m/s 데이터 집중 분석합시다.', timeStr: '19:15', isVvip: true }
-    ]
-  });
 
-  const activeRoomId = selectedCustomRoom ? selectedCustomRoom.id : selectedMatch.id;
-  const currentMatchChats = chatMessages[activeRoomId] || [
-    { id: 'def1', senderName: '토큰공식리포터', senderTier: 'OFFICIAL FACT', senderAvatar: '🎟️', text: `[${selectedCustomRoom ? selectedCustomRoom.roomTitle : selectedMatch.homeTeam.name}] 실시간 라이브 톡을 나눠보세요!`, timeStr: '19:28', isVvip: true }
-  ];
 
-  // 📌 STRICTLY SCROLL ONLY THE INNER CHAT CONTAINER (PREVENT ENTIRE WEBPAGE FROM MOVING DOWN!)
+  // 📌 Auto scroll to bottom strictly inside the chat container (prevents entire webpage window from jumping down!)
   const scrollToBottomInnerBoxOnly = () => {
     if (chatScrollContainerRef.current) {
       chatScrollContainerRef.current.scrollTop = chatScrollContainerRef.current.scrollHeight;
@@ -238,16 +297,15 @@ export const PCWebCommunityHub = ({
 
   useEffect(() => {
     scrollToBottomInnerBoxOnly();
-    const timer = setTimeout(scrollToBottomInnerBoxOnly, 30);
+    const timer = setTimeout(scrollToBottomInnerBoxOnly, 60);
     return () => clearTimeout(timer);
   }, [chatMessages, activeRoomId]);
 
-  const handleSendChatMessage = (e: React.FormEvent) => {
+  const handleSendChatMessage = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!chatInputText.trim()) return;
 
-    const newMsg: ChatMessage = {
-      id: `msg_${Date.now()}`,
+    const baseMsg = {
       senderName: userProfile.name,
       senderTier: `${membershipTier} 회원`,
       senderAvatar: '👤',
@@ -256,11 +314,23 @@ export const PCWebCommunityHub = ({
       isVvip: true
     };
 
-    setChatMessages(prev => ({
-      ...prev,
-      [activeRoomId]: [...(prev[activeRoomId] || []), newMsg]
-    }));
+    if (isFirebaseConfigured) {
+      const docId = await firebaseService.sendRoomMessage(activeRoomId, baseMsg);
+      if (!docId) {
+        alert("⚠️ 실시간 전송 실패!\n\n파이어베이스 콘솔(Firestore Database)을 생성하셨는지 확인해 주세요. 규칙(Rules) 탭에서 'allow read, write: if true;'로 게시(Publish)해야 채팅이 작동합니다.");
+      }
+    } else {
+      const newMsg: ChatMessage = {
+        ...baseMsg,
+        id: `msg_${Date.now()}`
+      };
+      setChatMessages(prev => ({
+        ...prev,
+        [activeRoomId]: [...(prev[activeRoomId] || []), newMsg]
+      }));
+    }
 
+    triggerHubNotification(userProfile.name, chatInputText.trim());
     setChatInputText('');
   };
 
@@ -324,26 +394,26 @@ export const PCWebCommunityHub = ({
   };
 
   return (
-    <div className="w-full bg-slate-950 text-slate-100 rounded-3xl border-2 border-amber-500/40 shadow-2xl overflow-hidden p-2.5 sm:p-3.5 h-[690px] max-h-[88vh] backdrop-blur-xl">
+    <div className="w-full bg-slate-950 text-slate-100 rounded-3xl border-2 border-amber-500/40 shadow-2xl overflow-hidden p-2 sm:p-3.5 h-[calc(100vh-170px)] md:h-[690px] max-h-[80vh] md:max-h-[88vh] backdrop-blur-xl">
       
       {/* MAIN CONTAINER */}
-      <div className="flex flex-col md:flex-row items-stretch gap-3 h-full overflow-hidden">
+      <div className="flex flex-row items-stretch gap-2 sm:gap-3 h-full overflow-hidden">
         
         {/* 👈 LEFT VERTICAL SIDEBAR PANEL (프리미엄 럭셔리 네온 사이드바) */}
-        <div className="w-full md:w-80 bg-slate-900/90 border-2 border-slate-800 rounded-2xl p-3 flex flex-col space-y-3 shrink-0 shadow-2xl h-full overflow-hidden">
+        <div className="w-[125px] sm:w-[200px] md:w-80 bg-slate-900/90 border-2 border-slate-800 rounded-2xl p-1.5 sm:p-3 flex flex-col space-y-2.5 shrink-0 shadow-2xl h-full overflow-hidden">
           
           {/* 👑 VVIP Exclusive Create Custom Room Button */}
           {membershipTier === 'VVIP' ? (
             <button
               onClick={() => setIsCreateVvipRoomModalOpen(true)}
-              className="w-full py-2 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 hover:from-amber-300 hover:to-yellow-300 text-slate-950 rounded-xl font-black text-xs shadow-lg transition-all flex items-center justify-center gap-1.5 border border-yellow-200 cursor-pointer shrink-0 hover:scale-[1.02] active:scale-[0.98]"
+              className="w-full py-1.5 sm:py-2 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 hover:from-amber-300 hover:to-yellow-300 text-slate-950 rounded-xl font-black text-[9px] sm:text-xs shadow-lg transition-all flex items-center justify-center gap-1 border border-yellow-200 cursor-pointer shrink-0 hover:scale-[1.02] active:scale-[0.98]"
             >
-              <Plus className="w-4 h-4 text-slate-950 stroke-[3]" />
-              <span>👑 VVIP 비밀방 만들기</span>
+              <Plus className="w-3.5 h-3.5 text-slate-950 stroke-[3]" />
+              <span>👑 <span className="hidden sm:inline">비밀</span>방 만들기</span>
             </button>
           ) : (
-            <div className="text-center py-1.5 text-[10px] text-amber-400 font-bold bg-amber-950/80 rounded-xl border border-amber-500/40 shrink-0">
-              👑 VVIP 등급 시 비밀방 생성 가능
+            <div className="text-center py-1.5 text-[8px] sm:text-[10px] text-amber-400 font-bold bg-amber-950/80 rounded-xl border border-amber-500/40 shrink-0 leading-tight">
+              👑 <span className="hidden sm:inline">VVIP </span>방 개설 가능
             </div>
           )}
 
@@ -353,102 +423,102 @@ export const PCWebCommunityHub = ({
             {/* 1. 📢 메인 & 종목별 전체 톡방 (5개) */}
             <div className="space-y-1.5">
               <div className="flex items-center justify-between px-1 mb-0.5">
-                <span className="text-[10px] font-black text-amber-400/90 uppercase tracking-wider flex items-center gap-1">
+                <span className="text-[9px] sm:text-[10px] font-black text-amber-400/90 uppercase tracking-wider flex items-center gap-1">
                   <Sparkles className="w-3 h-3 text-amber-400" />
-                  카테고리별 공식 톡방
+                  <span className="hidden sm:inline">카테고리별 </span>공식 톡방
                 </span>
-                <span className="text-[9px] bg-emerald-500/20 text-emerald-400 px-1.5 py-0.2 rounded font-mono font-bold">
-                  LIVE READY
+                <span className="text-[8px] sm:text-[9px] bg-emerald-500/20 text-emerald-400 px-1 py-0.2 rounded font-mono font-bold hidden xs:inline">
+                  LIVE
                 </span>
               </div>
 
               {/* 📢 1. 메인 전체 톡방 */}
               <button
                 onClick={() => handleSelectOfficialRoom(globalChatRoom)}
-                className={`w-full py-2 px-3 rounded-xl text-xs font-black transition-all flex items-center justify-between border cursor-pointer ${
+                className={`w-full py-1.5 px-2 rounded-xl text-[10px] sm:text-xs font-black transition-all flex items-center justify-between border cursor-pointer ${
                   !selectedCustomRoom && selectedMatch.id === 'global-all-chat'
                     ? 'bg-amber-500 text-slate-950 border-amber-300 shadow-lg ring-2 ring-amber-400/50 scale-[1.01]'
                     : 'bg-slate-950/90 text-slate-200 border-slate-800 hover:border-amber-400/80 hover:bg-slate-900'
                 }`}
               >
-                <div className="flex items-center gap-2 min-w-0">
-                  <Globe className={`w-4 h-4 shrink-0 ${!selectedCustomRoom && selectedMatch.id === 'global-all-chat' ? 'text-slate-950' : 'text-amber-400'}`} />
-                  <span className="truncate">📢 메인 전체 톡방</span>
+                <div className="flex items-center gap-1 min-w-0">
+                  <Globe className={`w-3.5 h-3.5 shrink-0 ${!selectedCustomRoom && selectedMatch.id === 'global-all-chat' ? 'text-slate-950' : 'text-amber-400'}`} />
+                  <span className="truncate">📢 메인 <span className="hidden sm:inline">전체</span>톡방</span>
                 </div>
-                <span className="text-[9px] px-1.5 py-0.5 rounded bg-slate-900 font-mono text-amber-400 font-bold shrink-0 border border-amber-500/30">1,420명</span>
+                <span className="text-[8px] sm:text-[9px] px-1 py-0.5 rounded bg-slate-900 font-mono text-amber-400 font-bold shrink-0 border border-amber-500/30">{activeRoomId === 'global-all-chat' ? '1명' : '0명'}</span>
               </button>
 
               {/* ⚾ 2. 야구 전체 톡방 */}
               <button
                 onClick={() => handleSelectOfficialRoom(baseballCategoryRoom)}
-                className={`w-full py-2 px-3 rounded-xl text-xs font-black transition-all flex items-center justify-between border cursor-pointer ${
+                className={`w-full py-1.5 px-2 rounded-xl text-[10px] sm:text-xs font-black transition-all flex items-center justify-between border cursor-pointer ${
                   !selectedCustomRoom && selectedMatch.id === 'category-baseball-chat'
                     ? 'bg-amber-500 text-slate-950 border-amber-300 shadow-lg ring-2 ring-amber-400/50 scale-[1.01]'
                     : 'bg-slate-950/90 text-slate-200 border-slate-800 hover:border-amber-400/80 hover:bg-slate-900'
                 }`}
               >
-                <div className="flex items-center gap-2 min-w-0">
-                  <span className="text-sm shrink-0">⚾</span>
-                  <span className="truncate">야구 전체 톡방</span>
+                <div className="flex items-center gap-1 min-w-0">
+                  <span className="text-xs shrink-0">⚾</span>
+                  <span className="truncate">야구 <span className="hidden sm:inline">전체</span>톡방</span>
                 </div>
-                <span className="text-[9px] px-1.5 py-0.5 rounded bg-amber-950 text-amber-300 font-mono font-bold shrink-0 border border-amber-500/40">520명</span>
+                <span className="text-[8px] sm:text-[9px] px-1 py-0.5 rounded bg-amber-950 text-amber-300 font-mono font-bold shrink-0 border border-amber-500/40">{activeRoomId === 'category-baseball-chat' ? '1명' : '0명'}</span>
               </button>
 
               {/* 🏀 3. 농구 전체 톡방 */}
               <button
                 onClick={() => handleSelectOfficialRoom(basketballCategoryRoom)}
-                className={`w-full py-2 px-3 rounded-xl text-xs font-black transition-all flex items-center justify-between border cursor-pointer ${
+                className={`w-full py-1.5 px-2 rounded-xl text-[10px] sm:text-xs font-black transition-all flex items-center justify-between border cursor-pointer ${
                   !selectedCustomRoom && selectedMatch.id === 'category-basketball-chat'
                     ? 'bg-amber-500 text-slate-950 border-amber-300 shadow-lg ring-2 ring-amber-400/50 scale-[1.01]'
                     : 'bg-slate-950/90 text-slate-200 border-slate-800 hover:border-amber-400/80 hover:bg-slate-900'
                 }`}
               >
-                <div className="flex items-center gap-2 min-w-0">
-                  <span className="text-sm shrink-0">🏀</span>
-                  <span className="truncate">농구 전체 톡방</span>
+                <div className="flex items-center gap-1 min-w-0">
+                  <span className="text-xs shrink-0">🏀</span>
+                  <span className="truncate">농구 <span className="hidden sm:inline">전체</span>톡방</span>
                 </div>
-                <span className="text-[9px] px-1.5 py-0.5 rounded bg-orange-950 text-orange-300 font-mono font-bold shrink-0 border border-orange-500/40">380명</span>
+                <span className="text-[8px] sm:text-[9px] px-1 py-0.5 rounded bg-orange-950 text-orange-300 font-mono font-bold shrink-0 border border-orange-500/40">{activeRoomId === 'category-basketball-chat' ? '1명' : '0명'}</span>
               </button>
 
               {/* ⚽ 4. 축구 전체 톡방 */}
               <button
                 onClick={() => handleSelectOfficialRoom(footballCategoryRoom)}
-                className={`w-full py-2 px-3 rounded-xl text-xs font-black transition-all flex items-center justify-between border cursor-pointer ${
+                className={`w-full py-1.5 px-2 rounded-xl text-[10px] sm:text-xs font-black transition-all flex items-center justify-between border cursor-pointer ${
                   !selectedCustomRoom && selectedMatch.id === 'category-football-chat'
                     ? 'bg-amber-500 text-slate-950 border-amber-300 shadow-lg ring-2 ring-amber-400/50 scale-[1.01]'
                     : 'bg-slate-950/90 text-slate-200 border-slate-800 hover:border-amber-400/80 hover:bg-slate-900'
                 }`}
               >
-                <div className="flex items-center gap-2 min-w-0">
-                  <span className="text-sm shrink-0">⚽</span>
-                  <span className="truncate">축구 전체 톡방</span>
+                <div className="flex items-center gap-1 min-w-0">
+                  <span className="text-xs shrink-0">⚽</span>
+                  <span className="truncate">축구 <span className="hidden sm:inline">전체</span>톡방</span>
                 </div>
-                <span className="text-[9px] px-1.5 py-0.5 rounded bg-emerald-950 text-emerald-300 font-mono font-bold shrink-0 border border-emerald-500/40">420명</span>
+                <span className="text-[8px] sm:text-[9px] px-1 py-0.5 rounded bg-emerald-950 text-emerald-300 font-mono font-bold shrink-0 border border-emerald-500/40">{activeRoomId === 'category-football-chat' ? '1명' : '0명'}</span>
               </button>
 
               {/* 🏐 5. 배구 전체 톡방 */}
               <button
                 onClick={() => handleSelectOfficialRoom(volleyballCategoryRoom)}
-                className={`w-full py-2 px-3 rounded-xl text-xs font-black transition-all flex items-center justify-between border cursor-pointer ${
+                className={`w-full py-1.5 px-2 rounded-xl text-[10px] sm:text-xs font-black transition-all flex items-center justify-between border cursor-pointer ${
                   !selectedCustomRoom && selectedMatch.id === 'category-volleyball-chat'
                     ? 'bg-amber-500 text-slate-950 border-amber-300 shadow-lg ring-2 ring-amber-400/50 scale-[1.01]'
                     : 'bg-slate-950/90 text-slate-200 border-slate-800 hover:border-amber-400/80 hover:bg-slate-900'
                 }`}
               >
-                <div className="flex items-center gap-2 min-w-0">
-                  <span className="text-sm shrink-0">🏐</span>
-                  <span className="truncate">배구 전체 톡방</span>
+                <div className="flex items-center gap-1 min-w-0">
+                  <span className="text-xs shrink-0">🏐</span>
+                  <span className="truncate">배구 <span className="hidden sm:inline">전체</span>톡방</span>
                 </div>
-                <span className="text-[9px] px-1.5 py-0.5 rounded bg-sky-950 text-sky-300 font-mono font-bold shrink-0 border border-sky-500/40">290명</span>
+                <span className="text-[8px] sm:text-[9px] px-1 py-0.5 rounded bg-sky-950 text-sky-300 font-mono font-bold shrink-0 border border-sky-500/40">{activeRoomId === 'category-volleyball-chat' ? '1명' : '0명'}</span>
               </button>
 
             </div>
 
             {/* 👑 2. VVIP 커스텀 비밀방 목록 */}
             <div className="space-y-1.5 pt-2 border-t border-slate-800">
-              <span className="text-[10px] font-black text-amber-400/90 uppercase tracking-wider block px-1 flex items-center gap-1">
+              <span className="text-[9px] sm:text-[10px] font-black text-amber-400/90 uppercase tracking-wider block px-1 flex items-center gap-1">
                 <Crown className="w-3 h-3 text-amber-400" />
-                VVIP 커스텀 비밀방
+                <span className="hidden sm:inline">VVIP </span>커스텀 비밀방
               </span>
               <div className="space-y-1.5">
                 {customVvipRooms.map((room) => {
@@ -457,17 +527,17 @@ export const PCWebCommunityHub = ({
                     <button
                       key={room.id}
                       onClick={() => handleSelectCustomRoom(room)}
-                      className={`w-full py-2 px-3 rounded-xl text-xs font-black transition-all flex items-center justify-between border cursor-pointer ${
+                      className={`w-full py-1.5 px-2 rounded-xl text-[10px] sm:text-xs font-black transition-all flex items-center justify-between border cursor-pointer ${
                         isSelected
                           ? 'bg-yellow-400 text-slate-950 border-yellow-200 shadow-md ring-2 ring-yellow-400/50 scale-[1.01]'
                           : 'bg-slate-950/90 text-slate-300 border-amber-500/30 hover:border-amber-400 hover:bg-slate-900'
                       }`}
                     >
-                      <div className="flex items-center gap-2 min-w-0">
-                        {room.isPasswordProtected ? <Lock className="w-3.5 h-3.5 text-amber-400 shrink-0" /> : <Crown className="w-3.5 h-3.5 text-yellow-400 shrink-0" />}
+                      <div className="flex items-center gap-1.5 min-w-0">
+                        {room.isPasswordProtected ? <Lock className="w-3 h-3 text-amber-400 shrink-0" /> : <Crown className="w-3.5 h-3.5 text-yellow-400 shrink-0" />}
                         <span className="truncate text-left">{room.roomTitle}</span>
                       </div>
-                      <span className="text-[9px] opacity-80 shrink-0 font-mono">{room.memberCount}명</span>
+                      <span className="text-[8px] sm:text-[9px] opacity-80 shrink-0 font-mono">{activeRoomId === room.id ? '1명' : '0명'}</span>
                     </button>
                   );
                 })}
@@ -508,14 +578,57 @@ export const PCWebCommunityHub = ({
               </div>
             </div>
 
-            {!selectedCustomRoom && selectedMatch.betmanMatchNo > 0 && (
+            <div className="flex items-center gap-1.5 shrink-0">
+              {/* Hub Notification Settings Toggle Button */}
               <button
-                onClick={() => onOpenMatchDetail(selectedMatch)}
-                className="px-3 py-1 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-slate-950 text-[10px] font-black shadow transition-all cursor-pointer shrink-0"
+                type="button"
+                onClick={() => {
+                  const nextMap: Record<'sound' | 'browser' | 'none', 'sound' | 'browser' | 'none'> = {
+                    sound: 'browser',
+                    browser: 'none',
+                    none: 'sound'
+                  };
+                  const next = nextMap[hubNotificationSettings];
+                  setHubNotificationSettings(next);
+                  if (next === 'browser') {
+                    if ('Notification' in window) {
+                      Notification.requestPermission().then(perm => {
+                        if (perm !== 'granted') {
+                          alert('브라우저 바탕화면 알림 권한이 필요합니다. 크롬/사파리 설정에서 알림을 허용해주세요!');
+                        } else {
+                          new Notification('🔔 토큰 실시간 전체 톡방 알림 활성화!', {
+                            body: '선택한 톡방에 새로운 메시지가 오면 데스크톱 화면에 알림이 표시됩니다.',
+                            tag: 'tokeon-hub-init'
+                          });
+                        }
+                      });
+                    } else {
+                      alert('이 브라우저는 바탕화면 알림을 지원하지 않습니다.');
+                    }
+                  }
+                }}
+                className={`text-[10px] px-2.5 py-1 border rounded-lg font-black flex items-center gap-1 shadow transition-all cursor-pointer ${
+                  hubNotificationSettings === 'sound'
+                    ? 'bg-amber-100 border-amber-300 text-amber-800'
+                    : hubNotificationSettings === 'browser'
+                    ? 'bg-cyan-100 border-cyan-300 text-cyan-800'
+                    : 'bg-slate-800 border-slate-700 text-slate-400'
+                }`}
+                title="클릭하여 대화방 알림 설정을 전환합니다 (소리 🔊 -> 브라우저 🖥️ -> 알림끔 🚫)"
               >
-                📊 팩트 상세
+                <span>{hubNotificationSettings === 'sound' ? '🔔 소리알림' : hubNotificationSettings === 'browser' ? '🖥️ 화면알림' : '🚫 알림차단'}</span>
               </button>
-            )}
+
+              {!selectedCustomRoom && selectedMatch.betmanMatchNo > 0 && (
+                <button
+                  type="button"
+                  onClick={() => onOpenMatchDetail(selectedMatch)}
+                  className="px-3 py-1 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-slate-950 text-[10px] font-black shadow transition-all cursor-pointer shrink-0"
+                >
+                  📊 팩트 상세
+                </button>
+              )}
+            </div>
           </div>
 
           {/* 📌📌📌 CHAT MESSAGES INNER SCROLL BOX (초고밀도 마이크로 스트림 대화 카드) */}
@@ -549,6 +662,7 @@ export const PCWebCommunityHub = ({
                 </div>
               </div>
             ))}
+            <div ref={messagesEndRef} />
           </div>
 
           {/* 📌 ULTRA-SLIM CHAT INPUT BAR WITH NEON GLOW RING */}

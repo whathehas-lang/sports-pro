@@ -1,6 +1,8 @@
 import type { Match, CommunityPost } from '../types/sports';
+import { OFFICIAL_260103_MATCHES } from './official260103Schedule';
 
-export const INITIAL_MATCHES: Match[] = [
+export const INITIAL_MATCHES: Match[] = OFFICIAL_260103_MATCHES;
+export const LEGACY_INITIAL_MATCHES: Match[] = [
   {
     id: 'm0',
     betmanRound: '야구 승5패 8회차',
@@ -17,22 +19,11 @@ export const INITIAL_MATCHES: Match[] = [
       keyAbsenceNotice: '⚠️ [라인업 팩트] 삼성 1선발 원태인 확정 vs KIA 정해영 연투 과부하(26구 🔴) 발표!'
     },
     headToHeadRecord: {
-      summaryText: '시즌 맞대결 10경기: 삼성 라이온즈 6승 4패 우세 (홈 3승 원정 3승)',
-      homeWins: 6,
+      summaryText: '상대전적 기록이 없습니다.',
+      homeWins: 0,
       draws: 0,
-      awayWins: 4,
-      last5Matches: [
-        { dateStr: '07.12', homeScore: 6, awayScore: 4, winnerName: '삼성' },
-        { dateStr: '06.02', homeScore: 3, awayScore: 5, winnerName: 'KIA' },
-        { dateStr: '05.14', homeScore: 8, awayScore: 2, winnerName: '삼성' },
-        { dateStr: '04.28', homeScore: 5, awayScore: 3, winnerName: '삼성' },
-        { dateStr: '04.16', homeScore: 2, awayScore: 7, winnerName: 'KIA' },
-        { dateStr: '04.02', homeScore: 9, awayScore: 4, winnerName: '삼성' },
-        { dateStr: '03.24', homeScore: 1, awayScore: 4, winnerName: 'KIA' },
-        { dateStr: '03.15', homeScore: 7, awayScore: 5, winnerName: '삼성' },
-        { dateStr: '03.02', homeScore: 4, awayScore: 6, winnerName: 'KIA' },
-        { dateStr: '02.20', homeScore: 8, awayScore: 3, winnerName: '삼성' }
-      ]
+      awayWins: 0,
+      last5Matches: []
     },
     homeTeam: {
       id: 'ssg',
@@ -240,22 +231,11 @@ export const INITIAL_MATCHES: Match[] = [
       keyAbsenceNotice: '⚠️ [라인업 팩트] 맨유 4-3-3 호일룬 선발 복귀 vs 아스널 4-4-2 투톱 사카-제수스 배치 발표!'
     },
     headToHeadRecord: {
-      summaryText: '시즌 맞대결 10경기: 맨체스터U 6승 2무 2패 우세 (홈 3승 원정 3승)',
-      homeWins: 6,
-      draws: 2,
-      awayWins: 2,
-      last5Matches: [
-        { dateStr: '05.12', homeScore: 1, awayScore: 0, winnerName: '맨체스터U' },
-        { dateStr: '01.22', homeScore: 2, awayScore: 2, winnerName: '무승부' },
-        { dateStr: '09.03', homeScore: 3, awayScore: 1, winnerName: '맨체스터U' },
-        { dateStr: '01.22', homeScore: 3, awayScore: 2, winnerName: '아스널' },
-        { dateStr: '09.04', homeScore: 3, awayScore: 1, winnerName: '맨체스터U' },
-        { dateStr: '04.23', homeScore: 3, awayScore: 1, winnerName: '아스널' },
-        { dateStr: '12.02', homeScore: 3, awayScore: 2, winnerName: '맨체스터U' },
-        { dateStr: '01.30', homeScore: 0, awayScore: 0, winnerName: '무승부' },
-        { dateStr: '11.01', homeScore: 0, awayScore: 1, winnerName: '아스널' },
-        { dateStr: '03.10', homeScore: 2, awayScore: 0, winnerName: '맨체스터U' }
-      ]
+      summaryText: '상대전적 기록이 없습니다.',
+      homeWins: 0,
+      draws: 0,
+      awayWins: 0,
+      last5Matches: []
     },
     homeTeam: {
       id: 'mun',
@@ -326,40 +306,16 @@ export const INITIAL_MATCHES: Match[] = [
       tacticDescription: '4-3-3 공격 지향 전술 가동 (최근 10경기 중 7경기 2.5 오버 발생)'
     },
     homeOfficialLineup: {
-      formation: '4-3-3 포메이션',
-      starting11Value: '4,500억',
+      formation: '4-3-3 포메이션 (오피셜 라인업 팩트)',
+      starting11Value: '맨체스터 UTD 주전',
       starting11ValueNum: 4500,
-      players: [
-        { id: 'f_m1', name: '호일룬', number: 11, position: 'FW', marketValue: '900억', marketValueNum: 900, seasonAvgStat: '12골 3도움', recent3FormStat: '최근 3경기 3골', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 180, tierCategory: '1GUN_STARTER', isHotForm: true },
-        { id: 'f_m2', name: '래시포드', number: 10, position: 'FW', marketValue: '1,100억', marketValueNum: 1100, seasonAvgStat: '9골 6도움', recent3FormStat: '최근 3경기 1골 1도움', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 210, tierCategory: '1GUN_STARTER' },
-        { id: 'f_m3', name: '안토니', number: 21, position: 'FW', marketValue: '600억', marketValueNum: 600, seasonAvgStat: '4골 2도움', recent3FormStat: '최근 3경기 1도움', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 190, tierCategory: '1GUN_STARTER' },
-        { id: 'f_m4', name: '브루노', number: 8, position: 'MF', marketValue: '1,200억', marketValueNum: 1200, seasonAvgStat: '10골 12도움', recent3FormStat: '최근 3경기 2골 2도움', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 270, tierCategory: '1GUN_STARTER', isHotForm: true },
-        { id: 'f_m5', name: '카세미루', number: 18, position: 'MF', marketValue: '700억', marketValueNum: 700, seasonAvgStat: '3골 2도움', recent3FormStat: '경고 4장 누적', formStatus: 'RED', stamina: 'YELLOW', minutesPlayed14d: 240, tierCategory: '1GUN_STARTER', isCardSuspensionRisk: true },
-        { id: 'f_m6', name: '마이누', number: 37, position: 'MF', marketValue: '800억', marketValueNum: 800, seasonAvgStat: '5골 4도움', recent3FormStat: '최근 3경기 1골', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 220, tierCategory: '1GUN_STARTER' },
-        { id: 'f_m7', name: '루크쇼', number: 23, position: 'DF', marketValue: '650억', marketValueNum: 650, seasonAvgStat: '1골 5도움', recent3FormStat: '최근 3경기 1도움', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 250, tierCategory: '1GUN_STARTER' },
-        { id: 'f_m8', name: '리산드로', number: 6, position: 'DF', marketValue: '850억', marketValueNum: 850, seasonAvgStat: '2골 1도움', recent3FormStat: '최근 3경기 클린시트 1회', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 270, tierCategory: '1GUN_STARTER' },
-        { id: 'f_m9', name: '바란', number: 19, position: 'DF', marketValue: '700억', marketValueNum: 700, seasonAvgStat: '1골 1도움', recent3FormStat: '최근 3경기 차단 12회', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 260, tierCategory: '1GUN_STARTER' },
-        { id: 'f_m10', name: '달롯', number: 20, position: 'DF', marketValue: '600억', marketValueNum: 600, seasonAvgStat: '2골 3도움', recent3FormStat: '최근 3경기 태클 8회', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 240, tierCategory: '1GUN_STARTER' },
-        { id: 'f_m11', name: '오나나', number: 24, position: 'GK', marketValue: '600억', marketValueNum: 600, seasonAvgStat: '클린시트 9회', recent3FormStat: '최근 3경기 선방 14회', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 270, tierCategory: '1GUN_STARTER' }
-      ]
+      players: []
     },
     awayOfficialLineup: {
-      formation: '4-4-2 포메이션',
-      starting11Value: '1조 1,000억',
+      formation: '4-4-2 포메이션 (오피셜 라인업 팩트)',
+      starting11Value: '아스널 주전',
       starting11ValueNum: 11000,
-      players: [
-        { id: 'f_a1', name: '사카', number: 7, position: 'FW', marketValue: '1,800억', marketValueNum: 1800, seasonAvgStat: '15골 11도움', recent3FormStat: '최근 3경기 3골 1도움', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 270, tierCategory: '1GUN_STARTER', isHotForm: true },
-        { id: 'f_a2', name: '제수스', number: 9, position: 'FW', marketValue: '1,100억', marketValueNum: 1100, seasonAvgStat: '8골 5도움', recent3FormStat: '최근 3경기 1골', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 240, tierCategory: '1GUN_STARTER' },
-        { id: 'f_a3', name: '외데고르', number: 8, position: 'MF', marketValue: '1,500억', marketValueNum: 1500, seasonAvgStat: '11골 9도움', recent3FormStat: '최근 3경기 2골 2도움', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 270, tierCategory: '1GUN_STARTER', isHotForm: true },
-        { id: 'f_a4', name: '라이스', number: 4, position: 'MF', marketValue: '1,600억', marketValueNum: 1600, seasonAvgStat: '7골 8도움', recent3FormStat: '최근 3경기 차단 15회', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 270, tierCategory: '1GUN_STARTER' },
-        { id: 'f_a5', name: '하베르츠', number: 29, position: 'MF', marketValue: '1,100억', marketValueNum: 1100, seasonAvgStat: '9골 6도움', recent3FormStat: '최근 3경기 1골 1도움', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 250, tierCategory: '1GUN_STARTER' },
-        { id: 'f_a6', name: '마르티넬리', number: 11, position: 'MF', marketValue: '1,000억', marketValueNum: 1000, seasonAvgStat: '8골 5도움', recent3FormStat: '최근 3경기 1골', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 240, tierCategory: '1GUN_STARTER' },
-        { id: 'f_a7', name: '진첸코', number: 35, position: 'DF', marketValue: '700억', marketValueNum: 700, seasonAvgStat: '1골 4도움', recent3FormStat: '최근 3경기 패스성공률 91%', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 230, tierCategory: '1GUN_STARTER' },
-        { id: 'f_a8', name: '마갈량이스', number: 6, position: 'DF', marketValue: '900억', marketValueNum: 900, seasonAvgStat: '4골 1도움', recent3FormStat: '최근 3경기 세트피스 1골', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 270, tierCategory: '1GUN_STARTER' },
-        { id: 'f_a9', name: '살리바', number: 2, position: 'DF', marketValue: '1,200억', marketValueNum: 1200, seasonAvgStat: '2골 1도움', recent3FormStat: '최근 3경기 클린시트 2회', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 270, tierCategory: '1GUN_STARTER', isHotForm: true },
-        { id: 'f_a10', name: '화이트', number: 4, position: 'DF', marketValue: '800억', marketValueNum: 800, seasonAvgStat: '2골 4도움', recent3FormStat: '최근 3경기 크로스 8회', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 250, tierCategory: '1GUN_STARTER' },
-        { id: 'f_a11', name: '라야', number: 22, position: 'GK', marketValue: '600억', marketValueNum: 600, seasonAvgStat: '클린시트 12회', recent3FormStat: '최근 3경기 무실점 2회', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 270, tierCategory: '1GUN_STARTER' }
-      ]
+      players: []
     }
   },
   {
@@ -378,17 +334,11 @@ export const INITIAL_MATCHES: Match[] = [
       keyAbsenceNotice: '⚡ 🏀 [NBA 오피셜 라인업 팩트] 5명 주전 득점지분 68.5% 집중 (르브론+데이비스 50.4점 핫폼 👑🔥) vs 골스 탐슨 부상 로테이션 휴식 발표!'
     },
     headToHeadRecord: {
-      summaryText: '시즌 맞대결 5경기: LA 레이커스 3승 2패 우세',
-      homeWins: 3,
+      summaryText: '상대전적 기록이 없습니다.',
+      homeWins: 0,
       draws: 0,
-      awayWins: 2,
-      last5Matches: [
-        { dateStr: '03.16', homeScore: 128, awayScore: 121, winnerName: 'LA 레이커스' },
-        { dateStr: '01.27', homeScore: 145, awayScore: 144, winnerName: 'LA 레이커스' },
-        { dateStr: '01.15', homeScore: 112, awayScore: 118, winnerName: '골든스테이트' },
-        { dateStr: '12.05', homeScore: 120, awayScore: 115, winnerName: 'LA 레이커스' },
-        { dateStr: '11.10', homeScore: 105, awayScore: 110, winnerName: '골든스테이트' }
-      ]
+      awayWins: 0,
+      last5Matches: []
     },
     homeTeam: {
       id: 'lal',
@@ -515,16 +465,11 @@ export const INITIAL_MATCHES: Match[] = [
       keyAbsenceNotice: '⚠️ [라인업 팩트] KCC 허웅 3점 야투 성공률 42.5% 핫폼 확정!'
     },
     headToHeadRecord: {
-      summaryText: '시즌 맞대결 4경기: 부산 KCC 2승 2패 백중세',
-      homeWins: 2,
+      summaryText: '상대전적 기록이 없습니다.',
+      homeWins: 0,
       draws: 0,
-      awayWins: 2,
-      last5Matches: [
-        { dateStr: '02.10', homeScore: 88, awayScore: 85, winnerName: '부산 KCC' },
-        { dateStr: '01.12', homeScore: 78, awayScore: 84, winnerName: '원주 DB' },
-        { dateStr: '12.02', homeScore: 92, awayScore: 88, winnerName: '부산 KCC' },
-        { dateStr: '11.04', homeScore: 75, awayScore: 82, winnerName: '원주 DB' }
-      ]
+      awayWins: 0,
+      last5Matches: []
     },
     homeTeam: {
       id: 'kcc',
@@ -621,17 +566,11 @@ export const INITIAL_MATCHES: Match[] = [
       keyAbsenceNotice: '⚠️ [기록식 팩트] 해리 케인 최근 5경기 6골 득점 기록 팩트!'
     },
     headToHeadRecord: {
-      summaryText: '시즌 맞대결 6경기: 바이에른 뮌헨 4승 2패 우세',
-      homeWins: 4,
+      summaryText: '상대전적 기록이 없습니다.',
+      homeWins: 0,
       draws: 0,
-      awayWins: 2,
-      last5Matches: [
-        { dateStr: '03.08', homeScore: 2, awayScore: 0, winnerName: '바이에른 뮌헨' },
-        { dateStr: '02.14', homeScore: 1, awayScore: 0, winnerName: '바이에른 뮌헨' },
-        { dateStr: '04.13', homeScore: 1, awayScore: 0, winnerName: '바이에른 뮌헨' },
-        { dateStr: '04.07', homeScore: 2, awayScore: 3, winnerName: 'PSG' },
-        { dateStr: '08.23', homeScore: 1, awayScore: 0, winnerName: '바이에른 뮌헨' }
-      ]
+      awayWins: 0,
+      last5Matches: []
     },
     homeTeam: {
       id: 'fcb',

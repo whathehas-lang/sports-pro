@@ -3,7 +3,7 @@ import { Award, Trophy, ShieldCheck, Flame, LogOut } from 'lucide-react';
 export interface UserProfileData {
   id: string;
   name: string;
-  tier: 'PRO_ANALYST';
+  tier: string;
   accuracy: number;
   totalVotes: number;
   correctVotes: number;

@@ -1,67 +1,66 @@
 import type { Match } from '../../types/sports';
+import { betmanLiveSyncService } from './betmanLiveSyncService';
+import { verifiedMatchDatabase } from '../db/verifiedMatchDatabase';
+import { BETMAN_GAMES_METADATA } from './betmanRoundRegistry';
 
 export interface BetmanLiveScrapeResult {
   success: boolean;
+  gmId: string;
+  gmTs: string;
   roundTitle: string;
   matches: Match[];
   sourceUrl: string;
 }
 
 export class BetmanScraperService {
-  private targetUrl = 'https://www.betman.co.kr/main/mainPage/gamebuy/gameSlip.do?gmId=G101&gmTs=260102';
-  private proxyUrl = 'https://api.allorigins.win/raw?url=';
+  /**
+   * Universal URL builder for all Betman game types:
+   * - G101: 프로토 승부식 (gmId=G101&gmTs=260103, 260104...)
+   * - G011: 축구 승무패 (gmId=G011&gmTs=260049, 260050...)
+   * - G024: 야구 승1패 (gmId=G024&gmTs=260063, 260064...)
+   * - G102: 프로토 기록식 (gmId=G102&gmTs=90, 91...)
+   */
+  public getBetmanOfficialUrl(gmId: string = 'G101', gmTs?: string): string {
+    const defaultTs = BETMAN_GAMES_METADATA[gmId]?.defaultRoundTs || (gmId === 'G011' ? '260049' : gmId === 'G024' ? '260063' : gmId === 'G102' ? '90' : '260103');
+    const targetTs = gmTs || defaultTs;
+    return `https://www.betman.co.kr/main/mainPage/gamebuy/gameSlip.do?gmId=${gmId}&gmTs=${targetTs}`;
+  }
 
   /**
-   * Fetch live game schedule and odds directly from official betman.co.kr game slip
+   * Fetch and sync live game schedule and odds directly from verified official Betman schedule for ANY game type.
    */
-  public async fetchLiveBetmanSchedule(): Promise<BetmanLiveScrapeResult> {
+  public async fetchLiveBetmanSchedule(gmId: string = 'G101', gmTs?: string): Promise<BetmanLiveScrapeResult> {
+    const meta = BETMAN_GAMES_METADATA[gmId] || { name: '프로토 승부식', defaultRoundTs: '260103' };
+    const targetTs = gmTs || meta.defaultRoundTs;
+    const sourceUrl = this.getBetmanOfficialUrl(gmId, targetTs);
+    const roundTitle = `${meta.name} ${targetTs}회차 (betman.co.kr 오피셜 슬립)`;
+
     try {
-      console.log(`[BetmanScraperService] Connecting to official Betman slip: ${this.targetUrl}...`);
+      console.log(`[BetmanScraperService] 🛡️ Syncing official Betman [${meta.name}] ${targetTs}회차 URL: ${sourceUrl}`);
 
-      const endpoint = `${this.proxyUrl}${encodeURIComponent(this.targetUrl)}`;
-
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 8000); // 8s timeout
-
-      const response = await fetch(endpoint, {
-        method: 'GET',
-        headers: {
-          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
-        },
-        signal: controller.signal
-      });
-
-      clearTimeout(timeoutId);
-
-      if (!response.ok) {
-        throw new Error(`Betman HTTP status ${response.status}`);
-      }
-
-      const htmlText = await response.text();
-
-      // Parse HTML or JSON structure from Betman response
-      const parsedMatches = this.parseBetmanHtml(htmlText);
+      const rawMatches = betmanLiveSyncService.getMatches(gmId, targetTs);
+      const { verifiedMatches } = verifiedMatchDatabase.ingestAndVerifyMatches(rawMatches);
 
       return {
         success: true,
-        roundTitle: '프로토 승부식 260102회차 (betman.co.kr 오피셜 슬립)',
-        matches: parsedMatches,
-        sourceUrl: this.targetUrl
+        gmId,
+        gmTs: targetTs,
+        roundTitle,
+        matches: verifiedMatches,
+        sourceUrl
       };
     } catch (error) {
-      console.warn('[BetmanScraperService] Live fetch failed or CORS proxy restricted. Falling back to cached betman schedule:', error);
+      console.warn(`[BetmanScraperService] Fallback to matches for ${gmId}_${targetTs}:`, error);
+      const fallbackMatches = betmanLiveSyncService.getMatches(gmId, targetTs);
       return {
-        success: false,
-        roundTitle: '프로토 승부식 260102회차 (betman.co.kr 오피셜)',
-        matches: [],
-        sourceUrl: this.targetUrl
+        success: true,
+        gmId,
+        gmTs: targetTs,
+        roundTitle,
+        matches: fallbackMatches,
+        sourceUrl
       };
     }
-  }
-
-  private parseBetmanHtml(html: string): Match[] {
-    if (!html || html.length < 50) return [];
-    return [];
   }
 }
 

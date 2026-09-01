@@ -62,14 +62,11 @@ export function mapRawApiMatchToMatch(raw: RawApiMatchResponse, matchIndex: numb
       keyAbsenceNotice: '⚠️ [API 팩트 정보] 부상 및 징계 선수 명단 자동 연동 적용됨'
     },
     headToHeadRecord: {
-      summaryText: `시즌 최근 맞대결: ${homeTeam.name} 우세`,
-      homeWins: 3,
-      draws: 1,
-      awayWins: 1,
-      last5Matches: [
-        { dateStr: '07.20', homeScore: 2, awayScore: 1, winnerName: homeTeam.name },
-        { dateStr: '05.11', homeScore: 1, awayScore: 1, winnerName: '무승부' }
-      ]
+      summaryText: '상대전적 기록이 없습니다.',
+      homeWins: 0,
+      draws: 0,
+      awayWins: 0,
+      last5Matches: []
     },
     homeTeam,
     awayTeam,
