@@ -7,12 +7,12 @@ import type { StarterPitcherInfo } from '../../types/sports';
  */
 export class KboNpbOfficialLineupService {
   private static kboCache: Map<string, StarterPitcherInfo> = new Map([
-    ['두산 베어스', { name: '잭로그', number: 40, throwsHand: 'R', era: '3.45', whip: '1.20', wins: 8, losses: 4, inningsPitched: '112.0', strikeouts: 105, vsOpponentLogs: [] }],
+    ['두산 베어스', { name: '곽빈', number: 40, throwsHand: 'R', era: '3.45', whip: '1.20', wins: 8, losses: 4, inningsPitched: '112.0', strikeouts: 105, vsOpponentLogs: [] }],
     ['LG 트윈스', { name: '임찬규', number: 1, throwsHand: 'R', era: '3.83', whip: '1.28', wins: 10, losses: 6, inningsPitched: '134.0', strikeouts: 116, vsOpponentLogs: [] }],
-    ['삼성 라이온즈', { name: '보스', number: 28, throwsHand: 'R', era: '3.52', whip: '1.16', wins: 8, losses: 5, inningsPitched: '102.0', strikeouts: 94, vsOpponentLogs: [] }],
-    ['롯데 자이언츠', { name: '로드리게스', number: 30, throwsHand: 'R', era: '3.75', whip: '1.24', wins: 6, losses: 5, inningsPitched: '91.1', strikeouts: 86, vsOpponentLogs: [] }],
-    ['KT 위즈', { name: '대니엘', number: 35, throwsHand: 'R', era: '3.90', whip: '1.25', wins: 5, losses: 4, inningsPitched: '76.1', strikeouts: 70, vsOpponentLogs: [] }],
-    ['한화 이글스', { name: '화이트', number: 33, throwsHand: 'R', era: '3.65', whip: '1.18', wins: 7, losses: 4, inningsPitched: '88.2', strikeouts: 82, vsOpponentLogs: [] }],
+    ['삼성 라이온즈', { name: '원태인', number: 28, throwsHand: 'R', era: '3.52', whip: '1.16', wins: 8, losses: 5, inningsPitched: '102.0', strikeouts: 94, vsOpponentLogs: [] }],
+    ['롯데 자이언츠', { name: '박세웅', number: 30, throwsHand: 'R', era: '3.75', whip: '1.24', wins: 6, losses: 5, inningsPitched: '91.1', strikeouts: 86, vsOpponentLogs: [] }],
+    ['KT 위즈', { name: '고영표', number: 35, throwsHand: 'R', era: '3.90', whip: '1.25', wins: 5, losses: 4, inningsPitched: '76.1', strikeouts: 70, vsOpponentLogs: [] }],
+    ['한화 이글스', { name: '류현진', number: 33, throwsHand: 'R', era: '3.65', whip: '1.18', wins: 7, losses: 4, inningsPitched: '88.2', strikeouts: 82, vsOpponentLogs: [] }],
     ['NC 다이노스', { name: '하트', number: 59, throwsHand: 'L', era: '2.69', whip: '1.03', wins: 13, losses: 3, inningsPitched: '157.0', strikeouts: 182, vsOpponentLogs: [] }],
     ['KIA 타이거즈', { name: '네일', number: 40, throwsHand: 'R', era: '2.53', whip: '1.09', wins: 12, losses: 5, inningsPitched: '149.1', strikeouts: 138, vsOpponentLogs: [] }],
     ['키움 히어로즈', { name: '후라도', number: 75, throwsHand: 'R', era: '3.36', whip: '1.14', wins: 10, losses: 8, inningsPitched: '190.1', strikeouts: 169, vsOpponentLogs: [] }],

@@ -4983,7 +4983,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "잭로그",
+        "name": "곽빈",
         "number": 47,
         "throwsHand": "R",
         "era": "3.45",
@@ -5257,7 +5257,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "잭로그",
+        "name": "곽빈",
         "number": 47,
         "throwsHand": "R",
         "era": "3.45",
@@ -5531,7 +5531,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "잭로그",
+        "name": "곽빈",
         "number": 47,
         "throwsHand": "R",
         "era": "3.45",
@@ -5805,7 +5805,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "잭로그",
+        "name": "곽빈",
         "number": 47,
         "throwsHand": "R",
         "era": "3.45",
@@ -6079,7 +6079,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "잭로그",
+        "name": "곽빈",
         "number": 47,
         "throwsHand": "R",
         "era": "3.45",
@@ -6353,7 +6353,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "잭로그",
+        "name": "곽빈",
         "number": 47,
         "throwsHand": "R",
         "era": "3.45",
@@ -6627,7 +6627,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "잭로그",
+        "name": "곽빈",
         "number": 47,
         "throwsHand": "R",
         "era": "3.45",
@@ -6901,7 +6901,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "잭로그",
+        "name": "곽빈",
         "number": 47,
         "throwsHand": "R",
         "era": "3.45",
@@ -7175,7 +7175,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "보스",
+        "name": "원태인",
         "number": 18,
         "throwsHand": "R",
         "era": "3.52",
@@ -7284,7 +7284,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "로드리게스",
+        "name": "박세웅",
         "number": 46,
         "throwsHand": "R",
         "era": "3.75",
@@ -7431,7 +7431,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "보스",
+        "name": "원태인",
         "number": 18,
         "throwsHand": "R",
         "era": "3.52",
@@ -7540,7 +7540,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "로드리게스",
+        "name": "박세웅",
         "number": 46,
         "throwsHand": "R",
         "era": "3.75",
@@ -7687,7 +7687,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "보스",
+        "name": "원태인",
         "number": 18,
         "throwsHand": "R",
         "era": "3.52",
@@ -7796,7 +7796,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "로드리게스",
+        "name": "박세웅",
         "number": 46,
         "throwsHand": "R",
         "era": "3.75",
@@ -7943,7 +7943,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "보스",
+        "name": "원태인",
         "number": 18,
         "throwsHand": "R",
         "era": "3.52",
@@ -8052,7 +8052,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "로드리게스",
+        "name": "박세웅",
         "number": 46,
         "throwsHand": "R",
         "era": "3.75",
@@ -8199,7 +8199,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "보스",
+        "name": "원태인",
         "number": 18,
         "throwsHand": "R",
         "era": "3.52",
@@ -8308,7 +8308,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "로드리게스",
+        "name": "박세웅",
         "number": 46,
         "throwsHand": "R",
         "era": "3.75",
@@ -8455,7 +8455,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "보스",
+        "name": "원태인",
         "number": 18,
         "throwsHand": "R",
         "era": "3.52",
@@ -8564,7 +8564,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "로드리게스",
+        "name": "박세웅",
         "number": 46,
         "throwsHand": "R",
         "era": "3.75",
@@ -8711,7 +8711,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "보스",
+        "name": "원태인",
         "number": 18,
         "throwsHand": "R",
         "era": "3.52",
@@ -8820,7 +8820,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "로드리게스",
+        "name": "박세웅",
         "number": 46,
         "throwsHand": "R",
         "era": "3.75",
@@ -8967,7 +8967,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "보스",
+        "name": "원태인",
         "number": 18,
         "throwsHand": "R",
         "era": "3.52",
@@ -9076,7 +9076,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "로드리게스",
+        "name": "박세웅",
         "number": 46,
         "throwsHand": "R",
         "era": "3.75",
@@ -9223,7 +9223,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "대니엘",
+        "name": "고영표",
         "number": 1,
         "throwsHand": "R",
         "era": "3.90",
@@ -9332,7 +9332,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "화이트",
+        "name": "류현진",
         "number": 99,
         "throwsHand": "L",
         "era": "3.65",
@@ -9479,7 +9479,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "대니엘",
+        "name": "고영표",
         "number": 1,
         "throwsHand": "R",
         "era": "3.90",
@@ -9588,7 +9588,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "화이트",
+        "name": "류현진",
         "number": 99,
         "throwsHand": "L",
         "era": "3.65",
@@ -9735,7 +9735,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "대니엘",
+        "name": "고영표",
         "number": 1,
         "throwsHand": "R",
         "era": "3.90",
@@ -9844,7 +9844,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "화이트",
+        "name": "류현진",
         "number": 99,
         "throwsHand": "L",
         "era": "3.65",
@@ -9991,7 +9991,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "대니엘",
+        "name": "고영표",
         "number": 1,
         "throwsHand": "R",
         "era": "3.90",
@@ -10100,7 +10100,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "화이트",
+        "name": "류현진",
         "number": 99,
         "throwsHand": "L",
         "era": "3.65",
@@ -10247,7 +10247,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "대니엘",
+        "name": "고영표",
         "number": 1,
         "throwsHand": "R",
         "era": "3.90",
@@ -10356,7 +10356,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "화이트",
+        "name": "류현진",
         "number": 99,
         "throwsHand": "L",
         "era": "3.65",
@@ -10503,7 +10503,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "대니엘",
+        "name": "고영표",
         "number": 1,
         "throwsHand": "R",
         "era": "3.90",
@@ -10612,7 +10612,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "화이트",
+        "name": "류현진",
         "number": 99,
         "throwsHand": "L",
         "era": "3.65",
@@ -10759,7 +10759,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "대니엘",
+        "name": "고영표",
         "number": 1,
         "throwsHand": "R",
         "era": "3.90",
@@ -10868,7 +10868,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "화이트",
+        "name": "류현진",
         "number": 99,
         "throwsHand": "L",
         "era": "3.65",
@@ -11015,7 +11015,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "대니엘",
+        "name": "고영표",
         "number": 1,
         "throwsHand": "R",
         "era": "3.90",
@@ -11124,7 +11124,7 @@ export const OFFICIAL_260103_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "화이트",
+        "name": "류현진",
         "number": 99,
         "throwsHand": "L",
         "era": "3.65",

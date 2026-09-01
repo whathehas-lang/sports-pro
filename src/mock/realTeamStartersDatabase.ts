@@ -10494,7 +10494,7 @@ export const REAL_TEAM_STARTERS_DICT: Record<string, {
     },
     {
       "position": "MF",
-      "name": "보스",
+      "name": "원태인",
       "number": 55,
       "marketValue": "200억",
       "marketValueNum": 200,
@@ -10628,7 +10628,7 @@ export const REAL_TEAM_STARTERS_DICT: Record<string, {
     },
     {
       "position": "MF",
-      "name": "보스",
+      "name": "원태인",
       "number": 55,
       "marketValue": "200억",
       "marketValueNum": 200,
