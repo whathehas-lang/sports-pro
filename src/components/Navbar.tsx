@@ -226,142 +226,95 @@ export const Navbar = ({
 
       </div>
 
-      {/* SECONDARY FOLDER CATEGORY PILLS BAR */}
+      {/* 📱 Tokeon & TotoCan Style Official 6-Tab Navigation Bar */}
       {activeTab === 'home' && (
-        <div className={`border-t w-full ${
-          isLight ? 'border-slate-100 bg-slate-50/80' : 'border-slate-900 bg-slate-950'
-        }`}>
-          <div className="max-w-7xl mx-auto px-2 py-2 grid grid-cols-2 md:flex md:flex-row items-center gap-1.5 w-full">
+        <div className="w-full bg-[#6c7f8f] dark:bg-slate-900 border-t border-b border-slate-600/40">
+          <div className="max-w-7xl mx-auto flex items-center justify-between overflow-x-auto no-scrollbar text-xs font-bold">
             
-            {/* 🎟️ 프로토 승부식 + 회차 선택 드롭다운 */}
-            <div
-              onClick={() => onSelectFolder('SEUNGBUSHIK')}
-              className={`col-span-1 w-full px-2 py-1 rounded-xl text-[10px] sm:text-[11px] font-black transition-all cursor-pointer flex items-center justify-between gap-1.5 border ${
-                selectedFolder === 'SEUNGBUSHIK' || selectedFolder === 'ALL'
-                  ? 'bg-amber-400 text-slate-950 border-amber-300 shadow-sm'
-                  : isLight ? 'text-slate-600 hover:text-slate-900 bg-white border-slate-200' : 'text-slate-400 hover:text-white bg-slate-900/60 border-slate-800/80'
-              }`}
-            >
-              <span>🎟️ 승부식</span>
-              <select
-                value={selectedFolder === 'SEUNGBUSHIK' ? selectedRound : `프로토 승부식 ${dynamicMeta.G101.defaultRoundTs}회차 (betman.co.kr 오피셜 슬립)`}
-                onChange={(e) => {
-                  e.stopPropagation();
-                  onSelectFolder('SEUNGBUSHIK');
-                  onSelectRound(e.target.value);
-                }}
-                onClick={(e) => e.stopPropagation()}
-                className="bg-amber-300 hover:bg-amber-200 text-amber-950 border border-amber-500/80 rounded px-1 py-0.5 text-[9px] sm:text-[11px] font-black outline-none cursor-pointer shadow-xs shrink-0"
-                title="프로토 승부식 회차 직접 선택"
-              >
-                {dynamicMeta.G101.roundsList.map((ts) => (
-                  <option key={ts} value={`프로토 승부식 ${ts}회차 (betman.co.kr 오피셜 슬립)`}>
-                    {ts}회차
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* ⚽ 축구 승무패 + 회차 선택 드롭다운 */}
-            <div
-              onClick={() => onSelectFolder('SEUNGMUBAE')}
-              className={`col-span-1 w-full px-2 py-1 rounded-xl text-[10px] sm:text-[11px] font-black transition-all cursor-pointer flex items-center justify-between gap-1.5 border ${
-                selectedFolder === 'SEUNGMUBAE'
-                  ? 'bg-emerald-500 text-white border-emerald-400 shadow-sm'
-                  : isLight ? 'text-slate-600 hover:text-slate-900 bg-white border-slate-200' : 'text-slate-400 hover:text-white bg-slate-900/60 border-slate-800/80'
-              }`}
-            >
-              <span>⚽ 승무패</span>
-              <select
-                value={selectedFolder === 'SEUNGMUBAE' ? selectedRound : `축구 승무패 ${dynamicMeta.G011.defaultRoundTs}회차 (betman.co.kr 오피셜 슬립)`}
-                onChange={(e) => {
-                  e.stopPropagation();
-                  onSelectFolder('SEUNGMUBAE');
-                  onSelectRound(e.target.value);
-                }}
-                onClick={(e) => e.stopPropagation()}
-                className="bg-emerald-600 hover:bg-emerald-700 text-white border border-emerald-400/80 rounded px-1 py-0.5 text-[9px] sm:text-[11px] font-black outline-none cursor-pointer shadow-xs shrink-0"
-                title="축구 승무패 회차 직접 선택"
-              >
-                {dynamicMeta.G011.roundsList.map((ts) => (
-                  <option key={ts} value={`축구 승무패 ${ts}회차 (betman.co.kr 오피셜 슬립)`}>
-                    {ts}회차
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* ⚾ 야구 승1패 + 회차 선택 드롭다운 */}
-            <div
-              onClick={() => onSelectFolder('SEUNG1PAE')}
-              className={`col-span-1 w-full px-2 py-1 rounded-xl text-[10px] sm:text-[11px] font-black transition-all cursor-pointer flex items-center justify-between gap-1.5 border ${
-                selectedFolder === 'SEUNG1PAE'
-                  ? 'bg-orange-500 text-white border-orange-400 shadow-sm'
-                  : isLight ? 'text-slate-600 hover:text-slate-900 bg-white border-slate-200' : 'text-slate-400 hover:text-white bg-slate-900/60 border-slate-800/80'
-              }`}
-            >
-              <span>⚾ 승1패</span>
-              <select
-                value={selectedFolder === 'SEUNG1PAE' ? selectedRound : `야구 승1패 ${dynamicMeta.G024.defaultRoundTs}회차 (betman.co.kr 오피셜 슬립)`}
-                onChange={(e) => {
-                  e.stopPropagation();
-                  onSelectFolder('SEUNG1PAE');
-                  onSelectRound(e.target.value);
-                }}
-                onClick={(e) => e.stopPropagation()}
-                className="bg-orange-600 hover:bg-orange-700 text-white border border-orange-400/80 rounded px-1 py-0.5 text-[9px] sm:text-[11px] font-black outline-none cursor-pointer shadow-xs shrink-0"
-                title="야구 승1패 회차 직접 선택"
-              >
-                {dynamicMeta.G024.roundsList.map((ts) => (
-                  <option key={ts} value={`야구 승1패 ${ts}회차 (betman.co.kr 오피셜 슬립)`}>
-                    {ts}회차
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* 🎯 프로토 기록식 + 회차 선택 드롭다운 */}
-            <div
-              onClick={() => onSelectFolder('GIROKSIK')}
-              className={`col-span-1 w-full px-2 py-1 rounded-xl text-[10px] sm:text-[11px] font-black transition-all cursor-pointer flex items-center justify-between gap-1.5 border ${
-                selectedFolder === 'GIROKSIK'
-                  ? 'bg-purple-500 text-white border-purple-400 shadow-sm'
-                  : isLight ? 'text-slate-600 hover:text-slate-900 bg-white border-slate-200' : 'text-slate-400 hover:text-white bg-slate-900/60 border-slate-800/80'
-              }`}
-            >
-              <span>🎯 기록식</span>
-              <select
-                value={selectedFolder === 'GIROKSIK' ? selectedRound : `프로토 기록식 ${dynamicMeta.G102.defaultRoundTs}회차 (betman.co.kr 오피셜 슬립)`}
-                onChange={(e) => {
-                  e.stopPropagation();
-                  onSelectFolder('GIROKSIK');
-                  onSelectRound(e.target.value);
-                }}
-                onClick={(e) => e.stopPropagation()}
-                className="bg-purple-600 hover:bg-purple-700 text-white border border-purple-400/80 rounded px-1 py-0.5 text-[9px] sm:text-[11px] font-black outline-none cursor-pointer shadow-xs shrink-0"
-                title="프로토 기록식 회차 직접 선택"
-              >
-                {dynamicMeta.G102.roundsList.map((ts) => (
-                  <option key={ts} value={`프로토 기록식 ${ts}회차 (betman.co.kr 오피셜 슬립)`}>
-                    {ts}회차
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* 🏀 승5패 (준비중) */}
+            {/* 1. 프로토 (승부식) */}
             <button
-              onClick={() => onSelectFolder('SEUNG5PAE')}
-              className={`col-span-2 md:col-span-1 w-full py-1.5 rounded-xl text-[10px] sm:text-[11px] font-black transition-all cursor-pointer border ${
-                selectedFolder === 'SEUNG5PAE'
-                  ? 'bg-slate-200 text-slate-800 border-slate-300 shadow-sm'
-                  : isLight ? 'text-slate-400 bg-slate-100 border-slate-200' : 'text-slate-500 hover:text-slate-300 bg-slate-900/40 border-slate-800/50'
+              type="button"
+              onClick={() => onSelectFolder('SEUNGBUSHIK')}
+              className={`flex-1 min-w-[58px] py-2.5 px-1 text-center transition-all cursor-pointer text-[12px] sm:text-[13px] ${
+                selectedFolder === 'SEUNGBUSHIK' || selectedFolder === 'ALL'
+                  ? 'bg-[#4e5d6c] dark:bg-slate-700 text-white font-black shadow-inner'
+                  : 'text-slate-100/90 hover:bg-[#5d6f7e] hover:text-white'
               }`}
-              title="현재 발매 시즌이 아닙니다 (다음 시즌 개장 예정)"
             >
-              🏀 농구 승5패 (시즌 준비중)
+              프로토
             </button>
 
+            {/* 2. 승무패 */}
+            <button
+              type="button"
+              onClick={() => onSelectFolder('SEUNGMUBAE')}
+              className={`flex-1 min-w-[58px] py-2.5 px-1 text-center transition-all cursor-pointer text-[12px] sm:text-[13px] border-l border-slate-500/40 ${
+                selectedFolder === 'SEUNGMUBAE'
+                  ? 'bg-[#4e5d6c] dark:bg-slate-700 text-white font-black shadow-inner'
+                  : 'text-slate-100/90 hover:bg-[#5d6f7e] hover:text-white'
+              }`}
+            >
+              승무패
+            </button>
+
+            {/* 3. 승5패 */}
+            <button
+              type="button"
+              onClick={() => onSelectFolder('SEUNG5PAE')}
+              className={`flex-1 min-w-[58px] py-2.5 px-1 text-center transition-all cursor-pointer text-[12px] sm:text-[13px] border-l border-slate-500/40 ${
+                selectedFolder === 'SEUNG5PAE'
+                  ? 'bg-[#4e5d6c] dark:bg-slate-700 text-white font-black shadow-inner'
+                  : 'text-slate-100/90 hover:bg-[#5d6f7e] hover:text-white'
+              }`}
+            >
+              승5패
+            </button>
+
+            {/* 4. 승1패 */}
+            <button
+              type="button"
+              onClick={() => onSelectFolder('SEUNG1PAE')}
+              className={`flex-1 min-w-[58px] py-2.5 px-1 text-center transition-all cursor-pointer text-[12px] sm:text-[13px] border-l border-slate-500/40 ${
+                selectedFolder === 'SEUNG1PAE'
+                  ? 'bg-[#4e5d6c] dark:bg-slate-700 text-white font-black shadow-inner'
+                  : 'text-slate-100/90 hover:bg-[#5d6f7e] hover:text-white'
+              }`}
+            >
+              승1패
+            </button>
+
+            {/* 5. 스페셜 */}
+            <button
+              type="button"
+              onClick={() => alert('스페셜 회차 준비 중입니다.')}
+              className="flex-1 min-w-[58px] py-2.5 px-1 text-center text-slate-100/80 hover:bg-[#5d6f7e] hover:text-white transition-all cursor-pointer text-[12px] sm:text-[13px] border-l border-slate-500/40"
+            >
+              스페셜
+            </button>
+
+            {/* 6. 기록식 */}
+            <button
+              type="button"
+              onClick={() => onSelectFolder('GIROKSIK')}
+              className={`flex-1 min-w-[58px] py-2.5 px-1 text-center transition-all cursor-pointer text-[12px] sm:text-[13px] border-l border-slate-500/40 ${
+                selectedFolder === 'GIROKSIK'
+                  ? 'bg-[#4e5d6c] dark:bg-slate-700 text-white font-black shadow-inner'
+                  : 'text-slate-100/90 hover:bg-[#5d6f7e] hover:text-white'
+              }`}
+            >
+              기록식
+            </button>
+
+          </div>
+        </div>
+      )}
+
+      {/* FILTER & VIEW TOGGLES BAR */}
+      {activeTab === 'home' && selectedFolder === 'SEUNGBUSHIK' && (
+        <div className={`border-t w-full ${isLight ? 'border-slate-100 bg-slate-50/80' : 'border-slate-900 bg-slate-950'}`}>
+          <div className="max-w-7xl mx-auto px-2 py-1.5 flex items-center justify-between gap-1.5 w-full">
+            
+            {/* 🌐 전체포함 / ⏰ 진행예정만 */}
             {/* 🌐 전체포함 / ⏰ 진행예정만 */}
             <button
               onClick={() => setHidePassedMatches(!hidePassedMatches)}
