@@ -81,9 +81,11 @@ export const LineupTacticsView = ({ match, theme = 'light' }: LineupTacticsViewP
 
   const kboStarters = findKboStarters(activeTeam.name);
 
+  const realStartersMatch = findRealStarters(activeTeam.name);
+
   const getPlayerByPos = (posCode: string, fallbackName: string, fallbackNum: number, fallbackVal: string) => {
     const found = players.find(p => p.position.toUpperCase().includes(posCode.toUpperCase()));
-    if (found) {
+    if (found && !found.name.includes('선수') && !found.name.includes('포수') && !found.name.includes('1루수') && !found.name.includes('2루수') && !found.name.includes('3루수') && !found.name.includes('유격수') && !found.name.includes('외야수')) {
       return {
         name: found.name,
         num: found.number,
@@ -97,7 +99,7 @@ export const LineupTacticsView = ({ match, theme = 'light' }: LineupTacticsViewP
     }
 
     const bbFound = realBaseballPlayers.find(p => p.position.toUpperCase().includes(posCode.toUpperCase()));
-    if (bbFound) {
+    if (bbFound && !bbFound.name.includes('선수') && !bbFound.name.includes('타자')) {
       return {
         name: bbFound.name,
         num: bbFound.number || fallbackNum,
@@ -108,6 +110,22 @@ export const LineupTacticsView = ({ match, theme = 'light' }: LineupTacticsViewP
         mins: bbFound.minutesPlayed14d || 0,
         playerObj: bbFound
       };
+    }
+
+    if (realStartersMatch && realStartersMatch.length > 0) {
+      const matchP = realStartersMatch.find(p => p.position.toUpperCase().includes(posCode.toUpperCase()));
+      if (matchP) {
+        return {
+          name: matchP.name,
+          num: matchP.number || fallbackNum,
+          val: matchP.marketValue || fallbackVal,
+          form: 'GREEN' as const,
+          isHot: false,
+          stamina: 'GREEN' as const,
+          mins: 0,
+          playerObj: undefined
+        };
+      }
     }
     
     if (kboStarters) {
@@ -146,14 +164,14 @@ export const LineupTacticsView = ({ match, theme = 'light' }: LineupTacticsViewP
     playerObj: undefined,
     isConfirmed: isPitcherConfirmed
   };
-  const c = getPlayerByPos('C', `${activeTeam.name} 포수`, 2, '주전포수');
-  const b1 = getPlayerByPos('1B', `${activeTeam.name} 1루수`, 3, '내야주전');
-  const b2 = getPlayerByPos('2B', `${activeTeam.name} 2루수`, 4, '내야주전');
-  const b3 = getPlayerByPos('3B', `${activeTeam.name} 3루수`, 5, '내야주전');
-  const ss = getPlayerByPos('SS', `${activeTeam.name} 유격수`, 6, '내야주전');
-  const lf = getPlayerByPos('LF', `${activeTeam.name} 좌익수`, 7, '외야주전');
-  const cf = getPlayerByPos('CF', `${activeTeam.name} 중견수`, 8, '외야주전');
-  const rf = getPlayerByPos('RF', `${activeTeam.name} 우익수`, 9, '외야주전');
+  const c = getPlayerByPos('C', '양의지', 25, '주전포수');
+  const b1 = getPlayerByPos('1B', '양석환', 53, '내야주전');
+  const b2 = getPlayerByPos('2B', '강승호', 23, '내야주전');
+  const b3 = getPlayerByPos('3B', '허경민', 13, '내야주전');
+  const ss = getPlayerByPos('SS', '박성한', 2, '내야주전');
+  const lf = getPlayerByPos('LF', '김현수', 22, '외야주전');
+  const cf = getPlayerByPos('CF', '정수빈', 31, '외야주전');
+  const rf = getPlayerByPos('RF', '홍창기', 51, '외야주전');
 
   const baseballFielders = [
     { pos: 'P', name: sp.name, num: sp.num, val: sp.val, form: sp.form, isHot: sp.isHot, isConfirmed: sp.isConfirmed, playerObj: sp.playerObj, positionStyle: 'bottom-[120px] left-1/2 -translate-x-1/2 z-20' },
