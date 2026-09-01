@@ -5,6 +5,7 @@ import { MobileConnectModal } from './components/MobileConnectModal';
 import { MatchCard } from './components/MatchCard';
 import { MatchDetailModal } from './components/MatchDetailModal';
 import { Seung1PaeTableView } from './components/Seung1PaeTableView';
+import { SeungMuBaeTableView } from './components/SeungMuBaeTableView';
 import { PCWebCommunityHub } from './components/PCWebCommunityHub';
 import { UserProfileModal, type UserProfileData } from './components/UserProfileModal';
 import { LoginModal } from './components/LoginModal';
@@ -805,6 +806,17 @@ export default function App() {
             {selectedFolder === 'SEUNG1PAE' ? (
               <div className="w-full space-y-4">
                 <Seung1PaeTableView
+                  matches={matches}
+                  selectedRound={selectedRound}
+                  onSelectRound={setSelectedRound}
+                  onSelectMatch={(m) => handleOpenDetailModal(m)}
+                  theme={theme}
+                />
+              </div>
+            ) : selectedFolder === 'SEUNGMUBAE' ? (
+              /* ⚽ 축구 승무패 전용 오피셜 슬립 테이블 그리드 뷰 */
+              <div className="w-full space-y-4">
+                <SeungMuBaeTableView
                   matches={matches}
                   selectedRound={selectedRound}
                   onSelectRound={setSelectedRound}
