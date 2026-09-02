@@ -447,7 +447,7 @@ export default function App() {
 
   // Countdown timer effect (VIP & VVIP always exempted)
   useEffect(() => {
-    if (membershipTier === 'VIP' || membershipTier === 'VVIP' || isLoggedIn) {
+    if (membershipTier === 'VIP' || (membershipTier === 'VIP' || membershipTier === 'VVIP') || isLoggedIn) {
       setIsTrialExpired(false);
       setIsPaywallOpen(false);
       return;
@@ -622,7 +622,7 @@ export default function App() {
 
   // Handle opening match detail modal
   const handleOpenDetailModal = (match: Match) => {
-    if (membershipTier === 'VIP' || membershipTier === 'VVIP' || isLoggedIn || userProfile.name.includes('관리자')) {
+    if (membershipTier === 'VIP' || (membershipTier === 'VIP' || membershipTier === 'VVIP') || isLoggedIn || userProfile.name.includes('관리자')) {
       setSelectedMatchForDetail(match);
       return;
     }
