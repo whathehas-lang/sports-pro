@@ -403,7 +403,7 @@ export const PCWebCommunityHub = ({
         <div className="w-[125px] sm:w-[200px] md:w-80 bg-slate-900/90 border-2 border-slate-800 rounded-2xl p-1.5 sm:p-3 flex flex-col space-y-2.5 shrink-0 shadow-2xl h-full overflow-hidden">
           
           {/* 👑 VVIP Exclusive Create Custom Room Button */}
-          {membershipTier === 'VVIP' ? (
+          {(membershipTier === 'VIP' || membershipTier === 'VVIP') ? (
             <button
               onClick={() => setIsCreateVvipRoomModalOpen(true)}
               className="w-full py-1.5 sm:py-2 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 hover:from-amber-300 hover:to-yellow-300 text-slate-950 rounded-xl font-black text-[9px] sm:text-xs shadow-lg transition-all flex items-center justify-center gap-1 border border-yellow-200 cursor-pointer shrink-0 hover:scale-[1.02] active:scale-[0.98]"
@@ -413,7 +413,7 @@ export const PCWebCommunityHub = ({
             </button>
           ) : (
             <div className="text-center py-1.5 text-[8px] sm:text-[10px] text-amber-400 font-bold bg-amber-950/80 rounded-xl border border-amber-500/40 shrink-0 leading-tight">
-              👑 <span className="hidden sm:inline">VVIP </span>방 개설 가능
+              👑 <span className="hidden sm:inline">VIP </span>방 개설 가능
             </div>
           )}
 

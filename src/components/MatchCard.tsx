@@ -603,19 +603,19 @@ export const MatchCard = ({ match, membershipTier = 'VVIP', cardDensity = 'DETAI
         {/* 👑 [축구 5대 핵심 승패 지표 퀵 뱃지 바 (VVIP 전용)] */}
         {match.sport === 'football' && match.soccerWinFactorMetrics && (
           <div className={`px-2.5 py-1.5 rounded-lg border flex items-center justify-between text-[10px] sm:text-[11px] font-bold ${
-            membershipTier === 'VVIP'
+            (membershipTier === 'VIP' || membershipTier === 'VVIP')
               ? isLight ? 'bg-amber-50/80 border-amber-300/80 text-amber-950 shadow-xs' : 'bg-slate-950/90 border-amber-500/40 text-amber-200'
               : isLight ? 'bg-slate-100 border-slate-200 text-slate-700' : 'bg-slate-900 border-slate-800 text-slate-400'
           }`}>
             <div className="flex items-center gap-1 truncate min-w-0 mr-2">
-              <span className="text-amber-500 font-black shrink-0">👑 [VVIP 팩트]</span>
+              <span className="text-amber-500 font-black shrink-0">👑 [VIP 팩트]</span>
               <span className="truncate">
-                {membershipTier === 'VVIP' 
+                {(membershipTier === 'VIP' || membershipTier === 'VVIP') 
                   ? match.soccerWinFactorMetrics.keyWinFactorAdvantage 
                   : '5대 핵심 승패 지표 (xG·빅찬스·필드틸트·선제골)'}
               </span>
             </div>
-            {membershipTier === 'VVIP' ? (
+            {(membershipTier === 'VIP' || membershipTier === 'VVIP') ? (
               <div className="flex items-center gap-1 shrink-0 font-mono text-[10px] bg-slate-900/60 dark:bg-slate-900 px-1.5 py-0.5 rounded border border-slate-700/50">
                 <span className="text-emerald-500 font-black">xG {match.soccerWinFactorMetrics.homeXg}</span>
                 <span className="text-slate-400">:</span>
@@ -623,7 +623,7 @@ export const MatchCard = ({ match, membershipTier = 'VVIP', cardDensity = 'DETAI
               </div>
             ) : (
               <span className="text-[10px] px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-400 border border-amber-400/40 font-bold shrink-0">
-                🔒 VVIP 전용
+                🔒 VIP 전용
               </span>
             )}
           </div>
