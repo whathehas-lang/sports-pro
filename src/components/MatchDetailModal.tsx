@@ -176,6 +176,11 @@ export const MatchDetailModal = ({
 
   const unitStr = match.sport === 'football' ? '골' : match.sport === 'basketball' ? '점' : '점';
 
+  // ⏱️ 축구/구기 14일 누적 출전분 & 피로도 수치 (최상위 스코프 선언으로 렌더링 스코프 에러 완전 차단)
+  const homeMins = match.homeTeam?.minutesPlayed14d || 220;
+  const awayMins = match.awayTeam?.minutesPlayed14d || 260;
+  const isHomeFitter = homeMins <= awayMins;
+
   // 🛡️ 100% Safe Under/Over fact object (결측 시 완벽 방어)
   const underOver = match.underOverFact || {
     last10OverRatio: 50,
@@ -307,9 +312,6 @@ export const MatchDetailModal = ({
     }
 
     // ⚽ 축구 전용 팩트 (Football)
-    const homeMins = match.homeTeam.minutesPlayed14d || 220;
-    const awayMins = match.awayTeam.minutesPlayed14d || 260;
-    const isHomeFitter = homeMins <= awayMins;
     const winMetrics = match.soccerWinFactorMetrics;
 
     return (
