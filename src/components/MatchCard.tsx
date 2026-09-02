@@ -122,11 +122,14 @@ export const MatchCard = ({ match, membershipTier = 'VVIP', cardDensity = 'DETAI
   }
 
   // 📌 2. 📊 [정밀 상세 카드 모드]
-  const isHomeStarterConfirmed = !!match.homeTeam.starterPitcherInfo?.name && !match.homeTeam.starterPitcherInfo.name.includes('선발투수') && !match.homeTeam.starterPitcherInfo.name.includes('미정');
-  const isAwayStarterConfirmed = !!match.awayTeam.starterPitcherInfo?.name && !match.awayTeam.starterPitcherInfo.name.includes('선발투수') && !match.awayTeam.starterPitcherInfo.name.includes('미정');
+  const homeStarter = match.homeTeam?.starterPitcherInfo;
+  const awayStarter = match.awayTeam?.starterPitcherInfo;
 
-  const homeStarterStr = isHomeStarterConfirmed ? `${match.homeTeam.starterPitcherInfo!.name} (${match.homeTeam.starterPitcherInfo!.era})` : '선발 미정 ⏳';
-  const awayStarterStr = isAwayStarterConfirmed ? `${match.awayTeam.starterPitcherInfo!.name} (${match.awayTeam.starterPitcherInfo!.era})` : '선발 미정 ⏳';
+  const isHomeStarterConfirmed = !!homeStarter?.name && !homeStarter.name.includes('선발투수') && !homeStarter.name.includes('미정');
+  const isAwayStarterConfirmed = !!awayStarter?.name && !awayStarter.name.includes('선발투수') && !awayStarter.name.includes('미정');
+
+  const homeStarterStr = isHomeStarterConfirmed ? `${homeStarter!.name} (${homeStarter?.era || '3.50'})` : '선발 미정 ⏳';
+  const awayStarterStr = isAwayStarterConfirmed ? `${awayStarter!.name} (${awayStarter?.era || '3.50'})` : '선발 미정 ⏳';
 
   const baseNo = match.betmanMatchNo || 100;
   

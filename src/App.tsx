@@ -614,8 +614,12 @@ export default function App() {
   // Deduplicate matches so that separate handicap/under-over game cards are hidden, leaving only the main (lowest match number) card
   const seenMatches = new Set<string>();
   const filteredMatches = sortedMatches.filter((m) => {
+    if (!m) return false;
     if (m.betmanFolder !== 'SEUNGBUSHIK') return true;
-    const key = `${m.matchTime.trim()}_${m.homeTeam.name.trim()}_${m.awayTeam.name.trim()}`;
+    const timeStr = typeof m?.matchTime === 'string' ? m.matchTime.trim() : '';
+    const homeStr = typeof m?.homeTeam?.name === 'string' ? m.homeTeam.name.trim() : '';
+    const awayStr = typeof m?.awayTeam?.name === 'string' ? m.awayTeam.name.trim() : '';
+    const key = `${timeStr}_${homeStr}_${awayStr}`;
     if (seenMatches.has(key)) {
       return false;
     }
