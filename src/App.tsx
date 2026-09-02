@@ -1046,7 +1046,7 @@ export default function App() {
       {isPaywallOpen && (
         <SubscriptionPaywallModal
           isTrialExpired={isTrialExpired}
-          onClose={isTrialExpired ? undefined : () => setIsPaywallOpen(false)}
+          onClose={() => setIsPaywallOpen(false)}
           onUpgradeSuccess={handleUpgradeSuccess}
         />
       )}

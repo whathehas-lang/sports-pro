@@ -21,7 +21,7 @@ export const SubscriptionPaywallModal = ({
   const [paymentSuccess, setPaymentSuccess] = useState<boolean>(false);
   const [paymentError, setPaymentError] = useState<string | null>(null);
 
-  // 계좌번호 정보 (대표님 실계좌 반영)
+  // 계좌번호 정보 (대표님 실계좌)
   const bankInfo = {
     bankName: 'NH농협은행',
     accountNumber: '352-1278-0792-03',
@@ -33,7 +33,7 @@ export const SubscriptionPaywallModal = ({
   // 계좌번호 원터치 복사
   const handleCopyAccount = () => {
     try {
-      navigator.clipboard.writeText(bankInfo.accountNumber);
+      navigator.clipboard.writeText('3521278079203');
       setCopyToast(true);
       setTimeout(() => setCopyToast(false), 2000);
     } catch (e) {
@@ -51,14 +51,15 @@ export const SubscriptionPaywallModal = ({
     setPaymentError(null);
     setIsVerifyingDeposit(true);
 
-    // 1.5초 실시간 입금 감지 애니메이션 후 100% 자동 승인 처리!
+    // 즉시 VIP 권한 승인 및 모달 닫기
     setTimeout(() => {
       setIsVerifyingDeposit(false);
       setPaymentSuccess(true);
       setTimeout(() => {
         onUpgradeSuccess('VIP');
-      }, 1000);
-    }, 1500);
+        if (onClose) onClose();
+      }, 600);
+    }, 800);
   };
 
   // 💳 카드 / 카카오페이 결제 (토스페이먼츠)
@@ -75,7 +76,8 @@ export const SubscriptionPaywallModal = ({
         setPaymentSuccess(true);
         setTimeout(() => {
           onUpgradeSuccess(approvedTier);
-        }, 800);
+          if (onClose) onClose();
+        }, 600);
       },
       (errorMsg) => {
         setPaymentError(errorMsg);
@@ -84,46 +86,36 @@ export const SubscriptionPaywallModal = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-0 sm:p-4 bg-slate-950/90 backdrop-blur-lg animate-in fade-in">
-      <div className="w-full max-w-full sm:max-w-lg h-full sm:h-auto sm:max-h-[94vh] bg-slate-900 border-0 sm:border-2 border-amber-500/70 rounded-none sm:rounded-3xl p-5 sm:p-7 space-y-5 shadow-2xl relative overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-slate-950/90 backdrop-blur-lg animate-in fade-in">
+      <div className="w-full max-w-full sm:max-w-lg max-h-[92vh] bg-slate-900 border-2 border-amber-500/70 rounded-3xl p-5 sm:p-7 space-y-4 shadow-2xl relative overflow-y-auto">
         
         {/* Ambient Glow Effects */}
         <div className="absolute -right-16 -top-16 w-48 h-48 bg-amber-500/20 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -left-16 -bottom-16 w-48 h-48 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none" />
 
-        {/* Close Button */}
-        {onClose && !isTrialExpired && (
+        {/* Close Button (항상 누를 수 있도록 상시 노출!) */}
+        {onClose && (
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 rounded-xl text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 transition-colors z-20 cursor-pointer"
+            className="absolute top-4 right-4 p-2 rounded-xl text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 transition-colors z-20 cursor-pointer shadow-md"
+            title="닫기"
           >
-            <X className="w-4 h-4" />
+            <X className="w-5 h-5 text-white" />
           </button>
         )}
 
         {/* Header Alert */}
-        <div className="text-center space-y-2 relative z-10 pt-1 sm:pt-0">
-          {isTrialExpired ? (
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-rose-950 border border-rose-500 text-rose-300 font-black text-xs animate-pulse shadow-lg">
-              <AlertTriangle className="w-4 h-4 text-rose-400" />
-              <span>⏰ 무료 3일 체험 기간이 만료되었습니다</span>
-            </div>
-          ) : (
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-950 border border-amber-500 text-amber-300 font-black text-xs shadow-lg">
-              <Sparkles className="w-4 h-4 text-amber-400 animate-spin" />
-              <span>👑 토큰 (Tokeon) VIP 전용 서비스</span>
-            </div>
-          )}
+        <div className="text-center space-y-1.5 relative z-10 pt-1 sm:pt-0">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-950 border border-amber-500 text-amber-300 font-black text-xs shadow-lg">
+            <Sparkles className="w-4 h-4 text-amber-400 animate-spin" />
+            <span>👑 토큰 (Tokeon) VIP 전용 서비스</span>
+          </div>
 
           <h2 className="text-xl sm:text-2xl font-black text-white leading-snug">
-            {isTrialExpired ? (
-              <span>무료 3일 체험이 만료되었습니다.<br /><span className="text-amber-400">VIP 유료 멤버십 결제</span> 후 서비스가 해제됩니다.</span>
-            ) : (
-              <span>100% 오피셜 팩트 분석 <span className="text-amber-400">VIP 멤버십 혜택</span></span>
-            )}
+            <span>100% 오피셜 팩트 분석 <span className="text-amber-400">VIP 멤버십 안내</span></span>
           </h2>
           <p className="text-xs text-slate-400 max-w-md mx-auto">
-            주관적 AI 예측 0%! 100% 오피셜 선발 라인업, 대구 라팍 바람 5.4m/s, NBA 비행 과부하 데이터를 제공하는 VIP 단일 유료 서비스입니다.
+            주관적 AI 예측 0%! 100% 오피셜 선발 라인업, 대구 라팍 바람 5.4m/s, NBA 비행 과부하 데이터를 제공하는 VIP 유료 서비스입니다.
           </p>
         </div>
 
@@ -142,18 +134,18 @@ export const SubscriptionPaywallModal = ({
         <div className="grid grid-cols-2 gap-2 bg-slate-950 p-1 rounded-2xl border border-slate-800 relative z-10">
           <button
             onClick={() => setActiveTab('BANK')}
-            className={`py-2.5 rounded-xl text-xs font-black transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
+            className={`py-2 rounded-xl text-xs font-black transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
               activeTab === 'BANK'
                 ? 'bg-amber-500 text-slate-950 shadow-md scale-[1.01]'
                 : 'text-slate-400 hover:text-white'
             }`}
           >
             <Building2 className="w-4 h-4" />
-            <span>🏦 실시간 계좌이체 (2번 자동)</span>
+            <span>🏦 농협 실시간 계좌이체</span>
           </button>
           <button
             onClick={() => setActiveTab('CARD')}
-            className={`py-2.5 rounded-xl text-xs font-black transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
+            className={`py-2 rounded-xl text-xs font-black transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
               activeTab === 'CARD'
                 ? 'bg-amber-500 text-slate-950 shadow-md scale-[1.01]'
                 : 'text-slate-400 hover:text-white'
@@ -164,12 +156,12 @@ export const SubscriptionPaywallModal = ({
           </button>
         </div>
 
-        {/* TAB 1: 🏦 2번 실시간 계좌이체 자동 입금 확인 시스템 */}
+        {/* TAB 1: 🏦 농협 실시간 계좌이체 */}
         {activeTab === 'BANK' && (
-          <div className="space-y-4 relative z-10 animate-in fade-in">
+          <div className="space-y-3.5 relative z-10 animate-in fade-in">
             {/* 계좌 정보 카드 */}
-            <div className="p-5 rounded-2xl bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border-2 border-amber-500/60 space-y-3.5 shadow-xl">
-              <div className="flex items-center justify-between border-b border-slate-800 pb-2.5">
+            <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border-2 border-amber-500/60 space-y-3 shadow-xl">
+              <div className="flex items-center justify-between border-b border-slate-800 pb-2">
                 <span className="text-xs font-black text-amber-300 flex items-center gap-1.5">
                   <Building2 className="w-4 h-4 text-amber-400" />
                   실시간 입금 전용 계좌
@@ -188,7 +180,7 @@ export const SubscriptionPaywallModal = ({
                 <div className="flex items-center justify-between bg-slate-950 p-2.5 rounded-xl border border-slate-800">
                   <div>
                     <span className="text-[10px] text-slate-400 block">계좌번호</span>
-                    <span className="font-mono font-black text-amber-300 text-base">{bankInfo.accountNumber}</span>
+                    <span className="font-mono font-black text-amber-300 text-sm sm:text-base">{bankInfo.accountNumber}</span>
                   </div>
                   <button
                     onClick={handleCopyAccount}
@@ -206,13 +198,13 @@ export const SubscriptionPaywallModal = ({
 
                 <div className="flex items-center justify-between pt-1 border-t border-slate-800/80">
                   <span className="text-slate-400 font-bold">입금 금액:</span>
-                  <span className="font-black text-emerald-400 text-base">{bankInfo.amountStr}</span>
+                  <span className="font-black text-emerald-400 text-sm sm:text-base">{bankInfo.amountStr}</span>
                 </div>
               </div>
             </div>
 
             {/* 입금자명 입력 및 자동 확인 버튼 */}
-            <div className="space-y-2.5">
+            <div className="space-y-2">
               <div className="space-y-1">
                 <label className="text-xs text-slate-300 font-bold flex items-center gap-1">
                   <User className="w-3.5 h-3.5 text-amber-400" />
@@ -223,14 +215,14 @@ export const SubscriptionPaywallModal = ({
                   value={depositorName}
                   onChange={(e) => setDepositorName(e.target.value)}
                   placeholder="예: 김현철 또는 소망"
-                  className="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl px-3.5 py-2.5 text-white font-black text-sm outline-none transition-all"
+                  className="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl px-3.5 py-2 text-white font-black text-sm outline-none transition-all"
                 />
               </div>
 
               <button
                 onClick={handleAutoVerifyDeposit}
                 disabled={isVerifyingDeposit}
-                className="w-full py-3.5 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 hover:from-amber-300 hover:to-yellow-300 text-slate-950 font-black text-sm rounded-2xl shadow-xl transition-all flex items-center justify-center gap-2 cursor-pointer border border-yellow-200 active:scale-[0.99] disabled:opacity-50"
+                className="w-full py-3 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 hover:from-amber-300 hover:to-yellow-300 text-slate-950 font-black text-sm rounded-2xl shadow-xl transition-all flex items-center justify-center gap-2 cursor-pointer border border-yellow-200 active:scale-[0.99] disabled:opacity-50"
               >
                 {isVerifyingDeposit ? (
                   <>
@@ -239,7 +231,7 @@ export const SubscriptionPaywallModal = ({
                   </>
                 ) : (
                   <>
-                    <Zap className="w-4 h-4 text-slate-950 fill-current" />
+                    <Crown className="w-4 h-4 text-slate-950" />
                     <span>[⚡ 9,900원 송금 완료 ➔ 1초 자동 승인 & 열기]</span>
                   </>
                 )}
@@ -250,19 +242,19 @@ export const SubscriptionPaywallModal = ({
 
         {/* TAB 2: 💳 토스페이먼츠 카드 / 간편결제 */}
         {activeTab === 'CARD' && (
-          <div className="space-y-4 relative z-10 animate-in fade-in">
+          <div className="space-y-3.5 relative z-10 animate-in fade-in">
             {/* VIP Card */}
-            <div className="p-5 rounded-2xl bg-gradient-to-b from-amber-950/90 via-slate-900 to-slate-950 border-2 border-amber-400 shadow-xl space-y-3">
+            <div className="p-4 rounded-2xl bg-gradient-to-b from-amber-950/90 via-slate-900 to-slate-950 border-2 border-amber-400 shadow-xl space-y-2.5">
               <div className="flex items-center justify-between">
                 <span className="px-3 py-1 rounded-full bg-amber-400 text-slate-950 font-black text-xs shadow">
                   👑 VIP 단일 전용 패스
                 </span>
                 <Crown className="w-5 h-5 text-amber-400" />
               </div>
-              <div className="text-2xl font-black text-amber-300">
+              <div className="text-xl font-black text-amber-300">
                 9,900원 <span className="text-xs text-slate-400 font-normal">/ 월 (부가세 포함)</span>
               </div>
-              <ul className="space-y-1.5 text-xs text-slate-200 font-bold border-t border-amber-500/30 pt-2.5">
+              <ul className="space-y-1 text-xs text-slate-200 font-bold border-t border-amber-500/30 pt-2">
                 <li className="flex items-center gap-2 text-amber-200">
                   <Check className="w-4 h-4 text-amber-400 shrink-0" />
                   <span>1~14번 전 경기 100% 팩트 무제한 열람</span>
@@ -291,21 +283,23 @@ export const SubscriptionPaywallModal = ({
           </div>
         )}
 
-        {/* Security Badge */}
-        <div className="flex items-center justify-center gap-1.5 text-[11px] text-slate-400 pt-1">
-          <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-          <span>24시간 실시간 입금 감지 자동 승인 시스템 (VAT 포함)</span>
+        {/* Bottom Close Action */}
+        <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between">
+          <div className="flex items-center gap-1 text-[11px] text-slate-400">
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+            <span>24시간 실시간 입금 감지 (VAT 포함)</span>
+          </div>
+          {onClose && (
+            <button
+              onClick={onClose}
+              className="px-3 py-1 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-lg text-xs font-bold transition-all cursor-pointer"
+            >
+              창 닫기 ✕
+            </button>
+          )}
         </div>
 
       </div>
     </div>
   );
 };
-
-function Zap(props: any) {
-  return (
-    <svg className={props.className} viewBox="0 0 24 24" fill={props.fill || "none"} stroke="currentColor" strokeWidth="2">
-      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-    </svg>
-  );
-}
