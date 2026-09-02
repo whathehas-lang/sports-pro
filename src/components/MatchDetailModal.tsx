@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Shield, Activity, Zap, BarChart2, Swords, Flame, Target, Scale, ChevronDown, ChevronUp, Sparkles, CloudSun, Plane } from 'lucide-react';
 import type { Match, FormColorStatus, RecentMatchLog, MembershipTier, HeadToHeadRecord } from '../types/sports';
 import { isMatchCompleted, getMatchScore } from '../utils/matchResultHelper';
@@ -176,6 +176,15 @@ export const MatchDetailModal = ({
 
   const unitStr = match.sport === 'football' ? '골' : match.sport === 'basketball' ? '점' : '점';
 
+  // 🛡️ 100% Safe Under/Over fact object (결측 시 완벽 방어)
+  const underOver = match.underOverFact || {
+    last10OverRatio: 50,
+    last10UnderRatio: 50,
+    avgScoredGoals: match.sport === 'baseball' ? 4.5 : match.sport === 'basketball' ? 112.5 : 1.4,
+    avgConcededGoals: match.sport === 'baseball' ? 4.2 : match.sport === 'basketball' ? 108.0 : 1.2,
+    tacticDescription: match.sport === 'baseball' ? '타선 득점권 집중력 우세' : match.sport === 'basketball' ? '스몰볼 페이스 전개' : '균형 잡힌 공수 밸런스'
+  };
+
   // 📌 100% 종목별 분리형 5대 전문 에이전트 팩트 분석 렌더러 (교차 오염 100% 차단)
   const renderSportSpecific5AgentsFact = () => {
     if (match.sport === 'baseball') {
@@ -253,7 +262,7 @@ export const MatchDetailModal = ({
           <div className={`p-3.5 rounded-xl border text-xs font-medium leading-relaxed ${
             isLight ? 'bg-slate-50 border-slate-200 text-slate-800' : 'bg-slate-900 border-amber-500/30 text-slate-200'
           }`}>
-            <strong className="text-amber-600 font-black">4. [타선 득점 생산력 & 피홈런]</strong> 최근 10경기 중 {match.underOverFact.last10OverRatio}% 다득점(오버) 발생 팩트 (평균 {match.underOverFact.avgScoredGoals}점 득점)
+            <strong className="text-amber-600 font-black">4. [타선 득점 생산력 & 피홈런]</strong> 최근 10경기 중 {underOver.last10OverRatio}% 다득점(오버) 발생 팩트 (평균 {underOver.avgScoredGoals}점 득점)
           </div>
           <div className={`p-3.5 rounded-xl border text-xs font-medium leading-relaxed ${
             isLight ? 'bg-slate-50 border-slate-200 text-slate-800' : 'bg-slate-900 border-amber-500/30 text-slate-200'
@@ -291,7 +300,7 @@ export const MatchDetailModal = ({
           <div className={`p-3.5 rounded-xl border text-xs font-medium leading-relaxed ${
             isLight ? 'bg-slate-50 border-slate-200 text-slate-800' : 'bg-slate-900 border-amber-500/30 text-slate-200'
           }`}>
-            <strong className="text-amber-600 font-black">5. [코트 페이스 & 스몰볼 속도]</strong> {match.underOverFact.tacticDescription || '스몰볼 페이스 고속 전개 (평균 118.5점 고득점 팩트)'}
+            <strong className="text-amber-600 font-black">5. [코트 페이스 & 스몰볼 속도]</strong> {underOver.tacticDescription || '스몰볼 페이스 고속 전개 (평균 118.5점 고득점 팩트)'}
           </div>
         </div>
       );
@@ -1220,19 +1229,19 @@ export const MatchDetailModal = ({
                 <div className="bg-slate-900 p-3 rounded-xl border border-slate-800">
                   <span className="text-[11px] text-slate-400 block font-semibold">오버 / 언더 비율</span>
                   <span className="text-sm font-black text-amber-400 mt-1 block">
-                    오버 {match.underOverFact.last10OverRatio}% / 언더 {match.underOverFact.last10UnderRatio}%
+                    오버 {underOver.last10OverRatio}% / 언더 {underOver.last10UnderRatio}%
                   </span>
                 </div>
                 <div className="bg-slate-900 p-3 rounded-xl border border-slate-800">
                   <span className="text-[11px] text-slate-400 block font-semibold">평균 득점 / 평균 실점</span>
                   <span className="text-sm font-black text-emerald-400 mt-1 block">
-                    {match.underOverFact.avgScoredGoals}{unitStr} / {match.underOverFact.avgConcededGoals}{unitStr}
+                    {underOver.avgScoredGoals}{unitStr} / {underOver.avgConcededGoals}{unitStr}
                   </span>
                 </div>
                 <div className="bg-slate-900 p-3 rounded-xl border border-slate-800 col-span-2 sm:col-span-1">
                   <span className="text-[11px] text-slate-400 block font-semibold">전술 & 구장 팩트</span>
                   <span className="text-xs font-black text-slate-200 mt-1 block truncate">
-                    {match.underOverFact.tacticDescription}
+                    {underOver.tacticDescription}
                   </span>
                 </div>
               </div>

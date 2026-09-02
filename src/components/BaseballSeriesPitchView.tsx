@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Flame, Clock, Zap, Shield, AlertTriangle, Lock, Crown } from 'lucide-react';
 import type { BaseballSeriesPitchTracker, Team, IndividualPitcherRecord, MembershipTier } from '../types/sports';
 import { BaseballSeriesFatigueEngine } from '../services/enricher/baseballSeriesFatigueEngine';

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Shield, DollarSign, UserCheck, BarChart3, TrendingUp, Sparkles, Battery, AlertCircle, AlertTriangle, Crown, Trophy, Plane, Clock, Compass, TrendingDown, Zap, Flame } from 'lucide-react';
 import type { Match, OfficialPlayerInfo } from '../types/sports';
 import { BaseballTeamHittingCard } from './BaseballTeamHittingCard';
