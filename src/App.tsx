@@ -385,27 +385,8 @@ export default function App() {
     return Math.max(0, totalTrial - diffSeconds);
   });
 
-  const [isTrialExpired, setIsTrialExpired] = useState<boolean>(() => {
-    const savedTier = localStorage.getItem('tokeon_membership_tier');
-    if (savedTier === 'VVIP') return false;
-
-    const savedStart = localStorage.getItem('tokeon_trial_start_time');
-    if (!savedStart) return false;
-    const startTime = parseInt(savedStart, 10);
-    const diffSeconds = Math.floor((Date.now() - startTime) / 1000);
-    return diffSeconds >= 3 * 24 * 3600;
-  });
-
-  const [isPaywallOpen, setIsPaywallOpen] = useState<boolean>(() => {
-    const savedTier = localStorage.getItem('tokeon_membership_tier');
-    if (savedTier === 'VVIP') return false;
-
-    const savedStart = localStorage.getItem('tokeon_trial_start_time');
-    if (!savedStart) return false;
-    const startTime = parseInt(savedStart, 10);
-    const diffSeconds = Math.floor((Date.now() - startTime) / 1000);
-    return diffSeconds >= 3 * 24 * 3600;
-  });
+  const [isTrialExpired, setIsTrialExpired] = useState<boolean>(false);
+  const [isPaywallOpen, setIsPaywallOpen] = useState<boolean>(false);
 
   // Sync membership tier changes to localStorage
   useEffect(() => {
@@ -532,11 +513,14 @@ export default function App() {
 
   // 📌 Handle Upgrade Paid Membership Success (유료 결제 시 차단 창 즉시 해제 및 모달 닫기!)
   const handleUpgradeSuccess = (tier: MembershipTier) => {
-    setMembershipTier(tier);
-    localStorage.setItem('tokeon_membership_tier', tier);
+    setMembershipTier('VIP');
+    localStorage.setItem('tokeon_membership_tier', 'VIP');
+    localStorage.removeItem('tokeon_trial_start_time');
+    localStorage.setItem('tokeon_is_logged_in', 'true');
+    setIsLoggedIn(true);
     setIsTrialExpired(false);
-    setTrialSecondsLeft(30 * 24 * 3600); // 30일 유료 멤버십 결제 적용
-    setIsPaywallOpen(false); // 차단 창 즉시 해제 & 지우기!
+    setTrialSecondsLeft(30 * 24 * 3600);
+    setIsPaywallOpen(false);
   };
 
   // Handle Simulate Trial Expiration Test
@@ -638,6 +622,10 @@ export default function App() {
 
   // Handle opening match detail modal
   const handleOpenDetailModal = (match: Match) => {
+    if (membershipTier === 'VIP' || membershipTier === 'VVIP' || isLoggedIn || userProfile.name.includes('관리자')) {
+      setSelectedMatchForDetail(match);
+      return;
+    }
     if (isTrialExpired) {
       setIsPaywallOpen(true);
       return;
