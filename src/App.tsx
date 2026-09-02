@@ -198,6 +198,12 @@ export default function App() {
       }
     });
 
+    // 💳 결제 완료 리다이렉트 URL 확인 처리
+    if (typeof window !== 'undefined' && window.location.search.includes('payment_status=success')) {
+      handleUpgradeSuccess('VIP');
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+
     return () => {
       unsubscribePolling();
       unsubscribeWebhook();
