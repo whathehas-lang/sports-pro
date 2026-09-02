@@ -464,27 +464,14 @@ export default function App() {
   const totalCombinations = Object.values(markedPicks).reduce((acc, picks) => acc * Math.max(1, picks.length), 1);
   const totalCost = (markedMatchCount > 0 ? totalCombinations : 0) * 1000;
 
-  // Countdown timer effect (compares real-time to prevent resets)
+  // Countdown timer effect (VIP & VVIP always exempted)
   useEffect(() => {
-    if (isTrialExpired || membershipTier === 'VVIP') return;
-    const timer = setInterval(() => {
-      const savedStart = localStorage.getItem('tokeon_trial_start_time');
-      if (!savedStart) return;
-      const startTime = parseInt(savedStart, 10);
-      const diffSeconds = Math.floor((Date.now() - startTime) / 1000);
-      const totalTrial = 3 * 24 * 3600; // 3 days
-      const remaining = totalTrial - diffSeconds;
-      if (remaining <= 0) {
-        setTrialSecondsLeft(0);
-        setIsTrialExpired(true);
-        setIsPaywallOpen(true);
-        clearInterval(timer);
-      } else {
-        setTrialSecondsLeft(remaining);
-      }
-    }, 1000);
-    return () => clearInterval(timer);
-  }, [isTrialExpired, membershipTier]);
+    if (membershipTier === 'VIP' || membershipTier === 'VVIP' || isLoggedIn) {
+      setIsTrialExpired(false);
+      setIsPaywallOpen(false);
+      return;
+    }
+  }, [membershipTier, isLoggedIn]);
 
   // Format Trial Timer String
   const formatTimerStr = (totalSec: number) => {
@@ -703,72 +690,6 @@ export default function App() {
         )}
 
 
-
-        {/* 📌 3-DAY FREE TRIAL COUNTDOWN NEON BANNER (관리자 및 VIP 회원은 숨김 처리) */}
-        {(!userProfile.name.includes('관리자') && membershipTier !== 'VIP' && membershipTier !== 'VVIP') && (
-        <div className={`p-3 rounded-2xl border flex flex-col sm:flex-row items-center justify-between gap-3 shadow-md transition-all ${
-          isTrialExpired
-            ? isLight ? 'bg-rose-50 border-rose-300 text-rose-900' : 'bg-gradient-to-r from-rose-950 via-slate-900 to-rose-950 border-rose-500/70 text-rose-200'
-            : isLight ? 'bg-gradient-to-r from-amber-50 via-yellow-50 to-amber-50 border-amber-300 text-amber-950' : 'bg-gradient-to-r from-amber-950 via-slate-900 to-amber-950 border-amber-500/70 text-amber-200'
-        }`}>
-          <div className="flex items-center gap-2.5 min-w-0">
-            {isTrialExpired ? (
-              <AlertTriangle className="w-5 h-5 text-rose-500 shrink-0 animate-bounce" />
-            ) : (
-              <Clock className="w-5 h-5 text-amber-500 shrink-0 animate-pulse" />
-            )}
-            <div className="min-w-0">
-              <div className="flex items-center gap-2">
-                <span className={`font-black text-xs sm:text-sm ${isLight ? 'text-slate-950' : 'text-white'}`}>
-                  {isTrialExpired ? '⛔ 무료 3일 체험이 만료되었습니다!' : '⏳ [무료 3일 체험 진행중]'}
-                </span>
-                <span className={`text-[10px] px-2 py-0.5 rounded font-mono font-black ${
-                  isTrialExpired ? 'bg-rose-500 text-white' : 'bg-amber-400 text-slate-950'
-                }`}>
-                  {isTrialExpired ? 'EXPIRED' : '3-DAY TRIAL'}
-                </span>
-              </div>
-              <p className={`text-[11px] font-medium truncate mt-0.5 ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
-                {isTrialExpired
-                  ? '서비스 연결이 제한되었습니다. 오피셜 팩트 데이터 이용을 위해 유료 멤버십으로 전환해 주세요.'
-                  : `무료 체험 남은 시간: ${formatTimerStr(trialSecondsLeft)} (만료 시 유료 전용 전환)`}
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2 shrink-0">
-            {isTrialExpired ? (
-              <button
-                onClick={() => setIsPaywallOpen(true)}
-                className="px-4 py-2 bg-gradient-to-r from-amber-400 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-slate-950 font-black text-xs rounded-xl shadow-lg transition-all flex items-center gap-1.5 cursor-pointer border border-yellow-200"
-              >
-                <CreditCard className="w-4 h-4 text-slate-950" />
-                <span>유료 멤버십 구독하기 💳</span>
-              </button>
-            ) : (
-              <>
-                <button
-                  onClick={() => setIsPaywallOpen(true)}
-                  className="px-3 py-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-[11px] rounded-xl shadow-sm transition-all flex items-center gap-1 cursor-pointer border border-amber-300"
-                >
-                  <span>유료 전환 👑</span>
-                </button>
-                
-                {/* 🧪 테스트용 3일 만료 즉시 시뮬레이션 버튼 */}
-                <button
-                  onClick={handleSimulateTrialExpired}
-                  className={`px-2.5 py-1.5 text-[10px] font-bold rounded-xl border transition-all cursor-pointer ${
-                    isLight ? 'bg-white hover:bg-rose-50 text-rose-600 border-rose-300' : 'bg-slate-800 hover:bg-slate-700 text-rose-300 border-rose-500/30'
-                  }`}
-                  title="3일 만료 차단 테스트"
-                >
-                  <span>⏰ 3일 만료 테스트</span>
-                </button>
-              </>
-            )}
-          </div>
-        </div>
-        )}
 
         {/* HOME TAB CONTENT (경기목록 탭 전용) */}
         {activeTab === 'home' && (
