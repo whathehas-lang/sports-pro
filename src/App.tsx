@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Trophy, Sparkles, MessageSquare, Clock, AlertTriangle, CreditCard, ShieldCheck, Database, CheckCircle2, RefreshCw, X } from 'lucide-react';
 import { Navbar } from './components/Navbar';
 import { MobileConnectModal } from './components/MobileConnectModal';

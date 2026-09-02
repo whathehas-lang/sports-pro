@@ -1,3 +1,4 @@
+import React from 'react';
 import { BellRing, X, ChevronRight, Zap } from 'lucide-react';
 import type { Match } from '../types/sports';
 

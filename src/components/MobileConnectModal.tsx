@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Smartphone, QrCode, Copy, Check, Sparkles, Globe } from 'lucide-react';
 
 interface MobileConnectModalProps {
@@ -10,14 +10,14 @@ interface MobileConnectModalProps {
 export const MobileConnectModal = ({ isOpen, onClose, theme = 'light' }: MobileConnectModalProps) => {
   const isLight = theme === 'light';
   const [copied, setCopied] = useState(false);
-  const [mobileUrl, setMobileUrl] = useState('http://192.168.219.104:5173');
+  const [mobileUrl, setMobileUrl] = useState('http://192.168.219.103:5173');
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const host = window.location.hostname;
       const port = window.location.port ? `:${window.location.port}` : '';
       if (host === 'localhost' || host === '127.0.0.1') {
-        setMobileUrl(`http://192.168.219.104${port || ':5173'}`);
+        setMobileUrl(`http://192.168.219.103${port || ':5173'}`);
       } else {
         setMobileUrl(`${window.location.protocol}//${host}${port}`);
       }

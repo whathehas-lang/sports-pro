@@ -1,3 +1,4 @@
+import React from 'react';
 import { Award, Trophy, ShieldCheck, Flame, LogOut } from 'lucide-react';
 
 export interface UserProfileData {

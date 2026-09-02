@@ -1,3 +1,4 @@
+import React from 'react';
 import { Trophy, Smartphone, MessageSquare, LogIn, LogOut, User, Crown, Clock, LayoutGrid } from 'lucide-react';
 import type { BetmanFolderCategory, MembershipTier, ViewMode } from '../types/sports';
 import { getDynamicBetmanGamesMetadata } from '../services/betman/betmanRoundRegistry';

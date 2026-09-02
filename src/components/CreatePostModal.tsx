@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { X, Tag, Paperclip, Send } from 'lucide-react';
 import type { Match, CommunityPost } from '../types/sports';
 

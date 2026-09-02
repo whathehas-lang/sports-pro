@@ -1,3 +1,4 @@
+import React from 'react';
 import { ChevronRight, Star } from 'lucide-react';
 import type { Match, MembershipTier } from '../types/sports';
 import { isMatchCompleted, getMatchScore, calculateWinningPicks } from '../utils/matchResultHelper';

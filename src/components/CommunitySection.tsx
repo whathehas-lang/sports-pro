@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { MessageSquare, ThumbsUp, Eye, PlusCircle, Search, Send } from 'lucide-react';
 import type { CommunityPost } from '../types/sports';
 

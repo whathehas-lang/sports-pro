@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { X, Lock, User, Sparkles, ShieldCheck, ArrowRight, KeyRound, CheckCircle2, Crown } from 'lucide-react';
 import type { MembershipTier } from '../types/sports';
 import { authService } from '../services/auth/authService';

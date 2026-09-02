@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Crown, X, Check, CreditCard, Sparkles, AlertTriangle } from 'lucide-react';
 import type { MembershipTier } from '../types/sports';
 import { tossPaymentsService } from '../services/payment/tossPaymentsService';

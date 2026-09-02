@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Send, Globe, Plus, Lock, Key, Crown, X, ShieldAlert, Activity, Sparkles } from 'lucide-react';
 import type { Match, MembershipTier } from '../types/sports';
 import { firebaseService, isFirebaseConfigured } from '../services/firebase/firebaseService';
