@@ -4,6 +4,7 @@ import { Navbar } from './components/Navbar';
 import { MobileConnectModal } from './components/MobileConnectModal';
 import { MatchCard } from './components/MatchCard';
 import { MatchDetailModal } from './components/MatchDetailModal';
+import { ErrorBoundary } from './components/ErrorBoundary';
 import { PCWebCommunityHub } from './components/PCWebCommunityHub';
 import { UserProfileModal, type UserProfileData } from './components/UserProfileModal';
 import { LoginModal } from './components/LoginModal';
@@ -1150,13 +1151,18 @@ export default function App() {
 
       {/* MODAL 1: MATCH FACT DETAIL MODAL */}
       {selectedMatchForDetail && (
-        <MatchDetailModal
-          match={selectedMatchForDetail}
+        <ErrorBoundary 
+          fallbackTitle="경기 상세 정보 렌더링 복구" 
           onClose={() => setSelectedMatchForDetail(null)}
-          membershipTier={membershipTier}
-          onOpenPaywall={() => setIsPaywallOpen(true)}
-          theme={theme}
-        />
+        >
+          <MatchDetailModal
+            match={selectedMatchForDetail}
+            onClose={() => setSelectedMatchForDetail(null)}
+            membershipTier={membershipTier}
+            onOpenPaywall={() => setIsPaywallOpen(true)}
+            theme={theme}
+          />
+        </ErrorBoundary>
       )}
 
       {/* MODAL 2: LOGIN & SIGNUP MODAL */}
