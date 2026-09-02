@@ -6,10 +6,20 @@ import { OFFICIAL_G102_MATCHES } from '../../mock/officialG102Schedule';
 import { MasterFootballOrchestratorService } from '../orchestrator/masterFootballOrchestratorService';
 import { MultiSourceBaseballOrchestrator } from '../enricher/multiSourceBaseballOrchestrator';
 import { verifiedMatchDatabase } from '../db/verifiedMatchDatabase';
+import { calculateActiveSeungbushikRoundTs } from './betmanRoundRegistry';
 
 export class BetmanLiveSyncService {
+  /**
+   * 전체 실시간 라이브 경기 목록 조회 (기본 현재 활성 회차 자동 감지)
+   */
+  public static getAllLiveMatches(): Match[] {
+    const currentRound = String(calculateActiveSeungbushikRoundTs());
+    return this.getMatches('G101', currentRound);
+  }
+
   public static getMatches(gmId: string = 'G101', gmTs?: string): Match[] {
-    const rawMatches = BetmanLiveSyncService.getRawMatches(gmId, gmTs);
+    const activeGmTs = gmTs || (gmId === 'G101' ? String(calculateActiveSeungbushikRoundTs()) : undefined);
+    const rawMatches = BetmanLiveSyncService.getRawMatches(gmId, activeGmTs);
     const orchestrated = rawMatches.map(m => MasterFootballOrchestratorService.orchestrateSync(m));
     const { verifiedMatches } = verifiedMatchDatabase.ingestAndVerifyMatches(orchestrated);
     return verifiedMatches;
@@ -19,7 +29,8 @@ export class BetmanLiveSyncService {
    * 실시간 수집 레이어 이원화 (Multi-Source Strategy) 비동기 동기화
    */
   public static async getMatchesAsync(gmId: string = 'G101', gmTs?: string): Promise<Match[]> {
-    const matches = BetmanLiveSyncService.getMatches(gmId, gmTs);
+    const activeGmTs = gmTs || (gmId === 'G101' ? String(calculateActiveSeungbushikRoundTs()) : undefined);
+    const matches = BetmanLiveSyncService.getMatches(gmId, activeGmTs);
     return MultiSourceBaseballOrchestrator.enrichMatchesWithMultiSource(matches);
   }
 
@@ -60,13 +71,14 @@ export class BetmanLiveSyncService {
       })).sort((a, b) => (a.betmanMatchNo || 0) - (b.betmanMatchNo || 0));
     }
 
+    // ⚡ G101 (프로토 승부식): 현재 활성 회차 자동 감지
+    const effectiveGmTs = gmTs || String(calculateActiveSeungbushikRoundTs());
     const baseMatches = OFFICIAL_260103_MATCHES && OFFICIAL_260103_MATCHES.length > 0 ? OFFICIAL_260103_MATCHES : [];
-    if (!gmTs) return baseMatches;
 
-    const roundPrefix = gmId === 'G011' ? '축구 승무패' : gmId === 'G024' ? '야구 승1패' : gmId === 'G102' ? '프로토 기록식' : '프로토 승부식';
-    const targetRoundName = `${roundPrefix} ${gmTs}회차 (betman.co.kr 오피셜 실시간 슬립)`;
+    const roundPrefix = '프로토 승부식';
+    const targetRoundName = `${roundPrefix} ${effectiveGmTs}회차 (betman.co.kr 오피셜 실시간 슬립)`;
 
-    const numTarget = parseInt(gmTs, 10);
+    const numTarget = parseInt(effectiveGmTs, 10);
     const numBase = 260103;
     const roundDiff = numTarget - numBase;
 
@@ -81,12 +93,12 @@ export class BetmanLiveSyncService {
 
       return {
         ...m,
-        id: `${gmId}_${gmTs}_${m.betmanMatchNo || (m as any).matchNo || idx + 1}`,
+        id: `${gmId}_${effectiveGmTs}_${m.betmanMatchNo || (m as any).matchNo || idx + 1}`,
         round: targetRoundName,
         betmanRound: targetRoundName,
         matchTime: updatedTime,
         closingTime: updatedClosing,
-        betmanFolder: gmId === 'G101' ? 'SEUNGBUSHIK' : (m.betmanFolder || (gmId === 'G011' ? 'SEUNGMUBAE' : gmId === 'G024' ? 'SEUNG1PAE' : 'SEUNGBUSHIK'))
+        betmanFolder: gmId === 'G101' ? 'SEUNGBUSHIK' : (m.betmanFolder || 'SEUNGBUSHIK')
       };
     }).sort((a, b) => (a.betmanMatchNo || (a as any).matchNo || 0) - (b.betmanMatchNo || (b as any).matchNo || 0));
   }
@@ -104,30 +116,13 @@ export class BetmanLiveSyncService {
     const d = new Date(currentYear, month, day);
     d.setDate(d.getDate() + daysOffset);
 
-    const weekDays = ['일', '월', '화', '수', '목', '금', '토'];
-    const newMonthStr = String(d.getMonth() + 1).padStart(2, '0');
-    const newDayStr = String(d.getDate()).padStart(2, '0');
-    const newDayOfWeek = weekDays[d.getDay()];
+    const newMonth = String(d.getMonth() + 1).padStart(2, '0');
+    const newDay = String(d.getDate()).padStart(2, '0');
+    const daysOfWeek = ['일', '월', '화', '수', '목', '금', '토'];
+    const newDayOfWeek = daysOfWeek[d.getDay()];
 
-    return `${newMonthStr}.${newDayStr}(${newDayOfWeek}) ${time}`;
-  }
-
-  public getAllMatches(): Match[] {
-    return BetmanLiveSyncService.getAllLiveMatches();
-  }
-
-  public getMatches(gmId: string = 'G101', gmTs?: string): Match[] {
-    return BetmanLiveSyncService.getMatches(gmId, gmTs);
-  }
-
-  public async getMatchesAsync(gmId: string = 'G101', gmTs?: string): Promise<Match[]> {
-    return BetmanLiveSyncService.getMatchesAsync(gmId, gmTs);
-  }
-
-  public static getAllLiveMatches(): Match[] {
-    const { verifiedMatches } = verifiedMatchDatabase.ingestAndVerifyMatches(OFFICIAL_260103_MATCHES);
-    return verifiedMatches;
+    return `${newMonth}.${newDay}(${newDayOfWeek}) ${time}`;
   }
 }
 
-export const betmanLiveSyncService = new BetmanLiveSyncService();
+export const betmanLiveSyncService = BetmanLiveSyncService;
