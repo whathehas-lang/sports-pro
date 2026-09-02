@@ -370,7 +370,9 @@ export default function App() {
   });
   const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false);
 
-  // 📌 3-DAY FREE TRIAL & PAID SUBSCRIPTION STATE MANAGEMENT (무료 3일 체험 72시간 카운트다운 & 유료 전환)
+  // 📌 5-MINUTE FREE TRIAL REAL TEST STATE (5분 카운트다운 & 5분 후 자동 결제창 팝업 차단)
+  const TOTAL_TRIAL_SECONDS = 5 * 60; // 5분 (300초)
+
   const [trialSecondsLeft, setTrialSecondsLeft] = useState<number>(() => {
     const savedStart = localStorage.getItem('tokeon_trial_start_time');
     const now = Date.now();
@@ -381,12 +383,23 @@ export default function App() {
       localStorage.setItem('tokeon_trial_start_time', now.toString());
     }
     const diffSeconds = Math.floor((now - startTime) / 1000);
-    const totalTrial = 3 * 24 * 3600; // 3 days
-    return Math.max(0, totalTrial - diffSeconds);
+    const remaining = TOTAL_TRIAL_SECONDS - diffSeconds;
+    return remaining > 0 ? remaining : 0;
   });
 
-  const [isTrialExpired, setIsTrialExpired] = useState<boolean>(false);
-  const [isPaywallOpen, setIsPaywallOpen] = useState<boolean>(false);
+  const [isTrialExpired, setIsTrialExpired] = useState<boolean>(() => {
+    const savedStart = localStorage.getItem('tokeon_trial_start_time');
+    if (!savedStart) return false;
+    const diff = Math.floor((Date.now() - parseInt(savedStart, 10)) / 1000);
+    return diff >= TOTAL_TRIAL_SECONDS;
+  });
+
+  const [isPaywallOpen, setIsPaywallOpen] = useState<boolean>(() => {
+    const savedStart = localStorage.getItem('tokeon_trial_start_time');
+    if (!savedStart) return false;
+    const diff = Math.floor((Date.now() - parseInt(savedStart, 10)) / 1000);
+    return diff >= TOTAL_TRIAL_SECONDS;
+  });
 
   // Sync membership tier changes to localStorage
   useEffect(() => {
@@ -445,21 +458,48 @@ export default function App() {
   const totalCombinations = Object.values(markedPicks).reduce((acc, picks) => acc * Math.max(1, picks.length), 1);
   const totalCost = (markedMatchCount > 0 ? totalCombinations : 0) * 1000;
 
-  // Countdown timer effect (VIP & VVIP always exempted)
+  // ⏱️ 5분 실시간 카운트다운 타이머 (1초씩 차감 ➔ 0초 도달 시 결제창 자동 팝업 차단!)
   useEffect(() => {
-    if (membershipTier === 'VIP' || (membershipTier === 'VIP' || membershipTier === 'VVIP') || isLoggedIn) {
-      setIsTrialExpired(false);
-      setIsPaywallOpen(false);
-      return;
-    }
-  }, [membershipTier, isLoggedIn]);
+    const timer = setInterval(() => {
+      const savedStart = localStorage.getItem('tokeon_trial_start_time');
+      const now = Date.now();
+      let startTime = now;
+      if (savedStart) {
+        startTime = parseInt(savedStart, 10);
+      } else {
+        localStorage.setItem('tokeon_trial_start_time', now.toString());
+      }
+      
+      const diffSeconds = Math.floor((now - startTime) / 1000);
+      const remaining = TOTAL_TRIAL_SECONDS - diffSeconds;
 
-  // Format Trial Timer String
+      if (remaining <= 0) {
+        setTrialSecondsLeft(0);
+        setIsTrialExpired(true);
+        setIsPaywallOpen(true); // 5분 만료 시 결제창 자동 팝업!
+        clearInterval(timer);
+      } else {
+        setTrialSecondsLeft(remaining);
+        setIsTrialExpired(false);
+      }
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  // 🔄 5분 테스트 리셋 함수
+  const handleReset5MinTrial = () => {
+    localStorage.setItem('tokeon_trial_start_time', Date.now().toString());
+    setTrialSecondsLeft(TOTAL_TRIAL_SECONDS);
+    setIsTrialExpired(false);
+    setIsPaywallOpen(false);
+  };
+
+  // Format Trial Timer String (분:초 형식)
   const formatTimerStr = (totalSec: number) => {
-    const hours = Math.floor(totalSec / 3600);
-    const mins = Math.floor((totalSec % 3600) / 60);
+    const mins = Math.floor(totalSec / 60);
     const secs = totalSec % 60;
-    return `${hours}시간 ${mins.toString().padStart(2, '0')}분 ${secs.toString().padStart(2, '0')}초`;
+    return `${mins.toString().padStart(2, '0')}분 ${secs.toString().padStart(2, '0')}초`;
   };
 
   // 📌 Handle Login & Signup Success (회원가입 및 유료 등급 로그인 시 차단 창 즉시 해제 및 모달 닫기!)
@@ -620,12 +660,8 @@ export default function App() {
     );
   };
 
-  // Handle opening match detail modal
+  // Handle opening match detail modal (5분 만료 시 무조건 결제창 팝업 차단!)
   const handleOpenDetailModal = (match: Match) => {
-    if (membershipTier === 'VIP' || (membershipTier === 'VIP' || membershipTier === 'VVIP') || isLoggedIn || userProfile.name.includes('관리자')) {
-      setSelectedMatchForDetail(match);
-      return;
-    }
     if (isTrialExpired) {
       setIsPaywallOpen(true);
       return;
@@ -678,6 +714,68 @@ export default function App() {
         )}
 
 
+
+                {/* ⏱️ 5분 무료체험 실시간 카운트다운 배너 */}
+        <div className={`p-3 rounded-2xl border flex flex-col sm:flex-row items-center justify-between gap-3 shadow-lg transition-all ${
+          isTrialExpired
+            ? 'bg-gradient-to-r from-rose-950 via-slate-900 to-rose-950 border-rose-500/80 text-rose-200 animate-pulse'
+            : isLight ? 'bg-gradient-to-r from-amber-50 via-yellow-50 to-amber-50 border-amber-300 text-amber-950' : 'bg-gradient-to-r from-amber-950 via-slate-900 to-amber-950 border-amber-500/70 text-amber-200'
+        }`}>
+          <div className="flex items-center gap-2.5 min-w-0">
+            <span className="text-xl shrink-0">{isTrialExpired ? '⛔' : '⏳'}</span>
+            <div className="min-w-0">
+              <div className="flex items-center gap-2">
+                <span className={`font-black text-xs sm:text-sm ${isTrialExpired ? 'text-rose-300' : 'text-amber-300'}`}>
+                  {isTrialExpired ? '⛔ 5분 무료체험이 만료되었습니다! (터치 차단됨)' : '⏳ [5분 무료체험 실시간 테스트 진행중]'}
+                </span>
+                <span className={`text-[10px] px-2 py-0.5 rounded font-mono font-black ${
+                  isTrialExpired ? 'bg-rose-500 text-white' : 'bg-amber-400 text-slate-950'
+                }`}>
+                  {isTrialExpired ? 'EXPIRED' : '5-MIN TEST'}
+                </span>
+              </div>
+              <p className={`text-[11px] font-bold truncate mt-0.5 ${isTrialExpired ? 'text-rose-400' : 'text-slate-300'}`}>
+                {isTrialExpired
+                  ? '경기를 터치하면 결제창이 뜨며 데이터가 차단됩니다.'
+                  : `남은 시간: ${formatTimerStr(trialSecondsLeft)} (0초 도달 시 결제창 자동 팝업!)`}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 shrink-0">
+            {isTrialExpired ? (
+              <button
+                onClick={() => setIsPaywallOpen(true)}
+                className="px-3.5 py-1.5 bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-950 font-black text-xs rounded-xl shadow transition-all cursor-pointer"
+              >
+                <span>결제창 열기 💳</span>
+              </button>
+            ) : (
+              <button
+                onClick={() => {
+                  // 즉시 0초 만료 시뮬레이션
+                  const fiveAgo = Date.now() - 6 * 60 * 1000;
+                  localStorage.setItem('tokeon_trial_start_time', fiveAgo.toString());
+                  setTrialSecondsLeft(0);
+                  setIsTrialExpired(true);
+                  setIsPaywallOpen(true);
+                }}
+                className="px-2.5 py-1 bg-rose-950/80 hover:bg-rose-900 border border-rose-500/50 text-rose-300 font-bold text-[10px] rounded-lg transition-all cursor-pointer"
+                title="즉시 만료 테스트"
+              >
+                <span>⚡ 즉시 만료</span>
+              </button>
+            )}
+
+            <button
+              onClick={handleReset5MinTrial}
+              className="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-amber-300 border border-slate-700 font-bold text-[10px] rounded-lg transition-all cursor-pointer flex items-center gap-1"
+              title="5분 타이머 다시 시작"
+            >
+              <span>🔄 5분 다시 시작</span>
+            </button>
+          </div>
+        </div>
 
         {/* HOME TAB CONTENT (경기목록 탭 전용) */}
         {activeTab === 'home' && (
