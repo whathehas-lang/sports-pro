@@ -13,14 +13,41 @@ interface CoreWinFactorViewProps {
 
 export const CoreWinFactorView: React.FC<CoreWinFactorViewProps> = ({
   metrics,
-  homeName,
-  awayName,
+  homeName = '홈팀',
+  awayName = '원정팀',
   membershipTier = 'VVIP',
   onOpenPaywall,
   theme = 'dark',
 }) => {
   const isLight = theme === 'light';
   const isVvip = membershipTier === 'VVIP';
+
+  const safeMetrics = metrics || {
+    xgMarginDiff: 0.3,
+    homeXg: 1.45,
+    homeXga: 1.15,
+    awayXg: 1.15,
+    awayXga: 1.45,
+    homeBigChances: 3,
+    homeBigChancesConceded: 1,
+    awayBigChances: 2,
+    awayBigChancesConceded: 2,
+    homeInsideBoxShotPct: 65,
+    awayInsideBoxShotPct: 55,
+    homeInsideBoxShots: 8,
+    homeTotalShots: 12,
+    awayInsideBoxShots: 6,
+    awayTotalShots: 11,
+    homeFieldTiltPct: 54,
+    awayFieldTiltPct: 46,
+    fieldTiltLeader: 'HOME' as const,
+    homeFirstGoalWinPct: 75,
+    homeFirstGoalUnbeatenPct: 88,
+    awayFirstGoalWinPct: 62,
+    awayFirstGoalUnbeatenPct: 78,
+    winFactorVerdict: '기대 득점 및 파이널 서드 장악력 우세',
+    keyWinFactorAdvantage: '홈팀 공격 찬스 창출력 우세'
+  };
 
   return (
     <div className={`p-4 sm:p-5 rounded-2xl border space-y-4 shadow-xl transition-all relative overflow-hidden ${
@@ -46,7 +73,7 @@ export const CoreWinFactorView: React.FC<CoreWinFactorViewProps> = ({
               )}
             </span>
             <span className="text-[11px] font-bold opacity-90 block mt-0.5">
-              {isVvip ? metrics.keyWinFactorAdvantage : '🔥 [VVIP 전용 팩트] 파이널 서드 장악률 & 1:1 빅찬스 및 선제골 승점 확보율'}
+              {isVvip ? safeMetrics.keyWinFactorAdvantage : '🔥 [VVIP 전용 팩트] 파이널 서드 장악률 & 1:1 빅찬스 및 선제골 승점 확보율'}
             </span>
           </div>
         </div>
@@ -94,25 +121,25 @@ export const CoreWinFactorView: React.FC<CoreWinFactorViewProps> = ({
               <span>1. xG (기대 득점) & xGA (기대 실점)</span>
             </span>
             <span className={`text-[10px] px-1.5 py-0.5 rounded font-mono font-bold ${
-              metrics.xgMarginDiff > 0 ? 'bg-emerald-500/20 text-emerald-400' : 'bg-rose-500/20 text-rose-400'
+              safeMetrics.xgMarginDiff > 0 ? 'bg-emerald-500/20 text-emerald-400' : 'bg-rose-500/20 text-rose-400'
             }`}>
-              xG 마진 {metrics.xgMarginDiff > 0 ? `+${metrics.xgMarginDiff}` : metrics.xgMarginDiff}
+              xG 마진 {safeMetrics.xgMarginDiff > 0 ? `+${safeMetrics.xgMarginDiff}` : safeMetrics.xgMarginDiff}
             </span>
           </div>
 
           <div className="space-y-1.5">
             <div className="flex justify-between text-[11px] font-bold">
-              <span className="text-emerald-400">[홈] {metrics.homeXg}골 (xGA {metrics.homeXga})</span>
-              <span className="text-cyan-400">(xGA {metrics.awayXga}) {metrics.awayXg}골 [원정]</span>
+              <span className="text-emerald-400">[홈] {safeMetrics.homeXg}골 (xGA {safeMetrics.homeXga})</span>
+              <span className="text-cyan-400">(xGA {safeMetrics.awayXga}) {safeMetrics.awayXg}골 [원정]</span>
             </div>
             <div className="h-2.5 w-full bg-slate-800 rounded-full overflow-hidden flex">
               <div 
                 className="bg-emerald-500 h-full transition-all duration-700" 
-                style={{ width: `${(metrics.homeXg / (metrics.homeXg + metrics.awayXg || 1)) * 100}%` }}
+                style={{ width: `${(safeMetrics.homeXg / (safeMetrics.homeXg + safeMetrics.awayXg || 1)) * 100}%` }}
               />
               <div 
                 className="bg-cyan-500 h-full transition-all duration-700" 
-                style={{ width: `${(metrics.awayXg / (metrics.homeXg + metrics.awayXg || 1)) * 100}%` }}
+                style={{ width: `${(safeMetrics.awayXg / (safeMetrics.homeXg + safeMetrics.awayXg || 1)) * 100}%` }}
               />
             </div>
             <p className="text-[10px] text-slate-400 leading-tight">
@@ -139,18 +166,18 @@ export const CoreWinFactorView: React.FC<CoreWinFactorViewProps> = ({
             }`}>
               <span className="text-slate-400 text-[10px] block">[홈] {homeName}</span>
               <span className="font-black text-emerald-400 text-sm mt-0.5 block">
-                {metrics.homeBigChances}회 창출
+                {safeMetrics.homeBigChances}회 창출
               </span>
-              <span className="text-[9px] text-slate-400 block">허용 {metrics.homeBigChancesConceded}회</span>
+              <span className="text-[9px] text-slate-400 block">허용 {safeMetrics.homeBigChancesConceded}회</span>
             </div>
             <div className={`p-2 rounded-lg border ${
               isLight ? 'bg-white border-cyan-200' : 'bg-slate-950 border-cyan-500/30'
             }`}>
               <span className="text-slate-400 text-[10px] block">[원정] {awayName}</span>
               <span className="font-black text-cyan-400 text-sm mt-0.5 block">
-                {metrics.awayBigChances}회 창출
+                {safeMetrics.awayBigChances}회 창출
               </span>
-              <span className="text-[9px] text-slate-400 block">허용 {metrics.awayBigChancesConceded}회</span>
+              <span className="text-[9px] text-slate-400 block">허용 {safeMetrics.awayBigChancesConceded}회</span>
             </div>
           </div>
           <p className="text-[10px] text-slate-400 leading-tight">
@@ -172,17 +199,17 @@ export const CoreWinFactorView: React.FC<CoreWinFactorViewProps> = ({
 
           <div className="space-y-1.5">
             <div className="flex justify-between text-[11px] font-bold">
-              <span className="text-emerald-400">[홈] {metrics.homeInsideBoxShotPct}% ({metrics.homeInsideBoxShots}/{metrics.homeTotalShots}개)</span>
-              <span className="text-cyan-400">({metrics.awayInsideBoxShots}/{metrics.awayTotalShots}개) {metrics.awayInsideBoxShotPct}% [원정]</span>
+              <span className="text-emerald-400">[홈] {safeMetrics.homeInsideBoxShotPct}% ({safeMetrics.homeInsideBoxShots}/{safeMetrics.homeTotalShots}개)</span>
+              <span className="text-cyan-400">({safeMetrics.awayInsideBoxShots}/{safeMetrics.awayTotalShots}개) {safeMetrics.awayInsideBoxShotPct}% [원정]</span>
             </div>
             <div className="h-2.5 w-full bg-slate-800 rounded-full overflow-hidden flex">
               <div 
                 className="bg-purple-500 h-full transition-all duration-700" 
-                style={{ width: `${(metrics.homeInsideBoxShotPct / (metrics.homeInsideBoxShotPct + metrics.awayInsideBoxShotPct || 1)) * 100}%` }}
+                style={{ width: `${(safeMetrics.homeInsideBoxShotPct / (safeMetrics.homeInsideBoxShotPct + safeMetrics.awayInsideBoxShotPct || 1)) * 100}%` }}
               />
               <div 
                 className="bg-indigo-500 h-full transition-all duration-700" 
-                style={{ width: `${(metrics.awayInsideBoxShotPct / (metrics.homeInsideBoxShotPct + metrics.awayInsideBoxShotPct || 1)) * 100}%` }}
+                style={{ width: `${(safeMetrics.awayInsideBoxShotPct / (safeMetrics.homeInsideBoxShotPct + safeMetrics.awayInsideBoxShotPct || 1)) * 100}%` }}
               />
             </div>
             <p className="text-[10px] text-slate-400 leading-tight">
@@ -201,23 +228,23 @@ export const CoreWinFactorView: React.FC<CoreWinFactorViewProps> = ({
               <span>4. 필드 틸트 (위험지역 점유율)</span>
             </span>
             <span className="text-[10px] px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 font-bold">
-              {metrics.fieldTiltLeader === 'HOME' ? `${homeName} 주도 🟢` : (metrics.fieldTiltLeader === 'AWAY' ? `${awayName} 주도 🔵` : '대등 🤝')}
+              {safeMetrics.fieldTiltLeader === 'HOME' ? `${homeName} 주도 🟢` : (safeMetrics.fieldTiltLeader === 'AWAY' ? `${awayName} 주도 🔵` : '대등 🤝')}
             </span>
           </div>
 
           <div className="space-y-1.5">
             <div className="flex justify-between text-[11px] font-bold">
-              <span className="text-emerald-400">[홈] {metrics.homeFieldTiltPct}%</span>
-              <span className="text-cyan-400">{metrics.awayFieldTiltPct}% [원정]</span>
+              <span className="text-emerald-400">[홈] {safeMetrics.homeFieldTiltPct}%</span>
+              <span className="text-cyan-400">{safeMetrics.awayFieldTiltPct}% [원정]</span>
             </div>
             <div className="h-2.5 w-full bg-slate-800 rounded-full overflow-hidden flex">
               <div 
                 className="bg-emerald-500 h-full transition-all duration-700" 
-                style={{ width: `${metrics.homeFieldTiltPct}%` }}
+                style={{ width: `${safeMetrics.homeFieldTiltPct}%` }}
               />
               <div 
                 className="bg-cyan-500 h-full transition-all duration-700" 
-                style={{ width: `${metrics.awayFieldTiltPct}%` }}
+                style={{ width: `${safeMetrics.awayFieldTiltPct}%` }}
               />
             </div>
             <p className="text-[10px] text-slate-400 leading-tight">
@@ -248,10 +275,10 @@ export const CoreWinFactorView: React.FC<CoreWinFactorViewProps> = ({
           }`}>
             <div>
               <span className="font-bold text-emerald-400 block">[홈] {homeName}</span>
-              <span className="text-[10px] text-slate-400">선제골 넣을 시 승점 확보율: {metrics.homeFirstGoalUnbeatenPct}%</span>
+              <span className="text-[10px] text-slate-400">선제골 넣을 시 승점 확보율: {safeMetrics.homeFirstGoalUnbeatenPct}%</span>
             </div>
             <div className="text-right">
-              <span className="text-xs font-black text-emerald-400 block">승률 {metrics.homeFirstGoalWinPct}%</span>
+              <span className="text-xs font-black text-emerald-400 block">승률 {safeMetrics.homeFirstGoalWinPct}%</span>
               <span className="text-[9px] text-emerald-500/90 font-bold">압도적 우세</span>
             </div>
           </div>
@@ -261,17 +288,17 @@ export const CoreWinFactorView: React.FC<CoreWinFactorViewProps> = ({
           }`}>
             <div>
               <span className="font-bold text-cyan-400 block">[원정] {awayName}</span>
-              <span className="text-[10px] text-slate-400">선제골 넣을 시 승점 확보율: {metrics.awayFirstGoalUnbeatenPct}%</span>
+              <span className="text-[10px] text-slate-400">선제골 넣을 시 승점 확보율: {safeMetrics.awayFirstGoalUnbeatenPct}%</span>
             </div>
             <div className="text-right">
-              <span className="text-xs font-black text-cyan-400 block">승률 {metrics.awayFirstGoalWinPct}%</span>
+              <span className="text-xs font-black text-cyan-400 block">승률 {safeMetrics.awayFirstGoalWinPct}%</span>
               <span className="text-[9px] text-cyan-500/90 font-bold">강력한 방어력</span>
             </div>
           </div>
         </div>
 
         <p className="text-[11px] text-slate-300 font-medium bg-slate-950/80 p-2.5 rounded-lg border border-slate-800 leading-relaxed mt-2">
-          {metrics.winFactorVerdict}
+          {safeMetrics.winFactorVerdict}
         </p>
       </div>
     </div>

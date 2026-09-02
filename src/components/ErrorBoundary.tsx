@@ -50,9 +50,16 @@ export class ErrorBoundary extends Component<Props, State> {
               아래 버튼을 누르면 정상 화면으로 즉시 복구됩니다.
             </p>
             {this.state.error && (
-              <pre className="bg-slate-950 p-3 rounded-lg text-[10px] text-red-300 text-left overflow-x-auto border border-slate-800 max-h-32">
-                {this.state.error.message}
-              </pre>
+              <div className="space-y-1 text-left">
+                <div className="text-[11px] font-mono text-red-300 bg-slate-950 p-2.5 rounded-lg border border-red-500/30 break-all font-bold">
+                  {this.state.error.name}: {this.state.error.message}
+                </div>
+                {this.state.error.stack && (
+                  <pre className="bg-slate-950 p-2 rounded text-[9px] text-slate-400 font-mono overflow-x-auto max-h-24 border border-slate-800">
+                    {this.state.error.stack}
+                  </pre>
+                )}
+              </div>
             )}
             <div className="flex gap-2">
               {this.props.onClose && (
