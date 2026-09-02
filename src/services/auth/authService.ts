@@ -66,7 +66,7 @@ export class AuthService {
       console.log('[AuthService] Detected Kakao redirect code in URL, finalizing login...');
       const fallbackUser: UserSessionData = {
         uid: `kakao_${Date.now()}`,
-        name: '소망 (카카오 VVIP)',
+        name: '소망 (👑 최고관리자)',
         email: 'luhc76@daum.net',
         provider: 'KAKAO',
         tier: 'VVIP',
@@ -111,7 +111,7 @@ export class AuthService {
 
                     const realUser: UserSessionData = {
                       uid: `kakao_${res.id || Date.now()}`,
-                      name: profile.nickname || '소망 (카카오 VVIP)',
+                      name: (profile.nickname || '소망') + ' (👑 최고관리자)',
                       email: kakaoAccount.email || 'luhc76@daum.net',
                       avatar: profile.profile_image_url || profile.thumbnail_image_url || '',
                       provider: 'KAKAO',
@@ -129,7 +129,7 @@ export class AuthService {
                     console.warn('[AuthService] Kakao User Info Error, finalizing with verified state:', error);
                     const fallbackUser: UserSessionData = {
                       uid: `kakao_${Date.now()}`,
-                      name: '소망 (카카오 VVIP)',
+                      name: '소망 (👑 최고관리자)',
                       email: 'luhc76@daum.net',
                       provider: 'KAKAO',
                       tier: 'VVIP',
@@ -145,7 +145,7 @@ export class AuthService {
               } else {
                 const fastUser: UserSessionData = {
                   uid: `kakao_${Date.now()}`,
-                  name: '소망 (카카오 VVIP)',
+                  name: '소망 (👑 최고관리자)',
                   email: 'luhc76@daum.net',
                   provider: 'KAKAO',
                   tier: 'VVIP',

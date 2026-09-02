@@ -26,7 +26,7 @@ export const UserProfileModal = ({ userProfile, onLogout }: UserProfileModalProp
           {/* Avatar */}
           <div className="w-24 h-24 rounded-3xl bg-gradient-to-tr from-emerald-500 to-cyan-500 p-1 shadow-xl shrink-0">
             <div className="w-full h-full bg-slate-950 rounded-[22px] flex items-center justify-center text-4xl">
-              🎟️
+              👑
             </div>
           </div>
 
@@ -35,7 +35,7 @@ export const UserProfileModal = ({ userProfile, onLogout }: UserProfileModalProp
             <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3">
               <h2 className="text-2xl font-black text-white">{userProfile.name}</h2>
               <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-bold flex items-center gap-1">
-                <Award className="w-3.5 h-3.5" /> 오피셜 팩트 분석가 🏅
+                <Award className="w-3.5 h-3.5 text-amber-400" /> 👑 최고관리자 (SUPER ADMIN) 마스터
               </span>
             </div>
 
@@ -60,7 +60,7 @@ export const UserProfileModal = ({ userProfile, onLogout }: UserProfileModalProp
               <div className="text-3xl font-black text-emerald-400 mt-1">
                 {userProfile.accuracy}%
               </div>
-              <span className="text-[11px] text-emerald-400 font-bold block mt-1">상위 1% 팩트 리포터</span>
+              <span className="text-[11px] text-emerald-400 font-bold block mt-1">👑 토큰 시스템 최고권한자</span>
             </div>
 
             {onLogout && (

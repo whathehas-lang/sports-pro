@@ -201,7 +201,7 @@ export const Navbar = ({
                 }`}
               >
                 <User className="w-3.5 h-3.5 text-amber-500" />
-                <span className="truncate max-w-[70px]">{userName}</span>
+                <span className="truncate max-w-[120px] font-black text-amber-300">{userName}</span>
               </button>
               
               <button

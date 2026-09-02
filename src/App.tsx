@@ -495,15 +495,16 @@ export default function App() {
     setMembershipTier(userData.tier);
     localStorage.setItem('tokeon_membership_tier', userData.tier);
     
+    const adminName = userData.name.includes('관리자') ? userData.name : `${userData.name} (👑 최고관리자)`;
     const newProfile: UserProfileData = {
-      id: 'u_' + Date.now(),
-      name: userData.name,
-      tier: userData.tier === 'VVIP' ? 'PRO_ANALYST' : 'BASIC',
-      favoriteSport: '야구/농구 (KBO & NBA 팩트)',
-      accuracy: userData.tier === 'VVIP' ? 94.8 : 72.5,
-      totalVotes: userData.tier === 'VVIP' ? 120 : 10,
-      correctVotes: userData.tier === 'VVIP' ? 114 : 7,
-      badges: userData.tier === 'VVIP' ? ['👑 VVIP 팩트 마스터', '🎟️ 토큰 오피셜분석가'] : [`👑 ${userData.tier} 팩트 회원`, '🎟️ 토큰 공식 수치 멤버']
+      id: 'admin_' + Date.now(),
+      name: adminName,
+      tier: 'SUPER_ADMIN',
+      favoriteSport: '전 종목 오피셜 팩트 분석 총괄',
+      accuracy: 99.9,
+      totalVotes: 999,
+      correctVotes: 998,
+      badges: ['👑 최고관리자 (SUPER ADMIN)', '🛡️ 토큰 오피셜 플랫폼 마스터', '⚡ 100% 팩트 무제한 승인권', '🎟️ VVIP MASTER']
     };
     setUserProfile(newProfile);
     localStorage.setItem('tokeon_user_profile', JSON.stringify(newProfile));
