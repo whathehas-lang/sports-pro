@@ -21,11 +21,11 @@ export const SubscriptionPaywallModal = ({
   const [paymentSuccess, setPaymentSuccess] = useState<boolean>(false);
   const [paymentError, setPaymentError] = useState<string | null>(null);
 
-  // 계좌번호 정보
+  // 계좌번호 정보 (대표님 실계좌 반영)
   const bankInfo = {
-    bankName: '카카오뱅크',
-    accountNumber: '3333-28-1234567',
-    accountHolder: '토큰스포츠 (김현철)',
+    bankName: 'NH농협은행',
+    accountNumber: '352-1278-0792-03',
+    accountHolder: '김현철',
     amountStr: '9,900원 (부가세 포함)',
     amountNum: 9900
   };
