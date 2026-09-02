@@ -93,8 +93,8 @@ export const SubscriptionPaywallModal = ({
         <div className="absolute -right-16 -top-16 w-48 h-48 bg-amber-500/20 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -left-16 -bottom-16 w-48 h-48 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none" />
 
-        {/* Close Button (항상 누를 수 있도록 상시 노출!) */}
-        {onClose && (
+        {/* Close Button: 만료 상태(isTrialExpired)일 때는 닫기 버튼 완전 숨김(철통 잠금!) */}
+        {!isTrialExpired && onClose && (
           <button
             onClick={onClose}
             className="absolute top-4 right-4 p-2 rounded-xl text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 transition-colors z-20 cursor-pointer shadow-md"
@@ -289,13 +289,17 @@ export const SubscriptionPaywallModal = ({
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
             <span>24시간 실시간 입금 감지 (VAT 포함)</span>
           </div>
-          {onClose && (
+          {!isTrialExpired && onClose ? (
             <button
               onClick={onClose}
               className="px-3 py-1 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-lg text-xs font-bold transition-all cursor-pointer"
             >
               창 닫기 ✕
             </button>
+          ) : (
+            <span className="text-[10px] text-rose-400 font-bold">
+              🔒 VIP 결제 완료 시 즉시 잠금 해제
+            </span>
           )}
         </div>
 
