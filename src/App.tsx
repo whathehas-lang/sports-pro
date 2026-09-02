@@ -370,8 +370,8 @@ export default function App() {
   });
   const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false);
 
-  // 📌 5-MINUTE FREE TRIAL REAL TEST STATE (5분 카운트다운 & 10분 후 자동 결제창 팝업 차단)
-  const TOTAL_TRIAL_SECONDS = 10 * 60; // 10분 (600초)
+  // 📌 5-MINUTE FREE TRIAL REAL TEST STATE (5분 카운트다운 & 3일 후 자동 결제창 팝업 차단)
+  const TOTAL_TRIAL_SECONDS = 3 * 24 * 3600; // 3일 (72시간 = 259,200초)
 
   const [trialSecondsLeft, setTrialSecondsLeft] = useState<number>(() => {
     localStorage.setItem('tokeon_trial_start_time', Date.now().toString());
@@ -477,7 +477,7 @@ export default function App() {
       if (remaining <= 0) {
         setTrialSecondsLeft(0);
         setIsTrialExpired(true);
-        setIsPaywallOpen(true); // 10분 만료 시 결제창 자동 팝업!
+        setIsPaywallOpen(true); // 3일 만료 시 결제창 자동 팝업!
         clearInterval(timer);
       } else {
         setTrialSecondsLeft(remaining);
@@ -489,18 +489,19 @@ export default function App() {
   }, []);
 
   // 🔄 5분 테스트 리셋 함수
-  const handleReset10MinTrial = () => {
+  const handleReset3DayTrial = () => {
     localStorage.setItem('tokeon_trial_start_time', Date.now().toString());
     setTrialSecondsLeft(TOTAL_TRIAL_SECONDS);
     setIsTrialExpired(false);
     setIsPaywallOpen(false);
   };
 
-  // Format Trial Timer String (분:초 형식)
+  // Format Trial Timer String (시간:분:초 형식)
   const formatTimerStr = (totalSec: number) => {
-    const mins = Math.floor(totalSec / 60);
+    const hours = Math.floor(totalSec / 3600);
+    const mins = Math.floor((totalSec % 3600) / 60);
     const secs = totalSec % 60;
-    return `${mins.toString().padStart(2, '0')}분 ${secs.toString().padStart(2, '0')}초`;
+    return `${hours}시간 ${mins.toString().padStart(2, '0')}분 ${secs.toString().padStart(2, '0')}초`;
   };
 
   // 📌 Handle Login & Signup Success (회원가입 및 유료 등급 로그인 시 차단 창 즉시 해제 및 모달 닫기!)
@@ -661,7 +662,7 @@ export default function App() {
     );
   };
 
-  // Handle opening match detail modal (10분 만료 시 무조건 결제창 팝업 차단!)
+  // Handle opening match detail modal (3일 만료 시 무조건 결제창 팝업 차단!)
   const handleOpenDetailModal = (match: Match) => {
     if (isTrialExpired) {
       setIsPaywallOpen(true);
@@ -716,7 +717,7 @@ export default function App() {
 
 
 
-                {/* ⏱️ 10분 무료체험 실시간 카운트다운 배너 */}
+                {/* ⏱️ 3일 무료체험 실시간 카운트다운 배너 */}
         <div className={`p-3 rounded-2xl border flex flex-col sm:flex-row items-center justify-between gap-3 shadow-lg transition-all ${
           isTrialExpired
             ? 'bg-gradient-to-r from-rose-950 via-slate-900 to-rose-950 border-rose-500/80 text-rose-200 animate-pulse'
@@ -727,12 +728,12 @@ export default function App() {
             <div className="min-w-0">
               <div className="flex items-center gap-2">
                 <span className={`font-black text-xs sm:text-sm ${isTrialExpired ? 'text-rose-300' : 'text-amber-300'}`}>
-                  {isTrialExpired ? '⛔ 10분 무료체험이 만료되었습니다! (터치 차단됨)' : '⏳ [10분 무료체험 실시간 테스트 진행중]'}
+                  {isTrialExpired ? '⛔ 3일 무료체험이 만료되었습니다! (터치 차단됨)' : '⏳ [3일 무료체험 실시간 테스트 진행중]'}
                 </span>
                 <span className={`text-[10px] px-2 py-0.5 rounded font-mono font-black ${
                   isTrialExpired ? 'bg-rose-500 text-white' : 'bg-amber-400 text-slate-950'
                 }`}>
-                  {isTrialExpired ? 'EXPIRED' : '10-MIN TEST'}
+                  {isTrialExpired ? 'EXPIRED' : '3-DAY TRIAL'}
                 </span>
               </div>
               <p className={`text-[11px] font-bold truncate mt-0.5 ${isTrialExpired ? 'text-rose-400' : 'text-slate-300'}`}>
@@ -769,11 +770,11 @@ export default function App() {
             )}
 
             <button
-              onClick={handleReset10MinTrial}
+              onClick={handleReset3DayTrial}
               className="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-amber-300 border border-slate-700 font-bold text-[10px] rounded-lg transition-all cursor-pointer flex items-center gap-1"
-              title="10분 타이머 다시 시작"
+              title="3일 타이머 다시 시작"
             >
-              <span>🔄 10분 다시 시작</span>
+              <span>🔄 3일 다시 시작</span>
             </button>
           </div>
         </div>
