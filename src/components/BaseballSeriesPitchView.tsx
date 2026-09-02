@@ -421,13 +421,13 @@ export const BaseballSeriesPitchView = ({
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
               {/* 홈팀 선발투수 카드 */}
-              <div className="bg-slate-950/90 p-4 rounded-xl border border-emerald-500/40 space-y-3 shadow-md">
-                <div className="flex items-center justify-between border-b border-slate-800 pb-2">
-                  <div className="flex items-center gap-2">
-                    <span className="font-black text-emerald-400 text-sm">[홈] {homeTeam.name}</span>
-                    <span className="text-white font-black text-sm">{todayMatchup.homeStarterName}</span>
+              <div className="bg-slate-950/90 p-3 sm:p-4 rounded-xl border border-emerald-500/40 space-y-3 shadow-md">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800 pb-2.5 gap-2">
+                  <div className="flex items-center gap-2 flex-wrap min-w-0">
+                    <span className="font-black text-emerald-400 text-sm shrink-0">[홈] {homeTeam.name}</span>
+                    <span className="text-white font-black text-sm truncate">{todayMatchup.homeStarterName}</span>
                   </div>
-                  <span className={`text-[10px] font-black px-2 py-0.5 rounded shadow ${
+                  <span className={`text-[10px] font-black px-2.5 py-0.5 rounded shadow self-start sm:self-auto shrink-0 ${
                     todayMatchup.homeStarterFormTrend === 'UP'
                       ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/50'
                       : 'bg-red-500/20 text-rose-300 border border-red-500/50'
@@ -483,13 +483,13 @@ export const BaseballSeriesPitchView = ({
               </div>
 
               {/* 원정팀 선발투수 카드 */}
-              <div className="bg-slate-950/90 p-4 rounded-xl border border-cyan-500/40 space-y-3 shadow-md">
-                <div className="flex items-center justify-between border-b border-slate-800 pb-2">
-                  <div className="flex items-center gap-2">
-                    <span className="font-black text-cyan-400 text-sm">[원정] {awayTeam.name}</span>
-                    <span className="text-white font-black text-sm">{todayMatchup.awayStarterName}</span>
+              <div className="bg-slate-950/90 p-3 sm:p-4 rounded-xl border border-cyan-500/40 space-y-3 shadow-md">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800 pb-2.5 gap-2">
+                  <div className="flex items-center gap-2 flex-wrap min-w-0">
+                    <span className="font-black text-cyan-400 text-sm shrink-0">[원정] {awayTeam.name}</span>
+                    <span className="text-white font-black text-sm truncate">{todayMatchup.awayStarterName}</span>
                   </div>
-                  <span className={`text-[10px] font-black px-2 py-0.5 rounded shadow ${
+                  <span className={`text-[10px] font-black px-2.5 py-0.5 rounded shadow self-start sm:self-auto shrink-0 ${
                     todayMatchup.awayStarterFormTrend === 'UP'
                       ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/50'
                       : 'bg-red-500/20 text-rose-300 border border-red-500/50'

@@ -1,76 +1,77 @@
-import React, { useState } from 'react';
-import { X, Lock, User, Sparkles, ShieldCheck, ArrowRight, KeyRound, CheckCircle2, Crown } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { X, ShieldCheck, CheckCircle2, Crown, Sparkles, AlertCircle } from 'lucide-react';
 import type { MembershipTier } from '../types/sports';
 import { authService } from '../services/auth/authService';
 
 interface LoginModalProps {
   onClose: () => void;
-  onLoginSuccess: (userData: { name: string; tier: MembershipTier; email: string }) => void;
+  onLoginSuccess: (userData: { name: string; tier: MembershipTier; email: string; avatar?: string }) => void;
 }
 
 export const LoginModal = ({ onClose, onLoginSuccess }: LoginModalProps) => {
-  const [activeTab, setActiveTab] = useState<'LOGIN' | 'SIGNUP'>('LOGIN');
-
-  // Form states
-  const [emailInput, setEmailInput] = useState<string>('');
-  const [passwordInput, setPasswordInput] = useState<string>('');
-  const [nicknameInput, setNicknameInput] = useState<string>('');
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [loadingProvider, setLoadingProvider] = useState<'KAKAO' | 'GOOGLE' | null>(null);
   const [errorMsg, setErrorMsg] = useState<string>('');
   const [successMsg, setSuccessMsg] = useState<string>('');
 
-  // Handle Form Submit
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  useEffect(() => {
+    authService.initKakaoSdk();
+  }, []);
+
+  // 💬 카카오 실제 로그인 핸들러
+  const handleKakaoLogin = async () => {
+    setIsLoading(true);
+    setLoadingProvider('KAKAO');
     setErrorMsg('');
+    setSuccessMsg('');
 
-    if (activeTab === 'LOGIN') {
-      if (!emailInput.trim() || !passwordInput.trim()) {
-        setErrorMsg('아이디(이메일)와 비밀번호를 모두 입력해 주세요.');
-        return;
-      }
-
-      const user = await authService.loginWithEmail(emailInput.trim());
-      setSuccessMsg('🟢 VVIP 로그인 성공! 오피셜 팩트 데이터 시스템에 접속합니다.');
+    try {
+      const user = await authService.loginWithKakao();
+      setSuccessMsg(`🎉 [${user.name}]님 카카오톡 실제 계정으로 로그인 완료!`);
       setTimeout(() => {
         onLoginSuccess({
           name: user.name,
           tier: user.tier,
           email: user.email,
+          avatar: user.avatar
         });
       }, 500);
-    } else {
-      if (!nicknameInput.trim() || !emailInput.trim() || !passwordInput.trim()) {
-        setErrorMsg('모든 필수 항목을 입력해 주세요.');
-        return;
-      }
-
-      const user = await authService.loginWithEmail(emailInput.trim(), nicknameInput.trim());
-      setSuccessMsg('🎉 VVIP 회원가입 완료! 100% 오피셜 팩트 유료 등급으로 자동 로그인합니다.');
-      setTimeout(() => {
-        onLoginSuccess({
-          name: user.name,
-          tier: user.tier,
-          email: user.email,
-        });
-      }, 500);
+    } catch (err: any) {
+      console.warn('Kakao login error:', err);
+      setErrorMsg(err?.message || '카카오 로그인을 완료하지 못했습니다.');
+      setIsLoading(false);
+      setLoadingProvider(null);
     }
   };
 
-  // Quick Demo Login Handler
-  const handleQuickDemoLogin = async () => {
-    const user = await authService.loginWithSocial('Google');
-    setSuccessMsg('👑 [VVIP 100% 팩트 유료 계정]으로 1초 빠른 로그인되었습니다!');
-    setTimeout(() => {
-      onLoginSuccess({
-        name: user.name,
-        tier: user.tier,
-        email: user.email,
-      });
-    }, 400);
+  // 🌐 구글 실제 로그인 핸들러
+  const handleGoogleLogin = async () => {
+    setIsLoading(true);
+    setLoadingProvider('GOOGLE');
+    setErrorMsg('');
+    setSuccessMsg('');
+
+    try {
+      const user = await authService.loginWithGoogle();
+      setSuccessMsg(`🎉 [${user.name}]님 구글 실제 계정으로 로그인 완료!`);
+      setTimeout(() => {
+        onLoginSuccess({
+          name: user.name,
+          tier: user.tier,
+          email: user.email,
+          avatar: user.avatar
+        });
+      }, 500);
+    } catch (err: any) {
+      console.warn('Google login error:', err);
+      setErrorMsg(err?.message || '구글 로그인을 완료하지 못했습니다.');
+      setIsLoading(false);
+      setLoadingProvider(null);
+    }
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md animate-in fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/85 backdrop-blur-md animate-in fade-in">
       <div className="w-full max-w-md bg-slate-900 border-2 border-amber-500/60 rounded-3xl p-6 space-y-5 shadow-2xl relative overflow-hidden">
         
         {/* Glow Ambient Effect */}
@@ -79,149 +80,91 @@ export const LoginModal = ({ onClose, onLoginSuccess }: LoginModalProps) => {
         {/* Header */}
         <div className="flex items-center justify-between border-b border-slate-800 pb-3 relative z-10">
           <div className="flex items-center gap-2">
-            <KeyRound className="w-5 h-5 text-amber-400" />
+            <Crown className="w-5 h-5 text-amber-400" />
             <h3 className="text-base font-black text-white">
-              {activeTab === 'LOGIN' ? '🔑 VVIP 유료 회원 로그인' : '📝 VVIP 1초 회원가입'}
+              소셜 간편 로그인 / 회원가입
             </h3>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-xl text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 transition-colors"
+            className="p-1.5 rounded-xl text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 transition-colors cursor-pointer"
           >
             <X className="w-4 h-4" />
           </button>
         </div>
 
-        {/* LOGIN vs SIGNUP TAB SWITCHER */}
-        <div className="grid grid-cols-2 gap-2 bg-slate-950 p-1 rounded-2xl border border-slate-800 relative z-10">
-          <button
-            onClick={() => {
-              setActiveTab('LOGIN');
-              setErrorMsg('');
-            }}
-            className={`py-2 rounded-xl text-xs font-black transition-all ${
-              activeTab === 'LOGIN'
-                ? 'bg-amber-500 text-slate-950 shadow-md'
-                : 'text-slate-400 hover:text-white'
-            }`}
-          >
-            🔑 로그인
-          </button>
-          <button
-            onClick={() => {
-              setActiveTab('SIGNUP');
-              setErrorMsg('');
-            }}
-            className={`py-2 rounded-xl text-xs font-black transition-all ${
-              activeTab === 'SIGNUP'
-                ? 'bg-amber-500 text-slate-950 shadow-md'
-                : 'text-slate-400 hover:text-white'
-            }`}
-          >
-            📝 1초 회원가입
-          </button>
+        {/* Info Banner */}
+        <div className="p-3 bg-gradient-to-r from-amber-950/80 via-slate-950 to-amber-950/80 rounded-2xl border border-amber-500/50 space-y-1 text-center">
+          <div className="text-amber-300 font-black text-xs flex items-center justify-center gap-1.5">
+            <Sparkles className="w-4 h-4 text-amber-400" />
+            <span>1초 카카오 & 구글 공식 실시간 계정 연동</span>
+          </div>
+          <p className="text-[11px] text-slate-300 font-medium">
+            별도의 가입 절차 없이 본인 소셜 계정으로 즉시 VVIP 팩트 분석을 이용하실 수 있습니다.
+          </p>
         </div>
 
         {/* Alert Messages */}
         {errorMsg && (
-          <div className="p-3 bg-rose-950/90 text-rose-200 rounded-xl border border-rose-500 text-xs font-bold flex items-center gap-2">
-            <X className="w-4 h-4 text-rose-400 shrink-0" />
+          <div className="p-3 bg-rose-950/90 text-rose-200 rounded-xl border border-rose-500 text-xs font-bold flex items-center gap-2 animate-in fade-in">
+            <AlertCircle className="w-4 h-4 text-rose-400 shrink-0" />
             <span>{errorMsg}</span>
           </div>
         )}
 
         {successMsg && (
-          <div className="p-3 bg-emerald-950/90 text-emerald-200 rounded-xl border border-emerald-500 text-xs font-bold flex items-center gap-2">
+          <div className="p-3 bg-emerald-950/90 text-emerald-200 rounded-xl border border-emerald-500 text-xs font-bold flex items-center gap-2 animate-in fade-in">
             <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
             <span>{successMsg}</span>
           </div>
         )}
 
-        {/* FORM */}
-        <form onSubmit={handleSubmit} className="space-y-3.5 text-xs relative z-10">
+        {/* OFFICIAL SOCIAL LOGIN BUTTONS */}
+        <div className="space-y-3 pt-2 relative z-10">
           
-          {/* Signup Nickname Field */}
-          {activeTab === 'SIGNUP' && (
-            <div className="space-y-1">
-              <label className="text-slate-300 font-bold block flex items-center gap-1">
-                <User className="w-3.5 h-3.5 text-amber-400" />
-                닉네임 (활동명):
-              </label>
-              <input
-                type="text"
-                required
-                value={nicknameInput}
-                onChange={(e) => setNicknameInput(e.target.value)}
-                placeholder="예: 대구적중마스터"
-                className="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl px-3.5 py-2.5 text-white font-medium outline-none transition-all"
-              />
-            </div>
-          )}
-
-          {/* Email / ID Field */}
-          <div className="space-y-1">
-            <label className="text-slate-300 font-bold block flex items-center gap-1">
-              <User className="w-3.5 h-3.5 text-amber-400" />
-              아이디 또는 이메일:
-            </label>
-            <input
-              type="text"
-              required
-              value={emailInput}
-              onChange={(e) => setEmailInput(e.target.value)}
-              placeholder="예: vvip@tokeon.co.kr"
-              className="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl px-3.5 py-2.5 text-white font-medium outline-none transition-all"
-            />
-          </div>
-
-          {/* Password Field */}
-          <div className="space-y-1">
-            <label className="text-slate-300 font-bold block flex items-center gap-1">
-              <Lock className="w-3.5 h-3.5 text-amber-400" />
-              비밀번호:
-            </label>
-            <input
-              type="password"
-              required
-              value={passwordInput}
-              onChange={(e) => setPasswordInput(e.target.value)}
-              placeholder="••••••••"
-              className="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl px-3.5 py-2.5 text-white font-medium outline-none transition-all"
-            />
-          </div>
-
-          {/* Fixed Single Tier: VVIP */}
-          <div className="p-2.5 bg-slate-950 rounded-xl border border-amber-500/50 flex items-center justify-between text-xs font-bold">
-            <span className="text-slate-300 flex items-center gap-1">
-              <ShieldCheck className="w-3.5 h-3.5 text-amber-400" /> 회원 등급:
-            </span>
-            <span className="px-2.5 py-0.5 rounded bg-amber-400 text-slate-950 font-black text-[11px]">
-              👑 VVIP 100% 오피셜 전용
-            </span>
-          </div>
-
-          {/* Submit Button */}
+          {/* 1. 카카오톡 공식 1초 로그인 버튼 */}
           <button
-            type="submit"
-            className="w-full py-3 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 hover:from-amber-300 hover:to-yellow-300 text-slate-950 font-black text-xs sm:text-sm rounded-2xl shadow-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer border border-yellow-200 mt-2"
+            onClick={handleKakaoLogin}
+            disabled={isLoading}
+            className="w-full py-3.5 px-4 bg-[#FEE500] hover:bg-[#FDD835] active:scale-[0.98] text-[#191919] font-black text-sm rounded-2xl shadow-lg transition-all flex items-center justify-center gap-2.5 cursor-pointer disabled:opacity-50 border border-yellow-400"
           >
-            <span>{activeTab === 'LOGIN' ? '🔑 VVIP 로그인하기' : '📝 VVIP 회원가입 및 접속'}</span>
-            <ArrowRight className="w-4 h-4 text-slate-950 stroke-[3]" />
+            {/* Kakao Icon */}
+            <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M12 3c-5.523 0-10 3.582-10 8 0 2.868 1.884 5.385 4.757 6.772l-.994 3.708a.5.5 0 0 0 .668.598l4.498-2.999c.356.046.72.071 1.071.071 5.523 0 10-3.582 10-8s-4.477-8-10-8z"/>
+            </svg>
+            <span>
+              {loadingProvider === 'KAKAO' ? '카카오톡 연결 중... 💬' : '카카오톡으로 1초 로그인 / 시작'}
+            </span>
           </button>
-        </form>
 
-        {/* QUICK DEMO ONE-CLICK LOGIN BOX */}
-        <div className="pt-3 border-t border-slate-800 space-y-2 relative z-10">
-          <span className="text-[10px] font-black text-slate-400 uppercase tracking-wider block text-center flex items-center justify-center gap-1">
-            <Sparkles className="w-3 h-3 text-amber-400" /> 1초 VVIP 원클릭 체험 로그인
+          {/* 2. 구글 공식 계정 로그인 버튼 */}
+          <button
+            onClick={handleGoogleLogin}
+            disabled={isLoading}
+            className="w-full py-3.5 px-4 bg-white hover:bg-slate-100 active:scale-[0.98] text-slate-900 font-black text-sm rounded-2xl shadow-lg transition-all flex items-center justify-center gap-2.5 cursor-pointer disabled:opacity-50 border border-slate-300"
+          >
+            {/* Google Colorful Icon */}
+            <svg className="w-5 h-5" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+            <span>
+              {loadingProvider === 'GOOGLE' ? 'Google 계정 연결 중... 🌐' : 'Google 계정으로 로그인'}
+            </span>
+          </button>
+        </div>
+
+        {/* Security & Tier Badge */}
+        <div className="p-3 bg-slate-950 rounded-2xl border border-slate-800 flex items-center justify-between text-xs font-bold text-slate-400">
+          <span className="flex items-center gap-1.5 text-slate-300">
+            <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            안전한 OAuth 2.0 공식 보안 인증
           </span>
-          <button
-            onClick={handleQuickDemoLogin}
-            className="w-full py-2.5 bg-gradient-to-r from-amber-950 via-slate-900 to-amber-950 hover:from-amber-900 border border-amber-500/60 rounded-xl text-amber-300 text-xs font-black shadow flex items-center justify-center gap-1.5 cursor-pointer transition-all"
-          >
-            <Crown className="w-4 h-4 text-amber-400" />
-            <span>👑 VVIP 100% 팩트 유료 계정 원클릭 로그인</span>
-          </button>
+          <span className="text-[10px] bg-amber-400 text-slate-950 px-2 py-0.5 rounded font-black">
+            👑 VVIP 자동 승급
+          </span>
         </div>
 
       </div>

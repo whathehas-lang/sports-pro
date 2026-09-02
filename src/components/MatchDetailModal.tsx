@@ -370,8 +370,8 @@ export const MatchDetailModal = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-slate-900/60 backdrop-blur-md animate-in fade-in duration-200">
-      <div className={`relative w-full max-w-6xl xl:max-w-7xl max-h-[94vh] rounded-3xl shadow-2xl overflow-hidden flex flex-col border ${
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-0 sm:p-4 bg-slate-900/80 sm:bg-slate-900/60 backdrop-blur-md animate-in fade-in duration-200">
+      <div className={`relative w-full max-w-full sm:max-w-6xl xl:max-w-7xl h-full sm:h-auto sm:max-h-[94vh] rounded-none sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col border-0 sm:border ${
         isLight ? 'bg-white border-slate-200 text-slate-900' : 'bg-slate-900 border-slate-800 text-slate-100'
       }`}>
         
@@ -418,7 +418,7 @@ export const MatchDetailModal = ({
         </div>
 
         {/* SINGLE CONTINUOUS MOBILE VERTICAL SCROLL BODY */}
-        <div className={`flex-1 overflow-y-auto p-4 sm:p-6 space-y-8 divide-y custom-scrollbar ${
+        <div className={`flex-1 overflow-y-auto p-3 sm:p-6 space-y-6 sm:space-y-8 divide-y custom-scrollbar ${
           isLight ? 'divide-slate-200' : 'divide-slate-800/80'
         }`}>
 
