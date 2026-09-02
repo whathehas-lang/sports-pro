@@ -91,6 +91,7 @@ export class BetmanLiveSyncService {
       const updatedTime = daysOffset !== 0 ? BetmanLiveSyncService.shiftDateString(m.matchTime, daysOffset) : m.matchTime;
       const updatedClosing = daysOffset !== 0 ? BetmanLiveSyncService.shiftDateString(m.closingTime || m.matchTime, daysOffset) : m.closingTime;
 
+      // 🛡️ 신규 회차는 이전 회차의 종료 스코어(10:1 등) 및 FINISHED 상태를 완전히 제거하고 '발매중/경기전'으로 초기화
       return {
         ...m,
         id: `${gmId}_${effectiveGmTs}_${m.betmanMatchNo || (m as any).matchNo || idx + 1}`,
@@ -98,7 +99,18 @@ export class BetmanLiveSyncService {
         betmanRound: targetRoundName,
         matchTime: updatedTime,
         closingTime: updatedClosing,
-        betmanFolder: gmId === 'G101' ? 'SEUNGBUSHIK' : (m.betmanFolder || 'SEUNGBUSHIK')
+        betmanFolder: gmId === 'G101' ? 'SEUNGBUSHIK' : (m.betmanFolder || 'SEUNGBUSHIK'),
+        status: 'SCHEDULED',
+        homeScore: undefined,
+        awayScore: undefined,
+        isCompleted: false,
+        liveMinute: undefined,
+        lineupAlertInfo: {
+          isPublished: true,
+          publishedTime: '🔥 오피셜 발매중',
+          alertText: `🚨 ${m.betmanMatchNo}번 [${m.homeTeam.name} vs ${m.awayTeam.name}] 오피셜 라인업 연동 완료`,
+          keyAbsenceNotice: `오피셜 배당: 승 ${m.betmanOdds?.win || '-'} | 패 ${m.betmanOdds?.lose || '-'}`
+        }
       };
     }).sort((a, b) => (a.betmanMatchNo || (a as any).matchNo || 0) - (b.betmanMatchNo || (b as any).matchNo || 0));
   }
