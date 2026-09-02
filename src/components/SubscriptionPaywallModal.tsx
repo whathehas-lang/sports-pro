@@ -93,16 +93,7 @@ export const SubscriptionPaywallModal = ({
         <div className="absolute -right-16 -top-16 w-48 h-48 bg-amber-500/20 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -left-16 -bottom-16 w-48 h-48 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none" />
 
-        {/* Close Button: 만료 상태(isTrialExpired)일 때는 닫기 버튼 완전 숨김(철통 잠금!) */}
-        {!isTrialExpired && onClose && (
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 p-2 rounded-xl text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 transition-colors z-20 cursor-pointer shadow-md"
-            title="닫기"
-          >
-            <X className="w-5 h-5 text-white" />
-          </button>
-        )}
+        {/* 🔒 철통 잠금: X 닫기 버튼 완전 제거 */}
 
         {/* Header Alert */}
         <div className="text-center space-y-1.5 relative z-10 pt-1 sm:pt-0">
@@ -283,24 +274,15 @@ export const SubscriptionPaywallModal = ({
           </div>
         )}
 
-        {/* Bottom Close Action */}
+        {/* 🔒 철통 잠금 하단: 결제 승인 전까지 닫기 불가 */}
         <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between">
           <div className="flex items-center gap-1 text-[11px] text-slate-400">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
             <span>24시간 실시간 입금 감지 (VAT 포함)</span>
           </div>
-          {!isTrialExpired && onClose ? (
-            <button
-              onClick={onClose}
-              className="px-3 py-1 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-lg text-xs font-bold transition-all cursor-pointer"
-            >
-              창 닫기 ✕
-            </button>
-          ) : (
-            <span className="text-[10px] text-rose-400 font-bold">
-              🔒 VIP 결제 완료 시 즉시 잠금 해제
-            </span>
-          )}
+          <span className="text-[11px] text-amber-400 font-black flex items-center gap-1">
+            <span>🔒 VIP 승인 시 자동 잠금 해제</span>
+          </span>
         </div>
 
       </div>
