@@ -20,7 +20,7 @@ declare global {
 export class AuthService {
   private currentUser: UserSessionData | null = null;
   private storageKey = 'sports_v2_user_session';
-  private kakaoJsKey = (import.meta as any).env?.VITE_KAKAO_JAVASCRIPT_KEY || '48238b8e8131a02d7b84e7b6d3a71cb7';
+  private kakaoJsKey = (import.meta as any).env?.VITE_KAKAO_JAVASCRIPT_KEY || '1f7aeb3ff3008e93592e69fa5f4161ca';
   private googleClientId = (import.meta as any).env?.VITE_GOOGLE_CLIENT_ID || '1046965158223-demo.apps.googleusercontent.com';
 
   constructor() {
@@ -112,7 +112,7 @@ export class AuthService {
       if (window.Kakao && window.Kakao.Auth && typeof window.Kakao.Auth.login === 'function') {
         try {
           window.Kakao.Auth.login({
-            scope: 'profile_nickname,account_email',
+            // safe scope for general kakao apps
             success: (authObj: any) => {
               console.log('[AuthService] Kakao Auth Success:', authObj);
               if (window.Kakao.API && typeof window.Kakao.API.request === 'function') {
