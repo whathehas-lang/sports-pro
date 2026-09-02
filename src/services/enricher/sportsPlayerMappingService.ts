@@ -133,27 +133,13 @@ export class SportsPlayerMappingService {
     if (lower.includes('kiwoom') || lower.includes('heroes') || lower.includes('키움')) return '키움 히어로즈';
     if (lower.includes('ssg') || lower.includes('landers') || lower.includes('랜더스')) return 'SSG 랜더스';
 
-    if (lower.includes('yankees') || lower.includes('양키스') || lower.includes('뉴욕양키')) return '뉴욕 양키스';
-    if (lower.includes('angels') || lower.includes('에인절스') || lower.includes('la에인절')) return 'LA 에인절스';
-    if (lower.includes('dodgers') || lower.includes('다저스') || lower.includes('la다저스')) return 'LA 다저스';
-    if (lower.includes('diamondbacks') || lower.includes('애리조나') || lower.includes('애리다이')) return '애리조나 다이아몬드백스';
-    if (lower.includes('phillies') || lower.includes('필라델피아') || lower.includes('필라필리')) return '필라델피아 필리스';
+    if (lower.includes('yankees') || lower.includes('양키스')) return '뉴욕 양키스';
+    if (lower.includes('angels') || lower.includes('에인절스')) return 'LA 에인절스';
+    if (lower.includes('dodgers') || lower.includes('다저스')) return 'LA 다저스';
+    if (lower.includes('diamondbacks') || lower.includes('애리조나')) return '애리조나 다이아몬드백스';
+    if (lower.includes('phillies') || lower.includes('필라델피아')) return '필라델피아 필리스';
     if (lower.includes('padres') || lower.includes('샌디에이고')) return '샌디에이고 파드리스';
-    if (lower.includes('rays') || lower.includes('탬파베이') || lower.includes('탬파레이')) return '탬파베이 레이스';
-    if (lower.includes('mets') || lower.includes('뉴욕메츠')) return '뉴욕 메츠';
-    if (lower.includes('pirates') || lower.includes('피츠버그') || lower.includes('피츠파이')) return '피츠버그 파이리츠';
-    if (lower.includes('giants') || lower.includes('샌프란시스코') || lower.includes('샌프자이')) return '샌프란시스코 자이언츠';
-    if (lower.includes('royals') || lower.includes('캔자스시티') || lower.includes('캔자로얄')) return '캔자스시티 로열스';
-    if (lower.includes('marlins') || lower.includes('마이애미') || lower.includes('마이말린')) return '마이애미 말린스';
-    if (lower.includes('rangers') || lower.includes('텍사스') || lower.includes('텍사레인')) return '텍사스 레인저스';
-    if (lower.includes('athletics') || lower.includes('오클랜드') || lower.includes('애슬레틱')) return '오클랜드 애슬레틱스';
-    if (lower.includes('astros') || lower.includes('휴스턴') || lower.includes('휴스애스')) return '휴스턴 애스트로스';
-    if (lower.includes('whitesox') || lower.includes('화이트삭스') || lower.includes('시카화이')) return '시카고 화이트삭스';
-    if (lower.includes('rockies') || lower.includes('콜로라도') || lower.includes('콜로로키')) return '콜로라도 로키스';
-    if (lower.includes('orioles') || lower.includes('볼티모어') || lower.includes('볼티오리')) return '볼티모어 오리올스';
-    if (lower.includes('cardinals') || lower.includes('세인트루이스') || lower.includes('세인카디')) return '세인트루이스 카디널스';
 
     return teamName;
   }
 }
-

@@ -4,8 +4,6 @@ import { Navbar } from './components/Navbar';
 import { MobileConnectModal } from './components/MobileConnectModal';
 import { MatchCard } from './components/MatchCard';
 import { MatchDetailModal } from './components/MatchDetailModal';
-import { Seung1PaeTableView } from './components/Seung1PaeTableView';
-import { SeungMuBaeTableView } from './components/SeungMuBaeTableView';
 import { PCWebCommunityHub } from './components/PCWebCommunityHub';
 import { UserProfileModal, type UserProfileData } from './components/UserProfileModal';
 import { LoginModal } from './components/LoginModal';
@@ -802,31 +800,9 @@ export default function App() {
               </div>
             </div>
 
-            {/* ⚾ 야구 승1패 전용 오피셜 슬립 테이블 그리드 뷰 */}
-            {selectedFolder === 'SEUNG1PAE' ? (
-              <div className="w-full space-y-4">
-                <Seung1PaeTableView
-                  matches={matches}
-                  selectedRound={selectedRound}
-                  onSelectRound={setSelectedRound}
-                  onSelectMatch={(m) => handleOpenDetailModal(m)}
-                  theme={theme}
-                />
-              </div>
-            ) : selectedFolder === 'SEUNGMUBAE' ? (
-              /* ⚽ 축구 승무패 전용 오피셜 슬립 테이블 그리드 뷰 */
-              <div className="w-full space-y-4">
-                <SeungMuBaeTableView
-                  matches={matches}
-                  selectedRound={selectedRound}
-                  onSelectRound={setSelectedRound}
-                  onSelectMatch={(m) => handleOpenDetailModal(m)}
-                  theme={theme}
-                />
-              </div>
-            ) : viewMode === 'PC_WEB' ? (
+            {/* PC DESKTOP MODE vs MOBILE APP MODE */}
+            {viewMode === 'PC_WEB' ? (
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
-
                 
                 {/* LEFT MAIN GRID (8 COLS): 2-COLUMN MATCH CARDS GRID */}
                 <div className="lg:col-span-8 space-y-4">

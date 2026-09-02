@@ -55,46 +55,29 @@ export class H2HRecentFormEngine {
     const internalDbRecord = h2hDatabaseStorage.getH2H(homeName, awayName) || h2hDatabaseStorage.getH2H(match.homeTeam.name, match.awayTeam.name);
 
     if (internalDbRecord && internalDbRecord.last5Matches && internalDbRecord.last5Matches.length > 0) {
-      const list = internalDbRecord.last5Matches;
-      const hw = list.filter((m: any) => m.result === '승' || (m.homeScore !== undefined && m.homeScore > m.awayScore)).length;
-      const dr = list.filter((m: any) => m.result === '무' || (m.homeScore !== undefined && m.homeScore === m.awayScore)).length;
-      const aw = list.filter((m: any) => m.result === '패' || (m.awayScore !== undefined && m.awayScore > m.homeScore)).length;
       h2h = {
-        summaryText: internalDbRecord.summaryText || `과거 맞대결 ${list.length}경기 실존 기록: [${homeName}] ${hw}승 ${dr > 0 ? `${dr}무 ` : ''}${aw}패`,
-        homeWins: hw,
-        draws: dr,
-        awayWins: aw,
-        last5Matches: list
-      };
-    } else if (match.headToHeadRecord && match.headToHeadRecord.last5Matches && match.headToHeadRecord.last5Matches.length > 0) {
-      const list = match.headToHeadRecord.last5Matches;
-      const hw = match.headToHeadRecord.homeWins || list.filter((m: any) => m.result === '승' || (m.homeScore !== undefined && m.homeScore > m.awayScore)).length;
-      const dr = match.headToHeadRecord.draws || list.filter((m: any) => m.result === '무' || (m.homeScore !== undefined && m.homeScore === m.awayScore)).length;
-      const aw = match.headToHeadRecord.awayWins || list.filter((m: any) => m.result === '패' || (m.awayScore !== undefined && m.awayScore > m.homeScore)).length;
-      h2h = {
-        summaryText: match.headToHeadRecord.summaryText || `과거 맞대결 ${list.length}경기 실존 기록: [${homeName}] ${hw}승 ${dr > 0 ? `${dr}무 ` : ''}${aw}패`,
-        homeWins: hw,
-        draws: dr,
-        awayWins: aw,
-        last5Matches: list
+        summaryText: internalDbRecord.summaryText,
+        homeWins: internalDbRecord.homeWins,
+        draws: internalDbRecord.draws,
+        awayWins: internalDbRecord.awayWins,
+        last5Matches: internalDbRecord.last5Matches
       };
     } else if (match.h2hRecentMatches && match.h2hRecentMatches.length > 0) {
-      const list = match.h2hRecentMatches;
-      const homeWins = list.filter((m: any) => m.result === '승' || (m.homeScore !== undefined && m.homeScore > m.awayScore)).length;
-      const draws = list.filter((m: any) => m.result === '무' || (m.homeScore !== undefined && m.homeScore === m.awayScore)).length;
-      const awayWins = list.filter((m: any) => m.result === '패' || (m.awayScore !== undefined && m.awayScore > m.homeScore)).length;
+      const homeWins = match.h2hRecentMatches.filter(m => m.homeScore > m.awayScore).length;
+      const draws = match.h2hRecentMatches.filter(m => m.homeScore === m.awayScore).length;
+      const awayWins = match.h2hRecentMatches.length - homeWins - draws;
       h2h = {
-        summaryText: `과거 맞대결 ${list.length}경기 실존 기록: [${homeName}] ${homeWins}승 ${draws > 0 ? `${draws}무 ` : ''}${awayWins}패`,
+        summaryText: `과거 맞대결 ${match.h2hRecentMatches.length}경기 실존 기록`,
         homeWins,
         draws,
         awayWins,
-        last5Matches: list
+        last5Matches: match.h2hRecentMatches
       };
-    } else {
+    } else if (!h2h || !h2h.last5Matches || h2h.last5Matches.length === 0) {
       const generated = FootballH2HRecentFormEngine.generateH2HMatches(homeName, awayName, seed, match.sport);
-      const homeWins = generated.filter((m: any) => m.result === '승' || (m.homeScore !== undefined && m.homeScore > m.awayScore)).length;
-      const draws = generated.filter((m: any) => m.result === '무' || (m.homeScore !== undefined && m.homeScore === m.awayScore)).length;
-      const awayWins = generated.filter((m: any) => m.result === '패' || (m.awayScore !== undefined && m.awayScore > m.homeScore)).length;
+      const homeWins = generated.filter(m => m.homeScore > m.awayScore).length;
+      const draws = generated.filter(m => m.homeScore === m.awayScore).length;
+      const awayWins = generated.length - homeWins - draws;
       h2h = {
         summaryText: `과거 맞대결 ${generated.length}경기 실존 기록: [${homeName}] ${homeWins}승 ${draws > 0 ? `${draws}무 ` : ''}${awayWins}패`,
         homeWins,
@@ -103,7 +86,6 @@ export class H2HRecentFormEngine {
         last5Matches: generated
       };
     }
-
 
     return {
       ...match,

@@ -73,9 +73,8 @@ export class SportsApiService {
     const defaultTs = metadata?.defaultRoundTs || (gmId === 'G011' ? '260049' : gmId === 'G024' ? '260064' : gmId === 'G102' ? '89' : '260103');
     const gmTs = roundName.includes('회차') ? (roundName.match(/\d+/) || [defaultTs])[0] : defaultTs;
     
-    return betmanRoundRegistry.getMatchesByGameAndRoundAsync(gmId, gmTs);
+    return betmanRoundRegistry.getMatchesByGameAndRound(gmId, gmTs);
   }
 }
-
 
 export const sportsApiService = new SportsApiService();

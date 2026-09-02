@@ -129,14 +129,6 @@ export class BetmanRoundRegistryService {
   }
 
   /**
-   * Get enriched matches asynchronously for a specific game code (gmId) & round sequence (gmTs)
-   */
-  public async getMatchesByGameAndRoundAsync(gmId: string = 'G101', gmTs: string = '260102'): Promise<Match[]> {
-    return betmanLiveSyncService.getMatchesAsync(gmId, gmTs);
-  }
-
-
-  /**
    * Get official Betman game slip URL for any gmId & gmTs
    */
   public getOfficialBetmanSlipUrl(gmId: string = 'G101', gmTs: string = '260102'): string {

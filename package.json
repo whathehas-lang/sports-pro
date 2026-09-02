@@ -1,8 +1,8 @@
 {
-  "name": "token-app-upgrade-v2",
+  "name": "token-app-release-v1",
   "private": true,
-  "version": "2.0.0-dev",
-  "description": "토큰앱 - 앱출시 2버전 (차세대 기능 업그레이드 전용 독립 프로젝트)",
+  "version": "1.0.0",
+  "description": "토큰앱 - 앱출시 1버전 (독립형 스포츠 오피셜 팩트 분석 시스템)",
   "type": "module",
   "scripts": {
     "dev": "vite --open",

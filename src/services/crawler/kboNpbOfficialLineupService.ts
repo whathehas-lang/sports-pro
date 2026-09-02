@@ -13,10 +13,10 @@ export class KboNpbOfficialLineupService {
     ['롯데 자이언츠', { name: '박세웅', number: 30, throwsHand: 'R', era: '3.75', whip: '1.24', wins: 6, losses: 5, inningsPitched: '91.1', strikeouts: 86, vsOpponentLogs: [] }],
     ['KT 위즈', { name: '고영표', number: 35, throwsHand: 'R', era: '3.90', whip: '1.25', wins: 5, losses: 4, inningsPitched: '76.1', strikeouts: 70, vsOpponentLogs: [] }],
     ['한화 이글스', { name: '류현진', number: 33, throwsHand: 'R', era: '3.65', whip: '1.18', wins: 7, losses: 4, inningsPitched: '88.2', strikeouts: 82, vsOpponentLogs: [] }],
-    ['NC 다이노스', { name: '하트', number: 59, throwsHand: 'L', era: '2.69', whip: '1.03', wins: 13, losses: 3, inningsPitched: '157.0', strikeouts: 182, vsOpponentLogs: [] }],
+    ['NC 다이노스', { name: '구창모', number: 59, throwsHand: 'L', era: '2.85', whip: '1.08', wins: 7, losses: 2, inningsPitched: '65.0', strikeouts: 72, vsOpponentLogs: [] }],
     ['KIA 타이거즈', { name: '네일', number: 40, throwsHand: 'R', era: '2.53', whip: '1.09', wins: 12, losses: 5, inningsPitched: '149.1', strikeouts: 138, vsOpponentLogs: [] }],
-    ['키움 히어로즈', { name: '후라도', number: 75, throwsHand: 'R', era: '3.36', whip: '1.14', wins: 10, losses: 8, inningsPitched: '190.1', strikeouts: 169, vsOpponentLogs: [] }],
-    ['SSG 랜더스', { name: '김광현', number: 29, throwsHand: 'L', era: '4.93', whip: '1.45', wins: 12, losses: 10, inningsPitched: '144.1', strikeouts: 154, vsOpponentLogs: [] }]
+    ['키움 히어로즈', { name: '알칸타라', number: 44, throwsHand: 'R', era: '3.55', whip: '1.20', wins: 8, losses: 6, inningsPitched: '120.1', strikeouts: 110, vsOpponentLogs: [] }],
+    ['SSG 랜더스', { name: '최민준', number: 38, throwsHand: 'R', era: '4.10', whip: '1.32', wins: 5, losses: 4, inningsPitched: '68.0', strikeouts: 58, vsOpponentLogs: [] }]
   ]);
 
   private static npbCache: Map<string, StarterPitcherInfo> = new Map([

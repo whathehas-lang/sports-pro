@@ -77,9 +77,6 @@ export class MasterFootballOrchestratorService {
           tacticDescription: `${fmt} 포메이션 기반 ${isOverFavored ? '공격형 침투 전술 (오버 우세)' : '안정적 수비 블록 구축 (언더 우세)'}`
         }
       };
-
-      // ⚽ 축구 상대전적(H2H 5경기) & 최근 10경기 결과 및 로그 완벽 주입
-      enriched = H2HRecentFormEngine.enrichH2HAndRecentLogs(enriched);
     } else {
       // ⚾ 야구 & 🏀 농구 전 종목 상대전적(H2H 5경기) & 최근 10경기 결과 및 선발 상대전적 완벽 주입
       enriched = FootballH2HRecentFormEngine.enrichH2HAndRecent(enriched);
@@ -89,5 +86,4 @@ export class MasterFootballOrchestratorService {
     return enriched;
   }
 }
-
 
