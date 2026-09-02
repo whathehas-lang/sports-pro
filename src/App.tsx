@@ -704,7 +704,8 @@ export default function App() {
 
 
 
-        {/* 📌 3-DAY FREE TRIAL COUNTDOWN NEON BANNER */}
+        {/* 📌 3-DAY FREE TRIAL COUNTDOWN NEON BANNER (관리자 및 VIP 회원은 숨김 처리) */}
+        {(!userProfile.name.includes('관리자') && membershipTier !== 'VIP' && membershipTier !== 'VVIP') && (
         <div className={`p-3 rounded-2xl border flex flex-col sm:flex-row items-center justify-between gap-3 shadow-md transition-all ${
           isTrialExpired
             ? isLight ? 'bg-rose-50 border-rose-300 text-rose-900' : 'bg-gradient-to-r from-rose-950 via-slate-900 to-rose-950 border-rose-500/70 text-rose-200'
@@ -767,6 +768,7 @@ export default function App() {
             )}
           </div>
         </div>
+        )}
 
         {/* HOME TAB CONTENT (경기목록 탭 전용) */}
         {activeTab === 'home' && (
