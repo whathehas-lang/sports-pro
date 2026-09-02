@@ -22,6 +22,7 @@ import { MatchDbLockService } from './services/api/matchDbLockService';
 import { KboLiveSubPipelineService } from './services/api/kboLiveSubPipelineService';
 import { H2HBatchPrefetchService } from './services/batch/h2hBatchPrefetchService';
 import { H2HRecentFormEngine } from './services/enricher/h2hRecentFormEngine';
+import { BetmanHourlySyncScheduler } from './services/scheduler/betmanHourlySyncScheduler';
 
 export default function App() {
   const dynamicMeta = getDynamicBetmanGamesMetadata();
@@ -186,11 +187,21 @@ export default function App() {
       }));
     });
 
+    // 4. ⏰ 오후 3시(15:00) 1시간 단위 배트맨 추가 경기(MLB 등) 자동 동기화 스케줄러 시작
+    BetmanHourlySyncScheduler.start();
+    const unsubscribeHourly = BetmanHourlySyncScheduler.subscribe((latestMatches) => {
+      if (latestMatches && latestMatches.length > 0) {
+        setMatches(latestMatches);
+      }
+    });
+
     return () => {
       unsubscribePolling();
       unsubscribeWebhook();
       unsubscribeKbo();
+      unsubscribeHourly();
       KboLiveSubPipelineService.stop();
+      BetmanHourlySyncScheduler.stop();
     };
   }, []);
 
