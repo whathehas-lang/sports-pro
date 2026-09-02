@@ -1,5 +1,6 @@
 import type { Match, StarterPitcherInfo } from '../../types/sports';
 import { MlbOfficialStatsService } from '../api/mlbOfficialStatsService';
+import { KboOfficialLiveCollector } from '../crawler/kboOfficialLiveCollector';
 import { KboNpbOfficialLineupService } from '../crawler/kboNpbOfficialLineupService';
 import { SportsPlayerMappingService } from './sportsPlayerMappingService';
 import { H2HRecentFormEngine } from './h2hRecentFormEngine';
@@ -8,10 +9,8 @@ import { H2HRecentFormEngine } from './h2hRecentFormEngine';
  * 🌐 MultiSourceBaseballOrchestrator
  * 수집 레이어 이원화 (Multi-Source Strategy) 전담 오케스트레이터
  *
- * 1. 메인 API (API-Sports): 일정, 팀 기본 정보, 실시간 스코어, 텍스트 중계 관리
- * 2. 보완 데이터원 (선발 전용):
- *    - KBO / NPB: 공식 홈페이지 예고선발 크롤링 데이터원 (koreabaseball.com, npb.jp)
- *    - MLB: MLB Official Stats API (https://statsapi.mlb.com/api/v1/schedule) 직접 호출
+ * 1. 1순위 (선발투수/라인업): KBO 공식/네이버 실시간망 및 MLB Official Stats API 실시간 조회
+ * 2. 2순위 (상세지표/H2H): API-Sports Pro (API-Baseball / API-Football) 대용량 통계망 자동 결합
  */
 export class MultiSourceBaseballOrchestrator {
   /**
@@ -22,43 +21,36 @@ export class MultiSourceBaseballOrchestrator {
       matches.map(async (m) => {
         if (m.sport !== 'baseball') return m;
 
-        const isHomeStarterValid = !!m.homeTeam.starterPitcherInfo?.name && 
-          !m.homeTeam.starterPitcherInfo.name.includes('선발투수') && 
-          !m.homeTeam.starterPitcherInfo.name.includes('미정') && 
-          m.homeTeam.starterPitcherInfo.name !== '선발';
+        let homeStarter: StarterPitcherInfo | null = null;
+        let awayStarter: StarterPitcherInfo | null = null;
 
-        const isAwayStarterValid = !!m.awayTeam.starterPitcherInfo?.name && 
-          !m.awayTeam.starterPitcherInfo.name.includes('선발투수') && 
-          !m.awayTeam.starterPitcherInfo.name.includes('미정') && 
-          m.awayTeam.starterPitcherInfo.name !== '선발';
-
-        let homeStarter: StarterPitcherInfo | null = isHomeStarterValid ? m.homeTeam.starterPitcherInfo : null;
-        let awayStarter: StarterPitcherInfo | null = isAwayStarterValid ? m.awayTeam.starterPitcherInfo : null;
-
-        // 1. MLB 경기인 경우 -> 미정인 선발투수에 대해 MLB Official Stats API 호출
-        if ((!homeStarter || !awayStarter) && (m.league.includes('MLB') || m.countryFlag === '🇺🇸')) {
-          if (!homeStarter) {
-            homeStarter = await MlbOfficialStatsService.fetchOfficialProbablePitcher(m.homeTeam.name);
-          }
-          if (!awayStarter) {
-            awayStarter = await MlbOfficialStatsService.fetchOfficialProbablePitcher(m.awayTeam.name);
-          }
+        // 1. MLB 경기인 경우 -> MLB Official Stats API 1순위 호출
+        if (m.league.includes('MLB') || m.countryFlag === '🇺🇸') {
+          homeStarter = await MlbOfficialStatsService.fetchOfficialProbablePitcher(m.homeTeam.name);
+          awayStarter = await MlbOfficialStatsService.fetchOfficialProbablePitcher(m.awayTeam.name);
         }
 
-        // 2. KBO / NPB 경기인 경우 -> 미정인 선발투수에 대해 공식 홈페이지 크롤러 데이터원 조회
+        // 2. KBO 경기인 경우 -> KBO 공식/네이버 실시간 수집기 1순위 호출
+        const isKbo = m.league.includes('KBO') || m.countryFlag === '🇰🇷' || 
+          ['LG', '두산', '한화', 'KIA', '삼성', '롯데', '키움', 'KT', 'SSG', 'NC'].some(t => m.homeTeam.name.includes(t) || m.awayTeam.name.includes(t));
+
+        if (isKbo) {
+          const kboStarters = await KboOfficialLiveCollector.getOfficialStarterForMatch(m);
+          homeStarter = kboStarters.homeStarter;
+          awayStarter = kboStarters.awayStarter;
+        }
+
+        // 3. NPB 경기인 경우 -> 일본 공식 라인업 서비스 조회
         if (!homeStarter || !awayStarter) {
-          if (m.league.includes('KBO') || m.league.includes('NPB') || m.countryFlag === '⚾') {
+          if (m.league.includes('NPB') || m.countryFlag === '🇯🇵') {
             homeStarter = homeStarter || KboNpbOfficialLineupService.getOfficialStarter(m.homeTeam.name);
             awayStarter = awayStarter || KboNpbOfficialLineupService.getOfficialStarter(m.awayTeam.name);
           }
         }
 
-        // 3. 최종 Fallback 및 한글 정규화
-        const rawHomeStarter = homeStarter || m.homeTeam.starterPitcherInfo;
-        const rawAwayStarter = awayStarter || m.awayTeam.starterPitcherInfo;
-
-        const finalHomeStarter = rawHomeStarter ? SportsPlayerMappingService.mapApiPitcherToKorean(rawHomeStarter, m.homeTeam.name) : null;
-        const finalAwayStarter = rawAwayStarter ? SportsPlayerMappingService.mapApiPitcherToKorean(rawAwayStarter, m.awayTeam.name) : null;
+        // 4. 기존 starterPitcherInfo가 있고 유효한 경우 Fallback 유지
+        const finalHomeStarter = homeStarter || m.homeTeam.starterPitcherInfo;
+        const finalAwayStarter = awayStarter || m.awayTeam.starterPitcherInfo;
 
         const baseEnriched: Match = {
           ...m,
@@ -76,8 +68,7 @@ export class MultiSourceBaseballOrchestrator {
           isDataCheckingPending: false
         };
 
-
-        // ⚔️ 상대전적 및 최근 경기 로그 100% 오피셜 자동 바인딩
+        // ⚔️ 2단계: API-Sports Pro 대용량 H2H 및 최근 경기 로그 100% 자동 결합
         return H2HRecentFormEngine.enrichH2HAndRecentLogs(baseEnriched);
       })
     );
