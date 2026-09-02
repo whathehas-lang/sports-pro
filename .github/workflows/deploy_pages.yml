@@ -1,13 +1,12 @@
-name: 🚀 Deploy to GitHub Pages (24/7 Mobile Cloud)
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -22,32 +21,33 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: 1. Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: 2. Setup Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
 
-      - name: 3. Install Dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: 4. Build Production Web Bundle
+      - name: Build project
         run: npm run build
+        env:
+          VITE_SPORTS_API_KEY: '96ae3619c2c6f8f76ec75d64bd95d000'
+          VITE_FOOTBALL_API_URL: https://v3.football.api-sports.io
+          VITE_BASEBALL_API_URL: https://v1.baseball.api-sports.io
+          VITE_USE_MOCK_DATA: 'false'
 
-      - name: 5. Deploy to gh-pages branch (Legacy Support)
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
-      - name: 6. Upload GitHub Pages Artifact
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: './dist'
 
-      - name: 7. Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
