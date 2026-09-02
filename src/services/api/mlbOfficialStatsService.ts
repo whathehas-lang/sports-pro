@@ -116,8 +116,10 @@ export class MlbOfficialStatsService {
    * 2순위: MLB 연맹 공식 Stats API (statsapi.mlb.com) 수집
    */
   private static async fetchFromMlbStatsApi(teamName: string, dateStr?: string): Promise<StarterPitcherInfo | null> {
-    const today = dateStr || new Date().toISOString().split('T')[0];
-    const url = `https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=${today}&hydrate=probablePitcher(note),team,linescore`;
+    const now = dateStr ? new Date(dateStr) : new Date();
+    const yesterday = new Date(now.getTime() - 24 * 3600 * 1000).toISOString().split('T')[0];
+    const tomorrow = new Date(now.getTime() + 24 * 3600 * 1000).toISOString().split('T')[0];
+    const url = `https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=${yesterday}&endDate=${tomorrow}&hydrate=probablePitcher(note),team,linescore`;
     
     const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
     if (!res.ok) return null;
