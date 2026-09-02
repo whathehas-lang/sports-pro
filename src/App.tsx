@@ -370,10 +370,11 @@ export default function App() {
   });
   const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false);
 
-  // 📌 5-MINUTE FREE TRIAL REAL TEST STATE (5분 카운트다운 & 5분 후 자동 결제창 팝업 차단)
-  const TOTAL_TRIAL_SECONDS = 5 * 60; // 5분 (300초)
+  // 📌 5-MINUTE FREE TRIAL REAL TEST STATE (5분 카운트다운 & 10분 후 자동 결제창 팝업 차단)
+  const TOTAL_TRIAL_SECONDS = 10 * 60; // 10분 (600초)
 
   const [trialSecondsLeft, setTrialSecondsLeft] = useState<number>(() => {
+    localStorage.setItem('tokeon_trial_start_time', Date.now().toString());
     const savedStart = localStorage.getItem('tokeon_trial_start_time');
     const now = Date.now();
     let startTime = now;
@@ -476,7 +477,7 @@ export default function App() {
       if (remaining <= 0) {
         setTrialSecondsLeft(0);
         setIsTrialExpired(true);
-        setIsPaywallOpen(true); // 5분 만료 시 결제창 자동 팝업!
+        setIsPaywallOpen(true); // 10분 만료 시 결제창 자동 팝업!
         clearInterval(timer);
       } else {
         setTrialSecondsLeft(remaining);
@@ -488,7 +489,7 @@ export default function App() {
   }, []);
 
   // 🔄 5분 테스트 리셋 함수
-  const handleReset5MinTrial = () => {
+  const handleReset10MinTrial = () => {
     localStorage.setItem('tokeon_trial_start_time', Date.now().toString());
     setTrialSecondsLeft(TOTAL_TRIAL_SECONDS);
     setIsTrialExpired(false);
@@ -660,7 +661,7 @@ export default function App() {
     );
   };
 
-  // Handle opening match detail modal (5분 만료 시 무조건 결제창 팝업 차단!)
+  // Handle opening match detail modal (10분 만료 시 무조건 결제창 팝업 차단!)
   const handleOpenDetailModal = (match: Match) => {
     if (isTrialExpired) {
       setIsPaywallOpen(true);
@@ -715,7 +716,7 @@ export default function App() {
 
 
 
-                {/* ⏱️ 5분 무료체험 실시간 카운트다운 배너 */}
+                {/* ⏱️ 10분 무료체험 실시간 카운트다운 배너 */}
         <div className={`p-3 rounded-2xl border flex flex-col sm:flex-row items-center justify-between gap-3 shadow-lg transition-all ${
           isTrialExpired
             ? 'bg-gradient-to-r from-rose-950 via-slate-900 to-rose-950 border-rose-500/80 text-rose-200 animate-pulse'
@@ -726,12 +727,12 @@ export default function App() {
             <div className="min-w-0">
               <div className="flex items-center gap-2">
                 <span className={`font-black text-xs sm:text-sm ${isTrialExpired ? 'text-rose-300' : 'text-amber-300'}`}>
-                  {isTrialExpired ? '⛔ 5분 무료체험이 만료되었습니다! (터치 차단됨)' : '⏳ [5분 무료체험 실시간 테스트 진행중]'}
+                  {isTrialExpired ? '⛔ 10분 무료체험이 만료되었습니다! (터치 차단됨)' : '⏳ [10분 무료체험 실시간 테스트 진행중]'}
                 </span>
                 <span className={`text-[10px] px-2 py-0.5 rounded font-mono font-black ${
                   isTrialExpired ? 'bg-rose-500 text-white' : 'bg-amber-400 text-slate-950'
                 }`}>
-                  {isTrialExpired ? 'EXPIRED' : '5-MIN TEST'}
+                  {isTrialExpired ? 'EXPIRED' : '10-MIN TEST'}
                 </span>
               </div>
               <p className={`text-[11px] font-bold truncate mt-0.5 ${isTrialExpired ? 'text-rose-400' : 'text-slate-300'}`}>
@@ -768,11 +769,11 @@ export default function App() {
             )}
 
             <button
-              onClick={handleReset5MinTrial}
+              onClick={handleReset10MinTrial}
               className="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-amber-300 border border-slate-700 font-bold text-[10px] rounded-lg transition-all cursor-pointer flex items-center gap-1"
-              title="5분 타이머 다시 시작"
+              title="10분 타이머 다시 시작"
             >
-              <span>🔄 5분 다시 시작</span>
+              <span>🔄 10분 다시 시작</span>
             </button>
           </div>
         </div>
