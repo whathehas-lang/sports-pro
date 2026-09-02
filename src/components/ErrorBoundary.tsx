@@ -26,6 +26,10 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   public handleReload = () => {
+    try {
+      localStorage.clear();
+      sessionStorage.clear();
+    } catch (e) {}
     this.setState({ hasError: false });
     if (this.props.onClose) {
       this.props.onClose();
@@ -47,18 +51,13 @@ export class ErrorBoundary extends Component<Props, State> {
             </h2>
             <p className="text-xs text-slate-300 leading-relaxed">
               화면 표시 중 일시적인 데이터 예외가 발생했습니다.<br />
-              아래 버튼을 누르면 정상 화면으로 즉시 복구됩니다.
+              아래 버튼을 누르면 캐시를 초기화하고 정상 화면으로 즉시 복구됩니다.
             </p>
             {this.state.error && (
               <div className="space-y-1 text-left">
                 <div className="text-[11px] font-mono text-red-300 bg-slate-950 p-2.5 rounded-lg border border-red-500/30 break-all font-bold">
                   {this.state.error.name}: {this.state.error.message}
                 </div>
-                {this.state.error.stack && (
-                  <pre className="bg-slate-950 p-2 rounded text-[9px] text-slate-400 font-mono overflow-x-auto max-h-24 border border-slate-800">
-                    {this.state.error.stack}
-                  </pre>
-                )}
               </div>
             )}
             <div className="flex gap-2">
@@ -75,7 +74,7 @@ export class ErrorBoundary extends Component<Props, State> {
                 className="flex-1 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs rounded-xl flex items-center justify-center gap-2 shadow-lg transition-all cursor-pointer"
               >
                 <RefreshCw className="w-4 h-4" />
-                즉시 복구하기
+                즉시 복구 및 캐시 초기화
               </button>
             </div>
           </div>

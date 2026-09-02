@@ -9,6 +9,7 @@ import { PCWebCommunityHub } from './components/PCWebCommunityHub';
 import { UserProfileModal, type UserProfileData } from './components/UserProfileModal';
 import { LoginModal } from './components/LoginModal';
 import { SubscriptionPaywallModal } from './components/SubscriptionPaywallModal';
+import { TotalIntegrityDashboardModal } from './components/TotalIntegrityDashboardModal';
 import { sportsApiService } from './services/api/sportsApiService';
 import { BetmanLiveSyncService } from './services/betman/betmanLiveSyncService';
 import { getDynamicBetmanGamesMetadata } from './services/betman/betmanRoundRegistry';
@@ -32,6 +33,7 @@ export default function App() {
   const [selectedRound, setSelectedRound] = useState<string>(`프로토 승부식 ${dynamicMeta.G101.defaultRoundTs}회차 (betman.co.kr 오피셜 슬립)`);
   const [auditReport, setAuditReport] = useState<VerificationAuditReport | null>(() => verifiedMatchDatabase.getLatestAuditReport());
   const [isAuditModalOpen, setIsAuditModalOpen] = useState<boolean>(false);
+  const [isIntegrityModalOpen, setIsIntegrityModalOpen] = useState<boolean>(false);
   const [isReverifying, setIsReverifying] = useState<boolean>(false);
   const [membershipTier, setMembershipTier] = useState<MembershipTier>(() => {
     const saved = localStorage.getItem('tokeon_membership_tier');
@@ -763,58 +765,7 @@ export default function App() {
         {activeTab === 'home' && (
           <div className="space-y-4">
             
-            {/* 🛡️ FACT VERIFICATION ENGINE & DB INTEGRITY STATUS BAR */}
-            <div className={`p-3 rounded-2xl border flex flex-col sm:flex-row items-center justify-between gap-3 shadow-sm transition-all ${
-              isLight ? 'bg-emerald-50/70 border-emerald-200 text-emerald-950' : 'bg-slate-900/90 border-emerald-500/40 text-emerald-200'
-            }`}>
-              <div className="flex items-center gap-2.5 min-w-0">
-                <div className="p-2 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 shrink-0">
-                  <ShieldCheck className="w-5 h-5" />
-                </div>
-                <div className="min-w-0">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <span className={`font-black text-xs sm:text-sm ${isLight ? 'text-slate-950' : 'text-white'}`}>
-                      🛡️ 팩트 검증 엔진 통과 DB 데이터 (Verified DB)
-                    </span>
-                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500 text-white font-mono font-black shadow-xs">
-                      무결성 100% FACT
-                    </span>
-                    <span className={`text-[10px] px-2 py-0.5 rounded font-mono font-bold border ${
-                      isLight ? 'bg-white text-slate-700 border-slate-200' : 'bg-slate-950 text-slate-300 border-slate-800'
-                    }`}>
-                      DB 보관 {verifiedMatchDatabase.count()}경기
-                    </span>
-                  </div>
-                  <p className={`text-[11px] font-medium truncate mt-0.5 ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
-                    API 원시 데이터 직접 노출 차단 ➡️ 5단계 검증·중복제거·스탯정제 ➡️ Verified DB 저장 후 안전 출력
-                  </p>
-                </div>
-              </div>
 
-              <div className="flex items-center gap-2 shrink-0">
-                <button
-                  onClick={handleReverifyAll}
-                  disabled={isReverifying}
-                  className={`px-3 py-1.5 font-bold text-[11px] rounded-xl shadow-xs transition-all flex items-center gap-1.5 cursor-pointer border ${
-                    isLight 
-                      ? 'bg-white hover:bg-slate-100 text-slate-800 border-slate-300' 
-                      : 'bg-slate-800 hover:bg-slate-700 text-slate-200 border-slate-700'
-                  }`}
-                  title="기존 데이터를 맹신하지 않고 5단계 검증 엔진을 통해 전면 재검증합니다"
-                >
-                  <RefreshCw className={`w-3.5 h-3.5 ${isReverifying ? 'animate-spin text-emerald-500' : ''}`} />
-                  <span>{isReverifying ? '재검증 중...' : '🔄 전면 재검증'}</span>
-                </button>
-
-                <button
-                  onClick={() => setIsAuditModalOpen(true)}
-                  className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-[11px] rounded-xl shadow-xs transition-all flex items-center gap-1.5 cursor-pointer"
-                >
-                  <Database className="w-3.5 h-3.5" />
-                  <span>검증 감사 보고서 📊</span>
-                </button>
-              </div>
-            </div>
 
             {/* PC DESKTOP MODE vs MOBILE APP MODE */}
             {viewMode === 'PC_WEB' ? (

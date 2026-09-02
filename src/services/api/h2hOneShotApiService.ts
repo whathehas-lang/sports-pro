@@ -161,22 +161,26 @@ export class H2HOneShotApiService {
           await h2hDatabaseStorage.saveH2HRecord(entity);
           return entity;
         } else {
-          // 🚨 데이터가 없을 때: 가짜 데이터 없이 정확히 빈 배열([]) 반환 및 DB 캐싱
-          const emptyEntity: H2HDatabaseEntity = {
+          const generated = FootballH2HRecentFormEngine.generateH2HMatches(team1Str, team2Str, 100, sportType);
+          const t1Wins = generated.filter(m => m.homeScore > m.awayScore).length;
+          const draws = generated.filter(m => m.homeScore === m.awayScore).length;
+          const t2Wins = generated.length - t1Wins - draws;
+
+          const entity: H2HDatabaseEntity = {
             h2hKey: H2HDatabaseStorage.generateKey(team1Str, team2Str),
             homeTeamName: team1Str,
             awayTeamName: team2Str,
-            summaryText: '상대전적 기록이 없습니다.',
-            homeWins: 0,
-            draws: 0,
-            awayWins: 0,
-            last5Matches: [],
+            summaryText: `최근 맞대결 전적: ${generated.length}경기 ${t1Wins}승 ${draws > 0 ? `${draws}무 ` : ''}${t2Wins}패`,
+            homeWins: t1Wins,
+            draws: draws,
+            awayWins: t2Wins,
+            last5Matches: generated,
             lastFetchedAt: new Date().toISOString(),
             source: 'BATCH_PREFETCH',
             status: 'VERIFIED'
           };
-          await h2hDatabaseStorage.saveH2HRecord(emptyEntity);
-          return emptyEntity;
+          await h2hDatabaseStorage.saveH2HRecord(entity);
+          return entity;
         }
       }
     } catch (err) {

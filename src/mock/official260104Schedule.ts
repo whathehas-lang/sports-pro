@@ -53,6 +53,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "116.2",
         "strikeouts": 130,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -80,9 +81,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 5,
         "inningsPitched": "95.0",
         "strikeouts": 99,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8390",
@@ -136,6 +139,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "116.2",
         "strikeouts": 130,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -163,9 +167,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 5,
         "inningsPitched": "95.0",
         "strikeouts": 99,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8391",
@@ -219,6 +225,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "116.2",
         "strikeouts": 130,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -246,9 +253,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 5,
         "inningsPitched": "95.0",
         "strikeouts": 99,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8392",
@@ -302,6 +311,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "116.2",
         "strikeouts": 130,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -329,9 +339,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 5,
         "inningsPitched": "95.0",
         "strikeouts": 99,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8393",
@@ -385,6 +397,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "116.2",
         "strikeouts": 130,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -412,9 +425,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 5,
         "inningsPitched": "95.0",
         "strikeouts": 99,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8394",
@@ -468,6 +483,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "50.0",
         "strikeouts": 47,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -495,9 +511,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 7,
         "inningsPitched": "110.0",
         "strikeouts": 115,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8395",
@@ -551,6 +569,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "50.0",
         "strikeouts": 47,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -578,9 +597,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 7,
         "inningsPitched": "110.0",
         "strikeouts": 115,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8396",
@@ -634,6 +655,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "50.0",
         "strikeouts": 47,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -661,9 +683,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 7,
         "inningsPitched": "110.0",
         "strikeouts": 115,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8397",
@@ -717,6 +741,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "50.0",
         "strikeouts": 47,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -744,9 +769,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 7,
         "inningsPitched": "110.0",
         "strikeouts": 115,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8398",
@@ -800,6 +827,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "50.0",
         "strikeouts": 47,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -827,9 +855,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 7,
         "inningsPitched": "110.0",
         "strikeouts": 115,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8399",
@@ -883,6 +913,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 2,
         "inningsPitched": "45.0",
         "strikeouts": 48,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -910,9 +941,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 1,
         "inningsPitched": "35.0",
         "strikeouts": 30,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8400",
@@ -966,6 +999,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 2,
         "inningsPitched": "45.0",
         "strikeouts": 48,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -993,9 +1027,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 1,
         "inningsPitched": "35.0",
         "strikeouts": 30,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8401",
@@ -1049,6 +1085,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 2,
         "inningsPitched": "45.0",
         "strikeouts": 48,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -1076,9 +1113,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 1,
         "inningsPitched": "35.0",
         "strikeouts": 30,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8402",
@@ -1132,6 +1171,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 2,
         "inningsPitched": "45.0",
         "strikeouts": 48,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -1159,9 +1199,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 1,
         "inningsPitched": "35.0",
         "strikeouts": 30,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8403",
@@ -1215,6 +1257,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 2,
         "inningsPitched": "45.0",
         "strikeouts": 48,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -1242,9 +1285,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 1,
         "inningsPitched": "35.0",
         "strikeouts": 30,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8404",
@@ -1298,6 +1343,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 2,
         "inningsPitched": "45.0",
         "strikeouts": 48,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -1325,9 +1371,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 1,
         "inningsPitched": "35.0",
         "strikeouts": 30,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8405",
@@ -1381,6 +1429,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 2,
         "inningsPitched": "45.0",
         "strikeouts": 48,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -1408,9 +1457,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 1,
         "inningsPitched": "35.0",
         "strikeouts": 30,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8406",
@@ -1464,6 +1515,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 2,
         "inningsPitched": "45.0",
         "strikeouts": 48,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -1491,9 +1543,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 1,
         "inningsPitched": "35.0",
         "strikeouts": 30,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8407",
@@ -1547,6 +1601,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 3,
         "inningsPitched": "72.0",
         "strikeouts": 68,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -1574,9 +1629,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "175.0",
         "strikeouts": 140,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8408",
@@ -1630,6 +1687,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 3,
         "inningsPitched": "72.0",
         "strikeouts": 68,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -1657,9 +1715,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "175.0",
         "strikeouts": 140,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8409",
@@ -1713,6 +1773,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 3,
         "inningsPitched": "72.0",
         "strikeouts": 68,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -1740,9 +1801,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "175.0",
         "strikeouts": 140,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8410",
@@ -1796,6 +1859,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 3,
         "inningsPitched": "72.0",
         "strikeouts": 68,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -1823,9 +1887,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "175.0",
         "strikeouts": 140,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8411",
@@ -1879,6 +1945,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 3,
         "inningsPitched": "72.0",
         "strikeouts": 68,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -1906,9 +1973,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "175.0",
         "strikeouts": 140,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8412",
@@ -1962,6 +2031,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 5,
         "inningsPitched": "65.0",
         "strikeouts": 52,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -1989,9 +2059,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 6,
         "inningsPitched": "104.0",
         "strikeouts": 75,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8413",
@@ -2045,6 +2117,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 5,
         "inningsPitched": "65.0",
         "strikeouts": 52,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -2072,9 +2145,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 6,
         "inningsPitched": "104.0",
         "strikeouts": 75,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8414",
@@ -2128,6 +2203,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 5,
         "inningsPitched": "65.0",
         "strikeouts": 52,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -2155,9 +2231,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 6,
         "inningsPitched": "104.0",
         "strikeouts": 75,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8415",
@@ -2211,6 +2289,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 5,
         "inningsPitched": "65.0",
         "strikeouts": 52,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -2238,9 +2317,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 6,
         "inningsPitched": "104.0",
         "strikeouts": 75,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8416",
@@ -2294,6 +2375,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 5,
         "inningsPitched": "65.0",
         "strikeouts": 52,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -2321,9 +2403,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 6,
         "inningsPitched": "104.0",
         "strikeouts": 75,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8417",
@@ -2377,6 +2461,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 7,
         "inningsPitched": "88.0",
         "strikeouts": 60,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -2404,9 +2489,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "70.0",
         "strikeouts": 48,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8418",
@@ -2460,6 +2547,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 7,
         "inningsPitched": "88.0",
         "strikeouts": 60,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -2487,9 +2575,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "70.0",
         "strikeouts": 48,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8419",
@@ -2543,6 +2633,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 7,
         "inningsPitched": "88.0",
         "strikeouts": 60,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -2570,9 +2661,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "70.0",
         "strikeouts": 48,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8420",
@@ -2626,6 +2719,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 7,
         "inningsPitched": "88.0",
         "strikeouts": 60,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -2653,9 +2747,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "70.0",
         "strikeouts": 48,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8421",
@@ -2709,6 +2805,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 7,
         "inningsPitched": "88.0",
         "strikeouts": 60,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -2736,9 +2833,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "70.0",
         "strikeouts": 48,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8422",
@@ -2792,6 +2891,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 6,
         "inningsPitched": "89.1",
         "strikeouts": 85,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -2819,9 +2919,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 5,
         "inningsPitched": "92.0",
         "strikeouts": 80,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8423",
@@ -2875,6 +2977,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 6,
         "inningsPitched": "89.1",
         "strikeouts": 85,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -2902,9 +3005,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 5,
         "inningsPitched": "92.0",
         "strikeouts": 80,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8424",
@@ -2958,6 +3063,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 6,
         "inningsPitched": "89.1",
         "strikeouts": 85,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -2985,9 +3091,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 5,
         "inningsPitched": "92.0",
         "strikeouts": 80,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8425",
@@ -3041,6 +3149,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 6,
         "inningsPitched": "89.1",
         "strikeouts": 85,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -3068,9 +3177,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 5,
         "inningsPitched": "92.0",
         "strikeouts": 80,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8426",
@@ -3124,6 +3235,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 6,
         "inningsPitched": "89.1",
         "strikeouts": 85,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -3151,9 +3263,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 5,
         "inningsPitched": "92.0",
         "strikeouts": 80,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8427",
@@ -3207,6 +3321,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "78.0",
         "strikeouts": 74,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -3234,9 +3349,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 3,
         "inningsPitched": "55.0",
         "strikeouts": 50,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8428",
@@ -3290,6 +3407,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "78.0",
         "strikeouts": 74,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -3317,9 +3435,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 3,
         "inningsPitched": "55.0",
         "strikeouts": 50,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8429",
@@ -3373,6 +3493,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "78.0",
         "strikeouts": 74,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -3400,9 +3521,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 3,
         "inningsPitched": "55.0",
         "strikeouts": 50,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8430",
@@ -3456,6 +3579,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "78.0",
         "strikeouts": 74,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -3483,9 +3607,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 3,
         "inningsPitched": "55.0",
         "strikeouts": 50,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8431",
@@ -3539,6 +3665,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "78.0",
         "strikeouts": 74,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -3566,9 +3693,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 3,
         "inningsPitched": "55.0",
         "strikeouts": 50,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8432",
@@ -3860,12 +3989,13 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "최승용",
         "number": 28,
         "throwsHand": "L",
-        "era": "5.61",
+        "era": "3.85",
         "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "wins": 3,
+        "losses": 2,
+        "inningsPitched": "45.0",
+        "strikeouts": 38,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -3887,15 +4017,17 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "김윤식",
         "number": 57,
         "throwsHand": "L",
-        "era": "4.97",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.10",
+        "whip": "1.32",
+        "wins": 4,
+        "losses": 3,
+        "inningsPitched": "52.0",
+        "strikeouts": 42,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8437",
@@ -3943,12 +4075,13 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "최승용",
         "number": 28,
         "throwsHand": "L",
-        "era": "5.61",
+        "era": "3.85",
         "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "wins": 3,
+        "losses": 2,
+        "inningsPitched": "45.0",
+        "strikeouts": 38,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -3970,15 +4103,17 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "김윤식",
         "number": 57,
         "throwsHand": "L",
-        "era": "4.97",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.10",
+        "whip": "1.32",
+        "wins": 4,
+        "losses": 3,
+        "inningsPitched": "52.0",
+        "strikeouts": 42,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8438",
@@ -4026,12 +4161,13 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "최승용",
         "number": 28,
         "throwsHand": "L",
-        "era": "5.61",
+        "era": "3.85",
         "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "wins": 3,
+        "losses": 2,
+        "inningsPitched": "45.0",
+        "strikeouts": 38,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -4053,15 +4189,17 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "김윤식",
         "number": 57,
         "throwsHand": "L",
-        "era": "4.97",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.10",
+        "whip": "1.32",
+        "wins": 4,
+        "losses": 3,
+        "inningsPitched": "52.0",
+        "strikeouts": 42,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8439",
@@ -4109,12 +4247,13 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "최승용",
         "number": 28,
         "throwsHand": "L",
-        "era": "5.61",
+        "era": "3.85",
         "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "wins": 3,
+        "losses": 2,
+        "inningsPitched": "45.0",
+        "strikeouts": 38,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -4136,15 +4275,17 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "김윤식",
         "number": 57,
         "throwsHand": "L",
-        "era": "4.97",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.10",
+        "whip": "1.32",
+        "wins": 4,
+        "losses": 3,
+        "inningsPitched": "52.0",
+        "strikeouts": 42,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8440",
@@ -4192,12 +4333,13 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "최승용",
         "number": 28,
         "throwsHand": "L",
-        "era": "5.61",
+        "era": "3.85",
         "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "wins": 3,
+        "losses": 2,
+        "inningsPitched": "45.0",
+        "strikeouts": 38,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -4219,15 +4361,17 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "김윤식",
         "number": 57,
         "throwsHand": "L",
-        "era": "4.97",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.10",
+        "whip": "1.32",
+        "wins": 4,
+        "losses": 3,
+        "inningsPitched": "52.0",
+        "strikeouts": 42,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8441",
@@ -4275,12 +4419,13 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "최승용",
         "number": 28,
         "throwsHand": "L",
-        "era": "5.61",
+        "era": "3.85",
         "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "wins": 3,
+        "losses": 2,
+        "inningsPitched": "45.0",
+        "strikeouts": 38,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -4302,15 +4447,17 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "김윤식",
         "number": 57,
         "throwsHand": "L",
-        "era": "4.97",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.10",
+        "whip": "1.32",
+        "wins": 4,
+        "losses": 3,
+        "inningsPitched": "52.0",
+        "strikeouts": 42,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8442",
@@ -4358,12 +4505,13 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "최승용",
         "number": 28,
         "throwsHand": "L",
-        "era": "5.61",
+        "era": "3.85",
         "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "wins": 3,
+        "losses": 2,
+        "inningsPitched": "45.0",
+        "strikeouts": 38,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -4385,15 +4533,17 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "김윤식",
         "number": 57,
         "throwsHand": "L",
-        "era": "4.97",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.10",
+        "whip": "1.32",
+        "wins": 4,
+        "losses": 3,
+        "inningsPitched": "52.0",
+        "strikeouts": 42,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8443",
@@ -4441,12 +4591,13 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "최승용",
         "number": 28,
         "throwsHand": "L",
-        "era": "5.61",
+        "era": "3.85",
         "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "wins": 3,
+        "losses": 2,
+        "inningsPitched": "45.0",
+        "strikeouts": 38,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -4468,15 +4619,17 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "김윤식",
         "number": 57,
         "throwsHand": "L",
-        "era": "4.97",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.10",
+        "whip": "1.32",
+        "wins": 4,
+        "losses": 3,
+        "inningsPitched": "52.0",
+        "strikeouts": 42,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8444",
@@ -4524,12 +4677,13 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "최원태",
         "number": 20,
         "throwsHand": "R",
-        "era": "4.57",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.25",
+        "whip": "1.34",
+        "wins": 9,
+        "losses": 7,
+        "inningsPitched": "126.2",
+        "strikeouts": 95,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -4549,17 +4703,19 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
         "name": "박세웅",
-        "number": 21,
+        "number": 30,
         "throwsHand": "R",
-        "era": "4.68",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.75",
+        "whip": "1.42",
+        "wins": 6,
+        "losses": 11,
+        "inningsPitched": "130.2",
+        "strikeouts": 105,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8445",
@@ -4607,12 +4763,13 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "최원태",
         "number": 20,
         "throwsHand": "R",
-        "era": "4.57",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.25",
+        "whip": "1.34",
+        "wins": 9,
+        "losses": 7,
+        "inningsPitched": "126.2",
+        "strikeouts": 95,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -4632,17 +4789,19 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
         "name": "박세웅",
-        "number": 21,
+        "number": 30,
         "throwsHand": "R",
-        "era": "4.68",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.75",
+        "whip": "1.42",
+        "wins": 6,
+        "losses": 11,
+        "inningsPitched": "130.2",
+        "strikeouts": 105,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8446",
@@ -4690,12 +4849,13 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "최원태",
         "number": 20,
         "throwsHand": "R",
-        "era": "4.57",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.25",
+        "whip": "1.34",
+        "wins": 9,
+        "losses": 7,
+        "inningsPitched": "126.2",
+        "strikeouts": 95,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -4715,17 +4875,19 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
         "name": "박세웅",
-        "number": 21,
+        "number": 30,
         "throwsHand": "R",
-        "era": "4.68",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.75",
+        "whip": "1.42",
+        "wins": 6,
+        "losses": 11,
+        "inningsPitched": "130.2",
+        "strikeouts": 105,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8447",
@@ -4773,12 +4935,13 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "최원태",
         "number": 20,
         "throwsHand": "R",
-        "era": "4.57",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.25",
+        "whip": "1.34",
+        "wins": 9,
+        "losses": 7,
+        "inningsPitched": "126.2",
+        "strikeouts": 95,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -4798,17 +4961,19 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
         "name": "박세웅",
-        "number": 21,
+        "number": 30,
         "throwsHand": "R",
-        "era": "4.68",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.75",
+        "whip": "1.42",
+        "wins": 6,
+        "losses": 11,
+        "inningsPitched": "130.2",
+        "strikeouts": 105,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8448",
@@ -4856,12 +5021,13 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "최원태",
         "number": 20,
         "throwsHand": "R",
-        "era": "4.57",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.25",
+        "whip": "1.34",
+        "wins": 9,
+        "losses": 7,
+        "inningsPitched": "126.2",
+        "strikeouts": 95,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -4881,17 +5047,19 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
         "name": "박세웅",
-        "number": 21,
+        "number": 30,
         "throwsHand": "R",
-        "era": "4.68",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.75",
+        "whip": "1.42",
+        "wins": 6,
+        "losses": 11,
+        "inningsPitched": "130.2",
+        "strikeouts": 105,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8449",
@@ -4939,12 +5107,13 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "최원태",
         "number": 20,
         "throwsHand": "R",
-        "era": "4.57",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.25",
+        "whip": "1.34",
+        "wins": 9,
+        "losses": 7,
+        "inningsPitched": "126.2",
+        "strikeouts": 95,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -4964,17 +5133,19 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
         "name": "박세웅",
-        "number": 21,
+        "number": 30,
         "throwsHand": "R",
-        "era": "4.68",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.75",
+        "whip": "1.42",
+        "wins": 6,
+        "losses": 11,
+        "inningsPitched": "130.2",
+        "strikeouts": 105,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8450",
@@ -5022,12 +5193,13 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "최원태",
         "number": 20,
         "throwsHand": "R",
-        "era": "4.57",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.25",
+        "whip": "1.34",
+        "wins": 9,
+        "losses": 7,
+        "inningsPitched": "126.2",
+        "strikeouts": 95,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -5047,17 +5219,19 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
         "name": "박세웅",
-        "number": 21,
+        "number": 30,
         "throwsHand": "R",
-        "era": "4.68",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.75",
+        "whip": "1.42",
+        "wins": 6,
+        "losses": 11,
+        "inningsPitched": "130.2",
+        "strikeouts": 105,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8451",
@@ -5105,12 +5279,13 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "최원태",
         "number": 20,
         "throwsHand": "R",
-        "era": "4.57",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.25",
+        "whip": "1.34",
+        "wins": 9,
+        "losses": 7,
+        "inningsPitched": "126.2",
+        "strikeouts": 95,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -5130,17 +5305,19 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
         "name": "박세웅",
-        "number": 21,
+        "number": 30,
         "throwsHand": "R",
-        "era": "4.68",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.75",
+        "whip": "1.42",
+        "wins": 6,
+        "losses": 11,
+        "inningsPitched": "130.2",
+        "strikeouts": 105,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8452",
@@ -5186,14 +5363,15 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
         "name": "소형준",
-        "number": 11,
+        "number": 30,
         "throwsHand": "R",
-        "era": "3.36",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "3.20",
+        "whip": "1.15",
+        "wins": 2,
+        "losses": 0,
+        "inningsPitched": "25.0",
+        "strikeouts": 22,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -5215,15 +5393,17 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "류현진",
         "number": 99,
         "throwsHand": "L",
-        "era": "3.85",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "3.87",
+        "whip": "1.26",
+        "wins": 9,
+        "losses": 8,
+        "inningsPitched": "158.1",
+        "strikeouts": 133,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8453",
@@ -5269,14 +5449,15 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
         "name": "소형준",
-        "number": 11,
+        "number": 30,
         "throwsHand": "R",
-        "era": "3.36",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "3.20",
+        "whip": "1.15",
+        "wins": 2,
+        "losses": 0,
+        "inningsPitched": "25.0",
+        "strikeouts": 22,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -5298,15 +5479,17 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "류현진",
         "number": 99,
         "throwsHand": "L",
-        "era": "3.85",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "3.87",
+        "whip": "1.26",
+        "wins": 9,
+        "losses": 8,
+        "inningsPitched": "158.1",
+        "strikeouts": 133,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8454",
@@ -5352,14 +5535,15 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
         "name": "소형준",
-        "number": 11,
+        "number": 30,
         "throwsHand": "R",
-        "era": "3.36",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "3.20",
+        "whip": "1.15",
+        "wins": 2,
+        "losses": 0,
+        "inningsPitched": "25.0",
+        "strikeouts": 22,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -5381,15 +5565,17 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "류현진",
         "number": 99,
         "throwsHand": "L",
-        "era": "3.85",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "3.87",
+        "whip": "1.26",
+        "wins": 9,
+        "losses": 8,
+        "inningsPitched": "158.1",
+        "strikeouts": 133,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8455",
@@ -5435,14 +5621,15 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
         "name": "소형준",
-        "number": 11,
+        "number": 30,
         "throwsHand": "R",
-        "era": "3.36",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "3.20",
+        "whip": "1.15",
+        "wins": 2,
+        "losses": 0,
+        "inningsPitched": "25.0",
+        "strikeouts": 22,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -5464,15 +5651,17 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "류현진",
         "number": 99,
         "throwsHand": "L",
-        "era": "3.85",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "3.87",
+        "whip": "1.26",
+        "wins": 9,
+        "losses": 8,
+        "inningsPitched": "158.1",
+        "strikeouts": 133,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8456",
@@ -5518,14 +5707,15 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
         "name": "소형준",
-        "number": 11,
+        "number": 30,
         "throwsHand": "R",
-        "era": "3.36",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "3.20",
+        "whip": "1.15",
+        "wins": 2,
+        "losses": 0,
+        "inningsPitched": "25.0",
+        "strikeouts": 22,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -5547,15 +5737,17 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "류현진",
         "number": 99,
         "throwsHand": "L",
-        "era": "3.85",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "3.87",
+        "whip": "1.26",
+        "wins": 9,
+        "losses": 8,
+        "inningsPitched": "158.1",
+        "strikeouts": 133,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8457",
@@ -5601,14 +5793,15 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
         "name": "소형준",
-        "number": 11,
+        "number": 30,
         "throwsHand": "R",
-        "era": "3.36",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "3.20",
+        "whip": "1.15",
+        "wins": 2,
+        "losses": 0,
+        "inningsPitched": "25.0",
+        "strikeouts": 22,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -5630,15 +5823,17 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "류현진",
         "number": 99,
         "throwsHand": "L",
-        "era": "3.85",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "3.87",
+        "whip": "1.26",
+        "wins": 9,
+        "losses": 8,
+        "inningsPitched": "158.1",
+        "strikeouts": 133,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8458",
@@ -5684,14 +5879,15 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
         "name": "소형준",
-        "number": 11,
+        "number": 30,
         "throwsHand": "R",
-        "era": "3.36",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "3.20",
+        "whip": "1.15",
+        "wins": 2,
+        "losses": 0,
+        "inningsPitched": "25.0",
+        "strikeouts": 22,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -5713,15 +5909,17 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "류현진",
         "number": 99,
         "throwsHand": "L",
-        "era": "3.85",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "3.87",
+        "whip": "1.26",
+        "wins": 9,
+        "losses": 8,
+        "inningsPitched": "158.1",
+        "strikeouts": 133,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8459",
@@ -5767,14 +5965,15 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
         "name": "소형준",
-        "number": 11,
+        "number": 30,
         "throwsHand": "R",
-        "era": "3.36",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "3.20",
+        "whip": "1.15",
+        "wins": 2,
+        "losses": 0,
+        "inningsPitched": "25.0",
+        "strikeouts": 22,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -5796,15 +5995,17 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "류현진",
         "number": 99,
         "throwsHand": "L",
-        "era": "3.85",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "3.87",
+        "whip": "1.26",
+        "wins": 9,
+        "losses": 8,
+        "inningsPitched": "158.1",
+        "strikeouts": 133,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8460",
@@ -5850,14 +6051,15 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
         "name": "토다",
-        "number": 34,
-        "throwsHand": "R",
-        "era": "3.90",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "number": 59,
+        "throwsHand": "L",
+        "era": "3.95",
+        "whip": "1.28",
+        "wins": 2,
+        "losses": 1,
+        "inningsPitched": "28.0",
+        "strikeouts": 26,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -5877,17 +6079,19 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
         "name": "시라카와",
-        "number": 36,
+        "number": 38,
         "throwsHand": "R",
-        "era": "4.88",
-        "whip": "1.25",
-        "wins": 8,
+        "era": "5.65",
+        "whip": "1.55",
+        "wins": 4,
         "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "inningsPitched": "51.0",
+        "strikeouts": 48,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8461",
@@ -5933,14 +6137,15 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
         "name": "토다",
-        "number": 34,
-        "throwsHand": "R",
-        "era": "3.90",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "number": 59,
+        "throwsHand": "L",
+        "era": "3.95",
+        "whip": "1.28",
+        "wins": 2,
+        "losses": 1,
+        "inningsPitched": "28.0",
+        "strikeouts": 26,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -5960,17 +6165,19 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
         "name": "시라카와",
-        "number": 36,
+        "number": 38,
         "throwsHand": "R",
-        "era": "4.88",
-        "whip": "1.25",
-        "wins": 8,
+        "era": "5.65",
+        "whip": "1.55",
+        "wins": 4,
         "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "inningsPitched": "51.0",
+        "strikeouts": 48,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8462",
@@ -6016,14 +6223,15 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
         "name": "토다",
-        "number": 34,
-        "throwsHand": "R",
-        "era": "3.90",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "number": 59,
+        "throwsHand": "L",
+        "era": "3.95",
+        "whip": "1.28",
+        "wins": 2,
+        "losses": 1,
+        "inningsPitched": "28.0",
+        "strikeouts": 26,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -6043,17 +6251,19 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
         "name": "시라카와",
-        "number": 36,
+        "number": 38,
         "throwsHand": "R",
-        "era": "4.88",
-        "whip": "1.25",
-        "wins": 8,
+        "era": "5.65",
+        "whip": "1.55",
+        "wins": 4,
         "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "inningsPitched": "51.0",
+        "strikeouts": 48,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8463",
@@ -6099,14 +6309,15 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
         "name": "토다",
-        "number": 34,
-        "throwsHand": "R",
-        "era": "3.90",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "number": 59,
+        "throwsHand": "L",
+        "era": "3.95",
+        "whip": "1.28",
+        "wins": 2,
+        "losses": 1,
+        "inningsPitched": "28.0",
+        "strikeouts": 26,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -6126,17 +6337,19 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
         "name": "시라카와",
-        "number": 36,
+        "number": 38,
         "throwsHand": "R",
-        "era": "4.88",
-        "whip": "1.25",
-        "wins": 8,
+        "era": "5.65",
+        "whip": "1.55",
+        "wins": 4,
         "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "inningsPitched": "51.0",
+        "strikeouts": 48,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8464",
@@ -6182,14 +6395,15 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
         "name": "토다",
-        "number": 34,
-        "throwsHand": "R",
-        "era": "3.90",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "number": 59,
+        "throwsHand": "L",
+        "era": "3.95",
+        "whip": "1.28",
+        "wins": 2,
+        "losses": 1,
+        "inningsPitched": "28.0",
+        "strikeouts": 26,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -6209,17 +6423,19 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
         "name": "시라카와",
-        "number": 36,
+        "number": 38,
         "throwsHand": "R",
-        "era": "4.88",
-        "whip": "1.25",
-        "wins": 8,
+        "era": "5.65",
+        "whip": "1.55",
+        "wins": 4,
         "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "inningsPitched": "51.0",
+        "strikeouts": 48,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8465",
@@ -6265,14 +6481,15 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
         "name": "토다",
-        "number": 34,
-        "throwsHand": "R",
-        "era": "3.90",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "number": 59,
+        "throwsHand": "L",
+        "era": "3.95",
+        "whip": "1.28",
+        "wins": 2,
+        "losses": 1,
+        "inningsPitched": "28.0",
+        "strikeouts": 26,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -6292,17 +6509,19 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
         "name": "시라카와",
-        "number": 36,
+        "number": 38,
         "throwsHand": "R",
-        "era": "4.88",
-        "whip": "1.25",
-        "wins": 8,
+        "era": "5.65",
+        "whip": "1.55",
+        "wins": 4,
         "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "inningsPitched": "51.0",
+        "strikeouts": 48,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8466",
@@ -6348,14 +6567,15 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
         "name": "토다",
-        "number": 34,
-        "throwsHand": "R",
-        "era": "3.90",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "number": 59,
+        "throwsHand": "L",
+        "era": "3.95",
+        "whip": "1.28",
+        "wins": 2,
+        "losses": 1,
+        "inningsPitched": "28.0",
+        "strikeouts": 26,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -6375,17 +6595,19 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
         "name": "시라카와",
-        "number": 36,
+        "number": 38,
         "throwsHand": "R",
-        "era": "4.88",
-        "whip": "1.25",
-        "wins": 8,
+        "era": "5.65",
+        "whip": "1.55",
+        "wins": 4,
         "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "inningsPitched": "51.0",
+        "strikeouts": 48,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8467",
@@ -6431,14 +6653,15 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
         "name": "토다",
-        "number": 34,
-        "throwsHand": "R",
-        "era": "3.90",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "number": 59,
+        "throwsHand": "L",
+        "era": "3.95",
+        "whip": "1.28",
+        "wins": 2,
+        "losses": 1,
+        "inningsPitched": "28.0",
+        "strikeouts": 26,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -6458,17 +6681,19 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
         "name": "시라카와",
-        "number": 36,
+        "number": 38,
         "throwsHand": "R",
-        "era": "4.88",
-        "whip": "1.25",
-        "wins": 8,
+        "era": "5.65",
+        "whip": "1.55",
+        "wins": 4,
         "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "inningsPitched": "51.0",
+        "strikeouts": 48,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8468",
@@ -6516,12 +6741,13 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "하영민",
         "number": 43,
         "throwsHand": "R",
-        "era": "4.63",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.12",
+        "whip": "1.38",
+        "wins": 9,
+        "losses": 8,
+        "inningsPitched": "142.0",
+        "strikeouts": 98,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -6543,15 +6769,17 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "김건우",
         "number": 59,
         "throwsHand": "L",
-        "era": "4.10",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.80",
+        "whip": "1.45",
+        "wins": 2,
+        "losses": 3,
+        "inningsPitched": "38.0",
+        "strikeouts": 35,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8469",
@@ -6599,12 +6827,13 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "하영민",
         "number": 43,
         "throwsHand": "R",
-        "era": "4.63",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.12",
+        "whip": "1.38",
+        "wins": 9,
+        "losses": 8,
+        "inningsPitched": "142.0",
+        "strikeouts": 98,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -6626,15 +6855,17 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "김건우",
         "number": 59,
         "throwsHand": "L",
-        "era": "4.10",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.80",
+        "whip": "1.45",
+        "wins": 2,
+        "losses": 3,
+        "inningsPitched": "38.0",
+        "strikeouts": 35,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8470",
@@ -6682,12 +6913,13 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "하영민",
         "number": 43,
         "throwsHand": "R",
-        "era": "4.63",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.12",
+        "whip": "1.38",
+        "wins": 9,
+        "losses": 8,
+        "inningsPitched": "142.0",
+        "strikeouts": 98,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -6709,15 +6941,17 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "김건우",
         "number": 59,
         "throwsHand": "L",
-        "era": "4.10",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.80",
+        "whip": "1.45",
+        "wins": 2,
+        "losses": 3,
+        "inningsPitched": "38.0",
+        "strikeouts": 35,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8471",
@@ -6765,12 +6999,13 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "하영민",
         "number": 43,
         "throwsHand": "R",
-        "era": "4.63",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.12",
+        "whip": "1.38",
+        "wins": 9,
+        "losses": 8,
+        "inningsPitched": "142.0",
+        "strikeouts": 98,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -6792,15 +7027,17 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "김건우",
         "number": 59,
         "throwsHand": "L",
-        "era": "4.10",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.80",
+        "whip": "1.45",
+        "wins": 2,
+        "losses": 3,
+        "inningsPitched": "38.0",
+        "strikeouts": 35,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8472",
@@ -6848,12 +7085,13 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "하영민",
         "number": 43,
         "throwsHand": "R",
-        "era": "4.63",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.12",
+        "whip": "1.38",
+        "wins": 9,
+        "losses": 8,
+        "inningsPitched": "142.0",
+        "strikeouts": 98,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -6875,15 +7113,17 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "김건우",
         "number": 59,
         "throwsHand": "L",
-        "era": "4.10",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.80",
+        "whip": "1.45",
+        "wins": 2,
+        "losses": 3,
+        "inningsPitched": "38.0",
+        "strikeouts": 35,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8473",
@@ -6931,12 +7171,13 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "하영민",
         "number": 43,
         "throwsHand": "R",
-        "era": "4.63",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.12",
+        "whip": "1.38",
+        "wins": 9,
+        "losses": 8,
+        "inningsPitched": "142.0",
+        "strikeouts": 98,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -6958,15 +7199,17 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "김건우",
         "number": 59,
         "throwsHand": "L",
-        "era": "4.10",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.80",
+        "whip": "1.45",
+        "wins": 2,
+        "losses": 3,
+        "inningsPitched": "38.0",
+        "strikeouts": 35,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8474",
@@ -7014,12 +7257,13 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "하영민",
         "number": 43,
         "throwsHand": "R",
-        "era": "4.63",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.12",
+        "whip": "1.38",
+        "wins": 9,
+        "losses": 8,
+        "inningsPitched": "142.0",
+        "strikeouts": 98,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -7041,15 +7285,17 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "김건우",
         "number": 59,
         "throwsHand": "L",
-        "era": "4.10",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.80",
+        "whip": "1.45",
+        "wins": 2,
+        "losses": 3,
+        "inningsPitched": "38.0",
+        "strikeouts": 35,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8475",
@@ -7097,12 +7343,13 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "하영민",
         "number": 43,
         "throwsHand": "R",
-        "era": "4.63",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.12",
+        "whip": "1.38",
+        "wins": 9,
+        "losses": 8,
+        "inningsPitched": "142.0",
+        "strikeouts": 98,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -7124,15 +7371,17 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "name": "김건우",
         "number": 59,
         "throwsHand": "L",
-        "era": "4.10",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
+        "era": "4.80",
+        "whip": "1.45",
+        "wins": 2,
+        "losses": 3,
+        "inningsPitched": "38.0",
+        "strikeouts": 35,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8476",
@@ -13408,6 +13657,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 5,
         "inningsPitched": "92.0",
         "strikeouts": 90,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -13435,9 +13685,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 7,
         "inningsPitched": "85.1",
         "strikeouts": 82,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8360",
@@ -13491,6 +13743,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 5,
         "inningsPitched": "92.0",
         "strikeouts": 90,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -13518,9 +13771,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 7,
         "inningsPitched": "85.1",
         "strikeouts": 82,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8361",
@@ -13574,6 +13829,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 5,
         "inningsPitched": "92.0",
         "strikeouts": 90,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -13601,9 +13857,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 7,
         "inningsPitched": "85.1",
         "strikeouts": 82,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8362",
@@ -13657,6 +13915,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 5,
         "inningsPitched": "92.0",
         "strikeouts": 90,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -13684,9 +13943,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 7,
         "inningsPitched": "85.1",
         "strikeouts": 82,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8363",
@@ -13740,6 +14001,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 5,
         "inningsPitched": "92.0",
         "strikeouts": 90,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -13767,9 +14029,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 7,
         "inningsPitched": "85.1",
         "strikeouts": 82,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8364",
@@ -13823,6 +14087,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 8,
         "inningsPitched": "78.0",
         "strikeouts": 65,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -13850,9 +14115,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 6,
         "inningsPitched": "72.0",
         "strikeouts": 60,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8365",
@@ -13906,6 +14173,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 8,
         "inningsPitched": "78.0",
         "strikeouts": 65,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -13933,9 +14201,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 6,
         "inningsPitched": "72.0",
         "strikeouts": 60,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8366",
@@ -13989,6 +14259,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 8,
         "inningsPitched": "78.0",
         "strikeouts": 65,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -14016,9 +14287,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 6,
         "inningsPitched": "72.0",
         "strikeouts": 60,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8367",
@@ -14072,6 +14345,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 8,
         "inningsPitched": "78.0",
         "strikeouts": 65,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -14099,9 +14373,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 6,
         "inningsPitched": "72.0",
         "strikeouts": 60,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8368",
@@ -14155,6 +14431,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 8,
         "inningsPitched": "78.0",
         "strikeouts": 65,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -14182,9 +14459,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 6,
         "inningsPitched": "72.0",
         "strikeouts": 60,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8369",
@@ -14238,6 +14517,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "99.1",
         "strikeouts": 102,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -14265,9 +14545,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 3,
         "inningsPitched": "84.0",
         "strikeouts": 78,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8370",
@@ -14321,6 +14603,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "99.1",
         "strikeouts": 102,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -14348,9 +14631,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 3,
         "inningsPitched": "84.0",
         "strikeouts": 78,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8371",
@@ -14404,6 +14689,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "99.1",
         "strikeouts": 102,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -14431,9 +14717,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 3,
         "inningsPitched": "84.0",
         "strikeouts": 78,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8372",
@@ -14487,6 +14775,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "99.1",
         "strikeouts": 102,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -14514,9 +14803,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 3,
         "inningsPitched": "84.0",
         "strikeouts": 78,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8373",
@@ -14570,6 +14861,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 4,
         "inningsPitched": "99.1",
         "strikeouts": 102,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -14597,9 +14889,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 3,
         "inningsPitched": "84.0",
         "strikeouts": 78,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8374",
@@ -14653,6 +14947,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 10,
         "inningsPitched": "140.0",
         "strikeouts": 160,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -14680,9 +14975,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 6,
         "inningsPitched": "65.0",
         "strikeouts": 62,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8375",
@@ -14736,6 +15033,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 10,
         "inningsPitched": "140.0",
         "strikeouts": 160,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -14763,9 +15061,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 6,
         "inningsPitched": "65.0",
         "strikeouts": 62,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8376",
@@ -14819,6 +15119,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 10,
         "inningsPitched": "140.0",
         "strikeouts": 160,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -14846,9 +15147,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 6,
         "inningsPitched": "65.0",
         "strikeouts": 62,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8377",
@@ -14902,6 +15205,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 10,
         "inningsPitched": "140.0",
         "strikeouts": 160,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -14929,9 +15233,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 6,
         "inningsPitched": "65.0",
         "strikeouts": 62,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8378",
@@ -14985,6 +15291,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 10,
         "inningsPitched": "140.0",
         "strikeouts": 160,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -15012,9 +15319,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 6,
         "inningsPitched": "65.0",
         "strikeouts": 62,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8379",
@@ -15068,6 +15377,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 6,
         "inningsPitched": "154.1",
         "strikeouts": 150,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -15095,9 +15405,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 9,
         "inningsPitched": "70.0",
         "strikeouts": 58,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8380",
@@ -15151,6 +15463,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 6,
         "inningsPitched": "154.1",
         "strikeouts": 150,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -15178,9 +15491,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 9,
         "inningsPitched": "70.0",
         "strikeouts": 58,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8381",
@@ -15234,6 +15549,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 6,
         "inningsPitched": "154.1",
         "strikeouts": 150,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -15261,9 +15577,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 9,
         "inningsPitched": "70.0",
         "strikeouts": 58,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8382",
@@ -15317,6 +15635,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 6,
         "inningsPitched": "154.1",
         "strikeouts": 150,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -15344,9 +15663,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 9,
         "inningsPitched": "70.0",
         "strikeouts": 58,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8383",
@@ -15400,6 +15721,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 6,
         "inningsPitched": "154.1",
         "strikeouts": 150,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -15427,9 +15749,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 9,
         "inningsPitched": "70.0",
         "strikeouts": 58,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8384",
@@ -15483,6 +15807,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 10,
         "inningsPitched": "85.0",
         "strikeouts": 75,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -15510,9 +15835,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 5,
         "inningsPitched": "135.0",
         "strikeouts": 145,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8385",
@@ -15566,6 +15893,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 10,
         "inningsPitched": "85.0",
         "strikeouts": 75,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -15593,9 +15921,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 5,
         "inningsPitched": "135.0",
         "strikeouts": 145,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8386",
@@ -15649,6 +15979,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 10,
         "inningsPitched": "85.0",
         "strikeouts": 75,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -15676,9 +16007,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 5,
         "inningsPitched": "135.0",
         "strikeouts": 145,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8387",
@@ -15732,6 +16065,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 10,
         "inningsPitched": "85.0",
         "strikeouts": 75,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -15759,9 +16093,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 5,
         "inningsPitched": "135.0",
         "strikeouts": 145,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8388",
@@ -15815,6 +16151,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 10,
         "inningsPitched": "85.0",
         "strikeouts": 75,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -15842,9 +16179,11 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
         "losses": 5,
         "inningsPitched": "135.0",
         "strikeouts": 145,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8536",
@@ -15889,15 +16228,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "닉 로돌로",
-        "number": 40,
+        "name": "브랜든 윌리엄슨",
+        "number": 55,
         "throwsHand": "L",
-        "era": "4.40",
-        "whip": "1.20",
-        "wins": 9,
-        "losses": 6,
-        "inningsPitched": "118.2",
-        "strikeouts": 122,
+        "era": "3.77",
+        "whip": "1.22",
+        "wins": 6,
+        "losses": 5,
+        "inningsPitched": "85.0",
+        "strikeouts": 80,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -15916,18 +16256,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "랜디 바스케스",
-        "number": 98,
+        "name": "케이시 마이즈",
+        "number": 24,
         "throwsHand": "R",
-        "era": "4.87",
-        "whip": "1.50",
-        "wins": 4,
+        "era": "4.20",
+        "whip": "1.28",
+        "wins": 7,
         "losses": 7,
-        "inningsPitched": "98.0",
-        "strikeouts": 62,
+        "inningsPitched": "92.0",
+        "strikeouts": 75,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8537",
@@ -15972,15 +16314,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "닉 로돌로",
-        "number": 40,
+        "name": "브랜든 윌리엄슨",
+        "number": 55,
         "throwsHand": "L",
-        "era": "4.40",
-        "whip": "1.20",
-        "wins": 9,
-        "losses": 6,
-        "inningsPitched": "118.2",
-        "strikeouts": 122,
+        "era": "3.77",
+        "whip": "1.22",
+        "wins": 6,
+        "losses": 5,
+        "inningsPitched": "85.0",
+        "strikeouts": 80,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -15999,18 +16342,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "랜디 바스케스",
-        "number": 98,
+        "name": "케이시 마이즈",
+        "number": 24,
         "throwsHand": "R",
-        "era": "4.87",
-        "whip": "1.50",
-        "wins": 4,
+        "era": "4.20",
+        "whip": "1.28",
+        "wins": 7,
         "losses": 7,
-        "inningsPitched": "98.0",
-        "strikeouts": 62,
+        "inningsPitched": "92.0",
+        "strikeouts": 75,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8538",
@@ -16055,15 +16400,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "닉 로돌로",
-        "number": 40,
+        "name": "브랜든 윌리엄슨",
+        "number": 55,
         "throwsHand": "L",
-        "era": "4.40",
-        "whip": "1.20",
-        "wins": 9,
-        "losses": 6,
-        "inningsPitched": "118.2",
-        "strikeouts": 122,
+        "era": "3.77",
+        "whip": "1.22",
+        "wins": 6,
+        "losses": 5,
+        "inningsPitched": "85.0",
+        "strikeouts": 80,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -16082,18 +16428,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "랜디 바스케스",
-        "number": 98,
+        "name": "케이시 마이즈",
+        "number": 24,
         "throwsHand": "R",
-        "era": "4.87",
-        "whip": "1.50",
-        "wins": 4,
+        "era": "4.20",
+        "whip": "1.28",
+        "wins": 7,
         "losses": 7,
-        "inningsPitched": "98.0",
-        "strikeouts": 62,
+        "inningsPitched": "92.0",
+        "strikeouts": 75,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8539",
@@ -16138,15 +16486,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "닉 로돌로",
-        "number": 40,
+        "name": "브랜든 윌리엄슨",
+        "number": 55,
         "throwsHand": "L",
-        "era": "4.40",
-        "whip": "1.20",
-        "wins": 9,
-        "losses": 6,
-        "inningsPitched": "118.2",
-        "strikeouts": 122,
+        "era": "3.77",
+        "whip": "1.22",
+        "wins": 6,
+        "losses": 5,
+        "inningsPitched": "85.0",
+        "strikeouts": 80,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -16165,18 +16514,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "랜디 바스케스",
-        "number": 98,
+        "name": "케이시 마이즈",
+        "number": 24,
         "throwsHand": "R",
-        "era": "4.87",
-        "whip": "1.50",
-        "wins": 4,
+        "era": "4.20",
+        "whip": "1.28",
+        "wins": 7,
         "losses": 7,
-        "inningsPitched": "98.0",
-        "strikeouts": 62,
+        "inningsPitched": "92.0",
+        "strikeouts": 75,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8540",
@@ -16221,15 +16572,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "닉 로돌로",
-        "number": 40,
+        "name": "브랜든 윌리엄슨",
+        "number": 55,
         "throwsHand": "L",
-        "era": "4.40",
-        "whip": "1.20",
-        "wins": 9,
-        "losses": 6,
-        "inningsPitched": "118.2",
-        "strikeouts": 122,
+        "era": "3.77",
+        "whip": "1.22",
+        "wins": 6,
+        "losses": 5,
+        "inningsPitched": "85.0",
+        "strikeouts": 80,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -16248,18 +16600,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "랜디 바스케스",
-        "number": 98,
+        "name": "케이시 마이즈",
+        "number": 24,
         "throwsHand": "R",
-        "era": "4.87",
-        "whip": "1.50",
-        "wins": 4,
+        "era": "4.20",
+        "whip": "1.28",
+        "wins": 7,
         "losses": 7,
-        "inningsPitched": "98.0",
-        "strikeouts": 62,
+        "inningsPitched": "92.0",
+        "strikeouts": 75,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8541",
@@ -16304,15 +16658,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "제이크 어빈",
-        "number": 27,
+        "name": "브래드 로드",
+        "number": 64,
         "throwsHand": "R",
-        "era": "4.41",
-        "whip": "1.18",
-        "wins": 10,
-        "losses": 14,
-        "inningsPitched": "187.2",
-        "strikeouts": 156,
+        "era": "4.15",
+        "whip": "1.30",
+        "wins": 4,
+        "losses": 6,
+        "inningsPitched": "65.0",
+        "strikeouts": 58,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -16331,18 +16686,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "AJ 스미스-샤우버",
-        "number": 62,
+        "name": "그랜트 홈즈",
+        "number": 54,
         "throwsHand": "R",
-        "era": "3.20",
-        "whip": "1.15",
-        "wins": 6,
-        "losses": 3,
-        "inningsPitched": "62.0",
-        "strikeouts": 68,
+        "era": "3.80",
+        "whip": "1.24",
+        "wins": 5,
+        "losses": 4,
+        "inningsPitched": "72.0",
+        "strikeouts": 70,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8542",
@@ -16387,15 +16744,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "제이크 어빈",
-        "number": 27,
+        "name": "브래드 로드",
+        "number": 64,
         "throwsHand": "R",
-        "era": "4.41",
-        "whip": "1.18",
-        "wins": 10,
-        "losses": 14,
-        "inningsPitched": "187.2",
-        "strikeouts": 156,
+        "era": "4.15",
+        "whip": "1.30",
+        "wins": 4,
+        "losses": 6,
+        "inningsPitched": "65.0",
+        "strikeouts": 58,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -16414,18 +16772,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "AJ 스미스-샤우버",
-        "number": 62,
+        "name": "그랜트 홈즈",
+        "number": 54,
         "throwsHand": "R",
-        "era": "3.20",
-        "whip": "1.15",
-        "wins": 6,
-        "losses": 3,
-        "inningsPitched": "62.0",
-        "strikeouts": 68,
+        "era": "3.80",
+        "whip": "1.24",
+        "wins": 5,
+        "losses": 4,
+        "inningsPitched": "72.0",
+        "strikeouts": 70,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8543",
@@ -16470,15 +16830,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "제이크 어빈",
-        "number": 27,
+        "name": "브래드 로드",
+        "number": 64,
         "throwsHand": "R",
-        "era": "4.41",
-        "whip": "1.18",
-        "wins": 10,
-        "losses": 14,
-        "inningsPitched": "187.2",
-        "strikeouts": 156,
+        "era": "4.15",
+        "whip": "1.30",
+        "wins": 4,
+        "losses": 6,
+        "inningsPitched": "65.0",
+        "strikeouts": 58,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -16497,18 +16858,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "AJ 스미스-샤우버",
-        "number": 62,
+        "name": "그랜트 홈즈",
+        "number": 54,
         "throwsHand": "R",
-        "era": "3.20",
-        "whip": "1.15",
-        "wins": 6,
-        "losses": 3,
-        "inningsPitched": "62.0",
-        "strikeouts": 68,
+        "era": "3.80",
+        "whip": "1.24",
+        "wins": 5,
+        "losses": 4,
+        "inningsPitched": "72.0",
+        "strikeouts": 70,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8544",
@@ -16553,15 +16916,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "제이크 어빈",
-        "number": 27,
+        "name": "브래드 로드",
+        "number": 64,
         "throwsHand": "R",
-        "era": "4.41",
-        "whip": "1.18",
-        "wins": 10,
-        "losses": 14,
-        "inningsPitched": "187.2",
-        "strikeouts": 156,
+        "era": "4.15",
+        "whip": "1.30",
+        "wins": 4,
+        "losses": 6,
+        "inningsPitched": "65.0",
+        "strikeouts": 58,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -16580,18 +16944,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "AJ 스미스-샤우버",
-        "number": 62,
+        "name": "그랜트 홈즈",
+        "number": 54,
         "throwsHand": "R",
-        "era": "3.20",
-        "whip": "1.15",
-        "wins": 6,
-        "losses": 3,
-        "inningsPitched": "62.0",
-        "strikeouts": 68,
+        "era": "3.80",
+        "whip": "1.24",
+        "wins": 5,
+        "losses": 4,
+        "inningsPitched": "72.0",
+        "strikeouts": 70,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8545",
@@ -16636,15 +17002,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "제이크 어빈",
-        "number": 27,
+        "name": "브래드 로드",
+        "number": 64,
         "throwsHand": "R",
-        "era": "4.41",
-        "whip": "1.18",
-        "wins": 10,
-        "losses": 14,
-        "inningsPitched": "187.2",
-        "strikeouts": 156,
+        "era": "4.15",
+        "whip": "1.30",
+        "wins": 4,
+        "losses": 6,
+        "inningsPitched": "65.0",
+        "strikeouts": 58,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -16663,18 +17030,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "AJ 스미스-샤우버",
-        "number": 62,
+        "name": "그랜트 홈즈",
+        "number": 54,
         "throwsHand": "R",
-        "era": "3.20",
-        "whip": "1.15",
-        "wins": 6,
-        "losses": 3,
-        "inningsPitched": "62.0",
-        "strikeouts": 68,
+        "era": "3.80",
+        "whip": "1.24",
+        "wins": 5,
+        "losses": 4,
+        "inningsPitched": "72.0",
+        "strikeouts": 70,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8546",
@@ -16719,15 +17088,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "맥켄지 고어",
-        "number": 1,
+        "name": "코디 브래드포드",
+        "number": 61,
         "throwsHand": "L",
-        "era": "3.90",
-        "whip": "1.30",
-        "wins": 9,
-        "losses": 10,
-        "inningsPitched": "140.0",
-        "strikeouts": 160,
+        "era": "3.54",
+        "whip": "1.05",
+        "wins": 6,
+        "losses": 3,
+        "inningsPitched": "76.1",
+        "strikeouts": 70,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -16746,18 +17116,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "브래디 바소",
-        "number": 63,
+        "name": "제이콥 로페즈",
+        "number": 60,
         "throwsHand": "L",
-        "era": "4.05",
-        "whip": "1.29",
-        "wins": 5,
-        "losses": 6,
+        "era": "4.20",
+        "whip": "1.32",
+        "wins": 4,
+        "losses": 7,
         "inningsPitched": "65.0",
         "strikeouts": 62,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8547",
@@ -16802,15 +17174,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "맥켄지 고어",
-        "number": 1,
+        "name": "코디 브래드포드",
+        "number": 61,
         "throwsHand": "L",
-        "era": "3.90",
-        "whip": "1.30",
-        "wins": 9,
-        "losses": 10,
-        "inningsPitched": "140.0",
-        "strikeouts": 160,
+        "era": "3.54",
+        "whip": "1.05",
+        "wins": 6,
+        "losses": 3,
+        "inningsPitched": "76.1",
+        "strikeouts": 70,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -16829,18 +17202,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "브래디 바소",
-        "number": 63,
+        "name": "제이콥 로페즈",
+        "number": 60,
         "throwsHand": "L",
-        "era": "4.05",
-        "whip": "1.29",
-        "wins": 5,
-        "losses": 6,
+        "era": "4.20",
+        "whip": "1.32",
+        "wins": 4,
+        "losses": 7,
         "inningsPitched": "65.0",
         "strikeouts": 62,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8548",
@@ -16885,15 +17260,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "맥켄지 고어",
-        "number": 1,
+        "name": "코디 브래드포드",
+        "number": 61,
         "throwsHand": "L",
-        "era": "3.90",
-        "whip": "1.30",
-        "wins": 9,
-        "losses": 10,
-        "inningsPitched": "140.0",
-        "strikeouts": 160,
+        "era": "3.54",
+        "whip": "1.05",
+        "wins": 6,
+        "losses": 3,
+        "inningsPitched": "76.1",
+        "strikeouts": 70,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -16912,18 +17288,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "브래디 바소",
-        "number": 63,
+        "name": "제이콥 로페즈",
+        "number": 60,
         "throwsHand": "L",
-        "era": "4.05",
-        "whip": "1.29",
-        "wins": 5,
-        "losses": 6,
+        "era": "4.20",
+        "whip": "1.32",
+        "wins": 4,
+        "losses": 7,
         "inningsPitched": "65.0",
         "strikeouts": 62,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8549",
@@ -16968,15 +17346,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "맥켄지 고어",
-        "number": 1,
+        "name": "코디 브래드포드",
+        "number": 61,
         "throwsHand": "L",
-        "era": "3.90",
-        "whip": "1.30",
-        "wins": 9,
-        "losses": 10,
-        "inningsPitched": "140.0",
-        "strikeouts": 160,
+        "era": "3.54",
+        "whip": "1.05",
+        "wins": 6,
+        "losses": 3,
+        "inningsPitched": "76.1",
+        "strikeouts": 70,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -16995,18 +17374,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "브래디 바소",
-        "number": 63,
+        "name": "제이콥 로페즈",
+        "number": 60,
         "throwsHand": "L",
-        "era": "4.05",
-        "whip": "1.29",
-        "wins": 5,
-        "losses": 6,
+        "era": "4.20",
+        "whip": "1.32",
+        "wins": 4,
+        "losses": 7,
         "inningsPitched": "65.0",
         "strikeouts": 62,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8550",
@@ -17051,15 +17432,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "맥켄지 고어",
-        "number": 1,
+        "name": "코디 브래드포드",
+        "number": 61,
         "throwsHand": "L",
-        "era": "3.90",
-        "whip": "1.30",
-        "wins": 9,
-        "losses": 10,
-        "inningsPitched": "140.0",
-        "strikeouts": 160,
+        "era": "3.54",
+        "whip": "1.05",
+        "wins": 6,
+        "losses": 3,
+        "inningsPitched": "76.1",
+        "strikeouts": 70,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -17078,18 +17460,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "브래디 바소",
-        "number": 63,
+        "name": "제이콥 로페즈",
+        "number": 60,
         "throwsHand": "L",
-        "era": "4.05",
-        "whip": "1.29",
-        "wins": 5,
-        "losses": 6,
+        "era": "4.20",
+        "whip": "1.32",
+        "wins": 4,
+        "losses": 7,
         "inningsPitched": "65.0",
         "strikeouts": 62,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8567",
@@ -17134,15 +17518,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "가브리엘 휴즈",
-        "number": 28,
+        "name": "스가노 토모유키",
+        "number": 18,
         "throwsHand": "R",
-        "era": "4.85",
-        "whip": "1.48",
-        "wins": 4,
-        "losses": 10,
-        "inningsPitched": "85.0",
-        "strikeouts": 75,
+        "era": "3.60",
+        "whip": "1.18",
+        "wins": 8,
+        "losses": 8,
+        "inningsPitched": "110.0",
+        "strikeouts": 95,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -17161,18 +17546,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "카일 브래디시",
-        "number": 39,
-        "throwsHand": "R",
-        "era": "2.75",
-        "whip": "1.04",
-        "wins": 12,
-        "losses": 5,
-        "inningsPitched": "135.0",
-        "strikeouts": 145,
+        "name": "트레버 로저스",
+        "number": 28,
+        "throwsHand": "L",
+        "era": "4.80",
+        "whip": "1.45",
+        "wins": 4,
+        "losses": 11,
+        "inningsPitched": "105.0",
+        "strikeouts": 90,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8568",
@@ -17217,15 +17604,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "가브리엘 휴즈",
-        "number": 28,
+        "name": "스가노 토모유키",
+        "number": 18,
         "throwsHand": "R",
-        "era": "4.85",
-        "whip": "1.48",
-        "wins": 4,
-        "losses": 10,
-        "inningsPitched": "85.0",
-        "strikeouts": 75,
+        "era": "3.60",
+        "whip": "1.18",
+        "wins": 8,
+        "losses": 8,
+        "inningsPitched": "110.0",
+        "strikeouts": 95,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -17244,18 +17632,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "카일 브래디시",
-        "number": 39,
-        "throwsHand": "R",
-        "era": "2.75",
-        "whip": "1.04",
-        "wins": 12,
-        "losses": 5,
-        "inningsPitched": "135.0",
-        "strikeouts": 145,
+        "name": "트레버 로저스",
+        "number": 28,
+        "throwsHand": "L",
+        "era": "4.80",
+        "whip": "1.45",
+        "wins": 4,
+        "losses": 11,
+        "inningsPitched": "105.0",
+        "strikeouts": 90,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8569",
@@ -17300,15 +17690,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "가브리엘 휴즈",
-        "number": 28,
+        "name": "스가노 토모유키",
+        "number": 18,
         "throwsHand": "R",
-        "era": "4.85",
-        "whip": "1.48",
-        "wins": 4,
-        "losses": 10,
-        "inningsPitched": "85.0",
-        "strikeouts": 75,
+        "era": "3.60",
+        "whip": "1.18",
+        "wins": 8,
+        "losses": 8,
+        "inningsPitched": "110.0",
+        "strikeouts": 95,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -17327,18 +17718,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "카일 브래디시",
-        "number": 39,
-        "throwsHand": "R",
-        "era": "2.75",
-        "whip": "1.04",
-        "wins": 12,
-        "losses": 5,
-        "inningsPitched": "135.0",
-        "strikeouts": 145,
+        "name": "트레버 로저스",
+        "number": 28,
+        "throwsHand": "L",
+        "era": "4.80",
+        "whip": "1.45",
+        "wins": 4,
+        "losses": 11,
+        "inningsPitched": "105.0",
+        "strikeouts": 90,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8570",
@@ -17383,15 +17776,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "가브리엘 휴즈",
-        "number": 28,
+        "name": "스가노 토모유키",
+        "number": 18,
         "throwsHand": "R",
-        "era": "4.85",
-        "whip": "1.48",
-        "wins": 4,
-        "losses": 10,
-        "inningsPitched": "85.0",
-        "strikeouts": 75,
+        "era": "3.60",
+        "whip": "1.18",
+        "wins": 8,
+        "losses": 8,
+        "inningsPitched": "110.0",
+        "strikeouts": 95,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -17410,18 +17804,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "카일 브래디시",
-        "number": 39,
-        "throwsHand": "R",
-        "era": "2.75",
-        "whip": "1.04",
-        "wins": 12,
-        "losses": 5,
-        "inningsPitched": "135.0",
-        "strikeouts": 145,
+        "name": "트레버 로저스",
+        "number": 28,
+        "throwsHand": "L",
+        "era": "4.80",
+        "whip": "1.45",
+        "wins": 4,
+        "losses": 11,
+        "inningsPitched": "105.0",
+        "strikeouts": 90,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8571",
@@ -17466,15 +17862,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "가브리엘 휴즈",
-        "number": 28,
+        "name": "스가노 토모유키",
+        "number": 18,
         "throwsHand": "R",
-        "era": "4.85",
-        "whip": "1.48",
-        "wins": 4,
-        "losses": 10,
-        "inningsPitched": "85.0",
-        "strikeouts": 75,
+        "era": "3.60",
+        "whip": "1.18",
+        "wins": 8,
+        "losses": 8,
+        "inningsPitched": "110.0",
+        "strikeouts": 95,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -17493,18 +17890,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "카일 브래디시",
-        "number": 39,
-        "throwsHand": "R",
-        "era": "2.75",
-        "whip": "1.04",
-        "wins": 12,
-        "losses": 5,
-        "inningsPitched": "135.0",
-        "strikeouts": 145,
+        "name": "트레버 로저스",
+        "number": 28,
+        "throwsHand": "L",
+        "era": "4.80",
+        "whip": "1.45",
+        "wins": 4,
+        "losses": 11,
+        "inningsPitched": "105.0",
+        "strikeouts": 90,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8572",
@@ -17548,18 +17947,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "에두아르도 로드리게스",
-        "number": 57,
-        "throwsHand": "L",
-        "era": "5.04",
-        "whip": "1.45",
-        "wins": 3,
-        "losses": 4,
-        "inningsPitched": "50.0",
-        "strikeouts": 47,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8572",
@@ -17576,18 +17964,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "헤수스 루자르도",
-        "number": 44,
-        "throwsHand": "L",
-        "era": "4.09",
-        "whip": "1.25",
+        "name": "앤드류 페인터",
+        "number": 76,
+        "throwsHand": "R",
+        "era": "3.20",
+        "whip": "1.10",
         "wins": 8,
-        "losses": 7,
-        "inningsPitched": "110.0",
-        "strikeouts": 115,
+        "losses": 3,
+        "inningsPitched": "85.0",
+        "strikeouts": 98,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8573",
@@ -17631,18 +18021,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "에두아르도 로드리게스",
-        "number": 57,
-        "throwsHand": "L",
-        "era": "5.04",
-        "whip": "1.45",
-        "wins": 3,
-        "losses": 4,
-        "inningsPitched": "50.0",
-        "strikeouts": 47,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8573",
@@ -17659,18 +18038,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "헤수스 루자르도",
-        "number": 44,
-        "throwsHand": "L",
-        "era": "4.09",
-        "whip": "1.25",
+        "name": "앤드류 페인터",
+        "number": 76,
+        "throwsHand": "R",
+        "era": "3.20",
+        "whip": "1.10",
         "wins": 8,
-        "losses": 7,
-        "inningsPitched": "110.0",
-        "strikeouts": 115,
+        "losses": 3,
+        "inningsPitched": "85.0",
+        "strikeouts": 98,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8574",
@@ -17714,18 +18095,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "에두아르도 로드리게스",
-        "number": 57,
-        "throwsHand": "L",
-        "era": "5.04",
-        "whip": "1.45",
-        "wins": 3,
-        "losses": 4,
-        "inningsPitched": "50.0",
-        "strikeouts": 47,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8574",
@@ -17742,18 +18112,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "헤수스 루자르도",
-        "number": 44,
-        "throwsHand": "L",
-        "era": "4.09",
-        "whip": "1.25",
+        "name": "앤드류 페인터",
+        "number": 76,
+        "throwsHand": "R",
+        "era": "3.20",
+        "whip": "1.10",
         "wins": 8,
-        "losses": 7,
-        "inningsPitched": "110.0",
-        "strikeouts": 115,
+        "losses": 3,
+        "inningsPitched": "85.0",
+        "strikeouts": 98,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8575",
@@ -17797,18 +18169,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "에두아르도 로드리게스",
-        "number": 57,
-        "throwsHand": "L",
-        "era": "5.04",
-        "whip": "1.45",
-        "wins": 3,
-        "losses": 4,
-        "inningsPitched": "50.0",
-        "strikeouts": 47,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8575",
@@ -17825,18 +18186,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "헤수스 루자르도",
-        "number": 44,
-        "throwsHand": "L",
-        "era": "4.09",
-        "whip": "1.25",
+        "name": "앤드류 페인터",
+        "number": 76,
+        "throwsHand": "R",
+        "era": "3.20",
+        "whip": "1.10",
         "wins": 8,
-        "losses": 7,
-        "inningsPitched": "110.0",
-        "strikeouts": 115,
+        "losses": 3,
+        "inningsPitched": "85.0",
+        "strikeouts": 98,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8576",
@@ -17880,18 +18243,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "에두아르도 로드리게스",
-        "number": 57,
-        "throwsHand": "L",
-        "era": "5.04",
-        "whip": "1.45",
-        "wins": 3,
-        "losses": 4,
-        "inningsPitched": "50.0",
-        "strikeouts": 47,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8576",
@@ -17908,18 +18260,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "헤수스 루자르도",
-        "number": 44,
-        "throwsHand": "L",
-        "era": "4.09",
-        "whip": "1.25",
+        "name": "앤드류 페인터",
+        "number": 76,
+        "throwsHand": "R",
+        "era": "3.20",
+        "whip": "1.10",
         "wins": 8,
-        "losses": 7,
-        "inningsPitched": "110.0",
-        "strikeouts": 115,
+        "losses": 3,
+        "inningsPitched": "85.0",
+        "strikeouts": 98,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8577",
@@ -17964,15 +18318,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "제딕슨 파에즈",
-        "number": 78,
-        "throwsHand": "R",
-        "era": "4.10",
-        "whip": "1.22",
+        "name": "패트릭 산도발",
+        "number": 43,
+        "throwsHand": "L",
+        "era": "4.40",
+        "whip": "1.35",
         "wins": 5,
-        "losses": 4,
-        "inningsPitched": "65.0",
-        "strikeouts": 60,
+        "losses": 8,
+        "inningsPitched": "90.0",
+        "strikeouts": 85,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -17991,18 +18346,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "브라이언 우",
-        "number": 22,
+        "name": "브라이스 밀러",
+        "number": 50,
         "throwsHand": "R",
-        "era": "2.89",
-        "whip": "0.89",
-        "wins": 9,
-        "losses": 3,
-        "inningsPitched": "121.1",
-        "strikeouts": 101,
+        "era": "3.10",
+        "whip": "1.02",
+        "wins": 11,
+        "losses": 8,
+        "inningsPitched": "160.0",
+        "strikeouts": 155,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8578",
@@ -18047,15 +18404,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "제딕슨 파에즈",
-        "number": 78,
-        "throwsHand": "R",
-        "era": "4.10",
-        "whip": "1.22",
+        "name": "패트릭 산도발",
+        "number": 43,
+        "throwsHand": "L",
+        "era": "4.40",
+        "whip": "1.35",
         "wins": 5,
-        "losses": 4,
-        "inningsPitched": "65.0",
-        "strikeouts": 60,
+        "losses": 8,
+        "inningsPitched": "90.0",
+        "strikeouts": 85,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -18074,18 +18432,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "브라이언 우",
-        "number": 22,
+        "name": "브라이스 밀러",
+        "number": 50,
         "throwsHand": "R",
-        "era": "2.89",
-        "whip": "0.89",
-        "wins": 9,
-        "losses": 3,
-        "inningsPitched": "121.1",
-        "strikeouts": 101,
+        "era": "3.10",
+        "whip": "1.02",
+        "wins": 11,
+        "losses": 8,
+        "inningsPitched": "160.0",
+        "strikeouts": 155,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8579",
@@ -18130,15 +18490,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "제딕슨 파에즈",
-        "number": 78,
-        "throwsHand": "R",
-        "era": "4.10",
-        "whip": "1.22",
+        "name": "패트릭 산도발",
+        "number": 43,
+        "throwsHand": "L",
+        "era": "4.40",
+        "whip": "1.35",
         "wins": 5,
-        "losses": 4,
-        "inningsPitched": "65.0",
-        "strikeouts": 60,
+        "losses": 8,
+        "inningsPitched": "90.0",
+        "strikeouts": 85,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -18157,18 +18518,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "브라이언 우",
-        "number": 22,
+        "name": "브라이스 밀러",
+        "number": 50,
         "throwsHand": "R",
-        "era": "2.89",
-        "whip": "0.89",
-        "wins": 9,
-        "losses": 3,
-        "inningsPitched": "121.1",
-        "strikeouts": 101,
+        "era": "3.10",
+        "whip": "1.02",
+        "wins": 11,
+        "losses": 8,
+        "inningsPitched": "160.0",
+        "strikeouts": 155,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8580",
@@ -18213,15 +18576,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "제딕슨 파에즈",
-        "number": 78,
-        "throwsHand": "R",
-        "era": "4.10",
-        "whip": "1.22",
+        "name": "패트릭 산도발",
+        "number": 43,
+        "throwsHand": "L",
+        "era": "4.40",
+        "whip": "1.35",
         "wins": 5,
-        "losses": 4,
-        "inningsPitched": "65.0",
-        "strikeouts": 60,
+        "losses": 8,
+        "inningsPitched": "90.0",
+        "strikeouts": 85,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -18240,18 +18604,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "브라이언 우",
-        "number": 22,
+        "name": "브라이스 밀러",
+        "number": 50,
         "throwsHand": "R",
-        "era": "2.89",
-        "whip": "0.89",
-        "wins": 9,
-        "losses": 3,
-        "inningsPitched": "121.1",
-        "strikeouts": 101,
+        "era": "3.10",
+        "whip": "1.02",
+        "wins": 11,
+        "losses": 8,
+        "inningsPitched": "160.0",
+        "strikeouts": 155,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8581",
@@ -18296,15 +18662,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "제딕슨 파에즈",
-        "number": 78,
-        "throwsHand": "R",
-        "era": "4.10",
-        "whip": "1.22",
+        "name": "패트릭 산도발",
+        "number": 43,
+        "throwsHand": "L",
+        "era": "4.40",
+        "whip": "1.35",
         "wins": 5,
-        "losses": 4,
-        "inningsPitched": "65.0",
-        "strikeouts": 60,
+        "losses": 8,
+        "inningsPitched": "90.0",
+        "strikeouts": 85,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -18323,18 +18690,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "브라이언 우",
-        "number": 22,
+        "name": "브라이스 밀러",
+        "number": 50,
         "throwsHand": "R",
-        "era": "2.89",
-        "whip": "0.89",
-        "wins": 9,
-        "losses": 3,
-        "inningsPitched": "121.1",
-        "strikeouts": 101,
+        "era": "3.10",
+        "whip": "1.02",
+        "wins": 11,
+        "losses": 8,
+        "inningsPitched": "160.0",
+        "strikeouts": 155,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8582",
@@ -18379,15 +18748,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "프레디 페랄타",
-        "number": 51,
+        "name": "그리핀 잭스",
+        "number": 22,
         "throwsHand": "R",
-        "era": "3.68",
-        "whip": "1.21",
-        "wins": 11,
-        "losses": 9,
-        "inningsPitched": "173.2",
-        "strikeouts": 200,
+        "era": "3.30",
+        "whip": "1.12",
+        "wins": 6,
+        "losses": 5,
+        "inningsPitched": "68.0",
+        "strikeouts": 72,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -18406,18 +18776,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "션 마네아",
-        "number": 59,
-        "throwsHand": "L",
-        "era": "3.47",
-        "whip": "1.08",
-        "wins": 12,
-        "losses": 6,
-        "inningsPitched": "181.2",
-        "strikeouts": 184,
+        "name": "저스틴 하겐만",
+        "number": 68,
+        "throwsHand": "R",
+        "era": "3.90",
+        "whip": "1.25",
+        "wins": 4,
+        "losses": 3,
+        "inningsPitched": "55.0",
+        "strikeouts": 50,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8583",
@@ -18462,15 +18834,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "프레디 페랄타",
-        "number": 51,
+        "name": "그리핀 잭스",
+        "number": 22,
         "throwsHand": "R",
-        "era": "3.68",
-        "whip": "1.21",
-        "wins": 11,
-        "losses": 9,
-        "inningsPitched": "173.2",
-        "strikeouts": 200,
+        "era": "3.30",
+        "whip": "1.12",
+        "wins": 6,
+        "losses": 5,
+        "inningsPitched": "68.0",
+        "strikeouts": 72,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -18489,18 +18862,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "션 마네아",
-        "number": 59,
-        "throwsHand": "L",
-        "era": "3.47",
-        "whip": "1.08",
-        "wins": 12,
-        "losses": 6,
-        "inningsPitched": "181.2",
-        "strikeouts": 184,
+        "name": "저스틴 하겐만",
+        "number": 68,
+        "throwsHand": "R",
+        "era": "3.90",
+        "whip": "1.25",
+        "wins": 4,
+        "losses": 3,
+        "inningsPitched": "55.0",
+        "strikeouts": 50,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8584",
@@ -18545,15 +18920,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "프레디 페랄타",
-        "number": 51,
+        "name": "그리핀 잭스",
+        "number": 22,
         "throwsHand": "R",
-        "era": "3.68",
-        "whip": "1.21",
-        "wins": 11,
-        "losses": 9,
-        "inningsPitched": "173.2",
-        "strikeouts": 200,
+        "era": "3.30",
+        "whip": "1.12",
+        "wins": 6,
+        "losses": 5,
+        "inningsPitched": "68.0",
+        "strikeouts": 72,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -18572,18 +18948,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "션 마네아",
-        "number": 59,
-        "throwsHand": "L",
-        "era": "3.47",
-        "whip": "1.08",
-        "wins": 12,
-        "losses": 6,
-        "inningsPitched": "181.2",
-        "strikeouts": 184,
+        "name": "저스틴 하겐만",
+        "number": 68,
+        "throwsHand": "R",
+        "era": "3.90",
+        "whip": "1.25",
+        "wins": 4,
+        "losses": 3,
+        "inningsPitched": "55.0",
+        "strikeouts": 50,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8585",
@@ -18628,15 +19006,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "프레디 페랄타",
-        "number": 51,
+        "name": "그리핀 잭스",
+        "number": 22,
         "throwsHand": "R",
-        "era": "3.68",
-        "whip": "1.21",
-        "wins": 11,
-        "losses": 9,
-        "inningsPitched": "173.2",
-        "strikeouts": 200,
+        "era": "3.30",
+        "whip": "1.12",
+        "wins": 6,
+        "losses": 5,
+        "inningsPitched": "68.0",
+        "strikeouts": 72,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -18655,18 +19034,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "션 마네아",
-        "number": 59,
-        "throwsHand": "L",
-        "era": "3.47",
-        "whip": "1.08",
-        "wins": 12,
-        "losses": 6,
-        "inningsPitched": "181.2",
-        "strikeouts": 184,
+        "name": "저스틴 하겐만",
+        "number": 68,
+        "throwsHand": "R",
+        "era": "3.90",
+        "whip": "1.25",
+        "wins": 4,
+        "losses": 3,
+        "inningsPitched": "55.0",
+        "strikeouts": 50,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8586",
@@ -18711,15 +19092,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "프레디 페랄타",
-        "number": 51,
+        "name": "그리핀 잭스",
+        "number": 22,
         "throwsHand": "R",
-        "era": "3.68",
-        "whip": "1.21",
-        "wins": 11,
-        "losses": 9,
-        "inningsPitched": "173.2",
-        "strikeouts": 200,
+        "era": "3.30",
+        "whip": "1.12",
+        "wins": 6,
+        "losses": 5,
+        "inningsPitched": "68.0",
+        "strikeouts": 72,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -18738,18 +19120,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "션 마네아",
-        "number": 59,
-        "throwsHand": "L",
-        "era": "3.47",
-        "whip": "1.08",
-        "wins": 12,
-        "losses": 6,
-        "inningsPitched": "181.2",
-        "strikeouts": 184,
+        "name": "저스틴 하겐만",
+        "number": 68,
+        "throwsHand": "R",
+        "era": "3.90",
+        "whip": "1.25",
+        "wins": 4,
+        "losses": 3,
+        "inningsPitched": "55.0",
+        "strikeouts": 50,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8587",
@@ -18794,15 +19178,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "폴 스킨스",
-        "number": 30,
+        "name": "재러드 존스",
+        "number": 37,
         "throwsHand": "R",
-        "era": "1.96",
-        "whip": "0.95",
-        "wins": 11,
-        "losses": 3,
-        "inningsPitched": "133.0",
-        "strikeouts": 170,
+        "era": "3.85",
+        "whip": "1.15",
+        "wins": 6,
+        "losses": 7,
+        "inningsPitched": "100.0",
+        "strikeouts": 120,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -18821,18 +19206,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "로건 웹",
-        "number": 62,
+        "name": "랜든 루프",
+        "number": 73,
         "throwsHand": "R",
-        "era": "3.47",
-        "whip": "1.23",
-        "wins": 13,
-        "losses": 10,
-        "inningsPitched": "204.2",
-        "strikeouts": 172,
+        "era": "3.40",
+        "whip": "1.20",
+        "wins": 5,
+        "losses": 4,
+        "inningsPitched": "75.0",
+        "strikeouts": 70,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8588",
@@ -18877,15 +19264,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "폴 스킨스",
-        "number": 30,
+        "name": "재러드 존스",
+        "number": 37,
         "throwsHand": "R",
-        "era": "1.96",
-        "whip": "0.95",
-        "wins": 11,
-        "losses": 3,
-        "inningsPitched": "133.0",
-        "strikeouts": 170,
+        "era": "3.85",
+        "whip": "1.15",
+        "wins": 6,
+        "losses": 7,
+        "inningsPitched": "100.0",
+        "strikeouts": 120,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -18904,18 +19292,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "로건 웹",
-        "number": 62,
+        "name": "랜든 루프",
+        "number": 73,
         "throwsHand": "R",
-        "era": "3.47",
-        "whip": "1.23",
-        "wins": 13,
-        "losses": 10,
-        "inningsPitched": "204.2",
-        "strikeouts": 172,
+        "era": "3.40",
+        "whip": "1.20",
+        "wins": 5,
+        "losses": 4,
+        "inningsPitched": "75.0",
+        "strikeouts": 70,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8589",
@@ -18960,15 +19350,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "폴 스킨스",
-        "number": 30,
+        "name": "재러드 존스",
+        "number": 37,
         "throwsHand": "R",
-        "era": "1.96",
-        "whip": "0.95",
-        "wins": 11,
-        "losses": 3,
-        "inningsPitched": "133.0",
-        "strikeouts": 170,
+        "era": "3.85",
+        "whip": "1.15",
+        "wins": 6,
+        "losses": 7,
+        "inningsPitched": "100.0",
+        "strikeouts": 120,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -18987,18 +19378,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "로건 웹",
-        "number": 62,
+        "name": "랜든 루프",
+        "number": 73,
         "throwsHand": "R",
-        "era": "3.47",
-        "whip": "1.23",
-        "wins": 13,
-        "losses": 10,
-        "inningsPitched": "204.2",
-        "strikeouts": 172,
+        "era": "3.40",
+        "whip": "1.20",
+        "wins": 5,
+        "losses": 4,
+        "inningsPitched": "75.0",
+        "strikeouts": 70,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8590",
@@ -19043,15 +19436,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "폴 스킨스",
-        "number": 30,
+        "name": "재러드 존스",
+        "number": 37,
         "throwsHand": "R",
-        "era": "1.96",
-        "whip": "0.95",
-        "wins": 11,
-        "losses": 3,
-        "inningsPitched": "133.0",
-        "strikeouts": 170,
+        "era": "3.85",
+        "whip": "1.15",
+        "wins": 6,
+        "losses": 7,
+        "inningsPitched": "100.0",
+        "strikeouts": 120,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -19070,18 +19464,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "로건 웹",
-        "number": 62,
+        "name": "랜든 루프",
+        "number": 73,
         "throwsHand": "R",
-        "era": "3.47",
-        "whip": "1.23",
-        "wins": 13,
-        "losses": 10,
-        "inningsPitched": "204.2",
-        "strikeouts": 172,
+        "era": "3.40",
+        "whip": "1.20",
+        "wins": 5,
+        "losses": 4,
+        "inningsPitched": "75.0",
+        "strikeouts": 70,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8591",
@@ -19126,15 +19522,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "폴 스킨스",
-        "number": 30,
+        "name": "재러드 존스",
+        "number": 37,
         "throwsHand": "R",
-        "era": "1.96",
-        "whip": "0.95",
-        "wins": 11,
-        "losses": 3,
-        "inningsPitched": "133.0",
-        "strikeouts": 170,
+        "era": "3.85",
+        "whip": "1.15",
+        "wins": 6,
+        "losses": 7,
+        "inningsPitched": "100.0",
+        "strikeouts": 120,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -19153,18 +19550,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "로건 웹",
-        "number": 62,
+        "name": "랜든 루프",
+        "number": 73,
         "throwsHand": "R",
-        "era": "3.47",
-        "whip": "1.23",
-        "wins": 13,
-        "losses": 10,
-        "inningsPitched": "204.2",
-        "strikeouts": 172,
+        "era": "3.40",
+        "whip": "1.20",
+        "wins": 5,
+        "losses": 4,
+        "inningsPitched": "75.0",
+        "strikeouts": 70,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8592",
@@ -19209,15 +19608,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "개빈 윌리엄스",
-        "number": 32,
-        "throwsHand": "R",
-        "era": "4.86",
-        "whip": "1.37",
-        "wins": 3,
-        "losses": 10,
-        "inningsPitched": "76.0",
-        "strikeouts": 79,
+        "name": "조이 칸틸로",
+        "number": 54,
+        "throwsHand": "L",
+        "era": "4.20",
+        "whip": "1.28",
+        "wins": 4,
+        "losses": 5,
+        "inningsPitched": "60.0",
+        "strikeouts": 65,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -19236,18 +19636,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "스펜서 마일스",
-        "number": 58,
+        "name": "딜런 시즈",
+        "number": 84,
         "throwsHand": "R",
-        "era": "4.20",
-        "whip": "1.28",
-        "wins": 4,
-        "losses": 5,
-        "inningsPitched": "60.0",
-        "strikeouts": 55,
+        "era": "3.47",
+        "whip": "1.08",
+        "wins": 13,
+        "losses": 10,
+        "inningsPitched": "170.0",
+        "strikeouts": 205,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8593",
@@ -19292,15 +19694,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "개빈 윌리엄스",
-        "number": 32,
-        "throwsHand": "R",
-        "era": "4.86",
-        "whip": "1.37",
-        "wins": 3,
-        "losses": 10,
-        "inningsPitched": "76.0",
-        "strikeouts": 79,
+        "name": "조이 칸틸로",
+        "number": 54,
+        "throwsHand": "L",
+        "era": "4.20",
+        "whip": "1.28",
+        "wins": 4,
+        "losses": 5,
+        "inningsPitched": "60.0",
+        "strikeouts": 65,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -19319,18 +19722,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "스펜서 마일스",
-        "number": 58,
+        "name": "딜런 시즈",
+        "number": 84,
         "throwsHand": "R",
-        "era": "4.20",
-        "whip": "1.28",
-        "wins": 4,
-        "losses": 5,
-        "inningsPitched": "60.0",
-        "strikeouts": 55,
+        "era": "3.47",
+        "whip": "1.08",
+        "wins": 13,
+        "losses": 10,
+        "inningsPitched": "170.0",
+        "strikeouts": 205,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8594",
@@ -19375,15 +19780,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "개빈 윌리엄스",
-        "number": 32,
-        "throwsHand": "R",
-        "era": "4.86",
-        "whip": "1.37",
-        "wins": 3,
-        "losses": 10,
-        "inningsPitched": "76.0",
-        "strikeouts": 79,
+        "name": "조이 칸틸로",
+        "number": 54,
+        "throwsHand": "L",
+        "era": "4.20",
+        "whip": "1.28",
+        "wins": 4,
+        "losses": 5,
+        "inningsPitched": "60.0",
+        "strikeouts": 65,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -19402,18 +19808,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "스펜서 마일스",
-        "number": 58,
+        "name": "딜런 시즈",
+        "number": 84,
         "throwsHand": "R",
-        "era": "4.20",
-        "whip": "1.28",
-        "wins": 4,
-        "losses": 5,
-        "inningsPitched": "60.0",
-        "strikeouts": 55,
+        "era": "3.47",
+        "whip": "1.08",
+        "wins": 13,
+        "losses": 10,
+        "inningsPitched": "170.0",
+        "strikeouts": 205,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8595",
@@ -19458,15 +19866,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "개빈 윌리엄스",
-        "number": 32,
-        "throwsHand": "R",
-        "era": "4.86",
-        "whip": "1.37",
-        "wins": 3,
-        "losses": 10,
-        "inningsPitched": "76.0",
-        "strikeouts": 79,
+        "name": "조이 칸틸로",
+        "number": 54,
+        "throwsHand": "L",
+        "era": "4.20",
+        "whip": "1.28",
+        "wins": 4,
+        "losses": 5,
+        "inningsPitched": "60.0",
+        "strikeouts": 65,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -19485,18 +19894,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "스펜서 마일스",
-        "number": 58,
+        "name": "딜런 시즈",
+        "number": 84,
         "throwsHand": "R",
-        "era": "4.20",
-        "whip": "1.28",
-        "wins": 4,
-        "losses": 5,
-        "inningsPitched": "60.0",
-        "strikeouts": 55,
+        "era": "3.47",
+        "whip": "1.08",
+        "wins": 13,
+        "losses": 10,
+        "inningsPitched": "170.0",
+        "strikeouts": 205,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8596",
@@ -19541,15 +19952,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "개빈 윌리엄스",
-        "number": 32,
-        "throwsHand": "R",
-        "era": "4.86",
-        "whip": "1.37",
-        "wins": 3,
-        "losses": 10,
-        "inningsPitched": "76.0",
-        "strikeouts": 79,
+        "name": "조이 칸틸로",
+        "number": 54,
+        "throwsHand": "L",
+        "era": "4.20",
+        "whip": "1.28",
+        "wins": 4,
+        "losses": 5,
+        "inningsPitched": "60.0",
+        "strikeouts": 65,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -19568,18 +19980,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "스펜서 마일스",
-        "number": 58,
+        "name": "딜런 시즈",
+        "number": 84,
         "throwsHand": "R",
-        "era": "4.20",
-        "whip": "1.28",
-        "wins": 4,
-        "losses": 5,
-        "inningsPitched": "60.0",
-        "strikeouts": 55,
+        "era": "3.47",
+        "whip": "1.08",
+        "wins": 13,
+        "losses": 10,
+        "inningsPitched": "170.0",
+        "strikeouts": 205,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8597",
@@ -19624,15 +20038,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "앤드류 모리스",
-        "number": 43,
+        "name": "딘 크레머",
+        "number": 64,
         "throwsHand": "R",
-        "era": "3.88",
-        "whip": "1.20",
+        "era": "4.12",
+        "whip": "1.24",
         "wins": 8,
-        "losses": 5,
-        "inningsPitched": "92.0",
-        "strikeouts": 90,
+        "losses": 10,
+        "inningsPitched": "130.0",
+        "strikeouts": 115,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -19651,18 +20066,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "트로이 멜튼",
-        "number": 67,
+        "name": "드루 앤더슨",
+        "number": 38,
         "throwsHand": "R",
-        "era": "4.15",
-        "whip": "1.28",
-        "wins": 6,
-        "losses": 7,
-        "inningsPitched": "85.1",
-        "strikeouts": 82,
+        "era": "3.85",
+        "whip": "1.20",
+        "wins": 7,
+        "losses": 6,
+        "inningsPitched": "85.0",
+        "strikeouts": 80,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8598",
@@ -19707,15 +20124,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "앤드류 모리스",
-        "number": 43,
+        "name": "딘 크레머",
+        "number": 64,
         "throwsHand": "R",
-        "era": "3.88",
-        "whip": "1.20",
+        "era": "4.12",
+        "whip": "1.24",
         "wins": 8,
-        "losses": 5,
-        "inningsPitched": "92.0",
-        "strikeouts": 90,
+        "losses": 10,
+        "inningsPitched": "130.0",
+        "strikeouts": 115,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -19734,18 +20152,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "트로이 멜튼",
-        "number": 67,
+        "name": "드루 앤더슨",
+        "number": 38,
         "throwsHand": "R",
-        "era": "4.15",
-        "whip": "1.28",
-        "wins": 6,
-        "losses": 7,
-        "inningsPitched": "85.1",
-        "strikeouts": 82,
+        "era": "3.85",
+        "whip": "1.20",
+        "wins": 7,
+        "losses": 6,
+        "inningsPitched": "85.0",
+        "strikeouts": 80,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8599",
@@ -19790,15 +20210,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "앤드류 모리스",
-        "number": 43,
+        "name": "딘 크레머",
+        "number": 64,
         "throwsHand": "R",
-        "era": "3.88",
-        "whip": "1.20",
+        "era": "4.12",
+        "whip": "1.24",
         "wins": 8,
-        "losses": 5,
-        "inningsPitched": "92.0",
-        "strikeouts": 90,
+        "losses": 10,
+        "inningsPitched": "130.0",
+        "strikeouts": 115,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -19817,18 +20238,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "트로이 멜튼",
-        "number": 67,
+        "name": "드루 앤더슨",
+        "number": 38,
         "throwsHand": "R",
-        "era": "4.15",
-        "whip": "1.28",
-        "wins": 6,
-        "losses": 7,
-        "inningsPitched": "85.1",
-        "strikeouts": 82,
+        "era": "3.85",
+        "whip": "1.20",
+        "wins": 7,
+        "losses": 6,
+        "inningsPitched": "85.0",
+        "strikeouts": 80,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8600",
@@ -19873,15 +20296,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "앤드류 모리스",
-        "number": 43,
+        "name": "딘 크레머",
+        "number": 64,
         "throwsHand": "R",
-        "era": "3.88",
-        "whip": "1.20",
+        "era": "4.12",
+        "whip": "1.24",
         "wins": 8,
-        "losses": 5,
-        "inningsPitched": "92.0",
-        "strikeouts": 90,
+        "losses": 10,
+        "inningsPitched": "130.0",
+        "strikeouts": 115,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -19900,18 +20324,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "트로이 멜튼",
-        "number": 67,
+        "name": "드루 앤더슨",
+        "number": 38,
         "throwsHand": "R",
-        "era": "4.15",
-        "whip": "1.28",
-        "wins": 6,
-        "losses": 7,
-        "inningsPitched": "85.1",
-        "strikeouts": 82,
+        "era": "3.85",
+        "whip": "1.20",
+        "wins": 7,
+        "losses": 6,
+        "inningsPitched": "85.0",
+        "strikeouts": 80,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8601",
@@ -19956,15 +20382,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "앤드류 모리스",
-        "number": 43,
+        "name": "딘 크레머",
+        "number": 64,
         "throwsHand": "R",
-        "era": "3.88",
-        "whip": "1.20",
+        "era": "4.12",
+        "whip": "1.24",
         "wins": 8,
-        "losses": 5,
-        "inningsPitched": "92.0",
-        "strikeouts": 90,
+        "losses": 10,
+        "inningsPitched": "130.0",
+        "strikeouts": 115,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -19983,18 +20410,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "트로이 멜튼",
-        "number": 67,
+        "name": "드루 앤더슨",
+        "number": 38,
         "throwsHand": "R",
-        "era": "4.15",
-        "whip": "1.28",
-        "wins": 6,
-        "losses": 7,
-        "inningsPitched": "85.1",
-        "strikeouts": 82,
+        "era": "3.85",
+        "whip": "1.20",
+        "wins": 7,
+        "losses": 6,
+        "inningsPitched": "85.0",
+        "strikeouts": 80,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8602",
@@ -20039,15 +20468,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "랜디 돕낙",
-        "number": 68,
-        "throwsHand": "R",
-        "era": "4.30",
-        "whip": "1.35",
-        "wins": 5,
-        "losses": 8,
-        "inningsPitched": "78.0",
-        "strikeouts": 65,
+        "name": "노아 카메론",
+        "number": 51,
+        "throwsHand": "L",
+        "era": "3.90",
+        "whip": "1.25",
+        "wins": 9,
+        "losses": 7,
+        "inningsPitched": "115.0",
+        "strikeouts": 105,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -20066,18 +20496,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "타일러 필립스",
-        "number": 70,
+        "name": "유리 페레즈",
+        "number": 39,
         "throwsHand": "R",
-        "era": "4.45",
-        "whip": "1.32",
-        "wins": 4,
-        "losses": 6,
-        "inningsPitched": "72.0",
-        "strikeouts": 60,
+        "era": "3.15",
+        "whip": "1.10",
+        "wins": 6,
+        "losses": 5,
+        "inningsPitched": "90.0",
+        "strikeouts": 100,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8603",
@@ -20122,15 +20554,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "랜디 돕낙",
-        "number": 68,
-        "throwsHand": "R",
-        "era": "4.30",
-        "whip": "1.35",
-        "wins": 5,
-        "losses": 8,
-        "inningsPitched": "78.0",
-        "strikeouts": 65,
+        "name": "노아 카메론",
+        "number": 51,
+        "throwsHand": "L",
+        "era": "3.90",
+        "whip": "1.25",
+        "wins": 9,
+        "losses": 7,
+        "inningsPitched": "115.0",
+        "strikeouts": 105,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -20149,18 +20582,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "타일러 필립스",
-        "number": 70,
+        "name": "유리 페레즈",
+        "number": 39,
         "throwsHand": "R",
-        "era": "4.45",
-        "whip": "1.32",
-        "wins": 4,
-        "losses": 6,
-        "inningsPitched": "72.0",
-        "strikeouts": 60,
+        "era": "3.15",
+        "whip": "1.10",
+        "wins": 6,
+        "losses": 5,
+        "inningsPitched": "90.0",
+        "strikeouts": 100,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8604",
@@ -20205,15 +20640,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "랜디 돕낙",
-        "number": 68,
-        "throwsHand": "R",
-        "era": "4.30",
-        "whip": "1.35",
-        "wins": 5,
-        "losses": 8,
-        "inningsPitched": "78.0",
-        "strikeouts": 65,
+        "name": "노아 카메론",
+        "number": 51,
+        "throwsHand": "L",
+        "era": "3.90",
+        "whip": "1.25",
+        "wins": 9,
+        "losses": 7,
+        "inningsPitched": "115.0",
+        "strikeouts": 105,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -20232,18 +20668,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "타일러 필립스",
-        "number": 70,
+        "name": "유리 페레즈",
+        "number": 39,
         "throwsHand": "R",
-        "era": "4.45",
-        "whip": "1.32",
-        "wins": 4,
-        "losses": 6,
-        "inningsPitched": "72.0",
-        "strikeouts": 60,
+        "era": "3.15",
+        "whip": "1.10",
+        "wins": 6,
+        "losses": 5,
+        "inningsPitched": "90.0",
+        "strikeouts": 100,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8605",
@@ -20288,15 +20726,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "랜디 돕낙",
-        "number": 68,
-        "throwsHand": "R",
-        "era": "4.30",
-        "whip": "1.35",
-        "wins": 5,
-        "losses": 8,
-        "inningsPitched": "78.0",
-        "strikeouts": 65,
+        "name": "노아 카메론",
+        "number": 51,
+        "throwsHand": "L",
+        "era": "3.90",
+        "whip": "1.25",
+        "wins": 9,
+        "losses": 7,
+        "inningsPitched": "115.0",
+        "strikeouts": 105,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -20315,18 +20754,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "타일러 필립스",
-        "number": 70,
+        "name": "유리 페레즈",
+        "number": 39,
         "throwsHand": "R",
-        "era": "4.45",
-        "whip": "1.32",
-        "wins": 4,
-        "losses": 6,
-        "inningsPitched": "72.0",
-        "strikeouts": 60,
+        "era": "3.15",
+        "whip": "1.10",
+        "wins": 6,
+        "losses": 5,
+        "inningsPitched": "90.0",
+        "strikeouts": 100,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8606",
@@ -20371,15 +20812,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "랜디 돕낙",
-        "number": 68,
-        "throwsHand": "R",
-        "era": "4.30",
-        "whip": "1.35",
-        "wins": 5,
-        "losses": 8,
-        "inningsPitched": "78.0",
-        "strikeouts": 65,
+        "name": "노아 카메론",
+        "number": 51,
+        "throwsHand": "L",
+        "era": "3.90",
+        "whip": "1.25",
+        "wins": 9,
+        "losses": 7,
+        "inningsPitched": "115.0",
+        "strikeouts": 105,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -20398,18 +20840,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "타일러 필립스",
-        "number": 70,
+        "name": "유리 페레즈",
+        "number": 39,
         "throwsHand": "R",
-        "era": "4.45",
-        "whip": "1.32",
-        "wins": 4,
-        "losses": 6,
-        "inningsPitched": "72.0",
-        "strikeouts": 60,
+        "era": "3.15",
+        "whip": "1.10",
+        "wins": 6,
+        "losses": 5,
+        "inningsPitched": "90.0",
+        "strikeouts": 100,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8607",
@@ -20454,15 +20898,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "매튜 보이드",
-        "number": 46,
+        "name": "데이비드 피터슨",
+        "number": 23,
         "throwsHand": "L",
-        "era": "2.72",
-        "whip": "1.13",
-        "wins": 8,
-        "losses": 4,
-        "inningsPitched": "99.1",
-        "strikeouts": 102,
+        "era": "3.02",
+        "whip": "1.18",
+        "wins": 10,
+        "losses": 3,
+        "inningsPitched": "120.0",
+        "strikeouts": 110,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -20481,18 +20926,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "로버트 개서",
-        "number": 33,
-        "throwsHand": "L",
-        "era": "2.57",
-        "whip": "1.11",
-        "wins": 7,
-        "losses": 3,
-        "inningsPitched": "84.0",
-        "strikeouts": 78,
+        "name": "제이콥 미시오로우스키",
+        "number": 37,
+        "throwsHand": "R",
+        "era": "3.45",
+        "whip": "1.15",
+        "wins": 8,
+        "losses": 5,
+        "inningsPitched": "95.0",
+        "strikeouts": 115,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8608",
@@ -20537,15 +20984,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "매튜 보이드",
-        "number": 46,
+        "name": "데이비드 피터슨",
+        "number": 23,
         "throwsHand": "L",
-        "era": "2.72",
-        "whip": "1.13",
-        "wins": 8,
-        "losses": 4,
-        "inningsPitched": "99.1",
-        "strikeouts": 102,
+        "era": "3.02",
+        "whip": "1.18",
+        "wins": 10,
+        "losses": 3,
+        "inningsPitched": "120.0",
+        "strikeouts": 110,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -20564,18 +21012,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "로버트 개서",
-        "number": 33,
-        "throwsHand": "L",
-        "era": "2.57",
-        "whip": "1.11",
-        "wins": 7,
-        "losses": 3,
-        "inningsPitched": "84.0",
-        "strikeouts": 78,
+        "name": "제이콥 미시오로우스키",
+        "number": 37,
+        "throwsHand": "R",
+        "era": "3.45",
+        "whip": "1.15",
+        "wins": 8,
+        "losses": 5,
+        "inningsPitched": "95.0",
+        "strikeouts": 115,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8609",
@@ -20620,15 +21070,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "매튜 보이드",
-        "number": 46,
+        "name": "데이비드 피터슨",
+        "number": 23,
         "throwsHand": "L",
-        "era": "2.72",
-        "whip": "1.13",
-        "wins": 8,
-        "losses": 4,
-        "inningsPitched": "99.1",
-        "strikeouts": 102,
+        "era": "3.02",
+        "whip": "1.18",
+        "wins": 10,
+        "losses": 3,
+        "inningsPitched": "120.0",
+        "strikeouts": 110,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -20647,18 +21098,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "로버트 개서",
-        "number": 33,
-        "throwsHand": "L",
-        "era": "2.57",
-        "whip": "1.11",
-        "wins": 7,
-        "losses": 3,
-        "inningsPitched": "84.0",
-        "strikeouts": 78,
+        "name": "제이콥 미시오로우스키",
+        "number": 37,
+        "throwsHand": "R",
+        "era": "3.45",
+        "whip": "1.15",
+        "wins": 8,
+        "losses": 5,
+        "inningsPitched": "95.0",
+        "strikeouts": 115,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8610",
@@ -20703,15 +21156,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "매튜 보이드",
-        "number": 46,
+        "name": "데이비드 피터슨",
+        "number": 23,
         "throwsHand": "L",
-        "era": "2.72",
-        "whip": "1.13",
-        "wins": 8,
-        "losses": 4,
-        "inningsPitched": "99.1",
-        "strikeouts": 102,
+        "era": "3.02",
+        "whip": "1.18",
+        "wins": 10,
+        "losses": 3,
+        "inningsPitched": "120.0",
+        "strikeouts": 110,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -20730,18 +21184,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "로버트 개서",
-        "number": 33,
-        "throwsHand": "L",
-        "era": "2.57",
-        "whip": "1.11",
-        "wins": 7,
-        "losses": 3,
-        "inningsPitched": "84.0",
-        "strikeouts": 78,
+        "name": "제이콥 미시오로우스키",
+        "number": 37,
+        "throwsHand": "R",
+        "era": "3.45",
+        "whip": "1.15",
+        "wins": 8,
+        "losses": 5,
+        "inningsPitched": "95.0",
+        "strikeouts": 115,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8611",
@@ -20786,15 +21242,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "매튜 보이드",
-        "number": 46,
+        "name": "데이비드 피터슨",
+        "number": 23,
         "throwsHand": "L",
-        "era": "2.72",
-        "whip": "1.13",
-        "wins": 8,
-        "losses": 4,
-        "inningsPitched": "99.1",
-        "strikeouts": 102,
+        "era": "3.02",
+        "whip": "1.18",
+        "wins": 10,
+        "losses": 3,
+        "inningsPitched": "120.0",
+        "strikeouts": 110,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -20813,18 +21270,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "로버트 개서",
-        "number": 33,
-        "throwsHand": "L",
-        "era": "2.57",
-        "whip": "1.11",
-        "wins": 7,
-        "losses": 3,
-        "inningsPitched": "84.0",
-        "strikeouts": 78,
+        "name": "제이콥 미시오로우스키",
+        "number": 37,
+        "throwsHand": "R",
+        "era": "3.45",
+        "whip": "1.15",
+        "wins": 8,
+        "losses": 5,
+        "inningsPitched": "95.0",
+        "strikeouts": 115,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8612",
@@ -20869,15 +21328,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "로넬 블랑코",
-        "number": 56,
+        "name": "헤이든 웨스네스키",
+        "number": 19,
         "throwsHand": "R",
-        "era": "2.80",
-        "whip": "1.09",
-        "wins": 13,
+        "era": "3.80",
+        "whip": "1.22",
+        "wins": 9,
         "losses": 6,
-        "inningsPitched": "154.1",
-        "strikeouts": 150,
+        "inningsPitched": "105.0",
+        "strikeouts": 95,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -20895,19 +21355,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "숀 버크",
-        "number": 49,
-        "throwsHand": "R",
-        "era": "4.60",
-        "whip": "1.42",
-        "wins": 3,
-        "losses": 9,
-        "inningsPitched": "70.0",
-        "strikeouts": 58,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8613",
@@ -20952,15 +21402,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "로넬 블랑코",
-        "number": 56,
+        "name": "헤이든 웨스네스키",
+        "number": 19,
         "throwsHand": "R",
-        "era": "2.80",
-        "whip": "1.09",
-        "wins": 13,
+        "era": "3.80",
+        "whip": "1.22",
+        "wins": 9,
         "losses": 6,
-        "inningsPitched": "154.1",
-        "strikeouts": 150,
+        "inningsPitched": "105.0",
+        "strikeouts": 95,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -20978,19 +21429,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "숀 버크",
-        "number": 49,
-        "throwsHand": "R",
-        "era": "4.60",
-        "whip": "1.42",
-        "wins": 3,
-        "losses": 9,
-        "inningsPitched": "70.0",
-        "strikeouts": 58,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8614",
@@ -21035,15 +21476,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "로넬 블랑코",
-        "number": 56,
+        "name": "헤이든 웨스네스키",
+        "number": 19,
         "throwsHand": "R",
-        "era": "2.80",
-        "whip": "1.09",
-        "wins": 13,
+        "era": "3.80",
+        "whip": "1.22",
+        "wins": 9,
         "losses": 6,
-        "inningsPitched": "154.1",
-        "strikeouts": 150,
+        "inningsPitched": "105.0",
+        "strikeouts": 95,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -21061,19 +21503,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "숀 버크",
-        "number": 49,
-        "throwsHand": "R",
-        "era": "4.60",
-        "whip": "1.42",
-        "wins": 3,
-        "losses": 9,
-        "inningsPitched": "70.0",
-        "strikeouts": 58,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8615",
@@ -21118,15 +21550,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "로넬 블랑코",
-        "number": 56,
+        "name": "헤이든 웨스네스키",
+        "number": 19,
         "throwsHand": "R",
-        "era": "2.80",
-        "whip": "1.09",
-        "wins": 13,
+        "era": "3.80",
+        "whip": "1.22",
+        "wins": 9,
         "losses": 6,
-        "inningsPitched": "154.1",
-        "strikeouts": 150,
+        "inningsPitched": "105.0",
+        "strikeouts": 95,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -21144,19 +21577,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "숀 버크",
-        "number": 49,
-        "throwsHand": "R",
-        "era": "4.60",
-        "whip": "1.42",
-        "wins": 3,
-        "losses": 9,
-        "inningsPitched": "70.0",
-        "strikeouts": 58,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8616",
@@ -21201,15 +21624,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "로넬 블랑코",
-        "number": 56,
+        "name": "헤이든 웨스네스키",
+        "number": 19,
         "throwsHand": "R",
-        "era": "2.80",
-        "whip": "1.09",
-        "wins": 13,
+        "era": "3.80",
+        "whip": "1.22",
+        "wins": 9,
         "losses": 6,
-        "inningsPitched": "154.1",
-        "strikeouts": 150,
+        "inningsPitched": "105.0",
+        "strikeouts": 95,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -21227,19 +21651,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "숀 버크",
-        "number": 49,
-        "throwsHand": "R",
-        "era": "4.60",
-        "whip": "1.42",
-        "wins": 3,
-        "losses": 9,
-        "inningsPitched": "70.0",
-        "strikeouts": 58,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8617",
@@ -21284,15 +21698,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "그레이슨 로드리게스",
-        "number": 30,
-        "throwsHand": "R",
-        "era": "3.86",
-        "whip": "1.24",
-        "wins": 13,
-        "losses": 4,
-        "inningsPitched": "116.2",
-        "strikeouts": 130,
+        "name": "리드 뎃머스",
+        "number": 48,
+        "throwsHand": "L",
+        "era": "6.70",
+        "whip": "1.55",
+        "wins": 4,
+        "losses": 8,
+        "inningsPitched": "85.0",
+        "strikeouts": 95,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -21311,18 +21726,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "게릿 콜",
-        "number": 45,
+        "name": "캠 슐리틀러",
+        "number": 68,
         "throwsHand": "R",
-        "era": "3.41",
-        "whip": "1.13",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.0",
-        "strikeouts": 99,
+        "era": "3.40",
+        "whip": "1.16",
+        "wins": 7,
+        "losses": 4,
+        "inningsPitched": "80.0",
+        "strikeouts": 85,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8618",
@@ -21367,15 +21784,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "그레이슨 로드리게스",
-        "number": 30,
-        "throwsHand": "R",
-        "era": "3.86",
-        "whip": "1.24",
-        "wins": 13,
-        "losses": 4,
-        "inningsPitched": "116.2",
-        "strikeouts": 130,
+        "name": "리드 뎃머스",
+        "number": 48,
+        "throwsHand": "L",
+        "era": "6.70",
+        "whip": "1.55",
+        "wins": 4,
+        "losses": 8,
+        "inningsPitched": "85.0",
+        "strikeouts": 95,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -21394,18 +21812,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "게릿 콜",
-        "number": 45,
+        "name": "캠 슐리틀러",
+        "number": 68,
         "throwsHand": "R",
-        "era": "3.41",
-        "whip": "1.13",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.0",
-        "strikeouts": 99,
+        "era": "3.40",
+        "whip": "1.16",
+        "wins": 7,
+        "losses": 4,
+        "inningsPitched": "80.0",
+        "strikeouts": 85,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8619",
@@ -21450,15 +21870,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "그레이슨 로드리게스",
-        "number": 30,
-        "throwsHand": "R",
-        "era": "3.86",
-        "whip": "1.24",
-        "wins": 13,
-        "losses": 4,
-        "inningsPitched": "116.2",
-        "strikeouts": 130,
+        "name": "리드 뎃머스",
+        "number": 48,
+        "throwsHand": "L",
+        "era": "6.70",
+        "whip": "1.55",
+        "wins": 4,
+        "losses": 8,
+        "inningsPitched": "85.0",
+        "strikeouts": 95,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -21477,18 +21898,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "게릿 콜",
-        "number": 45,
+        "name": "캠 슐리틀러",
+        "number": 68,
         "throwsHand": "R",
-        "era": "3.41",
-        "whip": "1.13",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.0",
-        "strikeouts": 99,
+        "era": "3.40",
+        "whip": "1.16",
+        "wins": 7,
+        "losses": 4,
+        "inningsPitched": "80.0",
+        "strikeouts": 85,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8620",
@@ -21533,15 +21956,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "그레이슨 로드리게스",
-        "number": 30,
-        "throwsHand": "R",
-        "era": "3.86",
-        "whip": "1.24",
-        "wins": 13,
-        "losses": 4,
-        "inningsPitched": "116.2",
-        "strikeouts": 130,
+        "name": "리드 뎃머스",
+        "number": 48,
+        "throwsHand": "L",
+        "era": "6.70",
+        "whip": "1.55",
+        "wins": 4,
+        "losses": 8,
+        "inningsPitched": "85.0",
+        "strikeouts": 95,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -21560,18 +21984,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "게릿 콜",
-        "number": 45,
+        "name": "캠 슐리틀러",
+        "number": 68,
         "throwsHand": "R",
-        "era": "3.41",
-        "whip": "1.13",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.0",
-        "strikeouts": 99,
+        "era": "3.40",
+        "whip": "1.16",
+        "wins": 7,
+        "losses": 4,
+        "inningsPitched": "80.0",
+        "strikeouts": 85,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8621",
@@ -21616,15 +22042,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "그레이슨 로드리게스",
-        "number": 30,
-        "throwsHand": "R",
-        "era": "3.86",
-        "whip": "1.24",
-        "wins": 13,
-        "losses": 4,
-        "inningsPitched": "116.2",
-        "strikeouts": 130,
+        "name": "리드 뎃머스",
+        "number": 48,
+        "throwsHand": "L",
+        "era": "6.70",
+        "whip": "1.55",
+        "wins": 4,
+        "losses": 8,
+        "inningsPitched": "85.0",
+        "strikeouts": 95,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -21643,18 +22070,20 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
       "starterPitcherInfo": {
-        "name": "게릿 콜",
-        "number": 45,
+        "name": "캠 슐리틀러",
+        "number": 68,
         "throwsHand": "R",
-        "era": "3.41",
-        "whip": "1.13",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.0",
-        "strikeouts": 99,
+        "era": "3.40",
+        "whip": "1.16",
+        "wins": 7,
+        "losses": 4,
+        "inningsPitched": "80.0",
+        "strikeouts": 85,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
-    }
+    },
+    "isPitcherAnnounced": true
   },
   {
     "id": "bm-260104-8622",
@@ -21699,15 +22128,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "에릭 라우어",
-        "number": 31,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.15",
-        "wins": 4,
+        "name": "야마모토 요시노부",
+        "number": 18,
+        "throwsHand": "R",
+        "era": "3.00",
+        "whip": "1.11",
+        "wins": 7,
         "losses": 2,
-        "inningsPitched": "45.0",
-        "strikeouts": 48,
+        "inningsPitched": "90.0",
+        "strikeouts": 105,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -21725,19 +22155,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "마이클 맥그리브",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "3.86",
-        "whip": "1.21",
-        "wins": 3,
-        "losses": 1,
-        "inningsPitched": "35.0",
-        "strikeouts": 30,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8623",
@@ -21782,15 +22202,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "에릭 라우어",
-        "number": 31,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.15",
-        "wins": 4,
+        "name": "야마모토 요시노부",
+        "number": 18,
+        "throwsHand": "R",
+        "era": "3.00",
+        "whip": "1.11",
+        "wins": 7,
         "losses": 2,
-        "inningsPitched": "45.0",
-        "strikeouts": 48,
+        "inningsPitched": "90.0",
+        "strikeouts": 105,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -21808,19 +22229,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "마이클 맥그리브",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "3.86",
-        "whip": "1.21",
-        "wins": 3,
-        "losses": 1,
-        "inningsPitched": "35.0",
-        "strikeouts": 30,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8624",
@@ -21865,15 +22276,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "에릭 라우어",
-        "number": 31,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.15",
-        "wins": 4,
+        "name": "야마모토 요시노부",
+        "number": 18,
+        "throwsHand": "R",
+        "era": "3.00",
+        "whip": "1.11",
+        "wins": 7,
         "losses": 2,
-        "inningsPitched": "45.0",
-        "strikeouts": 48,
+        "inningsPitched": "90.0",
+        "strikeouts": 105,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -21891,19 +22303,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "마이클 맥그리브",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "3.86",
-        "whip": "1.21",
-        "wins": 3,
-        "losses": 1,
-        "inningsPitched": "35.0",
-        "strikeouts": 30,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8625",
@@ -21948,15 +22350,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "에릭 라우어",
-        "number": 31,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.15",
-        "wins": 4,
+        "name": "야마모토 요시노부",
+        "number": 18,
+        "throwsHand": "R",
+        "era": "3.00",
+        "whip": "1.11",
+        "wins": 7,
         "losses": 2,
-        "inningsPitched": "45.0",
-        "strikeouts": 48,
+        "inningsPitched": "90.0",
+        "strikeouts": 105,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -21974,19 +22377,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "마이클 맥그리브",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "3.86",
-        "whip": "1.21",
-        "wins": 3,
-        "losses": 1,
-        "inningsPitched": "35.0",
-        "strikeouts": 30,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8626",
@@ -22031,15 +22424,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "에릭 라우어",
-        "number": 31,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.15",
-        "wins": 4,
+        "name": "야마모토 요시노부",
+        "number": 18,
+        "throwsHand": "R",
+        "era": "3.00",
+        "whip": "1.11",
+        "wins": 7,
         "losses": 2,
-        "inningsPitched": "45.0",
-        "strikeouts": 48,
+        "inningsPitched": "90.0",
+        "strikeouts": 105,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -22057,19 +22451,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "마이클 맥그리브",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "3.86",
-        "whip": "1.21",
-        "wins": 3,
-        "losses": 1,
-        "inningsPitched": "35.0",
-        "strikeouts": 30,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8627",
@@ -22114,15 +22498,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "에릭 라우어",
-        "number": 31,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.15",
-        "wins": 4,
+        "name": "야마모토 요시노부",
+        "number": 18,
+        "throwsHand": "R",
+        "era": "3.00",
+        "whip": "1.11",
+        "wins": 7,
         "losses": 2,
-        "inningsPitched": "45.0",
-        "strikeouts": 48,
+        "inningsPitched": "90.0",
+        "strikeouts": 105,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -22140,19 +22525,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "마이클 맥그리브",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "3.86",
-        "whip": "1.21",
-        "wins": 3,
-        "losses": 1,
-        "inningsPitched": "35.0",
-        "strikeouts": 30,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8628",
@@ -22197,15 +22572,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "에릭 라우어",
-        "number": 31,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.15",
-        "wins": 4,
+        "name": "야마모토 요시노부",
+        "number": 18,
+        "throwsHand": "R",
+        "era": "3.00",
+        "whip": "1.11",
+        "wins": 7,
         "losses": 2,
-        "inningsPitched": "45.0",
-        "strikeouts": 48,
+        "inningsPitched": "90.0",
+        "strikeouts": 105,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -22223,19 +22599,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "마이클 맥그리브",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "3.86",
-        "whip": "1.21",
-        "wins": 3,
-        "losses": 1,
-        "inningsPitched": "35.0",
-        "strikeouts": 30,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8629",
@@ -22280,15 +22646,16 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
       "starterPitcherInfo": {
-        "name": "에릭 라우어",
-        "number": 31,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.15",
-        "wins": 4,
+        "name": "야마모토 요시노부",
+        "number": 18,
+        "throwsHand": "R",
+        "era": "3.00",
+        "whip": "1.11",
+        "wins": 7,
         "losses": 2,
-        "inningsPitched": "45.0",
-        "strikeouts": 48,
+        "inningsPitched": "90.0",
+        "strikeouts": 105,
+        "status": "PROBABLE",
         "vsOpponentLogs": []
       }
     },
@@ -22306,19 +22673,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "마이클 맥그리브",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "3.86",
-        "whip": "1.21",
-        "wins": 3,
-        "losses": 1,
-        "inningsPitched": "35.0",
-        "strikeouts": 30,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8630",
@@ -22362,18 +22719,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "타카하시 케이지",
-        "number": 34,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.22",
-        "wins": 8,
-        "losses": 9,
-        "inningsPitched": "130.0",
-        "strikeouts": 115,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8630",
@@ -22389,19 +22735,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "무라카미 쇼키",
-        "number": 35,
-        "throwsHand": "R",
-        "era": "2.38",
-        "whip": "1.02",
-        "wins": 10,
-        "losses": 9,
-        "inningsPitched": "166.1",
-        "strikeouts": 130,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8631",
@@ -22445,18 +22781,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "타카하시 케이지",
-        "number": 34,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.22",
-        "wins": 8,
-        "losses": 9,
-        "inningsPitched": "130.0",
-        "strikeouts": 115,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8631",
@@ -22472,19 +22797,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "무라카미 쇼키",
-        "number": 35,
-        "throwsHand": "R",
-        "era": "2.38",
-        "whip": "1.02",
-        "wins": 10,
-        "losses": 9,
-        "inningsPitched": "166.1",
-        "strikeouts": 130,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8632",
@@ -22528,18 +22843,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "타카하시 케이지",
-        "number": 34,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.22",
-        "wins": 8,
-        "losses": 9,
-        "inningsPitched": "130.0",
-        "strikeouts": 115,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8632",
@@ -22555,19 +22859,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "무라카미 쇼키",
-        "number": 35,
-        "throwsHand": "R",
-        "era": "2.38",
-        "whip": "1.02",
-        "wins": 10,
-        "losses": 9,
-        "inningsPitched": "166.1",
-        "strikeouts": 130,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8633",
@@ -22611,18 +22905,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "타카하시 케이지",
-        "number": 34,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.22",
-        "wins": 8,
-        "losses": 9,
-        "inningsPitched": "130.0",
-        "strikeouts": 115,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8633",
@@ -22638,19 +22921,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "무라카미 쇼키",
-        "number": 35,
-        "throwsHand": "R",
-        "era": "2.38",
-        "whip": "1.02",
-        "wins": 10,
-        "losses": 9,
-        "inningsPitched": "166.1",
-        "strikeouts": 130,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8634",
@@ -22694,18 +22967,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "타카하시 케이지",
-        "number": 34,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.22",
-        "wins": 8,
-        "losses": 9,
-        "inningsPitched": "130.0",
-        "strikeouts": 115,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8634",
@@ -22721,19 +22983,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "무라카미 쇼키",
-        "number": 35,
-        "throwsHand": "R",
-        "era": "2.38",
-        "whip": "1.02",
-        "wins": 10,
-        "losses": 9,
-        "inningsPitched": "166.1",
-        "strikeouts": 130,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8635",
@@ -22777,18 +23029,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "타카하시 히로토",
-        "number": 19,
-        "throwsHand": "R",
-        "era": "1.38",
-        "whip": "0.98",
-        "wins": 12,
-        "losses": 4,
-        "inningsPitched": "143.2",
-        "strikeouts": 130,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8635",
@@ -22804,19 +23045,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "오세라 다이치",
-        "number": 14,
-        "throwsHand": "R",
-        "era": "2.05",
-        "whip": "1.08",
-        "wins": 9,
-        "losses": 6,
-        "inningsPitched": "145.0",
-        "strikeouts": 95,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8636",
@@ -22860,18 +23091,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "타카하시 히로토",
-        "number": 19,
-        "throwsHand": "R",
-        "era": "1.38",
-        "whip": "0.98",
-        "wins": 12,
-        "losses": 4,
-        "inningsPitched": "143.2",
-        "strikeouts": 130,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8636",
@@ -22887,19 +23107,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "오세라 다이치",
-        "number": 14,
-        "throwsHand": "R",
-        "era": "2.05",
-        "whip": "1.08",
-        "wins": 9,
-        "losses": 6,
-        "inningsPitched": "145.0",
-        "strikeouts": 95,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8637",
@@ -22943,18 +23153,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "타카하시 히로토",
-        "number": 19,
-        "throwsHand": "R",
-        "era": "1.38",
-        "whip": "0.98",
-        "wins": 12,
-        "losses": 4,
-        "inningsPitched": "143.2",
-        "strikeouts": 130,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8637",
@@ -22970,19 +23169,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "오세라 다이치",
-        "number": 14,
-        "throwsHand": "R",
-        "era": "2.05",
-        "whip": "1.08",
-        "wins": 9,
-        "losses": 6,
-        "inningsPitched": "145.0",
-        "strikeouts": 95,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8638",
@@ -23026,18 +23215,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "타카하시 히로토",
-        "number": 19,
-        "throwsHand": "R",
-        "era": "1.38",
-        "whip": "0.98",
-        "wins": 12,
-        "losses": 4,
-        "inningsPitched": "143.2",
-        "strikeouts": 130,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8638",
@@ -23053,19 +23231,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "오세라 다이치",
-        "number": 14,
-        "throwsHand": "R",
-        "era": "2.05",
-        "whip": "1.08",
-        "wins": 9,
-        "losses": 6,
-        "inningsPitched": "145.0",
-        "strikeouts": 95,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8639",
@@ -23109,18 +23277,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "타카하시 히로토",
-        "number": 19,
-        "throwsHand": "R",
-        "era": "1.38",
-        "whip": "0.98",
-        "wins": 12,
-        "losses": 4,
-        "inningsPitched": "143.2",
-        "strikeouts": 130,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8639",
@@ -23136,19 +23293,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "오세라 다이치",
-        "number": 14,
-        "throwsHand": "R",
-        "era": "2.05",
-        "whip": "1.08",
-        "wins": 9,
-        "losses": 6,
-        "inningsPitched": "145.0",
-        "strikeouts": 95,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8640",
@@ -23192,18 +23339,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "최승용",
-        "number": 28,
-        "throwsHand": "L",
-        "era": "5.61",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8640",
@@ -23219,19 +23355,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "김윤식",
-        "number": 57,
-        "throwsHand": "L",
-        "era": "4.97",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8641",
@@ -23275,18 +23401,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "최승용",
-        "number": 28,
-        "throwsHand": "L",
-        "era": "5.61",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8641",
@@ -23302,19 +23417,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "김윤식",
-        "number": 57,
-        "throwsHand": "L",
-        "era": "4.97",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8642",
@@ -23358,18 +23463,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "최승용",
-        "number": 28,
-        "throwsHand": "L",
-        "era": "5.61",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8642",
@@ -23385,19 +23479,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "김윤식",
-        "number": 57,
-        "throwsHand": "L",
-        "era": "4.97",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8643",
@@ -23441,18 +23525,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "최승용",
-        "number": 28,
-        "throwsHand": "L",
-        "era": "5.61",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8643",
@@ -23468,19 +23541,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "김윤식",
-        "number": 57,
-        "throwsHand": "L",
-        "era": "4.97",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8644",
@@ -23524,18 +23587,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "최승용",
-        "number": 28,
-        "throwsHand": "L",
-        "era": "5.61",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8644",
@@ -23551,19 +23603,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "김윤식",
-        "number": 57,
-        "throwsHand": "L",
-        "era": "4.97",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8645",
@@ -23607,18 +23649,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "최승용",
-        "number": 28,
-        "throwsHand": "L",
-        "era": "5.61",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8645",
@@ -23634,19 +23665,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "김윤식",
-        "number": 57,
-        "throwsHand": "L",
-        "era": "4.97",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8646",
@@ -23690,18 +23711,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "최승용",
-        "number": 28,
-        "throwsHand": "L",
-        "era": "5.61",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8646",
@@ -23717,19 +23727,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "김윤식",
-        "number": 57,
-        "throwsHand": "L",
-        "era": "4.97",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8647",
@@ -23773,18 +23773,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "최승용",
-        "number": 28,
-        "throwsHand": "L",
-        "era": "5.61",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8647",
@@ -23800,19 +23789,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "김윤식",
-        "number": 57,
-        "throwsHand": "L",
-        "era": "4.97",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8648",
@@ -23856,18 +23835,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "최원태",
-        "number": 20,
-        "throwsHand": "R",
-        "era": "4.57",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8648",
@@ -23883,19 +23851,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "박세웅",
-        "number": 21,
-        "throwsHand": "R",
-        "era": "4.68",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8649",
@@ -23939,18 +23897,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "최원태",
-        "number": 20,
-        "throwsHand": "R",
-        "era": "4.57",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8649",
@@ -23966,19 +23913,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "박세웅",
-        "number": 21,
-        "throwsHand": "R",
-        "era": "4.68",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8650",
@@ -24022,18 +23959,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "최원태",
-        "number": 20,
-        "throwsHand": "R",
-        "era": "4.57",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8650",
@@ -24049,19 +23975,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "박세웅",
-        "number": 21,
-        "throwsHand": "R",
-        "era": "4.68",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8651",
@@ -24105,18 +24021,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "최원태",
-        "number": 20,
-        "throwsHand": "R",
-        "era": "4.57",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8651",
@@ -24132,19 +24037,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "박세웅",
-        "number": 21,
-        "throwsHand": "R",
-        "era": "4.68",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8652",
@@ -24188,18 +24083,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "최원태",
-        "number": 20,
-        "throwsHand": "R",
-        "era": "4.57",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8652",
@@ -24215,19 +24099,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "박세웅",
-        "number": 21,
-        "throwsHand": "R",
-        "era": "4.68",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8653",
@@ -24271,18 +24145,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "최원태",
-        "number": 20,
-        "throwsHand": "R",
-        "era": "4.57",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8653",
@@ -24298,19 +24161,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "박세웅",
-        "number": 21,
-        "throwsHand": "R",
-        "era": "4.68",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8654",
@@ -24354,18 +24207,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "최원태",
-        "number": 20,
-        "throwsHand": "R",
-        "era": "4.57",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8654",
@@ -24381,19 +24223,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "박세웅",
-        "number": 21,
-        "throwsHand": "R",
-        "era": "4.68",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8655",
@@ -24437,18 +24269,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "최원태",
-        "number": 20,
-        "throwsHand": "R",
-        "era": "4.57",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8655",
@@ -24464,19 +24285,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "박세웅",
-        "number": 21,
-        "throwsHand": "R",
-        "era": "4.68",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8656",
@@ -24520,18 +24331,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "소형준",
-        "number": 11,
-        "throwsHand": "R",
-        "era": "3.36",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8656",
@@ -24547,19 +24347,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "류현진",
-        "number": 99,
-        "throwsHand": "L",
-        "era": "3.85",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8657",
@@ -24603,18 +24393,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "소형준",
-        "number": 11,
-        "throwsHand": "R",
-        "era": "3.36",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8657",
@@ -24630,19 +24409,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "류현진",
-        "number": 99,
-        "throwsHand": "L",
-        "era": "3.85",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8658",
@@ -24686,18 +24455,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "소형준",
-        "number": 11,
-        "throwsHand": "R",
-        "era": "3.36",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8658",
@@ -24713,19 +24471,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "류현진",
-        "number": 99,
-        "throwsHand": "L",
-        "era": "3.85",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8659",
@@ -24769,18 +24517,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "소형준",
-        "number": 11,
-        "throwsHand": "R",
-        "era": "3.36",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8659",
@@ -24796,19 +24533,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "류현진",
-        "number": 99,
-        "throwsHand": "L",
-        "era": "3.85",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8660",
@@ -24852,18 +24579,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "소형준",
-        "number": 11,
-        "throwsHand": "R",
-        "era": "3.36",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8660",
@@ -24879,19 +24595,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "류현진",
-        "number": 99,
-        "throwsHand": "L",
-        "era": "3.85",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8661",
@@ -24935,18 +24641,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "소형준",
-        "number": 11,
-        "throwsHand": "R",
-        "era": "3.36",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8661",
@@ -24962,19 +24657,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "류현진",
-        "number": 99,
-        "throwsHand": "L",
-        "era": "3.85",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8662",
@@ -25018,18 +24703,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "소형준",
-        "number": 11,
-        "throwsHand": "R",
-        "era": "3.36",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8662",
@@ -25045,19 +24719,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "류현진",
-        "number": 99,
-        "throwsHand": "L",
-        "era": "3.85",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8663",
@@ -25101,18 +24765,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "소형준",
-        "number": 11,
-        "throwsHand": "R",
-        "era": "3.36",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8663",
@@ -25128,19 +24781,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "류현진",
-        "number": 99,
-        "throwsHand": "L",
-        "era": "3.85",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8664",
@@ -25184,18 +24827,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "토다",
-        "number": 34,
-        "throwsHand": "R",
-        "era": "3.90",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8664",
@@ -25211,19 +24843,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "시라카와",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "4.88",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8665",
@@ -25267,18 +24889,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "토다",
-        "number": 34,
-        "throwsHand": "R",
-        "era": "3.90",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8665",
@@ -25294,19 +24905,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "시라카와",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "4.88",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8666",
@@ -25350,18 +24951,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "토다",
-        "number": 34,
-        "throwsHand": "R",
-        "era": "3.90",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8666",
@@ -25377,19 +24967,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "시라카와",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "4.88",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8667",
@@ -25433,18 +25013,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "토다",
-        "number": 34,
-        "throwsHand": "R",
-        "era": "3.90",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8667",
@@ -25460,19 +25029,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "시라카와",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "4.88",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8668",
@@ -25516,18 +25075,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "토다",
-        "number": 34,
-        "throwsHand": "R",
-        "era": "3.90",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8668",
@@ -25543,19 +25091,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "시라카와",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "4.88",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8669",
@@ -25599,18 +25137,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "토다",
-        "number": 34,
-        "throwsHand": "R",
-        "era": "3.90",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8669",
@@ -25626,19 +25153,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "시라카와",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "4.88",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8670",
@@ -25682,18 +25199,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "토다",
-        "number": 34,
-        "throwsHand": "R",
-        "era": "3.90",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8670",
@@ -25709,19 +25215,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "시라카와",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "4.88",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8671",
@@ -25765,18 +25261,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "토다",
-        "number": 34,
-        "throwsHand": "R",
-        "era": "3.90",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8671",
@@ -25792,19 +25277,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "시라카와",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "4.88",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8672",
@@ -25848,18 +25323,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "하영민",
-        "number": 43,
-        "throwsHand": "R",
-        "era": "4.63",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8672",
@@ -25875,19 +25339,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "김건우",
-        "number": 59,
-        "throwsHand": "L",
-        "era": "4.10",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8673",
@@ -25931,18 +25385,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "하영민",
-        "number": 43,
-        "throwsHand": "R",
-        "era": "4.63",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8673",
@@ -25958,19 +25401,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "김건우",
-        "number": 59,
-        "throwsHand": "L",
-        "era": "4.10",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8674",
@@ -26014,18 +25447,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "하영민",
-        "number": 43,
-        "throwsHand": "R",
-        "era": "4.63",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8674",
@@ -26041,19 +25463,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "김건우",
-        "number": 59,
-        "throwsHand": "L",
-        "era": "4.10",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8675",
@@ -26097,18 +25509,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "하영민",
-        "number": 43,
-        "throwsHand": "R",
-        "era": "4.63",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8675",
@@ -26124,19 +25525,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "김건우",
-        "number": 59,
-        "throwsHand": "L",
-        "era": "4.10",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8676",
@@ -26180,18 +25571,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "하영민",
-        "number": 43,
-        "throwsHand": "R",
-        "era": "4.63",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8676",
@@ -26207,19 +25587,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "김건우",
-        "number": 59,
-        "throwsHand": "L",
-        "era": "4.10",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8677",
@@ -26263,18 +25633,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "하영민",
-        "number": 43,
-        "throwsHand": "R",
-        "era": "4.63",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8677",
@@ -26290,19 +25649,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "김건우",
-        "number": 59,
-        "throwsHand": "L",
-        "era": "4.10",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8678",
@@ -26346,18 +25695,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "하영민",
-        "number": 43,
-        "throwsHand": "R",
-        "era": "4.63",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8678",
@@ -26373,19 +25711,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "김건우",
-        "number": 59,
-        "throwsHand": "L",
-        "era": "4.10",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8679",
@@ -26429,18 +25757,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "하영민",
-        "number": 43,
-        "throwsHand": "R",
-        "era": "4.63",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8679",
@@ -26456,19 +25773,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "김건우",
-        "number": 59,
-        "throwsHand": "L",
-        "era": "4.10",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8680",
@@ -26512,18 +25819,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "폴 스킨스",
-        "number": 30,
-        "throwsHand": "R",
-        "era": "1.96",
-        "whip": "0.95",
-        "wins": 11,
-        "losses": 3,
-        "inningsPitched": "133.0",
-        "strikeouts": 170,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8680",
@@ -26539,19 +25835,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "로건 웹",
-        "number": 62,
-        "throwsHand": "R",
-        "era": "3.47",
-        "whip": "1.23",
-        "wins": 13,
-        "losses": 10,
-        "inningsPitched": "204.2",
-        "strikeouts": 172,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8681",
@@ -26595,18 +25881,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "폴 스킨스",
-        "number": 30,
-        "throwsHand": "R",
-        "era": "1.96",
-        "whip": "0.95",
-        "wins": 11,
-        "losses": 3,
-        "inningsPitched": "133.0",
-        "strikeouts": 170,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8681",
@@ -26622,19 +25897,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "로건 웹",
-        "number": 62,
-        "throwsHand": "R",
-        "era": "3.47",
-        "whip": "1.23",
-        "wins": 13,
-        "losses": 10,
-        "inningsPitched": "204.2",
-        "strikeouts": 172,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8682",
@@ -26678,18 +25943,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "폴 스킨스",
-        "number": 30,
-        "throwsHand": "R",
-        "era": "1.96",
-        "whip": "0.95",
-        "wins": 11,
-        "losses": 3,
-        "inningsPitched": "133.0",
-        "strikeouts": 170,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8682",
@@ -26705,19 +25959,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "로건 웹",
-        "number": 62,
-        "throwsHand": "R",
-        "era": "3.47",
-        "whip": "1.23",
-        "wins": 13,
-        "losses": 10,
-        "inningsPitched": "204.2",
-        "strikeouts": 172,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8683",
@@ -26761,18 +26005,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "폴 스킨스",
-        "number": 30,
-        "throwsHand": "R",
-        "era": "1.96",
-        "whip": "0.95",
-        "wins": 11,
-        "losses": 3,
-        "inningsPitched": "133.0",
-        "strikeouts": 170,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8683",
@@ -26788,19 +26021,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "로건 웹",
-        "number": 62,
-        "throwsHand": "R",
-        "era": "3.47",
-        "whip": "1.23",
-        "wins": 13,
-        "losses": 10,
-        "inningsPitched": "204.2",
-        "strikeouts": 172,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8684",
@@ -26844,18 +26067,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "폴 스킨스",
-        "number": 30,
-        "throwsHand": "R",
-        "era": "1.96",
-        "whip": "0.95",
-        "wins": 11,
-        "losses": 3,
-        "inningsPitched": "133.0",
-        "strikeouts": 170,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8684",
@@ -26871,19 +26083,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "로건 웹",
-        "number": 62,
-        "throwsHand": "R",
-        "era": "3.47",
-        "whip": "1.23",
-        "wins": 13,
-        "losses": 10,
-        "inningsPitched": "204.2",
-        "strikeouts": 172,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8685",
@@ -26927,18 +26129,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "개빈 윌리엄스",
-        "number": 32,
-        "throwsHand": "R",
-        "era": "4.86",
-        "whip": "1.37",
-        "wins": 3,
-        "losses": 10,
-        "inningsPitched": "76.0",
-        "strikeouts": 79,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8685",
@@ -26954,19 +26145,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "스펜서 마일스",
-        "number": 58,
-        "throwsHand": "R",
-        "era": "4.20",
-        "whip": "1.28",
-        "wins": 4,
-        "losses": 5,
-        "inningsPitched": "60.0",
-        "strikeouts": 55,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8686",
@@ -27010,18 +26191,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "개빈 윌리엄스",
-        "number": 32,
-        "throwsHand": "R",
-        "era": "4.86",
-        "whip": "1.37",
-        "wins": 3,
-        "losses": 10,
-        "inningsPitched": "76.0",
-        "strikeouts": 79,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8686",
@@ -27037,19 +26207,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "스펜서 마일스",
-        "number": 58,
-        "throwsHand": "R",
-        "era": "4.20",
-        "whip": "1.28",
-        "wins": 4,
-        "losses": 5,
-        "inningsPitched": "60.0",
-        "strikeouts": 55,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8687",
@@ -27093,18 +26253,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "개빈 윌리엄스",
-        "number": 32,
-        "throwsHand": "R",
-        "era": "4.86",
-        "whip": "1.37",
-        "wins": 3,
-        "losses": 10,
-        "inningsPitched": "76.0",
-        "strikeouts": 79,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8687",
@@ -27120,19 +26269,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "스펜서 마일스",
-        "number": 58,
-        "throwsHand": "R",
-        "era": "4.20",
-        "whip": "1.28",
-        "wins": 4,
-        "losses": 5,
-        "inningsPitched": "60.0",
-        "strikeouts": 55,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8688",
@@ -27176,18 +26315,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "개빈 윌리엄스",
-        "number": 32,
-        "throwsHand": "R",
-        "era": "4.86",
-        "whip": "1.37",
-        "wins": 3,
-        "losses": 10,
-        "inningsPitched": "76.0",
-        "strikeouts": 79,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8688",
@@ -27203,19 +26331,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "스펜서 마일스",
-        "number": 58,
-        "throwsHand": "R",
-        "era": "4.20",
-        "whip": "1.28",
-        "wins": 4,
-        "losses": 5,
-        "inningsPitched": "60.0",
-        "strikeouts": 55,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8689",
@@ -27259,18 +26377,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "개빈 윌리엄스",
-        "number": 32,
-        "throwsHand": "R",
-        "era": "4.86",
-        "whip": "1.37",
-        "wins": 3,
-        "losses": 10,
-        "inningsPitched": "76.0",
-        "strikeouts": 79,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8689",
@@ -27286,19 +26393,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "스펜서 마일스",
-        "number": 58,
-        "throwsHand": "R",
-        "era": "4.20",
-        "whip": "1.28",
-        "wins": 4,
-        "losses": 5,
-        "inningsPitched": "60.0",
-        "strikeouts": 55,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8690",
@@ -27342,18 +26439,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "로넬 블랑코",
-        "number": 56,
-        "throwsHand": "R",
-        "era": "2.80",
-        "whip": "1.09",
-        "wins": 13,
-        "losses": 6,
-        "inningsPitched": "154.1",
-        "strikeouts": 150,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8690",
@@ -27369,19 +26455,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "숀 버크",
-        "number": 49,
-        "throwsHand": "R",
-        "era": "4.60",
-        "whip": "1.42",
-        "wins": 3,
-        "losses": 9,
-        "inningsPitched": "70.0",
-        "strikeouts": 58,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8691",
@@ -27425,18 +26501,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "로넬 블랑코",
-        "number": 56,
-        "throwsHand": "R",
-        "era": "2.80",
-        "whip": "1.09",
-        "wins": 13,
-        "losses": 6,
-        "inningsPitched": "154.1",
-        "strikeouts": 150,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8691",
@@ -27452,19 +26517,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "숀 버크",
-        "number": 49,
-        "throwsHand": "R",
-        "era": "4.60",
-        "whip": "1.42",
-        "wins": 3,
-        "losses": 9,
-        "inningsPitched": "70.0",
-        "strikeouts": 58,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8692",
@@ -27508,18 +26563,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "로넬 블랑코",
-        "number": 56,
-        "throwsHand": "R",
-        "era": "2.80",
-        "whip": "1.09",
-        "wins": 13,
-        "losses": 6,
-        "inningsPitched": "154.1",
-        "strikeouts": 150,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8692",
@@ -27535,19 +26579,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "숀 버크",
-        "number": 49,
-        "throwsHand": "R",
-        "era": "4.60",
-        "whip": "1.42",
-        "wins": 3,
-        "losses": 9,
-        "inningsPitched": "70.0",
-        "strikeouts": 58,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8693",
@@ -27591,18 +26625,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "로넬 블랑코",
-        "number": 56,
-        "throwsHand": "R",
-        "era": "2.80",
-        "whip": "1.09",
-        "wins": 13,
-        "losses": 6,
-        "inningsPitched": "154.1",
-        "strikeouts": 150,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8693",
@@ -27618,19 +26641,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "숀 버크",
-        "number": 49,
-        "throwsHand": "R",
-        "era": "4.60",
-        "whip": "1.42",
-        "wins": 3,
-        "losses": 9,
-        "inningsPitched": "70.0",
-        "strikeouts": 58,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8694",
@@ -27674,18 +26687,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "로넬 블랑코",
-        "number": 56,
-        "throwsHand": "R",
-        "era": "2.80",
-        "whip": "1.09",
-        "wins": 13,
-        "losses": 6,
-        "inningsPitched": "154.1",
-        "strikeouts": 150,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8694",
@@ -27701,19 +26703,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "숀 버크",
-        "number": 49,
-        "throwsHand": "R",
-        "era": "4.60",
-        "whip": "1.42",
-        "wins": 3,
-        "losses": 9,
-        "inningsPitched": "70.0",
-        "strikeouts": 58,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8705",
@@ -27757,18 +26749,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "매튜 보이드",
-        "number": 46,
-        "throwsHand": "L",
-        "era": "2.72",
-        "whip": "1.13",
-        "wins": 8,
-        "losses": 4,
-        "inningsPitched": "99.1",
-        "strikeouts": 102,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8705",
@@ -27784,19 +26765,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "로버트 개서",
-        "number": 33,
-        "throwsHand": "L",
-        "era": "2.57",
-        "whip": "1.11",
-        "wins": 7,
-        "losses": 3,
-        "inningsPitched": "84.0",
-        "strikeouts": 78,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8706",
@@ -27840,18 +26811,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "매튜 보이드",
-        "number": 46,
-        "throwsHand": "L",
-        "era": "2.72",
-        "whip": "1.13",
-        "wins": 8,
-        "losses": 4,
-        "inningsPitched": "99.1",
-        "strikeouts": 102,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8706",
@@ -27867,19 +26827,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "로버트 개서",
-        "number": 33,
-        "throwsHand": "L",
-        "era": "2.57",
-        "whip": "1.11",
-        "wins": 7,
-        "losses": 3,
-        "inningsPitched": "84.0",
-        "strikeouts": 78,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8707",
@@ -27923,18 +26873,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "매튜 보이드",
-        "number": 46,
-        "throwsHand": "L",
-        "era": "2.72",
-        "whip": "1.13",
-        "wins": 8,
-        "losses": 4,
-        "inningsPitched": "99.1",
-        "strikeouts": 102,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8707",
@@ -27950,19 +26889,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "로버트 개서",
-        "number": 33,
-        "throwsHand": "L",
-        "era": "2.57",
-        "whip": "1.11",
-        "wins": 7,
-        "losses": 3,
-        "inningsPitched": "84.0",
-        "strikeouts": 78,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8708",
@@ -28006,18 +26935,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "매튜 보이드",
-        "number": 46,
-        "throwsHand": "L",
-        "era": "2.72",
-        "whip": "1.13",
-        "wins": 8,
-        "losses": 4,
-        "inningsPitched": "99.1",
-        "strikeouts": 102,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8708",
@@ -28033,19 +26951,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "로버트 개서",
-        "number": 33,
-        "throwsHand": "L",
-        "era": "2.57",
-        "whip": "1.11",
-        "wins": 7,
-        "losses": 3,
-        "inningsPitched": "84.0",
-        "strikeouts": 78,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8709",
@@ -28089,18 +26997,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "매튜 보이드",
-        "number": 46,
-        "throwsHand": "L",
-        "era": "2.72",
-        "whip": "1.13",
-        "wins": 8,
-        "losses": 4,
-        "inningsPitched": "99.1",
-        "strikeouts": 102,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8709",
@@ -28116,19 +27013,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "로버트 개서",
-        "number": 33,
-        "throwsHand": "L",
-        "era": "2.57",
-        "whip": "1.11",
-        "wins": 7,
-        "losses": 3,
-        "inningsPitched": "84.0",
-        "strikeouts": 78,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8710",
@@ -28172,18 +27059,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "카일 브래디시",
-        "number": 39,
-        "throwsHand": "R",
-        "era": "2.75",
-        "whip": "1.04",
-        "wins": 12,
-        "losses": 5,
-        "inningsPitched": "135.0",
-        "strikeouts": 145,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8710",
@@ -28199,19 +27075,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "제딕슨 파에즈",
-        "number": 78,
-        "throwsHand": "R",
-        "era": "4.10",
-        "whip": "1.22",
-        "wins": 5,
-        "losses": 4,
-        "inningsPitched": "65.0",
-        "strikeouts": 60,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8711",
@@ -28255,18 +27121,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "카일 브래디시",
-        "number": 39,
-        "throwsHand": "R",
-        "era": "2.75",
-        "whip": "1.04",
-        "wins": 12,
-        "losses": 5,
-        "inningsPitched": "135.0",
-        "strikeouts": 145,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8711",
@@ -28282,19 +27137,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "제딕슨 파에즈",
-        "number": 78,
-        "throwsHand": "R",
-        "era": "4.10",
-        "whip": "1.22",
-        "wins": 5,
-        "losses": 4,
-        "inningsPitched": "65.0",
-        "strikeouts": 60,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8712",
@@ -28338,18 +27183,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "카일 브래디시",
-        "number": 39,
-        "throwsHand": "R",
-        "era": "2.75",
-        "whip": "1.04",
-        "wins": 12,
-        "losses": 5,
-        "inningsPitched": "135.0",
-        "strikeouts": 145,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8712",
@@ -28365,19 +27199,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "제딕슨 파에즈",
-        "number": 78,
-        "throwsHand": "R",
-        "era": "4.10",
-        "whip": "1.22",
-        "wins": 5,
-        "losses": 4,
-        "inningsPitched": "65.0",
-        "strikeouts": 60,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8713",
@@ -28421,18 +27245,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "카일 브래디시",
-        "number": 39,
-        "throwsHand": "R",
-        "era": "2.75",
-        "whip": "1.04",
-        "wins": 12,
-        "losses": 5,
-        "inningsPitched": "135.0",
-        "strikeouts": 145,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8713",
@@ -28448,19 +27261,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "제딕슨 파에즈",
-        "number": 78,
-        "throwsHand": "R",
-        "era": "4.10",
-        "whip": "1.22",
-        "wins": 5,
-        "losses": 4,
-        "inningsPitched": "65.0",
-        "strikeouts": 60,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8714",
@@ -28504,18 +27307,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "카일 브래디시",
-        "number": 39,
-        "throwsHand": "R",
-        "era": "2.75",
-        "whip": "1.04",
-        "wins": 12,
-        "losses": 5,
-        "inningsPitched": "135.0",
-        "strikeouts": 145,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8714",
@@ -28531,19 +27323,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "제딕슨 파에즈",
-        "number": 78,
-        "throwsHand": "R",
-        "era": "4.10",
-        "whip": "1.22",
-        "wins": 5,
-        "losses": 4,
-        "inningsPitched": "65.0",
-        "strikeouts": 60,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8715",
@@ -28587,18 +27369,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "랜디 돕낙",
-        "number": 68,
-        "throwsHand": "R",
-        "era": "4.30",
-        "whip": "1.35",
-        "wins": 5,
-        "losses": 8,
-        "inningsPitched": "78.0",
-        "strikeouts": 65,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8715",
@@ -28614,19 +27385,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "타일러 필립스",
-        "number": 70,
-        "throwsHand": "R",
-        "era": "4.45",
-        "whip": "1.32",
-        "wins": 4,
-        "losses": 6,
-        "inningsPitched": "72.0",
-        "strikeouts": 60,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8716",
@@ -28670,18 +27431,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "랜디 돕낙",
-        "number": 68,
-        "throwsHand": "R",
-        "era": "4.30",
-        "whip": "1.35",
-        "wins": 5,
-        "losses": 8,
-        "inningsPitched": "78.0",
-        "strikeouts": 65,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8716",
@@ -28697,19 +27447,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "타일러 필립스",
-        "number": 70,
-        "throwsHand": "R",
-        "era": "4.45",
-        "whip": "1.32",
-        "wins": 4,
-        "losses": 6,
-        "inningsPitched": "72.0",
-        "strikeouts": 60,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8717",
@@ -28753,18 +27493,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "랜디 돕낙",
-        "number": 68,
-        "throwsHand": "R",
-        "era": "4.30",
-        "whip": "1.35",
-        "wins": 5,
-        "losses": 8,
-        "inningsPitched": "78.0",
-        "strikeouts": 65,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8717",
@@ -28780,19 +27509,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "타일러 필립스",
-        "number": 70,
-        "throwsHand": "R",
-        "era": "4.45",
-        "whip": "1.32",
-        "wins": 4,
-        "losses": 6,
-        "inningsPitched": "72.0",
-        "strikeouts": 60,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8718",
@@ -28836,18 +27555,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "랜디 돕낙",
-        "number": 68,
-        "throwsHand": "R",
-        "era": "4.30",
-        "whip": "1.35",
-        "wins": 5,
-        "losses": 8,
-        "inningsPitched": "78.0",
-        "strikeouts": 65,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8718",
@@ -28863,19 +27571,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "타일러 필립스",
-        "number": 70,
-        "throwsHand": "R",
-        "era": "4.45",
-        "whip": "1.32",
-        "wins": 4,
-        "losses": 6,
-        "inningsPitched": "72.0",
-        "strikeouts": 60,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8719",
@@ -28919,18 +27617,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "랜디 돕낙",
-        "number": 68,
-        "throwsHand": "R",
-        "era": "4.30",
-        "whip": "1.35",
-        "wins": 5,
-        "losses": 8,
-        "inningsPitched": "78.0",
-        "strikeouts": 65,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8719",
@@ -28946,19 +27633,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "타일러 필립스",
-        "number": 70,
-        "throwsHand": "R",
-        "era": "4.45",
-        "whip": "1.32",
-        "wins": 4,
-        "losses": 6,
-        "inningsPitched": "72.0",
-        "strikeouts": 60,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8720",
@@ -29002,18 +27679,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "맥켄지 고어",
-        "number": 1,
-        "throwsHand": "L",
-        "era": "3.90",
-        "whip": "1.30",
-        "wins": 9,
-        "losses": 10,
-        "inningsPitched": "140.0",
-        "strikeouts": 160,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8720",
@@ -29029,19 +27695,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "프레디 페랄타",
-        "number": 51,
-        "throwsHand": "R",
-        "era": "3.68",
-        "whip": "1.21",
-        "wins": 11,
-        "losses": 9,
-        "inningsPitched": "173.2",
-        "strikeouts": 200,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8721",
@@ -29085,18 +27741,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "맥켄지 고어",
-        "number": 1,
-        "throwsHand": "L",
-        "era": "3.90",
-        "whip": "1.30",
-        "wins": 9,
-        "losses": 10,
-        "inningsPitched": "140.0",
-        "strikeouts": 160,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8721",
@@ -29112,19 +27757,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "프레디 페랄타",
-        "number": 51,
-        "throwsHand": "R",
-        "era": "3.68",
-        "whip": "1.21",
-        "wins": 11,
-        "losses": 9,
-        "inningsPitched": "173.2",
-        "strikeouts": 200,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8722",
@@ -29168,18 +27803,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "맥켄지 고어",
-        "number": 1,
-        "throwsHand": "L",
-        "era": "3.90",
-        "whip": "1.30",
-        "wins": 9,
-        "losses": 10,
-        "inningsPitched": "140.0",
-        "strikeouts": 160,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8722",
@@ -29195,19 +27819,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "프레디 페랄타",
-        "number": 51,
-        "throwsHand": "R",
-        "era": "3.68",
-        "whip": "1.21",
-        "wins": 11,
-        "losses": 9,
-        "inningsPitched": "173.2",
-        "strikeouts": 200,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8723",
@@ -29251,18 +27865,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "맥켄지 고어",
-        "number": 1,
-        "throwsHand": "L",
-        "era": "3.90",
-        "whip": "1.30",
-        "wins": 9,
-        "losses": 10,
-        "inningsPitched": "140.0",
-        "strikeouts": 160,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8723",
@@ -29278,19 +27881,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "프레디 페랄타",
-        "number": 51,
-        "throwsHand": "R",
-        "era": "3.68",
-        "whip": "1.21",
-        "wins": 11,
-        "losses": 9,
-        "inningsPitched": "173.2",
-        "strikeouts": 200,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8724",
@@ -29334,18 +27927,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "맥켄지 고어",
-        "number": 1,
-        "throwsHand": "L",
-        "era": "3.90",
-        "whip": "1.30",
-        "wins": 9,
-        "losses": 10,
-        "inningsPitched": "140.0",
-        "strikeouts": 160,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8724",
@@ -29361,19 +27943,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "프레디 페랄타",
-        "number": 51,
-        "throwsHand": "R",
-        "era": "3.68",
-        "whip": "1.21",
-        "wins": 11,
-        "losses": 9,
-        "inningsPitched": "173.2",
-        "strikeouts": 200,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8725",
@@ -29417,18 +27989,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "브라이언 우",
-        "number": 22,
-        "throwsHand": "R",
-        "era": "2.89",
-        "whip": "0.89",
-        "wins": 9,
-        "losses": 3,
-        "inningsPitched": "121.1",
-        "strikeouts": 101,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8725",
@@ -29444,19 +28005,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "브래디 바소",
-        "number": 63,
-        "throwsHand": "L",
-        "era": "4.05",
-        "whip": "1.29",
-        "wins": 5,
-        "losses": 6,
-        "inningsPitched": "65.0",
-        "strikeouts": 62,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8726",
@@ -29500,18 +28051,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "브라이언 우",
-        "number": 22,
-        "throwsHand": "R",
-        "era": "2.89",
-        "whip": "0.89",
-        "wins": 9,
-        "losses": 3,
-        "inningsPitched": "121.1",
-        "strikeouts": 101,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8726",
@@ -29527,19 +28067,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "브래디 바소",
-        "number": 63,
-        "throwsHand": "L",
-        "era": "4.05",
-        "whip": "1.29",
-        "wins": 5,
-        "losses": 6,
-        "inningsPitched": "65.0",
-        "strikeouts": 62,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8727",
@@ -29583,18 +28113,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "브라이언 우",
-        "number": 22,
-        "throwsHand": "R",
-        "era": "2.89",
-        "whip": "0.89",
-        "wins": 9,
-        "losses": 3,
-        "inningsPitched": "121.1",
-        "strikeouts": 101,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8727",
@@ -29610,19 +28129,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "브래디 바소",
-        "number": 63,
-        "throwsHand": "L",
-        "era": "4.05",
-        "whip": "1.29",
-        "wins": 5,
-        "losses": 6,
-        "inningsPitched": "65.0",
-        "strikeouts": 62,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8728",
@@ -29666,18 +28175,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "브라이언 우",
-        "number": 22,
-        "throwsHand": "R",
-        "era": "2.89",
-        "whip": "0.89",
-        "wins": 9,
-        "losses": 3,
-        "inningsPitched": "121.1",
-        "strikeouts": 101,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8728",
@@ -29693,19 +28191,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "브래디 바소",
-        "number": 63,
-        "throwsHand": "L",
-        "era": "4.05",
-        "whip": "1.29",
-        "wins": 5,
-        "losses": 6,
-        "inningsPitched": "65.0",
-        "strikeouts": 62,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8729",
@@ -29749,18 +28237,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "브라이언 우",
-        "number": 22,
-        "throwsHand": "R",
-        "era": "2.89",
-        "whip": "0.89",
-        "wins": 9,
-        "losses": 3,
-        "inningsPitched": "121.1",
-        "strikeouts": 101,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8729",
@@ -29776,19 +28253,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "브래디 바소",
-        "number": 63,
-        "throwsHand": "L",
-        "era": "4.05",
-        "whip": "1.29",
-        "wins": 5,
-        "losses": 6,
-        "inningsPitched": "65.0",
-        "strikeouts": 62,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8730",
@@ -29832,18 +28299,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "에릭 라우어",
-        "number": 31,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.15",
-        "wins": 4,
-        "losses": 2,
-        "inningsPitched": "45.0",
-        "strikeouts": 48,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8730",
@@ -29859,19 +28315,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "마이클 맥그리브",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "3.86",
-        "whip": "1.21",
-        "wins": 3,
-        "losses": 1,
-        "inningsPitched": "35.0",
-        "strikeouts": 30,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8731",
@@ -29915,18 +28361,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "에릭 라우어",
-        "number": 31,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.15",
-        "wins": 4,
-        "losses": 2,
-        "inningsPitched": "45.0",
-        "strikeouts": 48,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8731",
@@ -29942,19 +28377,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "마이클 맥그리브",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "3.86",
-        "whip": "1.21",
-        "wins": 3,
-        "losses": 1,
-        "inningsPitched": "35.0",
-        "strikeouts": 30,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8732",
@@ -29998,18 +28423,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "에릭 라우어",
-        "number": 31,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.15",
-        "wins": 4,
-        "losses": 2,
-        "inningsPitched": "45.0",
-        "strikeouts": 48,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8732",
@@ -30025,19 +28439,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "마이클 맥그리브",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "3.86",
-        "whip": "1.21",
-        "wins": 3,
-        "losses": 1,
-        "inningsPitched": "35.0",
-        "strikeouts": 30,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8733",
@@ -30081,18 +28485,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "에릭 라우어",
-        "number": 31,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.15",
-        "wins": 4,
-        "losses": 2,
-        "inningsPitched": "45.0",
-        "strikeouts": 48,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8733",
@@ -30108,19 +28501,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "마이클 맥그리브",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "3.86",
-        "whip": "1.21",
-        "wins": 3,
-        "losses": 1,
-        "inningsPitched": "35.0",
-        "strikeouts": 30,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8734",
@@ -30164,18 +28547,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "에릭 라우어",
-        "number": 31,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.15",
-        "wins": 4,
-        "losses": 2,
-        "inningsPitched": "45.0",
-        "strikeouts": 48,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8734",
@@ -30191,19 +28563,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "마이클 맥그리브",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "3.86",
-        "whip": "1.21",
-        "wins": 3,
-        "losses": 1,
-        "inningsPitched": "35.0",
-        "strikeouts": 30,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8735",
@@ -30247,18 +28609,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "에릭 라우어",
-        "number": 31,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.15",
-        "wins": 4,
-        "losses": 2,
-        "inningsPitched": "45.0",
-        "strikeouts": 48,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8735",
@@ -30274,19 +28625,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "마이클 맥그리브",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "3.86",
-        "whip": "1.21",
-        "wins": 3,
-        "losses": 1,
-        "inningsPitched": "35.0",
-        "strikeouts": 30,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8736",
@@ -30330,18 +28671,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "에릭 라우어",
-        "number": 31,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.15",
-        "wins": 4,
-        "losses": 2,
-        "inningsPitched": "45.0",
-        "strikeouts": 48,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8736",
@@ -30357,19 +28687,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "마이클 맥그리브",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "3.86",
-        "whip": "1.21",
-        "wins": 3,
-        "losses": 1,
-        "inningsPitched": "35.0",
-        "strikeouts": 30,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8737",
@@ -30413,18 +28733,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "에릭 라우어",
-        "number": 31,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.15",
-        "wins": 4,
-        "losses": 2,
-        "inningsPitched": "45.0",
-        "strikeouts": 48,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8737",
@@ -30440,19 +28749,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "마이클 맥그리브",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "3.86",
-        "whip": "1.21",
-        "wins": 3,
-        "losses": 1,
-        "inningsPitched": "35.0",
-        "strikeouts": 30,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8738",
@@ -30740,18 +29039,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "타카하시 케이지",
-        "number": 34,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.22",
-        "wins": 8,
-        "losses": 9,
-        "inningsPitched": "130.0",
-        "strikeouts": 115,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8742",
@@ -30767,19 +29055,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "타카하시 히로토",
-        "number": 19,
-        "throwsHand": "R",
-        "era": "1.38",
-        "whip": "0.98",
-        "wins": 12,
-        "losses": 4,
-        "inningsPitched": "143.2",
-        "strikeouts": 130,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8743",
@@ -30823,18 +29101,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "타카하시 케이지",
-        "number": 34,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.22",
-        "wins": 8,
-        "losses": 9,
-        "inningsPitched": "130.0",
-        "strikeouts": 115,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8743",
@@ -30850,19 +29117,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "타카하시 히로토",
-        "number": 19,
-        "throwsHand": "R",
-        "era": "1.38",
-        "whip": "0.98",
-        "wins": 12,
-        "losses": 4,
-        "inningsPitched": "143.2",
-        "strikeouts": 130,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8744",
@@ -30906,18 +29163,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "타카하시 케이지",
-        "number": 34,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.22",
-        "wins": 8,
-        "losses": 9,
-        "inningsPitched": "130.0",
-        "strikeouts": 115,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8744",
@@ -30933,19 +29179,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "타카하시 히로토",
-        "number": 19,
-        "throwsHand": "R",
-        "era": "1.38",
-        "whip": "0.98",
-        "wins": 12,
-        "losses": 4,
-        "inningsPitched": "143.2",
-        "strikeouts": 130,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8745",
@@ -30989,18 +29225,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "타카하시 케이지",
-        "number": 34,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.22",
-        "wins": 8,
-        "losses": 9,
-        "inningsPitched": "130.0",
-        "strikeouts": 115,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8745",
@@ -31016,19 +29241,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "타카하시 히로토",
-        "number": 19,
-        "throwsHand": "R",
-        "era": "1.38",
-        "whip": "0.98",
-        "wins": 12,
-        "losses": 4,
-        "inningsPitched": "143.2",
-        "strikeouts": 130,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8746",
@@ -31072,18 +29287,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "타카하시 케이지",
-        "number": 34,
-        "throwsHand": "L",
-        "era": "3.10",
-        "whip": "1.22",
-        "wins": 8,
-        "losses": 9,
-        "inningsPitched": "130.0",
-        "strikeouts": 115,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8746",
@@ -31099,19 +29303,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "타카하시 히로토",
-        "number": 19,
-        "throwsHand": "R",
-        "era": "1.38",
-        "whip": "0.98",
-        "wins": 12,
-        "losses": 4,
-        "inningsPitched": "143.2",
-        "strikeouts": 130,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8747",
@@ -31155,18 +29349,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "오세라 다이치",
-        "number": 14,
-        "throwsHand": "R",
-        "era": "2.05",
-        "whip": "1.08",
-        "wins": 9,
-        "losses": 6,
-        "inningsPitched": "145.0",
-        "strikeouts": 95,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8747",
@@ -31182,19 +29365,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "스가노 토모유키",
-        "number": 19,
-        "throwsHand": "R",
-        "era": "1.67",
-        "whip": "0.94",
-        "wins": 15,
-        "losses": 3,
-        "inningsPitched": "156.2",
-        "strikeouts": 111,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8748",
@@ -31238,18 +29411,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "오세라 다이치",
-        "number": 14,
-        "throwsHand": "R",
-        "era": "2.05",
-        "whip": "1.08",
-        "wins": 9,
-        "losses": 6,
-        "inningsPitched": "145.0",
-        "strikeouts": 95,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8748",
@@ -31265,19 +29427,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "스가노 토모유키",
-        "number": 19,
-        "throwsHand": "R",
-        "era": "1.67",
-        "whip": "0.94",
-        "wins": 15,
-        "losses": 3,
-        "inningsPitched": "156.2",
-        "strikeouts": 111,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8749",
@@ -31321,18 +29473,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "오세라 다이치",
-        "number": 14,
-        "throwsHand": "R",
-        "era": "2.05",
-        "whip": "1.08",
-        "wins": 9,
-        "losses": 6,
-        "inningsPitched": "145.0",
-        "strikeouts": 95,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8749",
@@ -31348,19 +29489,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "스가노 토모유키",
-        "number": 19,
-        "throwsHand": "R",
-        "era": "1.67",
-        "whip": "0.94",
-        "wins": 15,
-        "losses": 3,
-        "inningsPitched": "156.2",
-        "strikeouts": 111,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8750",
@@ -31404,18 +29535,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "오세라 다이치",
-        "number": 14,
-        "throwsHand": "R",
-        "era": "2.05",
-        "whip": "1.08",
-        "wins": 9,
-        "losses": 6,
-        "inningsPitched": "145.0",
-        "strikeouts": 95,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8750",
@@ -31431,19 +29551,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "스가노 토모유키",
-        "number": 19,
-        "throwsHand": "R",
-        "era": "1.67",
-        "whip": "0.94",
-        "wins": 15,
-        "losses": 3,
-        "inningsPitched": "156.2",
-        "strikeouts": 111,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8751",
@@ -31487,18 +29597,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "오세라 다이치",
-        "number": 14,
-        "throwsHand": "R",
-        "era": "2.05",
-        "whip": "1.08",
-        "wins": 9,
-        "losses": 6,
-        "inningsPitched": "145.0",
-        "strikeouts": 95,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8751",
@@ -31514,19 +29613,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "스가노 토모유키",
-        "number": 19,
-        "throwsHand": "R",
-        "era": "1.67",
-        "whip": "0.94",
-        "wins": 15,
-        "losses": 3,
-        "inningsPitched": "156.2",
-        "strikeouts": 111,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8752",
@@ -31570,18 +29659,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "하야카와 타카히사",
-        "number": 21,
-        "throwsHand": "L",
-        "era": "2.52",
-        "whip": "1.12",
-        "wins": 11,
-        "losses": 6,
-        "inningsPitched": "170.1",
-        "strikeouts": 160,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8752",
@@ -31597,19 +29675,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "이토 히로미",
-        "number": 17,
-        "throwsHand": "R",
-        "era": "2.65",
-        "whip": "1.06",
-        "wins": 14,
-        "losses": 5,
-        "inningsPitched": "176.1",
-        "strikeouts": 161,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8753",
@@ -31653,18 +29721,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "하야카와 타카히사",
-        "number": 21,
-        "throwsHand": "L",
-        "era": "2.52",
-        "whip": "1.12",
-        "wins": 11,
-        "losses": 6,
-        "inningsPitched": "170.1",
-        "strikeouts": 160,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8753",
@@ -31680,19 +29737,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "이토 히로미",
-        "number": 17,
-        "throwsHand": "R",
-        "era": "2.65",
-        "whip": "1.06",
-        "wins": 14,
-        "losses": 5,
-        "inningsPitched": "176.1",
-        "strikeouts": 161,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8754",
@@ -31736,18 +29783,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "하야카와 타카히사",
-        "number": 21,
-        "throwsHand": "L",
-        "era": "2.52",
-        "whip": "1.12",
-        "wins": 11,
-        "losses": 6,
-        "inningsPitched": "170.1",
-        "strikeouts": 160,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8754",
@@ -31763,19 +29799,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "이토 히로미",
-        "number": 17,
-        "throwsHand": "R",
-        "era": "2.65",
-        "whip": "1.06",
-        "wins": 14,
-        "losses": 5,
-        "inningsPitched": "176.1",
-        "strikeouts": 161,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8755",
@@ -31819,18 +29845,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "하야카와 타카히사",
-        "number": 21,
-        "throwsHand": "L",
-        "era": "2.52",
-        "whip": "1.12",
-        "wins": 11,
-        "losses": 6,
-        "inningsPitched": "170.1",
-        "strikeouts": 160,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8755",
@@ -31846,19 +29861,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "이토 히로미",
-        "number": 17,
-        "throwsHand": "R",
-        "era": "2.65",
-        "whip": "1.06",
-        "wins": 14,
-        "losses": 5,
-        "inningsPitched": "176.1",
-        "strikeouts": 161,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8756",
@@ -31902,18 +29907,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "하야카와 타카히사",
-        "number": 21,
-        "throwsHand": "L",
-        "era": "2.52",
-        "whip": "1.12",
-        "wins": 11,
-        "losses": 6,
-        "inningsPitched": "170.1",
-        "strikeouts": 160,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8756",
@@ -31929,19 +29923,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "이토 히로미",
-        "number": 17,
-        "throwsHand": "R",
-        "era": "2.65",
-        "whip": "1.06",
-        "wins": 14,
-        "losses": 5,
-        "inningsPitched": "176.1",
-        "strikeouts": 161,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8757",
@@ -31985,18 +29969,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "미야기 히로야",
-        "number": 13,
-        "throwsHand": "L",
-        "era": "2.41",
-        "whip": "1.05",
-        "wins": 7,
-        "losses": 9,
-        "inningsPitched": "141.2",
-        "strikeouts": 134,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8757",
@@ -32012,19 +29985,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "사사키 로키",
-        "number": 17,
-        "throwsHand": "R",
-        "era": "2.35",
-        "whip": "1.04",
-        "wins": 10,
-        "losses": 5,
-        "inningsPitched": "111.0",
-        "strikeouts": 129,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8758",
@@ -32068,18 +30031,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "미야기 히로야",
-        "number": 13,
-        "throwsHand": "L",
-        "era": "2.41",
-        "whip": "1.05",
-        "wins": 7,
-        "losses": 9,
-        "inningsPitched": "141.2",
-        "strikeouts": 134,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8758",
@@ -32095,19 +30047,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "사사키 로키",
-        "number": 17,
-        "throwsHand": "R",
-        "era": "2.35",
-        "whip": "1.04",
-        "wins": 10,
-        "losses": 5,
-        "inningsPitched": "111.0",
-        "strikeouts": 129,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8759",
@@ -32151,18 +30093,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "미야기 히로야",
-        "number": 13,
-        "throwsHand": "L",
-        "era": "2.41",
-        "whip": "1.05",
-        "wins": 7,
-        "losses": 9,
-        "inningsPitched": "141.2",
-        "strikeouts": 134,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8759",
@@ -32178,19 +30109,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "사사키 로키",
-        "number": 17,
-        "throwsHand": "R",
-        "era": "2.35",
-        "whip": "1.04",
-        "wins": 10,
-        "losses": 5,
-        "inningsPitched": "111.0",
-        "strikeouts": 129,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8760",
@@ -32234,18 +30155,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "미야기 히로야",
-        "number": 13,
-        "throwsHand": "L",
-        "era": "2.41",
-        "whip": "1.05",
-        "wins": 7,
-        "losses": 9,
-        "inningsPitched": "141.2",
-        "strikeouts": 134,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8760",
@@ -32261,19 +30171,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "사사키 로키",
-        "number": 17,
-        "throwsHand": "R",
-        "era": "2.35",
-        "whip": "1.04",
-        "wins": 10,
-        "losses": 5,
-        "inningsPitched": "111.0",
-        "strikeouts": 129,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8761",
@@ -32317,18 +30217,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "미야기 히로야",
-        "number": 13,
-        "throwsHand": "L",
-        "era": "2.41",
-        "whip": "1.05",
-        "wins": 7,
-        "losses": 9,
-        "inningsPitched": "141.2",
-        "strikeouts": 134,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8761",
@@ -32344,19 +30233,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "사사키 로키",
-        "number": 17,
-        "throwsHand": "R",
-        "era": "2.35",
-        "whip": "1.04",
-        "wins": 10,
-        "losses": 5,
-        "inningsPitched": "111.0",
-        "strikeouts": 129,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8762",
@@ -32400,18 +30279,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "아리하라 코헤이",
-        "number": 17,
-        "throwsHand": "R",
-        "era": "2.36",
-        "whip": "0.98",
-        "wins": 14,
-        "losses": 6,
-        "inningsPitched": "182.2",
-        "strikeouts": 137,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8762",
@@ -32427,19 +30295,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "이마이 다쓰야",
-        "number": 48,
-        "throwsHand": "R",
-        "era": "2.34",
-        "whip": "1.12",
-        "wins": 10,
-        "losses": 8,
-        "inningsPitched": "173.1",
-        "strikeouts": 187,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8763",
@@ -32483,18 +30341,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "아리하라 코헤이",
-        "number": 17,
-        "throwsHand": "R",
-        "era": "2.36",
-        "whip": "0.98",
-        "wins": 14,
-        "losses": 6,
-        "inningsPitched": "182.2",
-        "strikeouts": 137,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8763",
@@ -32510,19 +30357,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "이마이 다쓰야",
-        "number": 48,
-        "throwsHand": "R",
-        "era": "2.34",
-        "whip": "1.12",
-        "wins": 10,
-        "losses": 8,
-        "inningsPitched": "173.1",
-        "strikeouts": 187,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8764",
@@ -32566,18 +30403,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "아리하라 코헤이",
-        "number": 17,
-        "throwsHand": "R",
-        "era": "2.36",
-        "whip": "0.98",
-        "wins": 14,
-        "losses": 6,
-        "inningsPitched": "182.2",
-        "strikeouts": 137,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8764",
@@ -32593,19 +30419,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "이마이 다쓰야",
-        "number": 48,
-        "throwsHand": "R",
-        "era": "2.34",
-        "whip": "1.12",
-        "wins": 10,
-        "losses": 8,
-        "inningsPitched": "173.1",
-        "strikeouts": 187,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8765",
@@ -32649,18 +30465,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "아리하라 코헤이",
-        "number": 17,
-        "throwsHand": "R",
-        "era": "2.36",
-        "whip": "0.98",
-        "wins": 14,
-        "losses": 6,
-        "inningsPitched": "182.2",
-        "strikeouts": 137,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8765",
@@ -32676,19 +30481,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "이마이 다쓰야",
-        "number": 48,
-        "throwsHand": "R",
-        "era": "2.34",
-        "whip": "1.12",
-        "wins": 10,
-        "losses": 8,
-        "inningsPitched": "173.1",
-        "strikeouts": 187,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8766",
@@ -32732,18 +30527,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "아리하라 코헤이",
-        "number": 17,
-        "throwsHand": "R",
-        "era": "2.36",
-        "whip": "0.98",
-        "wins": 14,
-        "losses": 6,
-        "inningsPitched": "182.2",
-        "strikeouts": 137,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8766",
@@ -32759,19 +30543,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "이마이 다쓰야",
-        "number": 48,
-        "throwsHand": "R",
-        "era": "2.34",
-        "whip": "1.12",
-        "wins": 10,
-        "losses": 8,
-        "inningsPitched": "173.1",
-        "strikeouts": 187,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8767",
@@ -32815,18 +30589,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "김윤식",
-        "number": 57,
-        "throwsHand": "L",
-        "era": "4.97",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8767",
@@ -32842,19 +30605,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "최원태",
-        "number": 20,
-        "throwsHand": "R",
-        "era": "4.57",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8768",
@@ -32898,18 +30651,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "김윤식",
-        "number": 57,
-        "throwsHand": "L",
-        "era": "4.97",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8768",
@@ -32925,19 +30667,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "최원태",
-        "number": 20,
-        "throwsHand": "R",
-        "era": "4.57",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8769",
@@ -32981,18 +30713,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "김윤식",
-        "number": 57,
-        "throwsHand": "L",
-        "era": "4.97",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8769",
@@ -33008,19 +30729,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "최원태",
-        "number": 20,
-        "throwsHand": "R",
-        "era": "4.57",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8770",
@@ -33064,18 +30775,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "김윤식",
-        "number": 57,
-        "throwsHand": "L",
-        "era": "4.97",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8770",
@@ -33091,19 +30791,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "최원태",
-        "number": 20,
-        "throwsHand": "R",
-        "era": "4.57",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8771",
@@ -33147,18 +30837,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "김윤식",
-        "number": 57,
-        "throwsHand": "L",
-        "era": "4.97",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8771",
@@ -33174,19 +30853,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "최원태",
-        "number": 20,
-        "throwsHand": "R",
-        "era": "4.57",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8772",
@@ -33230,18 +30899,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "김윤식",
-        "number": 57,
-        "throwsHand": "L",
-        "era": "4.97",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8772",
@@ -33257,19 +30915,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "최원태",
-        "number": 20,
-        "throwsHand": "R",
-        "era": "4.57",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8773",
@@ -33313,18 +30961,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "김윤식",
-        "number": 57,
-        "throwsHand": "L",
-        "era": "4.97",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8773",
@@ -33340,19 +30977,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "최원태",
-        "number": 20,
-        "throwsHand": "R",
-        "era": "4.57",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8774",
@@ -33396,18 +31023,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "김윤식",
-        "number": 57,
-        "throwsHand": "L",
-        "era": "4.97",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8774",
@@ -33423,19 +31039,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "최원태",
-        "number": 20,
-        "throwsHand": "R",
-        "era": "4.57",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8775",
@@ -33479,18 +31085,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "박세웅",
-        "number": 21,
-        "throwsHand": "R",
-        "era": "4.68",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8775",
@@ -33506,19 +31101,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "류현진",
-        "number": 99,
-        "throwsHand": "L",
-        "era": "3.85",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8776",
@@ -33562,18 +31147,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "박세웅",
-        "number": 21,
-        "throwsHand": "R",
-        "era": "4.68",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8776",
@@ -33589,19 +31163,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "류현진",
-        "number": 99,
-        "throwsHand": "L",
-        "era": "3.85",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8777",
@@ -33645,18 +31209,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "박세웅",
-        "number": 21,
-        "throwsHand": "R",
-        "era": "4.68",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8777",
@@ -33672,19 +31225,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "류현진",
-        "number": 99,
-        "throwsHand": "L",
-        "era": "3.85",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8778",
@@ -33728,18 +31271,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "박세웅",
-        "number": 21,
-        "throwsHand": "R",
-        "era": "4.68",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8778",
@@ -33755,19 +31287,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "류현진",
-        "number": 99,
-        "throwsHand": "L",
-        "era": "3.85",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8779",
@@ -33811,18 +31333,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "박세웅",
-        "number": 21,
-        "throwsHand": "R",
-        "era": "4.68",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8779",
@@ -33838,19 +31349,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "류현진",
-        "number": 99,
-        "throwsHand": "L",
-        "era": "3.85",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8780",
@@ -33894,18 +31395,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "박세웅",
-        "number": 21,
-        "throwsHand": "R",
-        "era": "4.68",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8780",
@@ -33921,19 +31411,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "류현진",
-        "number": 99,
-        "throwsHand": "L",
-        "era": "3.85",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8781",
@@ -33977,18 +31457,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "박세웅",
-        "number": 21,
-        "throwsHand": "R",
-        "era": "4.68",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8781",
@@ -34004,19 +31473,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "류현진",
-        "number": 99,
-        "throwsHand": "L",
-        "era": "3.85",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8782",
@@ -34060,18 +31519,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "박세웅",
-        "number": 21,
-        "throwsHand": "R",
-        "era": "4.68",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8782",
@@ -34087,19 +31535,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "류현진",
-        "number": 99,
-        "throwsHand": "L",
-        "era": "3.85",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8783",
@@ -34143,18 +31581,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "김건우",
-        "number": 59,
-        "throwsHand": "L",
-        "era": "4.10",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8783",
@@ -34170,19 +31597,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "최승용",
-        "number": 28,
-        "throwsHand": "L",
-        "era": "5.61",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8784",
@@ -34226,18 +31643,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "김건우",
-        "number": 59,
-        "throwsHand": "L",
-        "era": "4.10",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8784",
@@ -34253,19 +31659,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "최승용",
-        "number": 28,
-        "throwsHand": "L",
-        "era": "5.61",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8785",
@@ -34309,18 +31705,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "김건우",
-        "number": 59,
-        "throwsHand": "L",
-        "era": "4.10",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8785",
@@ -34336,19 +31721,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "최승용",
-        "number": 28,
-        "throwsHand": "L",
-        "era": "5.61",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8786",
@@ -34392,18 +31767,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "김건우",
-        "number": 59,
-        "throwsHand": "L",
-        "era": "4.10",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8786",
@@ -34419,19 +31783,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "최승용",
-        "number": 28,
-        "throwsHand": "L",
-        "era": "5.61",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8787",
@@ -34475,18 +31829,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "김건우",
-        "number": 59,
-        "throwsHand": "L",
-        "era": "4.10",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8787",
@@ -34502,19 +31845,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "최승용",
-        "number": 28,
-        "throwsHand": "L",
-        "era": "5.61",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8788",
@@ -34558,18 +31891,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "김건우",
-        "number": 59,
-        "throwsHand": "L",
-        "era": "4.10",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8788",
@@ -34585,19 +31907,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "최승용",
-        "number": 28,
-        "throwsHand": "L",
-        "era": "5.61",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8789",
@@ -34641,18 +31953,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "김건우",
-        "number": 59,
-        "throwsHand": "L",
-        "era": "4.10",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8789",
@@ -34668,19 +31969,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "최승용",
-        "number": 28,
-        "throwsHand": "L",
-        "era": "5.61",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8790",
@@ -34724,18 +32015,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "김건우",
-        "number": 59,
-        "throwsHand": "L",
-        "era": "4.10",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8790",
@@ -34751,19 +32031,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "최승용",
-        "number": 28,
-        "throwsHand": "L",
-        "era": "5.61",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8791",
@@ -34807,18 +32077,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "시라카와",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "4.88",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8791",
@@ -34834,19 +32093,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "소형준",
-        "number": 11,
-        "throwsHand": "R",
-        "era": "3.36",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8792",
@@ -34890,18 +32139,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "시라카와",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "4.88",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8792",
@@ -34917,19 +32155,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "소형준",
-        "number": 11,
-        "throwsHand": "R",
-        "era": "3.36",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8793",
@@ -34973,18 +32201,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "시라카와",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "4.88",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8793",
@@ -35000,19 +32217,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "소형준",
-        "number": 11,
-        "throwsHand": "R",
-        "era": "3.36",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8794",
@@ -35056,18 +32263,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "시라카와",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "4.88",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8794",
@@ -35083,19 +32279,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "소형준",
-        "number": 11,
-        "throwsHand": "R",
-        "era": "3.36",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8795",
@@ -35139,18 +32325,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "시라카와",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "4.88",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8795",
@@ -35166,19 +32341,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "소형준",
-        "number": 11,
-        "throwsHand": "R",
-        "era": "3.36",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8796",
@@ -35222,18 +32387,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "시라카와",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "4.88",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8796",
@@ -35249,19 +32403,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "소형준",
-        "number": 11,
-        "throwsHand": "R",
-        "era": "3.36",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8797",
@@ -35305,18 +32449,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "시라카와",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "4.88",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8797",
@@ -35332,19 +32465,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "소형준",
-        "number": 11,
-        "throwsHand": "R",
-        "era": "3.36",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8798",
@@ -35388,18 +32511,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "시라카와",
-        "number": 36,
-        "throwsHand": "R",
-        "era": "4.88",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8798",
@@ -35415,19 +32527,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "소형준",
-        "number": 11,
-        "throwsHand": "R",
-        "era": "3.36",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8799",
@@ -35471,18 +32573,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "하영민",
-        "number": 43,
-        "throwsHand": "R",
-        "era": "4.63",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8799",
@@ -35498,19 +32589,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "토다",
-        "number": 34,
-        "throwsHand": "R",
-        "era": "3.90",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8800",
@@ -35554,18 +32635,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "하영민",
-        "number": 43,
-        "throwsHand": "R",
-        "era": "4.63",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8800",
@@ -35581,19 +32651,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "토다",
-        "number": 34,
-        "throwsHand": "R",
-        "era": "3.90",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8801",
@@ -35637,18 +32697,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "하영민",
-        "number": 43,
-        "throwsHand": "R",
-        "era": "4.63",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8801",
@@ -35664,19 +32713,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "토다",
-        "number": 34,
-        "throwsHand": "R",
-        "era": "3.90",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8802",
@@ -35720,18 +32759,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "하영민",
-        "number": 43,
-        "throwsHand": "R",
-        "era": "4.63",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8802",
@@ -35747,19 +32775,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "토다",
-        "number": 34,
-        "throwsHand": "R",
-        "era": "3.90",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8803",
@@ -35803,18 +32821,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "하영민",
-        "number": 43,
-        "throwsHand": "R",
-        "era": "4.63",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8803",
@@ -35830,19 +32837,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "토다",
-        "number": 34,
-        "throwsHand": "R",
-        "era": "3.90",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8804",
@@ -35886,18 +32883,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "하영민",
-        "number": 43,
-        "throwsHand": "R",
-        "era": "4.63",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8804",
@@ -35913,19 +32899,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "토다",
-        "number": 34,
-        "throwsHand": "R",
-        "era": "3.90",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8805",
@@ -35969,18 +32945,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "하영민",
-        "number": 43,
-        "throwsHand": "R",
-        "era": "4.63",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8805",
@@ -35996,19 +32961,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "토다",
-        "number": 34,
-        "throwsHand": "R",
-        "era": "3.90",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8806",
@@ -36052,18 +33007,7 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 1,
-      "starterPitcherInfo": {
-        "name": "하영민",
-        "number": 43,
-        "throwsHand": "R",
-        "era": "4.63",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
+      "starterPitcherInfo": null
     },
     "awayTeam": {
       "id": "a_8806",
@@ -36079,19 +33023,9 @@ export const OFFICIAL_260104_MATCHES: Match[] = [
       "minutesPlayed14d": 0,
       "totalMarketValue": "오피셜 팀",
       "totalMarketValueNum": 2,
-      "starterPitcherInfo": {
-        "name": "토다",
-        "number": 34,
-        "throwsHand": "R",
-        "era": "3.90",
-        "whip": "1.25",
-        "wins": 8,
-        "losses": 5,
-        "inningsPitched": "95.1",
-        "strikeouts": 88,
-        "vsOpponentLogs": []
-      }
-    }
+      "starterPitcherInfo": null
+    },
+    "isPitcherAnnounced": false
   },
   {
     "id": "bm-260104-8807",

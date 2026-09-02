@@ -79,7 +79,7 @@ export class MasterFootballOrchestratorService {
       };
     } else {
       // ⚾ 야구 & 🏀 농구 전 종목 상대전적(H2H 5경기) & 최근 10경기 결과 및 선발 상대전적 완벽 주입
-      enriched = FootballH2HRecentFormEngine.enrichH2HAndRecent(enriched);
+      enriched = FootballH2HRecentFormEngine.enrichH2HAndRecentLogs(enriched);
       enriched = H2HRecentFormEngine.enrichH2HAndRecentLogs(enriched);
     }
 

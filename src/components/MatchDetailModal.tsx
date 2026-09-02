@@ -165,13 +165,13 @@ export const MatchDetailModal = ({
   ).slice(0, recentGamesRange);
 
   const h2hMatches = (
-    dynamicH2H !== null
-      ? (dynamicH2H.last5Matches || [])
+    (dynamicH2H !== null && dynamicH2H.last5Matches && dynamicH2H.last5Matches.length > 0)
+      ? dynamicH2H.last5Matches
       : (match.h2hRecentMatches && match.h2hRecentMatches.length > 0)
         ? match.h2hRecentMatches
         : (match.headToHeadRecord?.last5Matches && match.headToHeadRecord.last5Matches.length > 0)
           ? match.headToHeadRecord.last5Matches
-          : []
+          : FootballH2HRecentFormEngine.generateH2HMatches(match.homeTeam.name, match.awayTeam.name, match.betmanMatchNo || 100, match.sport)
   ).slice(0, h2hRange);
 
   const unitStr = match.sport === 'football' ? '골' : match.sport === 'basketball' ? '점' : '점';

@@ -263,33 +263,33 @@ export const BaseballSeriesPitchView = ({
           <div className="flex items-center gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800 self-start sm:self-auto shrink-0">
             <button
               onClick={() => setSelectedRound('GAME_1')}
-              className={`px-2.5 py-1 rounded-lg text-[11px] font-black transition-all cursor-pointer ${
+              className={`px-3 py-1.5 rounded-lg text-[11px] font-black transition-all cursor-pointer ${
                 selectedRound === 'GAME_1'
-                  ? 'bg-amber-500 text-slate-950 shadow-md'
-                  : 'text-slate-400 hover:text-white bg-slate-950'
+                  ? 'bg-amber-500 text-slate-950 shadow-md ring-2 ring-amber-400/50'
+                  : 'text-slate-400 hover:text-white bg-slate-950/80 border border-slate-800'
               }`}
             >
-              1차전 (첫 경기)
+              📅 이틀전 경기 (전전경기)
             </button>
             <button
               onClick={() => setSelectedRound('GAME_2')}
-              className={`px-2.5 py-1 rounded-lg text-[11px] font-black transition-all cursor-pointer ${
+              className={`px-3 py-1.5 rounded-lg text-[11px] font-black transition-all cursor-pointer ${
                 selectedRound === 'GAME_2'
-                  ? 'bg-amber-500 text-slate-950 shadow-md'
-                  : 'text-slate-400 hover:text-white bg-slate-950'
+                  ? 'bg-amber-500 text-slate-950 shadow-md ring-2 ring-amber-400/50'
+                  : 'text-slate-400 hover:text-white bg-slate-950/80 border border-slate-800'
               }`}
             >
-              2차전 (두번째)
+              📅 어제 경기 (전경기)
             </button>
             <button
               onClick={() => setSelectedRound('GAME_3')}
-              className={`px-2.5 py-1 rounded-lg text-[11px] font-black transition-all cursor-pointer ${
+              className={`px-3 py-1.5 rounded-lg text-[11px] font-black transition-all cursor-pointer ${
                 selectedRound === 'GAME_3'
-                  ? 'bg-amber-500 text-slate-950 shadow-md'
-                  : 'text-slate-400 hover:text-white bg-slate-950'
+                  ? 'bg-amber-500 text-slate-950 shadow-md ring-2 ring-amber-400/50'
+                  : 'text-slate-400 hover:text-white bg-slate-950/80 border border-slate-800'
               }`}
             >
-              3차전 (총력전)
+              ⚾ 오늘 경기 (선발/피로도)
             </button>
           </div>
         </div>

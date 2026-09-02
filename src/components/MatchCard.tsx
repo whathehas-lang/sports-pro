@@ -126,11 +126,14 @@ export const MatchCard = ({ match, membershipTier = 'VVIP', cardDensity = 'DETAI
   const homeStarter = match.homeTeam?.starterPitcherInfo;
   const awayStarter = match.awayTeam?.starterPitcherInfo;
 
-  const isHomeStarterConfirmed = !!homeStarter?.name && !homeStarter.name.includes('선발투수') && !homeStarter.name.includes('미정');
-  const isAwayStarterConfirmed = !!awayStarter?.name && !awayStarter.name.includes('선발투수') && !awayStarter.name.includes('미정');
+  const isHomeStarterConfirmed = !!homeStarter?.name && !homeStarter.name.includes('선발투수') && !homeStarter.name.includes('미정') && homeStarter.name !== '선발';
+  const isAwayStarterConfirmed = !!awayStarter?.name && !awayStarter.name.includes('선발투수') && !awayStarter.name.includes('미정') && awayStarter.name !== '선발';
 
-  const homeStarterStr = isHomeStarterConfirmed ? `${homeStarter!.name} (${homeStarter?.era || '3.50'})` : '선발 미정 ⏳';
-  const awayStarterStr = isAwayStarterConfirmed ? `${awayStarter!.name} (${awayStarter?.era || '3.50'})` : '선발 미정 ⏳';
+  const homeBadge = homeStarter?.status === 'CONFIRMED' ? '[확정]' : '[예고]';
+  const awayBadge = awayStarter?.status === 'CONFIRMED' ? '[확정]' : '[예고]';
+
+  const homeStarterStr = isHomeStarterConfirmed ? `${homeBadge} ${homeStarter!.name} (${homeStarter?.era || '3.50'})` : '선발 미정 ⏳';
+  const awayStarterStr = isAwayStarterConfirmed ? `${awayBadge} ${awayStarter!.name} (${awayStarter?.era || '3.50'})` : '선발 미정 ⏳';
 
   const baseNo = match.betmanMatchNo || 100;
   
