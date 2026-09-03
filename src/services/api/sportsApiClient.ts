@@ -9,12 +9,12 @@ export class SportsApiClient {
 
   constructor() {
     const env = typeof import.meta !== 'undefined' && (import.meta as any).env ? (import.meta as any).env : {};
-    const isBrowser = typeof window !== 'undefined';
+    const isLocalhost = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
 
-    // 브라우저에서는 CORS 차단 방지를 위해 Vite 프록시(/api/...) 사용
-    this.footballBaseUrl = isBrowser ? '/api/football' : (env.VITE_FOOTBALL_API_URL || 'https://v3.football.api-sports.io');
-    this.baseballBaseUrl = isBrowser ? '/api/baseball' : (env.VITE_BASEBALL_API_URL || 'https://v1.baseball.api-sports.io');
-    this.apiKey = env.VITE_SPORTS_API_KEY || '02cbc5113771eefb4A3F6D14606C2af9';
+    // 🌐 스마트폰(GitHub Pages 등 운영 환경)에서는 공식 API-Sports 서버로 직접 직통 연결!
+    this.footballBaseUrl = isLocalhost ? '/api/football' : (env.VITE_FOOTBALL_API_URL || 'https://v3.football.api-sports.io');
+    this.baseballBaseUrl = isLocalhost ? '/api/baseball' : (env.VITE_BASEBALL_API_URL || 'https://v1.baseball.api-sports.io');
+    this.apiKey = env.VITE_SPORTS_API_KEY || '96ae3619c2c6f8f76ec75d64bd95d000';
     this.useMockData = env.VITE_USE_MOCK_DATA === 'true';
   }
 
