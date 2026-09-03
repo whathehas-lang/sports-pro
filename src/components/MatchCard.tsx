@@ -10,12 +10,13 @@ interface MatchCardProps {
   markedPicks?: string[];
   allMatches?: Match[];
   onSelectMatch: (match: Match) => void;
+  onOpenLiveChat?: (match: Match) => void;
   onToggleFavorite?: (matchId: string) => void;
   onTogglePick?: (matchId: string, pick: string) => void;
   theme?: 'light' | 'dark';
 }
 
-export const MatchCard = ({ match, membershipTier = 'VVIP', cardDensity = 'DETAILED', markedPicks = [], allMatches = [], onSelectMatch, onToggleFavorite, onTogglePick, theme = 'light' }: MatchCardProps) => {
+export const MatchCard = ({ match, membershipTier = 'VVIP', cardDensity = 'DETAILED', markedPicks = [], allMatches = [], onSelectMatch, onOpenLiveChat, onToggleFavorite, onTogglePick, theme = 'light' }: MatchCardProps) => {
   const isLight = theme === 'light';
   
   const isFinished = isMatchCompleted(match);
@@ -704,6 +705,30 @@ export const MatchCard = ({ match, membershipTier = 'VVIP', cardDensity = 'DETAI
           <span>📊 {match.betmanMatchNo}번 {match.homeTeam.name} vs {match.awayTeam.name} 정밀분석 (불펜·선발·상대전적)</span>
           <ChevronRight className="w-4 h-4" />
         </button>
+
+        {/* 💬 🔥 [실시간 라이브 톡방 버튼 (웹소켓 0.01초 직통)] */}
+        {onOpenLiveChat && (
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              onOpenLiveChat(match);
+            }}
+            className={`w-full py-2 px-3 rounded-xl font-black text-xs flex items-center justify-between gap-1.5 shadow-sm active:scale-98 transition-all cursor-pointer border ${
+              isLight
+                ? 'bg-amber-50 hover:bg-amber-100 text-amber-950 border-amber-300'
+                : 'bg-gradient-to-r from-amber-950/80 via-slate-900 to-amber-950/80 hover:from-amber-900/90 hover:to-amber-900/90 text-amber-300 border-amber-500/50'
+            }`}
+          >
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping shrink-0" />
+              <span>💬 {match.betmanMatchNo}번 실시간 라이브 톡 (야구 주자점등 & 채팅)</span>
+            </span>
+            <span className="text-[10px] font-extrabold bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded-full border border-amber-500/40 shrink-0">
+              ⚡ 웹소켓 LIVE
+            </span>
+          </button>
+        )}
 
         {/* 📌 🎯 [프로토 기록식 전용 점수식 선택 그리드] */}
         {match.betmanFolder === 'GIROKSIK' ? (

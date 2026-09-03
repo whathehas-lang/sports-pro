@@ -4,6 +4,7 @@ import { Navbar } from './components/Navbar';
 import { MobileConnectModal } from './components/MobileConnectModal';
 import { MatchCard } from './components/MatchCard';
 import { MatchDetailModal } from './components/MatchDetailModal';
+import { MatchLiveChatModal } from './components/MatchLiveChatModal';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { PCWebCommunityHub } from './components/PCWebCommunityHub';
 import { UserProfileModal, type UserProfileData } from './components/UserProfileModal';
@@ -364,6 +365,8 @@ export default function App() {
 
   // Active Match Detail Modal
   const [selectedMatchForDetail, setSelectedMatchForDetail] = useState<Match | null>(null);
+  // Active Real-Time Match Chat & Baserunner Modal
+  const [selectedMatchForChat, setSelectedMatchForChat] = useState<Match | null>(null);
 
   // 🎨 THEME STATE (☀️ 'light' by default vs 🌙 'dark')
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
@@ -990,6 +993,7 @@ export default function App() {
                         markedPicks={markedPicks[match.id] || []}
                         allMatches={matches}
                         onSelectMatch={(m) => handleOpenDetailModal(m)}
+                        onOpenLiveChat={(m) => setSelectedMatchForChat(m)}
                         onToggleFavorite={handleToggleFavorite}
                         onTogglePick={handleTogglePick}
                         theme={theme}
@@ -1131,6 +1135,7 @@ export default function App() {
                     markedPicks={markedPicks[match.id] || []}
                     allMatches={matches}
                     onSelectMatch={(m) => handleOpenDetailModal(m)}
+                    onOpenLiveChat={(m) => setSelectedMatchForChat(m)}
                     onToggleFavorite={handleToggleFavorite}
                     onTogglePick={handleTogglePick}
                     theme={theme}
@@ -1273,6 +1278,20 @@ export default function App() {
             onClose={() => setSelectedMatchForDetail(null)}
             membershipTier={membershipTier}
             onOpenPaywall={() => setIsPaywallOpen(true)}
+            theme={theme}
+          />
+        </ErrorBoundary>
+      )}
+
+      {/* MODAL 1-B: REAL-TIME FASTAPI WEBSOCKET CHAT & BASERUNNER MODAL */}
+      {selectedMatchForChat && (
+        <ErrorBoundary
+          fallbackTitle="실시간 라이브 톡방 복구"
+          onClose={() => setSelectedMatchForChat(null)}
+        >
+          <MatchLiveChatModal
+            match={selectedMatchForChat}
+            onClose={() => setSelectedMatchForChat(null)}
             theme={theme}
           />
         </ErrorBoundary>
