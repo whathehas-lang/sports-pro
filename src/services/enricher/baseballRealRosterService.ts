@@ -94,6 +94,57 @@ export class BaseballRealRosterService {
       };
     }
 
+
+    // 🇺🇸 MLB 피츠버그 파이어리츠
+    if (clean.includes('피츠버그') || clean.includes('pirates')) {
+      return {
+        teamName: '피츠버그 파이어리츠',
+        teamLogo: 'https://media.api-sports.io/baseball/teams/34.png',
+        starterPitcher: { name: '폴 스킨스', number: 30, throwsHand: 'R', era: '1.96', whip: '0.95', wins: 11, losses: 3, inningsPitched: '133.0', strikeouts: 170, vsOpponentLogs: [] },
+        battingLineup: {
+          formation: '4-3-3',
+          starting11Value: 'MLB 1군 오피셜',
+          starting11ValueNum: 2.0,
+          players: [
+            { id: 'pit_1', name: '오닐 크루즈', number: 15, position: 'CF', marketValue: '.265', marketValueNum: 0.265, seasonAvgStat: '타율 .265 | 21홈런 24도루', recent3FormStat: '특급 피지컬 리드오프', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'pit_2', name: '브라이언 레이놀즈', number: 10, position: 'LF', marketValue: '.278', marketValueNum: 0.278, seasonAvgStat: '타율 .278 | 24홈런 88타점 (올스타)', recent3FormStat: '스위치히터 간판', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'pit_3', name: '앤드루 맥커친', number: 22, position: 'DH', marketValue: '.235', marketValueNum: 0.235, seasonAvgStat: '타율 .235 | 20홈런 50타점', recent3FormStat: 'MVP 출신 베테랑', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'pit_4', name: '조이 바트', number: 14, position: 'C', marketValue: '.265', marketValueNum: 0.265, seasonAvgStat: '타율 .265 | 13홈런 45타점', recent3FormStat: '주전 포수 거포', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'pit_5', name: '로우디 텔레즈', number: 44, position: '1B', marketValue: '.243', marketValueNum: 0.243, seasonAvgStat: '타율 .243 | 13홈런 56타점', recent3FormStat: '좌타 1루수', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'pit_6', name: '닉 곤잘레스', number: 39, position: '2B', marketValue: '.270', marketValueNum: 0.270, seasonAvgStat: '타율 .270 | 7홈런 49타점', recent3FormStat: '클러치 2루수', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'pit_7', name: '키브라이언 헤이스', number: 13, position: '3B', marketValue: '.233', marketValueNum: 0.233, seasonAvgStat: '골든글러브 3B', recent3FormStat: '메이저 최고 3루수비', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'pit_8', name: '코너 조', number: 2, position: 'RF', marketValue: '.245', marketValueNum: 0.245, seasonAvgStat: '타율 .245 | 9홈런 36타점', recent3FormStat: '외야 유틸', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'pit_9', name: '아이재아 카이너-팔레파', number: 23, position: 'SS', marketValue: '.270', marketValueNum: 0.270, seasonAvgStat: '타율 .270 | 골든글러브 내야', recent3FormStat: '안정적 수비', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 }
+          ]
+        }
+      };
+    }
+
+    // 🇺🇸 MLB 샌프란시스코 자이언츠
+    if (clean.includes('샌프란시스코') || clean.includes('giants')) {
+      return {
+        teamName: '샌프란시스코 자이언츠',
+        teamLogo: 'https://media.api-sports.io/baseball/teams/35.png',
+        starterPitcher: { name: '로건 웹', number: 62, throwsHand: 'R', era: '3.46', whip: '1.23', wins: 13, losses: 10, inningsPitched: '204.2', strikeouts: 172, vsOpponentLogs: [] },
+        battingLineup: {
+          formation: '4-3-3',
+          starting11Value: 'MLB 1군 오피셜',
+          starting11ValueNum: 2.5,
+          players: [
+            { id: 'sf_1', name: '타일러 피츠제럴드', number: 49, position: 'SS', marketValue: '.280', marketValueNum: 0.280, seasonAvgStat: '타율 .280 | 15홈런 17도루 (신인 돌풍)', recent3FormStat: '파워 리드오프', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'sf_2', name: '엘리엇 라모스', number: 12, position: 'LF', marketValue: '.269', marketValueNum: 0.269, seasonAvgStat: '타율 .269 | 22홈런 72타점 (올스타)', recent3FormStat: '외야 간판 거포', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'sf_3', name: '마이클 콘포토', number: 8, position: 'DH', marketValue: '.237', marketValueNum: 0.237, seasonAvgStat: '타율 .237 | 20홈런 66타점', recent3FormStat: '좌타 중심타자', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'sf_4', name: '맷 채프먼', number: 26, position: '3B', marketValue: '.247', marketValueNum: 0.247, seasonAvgStat: '타율 .247 | 24홈런 78타점 (골든글러브 4회)', recent3FormStat: '공수겸장 4번', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'sf_5', name: '라몬테 웨이드 Jr.', number: 31, position: '1B', marketValue: '.260', marketValueNum: 0.260, seasonAvgStat: '타율 .260 | 출루율 .380 (늦밤 라몬테)', recent3FormStat: '출루 머신', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'sf_6', name: '마이크 야스트렘스키', number: 5, position: 'RF', marketValue: '.231', marketValueNum: 0.231, seasonAvgStat: '타율 .231 | 18홈런 57타점', recent3FormStat: '클러치 장타', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'sf_7', name: '패트릭 베일리', number: 14, position: 'C', marketValue: '.235', marketValueNum: 0.235, seasonAvgStat: '골든글러브급 프레이밍/도루저지', recent3FormStat: '메이저 최고 수비포수', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'sf_8', name: '브렛 와이슬리', number: 39, position: '2B', marketValue: '.238', marketValueNum: 0.238, seasonAvgStat: '타율 .238 | 2루 주전', recent3FormStat: '작전 수행', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'sf_9', name: '그랜트 맥크레이', number: 51, position: 'CF', marketValue: '.225', marketValueNum: 0.225, seasonAvgStat: '특급 스피드 중견수', recent3FormStat: '호수비·주루', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 }
+          ]
+        }
+      };
+    }
+
     // 3. 한화 이글스
     if (clean.includes('한화') || clean.includes('이글스')) {
       return {

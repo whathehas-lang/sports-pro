@@ -1,3 +1,4 @@
+import { BaseballSeriesFatigueEngine } from '../services/enricher/baseballSeriesFatigueEngine';
 import React, { useState, useEffect } from 'react';
 import { X, Shield, Activity, Zap, BarChart2, Swords, Flame, Target, Scale, ChevronDown, ChevronUp, Sparkles, CloudSun, Plane } from 'lucide-react';
 import type { Match, FormColorStatus, RecentMatchLog, MembershipTier, HeadToHeadRecord } from '../types/sports';
@@ -194,7 +195,13 @@ export const MatchDetailModal = ({
   const renderSportSpecific5AgentsFact = () => {
     if (match.sport === 'baseball') {
       const park = match.baseballParkReport;
-      const pitchTracker = match.baseballSeriesPitchTracker;
+      const pitchTracker = match.baseballSeriesPitchTracker || (match.sport === 'baseball' ? BaseballSeriesFatigueEngine.buildSeriesTracker(
+      'GAME_1',
+      match.homeTeam,
+      match.awayTeam,
+      homeStarter || { name: '홈 선발', era: '3.50', number: 1, throwsHand: 'R', whip: '1.20', wins: 0, losses: 0, inningsPitched: '0.0', strikeouts: 0, vsOpponentLogs: [] },
+      awayStarter || { name: '원정 선발', era: '3.50', number: 1, throwsHand: 'R', whip: '1.20', wins: 0, losses: 0, inningsPitched: '0.0', strikeouts: 0, vsOpponentLogs: [] }
+    ) : null);
       const handoverVerdict = pitchTracker?.todayMatchupInfo?.bullpenHandoverVerdict || `홈팀 선발(평균 ${pitchTracker?.todayMatchupInfo?.homeStarterAvgIp || 5.2}이닝) 등판 후 잔여 ${pitchTracker?.todayMatchupInfo?.homeBullpenRemainingIp || 3.1}이닝은 1~2차전 ${pitchTracker?.homeSeriesBullpenPitchesTotal || 60}구 소모로 휴식이 충분한 필승조가 100% 정상 방어(🟢)하는 반면, 원정팀 선발(평균 ${pitchTracker?.todayMatchupInfo?.awayStarterAvgIp || 4.2}이닝) 강판 시 잔여 ${pitchTracker?.todayMatchupInfo?.awayBullpenRemainingIp || 4.1}이닝을 1~2차전 ${pitchTracker?.awaySeriesBullpenPitchesTotal || 96}구 극심한 과부하(🔴) 상태인 불펜이 막아야 하므로 7~9회 후반 역전패 위험이 매우 높습니다.`;
 
       return (
@@ -640,7 +647,7 @@ export const MatchDetailModal = ({
                         [홈 선발] {homeStarter.name}
                       </span>
                       <span className="text-[10px] text-slate-400 font-bold bg-slate-900 px-2 py-0.5 rounded">
-                        {homeStarter.winLoss || '9승 4패'}
+                        {homeStarter.wins !== undefined && homeStarter.losses !== undefined ? `${homeStarter.wins}승 ${homeStarter.losses}패` : (homeStarter.winLoss || '시즌 12등판')}
                       </span>
                     </div>
 
@@ -682,7 +689,7 @@ export const MatchDetailModal = ({
                       <div className="grid grid-cols-2 gap-2 text-[11px] text-center border-t border-slate-800 pt-2">
                         <div className="bg-slate-900 p-2 rounded-lg border border-slate-800">
                           <span className="text-slate-400 block text-[10px]">시즌 전체 수치</span>
-                          <span className="font-black text-slate-200 mt-0.5 block">{homeStarter.seasonInningsPitched || homeStarter.inningsPitched || '84.2이닝'} • ERA {homeStarter.seasonEra || homeStarter.era}</span>
+                          <span className="font-black text-slate-200 mt-0.5 block">{homeStarter.seasonInningsPitched || homeStarter.inningsPitched ? `${homeStarter.inningsPitched}이닝` : '시즌 정규등판'} • ERA {homeStarter.seasonEra || homeStarter.era}</span>
                         </div>
                         <div className="bg-slate-900 p-2 rounded-lg border border-emerald-500/40">
                           <span className="text-emerald-400 font-bold block text-[10px]">{match.awayTeam.name} 상대 수치</span>
@@ -691,7 +698,7 @@ export const MatchDetailModal = ({
                       </div>
 
                       <p className="text-[11px] text-emerald-200 font-medium leading-relaxed bg-slate-900/80 p-2 rounded border border-emerald-500/30">
-                        {homeStarter.comparisonAnalysisText || `💡 [첫 맞대결 팩트] 해당 상대팀과의 올 시즌 첫 등판으로, 시즌 평균 방어율(ERA ${homeStarter.era || '3.72'}) 및 최근 3경기 투구 폼을 기준으로 분석합니다.`}
+                        {homeStarter.comparisonAnalysisText || `💡 [첫 맞대결 팩트] 해당 상대팀과의 올 시즌 첫 등판으로, 시즌 평균 방어율(ERA ${homeStarter.era || '3.50'}) 및 최근 3경기 투구 폼을 기준으로 분석합니다.`}
                       </p>
                     </div>
                   </div>
@@ -705,7 +712,7 @@ export const MatchDetailModal = ({
                         [원정 선발] {awayStarter.name}
                       </span>
                       <span className="text-[10px] text-slate-400 font-bold bg-slate-900 px-2 py-0.5 rounded">
-                        {awayStarter.winLoss || '13승 15패'}
+                        {awayStarter.wins !== undefined && awayStarter.losses !== undefined ? `${awayStarter.wins}승 ${awayStarter.losses}패` : (awayStarter.winLoss || '시즌 12등판')}
                       </span>
                     </div>
 
@@ -747,7 +754,7 @@ export const MatchDetailModal = ({
                       <div className="grid grid-cols-2 gap-2 text-[11px] text-center border-t border-slate-800 pt-2">
                         <div className="bg-slate-900 p-2 rounded-lg border border-slate-800">
                           <span className="text-slate-400 block text-[10px]">시즌 전체 수치</span>
-                          <span className="font-black text-slate-200 mt-0.5 block">{awayStarter.seasonInningsPitched || awayStarter.inningsPitched || '160.0이닝'} • ERA {awayStarter.seasonEra || awayStarter.era}</span>
+                          <span className="font-black text-slate-200 mt-0.5 block">{awayStarter.seasonInningsPitched || awayStarter.inningsPitched ? `${awayStarter.inningsPitched}이닝` : '시즌 정규등판'} • ERA {awayStarter.seasonEra || awayStarter.era}</span>
                         </div>
                         <div className="bg-slate-900 p-2 rounded-lg border border-cyan-500/40">
                           <span className="text-cyan-400 font-bold block text-[10px]">{match.homeTeam.name} 상대 수치</span>
@@ -756,7 +763,7 @@ export const MatchDetailModal = ({
                       </div>
 
                       <p className="text-[11px] text-cyan-200 font-medium leading-relaxed bg-slate-900/80 p-2 rounded border border-cyan-500/30">
-                        {awayStarter.comparisonAnalysisText || `💡 [첫 맞대결 팩트] 해당 상대팀과의 올 시즌 첫 등판으로, 시즌 평균 방어율(ERA ${awayStarter.era || '4.67'}) 및 최근 3경기 투구 폼을 기준으로 분석합니다.`}
+                        {awayStarter.comparisonAnalysisText || `💡 [첫 맞대결 팩트] 해당 상대팀과의 올 시즌 첫 등판으로, 시즌 평균 방어율(ERA ${awayStarter.era || '3.50'}) 및 최근 3경기 투구 폼을 기준으로 분석합니다.`}
                       </p>
                     </div>
                   </div>
