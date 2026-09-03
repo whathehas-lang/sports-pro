@@ -446,14 +446,14 @@ export const LineupTacticsView = ({ match, theme = 'light' }: LineupTacticsViewP
                     </div>
                   </div>
 
-                  <span className={`text-[10px] sm:text-[11px] font-black px-2 py-0.5 rounded-lg border shadow-md whitespace-nowrap ${
+                  <span className={`text-[9.5px] sm:text-[11px] font-black px-1.5 py-0.5 rounded-lg border shadow-md truncate max-w-[76px] sm:max-w-[95px] block text-center ${
                     isPitcher && !f.isConfirmed
                       ? 'bg-amber-950/90 text-amber-300 border-amber-500/50'
                       : 'text-slate-900 bg-white/95 border-slate-300'
                   }`}>
                     {isPitcher && !f.isConfirmed ? '선발 미정 ⏳' : `${f.pos} • ${f.name}`}
                   </span>
-                  <span className="text-[9px] font-extrabold text-amber-300 bg-slate-950/85 px-1.5 py-0.2 rounded border border-amber-500/40 shadow-sm">{f.val}</span>
+                  <span className="text-[9px] font-extrabold text-amber-300 bg-slate-950/85 px-1.5 py-0.2 rounded border border-amber-500/40 shadow-sm truncate max-w-[76px] sm:max-w-[95px] block text-center">{f.val}</span>
                 </div>
               );
             })}
@@ -997,8 +997,18 @@ export const LineupTacticsView = ({ match, theme = 'light' }: LineupTacticsViewP
                     </span>
                   </div>
 
-                  {/* 선수 동그라미 노드 수평 정렬 */}
-                  <div className="flex justify-around items-center px-1">
+                  {/* 선수 동그라미 노드 수평 정렬 (포메이션별 완벽 대칭 그리드) */}
+                  <div className={`w-full justify-items-center items-start ${
+                    row.players.length === 4 
+                      ? 'grid grid-cols-4 gap-1 px-1' 
+                      : row.players.length === 3 
+                        ? 'grid grid-cols-3 gap-2 px-2' 
+                        : row.players.length === 5 
+                          ? 'grid grid-cols-5 gap-0.5 px-0.5' 
+                          : row.players.length === 2 
+                            ? 'grid grid-cols-2 gap-4 px-6 max-w-xs mx-auto' 
+                            : 'flex justify-center items-center'
+                  }`}>
                     {row.players.map((player: OfficialPlayerInfo) => {
                       const stPercent = getStaminaPercent(player);
                       const stBarBg = getStaminaBarColor(player);
@@ -1010,17 +1020,17 @@ export const LineupTacticsView = ({ match, theme = 'light' }: LineupTacticsViewP
                       const hasAssist = !!player.recentMatchAssists;
 
                       return (
-                        <div key={player.id} className="flex flex-col items-center group cursor-pointer shrink-0 z-20 space-y-1">
+                        <div key={player.id} className="w-full max-w-[82px] sm:max-w-[100px] flex flex-col items-center group cursor-pointer shrink-0 z-20 space-y-1">
                           {/* ⚽ 🅰️ 직전 경기 득점/어시스트 최상단 플로팅 뱃지 */}
                           {(hasGoal || hasAssist) && (
                             <div className="flex items-center gap-1 z-30 mb-0.5">
                               {hasGoal && (
-                                <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 text-slate-950 px-2 py-0.5 rounded-full border border-yellow-100 font-black text-[9px] sm:text-[10px] shadow-[0_0_16px_#f59e0b] animate-bounce flex items-center gap-0.5">
+                                <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 text-slate-950 px-1.5 py-0.2 rounded-full border border-yellow-100 font-black text-[8px] sm:text-[9px] shadow-[0_0_16px_#f59e0b] animate-bounce flex items-center gap-0.5">
                                   ⚽ {player.recentMatchGoals}골
                                 </span>
                               )}
                               {hasAssist && (
-                                <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 text-slate-950 px-2 py-0.5 rounded-full border border-cyan-100 font-black text-[9px] sm:text-[10px] shadow-[0_0_16px_#06b6d4] flex items-center gap-0.5">
+                                <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 text-slate-950 px-1.5 py-0.2 rounded-full border border-cyan-100 font-black text-[8px] sm:text-[9px] shadow-[0_0_16px_#06b6d4] flex items-center gap-0.5">
                                   🅰️ {player.recentMatchAssists}도움
                                 </span>
                               )}
@@ -1050,7 +1060,7 @@ export const LineupTacticsView = ({ match, theme = 'light' }: LineupTacticsViewP
                           </div>
 
                           {/* 1군 주전 중 👑🔥 핫폼 활약자만 3D 퓨어 풀 황금색 적용 (대형 노드 - 선수 이름 표출) */}
-                          <div className={`relative w-11 h-11 sm:w-14 sm:h-14 rounded-full ${
+                          <div className={`relative w-10 h-10 sm:w-13 sm:h-13 rounded-full ${
                             isSub
                               ? 'bg-gradient-to-br from-slate-800 to-black text-white ring-2 ring-slate-400 shadow-[0_0_14px_#334155] animate-bounce'
                               : isCardRisk
@@ -1065,7 +1075,7 @@ export const LineupTacticsView = ({ match, theme = 'light' }: LineupTacticsViewP
                                       ? 'bg-gradient-to-br from-emerald-700/80 to-teal-900/80 text-emerald-100 border-2 border-dashed border-amber-300 ring-2 ring-amber-400/40'
                                       : 'bg-gradient-to-br from-cyan-700/80 to-blue-900/80 text-cyan-100 border-2 border-dashed border-amber-300 ring-2 ring-amber-400/40'
                           } flex items-center justify-center font-black shadow-2xl group-hover:scale-115 transition-transform p-1`}>
-                            <span className="font-black text-[10px] sm:text-xs text-center truncate leading-tight tracking-tighter max-w-[42px] sm:max-w-[50px]">
+                            <span className="font-black text-[9.5px] sm:text-xs text-center truncate leading-tight tracking-tighter max-w-[38px] sm:max-w-[48px]">
                               {player.name}
                             </span>
                             <span className="absolute -top-1 -right-1 text-xs">
@@ -1076,9 +1086,9 @@ export const LineupTacticsView = ({ match, theme = 'light' }: LineupTacticsViewP
                             </span>
                           </div>
 
-                          {/* 🔋 실시간 체력 프로그레스 바 (확대) */}
-                          <div className="w-16 sm:w-20 bg-slate-950/90 rounded-full p-0.5 border border-slate-700 shadow-md">
-                            <div className="h-2 w-full bg-slate-800 rounded-full overflow-hidden">
+                          {/* 🔋 실시간 체력 프로그레스 바 */}
+                          <div className="w-12 sm:w-16 bg-slate-950/90 rounded-full p-0.5 border border-slate-700 shadow-md">
+                            <div className="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
                               <div 
                                 className={`h-full ${stBarBg} transition-all duration-700 rounded-full`}
                                 style={{ width: `${stPercent}%` }}
@@ -1086,19 +1096,21 @@ export const LineupTacticsView = ({ match, theme = 'light' }: LineupTacticsViewP
                             </div>
                           </div>
 
-                          {/* 선수 이름 + 출전시간 수치 + 몸값 뱃지 (대형 가독성) */}
-                          <div className={`flex flex-col items-center bg-slate-950/95 px-2.5 py-1 rounded-xl border ${
+                          {/* 선수 이름 + 출전시간 수치 + 몸값 뱃지 (스마트폰 완벽 대칭 박스) */}
+                          <div className={`w-full max-w-[76px] sm:max-w-[94px] flex flex-col items-center bg-slate-950/95 px-1 py-1 rounded-xl border ${
                             isSub ? 'border-slate-500 shadow-[0_0_10px_rgba(255,255,255,0.2)]' : isCardRisk ? 'border-red-500 shadow-[0_0_12px_rgba(239,68,68,0.6)] animate-pulse' : isHot ? 'border-amber-400 shadow-[0_0_14px_rgba(245,158,11,0.8)]' : 'border-slate-700'
-                          } shadow-lg whitespace-nowrap`}>
-                            <span className="text-[10px] sm:text-xs font-black text-white flex items-center gap-1">
-                              <span>{player.name}</span>
-                              <span className="text-[10px] sm:text-[11px] font-extrabold text-amber-300">{player.marketValue}</span>
+                          } shadow-lg text-center`}>
+                            <span className="text-[9.5px] sm:text-[11px] font-black text-white truncate w-full block">
+                              {player.name}
                             </span>
-                            <span className={`text-[9px] sm:text-[10px] font-extrabold flex items-center gap-1 ${
+                            <span className="text-[8.5px] sm:text-[10px] font-extrabold text-amber-300 block">
+                              {player.marketValue}
+                            </span>
+                            <span className={`text-[7.5px] sm:text-[9px] font-bold flex items-center justify-center gap-0.5 ${
                               player.stamina === 'RED' ? 'text-red-400 animate-pulse' : player.stamina === 'YELLOW' ? 'text-amber-300' : 'text-emerald-400'
                             }`}>
-                              <Battery className="w-3 h-3" />
-                              14일 {mins}분 {getStaminaLight(player.stamina)}
+                              <Battery className="w-2.5 h-2.5 shrink-0" />
+                              <span>{mins}분 {getStaminaLight(player.stamina)}</span>
                             </span>
                           </div>
                         </div>
