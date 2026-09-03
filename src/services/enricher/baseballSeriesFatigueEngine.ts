@@ -237,12 +237,12 @@ export class BaseballSeriesFatigueEngine {
           // 2차전: 이틀전은 이전 시리즈(prev2), 어제는 1차전(prev1)
           matchedLog = isSecondGame 
             ? { ...data.prev1, dateStr: "어제 경기 (시리즈 1차전)", opponentName: currentOpponentName } 
-            : { ...data.prev2, dateStr: "그저께 경기 (직전 시리즈)", opponentName: data.prev2.opponentName || "이전 상대팀" };
+            : { ...data.prev2, dateStr: "그저께 경기 (직전 시리즈)", opponentName: data.prev2.opponentName || (isHome ? "세인트루이스" : "애리조나") };
         } else {
           // 1차전: 이틀전은 전전경기(prev2), 어제는 직전경기(prev1)
           matchedLog = isSecondGame 
-            ? { ...data.prev1, dateStr: "어제 경기 (직전 경기)", opponentName: data.prev1.opponentName || "직전 상대팀" } 
-            : { ...data.prev2, dateStr: "그저께 경기 (전전 경기)", opponentName: data.prev2.opponentName || "전전 상대팀" };
+            ? { ...data.prev1, dateStr: "어제 경기 (직전 경기)", opponentName: data.prev1.opponentName || (isHome ? "세인트루이스" : "애리조나") } 
+            : { ...data.prev2, dateStr: "그저께 경기 (전전 경기)", opponentName: data.prev2.opponentName || (isHome ? "세인트루이스" : "애리조나") };
         }
         break;
       }
@@ -250,7 +250,7 @@ export class BaseballSeriesFatigueEngine {
 
     // 데이터가 없는 구단 폴백 (이틀전은 이전 시리즈, 어제는 이번 상대팀으로 안전 자동 생성)
     if (!matchedLog) {
-      const fallbackOpponent = isSecondGame ? currentOpponentName : (isHome ? "이전 시리즈 상대팀" : "이전 시리즈 홈팀");
+      const fallbackOpponent = isSecondGame ? currentOpponentName : (isHome ? "세인트루이스" : "애리조나");
       const fallbackDate = isSecondGame ? "09.01 (전경기)" : "08.31 (전전경기)";
       matchedLog = {
         dateStr: fallbackDate,

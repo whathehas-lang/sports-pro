@@ -163,37 +163,35 @@ export const MatchDetailModal = ({
     : (match.awayTeam.recentGamesLog || []);
 
   const homeRecentLogs = (
-    dynamicHomeLogs !== null && dynamicHomeLogs.length > 0
-      ? dynamicHomeLogs
-      : (match.homeRecentLogs && match.homeRecentLogs.length > 0)
-        ? match.homeRecentLogs
-        : fallbackHomeLogs
+    match.sport === 'baseball'
+      ? fallbackHomeLogs
+      : (dynamicHomeLogs !== null && dynamicHomeLogs.length > 0)
+        ? dynamicHomeLogs
+        : (match.homeRecentLogs && match.homeRecentLogs.length > 0)
+          ? match.homeRecentLogs
+          : fallbackHomeLogs
   ).slice(0, recentGamesRange);
 
   const awayRecentLogs = (
-    dynamicAwayLogs !== null && dynamicAwayLogs.length > 0
-      ? dynamicAwayLogs
-      : (match.awayRecentLogs && match.awayRecentLogs.length > 0)
-        ? match.awayRecentLogs
-        : fallbackAwayLogs
+    match.sport === 'baseball'
+      ? fallbackAwayLogs
+      : (dynamicAwayLogs !== null && dynamicAwayLogs.length > 0)
+        ? dynamicAwayLogs
+        : (match.awayRecentLogs && match.awayRecentLogs.length > 0)
+          ? match.awayRecentLogs
+          : fallbackAwayLogs
   ).slice(0, recentGamesRange);
 
   const h2hMatches = (
-    (dynamicH2H !== null && dynamicH2H.last5Matches && dynamicH2H.last5Matches.length > 0)
-      ? dynamicH2H.last5Matches
-      : (match.h2hRecentMatches && match.h2hRecentMatches.length > 0)
-        ? match.h2hRecentMatches
-        : (match.headToHeadRecord?.last5Matches && match.headToHeadRecord.last5Matches.length > 0)
-          ? match.headToHeadRecord.last5Matches
-          : (match.sport === 'baseball'
-    ? [
-        { dateStr: '08.28', homeTeam: match.homeTeam.name, awayTeam: match.awayTeam.name, matchHomeTeam: match.homeTeam.name, matchAwayTeam: match.awayTeam.name, homeScore: 5, awayScore: 3, result: '승' },
-        { dateStr: '08.27', homeTeam: match.homeTeam.name, awayTeam: match.awayTeam.name, matchHomeTeam: match.homeTeam.name, matchAwayTeam: match.awayTeam.name, homeScore: 2, awayScore: 4, result: '패' },
-        { dateStr: '07.15', homeTeam: match.awayTeam.name, awayTeam: match.homeTeam.name, matchHomeTeam: match.awayTeam.name, matchAwayTeam: match.homeTeam.name, homeScore: 6, awayScore: 7, result: '승' },
-        { dateStr: '07.14', homeTeam: match.awayTeam.name, awayTeam: match.homeTeam.name, matchHomeTeam: match.awayTeam.name, matchAwayTeam: match.homeTeam.name, homeScore: 3, awayScore: 1, result: '패' },
-        { dateStr: '05.20', homeTeam: match.homeTeam.name, awayTeam: match.awayTeam.name, matchHomeTeam: match.homeTeam.name, matchAwayTeam: match.awayTeam.name, homeScore: 4, awayScore: 2, result: '승' }
-      ]
-    : FootballH2HRecentFormEngine.generateH2HMatches(match.homeTeam.name, match.awayTeam.name, match.betmanMatchNo || 100, match.sport))
+    match.sport === 'baseball'
+      ? BaseballMasterDataService.getAuthenticH2HMatches(match.homeTeam.name, match.awayTeam.name)
+      : ((dynamicH2H !== null && dynamicH2H.last5Matches && dynamicH2H.last5Matches.length > 0)
+          ? dynamicH2H.last5Matches
+          : (match.h2hRecentMatches && match.h2hRecentMatches.length > 0)
+            ? match.h2hRecentMatches
+            : (match.headToHeadRecord?.last5Matches && match.headToHeadRecord.last5Matches.length > 0)
+              ? match.headToHeadRecord.last5Matches
+              : FootballH2HRecentFormEngine.generateH2HMatches(match.homeTeam.name, match.awayTeam.name, match.betmanMatchNo || 100, match.sport))
   ).slice(0, h2hRange);
 
   const unitStr = match.sport === 'football' ? '골' : match.sport === 'basketball' ? '점' : '점';

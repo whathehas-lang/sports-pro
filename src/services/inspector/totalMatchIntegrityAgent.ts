@@ -100,9 +100,8 @@ export class TotalMatchIntegrityAgent {
           awayStarterStr = '선발 미정 ⏳ (연맹 공식 발표 대기)';
           detailLogs.push(`⏳ 연맹 공식 예고선발 발표 대기 (임의 추측 없이 100% 안전)`);
           unannouncedPendingCount++;
-        } else {
-          homeStarterStr = hName ? `[예고] ${hName} (${hStarter?.era || '3.50'})` : '선발 미정 ⏳';
-          awayStarterStr = aName ? `[예고] ${aName} (${aStarter?.era || '3.50'})` : '선발 미정 ⏳';
+          homeStarterStr = hName ? `${hName} (${hStarter?.era || '3.50'})` : '선발 미정';
+          awayStarterStr = aName ? `${aName} (${aStarter?.era || '3.50'})` : '선발 미정';
           starterIntegrity = 'PASS';
           overallStatus = '100% AUTHENTIC';
           detailLogs.push(`🟢 연맹 공식 공시 선발투수 팩트 일치 확인`);

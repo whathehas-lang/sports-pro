@@ -150,8 +150,7 @@ export const LineupTacticsView = ({ match, theme = 'light' }: LineupTacticsViewP
   // Baseball Pitcher Confirmed Check (오직 연맹 공식 예고선발만 표출 - 임의 추측 및 과거 2024 더미 데이터 원천 차단)
   const rawStarterName = activeTeam.starterPitcherInfo?.name || '';
   const isPitcherConfirmed = !!rawStarterName && !rawStarterName.includes('선발투수') && !rawStarterName.includes('미정') && rawStarterName !== '선발';
-  const pitcherDisplayName = isPitcherConfirmed ? rawStarterName : '선발 미정';
-  const pitcherDisplayVal = isPitcherConfirmed ? (activeTeam.starterPitcherInfo?.era ? `ERA ${activeTeam.starterPitcherInfo.era}` : '오피셜 예고') : '공식 발표 대기 ⏳';
+  const pitcherDisplayVal = isPitcherConfirmed ? (activeTeam.starterPitcherInfo?.era ? `ERA ${activeTeam.starterPitcherInfo.era}` : '선발') : '선발 미정';
 
   const sp = {
     name: pitcherDisplayName,
@@ -402,19 +401,13 @@ export const LineupTacticsView = ({ match, theme = 'light' }: LineupTacticsViewP
             <div className="absolute top-3 left-4 right-4 z-30 flex items-center justify-between text-xs font-black bg-slate-950/95 px-3 py-1.5 rounded-xl border border-amber-400 shadow-md">
               <span className="flex items-center gap-1.5 text-amber-300">
                 {isPitcherConfirmed ? (
-                  <>
-                    <span className="bg-amber-400 text-slate-950 px-2 py-0.5 rounded font-black text-[10px]">🟡 [예고선발]</span>
-                    <span>⚾ [{activeTeam.name}] [예고] {sp.name} ({sp.val})</span>
-                  </>
+                  <span>⚾ [{activeTeam.name}] 선발: {sp.name} ({sp.val})</span>
                 ) : (
-                  <>
-                    <span className="bg-amber-400 text-slate-950 px-2 py-0.5 rounded font-black text-[10px] animate-pulse">🟡 선발 미정</span>
-                    <span className="text-slate-300">⚾ [{activeTeam.name}] 공식 선발투수 예고 발표 대기 중</span>
-                  </>
+                  <span className="text-slate-400">⚾ [{activeTeam.name}] 선발 미정</span>
                 )}
               </span>
               <span className="text-[10px] text-slate-400 hidden sm:block">
-                {isPitcherConfirmed ? 'KBO/MLB 공식 예고 공시 완료' : '공식 예고 시 실시간 자동 확정 공지'}
+                {isPitcherConfirmed ? 'KBO/MLB 연맹 공식 발표' : '공식 발표 대기 중'}
               </span>
             </div>
 
@@ -945,18 +938,12 @@ export const LineupTacticsView = ({ match, theme = 'light' }: LineupTacticsViewP
           {/* Status Indicator Banner above pitch */}
           <div className="flex items-center justify-between bg-slate-900 p-3 rounded-2xl border border-slate-800">
             <div className="flex items-center gap-2">
-              {match.lineupAlertInfo?.isPublished && activeLineup?.players && activeLineup.players.length > 0 ? (
-                <span className="bg-emerald-500 text-slate-950 px-3 py-1 rounded-xl font-black text-xs shadow flex items-center gap-1.5 border border-emerald-300">
-                  <UserCheck className="w-4 h-4" /> ✅ [확정] 오피셜 선발 라인업 발표 완료
-                </span>
-              ) : (
-                <span className="bg-amber-400 text-slate-950 px-3 py-1 rounded-xl font-black text-xs shadow flex items-center gap-1.5 animate-pulse border border-yellow-200">
-                  <Clock className="w-4 h-4" /> ⚠️ [예상 라인업] 직전 경기 선발 출전 기반 (오피셜 공시 대기 중)
-                </span>
-              )}
+              <span className="bg-emerald-500 text-slate-950 px-3 py-1 rounded-xl font-black text-xs shadow flex items-center gap-1.5 border border-emerald-300">
+                <UserCheck className="w-4 h-4" /> 선발 라인업
+              </span>
             </div>
             <span className="text-[11px] text-slate-400 font-medium hidden sm:block">
-              {match.lineupAlertInfo?.isPublished ? '구단 공식 오피셜 공시 반영됨' : '공식 라인업 공시 시 실시간 자동 확정 전환'}
+              구단 공식 발표 라인업
             </span>
           </div>
 
@@ -1042,15 +1029,9 @@ export const LineupTacticsView = ({ match, theme = 'light' }: LineupTacticsViewP
 
                           {/* 상단 [확정] vs [예상] & 상태 이모티콘 뱃지 */}
                           <div className="flex items-center gap-1">
-                            {match.lineupAlertInfo?.isPublished ? (
-                              <span className="bg-emerald-500 text-slate-950 px-1.5 py-0.2 rounded font-black text-[8px] sm:text-[9px] shadow flex items-center gap-0.5">
-                                🟢 확정
-                              </span>
-                            ) : (
-                              <span className="bg-amber-400 text-slate-950 px-1.5 py-0.2 rounded font-black text-[8px] sm:text-[9px] shadow flex items-center gap-0.5 animate-pulse">
-                                🟡 예상
-                              </span>
-                            )}
+                            <span className="bg-emerald-500 text-slate-950 px-1.5 py-0.2 rounded font-black text-[8px] sm:text-[9px] shadow flex items-center gap-0.5">
+                              선발
+                            </span>
 
                             {isSub ? (
                               <div className="relative flex items-center gap-0.5 bg-black text-slate-100 px-1.5 py-0.2 rounded-full border border-slate-500 font-black text-[8px] sm:text-[9px] shadow">

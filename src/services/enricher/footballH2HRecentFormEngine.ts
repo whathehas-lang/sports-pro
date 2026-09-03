@@ -155,14 +155,17 @@ export class FootballH2HRecentFormEngine {
   private static findRivalPool(teamName: string, sport: string, leagueName: string = ''): string[] {
     const clean = teamName.replace(/\s+/g, '').toLowerCase();
 
-    if (sport === 'baseball' || leagueName.includes('KBO') || ['두산', 'LG', '삼성', '롯데', '한화', 'KIA', 'KT', 'SSG', 'NC', '키움'].some(t => clean.includes(t.toLowerCase()))) {
-      return this.LEAGUE_ROSTERS.KBO;
+    // 1. MLB 메이저리그 우선 매칭
+    if (leagueName.includes('MLB') || ['미네소타', '디트로이트', '다저스', '양키스', '보스턴', '필라델피아', '샌디에이고', '애틀랜타', '시애틀', '메츠', '카디널스', '볼티모어', '피츠버그', '샌프란시스코', '탬파베이', '토론토', '클리블랜드', '텍사스', '에인절스', '화이트삭스', '캔자스시티', '밀워키', '컵스', '신시내티', '애리조나', '콜로라도', '마이애미', '워싱턴', '애슬레틱스', '오클랜드'].some(t => clean.includes(t.toLowerCase()))) {
+      return this.LEAGUE_ROSTERS.MLB;
     }
-    if (leagueName.includes('NPB') || ['요미우리', '한신', '닛폰햄', '소프트뱅크', '오릭스', '요코하마', '야쿠르트', '주니치', '히로시마', '라쿠텐'].some(t => clean.includes(t.toLowerCase()))) {
+    // 2. NPB 일본야구 매칭
+    if (leagueName.includes('NPB') || ['요미우리', '한신', '닛폰햄', '소프트뱅크', '오릭스', '요코하마', '야쿠르트', '주니치', '히로시마', '라쿠텐', '지바롯데', '세이부'].some(t => clean.includes(t.toLowerCase()))) {
       return this.LEAGUE_ROSTERS.NPB;
     }
-    if (leagueName.includes('MLB') || ['미네소타', '디트로이트', '다저스', '양키스', '보스턴', '필라델피아', '샌디에이고', '애틀랜타', '시애틀', '메츠', '카디널스', '볼티모어'].some(t => clean.includes(t.toLowerCase()))) {
-      return this.LEAGUE_ROSTERS.MLB;
+    // 3. KBO 한국야구 매칭
+    if (leagueName.includes('KBO') || ['두산', 'LG', '삼성', '롯데', '한화', 'KIA', 'KT', 'SSG', 'NC', '키움'].some(t => clean.includes(t.toLowerCase()))) {
+      return this.LEAGUE_ROSTERS.KBO;
     }
 
     // 축구
