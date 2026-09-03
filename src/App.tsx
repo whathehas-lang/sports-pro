@@ -37,7 +37,7 @@ export default function App() {
   const [isReverifying, setIsReverifying] = useState<boolean>(false);
   const [membershipTier, setMembershipTier] = useState<MembershipTier>(() => {
     const saved = localStorage.getItem('tokeon_membership_tier');
-    return (saved as MembershipTier) || 'FREE';
+    return (saved as MembershipTier) || 'VVIP';
   });
   const [refreshToast, setRefreshToast] = useState<string | null>(null);
   const [isMobileConnectModalOpen, setIsMobileConnectModalOpen] = useState<boolean>(false);

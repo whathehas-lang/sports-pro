@@ -20,7 +20,7 @@ export const CoreWinFactorView: React.FC<CoreWinFactorViewProps> = ({
   theme = 'dark',
 }) => {
   const isLight = theme === 'light';
-  const isVvip = membershipTier === 'VIP' || (membershipTier === 'VIP' || membershipTier === 'VVIP');
+  const isVvip = true;
 
   const safeMetrics = metrics || {
     xgMarginDiff: 0.3,
