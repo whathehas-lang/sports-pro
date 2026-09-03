@@ -102,3 +102,35 @@ export function calculateWinningPicks(
 
   return winningPicks;
 }
+
+/**
+ * ⏰ 경기 시작 시간 파싱 헬퍼 (예: '09.03(목) 18:30' -> 타임스탬프)
+ */
+export function parseMatchTimestamp(matchTimeStr?: string, refYear: number = 2026): number {
+  if (!matchTimeStr) return 0;
+  const clean = matchTimeStr.replace(/\([^\)]*\)/g, '').trim();
+  const parts = clean.split(' ');
+  if (parts.length < 2) return 0;
+  const dateParts = parts[0].split('.');
+  const timeParts = parts[1].split(':');
+  if (dateParts.length < 2 || timeParts.length < 2) return 0;
+
+  const month = parseInt(dateParts[0], 10) - 1;
+  const day = parseInt(dateParts[1], 10);
+  const hours = parseInt(timeParts[0], 10);
+  const minutes = parseInt(timeParts[1], 10);
+
+  const matchDate = new Date(refYear, month, day, hours, minutes, 0, 0);
+  return matchDate.getTime();
+}
+
+/**
+ * ⏰ 경기 시작 시간이 이미 지났는지 실시간 확인 (LIVE 경기는 제외하고 소멸 대상 감지)
+ */
+export function isMatchTimePassed(match: Match, nowTs: number = Date.now()): boolean {
+  if (match.status === 'FINISHED') return true;
+  if (match.status === 'LIVE') return false; // 실시간 라이브 진행 중인 경기는 유지!
+  const matchTs = parseMatchTimestamp(match.matchTime);
+  if (!matchTs) return false;
+  return nowTs >= matchTs;
+}

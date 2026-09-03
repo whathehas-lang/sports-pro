@@ -14,7 +14,7 @@ import { sportsApiService } from './services/api/sportsApiService';
 import { BetmanLiveSyncService } from './services/betman/betmanLiveSyncService';
 import { getDynamicBetmanGamesMetadata } from './services/betman/betmanRoundRegistry';
 import type { Match, BetmanFolderCategory, MembershipTier, ViewMode } from './types/sports';
-import { isMatchCompleted } from './utils/matchResultHelper';
+import { isMatchCompleted, isMatchTimePassed } from './utils/matchResultHelper';
 import { firebaseService, isFirebaseConfigured } from './services/firebase/firebaseService';
 import { verifiedMatchDatabase } from './services/db/verifiedMatchDatabase';
 import type { VerificationAuditReport } from './services/verification/types';
@@ -584,9 +584,9 @@ export default function App() {
     return () => clearInterval(ticker);
   }, []);
 
-  // 📌 ⏰ 한국시간(KST) 기준 경기 시작 시간이 이미 지난 지난경기 자동 숨김 헬퍼
+  // 📌 ⏰ 한국시간(KST) 기준 경기 시작 시간이 이미 지난 경기 실시간 자동 숨김 헬퍼
   const isMatchPassed = (match: Match): boolean => {
-    return isMatchCompleted(match, nowTicker);
+    return isMatchTimePassed(match, nowTicker);
   };
 
   const [hidePassedMatches, setHidePassedMatches] = useState<boolean>(false);
@@ -643,14 +643,24 @@ export default function App() {
 
     if (hidePassedMatches && isMatchPassed(m)) return false;
 
-    // ⚡ 스마트 날짜 필터링 (기본: 오늘 경기 우선 자동 노출)
+    // ⚡ 100% 무인 자동 소멸: 시간이 지난 경기는 메인 목록에서 실시간 자동 제거!
+    const passed = isMatchTimePassed(m, nowTicker);
+
+    if (selectedDateFilter === 'PAST') {
+      // 지난 경기 탭에서만 시간 지난 경기 또는 종료된 경기 노출
+      return passed || m.status === 'FINISHED';
+    }
+
+    // 메인(오늘/내일/전체) 화면에서는 시간이 지난 경기를 100% 완전 자동 숨김(사라지게) 처리!
+    if (passed && m.status !== 'LIVE') {
+      return false;
+    }
+
     if (selectedDateFilter === 'TODAY') {
       const cat = getMatchDateCategory(m);
       if (cat !== 'TODAY' && m.status !== 'LIVE') return false;
     } else if (selectedDateFilter === 'TOMORROW') {
       if (getMatchDateCategory(m) !== 'TOMORROW') return false;
-    } else if (selectedDateFilter === 'PAST') {
-      if (getMatchDateCategory(m) !== 'PAST' && m.status !== 'FINISHED') return false;
     }
 
     return true;
@@ -845,7 +855,7 @@ export default function App() {
                   <span className={`text-[10px] px-1.5 py-0.2 rounded font-mono font-bold ${
                     selectedDateFilter === 'TODAY' ? 'bg-slate-950/20 text-slate-950' : 'bg-emerald-500/20 text-emerald-400'
                   }`}>
-                    {matches.filter(m => getMatchDateCategory(m) === 'TODAY' || m.status === 'LIVE').length}
+                    {matches.filter(m => (!isMatchTimePassed(m, nowTicker) || m.status === 'LIVE') && getMatchDateCategory(m) === 'TODAY').length}
                   </span>
                 </button>
 
@@ -877,7 +887,7 @@ export default function App() {
                   <span className={`text-[10px] px-1.5 py-0.2 rounded font-mono font-bold ${
                     selectedDateFilter === 'ALL' ? 'bg-white/20 text-white' : 'bg-slate-800 text-slate-400'
                   }`}>
-                    {matches.length}
+                    {matches.filter(m => !isMatchTimePassed(m, nowTicker) || m.status === 'LIVE').length}
                   </span>
                 </button>
 
@@ -891,7 +901,7 @@ export default function App() {
                 >
                   <span>⏪ 지난 경기</span>
                   <span className="text-[10px] opacity-70 font-mono">
-                    {matches.filter(m => getMatchDateCategory(m) === 'PAST').length}
+                    {matches.filter(m => isMatchTimePassed(m, nowTicker) && m.status !== 'LIVE').length}
                   </span>
                 </button>
               </div>
