@@ -84,9 +84,16 @@ export const MatchCard = ({ match, membershipTier = 'VVIP', cardDensity = 'DETAI
               {match.isFavorite ? '알림ON' : '관심'}
             </button>
 
-            <span className="px-2 py-0.5 rounded-lg bg-emerald-500/20 text-emerald-600 border border-emerald-500/40 font-black text-[10px] flex items-center gap-0.5 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                onSelectMatch(match);
+              }}
+              className="px-2 py-0.5 rounded-lg bg-emerald-500/20 text-emerald-600 border border-emerald-500/40 font-black text-[10px] flex items-center gap-0.5 hover:bg-emerald-500 hover:text-white transition-colors cursor-pointer"
+            >
               상세보기 <ChevronRight className="w-3 h-3" />
-            </span>
+            </button>
           </div>
         </div>
 
@@ -505,9 +512,16 @@ export const MatchCard = ({ match, membershipTier = 'VVIP', cardDensity = 'DETAI
           </button>
 
           {/* 📌 [미니 상세보기 버튼] */}
-          <span className="px-2.5 py-1 rounded-xl bg-emerald-500/20 text-emerald-700 border border-emerald-500/40 font-black text-[10px] sm:text-[11px] flex items-center gap-0.5 group-hover:bg-emerald-500 group-hover:text-white transition-all shadow-sm">
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              onSelectMatch(match);
+            }}
+            className="px-2.5 py-1 rounded-xl bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 border border-emerald-500/40 font-black text-[10px] sm:text-[11px] flex items-center gap-0.5 hover:bg-emerald-500 hover:text-white transition-all shadow-sm cursor-pointer"
+          >
             상세보기 <ChevronRight className="w-3.5 h-3.5" />
-          </span>
+          </button>
 
           {isFinished ? (
             <div className="flex items-center gap-1.5">

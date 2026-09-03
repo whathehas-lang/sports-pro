@@ -722,12 +722,8 @@ export default function App() {
     );
   };
 
-  // Handle opening match detail modal (3일 만료 시 무조건 결제창 팝업 차단!)
+  // Handle opening match detail modal
   const handleOpenDetailModal = (match: Match) => {
-    if (isTrialExpired) {
-      setIsPaywallOpen(true);
-      return;
-    }
     setSelectedMatchForDetail(match);
   };
 
