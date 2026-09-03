@@ -395,12 +395,7 @@ export default function App() {
     return diff >= TOTAL_TRIAL_SECONDS;
   });
 
-  const [isPaywallOpen, setIsPaywallOpen] = useState<boolean>(() => {
-    const savedStart = localStorage.getItem('tokeon_trial_start_time');
-    if (!savedStart) return false;
-    const diff = Math.floor((Date.now() - parseInt(savedStart, 10)) / 1000);
-    return diff >= TOTAL_TRIAL_SECONDS;
-  });
+  const [isPaywallOpen, setIsPaywallOpen] = useState<boolean>(false);
 
   // Sync membership tier changes to localStorage
   useEffect(() => {
@@ -477,7 +472,6 @@ export default function App() {
       if (remaining <= 0) {
         setTrialSecondsLeft(0);
         setIsTrialExpired(true);
-        setIsPaywallOpen(true); // 3일 만료 시 결제창 자동 팝업!
         clearInterval(timer);
       } else {
         setTrialSecondsLeft(remaining);
@@ -1290,7 +1284,7 @@ export default function App() {
       {isPaywallOpen && (
         <SubscriptionPaywallModal
           isTrialExpired={isTrialExpired}
-          onClose={isTrialExpired ? undefined : () => setIsPaywallOpen(false)}
+          onClose={() => setIsPaywallOpen(false)}
           onUpgradeSuccess={handleUpgradeSuccess}
         />
       )}

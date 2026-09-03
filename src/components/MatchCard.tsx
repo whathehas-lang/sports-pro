@@ -98,9 +98,15 @@ export const MatchCard = ({ match, membershipTier = 'VVIP', cardDensity = 'DETAI
         </div>
 
         {/* Compact Teams vs Starter Line */}
-        <div className={`flex items-center justify-between gap-2 px-3 py-2 rounded-lg border text-xs ${
-          isLight ? 'bg-slate-50 border-slate-200 text-slate-900' : 'bg-slate-950 border-slate-800 text-slate-100'
-        }`}>
+        <div 
+          onClick={(e) => {
+            e.stopPropagation();
+            onSelectMatch(match);
+          }}
+          className={`flex items-center justify-between gap-2 px-3 py-2 rounded-lg border text-xs cursor-pointer transition-all hover:border-emerald-500/60 ${
+            isLight ? 'bg-slate-50 border-slate-200 text-slate-900 hover:bg-slate-100' : 'bg-slate-950 border-slate-800 text-slate-100 hover:bg-slate-900'
+          }`}
+        >
           <div className="flex items-center gap-2 min-w-0 flex-1">
             <span className={`font-black truncate ${isFinished && homeScore > awayScore ? 'text-emerald-600 font-extrabold' : 'text-emerald-700'}`}>
               {sportIcon} [홈] {match.homeTeam.name}
@@ -546,10 +552,16 @@ export const MatchCard = ({ match, membershipTier = 'VVIP', cardDensity = 'DETAI
         </div>
       </div>
 
-      {/* 2. 📌 [팀명 & 스포츠 공 아이콘] */}
-      <div className={`p-2.5 rounded-xl border space-y-2 ${
-        isLight ? 'bg-slate-50/90 border-slate-200' : 'bg-slate-950 border-slate-800/90'
-      }`}>
+      {/* 2. 📌 [팀명 & 스포츠 공 아이콘 - 터치 시 즉시 상세 진입] */}
+      <div 
+        onClick={(e) => {
+          e.stopPropagation();
+          onSelectMatch(match);
+        }}
+        className={`p-2.5 rounded-xl border space-y-2 cursor-pointer transition-all hover:border-emerald-500/60 ${
+          isLight ? 'bg-slate-50/90 border-slate-200 hover:bg-slate-100/80' : 'bg-slate-950 border-slate-800/90 hover:bg-slate-900/90'
+        }`}
+      >
         <div className="flex items-center justify-between">
           {/* LEFT = HOME TEAM (홈) */}
           <div className="flex items-center gap-2 w-5/12 min-w-0">
@@ -675,6 +687,23 @@ export const MatchCard = ({ match, membershipTier = 'VVIP', cardDensity = 'DETAI
             </span>
           </div>
         )}
+
+        {/* 📌 [와이드 8대 팩트 상세보기 직통 버튼] */}
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            onSelectMatch(match);
+          }}
+          className={`w-full py-2.5 px-3 rounded-xl font-black text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-md active:scale-98 transition-all cursor-pointer border ${
+            isLight
+              ? 'bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 text-white border-emerald-600 hover:from-emerald-600 hover:to-teal-600 shadow-emerald-500/20'
+              : 'bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-white border-emerald-500/60 hover:from-emerald-500 hover:to-teal-500 shadow-emerald-950/40'
+          }`}
+        >
+          <span>📊 {match.betmanMatchNo}번 {match.homeTeam.name} vs {match.awayTeam.name} 정밀분석 (불펜·선발·상대전적)</span>
+          <ChevronRight className="w-4 h-4" />
+        </button>
 
         {/* 📌 🎯 [프로토 기록식 전용 점수식 선택 그리드] */}
         {match.betmanFolder === 'GIROKSIK' ? (
