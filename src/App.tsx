@@ -397,12 +397,7 @@ export default function App() {
     return remaining > 0 ? remaining : 0;
   });
 
-  const [isTrialExpired, setIsTrialExpired] = useState<boolean>(() => {
-    const savedStart = localStorage.getItem('tokeon_trial_start_time');
-    if (!savedStart) return false;
-    const diff = Math.floor((Date.now() - parseInt(savedStart, 10)) / 1000);
-    return diff >= TOTAL_TRIAL_SECONDS;
-  });
+  const [isTrialExpired, setIsTrialExpired] = useState<boolean>(false);
 
   const [isPaywallOpen, setIsPaywallOpen] = useState<boolean>(false);
 
@@ -773,70 +768,6 @@ export default function App() {
             <span>{refreshToast}</span>
           </div>
         )}
-
-
-
-                {/* ⏱️ 3일 무료체험 실시간 카운트다운 배너 */}
-        <div className={`p-3 rounded-2xl border flex flex-col sm:flex-row items-center justify-between gap-3 shadow-lg transition-all ${
-          isTrialExpired
-            ? 'bg-gradient-to-r from-rose-950 via-slate-900 to-rose-950 border-rose-500/80 text-rose-200 animate-pulse'
-            : isLight ? 'bg-gradient-to-r from-amber-50 via-yellow-50 to-amber-50 border-amber-300 text-amber-950' : 'bg-gradient-to-r from-amber-950 via-slate-900 to-amber-950 border-amber-500/70 text-amber-200'
-        }`}>
-          <div className="flex items-center gap-2.5 min-w-0">
-            <span className="text-xl shrink-0">{isTrialExpired ? '⛔' : '⏳'}</span>
-            <div className="min-w-0">
-              <div className="flex items-center gap-2">
-                <span className={`font-black text-xs sm:text-sm ${isTrialExpired ? 'text-rose-300' : 'text-amber-300'}`}>
-                  {isTrialExpired ? '⛔ 3일 무료체험이 만료되었습니다! (터치 차단됨)' : '⏳ [3일 무료체험 실시간 테스트 진행중]'}
-                </span>
-                <span className={`text-[10px] px-2 py-0.5 rounded font-mono font-black ${
-                  isTrialExpired ? 'bg-rose-500 text-white' : 'bg-amber-400 text-slate-950'
-                }`}>
-                  {isTrialExpired ? 'EXPIRED' : '3-DAY TRIAL'}
-                </span>
-              </div>
-              <p className={`text-[11px] font-bold truncate mt-0.5 ${isTrialExpired ? 'text-rose-400' : 'text-slate-300'}`}>
-                {isTrialExpired
-                  ? '경기를 터치하면 결제창이 뜨며 데이터가 차단됩니다.'
-                  : `남은 시간: ${formatTimerStr(trialSecondsLeft)} (0초 도달 시 결제창 자동 팝업!)`}
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2 shrink-0">
-            {isTrialExpired ? (
-              <button
-                onClick={() => setIsPaywallOpen(true)}
-                className="px-3.5 py-1.5 bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-950 font-black text-xs rounded-xl shadow transition-all cursor-pointer"
-              >
-                <span>결제창 열기 💳</span>
-              </button>
-            ) : (
-              <button
-                onClick={() => {
-                  // 즉시 0초 만료 시뮬레이션
-                  const fiveAgo = Date.now() - 6 * 60 * 1000;
-                  localStorage.setItem('tokeon_trial_start_time', fiveAgo.toString());
-                  setTrialSecondsLeft(0);
-                  setIsTrialExpired(true);
-                  setIsPaywallOpen(true);
-                }}
-                className="px-2.5 py-1 bg-rose-950/80 hover:bg-rose-900 border border-rose-500/50 text-rose-300 font-bold text-[10px] rounded-lg transition-all cursor-pointer"
-                title="즉시 만료 테스트"
-              >
-                <span>⚡ 즉시 만료</span>
-              </button>
-            )}
-
-            <button
-              onClick={handleReset3DayTrial}
-              className="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-amber-300 border border-slate-700 font-bold text-[10px] rounded-lg transition-all cursor-pointer flex items-center gap-1"
-              title="3일 타이머 다시 시작"
-            >
-              <span>🔄 3일 다시 시작</span>
-            </button>
-          </div>
-        </div>
 
         {/* HOME TAB CONTENT (경기목록 탭 전용) */}
         {activeTab === 'home' && (
