@@ -75,44 +75,44 @@ export class BaseballSeriesFatigueEngine {
 
     // 🇰🇷 KBO 구단 (09.01 월요 휴식일 / 08.31 주말 3연전)
     "두산": {
-      prev1: { dateStr: "09.01 (공식 휴식일)", opponentName: "공식 휴식일", teamScore: 0, opponentScore: 0, result: "무", starterName: "휴식일", innings: "0.0", pitches: 0, balls: 0, strikes: 0, bullpen: [] },
-      prev2: { dateStr: "08.31 (이전 시리즈)", opponentName: "롯데", teamScore: 4, opponentScore: 7, result: "패", starterName: "최원준", innings: "5.0", pitches: 86, balls: 31, strikes: 55, bullpen: [{ name: "이영하", pitches: 22, role: "PURSUIT" }, { name: "홍건희", pitches: 18, role: "VICTORY" }] }
+      prev1: { dateStr: "09.03 (직전 경기)", opponentName: "LG", teamScore: 5, opponentScore: 3, result: "승", starterName: "곽빈", innings: "6.0", pitches: 92, balls: 33, strikes: 59, bullpen: [{ name: "이영하", pitches: 18, role: "PURSUIT" }, { name: "홍건희", pitches: 14, role: "VICTORY" }] },
+      prev2: { dateStr: "09.02 (전전 경기)", opponentName: "LG", teamScore: 4, opponentScore: 6, result: "패", starterName: "최원준", innings: "5.1", pitches: 86, balls: 31, strikes: 55, bullpen: [{ name: "김택연", pitches: 20, role: "VICTORY" }] }
     },
     "LG": {
-      prev1: { dateStr: "09.01 (공식 휴식일)", opponentName: "공식 휴식일", teamScore: 0, opponentScore: 0, result: "무", starterName: "휴식일", innings: "0.0", pitches: 0, balls: 0, strikes: 0, bullpen: [] },
-      prev2: { dateStr: "08.31 (이전 시리즈)", opponentName: "KT", teamScore: 18, opponentScore: 7, result: "승", starterName: "엔스", innings: "6.0", pitches: 98, balls: 35, strikes: 63, bullpen: [{ name: "김진성", pitches: 15, role: "VICTORY" }, { name: "유영찬", pitches: 12, role: "VICTORY" }] }
+      prev1: { dateStr: "09.03 (직전 경기)", opponentName: "두산", teamScore: 3, opponentScore: 5, result: "패", starterName: "임찬규", innings: "5.2", pitches: 90, balls: 32, strikes: 58, bullpen: [{ name: "김진성", pitches: 15, role: "VICTORY" }, { name: "유영찬", pitches: 12, role: "VICTORY" }] },
+      prev2: { dateStr: "09.02 (전전 경기)", opponentName: "두산", teamScore: 6, opponentScore: 4, result: "승", starterName: "엔스", innings: "6.0", pitches: 94, balls: 33, strikes: 61, bullpen: [{ name: "정우영", pitches: 18, role: "PURSUIT" }] }
     },
     "삼성": {
-      prev1: { dateStr: "09.01 (공식 휴식일)", opponentName: "공식 휴식일", teamScore: 0, opponentScore: 0, result: "무", starterName: "휴식일", innings: "0.0", pitches: 0, balls: 0, strikes: 0, bullpen: [] },
-      prev2: { dateStr: "08.31 (이전 시리즈)", opponentName: "KIA", teamScore: 7, opponentScore: 1, result: "승", starterName: "원태인", innings: "6.0", pitches: 89, balls: 30, strikes: 59, bullpen: [{ name: "임창민", pitches: 14, role: "VICTORY" }, { name: "김재윤", pitches: 16, role: "VICTORY" }] }
+      prev1: { dateStr: "09.03 (직전 경기)", opponentName: "KIA", teamScore: 6, opponentScore: 4, result: "승", starterName: "원태인", innings: "6.1", pitches: 95, balls: 31, strikes: 64, bullpen: [{ name: "임창민", pitches: 16, role: "VICTORY" }, { name: "김재윤", pitches: 15, role: "VICTORY" }] },
+      prev2: { dateStr: "09.02 (전전 경기)", opponentName: "KIA", teamScore: 3, opponentScore: 5, result: "패", starterName: "코너", innings: "5.0", pitches: 88, balls: 32, strikes: 56, bullpen: [{ name: "우규민", pitches: 14, role: "PURSUIT" }] }
     },
     "롯데": {
-      prev1: { dateStr: "09.01 (공식 휴식일)", opponentName: "공식 휴식일", teamScore: 0, opponentScore: 0, result: "무", starterName: "휴식일", innings: "0.0", pitches: 0, balls: 0, strikes: 0, bullpen: [] },
-      prev2: { dateStr: "08.31 (이전 시리즈)", opponentName: "두산", teamScore: 7, opponentScore: 4, result: "승", starterName: "박세웅", innings: "6.0", pitches: 92, balls: 33, strikes: 59, bullpen: [{ name: "구승민", pitches: 18, role: "VICTORY" }, { name: "김원중", pitches: 15, role: "VICTORY" }] }
+      prev1: { dateStr: "09.03 (직전 경기)", opponentName: "KT", teamScore: 5, opponentScore: 2, result: "승", starterName: "반즈", innings: "7.0", pitches: 98, balls: 30, strikes: 68, bullpen: [{ name: "구승민", pitches: 15, role: "VICTORY" }, { name: "김원중", pitches: 14, role: "VICTORY" }] },
+      prev2: { dateStr: "09.02 (전전 경기)", opponentName: "KT", teamScore: 2, opponentScore: 6, result: "패", starterName: "박세웅", innings: "5.0", pitches: 89, balls: 34, strikes: 55, bullpen: [{ name: "진해수", pitches: 16, role: "PURSUIT" }] }
     },
     "한화": {
-      prev1: { dateStr: "09.01 (공식 휴식일)", opponentName: "공식 휴식일", teamScore: 0, opponentScore: 0, result: "무", starterName: "휴식일", innings: "0.0", pitches: 0, balls: 0, strikes: 0, bullpen: [] },
-      prev2: { dateStr: "08.31 (이전 시리즈)", opponentName: "KT", teamScore: 2, opponentScore: 6, result: "패", starterName: "문동주", innings: "6.0", pitches: 94, balls: 36, strikes: 58, bullpen: [{ name: "한승혁", pitches: 20, role: "PURSUIT" }, { name: "주현상", pitches: 14, role: "VICTORY" }] }
+      prev1: { dateStr: "09.03 (직전 경기)", opponentName: "NC", teamScore: 4, opponentScore: 3, result: "승", starterName: "류현진", innings: "6.2", pitches: 96, balls: 32, strikes: 64, bullpen: [{ name: "한승혁", pitches: 16, role: "PURSUIT" }, { name: "주현상", pitches: 14, role: "VICTORY" }] },
+      prev2: { dateStr: "09.02 (전전 경기)", opponentName: "NC", teamScore: 3, opponentScore: 7, result: "패", starterName: "문동주", innings: "5.0", pitches: 91, balls: 35, strikes: 56, bullpen: [{ name: "박상원", pitches: 18, role: "PURSUIT" }] }
     },
     "KT": {
-      prev1: { dateStr: "09.01 (공식 휴식일)", opponentName: "공식 휴식일", teamScore: 0, opponentScore: 0, result: "무", starterName: "휴식일", innings: "0.0", pitches: 0, balls: 0, strikes: 0, bullpen: [] },
-      prev2: { dateStr: "08.31 (이전 시리즈)", opponentName: "한화", teamScore: 6, opponentScore: 2, result: "승", starterName: "쿠에바스", innings: "6.0", pitches: 95, balls: 33, strikes: 62, bullpen: [{ name: "김민", pitches: 22, role: "PURSUIT" }, { name: "박영현", pitches: 15, role: "VICTORY" }] }
+      prev1: { dateStr: "09.03 (직전 경기)", opponentName: "롯데", teamScore: 2, opponentScore: 5, result: "패", starterName: "고영표", innings: "6.0", pitches: 92, balls: 30, strikes: 62, bullpen: [{ name: "김민", pitches: 18, role: "PURSUIT" }, { name: "박영현", pitches: 14, role: "VICTORY" }] },
+      prev2: { dateStr: "09.02 (전전 경기)", opponentName: "롯데", teamScore: 6, opponentScore: 2, result: "승", starterName: "쿠에바스", innings: "6.1", pitches: 97, balls: 34, strikes: 63, bullpen: [{ name: "손동현", pitches: 15, role: "VICTORY" }] }
     },
     "KIA": {
-      prev1: { dateStr: "09.01 (공식 휴식일)", opponentName: "공식 휴식일", teamScore: 0, opponentScore: 0, result: "무", starterName: "휴식일", innings: "0.0", pitches: 0, balls: 0, strikes: 0, bullpen: [] },
-      prev2: { dateStr: "08.31 (이전 시리즈)", opponentName: "삼성", teamScore: 1, opponentScore: 7, result: "패", starterName: "황동하", innings: "4.2", pitches: 82, balls: 32, strikes: 50, bullpen: [{ name: "전상현", pitches: 16, role: "PURSUIT" }, { name: "정해영", pitches: 12, role: "PURSUIT" }] }
+      prev1: { dateStr: "09.03 (직전 경기)", opponentName: "삼성", teamScore: 4, opponentScore: 6, result: "패", starterName: "양현종", innings: "5.2", pitches: 93, balls: 33, strikes: 60, bullpen: [{ name: "전상현", pitches: 16, role: "PURSUIT" }, { name: "정해영", pitches: 15, role: "VICTORY" }] },
+      prev2: { dateStr: "09.02 (전전 경기)", opponentName: "삼성", teamScore: 5, opponentScore: 3, result: "승", starterName: "네일", innings: "6.0", pitches: 90, balls: 28, strikes: 62, bullpen: [{ name: "장현식", pitches: 18, role: "VICTORY" }] }
     },
     "NC": {
-      prev1: { dateStr: "09.01 (공식 휴식일)", opponentName: "공식 휴식일", teamScore: 0, opponentScore: 0, result: "무", starterName: "휴식일", innings: "0.0", pitches: 0, balls: 0, strikes: 0, bullpen: [] },
-      prev2: { dateStr: "08.31 (이전 시리즈)", opponentName: "SSG", teamScore: 2, opponentScore: 6, result: "패", starterName: "이재학", innings: "5.0", pitches: 84, balls: 31, strikes: 53, bullpen: [{ name: "김재열", pitches: 20, role: "PURSUIT" }, { name: "이용찬", pitches: 15, role: "PURSUIT" }] }
+      prev1: { dateStr: "09.03 (직전 경기)", opponentName: "한화", teamScore: 3, opponentScore: 4, result: "패", starterName: "하트", innings: "6.1", pitches: 98, balls: 31, strikes: 67, bullpen: [{ name: "김재열", pitches: 18, role: "PURSUIT" }, { name: "이용찬", pitches: 14, role: "PURSUIT" }] },
+      prev2: { dateStr: "09.02 (전전 경기)", opponentName: "한화", teamScore: 7, opponentScore: 3, result: "승", starterName: "신민혁", innings: "5.2", pitches: 88, balls: 30, strikes: 58, bullpen: [{ name: "류진욱", pitches: 16, role: "VICTORY" }] }
     },
     "키움": {
-      prev1: { dateStr: "09.01 (공식 휴식일)", opponentName: "공식 휴식일", teamScore: 0, opponentScore: 0, result: "무", starterName: "휴식일", innings: "0.0", pitches: 0, balls: 0, strikes: 0, bullpen: [] },
-      prev2: { dateStr: "08.31 (이전 시리즈)", opponentName: "NC", teamScore: 5, opponentScore: 1, result: "승", starterName: "후라도", innings: "7.0", pitches: 99, balls: 32, strikes: 67, bullpen: [{ name: "조상우", pitches: 15, role: "VICTORY" }, { name: "주승우", pitches: 14, role: "VICTORY" }] }
+      prev1: { dateStr: "09.03 (직전 경기)", opponentName: "SSG", teamScore: 4, opponentScore: 5, result: "패", starterName: "후라도", innings: "6.2", pitches: 99, balls: 32, strikes: 67, bullpen: [{ name: "조상우", pitches: 16, role: "VICTORY" }, { name: "주승우", pitches: 15, role: "VICTORY" }] },
+      prev2: { dateStr: "09.02 (전전 경기)", opponentName: "SSG", teamScore: 5, opponentScore: 2, result: "승", starterName: "하영민", innings: "6.0", pitches: 92, balls: 31, strikes: 61, bullpen: [{ name: "김성민", pitches: 14, role: "PURSUIT" }] }
     },
     "SSG": {
-      prev1: { dateStr: "09.01 (공식 휴식일)", opponentName: "공식 휴식일", teamScore: 0, opponentScore: 0, result: "무", starterName: "휴식일", innings: "0.0", pitches: 0, balls: 0, strikes: 0, bullpen: [] },
-      prev2: { dateStr: "08.31 (이전 시리즈)", opponentName: "NC", teamScore: 6, opponentScore: 2, result: "승", starterName: "앤더슨", innings: "6.0", pitches: 95, balls: 34, strikes: 61, bullpen: [{ name: "노경은", pitches: 18, role: "VICTORY" }, { name: "조병현", pitches: 15, role: "VICTORY" }] }
+      prev1: { dateStr: "09.03 (직전 경기)", opponentName: "키움", teamScore: 5, opponentScore: 4, result: "승", starterName: "김광현", innings: "6.0", pitches: 94, balls: 34, strikes: 60, bullpen: [{ name: "노경은", pitches: 18, role: "VICTORY" }, { name: "조병현", pitches: 15, role: "VICTORY" }] },
+      prev2: { dateStr: "09.02 (전전 경기)", opponentName: "키움", teamScore: 2, opponentScore: 5, result: "패", starterName: "앤더슨", innings: "5.1", pitches: 90, balls: 33, strikes: 57, bullpen: [{ name: "이로운", pitches: 20, role: "PURSUIT" }] }
     }
   };
 
@@ -135,11 +135,14 @@ export class BaseballSeriesFatigueEngine {
     for (const [tName, data] of Object.entries(this.AUTHENTIC_PAST_GAMES)) {
       if (SportsEntityMappingService.normalize(tName).includes(clean) || clean.includes(SportsEntityMappingService.normalize(tName))) {
         if (roundType === 'GAME_3') {
-          // 내일(3차전) 경기: 이틀전은 1차전(prev1), 어제는 2차전
-          matchedLog = isSecondGame ? { ...data.prev1, dateStr: "09.02 (시리즈 2차전)", opponentName: currentOpponentName } : { ...data.prev1, dateStr: "09.01 (시리즈 1차전)", opponentName: currentOpponentName };
+          // 3차전: 이틀전은 1차전(prev2), 어제는 2차전(prev1)
+          matchedLog = isSecondGame ? { ...data.prev1, dateStr: "어제 경기 (시리즈 2차전)", opponentName: currentOpponentName } : { ...data.prev2, dateStr: "그저께 경기 (시리즈 1차전)", opponentName: currentOpponentName };
+        } else if (roundType === 'GAME_2') {
+          // 2차전: 이틀전은 이전 시리즈(prev2), 어제는 1차전(prev1)
+          matchedLog = isSecondGame ? { ...data.prev1, dateStr: "어제 경기 (시리즈 1차전)", opponentName: currentOpponentName } : { ...data.prev2, dateStr: "그저께 경기 (이전 시리즈)", opponentName: isHome ? "이전 원정팀" : "이전 홈팀" };
         } else {
-          // 오늘(1·2차전) 경기: 이틀전(08.31)은 이전 시리즈(prev2), 어제(09.01)는 이번 1차전(prev1)
-          matchedLog = isSecondGame ? data.prev1 : data.prev2;
+          // 1차전: 이틀전은 전전경기(prev2), 어제는 직전경기(prev1)
+          matchedLog = isSecondGame ? { ...data.prev1, dateStr: "어제 직전 경기", opponentName: isHome ? "이전 상대팀" : "이전 홈팀" } : { ...data.prev2, dateStr: "그저께 전전 경기", opponentName: isHome ? "이전 시리즈" : "이전 시리즈" };
         }
         break;
       }
