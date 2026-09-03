@@ -14,7 +14,7 @@ import { sportsApiService } from './services/api/sportsApiService';
 import { BetmanLiveSyncService } from './services/betman/betmanLiveSyncService';
 import { getDynamicBetmanGamesMetadata } from './services/betman/betmanRoundRegistry';
 import type { Match, BetmanFolderCategory, MembershipTier, ViewMode } from './types/sports';
-import { isMatchCompleted, isMatchTimePassed } from './utils/matchResultHelper';
+import { isMatchCompleted, isMatchTimePassed, parseMatchTimestamp } from './utils/matchResultHelper';
 import { firebaseService, isFirebaseConfigured } from './services/firebase/firebaseService';
 import { verifiedMatchDatabase } from './services/db/verifiedMatchDatabase';
 import type { VerificationAuditReport } from './services/verification/types';
