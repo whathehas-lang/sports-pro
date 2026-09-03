@@ -7,24 +7,26 @@
     <meta http-equiv="Expires" content="0" />
     <script>
       (function() {
-        var CURRENT_DEPLOY_VER = '20260904_0135';
-        var saved = localStorage.getItem('tokeon_deploy_version');
-        if (saved !== CURRENT_DEPLOY_VER) {
-          localStorage.setItem('tokeon_deploy_version', CURRENT_DEPLOY_VER);
-          if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.getRegistrations().then(function(regs) {
-              for (var r of regs) r.unregister();
-            });
+        var APP_VERSION = 'v20260904_0150';
+        try {
+          var currentUrl = new URL(window.location.href);
+          if (currentUrl.searchParams.get('app_ver') !== APP_VERSION) {
+            if ('serviceWorker' in navigator) {
+              navigator.serviceWorker.getRegistrations().then(function(regs) {
+                for (var r of regs) r.unregister();
+              });
+            }
+            if ('caches' in window) {
+              caches.keys().then(function(keys) {
+                for (var k of keys) caches.delete(k);
+              });
+            }
+            localStorage.clear();
+            sessionStorage.clear();
+            currentUrl.searchParams.set('app_ver', APP_VERSION);
+            window.location.replace(currentUrl.toString());
           }
-          if ('caches' in window) {
-            caches.keys().then(function(keys) {
-              for (var k of keys) caches.delete(k);
-            });
-          }
-          var url = new URL(window.location.href);
-          url.searchParams.set('v', CURRENT_DEPLOY_VER);
-          window.location.replace(url.toString());
-        }
+        } catch(e) {}
       })();
     </script>
     <link rel="icon" type="image/svg+xml" href="./app-icon.svg" />
@@ -40,7 +42,7 @@
     <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
     <script src="https://js.tosspayments.com/v1/payment"></script>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script type="module" crossorigin src="./assets/index-B2EMnhQP.js"></script>
+    <script type="module" crossorigin src="./assets/index-_pPxeWD2.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-DBc0ByFy.css">
   </head>
   <body class="bg-slate-950 text-slate-100 overflow-x-hidden w-full max-w-full select-none">
