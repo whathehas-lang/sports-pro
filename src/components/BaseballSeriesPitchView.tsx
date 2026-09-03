@@ -269,7 +269,7 @@ export const BaseballSeriesPitchView = ({
                   : 'text-slate-400 hover:text-white bg-slate-950/80 border border-slate-800'
               }`}
             >
-              📅 이틀전 경기 (전전경기)
+              📅 그저께 경기 (전전경기)
             </button>
             <button
               onClick={() => setSelectedRound('GAME_2')}
@@ -279,7 +279,7 @@ export const BaseballSeriesPitchView = ({
                   : 'text-slate-400 hover:text-white bg-slate-950/80 border border-slate-800'
               }`}
             >
-              📅 어제 경기 (전경기)
+              📅 어제 경기 (직전경기)
             </button>
             <button
               onClick={() => setSelectedRound('GAME_3')}
@@ -289,7 +289,7 @@ export const BaseballSeriesPitchView = ({
                   : 'text-slate-400 hover:text-white bg-slate-950/80 border border-slate-800'
               }`}
             >
-              ⚾ 오늘 경기 (선발/피로도)
+              ⚾ 오늘 경기 (선발/피로도 결론)
             </button>
           </div>
         </div>
