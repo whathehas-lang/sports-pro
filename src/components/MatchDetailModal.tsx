@@ -311,12 +311,12 @@ export const MatchDetailModal = ({
           <div className={`p-3.5 rounded-xl border text-xs font-medium leading-relaxed ${
             isLight ? 'bg-slate-50 border-slate-200 text-slate-800' : 'bg-slate-900 border-amber-500/30 text-slate-200'
           }`}>
-            <strong className="text-amber-600 font-black">1. [백투백(Back-to-Back) 연투 팩트]</strong> {fatigue?.homeFatigue.teamName || match.homeTeam.name} ({fatigue?.homeFatigue.restDaysLabel || '2일 휴식 🟢'}) vs {fatigue?.awayFatigue.teamName || match.awayTeam.name} ({fatigue?.awayFatigue.restDaysLabel || '0일 백투백 🔴'})
+            <strong className="text-amber-600 font-black">1. [백투백(Back-to-Back) 연투 팩트]</strong> {fatigue?.homeFatigue?.teamName || match.homeTeam.name} ({fatigue?.homeFatigue?.restDaysLabel || '2일 휴식 🟢'}) vs {fatigue?.awayFatigue?.teamName || match.awayTeam.name} ({fatigue?.awayFatigue?.restDaysLabel || '0일 백투백 🔴'})
           </div>
           <div className={`p-3.5 rounded-xl border text-xs font-medium leading-relaxed ${
             isLight ? 'bg-slate-50 border-slate-200 text-slate-800' : 'bg-slate-900 border-amber-500/30 text-slate-200'
           }`}>
-            <strong className="text-amber-600 font-black">2. [최근 7일 비행 이동거리(km)]</strong> {fatigue?.homeFatigue.teamName || match.homeTeam.name} ✈️ {fatigue?.homeFatigue.travelDistanceKm.toLocaleString() || 450}km vs {fatigue?.awayFatigue.teamName || match.awayTeam.name} ✈️ {fatigue?.awayFatigue.travelDistanceKm.toLocaleString() || 3850}km (대륙횡단 3시간 시차 이동 🔴)
+            <strong className="text-amber-600 font-black">2. [최근 7일 비행 이동거리(km)]</strong> {fatigue?.homeFatigue?.teamName || match.homeTeam.name} ✈️ {fatigue?.homeFatigue?.travelDistanceKm?.toLocaleString() || 450}km vs {fatigue?.awayFatigue?.teamName || match.awayTeam.name} ✈️ {fatigue?.awayFatigue?.travelDistanceKm?.toLocaleString() || 3850}km (대륙횡단 3시간 시차 이동 🔴)
           </div>
           <div className={`p-3.5 rounded-xl border text-xs font-medium leading-relaxed ${
             isLight ? 'bg-slate-50 border-slate-200 text-slate-800' : 'bg-slate-900 border-amber-500/30 text-slate-200'
