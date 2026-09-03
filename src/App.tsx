@@ -580,7 +580,7 @@ export default function App() {
   useEffect(() => {
     const ticker = setInterval(() => {
       setNowTicker(Date.now());
-    }, 15000); // 15초 마다 실시간 시계 체크
+    }, 10 * 60 * 1000); // ⏱️ 10분 마다 지난 경기 자동소멸 체크 (배터리/리소스 최적화)
     return () => clearInterval(ticker);
   }, []);
 
