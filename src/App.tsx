@@ -605,10 +605,11 @@ export default function App() {
     setSelectedRound(roundTitle);
   };
 
-  // 📅 100% 자동화 실시간 날짜 필터 ('TODAY' | 'TOMORROW' | 'ALL' | 'PAST')
-  const [selectedDateFilter, setSelectedDateFilter] = useState<'TODAY' | 'TOMORROW' | 'ALL' | 'PAST'>('TODAY');
+  // 📅 100% 자동화 실시간 경기 필터 ('UPCOMING' | 'DAWN' | 'DAY' | 'ALL' | 'PAST')
+  // 기본값: 'UPCOMING' (지금부터 열릴 내일 새벽 축구 ~ 오전 MLB ~ 저녁 KBO 전체 151개 자동 연속 표출!)
+  const [selectedDateFilter, setSelectedDateFilter] = useState<'UPCOMING' | 'DAWN' | 'DAY' | 'ALL' | 'PAST'>('UPCOMING');
 
-  // ⏰ 오늘 & 내일 날짜 문자열 자동 계산 (예: '09.03', '09.04')
+  // ⏰ 오늘 & 내일 날짜 문자열 자동 계산
   const getDynamicDateStrings = () => {
     const d = new Date(nowTicker);
     const todayMMDD = `${(d.getMonth() + 1).toString().padStart(2, '0')}.${d.getDate().toString().padStart(2, '0')}`;
@@ -619,14 +620,13 @@ export default function App() {
 
   const { todayMMDD, tmrwMMDD } = getDynamicDateStrings();
 
-  // 🤖 100% 자동 날짜 분류 헬퍼
-  const getMatchDateCategory = (m: Match): 'TODAY' | 'TOMORROW' | 'PAST' | 'FUTURE' => {
-    if (!m.matchTime) return 'TODAY';
-    const matchDatePart = m.matchTime.trim().slice(0, 5); // '09.03'
-    if (matchDatePart === todayMMDD) return 'TODAY';
-    if (matchDatePart === tmrwMMDD) return 'TOMORROW';
-    if (matchDatePart < todayMMDD) return 'PAST';
-    return 'FUTURE';
+  // 🤖 경기 시간대 헬퍼 (새벽: 00:00~06:00 / 낮저녁: 06:00~)
+  const isMatchDawnTime = (m: Match): boolean => {
+    if (!m.matchTime) return false;
+    const parts = m.matchTime.trim().split(' ');
+    if (parts.length < 2) return false;
+    const hour = parseInt(parts[1].split(':')[0], 10);
+    return hour < 6;
   };
 
   // Filter matches by selected folder category & smart date filter
@@ -647,46 +647,49 @@ export default function App() {
     const passed = isMatchTimePassed(m, nowTicker);
 
     if (selectedDateFilter === 'PAST') {
-      // 지난 경기 탭에서만 시간 지난 경기 또는 종료된 경기 노출
+      // 지난/마감 경기 탭: 시간 지난 경기 또는 종료된 경기만 노출
       return passed || m.status === 'FINISHED';
     }
 
-    // 메인(오늘/내일/전체) 화면에서는 시간이 지난 경기를 100% 완전 자동 숨김(사라지게) 처리!
+    if (selectedDateFilter === 'ALL') {
+      // 전체 회차 탭: 전 경기 노출 (시간 지난 경기 포함)
+      return true;
+    }
+
+    // 기본(발매예정 / 새벽 / 낮저녁) 화면: 시작 시간 지난 경기는 100% 자동 제거!
     if (passed && m.status !== 'LIVE') {
       return false;
     }
 
-    if (selectedDateFilter === 'TODAY') {
-      const cat = getMatchDateCategory(m);
-      if (cat !== 'TODAY' && m.status !== 'LIVE') return false;
-    } else if (selectedDateFilter === 'TOMORROW') {
-      if (getMatchDateCategory(m) !== 'TOMORROW') return false;
+    if (selectedDateFilter === 'DAWN') {
+      // 새벽 경기 필터 (00:00 ~ 06:00)
+      if (!isMatchDawnTime(m)) return false;
+    } else if (selectedDateFilter === 'DAY') {
+      // 주간/저녁 경기 필터 (06:00 ~ 23:59)
+      if (isMatchDawnTime(m)) return false;
     }
 
     return true;
   });
   
-  // 📌 100% 자동 스마트 우선순위 정렬 (LIVE ➔ 오늘 예정 ➔ 내일 예정 ➔ 지난 경기)
+  // 📌 100% 자동 스마트 시간순 정렬 (LIVE ➔ 가장 빠른 예정 경기순 ➔ 배트맨 경기번호순)
   const sortedMatches = [...rawFiltered].sort((a, b) => {
-    // 1. LIVE 경기 최우선 (0순위)
+    // 1. LIVE 실시간 진행 경기 최우선 (0순위)
     const isLiveA = a.status === 'LIVE' ? 0 : 1;
     const isLiveB = b.status === 'LIVE' ? 0 : 1;
     if (isLiveA !== isLiveB) return isLiveA - isLiveB;
 
-    // 2. 날짜 우선순위 (오늘 ➔ 내일 ➔ 미래 ➔ 과거)
-    const catWeight = { TODAY: 0, TOMORROW: 1, FUTURE: 2, PAST: 3 };
-    const weightA = catWeight[getMatchDateCategory(a)];
-    const weightB = catWeight[getMatchDateCategory(b)];
-    if (weightA !== weightB) return weightA - weightB;
+    // 2. 가장 빠른 경기 시작 시간순 (새벽 03:45 ➔ 오전 07:40 ➔ 저녁 18:30)
+    const tsA = parseMatchTimestamp(a.matchTime);
+    const tsB = parseMatchTimestamp(b.matchTime);
+    if (tsA !== tsB && tsA > 0 && tsB > 0) {
+      return tsA - tsB;
+    }
 
-    // 3. 동일 날짜 내에서는 공식 배트맨 경기 번호 오름차순 정렬
+    // 3. 동일 시간대 내에서는 공식 배트맨 경기 번호 오름차순 정렬
     const noA = a.betmanMatchNo || (a as any).matchNo || 0;
     const noB = b.betmanMatchNo || (b as any).matchNo || 0;
     if (noA !== noB) return noA - noB;
-
-    const timeA = a.matchTime || '';
-    const timeB = b.matchTime || '';
-    if (timeA !== timeB) return timeA.localeCompare(timeB);
 
     return a.id.localeCompare(b.id);
   });
@@ -839,39 +842,55 @@ export default function App() {
         {/* HOME TAB CONTENT (경기목록 탭 전용) */}
         {activeTab === 'home' && (
           <div className="space-y-4">
-            {/* 📅 100% 자동화 실시간 날짜 필터 바 (오늘 / 내일 / 전체 / 지난경기) */}
+            {/* 📅 100% 자동화 실시간 발매/예정 경기 필터 바 */}
             <div className="flex items-center justify-between gap-2 overflow-x-auto pb-1 custom-scrollbar">
               <div className="flex items-center gap-1.5 shrink-0">
                 <button
-                  onClick={() => setSelectedDateFilter('TODAY')}
+                  onClick={() => setSelectedDateFilter('UPCOMING')}
                   className={`px-3.5 py-2 rounded-xl text-xs font-black transition-all flex items-center gap-1.5 cursor-pointer ${
-                    selectedDateFilter === 'TODAY'
+                    selectedDateFilter === 'UPCOMING'
                       ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 shadow-md scale-[1.02]'
                       : isLight ? 'bg-white border border-slate-200 text-slate-700 hover:text-slate-950' : 'bg-slate-900 border border-slate-800 text-slate-300 hover:text-white'
                   }`}
                 >
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>⚡ 오늘 경기</span>
+                  <span>⚡ 발매/예정 경기</span>
                   <span className={`text-[10px] px-1.5 py-0.2 rounded font-mono font-bold ${
-                    selectedDateFilter === 'TODAY' ? 'bg-slate-950/20 text-slate-950' : 'bg-emerald-500/20 text-emerald-400'
+                    selectedDateFilter === 'UPCOMING' ? 'bg-slate-950/20 text-slate-950' : 'bg-emerald-500/20 text-emerald-400'
                   }`}>
-                    {matches.filter(m => (!isMatchTimePassed(m, nowTicker) || m.status === 'LIVE') && getMatchDateCategory(m) === 'TODAY').length}
+                    {matches.filter(m => !isMatchTimePassed(m, nowTicker) || m.status === 'LIVE').length}
                   </span>
                 </button>
 
                 <button
-                  onClick={() => setSelectedDateFilter('TOMORROW')}
+                  onClick={() => setSelectedDateFilter('DAWN')}
                   className={`px-3.5 py-2 rounded-xl text-xs font-black transition-all flex items-center gap-1.5 cursor-pointer ${
-                    selectedDateFilter === 'TOMORROW'
+                    selectedDateFilter === 'DAWN'
+                      ? 'bg-gradient-to-r from-indigo-500 to-blue-500 text-white shadow-md scale-[1.02]'
+                      : isLight ? 'bg-white border border-slate-200 text-slate-700 hover:text-slate-950' : 'bg-slate-900 border border-slate-800 text-slate-300 hover:text-white'
+                  }`}
+                >
+                  <span>🌙 내일 새벽 (03:45~)</span>
+                  <span className={`text-[10px] px-1.5 py-0.2 rounded font-mono font-bold ${
+                    selectedDateFilter === 'DAWN' ? 'bg-white/20 text-white' : 'bg-indigo-500/20 text-indigo-400'
+                  }`}>
+                    {matches.filter(m => (!isMatchTimePassed(m, nowTicker) || m.status === 'LIVE') && isMatchDawnTime(m)).length}
+                  </span>
+                </button>
+
+                <button
+                  onClick={() => setSelectedDateFilter('DAY')}
+                  className={`px-3.5 py-2 rounded-xl text-xs font-black transition-all flex items-center gap-1.5 cursor-pointer ${
+                    selectedDateFilter === 'DAY'
                       ? 'bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-950 shadow-md scale-[1.02]'
                       : isLight ? 'bg-white border border-slate-200 text-slate-700 hover:text-slate-950' : 'bg-slate-900 border border-slate-800 text-slate-300 hover:text-white'
                   }`}
                 >
-                  <span>📅 내일 경기</span>
+                  <span>⚾ 내일 주간/저녁 (KBO/MLB)</span>
                   <span className={`text-[10px] px-1.5 py-0.2 rounded font-mono font-bold ${
-                    selectedDateFilter === 'TOMORROW' ? 'bg-slate-950/20 text-slate-950' : 'bg-amber-500/20 text-amber-400'
+                    selectedDateFilter === 'DAY' ? 'bg-slate-950/20 text-slate-950' : 'bg-amber-500/20 text-amber-400'
                   }`}>
-                    {matches.filter(m => getMatchDateCategory(m) === 'TOMORROW').length}
+                    {matches.filter(m => (!isMatchTimePassed(m, nowTicker) || m.status === 'LIVE') && !isMatchDawnTime(m)).length}
                   </span>
                 </button>
 
@@ -879,7 +898,7 @@ export default function App() {
                   onClick={() => setSelectedDateFilter('ALL')}
                   className={`px-3.5 py-2 rounded-xl text-xs font-black transition-all flex items-center gap-1.5 cursor-pointer ${
                     selectedDateFilter === 'ALL'
-                      ? 'bg-gradient-to-r from-indigo-500 to-cyan-500 text-white shadow-md scale-[1.02]'
+                      ? 'bg-gradient-to-r from-slate-700 to-slate-800 text-white shadow-md scale-[1.02]'
                       : isLight ? 'bg-white border border-slate-200 text-slate-700 hover:text-slate-950' : 'bg-slate-900 border border-slate-800 text-slate-300 hover:text-white'
                   }`}
                 >
@@ -887,7 +906,7 @@ export default function App() {
                   <span className={`text-[10px] px-1.5 py-0.2 rounded font-mono font-bold ${
                     selectedDateFilter === 'ALL' ? 'bg-white/20 text-white' : 'bg-slate-800 text-slate-400'
                   }`}>
-                    {matches.filter(m => !isMatchTimePassed(m, nowTicker) || m.status === 'LIVE').length}
+                    {matches.length}
                   </span>
                 </button>
 
@@ -899,7 +918,7 @@ export default function App() {
                       : isLight ? 'bg-slate-200/80 text-slate-600 hover:text-slate-900' : 'bg-slate-900/60 text-slate-500 hover:text-slate-300'
                   }`}
                 >
-                  <span>⏪ 지난 경기</span>
+                  <span>⏪ 지난/마감</span>
                   <span className="text-[10px] opacity-70 font-mono">
                     {matches.filter(m => isMatchTimePassed(m, nowTicker) && m.status !== 'LIVE').length}
                   </span>
@@ -908,7 +927,7 @@ export default function App() {
 
               <div className="hidden sm:flex items-center gap-1.5 text-[11px] text-slate-400 font-bold shrink-0">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                <span>KST {todayMMDD} 실시간 자동 연동</span>
+                <span>KST 실시간 자동 연동</span>
               </div>
             </div>
             
