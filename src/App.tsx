@@ -44,15 +44,21 @@ export default function App() {
 
   const handleReverifyAll = () => {
     setIsReverifying(true);
-    setTimeout(async () => {
-      const freshMatches = await BetmanLiveSyncService.getMatchesAsync();
-      const { verifiedMatches, auditReport: newReport } = verifiedMatchDatabase.ingestAndVerifyMatches(freshMatches);
-      setMatches(verifiedMatches);
-      setAuditReport(newReport);
-      setIsReverifying(false);
-      setRefreshToast(`⚡ 167개 경기 실시간 데이터 최신 갱신 완료!`);
-      setTimeout(() => setRefreshToast(null), 2500);
-    }, 400);
+    try {
+      if ('caches' in window) {
+        caches.keys().then(keys => {
+          for (const k of keys) caches.delete(k);
+        });
+      }
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(regs => {
+          for (const r of regs) r.unregister();
+        });
+      }
+      localStorage.clear();
+      sessionStorage.clear();
+    } catch (e) {}
+    window.location.href = window.location.origin + window.location.pathname + '?app_ver=v' + Date.now();
   };
 
   // ⚡ 마운트 즉시 최신 오피셜 데이터 동기화 & 실시간 라이브 폴링 즉시 가동
