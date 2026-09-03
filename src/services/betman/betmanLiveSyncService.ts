@@ -1,6 +1,7 @@
 import type { Match } from '../../types/sports';
 import { OFFICIAL_260103_MATCHES } from '../../mock/official260103Schedule';
 import { OFFICIAL_260104_MATCHES } from '../../mock/official260104Schedule';
+import { OFFICIAL_260105_MATCHES } from '../../mock/official260105Schedule';
 import { OFFICIAL_G011_MATCHES } from '../../mock/officialG011Schedule';
 import { OFFICIAL_G024_MATCHES } from '../../mock/officialG024Schedule';
 import { OFFICIAL_G102_MATCHES } from '../../mock/officialG102Schedule';
@@ -74,6 +75,11 @@ export class BetmanLiveSyncService {
 
     // ⚡ G101 (프로토 승부식): 현재 활성 회차 자동 감지
     const effectiveGmTs = gmTs || String(calculateActiveSeungbushikRoundTs());
+
+    // 🎯 260105 주말 메가 회차 (금·토·일 주말 480개 풀매치 오피셜 직접 반환)
+    if (effectiveGmTs === '260105' && OFFICIAL_260105_MATCHES && OFFICIAL_260105_MATCHES.length > 0) {
+      return OFFICIAL_260105_MATCHES;
+    }
 
     // 🎯 260104 신규 회차는 Betman 오피셜 실시간 API에서 추출한 480개 실제 슬립 데이터 100% 직접 반환
     if (effectiveGmTs === '260104' && OFFICIAL_260104_MATCHES && OFFICIAL_260104_MATCHES.length > 0) {
