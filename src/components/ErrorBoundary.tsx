@@ -30,12 +30,12 @@ export class ErrorBoundary extends Component<Props, State> {
       localStorage.clear();
       sessionStorage.clear();
     } catch (e) {}
-    this.setState({ hasError: false });
-    if (this.props.onClose) {
-      this.props.onClose();
-    } else {
-      window.location.reload();
+    if ('caches' in window) {
+      caches.keys().then(function(keys) {
+        for (var k of keys) caches.delete(k);
+      });
     }
+    window.location.href = window.location.origin + window.location.pathname + '?v=' + Date.now();
   };
 
   public render() {
