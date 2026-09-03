@@ -147,9 +147,9 @@ export const LineupTacticsView = ({ match, theme = 'light' }: LineupTacticsViewP
     return { name: fallbackName, num: fallbackNum, val: fallbackVal, form: 'GREEN' as const, isHot: false, stamina: 'GREEN' as const, mins: 0, playerObj: undefined };
   };
 
-  // Baseball Pitcher Confirmed Check (오직 연맹 공식 예고선발만 표출 - 임의 추측 및 과거 2024 더미 데이터 원천 차단)
   const rawStarterName = activeTeam.starterPitcherInfo?.name || '';
   const isPitcherConfirmed = !!rawStarterName && !rawStarterName.includes('선발투수') && !rawStarterName.includes('미정') && rawStarterName !== '선발';
+  const pitcherDisplayName = isPitcherConfirmed ? rawStarterName : '선발 미정';
   const pitcherDisplayVal = isPitcherConfirmed ? (activeTeam.starterPitcherInfo?.era ? `ERA ${activeTeam.starterPitcherInfo.era}` : '선발') : '선발 미정';
 
   const sp = {
