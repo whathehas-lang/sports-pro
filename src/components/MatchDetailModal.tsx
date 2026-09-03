@@ -322,55 +322,70 @@ export const MatchDetailModal = ({
     const winMetrics = match.soccerWinFactorMetrics;
 
     return (
-      <div className="space-y-2.5">
+      <div className="space-y-3">
         {/* 👑 [VVIP 팩트: xG 체급 & 파이널 서드 경기 주도권 종합 결론] */}
-        <div className={`p-4 rounded-xl border-2 text-xs font-medium leading-relaxed shadow-sm ${
+        <div className={`p-4 rounded-xl border text-xs font-medium leading-relaxed shadow-sm ${
           isLight
-            ? 'bg-gradient-to-r from-emerald-50 via-teal-50 to-emerald-50 border-emerald-300 text-slate-900'
-            : 'bg-gradient-to-r from-emerald-950/60 via-slate-900 to-emerald-950/60 border-emerald-500/60 text-slate-200'
+            ? 'bg-slate-50 border-slate-300 text-slate-900'
+            : 'bg-slate-900/90 border-slate-800 text-slate-100'
         }`}>
-          <div className={`flex items-center justify-between font-black mb-1.5 ${isLight ? 'text-emerald-800' : 'text-emerald-300'}`}>
+          <div className="flex items-center justify-between font-black mb-1.5 text-emerald-400">
             <span className="flex items-center gap-1.5 text-xs sm:text-sm">
-              <Flame className="w-4 h-4 text-emerald-500 animate-bounce" />
-              <span>👑 [VVIP 팩트] xG 체급 & 파이널 서드 경기 주도권 결론</span>
+              <Flame className="w-4 h-4 text-emerald-500" />
+              <span>👑 [VVIP 팩트] xG 체급 & 경기 주도권 종합 결론</span>
             </span>
-            <span className="text-[10px] bg-emerald-400 text-slate-950 px-2 py-0.5 rounded font-black shadow-sm">
+            <span className="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded font-bold border border-slate-700">
               90분 정밀 분석
             </span>
           </div>
-          <p className={`font-semibold leading-relaxed ${isLight ? 'text-slate-800' : 'text-slate-100'}`}>
+          <p className="font-semibold leading-relaxed text-slate-200">
             {winMetrics?.winFactorVerdict || `${match.homeTeam.name}의 기대 득점(xG ${match.homeTeam.xgStats?.avgXg || 1.45}골) 및 필드 틸트 ${winMetrics?.homeFieldTiltPct || 54}% 우세로 경기 주도권 확보 유력`}
           </p>
         </div>
 
-        <div className={`p-3.5 rounded-xl border text-xs font-medium leading-relaxed ${
-          isLight ? 'bg-slate-50 border-slate-200 text-slate-800' : 'bg-slate-900 border-emerald-500/30 text-slate-200'
+        {/* 5대 정갈한 팩트 리스트 (단일 통일 카드) */}
+        <div className={`rounded-xl border divide-y text-xs ${
+          isLight ? 'bg-white border-slate-200 divide-slate-100 text-slate-800' : 'bg-slate-900/60 border-slate-800 divide-slate-800/80 text-slate-200'
         }`}>
-          <strong className="text-emerald-700 font-black">1. [라인업 & 전술 포메이션]</strong> [홈] {match.homeOfficialLineup?.formation || '4-3-3'} 전술 vs [원정] {match.awayOfficialLineup?.formation || '4-4-2'} 전술 오피셜 발표
-        </div>
-        <div className={`p-3.5 rounded-xl border text-xs font-medium leading-relaxed ${
-          isLight ? 'bg-slate-50 border-slate-200 text-slate-800' : 'bg-slate-900 border-emerald-500/30 text-slate-200'
-        }`}>
-          <strong className="text-emerald-700 font-black">2. [선발 11명 시장가치 체급]</strong> {match.homeTeam.name} 선발 몸값 {match.homeOfficialLineup?.starting11Value || match.homeTeam.totalMarketValue || '3,200억'} vs {match.awayTeam.name} 선발 몸값 {match.awayOfficialLineup?.starting11Value || match.awayTeam.totalMarketValue || '2,800억'}
-        </div>
-        <div className={`p-3.5 rounded-xl border text-xs font-medium leading-relaxed ${
-          isLight ? 'bg-slate-50 border-slate-200 text-slate-800' : 'bg-slate-900 border-emerald-500/30 text-slate-200'
-        }`}>
-          <strong className="text-emerald-700 font-black">3. [이동거리 & 연전 스케줄 피로도]</strong> {match.footballTravelFatigueTracker
-            ? `[홈] ${match.homeTeam.name} ✈️ ${match.footballTravelFatigueTracker.homeTravelInfo.travelDistanceKm.toLocaleString()}km (${match.footballTravelFatigueTracker.homeTravelInfo.scheduleSequenceLabel}) vs [원정] ${match.awayTeam.name} ✈️ ${match.footballTravelFatigueTracker.awayTravelInfo.travelDistanceKm.toLocaleString()}km (${match.footballTravelFatigueTracker.awayTravelInfo.scheduleSequenceLabel}) • 14일 누적: 홈 ${homeMins}분 vs 원정 ${awayMins}분`
-            : isHomeFitter 
-              ? `${match.homeTeam.name} 14일 ${homeMins}분 (체력 여유 🟢) vs ${match.awayTeam.name} ${awayMins}분 (체력 소모 🔴)`
-              : `${match.homeTeam.name} 14일 ${homeMins}분 (체력 소모 🔴) vs ${match.awayTeam.name} ${awayMins}분 (체력 여유 🟢)`}
-        </div>
-        <div className={`p-3.5 rounded-xl border text-xs font-medium leading-relaxed ${
-          isLight ? 'bg-slate-50 border-slate-200 text-slate-800' : 'bg-slate-900 border-emerald-500/30 text-slate-200'
-        }`}>
-          <strong className="text-emerald-700 font-black">4. [득점 생산력 & xG / xGA 지표]</strong> {match.homeTeam.name} 기대득점 xG {match.homeTeam.xgStats?.avgXg || 1.45}골 (기대실점 xGA {match.homeTeam.xgStats?.avgXga || 1.15}골) vs {match.awayTeam.name} xG {match.awayTeam.xgStats?.avgXg || 1.15}골 (xGA {match.awayTeam.xgStats?.avgXga || 1.45}골)
-        </div>
-        <div className={`p-3.5 rounded-xl border text-xs font-medium leading-relaxed ${
-          isLight ? 'bg-slate-50 border-slate-200 text-slate-800' : 'bg-slate-900 border-emerald-500/30 text-slate-200'
-        }`}>
-          <strong className="text-emerald-700 font-black">5. [필드 틸트 & 빅 찬스 창출력]</strong> 파이널 서드 점유율(필드 틸트): [홈] {winMetrics?.homeFieldTiltPct || 54}% vs [원정] {winMetrics?.awayFieldTiltPct || 46}% • 빅 찬스 창출 [홈] {winMetrics?.homeBigChances || 3}회 vs [원정] {winMetrics?.awayBigChances || 2}회
+          <div className="p-3 flex items-start gap-2.5">
+            <span className="w-5 h-5 rounded-md bg-slate-800 text-slate-300 flex items-center justify-center font-black text-[10px] shrink-0 mt-0.5">1</span>
+            <div className="space-y-0.5">
+              <strong className="text-white font-bold block">라인업 & 전술 포메이션</strong>
+              <span className="text-slate-300">[홈] {match.homeOfficialLineup?.formation || '4-3-3'} 전술 vs [원정] {match.awayOfficialLineup?.formation || '4-4-2'} 전술 오피셜 발표</span>
+            </div>
+          </div>
+          <div className="p-3 flex items-start gap-2.5">
+            <span className="w-5 h-5 rounded-md bg-slate-800 text-slate-300 flex items-center justify-center font-black text-[10px] shrink-0 mt-0.5">2</span>
+            <div className="space-y-0.5">
+              <strong className="text-white font-bold block">선발 11명 시장가치 체급</strong>
+              <span className="text-slate-300">{match.homeTeam.name} 선발 몸값 {match.homeOfficialLineup?.starting11Value || match.homeTeam.totalMarketValue || '3,200억'} vs {match.awayTeam.name} 선발 몸값 {match.awayOfficialLineup?.starting11Value || match.awayTeam.totalMarketValue || '2,800억'}</span>
+            </div>
+          </div>
+          <div className="p-3 flex items-start gap-2.5">
+            <span className="w-5 h-5 rounded-md bg-slate-800 text-slate-300 flex items-center justify-center font-black text-[10px] shrink-0 mt-0.5">3</span>
+            <div className="space-y-0.5">
+              <strong className="text-white font-bold block">이동거리 & 연전 스케줄 피로도</strong>
+              <span className="text-slate-300">{match.footballTravelFatigueTracker
+                ? `[홈] ${match.homeTeam.name} ✈️ ${match.footballTravelFatigueTracker.homeTravelInfo.travelDistanceKm.toLocaleString()}km (${match.footballTravelFatigueTracker.homeTravelInfo.scheduleSequenceLabel}) vs [원정] ${match.awayTeam.name} ✈️ ${match.footballTravelFatigueTracker.awayTravelInfo.travelDistanceKm.toLocaleString()}km (${match.footballTravelFatigueTracker.awayTravelInfo.scheduleSequenceLabel}) • 14일 누적: 홈 ${homeMins}분 vs 원정 ${awayMins}분`
+                : isHomeFitter 
+                  ? `${match.homeTeam.name} 14일 ${homeMins}분 (체력 여유 🟢) vs ${match.awayTeam.name} ${awayMins}분 (체력 소모 🔴)`
+                  : `${match.homeTeam.name} 14일 ${homeMins}분 (체력 소모 🔴) vs ${match.awayTeam.name} ${awayMins}분 (체력 여유 🟢)`}</span>
+            </div>
+          </div>
+          <div className="p-3 flex items-start gap-2.5">
+            <span className="w-5 h-5 rounded-md bg-slate-800 text-slate-300 flex items-center justify-center font-black text-[10px] shrink-0 mt-0.5">4</span>
+            <div className="space-y-0.5">
+              <strong className="text-white font-bold block">득점 생산력 & xG / xGA 지표</strong>
+              <span className="text-slate-300">{match.homeTeam.name} 기대득점 xG {match.homeTeam.xgStats?.avgXg || 1.45}골 (기대실점 xGA {match.homeTeam.xgStats?.avgXga || 1.15}골) vs {match.awayTeam.name} xG {match.awayTeam.xgStats?.avgXg || 1.15}골 (xGA {match.awayTeam.xgStats?.avgXga || 1.45}골)</span>
+            </div>
+          </div>
+          <div className="p-3 flex items-start gap-2.5">
+            <span className="w-5 h-5 rounded-md bg-slate-800 text-slate-300 flex items-center justify-center font-black text-[10px] shrink-0 mt-0.5">5</span>
+            <div className="space-y-0.5">
+              <strong className="text-white font-bold block">필드 틸트 & 빅 찬스 창출력</strong>
+              <span className="text-slate-300">파이널 서드 점유율(필드 틸트): [홈] {winMetrics?.homeFieldTiltPct || 54}% vs [원정] {winMetrics?.awayFieldTiltPct || 46}% • 빅 찬스 창출 [홈] {winMetrics?.homeBigChances || 3}회 vs [원정] {winMetrics?.awayBigChances || 2}회</span>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -468,7 +483,7 @@ export const MatchDetailModal = ({
             <div id="section-win-factors" className="space-y-4 pt-2 scroll-mt-6">
               <div className="flex items-center justify-between">
                 <h3 className="text-sm sm:text-base font-black text-amber-400 flex items-center gap-2">
-                  <Flame className="w-5 h-5 text-amber-400 animate-pulse" />
+                  <Flame className="w-5 h-5 text-slate-200" />
                   <span>1. 👑 [5대 핵심 승패 지표] xG · 빅찬스 · 박스안슈팅 · 필드틸트 · 선제골 확률</span>
                 </h3>
                 <span className="text-[10px] font-black text-amber-300 bg-amber-950 px-2.5 py-1 rounded-lg border border-amber-500/40">
@@ -491,7 +506,7 @@ export const MatchDetailModal = ({
             <div id="section-football-travel" className="space-y-4 pt-2 scroll-mt-6">
               <div className="flex items-center justify-between">
                 <h3 className="text-sm sm:text-base font-black text-amber-400 flex items-center gap-2">
-                  <Plane className="w-5 h-5 text-amber-400 animate-pulse" />
+                  <Plane className="w-5 h-5 text-slate-200" />
                   <span>2. ✈️ [축구 연전 이동거리 & 피로도] 원정 ➡️ 원정 / 홈 복귀 / 이동거리(km) 분석</span>
                 </h3>
                 <span className="text-[10px] font-black text-amber-300 bg-amber-950 px-2.5 py-1 rounded-lg border border-amber-500/40">
@@ -499,8 +514,8 @@ export const MatchDetailModal = ({
                 </span>
               </div>
 
-              <div className="bg-slate-950 p-4 sm:p-5 rounded-2xl border border-amber-500/40 space-y-4 shadow-xl">
-                <div className="p-3 bg-amber-950/70 rounded-xl border border-amber-500/50 text-xs text-amber-200 font-bold leading-relaxed">
+              <div className="bg-slate-950 p-4 sm:p-5 rounded-2xl border border-slate-800 space-y-4 shadow-xl">
+                <div className="p-3 bg-slate-900 rounded-xl border border-slate-800 text-xs text-slate-200 font-bold leading-relaxed">
                   {match.footballTravelFatigueTracker.tacticalImpactText}
                 </div>
 
@@ -565,8 +580,8 @@ export const MatchDetailModal = ({
                 <span>1. 🏀 백투백 연투 & 3,850km 비행 이동거리 과부하 팩트 수치</span>
               </h3>
 
-              <div className="bg-slate-950 p-4 sm:p-5 rounded-2xl border border-amber-500/40 space-y-4 shadow-xl">
-                <div className="p-3 bg-amber-950/70 rounded-xl border border-amber-500/50 text-xs text-amber-200 font-bold leading-relaxed">
+              <div className="bg-slate-950 p-4 sm:p-5 rounded-2xl border border-slate-800 space-y-4 shadow-xl">
+                <div className="p-3 bg-slate-900 rounded-xl border border-slate-800 text-xs text-slate-200 font-bold leading-relaxed">
                   {match.basketballTravelFatigueTracker?.summaryText || '🚨 [NBA 이동거리 & 백투백 수치 팩트] 원정팀 백투백 20시간 연투 + 3,850km 비행 과부하 (4쿼터 야투율 -18.5% 급감 🔴)'}
                 </div>
 

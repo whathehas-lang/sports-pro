@@ -227,10 +227,10 @@ export const LineupTacticsView = ({ match, theme = 'light' }: LineupTacticsViewP
     const fw = playersList.filter(p => p.position === 'FW');
 
     return [
-      { role: 'FW', label: `⭐ FW 공격수 (${fw.length}명)`, players: fw, badgeBg: 'bg-amber-950/90 text-amber-300 border-amber-500/50' },
-      { role: 'MF', label: `⚽ MF 미드필더 (${mf.length}명)`, players: mf, badgeBg: 'bg-emerald-950/90 text-emerald-300 border-emerald-500/50' },
-      { role: 'DF', label: `🛡️ DF 수비수 (${df.length}명)`, players: df, badgeBg: 'bg-cyan-950/90 text-cyan-300 border-cyan-500/50' },
-      { role: 'GK', label: `🧤 GK 골키퍼 (${gk.length}명)`, players: gk, badgeBg: 'bg-purple-950/90 text-purple-300 border-purple-500/50' },
+      { role: 'FW', label: `FW 공격수 (${fw.length}명)`, players: fw, badgeBg: 'bg-slate-800/90 text-slate-200 border-slate-700/60' },
+      { role: 'MF', label: `MF 미드필더 (${mf.length}명)`, players: mf, badgeBg: 'bg-slate-800/90 text-slate-200 border-slate-700/60' },
+      { role: 'DF', label: `DF 수비수 (${df.length}명)`, players: df, badgeBg: 'bg-slate-800/90 text-slate-200 border-slate-700/60' },
+      { role: 'GK', label: `GK 골키퍼 (${gk.length}명)`, players: gk, badgeBg: 'bg-slate-800/90 text-slate-200 border-slate-700/60' },
     ];
   };
 
@@ -960,22 +960,22 @@ export const LineupTacticsView = ({ match, theme = 'light' }: LineupTacticsViewP
             </span>
           </div>
 
-          <div className="relative w-full min-h-[660px] sm:min-h-[740px] bg-gradient-to-b from-emerald-950 via-emerald-900 to-emerald-950 rounded-3xl border-2 border-emerald-500/60 overflow-hidden shadow-2xl p-4 flex flex-col justify-between">
+          <div className="relative w-full min-h-[660px] sm:min-h-[740px] bg-[#0a1512] rounded-2xl border border-emerald-500/30 overflow-hidden shadow-xl p-4 flex flex-col justify-between">
             {/* Authentic Grass Pitch Stripe Patterns */}
             <div className="absolute inset-0 bg-[radial-gradient(#10b981_1.5px,transparent_1.5px)] [background-size:20px_20px] opacity-15 pointer-events-none" />
             <div className="absolute inset-0 bg-gradient-to-b from-emerald-950/80 via-transparent to-emerald-950/80 pointer-events-none" />
 
             {/* Pitch Outer Touchlines & Penalty Boxes */}
-            <div className="absolute inset-2 border-2 border-emerald-300/40 rounded-2xl pointer-events-none" />
+            <div className="absolute inset-2 border border-emerald-400/25 rounded-2xl pointer-events-none" />
             
             {/* Center Halfway Line & Center Circle */}
-            <div className="absolute top-1/2 left-2 right-2 border-b-2 border-emerald-300/40 pointer-events-none" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 border-2 border-emerald-300/40 rounded-full pointer-events-none flex items-center justify-center">
+            <div className="absolute top-1/2 left-2 right-2 border-b border-emerald-400/25 pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 border border-emerald-400/25 rounded-full pointer-events-none flex items-center justify-center">
               <div className="w-2.5 h-2.5 bg-emerald-300/60 rounded-full" />
             </div>
 
             {/* Goal Area Line */}
-            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-48 h-20 border-t-2 border-x-2 border-emerald-300/40 pointer-events-none" />
+            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-48 h-20 border-t border-x border-emerald-400/25 pointer-events-none" />
 
             {/* Soccer Pitch Top Header */}
             <div className="absolute top-3 left-4 right-4 z-30 flex items-center justify-between text-xs font-black text-emerald-300 bg-slate-950/90 px-3.5 py-2 rounded-xl border border-emerald-500/40 shadow-lg">
