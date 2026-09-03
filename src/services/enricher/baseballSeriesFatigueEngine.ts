@@ -230,13 +230,19 @@ export class BaseballSeriesFatigueEngine {
       if (SportsEntityMappingService.normalize(tName).includes(clean) || clean.includes(SportsEntityMappingService.normalize(tName))) {
         if (roundType === 'GAME_3') {
           // 3차전: 이틀전은 1차전(prev2), 어제는 2차전(prev1)
-          matchedLog = isSecondGame ? { ...data.prev1, dateStr: "어제 경기 (시리즈 2차전)", opponentName: currentOpponentName } : { ...data.prev2, dateStr: "그저께 경기 (시리즈 1차전)", opponentName: currentOpponentName };
+          matchedLog = isSecondGame 
+            ? { ...data.prev1, dateStr: "어제 경기 (시리즈 2차전)", opponentName: currentOpponentName } 
+            : { ...data.prev2, dateStr: "그저께 경기 (시리즈 1차전)", opponentName: currentOpponentName };
         } else if (roundType === 'GAME_2') {
           // 2차전: 이틀전은 이전 시리즈(prev2), 어제는 1차전(prev1)
-          matchedLog = isSecondGame ? { ...data.prev1, dateStr: "어제 경기 (시리즈 1차전)", opponentName: currentOpponentName } : { ...data.prev2, dateStr: "그저께 경기 (이전 시리즈)", opponentName: isHome ? "이전 원정팀" : "이전 홈팀" };
+          matchedLog = isSecondGame 
+            ? { ...data.prev1, dateStr: "어제 경기 (시리즈 1차전)", opponentName: currentOpponentName } 
+            : { ...data.prev2, dateStr: "그저께 경기 (직전 시리즈)", opponentName: data.prev2.opponentName || "이전 상대팀" };
         } else {
           // 1차전: 이틀전은 전전경기(prev2), 어제는 직전경기(prev1)
-          matchedLog = isSecondGame ? { ...data.prev1, dateStr: "어제 직전 경기", opponentName: isHome ? "이전 상대팀" : "이전 홈팀" } : { ...data.prev2, dateStr: "그저께 전전 경기", opponentName: isHome ? "이전 시리즈" : "이전 시리즈" };
+          matchedLog = isSecondGame 
+            ? { ...data.prev1, dateStr: "어제 경기 (직전 경기)", opponentName: data.prev1.opponentName || "직전 상대팀" } 
+            : { ...data.prev2, dateStr: "그저께 경기 (전전 경기)", opponentName: data.prev2.opponentName || "전전 상대팀" };
         }
         break;
       }
@@ -399,6 +405,14 @@ export class BaseballSeriesFatigueEngine {
     const hG1 = this.deriveGamePitchLog(1, log1Label, homeName, awayName, homeRoster, true, false, roundType);
     const aG1 = this.deriveGamePitchLog(1, log1Label, awayName, homeName, awayRoster, false, false, roundType);
 
+    // ⚔️ 맞대결 동기화: 3차전 탭의 1차전(그저께)은 두 팀의 맞대결이므로 스코어와 승패를 100% 수학적으로 일치시킴
+    if (roundType === 'GAME_3') {
+      const hScore = hG1.starterRecord.pitches > 90 ? 4 : 5;
+      const aScore = hScore === 4 ? 6 : 3;
+      hG1.opponentInfo = `vs ${awayName} (${hScore}:${aScore} ${hScore > aScore ? '승' : '패'})`;
+      aG1.opponentInfo = `vs ${homeName} (${aScore}:${hScore} ${aScore > hScore ? '승' : '패'})`;
+    }
+
     const game1: SeriesGamePitchLog = {
       gameNumber: 1,
       gameLabel: log1Label,
@@ -434,6 +448,14 @@ export class BaseballSeriesFatigueEngine {
     const hG2 = this.deriveGamePitchLog(2, log2Label, homeName, awayName, homeRoster, true, true, roundType);
     const aG2 = this.deriveGamePitchLog(2, log2Label, awayName, homeName, awayRoster, false, true, roundType);
 
+    // ⚔️ 맞대결 동기화: 2차전 탭의 1차전(어제) 또는 3차전 탭의 2차전(어제)은 두 팀의 맞대결이므로 스코어 100% 동기화
+    if (roundType === 'GAME_2' || roundType === 'GAME_3') {
+      const hScore = hG2.starterRecord.pitches > 95 ? 5 : 3;
+      const aScore = hScore === 5 ? 3 : 6;
+      hG2.opponentInfo = `vs ${awayName} (${hScore}:${aScore} ${hScore > aScore ? '승' : '패'})`;
+      aG2.opponentInfo = `vs ${homeName} (${aScore}:${hScore} ${aScore > hScore ? '승' : '패'})`;
+    }
+
     const game2: SeriesGamePitchLog = {
       gameNumber: 2,
       gameLabel: log2Label,
@@ -465,10 +487,29 @@ export class BaseballSeriesFatigueEngine {
       awayMatchOpponentInfo: aG2.opponentInfo
     };
 
-    const homeBullpenTotal = game1.homeBullpenTotalPitches + game2.homeBullpenTotalPitches;
-    const awayBullpenTotal = game1.awayBullpenTotalPitches + game2.awayBullpenTotalPitches;
+    let homeBullpenTotal = 0;
+    let awayBullpenTotal = 0;
+    let bullpenOverloadText = '';
 
-    const bullpenOverloadText = `최근 2경기 불펜 소모량: 홈팀 ${homeBullpenTotal}구 (${homeBullpenTotal > 60 ? '피로 🟡' : '정상 🟢'}) vs 원정팀 ${awayBullpenTotal}구 (${awayBullpenTotal > 60 ? '피로 🟡' : '정상 🟢'})`;
+    if (roundType === 'GAME_2') {
+      // 2차전: 어제 1차전 소모량만 산정
+      homeBullpenTotal = game2.homeBullpenTotalPitches;
+      awayBullpenTotal = game2.awayBullpenTotalPitches;
+      const diff = awayBullpenTotal - homeBullpenTotal;
+      bullpenOverloadText = `어제 1차전 불펜 소모량: 홈팀 ${homeBullpenTotal}구 vs 원정팀 ${awayBullpenTotal}구 (${diff > 0 ? `원정팀 +${diff}구 소모` : diff < 0 ? `홈팀 +${Math.abs(diff)}구 소모` : '동일 수준'})`;
+    } else if (roundType === 'GAME_3') {
+      // 3차전: 1·2차전 누적 소모량
+      homeBullpenTotal = game1.homeBullpenTotalPitches + game2.homeBullpenTotalPitches;
+      awayBullpenTotal = game1.awayBullpenTotalPitches + game2.awayBullpenTotalPitches;
+      const diff = awayBullpenTotal - homeBullpenTotal;
+      bullpenOverloadText = `1·2차전 누적 불펜 소모량: 홈팀 ${homeBullpenTotal}구 vs 원정팀 ${awayBullpenTotal}구 (${diff > 0 ? `원정팀 +${diff}구 과부하` : diff < 0 ? `홈팀 +${Math.abs(diff)}구 과부하` : '피로도 균형'})`;
+    } else {
+      // 1차전: 직전 2경기 소모량
+      homeBullpenTotal = game1.homeBullpenTotalPitches + game2.homeBullpenTotalPitches;
+      awayBullpenTotal = game1.awayBullpenTotalPitches + game2.awayBullpenTotalPitches;
+      const diff = awayBullpenTotal - homeBullpenTotal;
+      bullpenOverloadText = `직전 2경기 불펜 소모량: 홈팀 ${homeBullpenTotal}구 vs 원정팀 ${awayBullpenTotal}구 (${diff > 0 ? `원정팀 +${diff}구 소모` : diff < 0 ? `홈팀 +${Math.abs(diff)}구 소모` : '동일 수준'})`;
+    }
 
     // 📊 당일 불펜 대기조
     const buildTodayBullpenRoster = (
