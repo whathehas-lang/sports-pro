@@ -218,13 +218,16 @@ export const MatchLiveChatModal: React.FC<MatchLiveChatModalProps> = ({
     chatBottomRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
+  const isSendingRef = useRef<boolean>(false);
+
   const handleSendMessage = (textToSend?: string) => {
     const text = (textToSend || inputText).trim();
-    if (!text || !wsServiceRef.current) return;
+    if (!text) return;
+    if (isSendingRef.current) return;
+    isSendingRef.current = true;
+    setTimeout(() => { isSendingRef.current = false; }, 300);
 
-    wsServiceRef.current.sendMessage(myNickname, text, true, 'VVIP');
-
-    // 🌐 실시간 파이어베이스 클라우드로 동시 브로드캐스팅 (다른 폰/PC 기기에서도 즉각 수신)
+    // 🌐 1. 파이어베이스가 활성화되어 있으면 클라우드로 단일 발행 (중복 로컬 에코 방지)
     if (isFirebaseConfigured) {
       const roomKey = `match_chat_${matchId}`;
       const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -237,6 +240,9 @@ export const MatchLiveChatModal: React.FC<MatchLiveChatModalProps> = ({
         isVvip: true,
         color: 'text-amber-300'
       }).catch(err => console.error('[ChatModal] Firebase broadcast error:', err));
+    } else if (wsServiceRef.current) {
+      // 2. 파이어베이스가 없을 때만 로컬/FastAPI 웹소켓으로 전송
+      wsServiceRef.current.sendMessage(myNickname, text, true, 'VVIP');
     }
 
     if (!textToSend) setInputText('');
