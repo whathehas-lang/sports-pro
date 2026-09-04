@@ -27,6 +27,7 @@ import { H2HBatchPrefetchService } from './services/batch/h2hBatchPrefetchServic
 import { H2HRecentFormEngine } from './services/enricher/h2hRecentFormEngine';
 import { BetmanHourlySyncScheduler } from './services/scheduler/betmanHourlySyncScheduler';
 import { SportsDbService } from './services/api/sportsDbService';
+import { BaseballLiveStarterHub } from './services/api/baseballLiveStarterHub';
 
 export default function App() {
   const dynamicMeta = getDynamicBetmanGamesMetadata();
@@ -88,11 +89,21 @@ export default function App() {
     const unsubscribeDb = verifiedMatchDatabase.subscribe(() => {
       const dbMatches = verifiedMatchDatabase.getVerifiedMatches();
       if (dbMatches && dbMatches.length > 0) {
-        setMatches(dbMatches);
+        setMatches(dbMatches.map(m => BaseballLiveStarterHub.enrichMatchWithFactStarter(m)));
       }
     });
 
-    return () => unsubscribeDb();
+    // ⚾ Firebase 실시간 공식 선발투수 갱신 리스너 (백엔드가 긁어온 팩트 즉각 반영)
+    const unsubscribeStarters = firebaseService.subscribeToDailyStarters((startersMap) => {
+      if (startersMap && Object.keys(startersMap).length > 0) {
+        setMatches(prev => prev.map(m => BaseballLiveStarterHub.enrichMatchWithFactStarter(m)));
+      }
+    });
+
+    return () => {
+      unsubscribeDb();
+      unsubscribeStarters();
+    };
   }, []);
   
 

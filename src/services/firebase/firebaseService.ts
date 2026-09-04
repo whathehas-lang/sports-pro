@@ -2,6 +2,9 @@ import { initializeApp, getApps, getApp } from 'firebase/app';
 import { 
   getFirestore, 
   collection, 
+  doc,
+  getDoc,
+  setDoc,
   onSnapshot, 
   addDoc, 
   query, 
@@ -113,6 +116,72 @@ export const firebaseService = {
       return docRef.id;
     } catch (err) {
       console.error(`[Firebase] Failed to send message to room ${roomId}:`, err);
+      return null;
+    }
+  },
+
+  /**
+   * ⚾ 실시간 선발투수 맵 실시간 구독 (KBO & NPB)
+   */
+  subscribeToDailyStarters(
+    onUpdate: (startersMap: Record<string, { pitcher: string; league: string; status: string }>) => void
+  ): () => void {
+    if (!db) return () => {};
+
+    try {
+      const todayStr = new Date().toISOString().slice(0, 10);
+      const starterDocRef = doc(db, 'daily_starters', todayStr);
+      return onSnapshot(starterDocRef, (snap) => {
+        if (snap.exists()) {
+          const data = snap.data();
+          onUpdate(data.starters || {});
+        }
+      });
+    } catch (e) {
+      console.error('[Firebase] subscribeToDailyStarters error:', e);
+      return () => {};
+    }
+  },
+
+  /**
+   * ⚾ 실시간 선발투수 맵 Firestore 저장
+   */
+  async saveDailyStarters(
+    startersMap: Record<string, { pitcher: string; league: string; status: string }>
+  ): Promise<boolean> {
+    if (!db) return false;
+
+    try {
+      const todayStr = new Date().toISOString().slice(0, 10);
+      const starterDocRef = doc(db, 'daily_starters', todayStr);
+      await setDoc(starterDocRef, {
+        date: todayStr,
+        updatedAt: serverTimestamp(),
+        starters: startersMap
+      }, { merge: true });
+      return true;
+    } catch (e) {
+      console.error('[Firebase] saveDailyStarters error:', e);
+      return false;
+    }
+  },
+
+  /**
+   * ⚾ 오늘의 선발투수 맵 1회 조회
+   */
+  async getDailyStartersOnce(): Promise<Record<string, { pitcher: string; league: string; status: string }> | null> {
+    if (!db) return null;
+
+    try {
+      const todayStr = new Date().toISOString().slice(0, 10);
+      const starterDocRef = doc(db, 'daily_starters', todayStr);
+      const snap = await getDoc(starterDocRef);
+      if (snap.exists()) {
+        return snap.data().starters || null;
+      }
+      return null;
+    } catch (e) {
+      console.error('[Firebase] getDailyStartersOnce error:', e);
       return null;
     }
   }

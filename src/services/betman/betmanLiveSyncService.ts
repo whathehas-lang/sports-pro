@@ -9,6 +9,7 @@ import { MasterFootballOrchestratorService } from '../orchestrator/masterFootbal
 import { MultiSourceBaseballOrchestrator } from '../enricher/multiSourceBaseballOrchestrator';
 import { verifiedMatchDatabase } from '../db/verifiedMatchDatabase';
 import { calculateActiveSeungbushikRoundTs } from './betmanRoundRegistry';
+import { BaseballLiveStarterHub } from '../api/baseballLiveStarterHub';
 
 export class BetmanLiveSyncService {
   /**
@@ -24,7 +25,7 @@ export class BetmanLiveSyncService {
     const rawMatches = BetmanLiveSyncService.getRawMatches(gmId, activeGmTs);
     const orchestrated = rawMatches.map(m => MasterFootballOrchestratorService.orchestrateSync(m));
     const { verifiedMatches } = verifiedMatchDatabase.ingestAndVerifyMatches(orchestrated);
-    return verifiedMatches;
+    return verifiedMatches.map(m => BaseballLiveStarterHub.enrichMatchWithFactStarter(m));
   }
 
   /**

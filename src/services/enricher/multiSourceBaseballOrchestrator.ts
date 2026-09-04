@@ -3,6 +3,7 @@ import { KboOfficialLiveCollector } from '../crawler/kboOfficialLiveCollector';
 import { MlbOfficialStatsService } from '../api/mlbOfficialStatsService';
 import { NpbOfficialStarterService } from '../api/npbOfficialStarterService';
 import { FootballH2HRecentFormEngine } from './footballH2HRecentFormEngine';
+import { BaseballLiveStarterHub } from '../api/baseballLiveStarterHub';
 
 /**
  * ⚾ MultiSourceBaseballOrchestrator
@@ -12,6 +13,9 @@ import { FootballH2HRecentFormEngine } from './footballH2HRecentFormEngine';
  */
 export class MultiSourceBaseballOrchestrator {
   public static async enrichMatchesWithMultiSource(matches: Match[]): Promise<Match[]> {
+    // 실시간 최신 선발투수 팩트 동기화 (로컬 백엔드 / Firebase / 공식)
+    await BaseballLiveStarterHub.syncOfficialStarters().catch(() => {});
+
     return Promise.all(
       matches.map(async (m) => {
         if (m.sport !== 'baseball') return m;
@@ -33,15 +37,19 @@ export class MultiSourceBaseballOrchestrator {
         const isToday = matchTime.includes(todayMmDd) || matchTime.includes(todayDateStr) || (!matchTime.includes('.') && !matchTime.includes('-'));
         const isTomorrow = matchTime.includes(tmrwMmDd) || matchTime.includes(tmrwDateStr);
 
-        // 1. KBO 경기인 경우 -> 공식 KBO/네이버 공시 수집
+        // 1. KBO 경기인 경우 -> BaseballLiveStarterHub 공식 실시간 수집 연동
         const isKbo = m.league.includes('KBO') || m.countryFlag === '🇰🇷' || 
           ['LG', '두산', '한화', 'KIA', '삼성', '롯데', '키움', 'KT', 'SSG', 'NC'].some(t => m.homeTeam.name.includes(t) || m.awayTeam.name.includes(t));
 
         if (isKbo) {
           if (isToday) {
-            const kboStarters = await KboOfficialLiveCollector.getOfficialStarterForMatch(m);
-            homeStarter = kboStarters.homeStarter;
-            awayStarter = kboStarters.awayStarter;
+            homeStarter = BaseballLiveStarterHub.getStarterPitcher(m.homeTeam.name);
+            awayStarter = BaseballLiveStarterHub.getStarterPitcher(m.awayTeam.name);
+            if (!homeStarter || !awayStarter) {
+              const kboStarters = await KboOfficialLiveCollector.getOfficialStarterForMatch(m);
+              homeStarter = homeStarter || kboStarters.homeStarter;
+              awayStarter = awayStarter || kboStarters.awayStarter;
+            }
           }
           // 내일/미래 KBO는 공식 발표 전이므로 null 유지 (선발 미정)
         } else if (m.league.includes('MLB') || m.countryFlag === '🇺🇸') {
@@ -53,11 +61,16 @@ export class MultiSourceBaseballOrchestrator {
             homeStarter = await MlbOfficialStatsService.fetchOfficialProbablePitcher(m.homeTeam.name, tmrwDateStr);
             awayStarter = await MlbOfficialStatsService.fetchOfficialProbablePitcher(m.awayTeam.name, tmrwDateStr);
           }
-        } else if (m.league.includes('NPB') || m.countryFlag === '🇯🇵') {
-          // 3. NPB 경기인 경우 -> 공식 홈페이지 공시 수집
+        } else if (m.league.includes('NPB') || m.countryFlag === '🇯🇵' || 
+          ['야쿠르트', '주니치', '히로시마', '요미우리', '라쿠텐', '니혼햄', '오릭스', '지바롯데', '소프트뱅크', '세이부'].some(t => m.homeTeam.name.includes(t) || m.awayTeam.name.includes(t))) {
+          // 3. NPB 경기인 경우 -> BaseballLiveStarterHub 및 공식 예고선발 수집
           if (isToday) {
-            homeStarter = await NpbOfficialStarterService.fetchOfficialStarterByDate(m.homeTeam.name, 'TODAY');
-            awayStarter = await NpbOfficialStarterService.fetchOfficialStarterByDate(m.awayTeam.name, 'TODAY');
+            homeStarter = BaseballLiveStarterHub.getStarterPitcher(m.homeTeam.name);
+            awayStarter = BaseballLiveStarterHub.getStarterPitcher(m.awayTeam.name);
+            if (!homeStarter || !awayStarter) {
+              homeStarter = homeStarter || await NpbOfficialStarterService.fetchOfficialStarterByDate(m.homeTeam.name, 'TODAY');
+              awayStarter = awayStarter || await NpbOfficialStarterService.fetchOfficialStarterByDate(m.awayTeam.name, 'TODAY');
+            }
           }
         }
 
