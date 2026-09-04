@@ -222,6 +222,138 @@ const STADIUM_DATABASE: StadiumGeoInfo[] = [
     fenceSpec: '완전 밀폐형 돔구장',
     outfieldAngleDeg: 0
   },
+  {
+    nameKo: 'T-모바일 파크',
+    teamKeywords: ['시애틀', '매리너스', 'Mariners', 'Seattle', 'T-모바일', 'T모바일'],
+    lat: 47.5914,
+    lon: -122.3325,
+    isDome: true, // 개폐식 돔
+    parkFactor: 0.98,
+    parkType: '투수 친화',
+    fenceSpec: '좌우 101m, 중앙 122m, 개폐식 지붕 (해풍 영향 투수전)',
+    outfieldAngleDeg: 45
+  },
+  {
+    nameKo: '오클랜드 콜리세움',
+    teamKeywords: ['애슬레틱스', '오클랜드', 'Athletics', 'Oakland'],
+    lat: 37.7516,
+    lon: -122.2005,
+    isDome: false,
+    parkFactor: 0.94,
+    parkType: '투수 친화',
+    fenceSpec: '넓은 파울 지역 및 태평양 바닷바람 (장타 억제)',
+    outfieldAngleDeg: 40
+  },
+  {
+    nameKo: '부시 스타디움',
+    teamKeywords: ['세인트루이스', '카디널스', 'Cardinals'],
+    lat: 38.6226,
+    lon: -90.1928,
+    isDome: false,
+    parkFactor: 0.97,
+    parkType: '투수 친화',
+    fenceSpec: '좌우 102m, 중앙 122m',
+    outfieldAngleDeg: 45
+  },
+  {
+    nameKo: '펫코 파크',
+    teamKeywords: ['샌디에이고', '파드리스', 'Padres'],
+    lat: 32.7073,
+    lon: -117.1566,
+    isDome: false,
+    parkFactor: 0.95,
+    parkType: '투수 친화',
+    fenceSpec: '해풍 영향 야간 경기 투수 우세',
+    outfieldAngleDeg: 35
+  },
+  {
+    nameKo: '시티즌스 뱅크 파크',
+    teamKeywords: ['필라델피아', '필리스', 'Phillies'],
+    lat: 39.9061,
+    lon: -75.1665,
+    isDome: false,
+    parkFactor: 1.14,
+    parkType: '타자 친화',
+    fenceSpec: '좌우 100m, 중앙 122m (타자 친화 홈런 다발)',
+    outfieldAngleDeg: 40
+  },
+  {
+    nameKo: '트루이스트 파크',
+    teamKeywords: ['애틀랜타', '브레이브스', 'Braves'],
+    lat: 33.8908,
+    lon: -84.4678,
+    isDome: false,
+    parkFactor: 1.05,
+    parkType: '타자 친화',
+    fenceSpec: '좌우 101m, 중앙 122m',
+    outfieldAngleDeg: 35
+  },
+  {
+    nameKo: '미닛 메이드 파크',
+    teamKeywords: ['휴스턴', '애스트로스', 'Astros'],
+    lat: 29.7573,
+    lon: -95.3555,
+    isDome: true,
+    parkFactor: 1.02,
+    parkType: '타자 친화',
+    fenceSpec: '개폐식 지붕, 좌측 크로포드 박스 96m (단거리 홈런)',
+    outfieldAngleDeg: 40
+  },
+  {
+    nameKo: '글로브 라이프 필드',
+    teamKeywords: ['텍사스', '레인저스', 'Rangers'],
+    lat: 32.7473,
+    lon: -97.0838,
+    isDome: true,
+    parkFactor: 0.99,
+    parkType: '투타 밸런스',
+    fenceSpec: '최신식 개폐식 돔구장',
+    outfieldAngleDeg: 45
+  },
+  {
+    nameKo: '체이스 필드',
+    teamKeywords: ['애리조나', '다이아몬드백스', 'Diamondbacks'],
+    lat: 33.4453,
+    lon: -112.0667,
+    isDome: true,
+    parkFactor: 1.08,
+    parkType: '타자 친화',
+    fenceSpec: '사막 기후 개폐식 돔구장',
+    outfieldAngleDeg: 45
+  },
+  {
+    nameKo: '아메리칸 패밀리 필드',
+    teamKeywords: ['밀워키', '브루어스', 'Brewers'],
+    lat: 43.0280,
+    lon: -87.9712,
+    isDome: true,
+    parkFactor: 1.06,
+    parkType: '타자 친화',
+    fenceSpec: '부채꼴 개폐식 돔구장',
+    outfieldAngleDeg: 40
+  },
+  {
+    nameKo: '시티 필드',
+    teamKeywords: ['메츠', '뉴욕메츠', 'Mets'],
+    lat: 40.7571,
+    lon: -73.8458,
+    isDome: false,
+    parkFactor: 0.96,
+    parkType: '투수 친화',
+    fenceSpec: '바닷바람 및 깊은 외야 펜스',
+    outfieldAngleDeg: 45
+  },
+  {
+    nameKo: 'PNC 파크',
+    teamKeywords: ['피츠버그', '파이어리츠', 'Pirates'],
+    lat: 40.4469,
+    lon: -80.0057,
+    isDome: false,
+    parkFactor: 0.98,
+    parkType: '투수 친화',
+    fenceSpec: '우측 알레게니 강 펜스 21ft (장타 억제)',
+    outfieldAngleDeg: 45
+  },
 
   // --- 🇯🇵 NPB 주요 구장 ---
   {

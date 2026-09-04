@@ -68,6 +68,19 @@ export class MatchChatWebSocketService {
     if (this.isExplicitlyClosed) return;
 
     try {
+      const isLocal = typeof window !== 'undefined' && (
+        window.location.hostname === 'localhost' || 
+        window.location.hostname === '127.0.0.1' || 
+        window.location.hostname.startsWith('192.168.')
+      );
+      if (!isLocal) {
+        // 운영 깃허브 웹(whathehas-lang.github.io)에서는 로컬 포트 8001 시도하지 않고 즉시 안정 모드로 진입
+        if (this.onConnectionStatusCallback) {
+          this.onConnectionStatusCallback(false);
+        }
+        return;
+      }
+
       const wsHost = window.location.hostname || 'localhost';
       const wsUrl = `ws://${wsHost}:8001/ws/chat/${this.matchId}`;
 

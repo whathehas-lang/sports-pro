@@ -44,13 +44,8 @@ export class MlbLiveGameSyncService {
 
     for (const dateStr of datesToScan) {
       try {
-        const url = `${this.MLB_SCHEDULE_URL}?sportId=1&hydrate=probablePitcher,linescore,team&date=${dateStr}&_t=${Date.now()}`;
-        const res = await fetch(url, {
-          headers: {
-            'Cache-Control': 'no-cache, no-store, must-revalidate',
-            'Pragma': 'no-cache'
-          }
-        });
+        const url = `${this.MLB_SCHEDULE_URL}?sportId=1&hydrate=probablePitcher,linescore,team&date=${dateStr}`;
+        const res = await fetch(url);
 
         if (!res.ok) continue;
         const data = await res.json();

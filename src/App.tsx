@@ -26,6 +26,7 @@ import { KboLiveSubPipelineService } from './services/api/kboLiveSubPipelineServ
 import { H2HBatchPrefetchService } from './services/batch/h2hBatchPrefetchService';
 import { H2HRecentFormEngine } from './services/enricher/h2hRecentFormEngine';
 import { BetmanHourlySyncScheduler } from './services/scheduler/betmanHourlySyncScheduler';
+import { SportsDbService } from './services/api/sportsDbService';
 
 export default function App() {
   const dynamicMeta = getDynamicBetmanGamesMetadata();
@@ -42,6 +43,11 @@ export default function App() {
   });
   const [refreshToast, setRefreshToast] = useState<string | null>(null);
   const [isMobileConnectModalOpen, setIsMobileConnectModalOpen] = useState<boolean>(false);
+
+  // 📅 SQLite Sports Master DB 실시간 날짜 연동 상태 (3일전~오늘)
+  const [dbDates, setDbDates] = useState<string[]>(['2026-09-04', '2026-09-03', '2026-09-02', '2026-09-01']);
+  const [selectedDbDate, setSelectedDbDate] = useState<string>('2026-09-04');
+  const [dbMatchesMap, setDbMatchesMap] = useState<Record<string, Match[]>>({});
 
   const handleReverifyAll = () => {
     setIsReverifying(true);
@@ -607,6 +613,23 @@ export default function App() {
   // 기본값: 'UPCOMING' (지금부터 열릴 내일 새벽 축구 ~ 오전 MLB ~ 저녁 KBO 전체 151개 자동 연속 표출!)
   const [selectedDateFilter, setSelectedDateFilter] = useState<'UPCOMING' | 'DAWN' | 'DAY' | 'ALL' | 'PAST'>('UPCOMING');
 
+  // 💾 SQLite DB 실시간 날짜 목록 및 경기 결과 자동 로드
+  useEffect(() => {
+    SportsDbService.getAvailableDates().then(dates => {
+      if (dates && dates.length > 0) setDbDates(dates);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (selectedDateFilter === 'PAST' && !dbMatchesMap[selectedDbDate]) {
+      SportsDbService.getMatchesByDate(selectedDbDate).then(mList => {
+        if (mList && mList.length > 0) {
+          setDbMatchesMap(prev => ({ ...prev, [selectedDbDate]: mList }));
+        }
+      });
+    }
+  }, [selectedDateFilter, selectedDbDate]);
+
   // ⏰ 오늘 & 내일 날짜 문자열 자동 계산
   const getDynamicDateStrings = () => {
     const d = new Date(nowTicker);
@@ -627,8 +650,13 @@ export default function App() {
     return hour < 6;
   };
 
+  // ⚡ 지난/마감 탭 선택 시 SQLite DB의 3일전~오늘 실제 경기 데이터 우선 바인딩
+  const currentSourceMatches = (selectedDateFilter === 'PAST' && dbMatchesMap[selectedDbDate]?.length)
+    ? dbMatchesMap[selectedDbDate]
+    : matches;
+
   // Filter matches by selected folder category & smart date filter
-  const rawFiltered = matches.filter((m) => {
+  const rawFiltered = currentSourceMatches.filter((m) => {
     if (selectedFolder === 'SEUNGMUBAE') {
       if (m.sport !== 'football' && m.betmanFolder !== 'SEUNGMUBAE') return false;
     } else if (selectedFolder === 'SEUNG1PAE') {
@@ -645,7 +673,8 @@ export default function App() {
     const passed = isMatchTimePassed(m, nowTicker);
 
     if (selectedDateFilter === 'PAST') {
-      // 지난/마감 경기 탭: 시간 지난 경기 또는 종료된 경기만 노출
+      // DB 경기 데이터인 경우 해당 날짜의 전체 결과 표출
+      if (dbMatchesMap[selectedDbDate]?.length) return true;
       return passed || m.status === 'FINISHED';
     }
 
@@ -860,6 +889,58 @@ export default function App() {
                 <span>KST 실시간 자동 연동</span>
               </div>
             </div>
+
+            {/* 📅 SQLite 영구 DB 실시간 3일전~오늘 경기 결과 탭 바 */}
+            {selectedDateFilter === 'PAST' && (
+              <div className={`flex flex-wrap items-center justify-between gap-2 p-2.5 rounded-xl border text-xs shadow-sm transition-all ${
+                isLight ? 'bg-amber-50 border-amber-200' : 'bg-slate-900/90 border-amber-400/40'
+              }`}>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className={`font-black flex items-center gap-1 ${isLight ? 'text-amber-800' : 'text-amber-300'}`}>
+                    <span>💾</span>
+                    <span>오피셜 DB 경기 결과:</span>
+                  </span>
+                  {dbDates.map(d => {
+                    const isSelected = selectedDbDate === d;
+                    const label = d === '2026-09-04' ? '오늘 (09.04)' : d === '2026-09-03' ? '어제 (09.03)' : d === '2026-09-02' ? '2일전 (09.02)' : '3일전 (09.01)';
+                    return (
+                      <button
+                        key={d}
+                        onClick={() => {
+                          setSelectedDbDate(d);
+                          if (!dbMatchesMap[d]) {
+                            SportsDbService.getMatchesByDate(d).then(mList => {
+                              if (mList && mList.length > 0) {
+                                setDbMatchesMap(prev => ({ ...prev, [d]: mList }));
+                              }
+                            });
+                          }
+                        }}
+                        className={`px-3 py-1.5 rounded-lg text-xs font-black transition-all cursor-pointer flex items-center gap-1 ${
+                          isSelected
+                            ? 'bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 shadow-md scale-[1.03]'
+                            : isLight
+                              ? 'bg-white border border-slate-200 text-slate-700 hover:bg-amber-100/50'
+                              : 'bg-slate-800 border border-slate-700 text-slate-300 hover:bg-slate-700 hover:text-white'
+                        }`}
+                      >
+                        <span>{label}</span>
+                        {dbMatchesMap[d] && (
+                          <span className={`text-[10px] px-1 py-0.2 rounded font-mono ${
+                            isSelected ? 'bg-slate-950/20 text-slate-950' : 'bg-slate-700 text-slate-400'
+                          }`}>
+                            {dbMatchesMap[d].length}건
+                          </span>
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+                <span className="text-[11px] text-amber-500/80 font-bold hidden sm:inline-block">
+                  ⚡ API-Sports 영구 DB 연동 (실제 경기 결과)
+                </span>
+              </div>
+            )}
             
 
 

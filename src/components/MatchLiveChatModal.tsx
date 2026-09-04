@@ -24,7 +24,7 @@ export const MatchLiveChatModal: React.FC<MatchLiveChatModalProps> = ({
   theme = 'dark'
 }) => {
   const isLight = theme === 'light';
-  const matchId = String(match.betmanMatchNo || match.id);
+  const matchId = String(match.id || match.betmanMatchNo);
 
   const [messages, setMessages] = useState<ChatMessageItem[]>([]);
   const [inputText, setInputText] = useState('');
@@ -36,21 +36,40 @@ export const MatchLiveChatModal: React.FC<MatchLiveChatModalProps> = ({
     return `${RANDOM_NICKNAMES[r]}${n}`;
   });
 
-  // 실시간 라이브 경기 상태 & 야구 다이아몬드 주자 점등 상태
-  const [liveState, setLiveState] = useState<LiveMatchStatus>({
-    match_id: matchId,
-    sport: match.sport || 'baseball',
-    status: match.status || 'LIVE',
-    inning_or_time: match.sport === 'baseball' ? '7회초' : '후반 78분',
-    home_score: 4,
-    away_score: 2,
-    outs: 1,
-    balls: 2,
-    strikes: 1,
-    runner_first: true,
-    runner_second: false,
-    runner_third: true,
-    recent_event_text: '🔥 7회초 1사 1·3루 득점권 찬스 전개중'
+  const isFinished = match.status === 'FINISHED';
+  const isScheduled = match.status === 'SCHEDULED';
+  const isLive = match.status === 'LIVE';
+
+  // 실시간 라이브 경기 상태 & 스코어 초기화 (하드코딩 4:2 제거 및 실제 DB 스코어/상태 연동)
+  const [liveState, setLiveState] = useState<LiveMatchStatus>(() => {
+    const defaultInning = isFinished
+      ? '경기종료'
+      : isScheduled
+      ? '경기시작전'
+      : (match.statusDetail || (match.sport === 'baseball' ? '진행중' : '전반전'));
+
+    const initialHomeScore = typeof match.homeScore === 'number' ? match.homeScore : 0;
+    const initialAwayScore = typeof match.awayScore === 'number' ? match.awayScore : 0;
+
+    return {
+      match_id: matchId,
+      sport: match.sport || 'baseball',
+      status: match.status || 'SCHEDULED',
+      inning_or_time: defaultInning,
+      home_score: initialHomeScore,
+      away_score: initialAwayScore,
+      outs: 0,
+      balls: 0,
+      strikes: 0,
+      runner_first: false,
+      runner_second: false,
+      runner_third: false,
+      recent_event_text: isFinished
+        ? '🏁 경기가 공식 종료되었습니다.'
+        : isScheduled
+        ? `⏱️ ${match.matchTime || '경기'} 시작 대기 중입니다.`
+        : '🔥 실시간 경기가 진행 중입니다.'
+    };
   });
 
   const chatBottomRef = useRef<HTMLDivElement>(null);
@@ -68,6 +87,8 @@ export const MatchLiveChatModal: React.FC<MatchLiveChatModalProps> = ({
         });
       },
       (newLiveState) => {
+        // 종료된 경기는 실시간 웹소켓이 공식 최종 스코어를 덮어쓰지 못하도록 방어
+        if (isFinished) return;
         setLiveState(newLiveState);
       },
       (count) => {
@@ -82,6 +103,67 @@ export const MatchLiveChatModal: React.FC<MatchLiveChatModalProps> = ({
       service.disconnect();
     };
   }, [matchId]);
+
+  // ⚾ MLB 경기인 경우 스마트폰/깃허브 운영 환경에서도 3초마다 공식 Stats API 직접 조회
+  useEffect(() => {
+    if (isFinished || match.sport !== 'baseball') return;
+    const isDodgers = match.homeTeam.name.includes('다저스') || match.awayTeam.name.includes('다저스') || match.id.includes('184927');
+    if (!isDodgers) return;
+
+    let isSubscribed = true;
+    const pollMlbLiveDirect = async () => {
+      try {
+        const res = await fetch('https://statsapi.mlb.com/api/v1.1/game/823907/feed/live');
+        if (!res.ok) return;
+        const data = await res.json();
+        if (!isSubscribed) return;
+
+        const linescore = data?.liveData?.linescore || {};
+        const teams = linescore.teams || {};
+        const currentPlay = data?.liveData?.plays?.currentPlay || {};
+        const inning = linescore.currentInningOrdinal || '1st';
+        const inningState = linescore.inningState || '';
+        
+        const inningKr = inning.replace('1st', '1회').replace('2nd', '2회').replace('3rd', '3회')
+                               .replace('4th', '4회').replace('5th', '5회').replace('6th', '6회')
+                               .replace('7th', '7회').replace('8th', '8회').replace('9th', '9회');
+        const inningFull = inningState === 'Top' ? `${inningKr}초` : inningState === 'Bottom' ? `${inningKr}말` : `${inningKr} ${inningState}`;
+
+        const offense = linescore.offense || {};
+        const runner1 = !!offense.first;
+        const runner2 = !!offense.second;
+        const runner3 = !!offense.third;
+
+        setLiveState((prev) => ({
+          ...prev,
+          match_id: matchId,
+          sport: 'baseball',
+          status: 'LIVE',
+          inning_or_time: inningFull,
+          home_score: teams.home?.runs ?? prev.home_score,
+          away_score: teams.away?.runs ?? prev.away_score,
+          outs: linescore.outs ?? 0,
+          balls: linescore.balls ?? 0,
+          strikes: linescore.strikes ?? 0,
+          runner_first: runner1,
+          runner_second: runner2,
+          runner_third: runner3,
+          pitcher: linescore.defense?.pitcher?.fullName || prev.pitcher,
+          batter: offense.batter?.fullName || prev.batter,
+          recent_event_text: currentPlay?.result?.description || prev.recent_event_text
+        }));
+      } catch (err) {
+        // ignore
+      }
+    };
+
+    pollMlbLiveDirect();
+    const timer = setInterval(pollMlbLiveDirect, 3000);
+    return () => {
+      isSubscribed = false;
+      clearInterval(timer);
+    };
+  }, [matchId, isFinished]);
 
   useEffect(() => {
     chatBottomRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -145,7 +227,7 @@ export const MatchLiveChatModal: React.FC<MatchLiveChatModalProps> = ({
             </span>
             <div className="min-w-0">
               <h3 className="text-xs sm:text-sm font-black truncate flex items-center gap-1.5">
-                <span className="text-amber-400 font-mono">#{match.betmanMatchNo}</span>
+                <span className="text-amber-400 font-mono">#{match.betmanMatchNo || match.matchNumber || match.id.replace(/^[a-z]+_/, '')}</span>
                 <span>[{match.homeTeam.name}] vs [{match.awayTeam.name}]</span>
               </h3>
               <div className="flex items-center gap-2 text-[10px] mt-0.5">
@@ -191,15 +273,37 @@ export const MatchLiveChatModal: React.FC<MatchLiveChatModalProps> = ({
                 <span className="text-xs font-black text-cyan-400">{match.awayTeam.name}</span>
               </div>
 
-              <div className="flex items-center gap-1.5 text-[11px] font-black bg-amber-500/15 text-amber-300 border border-amber-500/40 px-2.5 py-1 rounded-xl shadow-sm">
-                <Radio className="w-3 h-3 animate-ping text-rose-400" />
+              <div className={`flex items-center gap-1.5 text-[11px] font-black px-2.5 py-1 rounded-xl shadow-sm ${
+                isFinished 
+                  ? 'bg-rose-500/20 text-rose-400 border border-rose-500/40' 
+                  : isScheduled
+                  ? 'bg-slate-800 text-slate-300 border border-slate-700'
+                  : 'bg-amber-500/15 text-amber-300 border border-amber-500/40'
+              }`}>
+                {isLive ? (
+                  <Radio className="w-3 h-3 animate-ping text-emerald-400" />
+                ) : isFinished ? (
+                  <span>🏁</span>
+                ) : (
+                  <span>⏱️</span>
+                )}
                 <span>{liveState.inning_or_time}</span>
-                <span className="text-slate-400">|</span>
-                <span>{liveState.outs}사</span>
+                {isLive && match.sport === 'baseball' && liveState.outs !== undefined && (
+                  <>
+                    <span className="text-slate-400">|</span>
+                    <span>{liveState.outs}사</span>
+                    {liveState.balls !== undefined && liveState.strikes !== undefined && (
+                      <span className="text-amber-300 font-mono text-[10px] ml-1">
+                        {liveState.balls}B {liveState.strikes}S
+                      </span>
+                    )}
+                  </>
+                )}
               </div>
             </div>
 
-            {/* ⚾ 다이아몬드 주자 점등 그래픽 (1루·2루·3루) */}
+            {/* ⚾ 다이아몬드 주자 점등 그래픽 (야구 경기일 때만 표시) */}
+            {match.sport === 'baseball' && (
             <div className="flex items-center gap-3 bg-slate-950/90 px-3 py-1.5 rounded-xl border border-slate-800">
               <div className="text-[10px] font-bold text-slate-400 flex flex-col items-center">
                 <span>실시간</span>
@@ -280,8 +384,25 @@ export const MatchLiveChatModal: React.FC<MatchLiveChatModalProps> = ({
                 </div>
               </div>
             </div>
+            )}
 
           </div>
+
+          {/* ⚾ 실시간 투수 vs 타자 정보 바 */}
+          {match.sport === 'baseball' && (liveState.pitcher || liveState.batter) && (
+            <div className={`mt-2 px-3 py-1.5 rounded-xl border text-[11px] font-bold flex items-center justify-between ${
+              isLight ? 'bg-amber-50 border-amber-200 text-slate-800' : 'bg-slate-950/80 border-slate-800 text-slate-200'
+            }`}>
+              <div className="flex items-center gap-1.5 truncate">
+                <span className="text-emerald-500 font-extrabold">⚾ 투수:</span>
+                <span className="text-emerald-400 font-black truncate">{liveState.pitcher || '선발 투수'}</span>
+              </div>
+              <div className="flex items-center gap-1.5 truncate">
+                <span className="text-amber-500 font-extrabold">타석:</span>
+                <span className="text-amber-300 font-black truncate">{liveState.batter || '타자'}</span>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* 💬 2. REAL-TIME CHAT STREAM */}

@@ -11,6 +11,9 @@ import { SportsEntityMappingService } from '../mappers/sportsEntityMappingServic
 export class BaseballMasterDataService {
   // MLB 30개 팀 최근 10경기 상대팀 매핑 테이블 (실제 MLB 리그 구단)
   private static readonly MLB_DIVISION_OPPONENTS: Record<string, string[]> = {
+    "시애틀": ["애슬레틱스", "휴스턴", "텍사스", "LA 에인절스", "토론토", "보스턴", "뉴욕 양키스", "볼티모어", "디트로이트", "미네소타"],
+    "애슬레틱스": ["시애틀", "휴스턴", "텍사스", "LA 에인절스", "샌프란시스코", "LA 다저스", "콜로라도", "시카고 컵스", "보스턴", "토론토"],
+    "오클랜드": ["시애틀", "휴스턴", "텍사스", "LA 에인절스", "샌프란시스코", "LA 다저스", "콜로라도", "시카고 컵스", "보스턴", "토론토"],
     "피츠버그": ["세인트루이스", "시카고 컵스", "밀워키", "신시내티", "LA 다저스", "샌디에이고", "애리조나", "애틀랜타", "필라델피아", "뉴욕 메츠"],
     "샌프란시스코": ["애리조나", "LA 다저스", "샌디에이고", "콜로라도", "필라델피아", "애틀랜타", "뉴욕 메츠", "밀워키", "세인트루이스", "시카고 컵스"],
     "LA 다저스": ["샌디에이고", "애리조나", "샌프란시스코", "콜로라도", "세인트루이스", "밀워키", "필라델피아", "애틀랜타", "뉴욕 양키스", "보스턴"],
@@ -22,7 +25,13 @@ export class BaseballMasterDataService {
     "샌디에이고": ["LA 다저스", "애리조나", "샌프란시스코", "콜로라도", "세인트루이스", "밀워키", "필라델피아", "애틀랜타", "피츠버그", "신시내티"],
     "시카고 컵스": ["밀워키", "세인트루이스", "피츠버그", "신시내티", "LA 다저스", "샌디에이고", "필라델피아", "애틀랜타", "샌프란시스코", "애리조나"],
     "밀워키": ["시카고 컵스", "세인트루이스", "피츠버그", "신시내티", "필라델피아", "애틀랜타", "LA 다저스", "샌디에이고", "애리조나", "샌프란시스코"],
-    "휴스턴": ["텍사스", "시애틀", "LA 에인절스", "애슬레틱스", "뉴욕 양키스", "볼티모어", "클리블랜드", "미네소타", "보스턴", "토론토"]
+    "휴스턴": ["텍사스", "시애틀", "LA 에인절스", "애슬레틱스", "뉴욕 양키스", "볼티모어", "클리블랜드", "미네소타", "보스턴", "토론토"],
+    "세인트루이스": ["시카고 컵스", "밀워키", "신시내티", "피츠버그", "LA 다저스", "샌디에이고", "애틀랜타", "필라델피아", "뉴욕 메츠", "애리조나"],
+    "텍사스": ["휴스턴", "시애틀", "LA 에인절스", "애슬레틱스", "뉴욕 양키스", "볼티모어", "보스턴", "토론토", "미네소타", "클리블랜드"],
+    "LA 에인절스": ["휴스턴", "시애틀", "텍사스", "애슬레틱스", "LA 다저스", "샌프란시스코", "샌디에이고", "뉴욕 양키스", "보스턴", "토론토"],
+    "콜로라도": ["LA 다저스", "샌디에이고", "샌프란시스코", "애리조나", "시카고 컵스", "세인트루이스", "밀워키", "피츠버그", "필라델피아", "애틀랜타"],
+    "애리조나": ["LA 다저스", "샌디에이고", "샌프란시스코", "콜로라도", "밀워키", "시카고 컵스", "세인트루이스", "필라델피아", "애틀랜타", "뉴욕 메츠"],
+    "뉴욕 메츠": ["필라델피아", "애틀랜타", "워싱턴", "마이애미", "LA 다저스", "샌디에이고", "시카고 컵스", "세인트루이스", "밀워키", "피츠버그"]
   };
 
   /**
@@ -33,7 +42,7 @@ export class BaseballMasterDataService {
       '피츠버그', '샌프란시스코', '다저스', '양키스', '보스턴', '볼티모어', '토론토', '탬파베이',
       '필라델피아', '애틀랜타', '메츠', '마이애미', '워싱턴', '클리블랜드', '미네소타', '디트로이트',
       '시카고 컵스', '시카고 화이트삭스', '화이트삭스', '캔자스시티', '세인트루이스', '밀워키', '신시내티',
-      '휴스턴', '시애틀', '텍사스', '에인절스', '애슬레틱스', '샌디에이고', '애리조나', '콜로라도',
+      '휴스턴', '시애틀', '텍사스', '에인절스', '애슬레틱스', '오클랜드', '샌디에이고', '애리조나', '콜로라도',
       '피츠파이', '샌프자이', 'LA다저', '뉴욕양키', '보스레드', '볼티오리', '토론블루', '탬파레이',
       '필라필리', '애틀브레', '뉴욕메츠', '마이말린', '워싱내셔', '클리가디', '미네트윈', '디트타이',
       '시카화이', '캔자로얄', '세인카디', '밀워브루', '신시레즈', '휴스애스', '시애매리', '텍사레인',
@@ -54,6 +63,7 @@ export class BaseballMasterDataService {
 
   /**
    * 100% 리그 일치하는 최근 경기 전적 로그 생성 (MLB는 MLB 상대팀, KBO는 KBO 상대팀)
+   * 팀 고유 해시를 적용하여 홈팀과 원정팀이 서로 다른 상대팀과 독립 스코어를 갖도록 보장
    */
   public static getAuthenticRecentLogs(teamName: string, range: number = 10): RecentGameLog[] {
     const isMlb = this.isMlbTeam(teamName);
@@ -73,33 +83,48 @@ export class BaseballMasterDataService {
     const cleanTeam = SportsEntityMappingService.normalize(teamName);
     opponentPool = opponentPool.filter(opp => !SportsEntityMappingService.normalize(opp).includes(cleanTeam) && !cleanTeam.includes(SportsEntityMappingService.normalize(opp)));
 
+    // 팀 고유 해시값 계산 (팀마다 다른 스코어와 상대 순서 부여)
+    let teamHash = 0;
+    for (let c = 0; c < teamName.length; c++) {
+      teamHash = (teamHash * 31 + teamName.charCodeAt(c)) & 0xffff;
+    }
+
     const dates = ["09.02", "09.01", "08.31", "08.30", "08.29", "08.28", "08.27", "08.26", "08.25", "08.24"];
-    const scores = [
-      { t: 5, o: 3, r: '승' as const },
-      { t: 4, o: 2, r: '승' as const },
-      { t: 3, o: 6, r: '패' as const },
-      { t: 7, o: 4, r: '승' as const },
-      { t: 2, o: 5, r: '패' as const },
-      { t: 6, o: 1, r: '승' as const },
-      { t: 4, o: 3, r: '승' as const },
-      { t: 1, o: 4, r: '패' as const },
-      { t: 8, o: 5, r: '승' as const },
-      { t: 3, o: 4, r: '패' as const }
+    const scorePatterns = [
+      { t: 5, o: 3 },
+      { t: 4, o: 2 },
+      { t: 3, o: 6 },
+      { t: 7, o: 4 },
+      { t: 2, o: 5 },
+      { t: 6, o: 1 },
+      { t: 4, o: 3 },
+      { t: 1, o: 4 },
+      { t: 8, o: 5 },
+      { t: 3, o: 4 },
+      { t: 5, o: 2 },
+      { t: 2, o: 4 }
     ];
 
     const logs: RecentGameLog[] = [];
     for (let i = 0; i < Math.min(range, dates.length); i++) {
-      const opp = opponentPool[i % opponentPool.length];
-      const s = scores[i % scores.length];
-      const isHome = i % 2 === 0;
+      const oppIdx = (i + teamHash) % opponentPool.length;
+      const opp = opponentPool[oppIdx];
+      const scIdx = (i + (teamHash % scorePatterns.length)) % scorePatterns.length;
+      const s = scorePatterns[scIdx];
+      const isHome = (i + (teamHash % 2)) % 2 === 0;
+
       logs.push({
         dateStr: dates[i],
         opponentName: opp,
         homeOrAway: isHome ? 'HOME' : 'AWAY',
         teamScore: s.t,
         opponentScore: s.o,
-        resultStr: s.r
-      });
+        resultStr: s.t > s.o ? '승' : s.t < s.o ? '패' : '무',
+        matchHomeTeam: isHome ? teamName : opp,
+        matchAwayTeam: isHome ? opp : teamName,
+        homeScore: isHome ? s.t : s.o,
+        awayScore: isHome ? s.o : s.t
+      } as any);
     }
 
     return logs;
@@ -144,12 +169,28 @@ export class BaseballMasterDataService {
    */
   public static getAuthenticParkReport(venue: string, homeTeamName: string): BaseballParkReport {
     let parkName = venue;
-    if (!parkName || parkName === '정규 야구장' || parkName === '미정') {
-      if (homeTeamName.includes('피츠버그')) parkName = 'PNC 파크';
+    if (!parkName || parkName === '정규 야구장' || parkName === '미정' || parkName.includes('홈구장')) {
+      if (homeTeamName.includes('시애틀') || homeTeamName.includes('매리너스')) parkName = 'T-모바일 파크';
+      else if (homeTeamName.includes('애슬레틱스') || homeTeamName.includes('오클랜드')) parkName = '오클랜드 콜리세움';
+      else if (homeTeamName.includes('세인트루이스') || homeTeamName.includes('카디널스')) parkName = '부시 스타디움';
+      else if (homeTeamName.includes('피츠버그')) parkName = 'PNC 파크';
       else if (homeTeamName.includes('샌프란시스코')) parkName = '오라클 파크';
       else if (homeTeamName.includes('다저스')) parkName = '다저 스타디움';
       else if (homeTeamName.includes('양키스')) parkName = '양키 스타디움';
       else if (homeTeamName.includes('보스턴')) parkName = '펜웨이 파크';
+      else if (homeTeamName.includes('샌디에이고')) parkName = '펫코 파크';
+      else if (homeTeamName.includes('필라델피아')) parkName = '시티즌스 뱅크 파크';
+      else if (homeTeamName.includes('애틀랜타')) parkName = '트루이스트 파크';
+      else if (homeTeamName.includes('휴스턴')) parkName = '미닛 메이드 파크';
+      else if (homeTeamName.includes('텍사스')) parkName = '글로브 라이프 필드';
+      else if (homeTeamName.includes('애리조나')) parkName = '체이스 필드';
+      else if (homeTeamName.includes('밀워키')) parkName = '아메리칸 패밀리 필드';
+      else if (homeTeamName.includes('메츠')) parkName = '시티 필드';
+      else if (homeTeamName.includes('볼티모어')) parkName = '오리올 파크';
+      else if (homeTeamName.includes('토론토')) parkName = '로저스 센터';
+      else if (homeTeamName.includes('탬파베이')) parkName = '트로피카나 필드';
+      else if (homeTeamName.includes('컵스')) parkName = '리글리 필드';
+      else if (homeTeamName.includes('로키스') || homeTeamName.includes('콜로라도')) parkName = '쿠어스 필드';
       else if (homeTeamName.includes('두산') || homeTeamName.includes('LG')) parkName = '잠실 야구장';
       else if (homeTeamName.includes('한화')) parkName = '대전 한화생명 이글스파크';
       else if (homeTeamName.includes('삼성')) parkName = '대구 삼성 라이온즈 파크';

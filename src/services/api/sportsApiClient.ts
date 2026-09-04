@@ -52,11 +52,7 @@ export class SportsApiClient {
       const response = await fetch(url.toString(), {
         method: 'GET',
         headers: {
-          'x-apisports-key': this.apiKey,
-          'Content-Type': 'application/json',
-          'Cache-Control': 'no-cache, no-store, must-revalidate',
-          'Pragma': 'no-cache',
-          'Expires': '0'
+          'x-apisports-key': this.apiKey
         },
         signal: controller.signal
       });

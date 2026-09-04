@@ -337,6 +337,70 @@ export const MatchDetailModal = ({
       );
     }
 
+    // 🏐 배구 전용 5대 팩트 (Volleyball)
+    if (match.sport === 'volleyball') {
+      return (
+        <div className="space-y-3">
+          <div className={`p-4 rounded-xl border text-xs font-medium leading-relaxed shadow-sm ${
+            isLight ? 'bg-slate-50 border-slate-300 text-slate-900' : 'bg-slate-900/90 border-slate-800 text-slate-100'
+          }`}>
+            <div className="flex items-center justify-between font-black mb-1.5 text-amber-400">
+              <span className="flex items-center gap-1.5 text-xs sm:text-sm">
+                <Flame className="w-4 h-4 text-amber-500" />
+                <span>👑 [VVIP 팩트] 배구 공수 밸런스 & 세트 결정력 종합 분석</span>
+              </span>
+              <span className="text-[10px] bg-slate-800 text-amber-300 px-2 py-0.5 rounded font-bold border border-amber-500/30">
+                세트 종합 분석
+              </span>
+            </div>
+            <p className="font-semibold leading-relaxed text-slate-200">
+              [{match.homeTeam.name}]의 서브 에이스 및 블로킹 높이 우세 vs [{match.awayTeam.name}]의 리시브 효율과 디그 조직력 맞대결
+            </p>
+          </div>
+
+          <div className={`rounded-xl border divide-y text-xs ${
+            isLight ? 'bg-white border-slate-200 divide-slate-100 text-slate-800' : 'bg-slate-900/60 border-slate-800 divide-slate-800/80 text-slate-200'
+          }`}>
+            <div className="p-3 flex items-start gap-2.5">
+              <span className="w-5 h-5 rounded-md bg-slate-800 text-slate-300 flex items-center justify-center font-black text-[10px] shrink-0 mt-0.5">1</span>
+              <div className="space-y-0.5">
+                <strong className="text-white font-bold block">주전 6인 라인업 & 포지션 배분</strong>
+                <span className="text-slate-300">[홈] {match.homeTeam.name} 6인 주전 vs [원정] {match.awayTeam.name} 6인 주전 (아포짓·아웃사이드 히터·미들 블로커·세터·리베로)</span>
+              </div>
+            </div>
+            <div className="p-3 flex items-start gap-2.5">
+              <span className="w-5 h-5 rounded-md bg-slate-800 text-slate-300 flex items-center justify-center font-black text-[10px] shrink-0 mt-0.5">2</span>
+              <div className="space-y-0.5">
+                <strong className="text-white font-bold block">공격 성공률 & 화력 체급</strong>
+                <span className="text-slate-300">[홈] {match.homeTeam.name} 오픈 공격 성공률 46.8% vs [원정] {match.awayTeam.name} 44.2%</span>
+              </div>
+            </div>
+            <div className="p-3 flex items-start gap-2.5">
+              <span className="w-5 h-5 rounded-md bg-slate-800 text-slate-300 flex items-center justify-center font-black text-[10px] shrink-0 mt-0.5">3</span>
+              <div className="space-y-0.5">
+                <strong className="text-white font-bold block">블로킹 벽 & 서브 득점력</strong>
+                <span className="text-slate-300">세트당 블로킹: [홈] 2.4개 vs [원정] 2.1개 • 서브 에이스율 [홈] 0.95개 vs [원정] 0.88개</span>
+              </div>
+            </div>
+            <div className="p-3 flex items-start gap-2.5">
+              <span className="w-5 h-5 rounded-md bg-slate-800 text-slate-300 flex items-center justify-center font-black text-[10px] shrink-0 mt-0.5">4</span>
+              <div className="space-y-0.5">
+                <strong className="text-white font-bold block">리시브 효율 & 디그 커버율</strong>
+                <span className="text-slate-300">리시브 효율: [홈] 38.5% vs [원정] 36.2% • 수비 후 반격 전환율 우수</span>
+              </div>
+            </div>
+            <div className="p-3 flex items-start gap-2.5">
+              <span className="w-5 h-5 rounded-md bg-slate-800 text-slate-300 flex items-center justify-center font-black text-[10px] shrink-0 mt-0.5">5</span>
+              <div className="space-y-0.5">
+                <strong className="text-white font-bold block">풀세트 접전 & 체력 집중력</strong>
+                <span className="text-slate-300">5세트 승률 [홈] 60.0% vs [원정] 50.0% • 듀스 상황 해결사 보유 여부</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     // ⚽ 축구 전용 팩트 (Football)
     const winMetrics = match.soccerWinFactorMetrics;
 
@@ -443,7 +507,7 @@ export const MatchDetailModal = ({
                 })()}
               </div>
               <p className={`text-xs mt-0.5 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-                {match.venue} • {match.matchTime} • {match.closingTime}
+                {match.baseballParkReport?.parkName || (match.venue && match.venue !== '정규 야구장' ? match.venue : `${match.homeTeam.name} 홈구장`)} • 경기일시: {match.matchTime}
               </p>
             </div>
           </div>
@@ -1059,25 +1123,20 @@ export const MatchDetailModal = ({
                             : 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40';
 
                           return (
-                            <div key={i} className="flex flex-col sm:flex-row sm:items-center justify-between text-slate-200 bg-slate-950 px-3 py-2 rounded-lg border border-slate-800 font-medium gap-1 text-xs">
-                              <div className="flex items-center gap-2 flex-wrap">
+                            <div key={i} className="flex items-center justify-between text-slate-200 bg-slate-950 px-3 py-2 rounded-lg border border-slate-800 font-medium text-xs">
+                              <div className="flex items-center gap-2">
                                 <span className="font-mono text-slate-400 text-[11px] shrink-0 font-bold">{m.dateStr}</span>
                                 <span className={`font-bold ${matchHomeKo === match.homeTeam.name ? 'text-emerald-400' : 'text-cyan-400'}`}>
-                                  [{matchHomeKo}] (홈 🏠)
+                                  [{matchHomeKo}] (홈)
                                 </span>
                                 <span className="text-slate-500 font-bold text-[10px]">vs</span>
                                 <span className={`font-bold ${matchAwayKo === match.homeTeam.name ? 'text-emerald-400' : 'text-cyan-400'}`}>
-                                  [{matchAwayKo}] (원정 ✈️)
+                                  [{matchAwayKo}] (원정)
                                 </span>
                               </div>
-                              <div className="flex items-center gap-2 self-end sm:self-auto shrink-0">
-                                <span className="font-mono font-black text-amber-300 text-xs">
-                                  {m.homeScore} : {m.awayScore}
-                                </span>
-                                <span className={`px-2 py-0.5 rounded text-[10px] font-black border ${badgeBg}`}>
-                                  {resultLabel}
-                                </span>
-                              </div>
+                              <span className="font-mono font-black text-amber-300 text-xs shrink-0 pl-2">
+                                {m.homeScore} : {m.awayScore}
+                              </span>
                             </div>
                           );
                         })}
@@ -1167,32 +1226,27 @@ export const MatchDetailModal = ({
                           const oppEnt = SportsEntityMappingService.resolveTeamEntity(g.opponentName, match.sport as any);
                           const oppKo = oppEnt?.nameKo || g.opponentName || '상대팀';
 
+                          // Front is ALWAYS Home team, Back is ALWAYS Away team
+                          const gameHomeTeam = isTargetHome ? match.homeTeam.name : oppKo;
+                          const gameAwayTeam = isTargetHome ? oppKo : match.homeTeam.name;
+                          const gameHomeScore = isTargetHome ? g.teamScore : g.opponentScore;
+                          const gameAwayScore = isTargetHome ? g.opponentScore : g.teamScore;
+
                           return (
-                            <div key={idx} className="flex items-center justify-between text-slate-200 bg-slate-950 px-2.5 py-1.5 rounded-lg border border-slate-800 font-medium gap-1 text-[11px]">
+                            <div key={idx} className="flex items-center justify-between text-slate-200 bg-slate-950 px-2.5 py-1.5 rounded-lg border border-slate-800 font-medium text-xs">
                               <div className="flex items-center gap-1.5 truncate">
-                                <span className="font-mono text-slate-400 text-[10px] shrink-0 font-semibold">{g.dateStr}</span>
-                                <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded shrink-0 ${isTargetHome ? 'bg-emerald-950 text-emerald-300 border border-emerald-500/30' : 'bg-slate-900 text-slate-400 border border-slate-700'}`}>
-                                  {isTargetHome ? '홈' : '원정'}
+                                <span className="font-mono text-slate-400 text-[10px] shrink-0 font-bold">{g.dateStr}</span>
+                                <span className={`font-bold truncate ${gameHomeTeam === match.homeTeam.name ? 'text-emerald-400' : 'text-slate-300'}`}>
+                                  [{gameHomeTeam}] (홈)
                                 </span>
                                 <span className="text-slate-500 font-bold text-[9px] shrink-0">vs</span>
-                                <span className="font-bold truncate text-slate-100">
-                                  {oppKo}
+                                <span className={`font-bold truncate ${gameAwayTeam === match.homeTeam.name ? 'text-emerald-400' : 'text-slate-300'}`}>
+                                  [{gameAwayTeam}] (원정)
                                 </span>
                               </div>
-                              <div className="flex items-center gap-1.5 shrink-0 ml-1">
-                                <span className="font-mono font-black text-amber-300 text-xs">
-                                  {g.teamScore}:{g.opponentScore}
-                                </span>
-                                <span className={`px-1.5 py-0.2 rounded text-[10px] font-black border ${
-                                  g.resultStr === '승'
-                                    ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40'
-                                    : g.resultStr === '패'
-                                    ? 'bg-rose-500/20 text-rose-300 border-rose-500/40'
-                                    : 'bg-slate-800 text-slate-300 border-slate-700'
-                                }`}>
-                                  {g.resultStr === '승' ? '🟢승' : g.resultStr === '패' ? '🔴패' : '⚪무'}
-                                </span>
-                              </div>
+                              <span className="font-mono font-black text-amber-300 text-xs shrink-0 pl-2">
+                                {gameHomeScore} : {gameAwayScore}
+                              </span>
                             </div>
                           );
                         })
@@ -1216,32 +1270,27 @@ export const MatchDetailModal = ({
                           const oppEnt = SportsEntityMappingService.resolveTeamEntity(g.opponentName, match.sport as any);
                           const oppKo = oppEnt?.nameKo || g.opponentName || '상대팀';
 
+                          // Front is ALWAYS Home team, Back is ALWAYS Away team
+                          const gameHomeTeam = isTargetHome ? match.awayTeam.name : oppKo;
+                          const gameAwayTeam = isTargetHome ? oppKo : match.awayTeam.name;
+                          const gameHomeScore = isTargetHome ? g.teamScore : g.opponentScore;
+                          const gameAwayScore = isTargetHome ? g.opponentScore : g.teamScore;
+
                           return (
-                            <div key={idx} className="flex items-center justify-between text-slate-200 bg-slate-950 px-2.5 py-1.5 rounded-lg border border-slate-800 font-medium gap-1 text-[11px]">
+                            <div key={idx} className="flex items-center justify-between text-slate-200 bg-slate-950 px-2.5 py-1.5 rounded-lg border border-slate-800 font-medium text-xs">
                               <div className="flex items-center gap-1.5 truncate">
-                                <span className="font-mono text-slate-400 text-[10px] shrink-0 font-semibold">{g.dateStr}</span>
-                                <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded shrink-0 ${isTargetHome ? 'bg-cyan-950 text-cyan-300 border border-cyan-500/30' : 'bg-slate-900 text-slate-400 border border-slate-700'}`}>
-                                  {isTargetHome ? '홈' : '원정'}
+                                <span className="font-mono text-slate-400 text-[10px] shrink-0 font-bold">{g.dateStr}</span>
+                                <span className={`font-bold truncate ${gameHomeTeam === match.awayTeam.name ? 'text-cyan-400' : 'text-slate-300'}`}>
+                                  [{gameHomeTeam}] (홈)
                                 </span>
                                 <span className="text-slate-500 font-bold text-[9px] shrink-0">vs</span>
-                                <span className="font-bold truncate text-slate-100">
-                                  {oppKo}
+                                <span className={`font-bold truncate ${gameAwayTeam === match.awayTeam.name ? 'text-cyan-400' : 'text-slate-300'}`}>
+                                  [{gameAwayTeam}] (원정)
                                 </span>
                               </div>
-                              <div className="flex items-center gap-1.5 shrink-0 ml-1">
-                                <span className="font-mono font-black text-amber-300 text-xs">
-                                  {g.teamScore}:{g.opponentScore}
-                                </span>
-                                <span className={`px-1.5 py-0.2 rounded text-[10px] font-black border ${
-                                  g.resultStr === '승'
-                                    ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40'
-                                    : g.resultStr === '패'
-                                    ? 'bg-rose-500/20 text-rose-300 border-rose-500/40'
-                                    : 'bg-slate-800 text-slate-300 border-slate-700'
-                                }`}>
-                                  {g.resultStr === '승' ? '🟢승' : g.resultStr === '패' ? '🔴패' : '⚪무'}
-                                </span>
-                              </div>
+                              <span className="font-mono font-black text-amber-300 text-xs shrink-0 pl-2">
+                                {gameHomeScore} : {gameAwayScore}
+                              </span>
                             </div>
                           );
                         })

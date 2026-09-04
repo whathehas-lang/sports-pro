@@ -36,7 +36,7 @@ export class BaseballRealRosterService {
           ]
         },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'KBO 1군 오피셜',
           starting11ValueNum: 1.0,
           players: [
@@ -76,7 +76,7 @@ export class BaseballRealRosterService {
           ]
         },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'KBO 1군 오피셜',
           starting11ValueNum: 1.0,
           players: [
@@ -102,7 +102,7 @@ export class BaseballRealRosterService {
         teamLogo: 'https://media.api-sports.io/baseball/teams/34.png',
         starterPitcher: { name: '폴 스킨스', number: 30, throwsHand: 'R', era: '1.96', whip: '0.95', wins: 11, losses: 3, inningsPitched: '133.0', strikeouts: 170, vsOpponentLogs: [] },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'MLB 1군 오피셜',
           starting11ValueNum: 2.0,
           players: [
@@ -127,7 +127,7 @@ export class BaseballRealRosterService {
         teamLogo: 'https://media.api-sports.io/baseball/teams/35.png',
         starterPitcher: { name: '로건 웹', number: 62, throwsHand: 'R', era: '3.46', whip: '1.23', wins: 13, losses: 10, inningsPitched: '204.2', strikeouts: 172, vsOpponentLogs: [] },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'MLB 1군 오피셜',
           starting11ValueNum: 2.5,
           players: [
@@ -166,7 +166,7 @@ export class BaseballRealRosterService {
           ]
         },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'KBO 1군 오피셜',
           starting11ValueNum: 1.0,
           players: [
@@ -202,7 +202,7 @@ export class BaseballRealRosterService {
           vsOpponentLogs: []
         },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'KBO 1군 오피셜',
           starting11ValueNum: 1.0,
           players: [
@@ -238,7 +238,7 @@ export class BaseballRealRosterService {
           vsOpponentLogs: []
         },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'KBO 1군 오피셜',
           starting11ValueNum: 1.0,
           players: [
@@ -274,7 +274,7 @@ export class BaseballRealRosterService {
           vsOpponentLogs: []
         },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'KBO 1군 오피셜',
           starting11ValueNum: 1.0,
           players: [
@@ -299,7 +299,7 @@ export class BaseballRealRosterService {
         teamLogo: 'https://media.api-sports.io/baseball/teams/99.png',
         starterPitcher: { name: '하영민', number: 43, throwsHand: 'R', era: '4.37', whip: '1.40', wins: 9, losses: 8, inningsPitched: '144.0', strikeouts: 95, vsOpponentLogs: [] },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'KBO 1군 오피셜',
           starting11ValueNum: 1.0,
           players: [
@@ -324,7 +324,7 @@ export class BaseballRealRosterService {
         teamLogo: 'https://media.api-sports.io/baseball/teams/100.png',
         starterPitcher: { name: '고영표', number: 1, throwsHand: 'R', era: '4.95', whip: '1.35', wins: 6, losses: 8, inningsPitched: '100.0', strikeouts: 78, vsOpponentLogs: [] },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'KBO 1군 오피셜',
           starting11ValueNum: 1.0,
           players: [
@@ -349,7 +349,7 @@ export class BaseballRealRosterService {
         teamLogo: 'https://media.api-sports.io/baseball/teams/92.png',
         starterPitcher: { name: '김광현', number: 29, throwsHand: 'L', era: '4.93', whip: '1.42', wins: 12, losses: 10, inningsPitched: '144.1', strikeouts: 128, vsOpponentLogs: [] },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'KBO 1군 오피셜',
           starting11ValueNum: 1.0,
           players: [
@@ -374,7 +374,7 @@ export class BaseballRealRosterService {
         teamLogo: 'https://media.api-sports.io/baseball/teams/91.png',
         starterPitcher: { name: '신민혁', number: 53, throwsHand: 'R', era: '4.31', whip: '1.34', wins: 8, losses: 9, inningsPitched: '121.0', strikeouts: 98, vsOpponentLogs: [] },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'KBO 1군 오피셜',
           starting11ValueNum: 1.0,
           players: [
@@ -399,7 +399,7 @@ export class BaseballRealRosterService {
         teamLogo: 'https://media.api-sports.io/baseball/teams/1.png',
         starterPitcher: { name: '게릿 콜', number: 45, throwsHand: 'R', era: '3.41', whip: '1.13', wins: 8, losses: 5, inningsPitched: '95.0', strikeouts: 99, vsOpponentLogs: [] },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'MLB 1군 오피셜',
           starting11ValueNum: 3.0,
           players: [
@@ -424,7 +424,7 @@ export class BaseballRealRosterService {
         teamLogo: 'https://media.api-sports.io/baseball/teams/3.png',
         starterPitcher: { name: '타일러 앤더슨', number: 31, throwsHand: 'L', era: '3.81', whip: '1.29', wins: 10, losses: 15, inningsPitched: '179.1', strikeouts: 142, vsOpponentLogs: [] },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'MLB 1군 오피셜',
           starting11ValueNum: 2.0,
           players: [
@@ -449,7 +449,7 @@ export class BaseballRealRosterService {
         teamLogo: 'https://media.api-sports.io/baseball/teams/2.png',
         starterPitcher: { name: '브랜든 팟', number: 32, throwsHand: 'R', era: '4.71', whip: '1.24', wins: 9, losses: 8, inningsPitched: '150.0', strikeouts: 145, vsOpponentLogs: [] },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'MLB 1군 오피셜',
           starting11ValueNum: 2.5,
           players: [
@@ -474,7 +474,7 @@ export class BaseballRealRosterService {
         teamLogo: 'https://media.api-sports.io/baseball/teams/4.png',
         starterPitcher: { name: '애런 놀라', number: 27, throwsHand: 'R', era: '3.57', whip: '1.18', wins: 12, losses: 7, inningsPitched: '160.0', strikeouts: 155, vsOpponentLogs: [] },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'MLB 1군 오피셜',
           starting11ValueNum: 3.0,
           players: [
@@ -499,7 +499,7 @@ export class BaseballRealRosterService {
         teamLogo: 'https://media.api-sports.io/baseball/teams/101.png',
         starterPitcher: { name: '토고 쇼세이', number: 20, throwsHand: 'R', era: '2.15', whip: '1.02', wins: 10, losses: 6, inningsPitched: '142.0', strikeouts: 130, vsOpponentLogs: [] },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'NPB 1군 오피셜',
           starting11ValueNum: 1.5,
           players: [
@@ -524,7 +524,7 @@ export class BaseballRealRosterService {
         teamLogo: 'https://media.api-sports.io/baseball/teams/102.png',
         starterPitcher: { name: '이시다 유타로', number: 54, throwsHand: 'R', era: '2.45', whip: '1.10', wins: 7, losses: 3, inningsPitched: '85.0', strikeouts: 65, vsOpponentLogs: [] },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'NPB 1군 오피셜',
           starting11ValueNum: 1.5,
           players: [
@@ -549,7 +549,7 @@ export class BaseballRealRosterService {
         teamLogo: 'https://media.api-sports.io/baseball/teams/103.png',
         starterPitcher: { name: '요시무라 코지로', number: 21, throwsHand: 'R', era: '2.95', whip: '1.18', wins: 7, losses: 7, inningsPitched: '110.0', strikeouts: 95, vsOpponentLogs: [] },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'NPB 1군 오피셜',
           starting11ValueNum: 1.5,
           players: [
@@ -574,7 +574,7 @@ export class BaseballRealRosterService {
         teamLogo: 'https://media.api-sports.io/baseball/teams/104.png',
         starterPitcher: { name: '타카하시 하루토', number: 29, throwsHand: 'L', era: '1.85', whip: '0.98', wins: 4, losses: 1, inningsPitched: '45.0', strikeouts: 42, vsOpponentLogs: [] },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'NPB 1군 오피셜',
           starting11ValueNum: 1.5,
           players: [
@@ -599,7 +599,7 @@ export class BaseballRealRosterService {
         teamLogo: 'https://media.api-sports.io/baseball/teams/105.png',
         starterPitcher: { name: '오노 유다이', number: 22, throwsHand: 'L', era: '3.10', whip: '1.15', wins: 3, losses: 4, inningsPitched: '52.0', strikeouts: 50, vsOpponentLogs: [] },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'NPB 1군 오피셜',
           starting11ValueNum: 1.5,
           players: [
@@ -624,7 +624,7 @@ export class BaseballRealRosterService {
         teamLogo: 'https://media.api-sports.io/baseball/teams/106.png',
         starterPitcher: { name: '토코다 히로키', number: 28, throwsHand: 'L', era: '2.18', whip: '1.05', wins: 11, losses: 6, inningsPitched: '135.0', strikeouts: 108, vsOpponentLogs: [] },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'NPB 1군 오피셜',
           starting11ValueNum: 1.5,
           players: [
@@ -649,7 +649,7 @@ export class BaseballRealRosterService {
         teamLogo: 'https://media.api-sports.io/baseball/teams/107.png',
         starterPitcher: { name: '야마사키 사치야', number: 18, throwsHand: 'L', era: '2.80', whip: '1.12', wins: 9, losses: 4, inningsPitched: '115.0', strikeouts: 88, vsOpponentLogs: [] },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'NPB 1군 오피셜',
           starting11ValueNum: 1.5,
           players: [
@@ -674,7 +674,7 @@ export class BaseballRealRosterService {
         teamLogo: 'https://media.api-sports.io/baseball/teams/108.png',
         starterPitcher: { name: '리반 모이넬로', number: 47, throwsHand: 'L', era: '1.62', whip: '0.92', wins: 10, losses: 4, inningsPitched: '145.0', strikeouts: 135, vsOpponentLogs: [] },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'NPB 1군 오피셜',
           starting11ValueNum: 1.5,
           players: [
@@ -699,7 +699,7 @@ export class BaseballRealRosterService {
         teamLogo: 'https://media.api-sports.io/baseball/teams/109.png',
         starterPitcher: { name: '이토 이츠키', number: 17, throwsHand: 'R', era: '3.40', whip: '1.22', wins: 4, losses: 3, inningsPitched: '60.0', strikeouts: 45, vsOpponentLogs: [] },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'NPB 1군 오피셜',
           starting11ValueNum: 1.5,
           players: [
@@ -724,7 +724,7 @@ export class BaseballRealRosterService {
         teamLogo: 'https://media.api-sports.io/baseball/teams/110.png',
         starterPitcher: { name: '쿠리 아렌', number: 11, throwsHand: 'R', era: '3.05', whip: '1.14', wins: 7, losses: 8, inningsPitched: '118.0', strikeouts: 90, vsOpponentLogs: [] },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'NPB 1군 오피셜',
           starting11ValueNum: 1.5,
           players: [
@@ -749,7 +749,7 @@ export class BaseballRealRosterService {
         teamLogo: 'https://media.api-sports.io/baseball/teams/111.png',
         starterPitcher: { name: '타카노 슈타', number: 34, throwsHand: 'R', era: '2.75', whip: '1.08', wins: 2, losses: 1, inningsPitched: '35.0', strikeouts: 38, vsOpponentLogs: [] },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'NPB 1군 오피셜',
           starting11ValueNum: 1.5,
           players: [
@@ -774,7 +774,7 @@ export class BaseballRealRosterService {
         teamLogo: 'https://media.api-sports.io/baseball/teams/112.png',
         starterPitcher: { name: '타이라 카이마', number: 61, throwsHand: 'R', era: '2.50', whip: '1.06', wins: 3, losses: 2, inningsPitched: '42.0', strikeouts: 40, vsOpponentLogs: [] },
         battingLineup: {
-          formation: '4-3-3',
+          formation: '선발 9인',
           starting11Value: 'NPB 1군 오피셜',
           starting11ValueNum: 1.5,
           players: [
@@ -792,12 +792,99 @@ export class BaseballRealRosterService {
       };
     }
 
-    // Default fallback with real KBO standard names
-    const fallbackNames = [
+    // 27. MLB 시애틀 매리너스
+    if (clean.includes('시애틀') || clean.includes('seattle') || clean.includes('mariners') || clean.includes('매리너스')) {
+      return {
+        teamName: '시애틀 매리너스',
+        teamLogo: 'https://media.api-sports.io/baseball/teams/32.png',
+        starterPitcher: { name: '조지 커비', number: 68, throwsHand: 'R', era: '3.42', whip: '1.08', wins: 11, losses: 11, inningsPitched: '179.0', strikeouts: 173, vsOpponentLogs: [] },
+        battingLineup: {
+          formation: '선발 9인',
+          starting11Value: 'MLB 1군 오피셜',
+          starting11ValueNum: 2.8,
+          players: [
+            { id: 'sea_1', name: '빅터 로블레스', number: 10, position: 'RF', marketValue: '.328', marketValueNum: 0.328, seasonAvgStat: '타율 .328 | OPS .850 (이적 후 각성)', recent3FormStat: '출루 머신', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'sea_2', name: '훌리오 로드리게스', number: 44, position: 'CF', marketValue: '.273', marketValueNum: 0.273, seasonAvgStat: '타율 .273 | 20홈런 24도루 (슈퍼스타)', recent3FormStat: '타격감 폭발', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'sea_3', name: '칼 랄리', number: 29, position: 'C', marketValue: '.220', marketValueNum: 0.220, seasonAvgStat: '타율 .220 | 34홈런 100타점 (MLB 포수 홈런 1위)', recent3FormStat: '장타 파워', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'sea_4', name: '랜디 아로자레나', number: 56, position: 'LF', marketValue: '.238', marketValueNum: 0.238, seasonAvgStat: '타율 .238 | 20홈런 20도루 (클러치 히터)', recent3FormStat: '빅이닝 주도', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'sea_5', name: '저스틴 터너', number: 2, position: 'DH', marketValue: '.255', marketValueNum: 0.255, seasonAvgStat: '타율 .255 | 베테랑 지명타자', recent3FormStat: '작전 수행', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'sea_6', name: '호르헤 폴랑코', number: 7, position: '2B', marketValue: '.215', marketValueNum: 0.215, seasonAvgStat: '타율 .215 | 스위치히터 16홈런', recent3FormStat: '장타력', formStatus: 'YELLOW', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'sea_7', name: 'J.P. 크로포드', number: 3, position: 'SS', marketValue: '.202', marketValueNum: 0.202, seasonAvgStat: '타율 .202 | 골든글러브 유격수 수비', recent3FormStat: '내야 사령탑', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'sea_8', name: '루크 레일리', number: 8, position: '1B', marketValue: '.243', marketValueNum: 0.243, seasonAvgStat: '타율 .243 | 22홈런 거포 1루수', recent3FormStat: '한방 능력', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'sea_9', name: '딜런 무어', number: 25, position: '3B', marketValue: '.201', marketValueNum: 0.201, seasonAvgStat: '타율 .201 | 32도루 유틸리티', recent3FormStat: '기동력', formStatus: 'YELLOW', stamina: 'GREEN', minutesPlayed14d: 9 }
+          ]
+        }
+      };
+    }
+
+    // 28. MLB 애슬레틱스 (오클랜드)
+    if (clean.includes('애슬레틱스') || clean.includes('오클랜드') || clean.includes('athletics') || clean.includes('oakland')) {
+      return {
+        teamName: '오클랜드 애슬레틱스',
+        teamLogo: 'https://media.api-sports.io/baseball/teams/19.png',
+        starterPitcher: { name: 'JP 시어스', number: 38, throwsHand: 'L', era: '4.18', whip: '1.22', wins: 11, losses: 11, inningsPitched: '170.1', strikeouts: 130, vsOpponentLogs: [] },
+        battingLineup: {
+          formation: '선발 9인',
+          starting11Value: 'MLB 1군 오피셜',
+          starting11ValueNum: 2.2,
+          players: [
+            { id: 'oak_1', name: '로렌스 버틀러', number: 4, position: 'RF', marketValue: '.262', marketValueNum: 0.262, seasonAvgStat: '타율 .262 | 22홈런 (후반기 OPS .950)', recent3FormStat: '핫 리드오프', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'oak_2', name: '브렌트 루커', number: 25, position: 'DH', marketValue: '.293', marketValueNum: 0.293, seasonAvgStat: '타율 .293 | 39홈런 112타점 (MLB 최상위 거포)', recent3FormStat: '홈런 폭발', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'oak_3', name: 'JJ 블리데이', number: 33, position: 'CF', marketValue: '.243', marketValueNum: 0.243, seasonAvgStat: '타율 .243 | 20홈런 중견수', recent3FormStat: '출루', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'oak_4', name: '셰이 란겔리어스', number: 23, position: 'C', marketValue: '.224', marketValueNum: 0.224, seasonAvgStat: '타율 .224 | 29홈런 공격형 포수', recent3FormStat: '장타력', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'oak_5', name: '세스 브라운', number: 15, position: '1B', marketValue: '.231', marketValueNum: 0.231, seasonAvgStat: '타율 .231 | 베테랑 좌타 거포', recent3FormStat: '클러치', formStatus: 'YELLOW', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'oak_6', name: '잭 겔로프', number: 20, position: '2B', marketValue: '.211', marketValueNum: 0.211, seasonAvgStat: '타율 .211 | 17홈런 25도루 호타준족', recent3FormStat: '기동력', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'oak_7', name: '타일러 소더스트롬', number: 21, position: 'LF', marketValue: '.229', marketValueNum: 0.229, seasonAvgStat: '타율 .229 | 특급 유망주 외야수', recent3FormStat: '타격감 회복', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'oak_8', name: '막스 슈만', number: 1, position: '3B', marketValue: '.223', marketValueNum: 0.223, seasonAvgStat: '타율 .223 | 다재다능 내야 유틸리티', recent3FormStat: '작전 수행', formStatus: 'YELLOW', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'oak_9', name: '제이콥 윌슨', number: 2, position: 'SS', marketValue: '.250', marketValueNum: 0.250, seasonAvgStat: '타율 .250 | 컨택트 특화 루키 유격수', recent3FormStat: '수비 안정', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 }
+          ]
+        }
+      };
+    }
+
+    // 29. MLB 세인트루이스 카디널스
+    if (clean.includes('세인트루이스') || clean.includes('stlouis') || clean.includes('cardinals') || clean.includes('카디널스')) {
+      return {
+        teamName: '세인트루이스 카디널스',
+        teamLogo: 'https://media.api-sports.io/baseball/teams/36.png',
+        starterPitcher: { name: '소니 그레이', number: 54, throwsHand: 'R', era: '3.84', whip: '1.09', wins: 13, losses: 9, inningsPitched: '166.1', strikeouts: 203, vsOpponentLogs: [] },
+        battingLineup: {
+          formation: '선발 9인',
+          starting11Value: 'MLB 1군 오피셜',
+          starting11ValueNum: 2.6,
+          players: [
+            { id: 'stl_1', name: '메이신 윈', number: 0, position: 'SS', marketValue: '.267', marketValueNum: 0.267, seasonAvgStat: '타율 .267 | 레이저 송구 신인왕 후보', recent3FormStat: '리드오프', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'stl_2', name: '알렉 벌레슨', number: 41, position: 'RF', marketValue: '.269', marketValueNum: 0.269, seasonAvgStat: '타율 .269 | 21홈런 78타점', recent3FormStat: '타격감 우수', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'stl_3', name: '폴 골드슈미트', number: 46, position: '1B', marketValue: '.245', marketValueNum: 0.245, seasonAvgStat: '타율 .245 | MVP 출신 베테랑 1루수', recent3FormStat: '클러치', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'stl_4', name: '놀란 아레나도', number: 28, position: '3B', marketValue: '.272', marketValueNum: 0.272, seasonAvgStat: '타율 .272 | 10년연속 GG 3루수', recent3FormStat: '철벽 수비', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'stl_5', name: '브렌든 도노반', number: 33, position: '2B', marketValue: '.278', marketValueNum: 0.278, seasonAvgStat: '타율 .278 | 고출루 2루수', recent3FormStat: '출루', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'stl_6', name: '라스 눗바', number: 21, position: 'LF', marketValue: '.244', marketValueNum: 0.244, seasonAvgStat: '타율 .244 | 일본 국대 출신 외야수', recent3FormStat: '파이팅', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'stl_7', name: '페드로 파헤스', number: 43, position: 'C', marketValue: '.238', marketValueNum: 0.238, seasonAvgStat: '타율 .238 | 주전 포수', recent3FormStat: '투수 리드', formStatus: 'YELLOW', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'stl_8', name: '이반 에레라', number: 48, position: 'DH', marketValue: '.301', marketValueNum: 0.301, seasonAvgStat: '타율 .301 | 고타율 공격력', recent3FormStat: '안타 생산', formStatus: 'GREEN', stamina: 'GREEN', minutesPlayed14d: 9 },
+            { id: 'stl_9', name: '빅터 스캇 2세', number: 11, position: 'CF', marketValue: '.230', marketValueNum: 0.230, seasonAvgStat: '타율 .230 | 초고속 주력', recent3FormStat: '기동력', formStatus: 'YELLOW', stamina: 'GREEN', minutesPlayed14d: 9 }
+          ]
+        }
+      };
+    }
+
+    // Default fallback: MLB/NPB/KBO 리그 구분 폴백
+    const isMlb = clean.includes('mariners') || clean.includes('athletics') || clean.includes('giants') || clean.includes('dodgers') || clean.includes('cubs') || clean.includes('mets') || clean.includes('reds') || clean.includes('braves') || clean.includes('phillies') || clean.includes('astros') || clean.includes('rangers') || clean.includes('rays') || clean.includes('twins') || clean.includes('tigers') || clean.includes('royals') || clean.includes('white') || clean.includes('angels');
+
+    const fallbackNames = isMlb ? [
+      { name: '무키 베츠', pos: 'SS', num: 50 },
+      { name: '오타니 쇼헤이', pos: 'DH', num: 17 },
+      { name: '프레디 프리먼', pos: '1B', num: 5 },
+      { name: '테오스카 에르난데스', pos: 'RF', num: 37 },
+      { name: '맥스 먼시', pos: '3B', num: 13 },
+      { name: '윌 스미스', pos: 'C', num: 16 },
+      { name: '토미 에드먼', pos: 'CF', num: 25 },
+      { name: '개빈 럭스', pos: '2B', num: 9 },
+      { name: '엔리케 에르난데스', pos: 'LF', num: 8 }
+    ] : [
       { name: '김현수', pos: 'LF', num: 22 },
       { name: '박찬호', pos: 'SS', num: 1 },
       { name: '이정후', pos: 'CF', num: 51 },
-      { name: '이대호', pos: '1B', num: 10 },
+      { name: '양석환', pos: '1B', num: 34 },
       { name: '양의지', pos: 'C', num: 25 },
       { name: '최정', pos: '3B', num: 14 },
       { name: '손아섭', pos: 'RF', num: 31 },
@@ -807,23 +894,23 @@ export class BaseballRealRosterService {
 
     return {
       teamName: teamName,
-      teamLogo: 'https://media.api-sports.io/baseball/leagues/5.png',
+      teamLogo: isMlb ? 'https://media.api-sports.io/baseball/leagues/1.png' : 'https://media.api-sports.io/baseball/leagues/5.png',
       starterPitcher: {
-        name: '임찬규',
-        number: 1,
+        name: isMlb ? '타일러 글래스노우' : '임찬규',
+        number: isMlb ? 31 : 1,
         throwsHand: 'R',
-        era: '3.50',
-        whip: '1.20',
+        era: isMlb ? '3.49' : '3.50',
+        whip: isMlb ? '0.95' : '1.20',
         wins: 10,
-        losses: 5,
-        inningsPitched: '140.0',
-        strikeouts: 120,
+        losses: 6,
+        inningsPitched: '134.0',
+        strikeouts: 168,
         vsOpponentLogs: []
       },
       battingLineup: {
-        formation: '4-3-3',
-        starting11Value: '1군 오피셜',
-        starting11ValueNum: 1.0,
+        formation: '선발 9인',
+        starting11Value: isMlb ? 'MLB 1군 오피셜' : 'KBO 1군 오피셜',
+        starting11ValueNum: isMlb ? 2.5 : 1.0,
         players: fallbackNames.map((fb, idx) => ({
           id: `fb_p_${idx + 1}`,
           name: fb.name,

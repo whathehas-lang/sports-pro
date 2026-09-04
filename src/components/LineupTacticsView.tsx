@@ -351,6 +351,8 @@ export const LineupTacticsView = ({ match, theme = 'light' }: LineupTacticsViewP
             '⚾ 오피셜 야구장 9개 수비 포지션 위치'
           ) : match.sport === 'basketball' ? (
             '🏀 오피셜 농구장 마룻바닥 5개 수비/공격 포지션 위치'
+          ) : match.sport === 'volleyball' ? (
+            '🏐 오피셜 배구장 6개 수비/공격 포지션 위치'
           ) : (
             '⚽ 오피셜 축구장 잔디밭 포메이션'
           )}
@@ -368,7 +370,7 @@ export const LineupTacticsView = ({ match, theme = 'light' }: LineupTacticsViewP
                 : 'text-slate-400 hover:text-white'
             }`}
           >
-            [홈] {match.homeTeam.name} ({match.sport === 'basketball' ? '5인 주전' : homeFmt})
+            [홈] {match.homeTeam.name} ({match.sport === 'baseball' ? '선발 9인' : match.sport === 'basketball' ? '5인 주전' : match.sport === 'volleyball' ? '6인 주전' : homeFmt})
           </button>
           <button
             onClick={() => {
@@ -381,7 +383,7 @@ export const LineupTacticsView = ({ match, theme = 'light' }: LineupTacticsViewP
                 : 'text-slate-400 hover:text-white'
             }`}
           >
-            [원정] {match.awayTeam.name} ({match.sport === 'basketball' ? '5인 주전' : awayFmt})
+            [원정] {match.awayTeam.name} ({match.sport === 'baseball' ? '선발 9인' : match.sport === 'basketball' ? '5인 주전' : match.sport === 'volleyball' ? '6인 주전' : awayFmt})
           </button>
         </div>
       </div>
@@ -932,8 +934,81 @@ export const LineupTacticsView = ({ match, theme = 'light' }: LineupTacticsViewP
             </div>
           </div>
         </div>
+      ) : match.sport === 'volleyball' ? (
+        /* 🏐 3. 오피셜 실내 배구 코트 (VOLLEYBALL COURT GRAPHIC - 6인 주전 코트) */
+        <div className="space-y-4">
+          <div className="flex items-center justify-between bg-slate-900 p-3 rounded-2xl border border-slate-800">
+            <div className="flex items-center gap-2">
+              <span className="bg-amber-500 text-slate-950 px-3 py-1 rounded-xl font-black text-xs shadow flex items-center gap-1.5 border border-amber-300">
+                <UserCheck className="w-4 h-4" /> 6인 주전 라인업
+              </span>
+            </div>
+            <span className="text-[11px] text-slate-400 font-medium hidden sm:block">
+              배구 공식 로테이션 & 포지션 배치도
+            </span>
+          </div>
+
+          <div className="relative w-full min-h-[460px] bg-gradient-to-b from-amber-950/40 via-slate-900 to-amber-950/40 rounded-2xl border-2 border-amber-500/40 overflow-hidden shadow-xl p-4 flex flex-col justify-between">
+            {/* Volleyball Court Hardwood Texture */}
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(245,158,11,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(245,158,11,0.05)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+            <div className="absolute inset-3 border-2 border-amber-400/50 rounded-xl pointer-events-none" />
+            {/* Center Net Line */}
+            <div className="absolute top-1/2 left-3 right-3 border-b-2 border-dashed border-amber-300 pointer-events-none flex items-center justify-center">
+              <span className="text-[10px] font-black text-amber-300 bg-slate-950 px-3 py-0.5 rounded-full border border-amber-400 -translate-y-1/2 shadow">
+                🏐 NET (네트 중앙선)
+              </span>
+            </div>
+            {/* 3m Attack Lines */}
+            <div className="absolute top-1/3 left-3 right-3 border-b border-amber-400/30 pointer-events-none" />
+            <div className="absolute top-2/3 left-3 right-3 border-b border-amber-400/30 pointer-events-none" />
+
+            {/* Top Zone (전위 공격 라인) */}
+            <div className="relative z-10 space-y-2 pt-2">
+              <span className="text-[10px] font-bold text-amber-400/80 px-2 block text-center">전위 (공격 & 블로킹 라인)</span>
+              <div className="grid grid-cols-3 gap-2 text-center">
+                <div className="bg-slate-950/90 p-2.5 rounded-xl border border-slate-700 shadow">
+                  <span className="text-[10px] font-black text-amber-400 block">OH1 (레프트)</span>
+                  <span className="text-xs font-bold text-white">아웃사이드 히터</span>
+                  <span className="text-[9px] text-emerald-400 block mt-0.5 font-bold">주공격수</span>
+                </div>
+                <div className="bg-slate-950/90 p-2.5 rounded-xl border border-slate-700 shadow">
+                  <span className="text-[10px] font-black text-amber-400 block">MB1 (센터)</span>
+                  <span className="text-xs font-bold text-white">미들 블로커</span>
+                  <span className="text-[9px] text-emerald-400 block mt-0.5 font-bold">속공·블로킹</span>
+                </div>
+                <div className="bg-slate-950/90 p-2.5 rounded-xl border border-slate-700 shadow">
+                  <span className="text-[10px] font-black text-amber-400 block">OP (라이트)</span>
+                  <span className="text-xs font-bold text-white">아포짓 스파이커</span>
+                  <span className="text-[9px] text-emerald-400 block mt-0.5 font-bold">에이스 거포</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Zone (후위 수비 & 세터 라인) */}
+            <div className="relative z-10 space-y-2 pb-2">
+              <div className="grid grid-cols-3 gap-2 text-center">
+                <div className="bg-slate-950/90 p-2.5 rounded-xl border border-slate-700 shadow">
+                  <span className="text-[10px] font-black text-cyan-400 block">S (세터)</span>
+                  <span className="text-xs font-bold text-white">세터 사령탑</span>
+                  <span className="text-[9px] text-cyan-300 block mt-0.5 font-bold">토스 조율</span>
+                </div>
+                <div className="bg-slate-950/90 p-2.5 rounded-xl border border-slate-700 shadow">
+                  <span className="text-[10px] font-black text-emerald-400 block">L (리베로)</span>
+                  <span className="text-xs font-bold text-white">수비 전문</span>
+                  <span className="text-[9px] text-emerald-300 block mt-0.5 font-bold">디그·리시브</span>
+                </div>
+                <div className="bg-slate-950/90 p-2.5 rounded-xl border border-slate-700 shadow">
+                  <span className="text-[10px] font-black text-amber-400 block">OH2 (레프트)</span>
+                  <span className="text-xs font-bold text-white">아웃사이드 히터</span>
+                  <span className="text-[9px] text-amber-300 block mt-0.5 font-bold">공수 밸런스</span>
+                </div>
+              </div>
+              <span className="text-[10px] font-bold text-cyan-400/80 px-2 block text-center">후위 (수비 & 서브 리시브 라인)</span>
+            </div>
+          </div>
+        </div>
       ) : (
-        /* ⚽ 3. 오피셜 리얼 잔디밭 축구장 (SOCCER PITCH GRAPHIC - 대형 와이드 HD 뷰) */
+        /* ⚽ 4. 오피셜 리얼 잔디밭 축구장 (SOCCER PITCH GRAPHIC - 대형 와이드 HD 뷰) */
         <div className="space-y-5">
           {/* Status Indicator Banner above pitch */}
           <div className="flex items-center justify-between bg-slate-900 p-3 rounded-2xl border border-slate-800">

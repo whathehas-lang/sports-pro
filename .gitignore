@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+__pycache__/
+*.pyc
+*.db
+backend/data/*.db
+backend/data/*.db-wal
+backend/data/*.db-shm

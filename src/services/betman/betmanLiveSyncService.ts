@@ -29,8 +29,28 @@ export class BetmanLiveSyncService {
 
   /**
    * 실시간 수집 레이어 이원화 (Multi-Source Strategy) 비동기 동기화
+   * 1순위: 로컬 FastAPI 백엔드 (100% 무인 자동 수집 & 자가 검증된 실시간 스케줄)
+   * 2순위: 오프라인 캐시 및 정적 공식 스케줄 (Fallback)
    */
   public static async getMatchesAsync(gmId: string = 'G101', gmTs?: string): Promise<Match[]> {
+    if (gmId === 'G101') {
+      try {
+        const res = await fetch('http://127.0.0.1:8001/api/betman/schedule', {
+          signal: AbortSignal.timeout(1500)
+        });
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.matches && data.matches.length > 0) {
+            const orchestrated = data.matches.map((m: Match) => MasterFootballOrchestratorService.orchestrateSync(m));
+            const { verifiedMatches } = verifiedMatchDatabase.ingestAndVerifyMatches(orchestrated);
+            return MultiSourceBaseballOrchestrator.enrichMatchesWithMultiSource(verifiedMatches);
+          }
+        }
+      } catch {
+        // 백엔드 오프라인 시 로컬 공식 데이터로 매끄럽게 폴백
+      }
+    }
+
     const activeGmTs = gmTs || (gmId === 'G101' ? String(calculateActiveSeungbushikRoundTs()) : undefined);
     const matches = BetmanLiveSyncService.getMatches(gmId, activeGmTs);
     return MultiSourceBaseballOrchestrator.enrichMatchesWithMultiSource(matches);

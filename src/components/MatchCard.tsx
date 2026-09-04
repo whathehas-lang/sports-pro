@@ -478,7 +478,7 @@ export const MatchCard = ({ match, membershipTier = 'VVIP', cardDensity = 'DETAI
       <div className="flex items-center justify-between text-xs">
         <div className="flex items-center gap-1.5 flex-wrap">
           <span className="px-2.5 py-0.5 rounded-lg bg-emerald-500 text-white font-black text-xs shadow-sm">
-            {match.betmanMatchNo}번
+            {match.betmanMatchNo || match.matchNumber || match.id.replace(/^[a-z]+_/, '')}번
           </span>
           <span className={`font-bold px-2 py-0.5 rounded-lg border flex items-center gap-1 text-[11px] ${
             isLight ? 'bg-slate-100 text-slate-700 border-slate-200' : 'bg-slate-800 text-slate-200 border-slate-700'
@@ -702,7 +702,7 @@ export const MatchCard = ({ match, membershipTier = 'VVIP', cardDensity = 'DETAI
               : 'bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-white border-emerald-500/60 hover:from-emerald-500 hover:to-teal-500 shadow-emerald-950/40'
           }`}
         >
-          <span>📊 {match.betmanMatchNo}번 {match.homeTeam.name} vs {match.awayTeam.name} 정밀분석 (불펜·선발·상대전적)</span>
+          <span>📊 {match.betmanMatchNo || match.matchNumber || match.id.replace(/^[a-z]+_/, '')}번 {match.homeTeam.name} vs {match.awayTeam.name} 정밀분석 (불펜·선발·상대전적)</span>
           <ChevronRight className="w-4 h-4" />
         </button>
 
@@ -722,7 +722,7 @@ export const MatchCard = ({ match, membershipTier = 'VVIP', cardDensity = 'DETAI
           >
             <span className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping shrink-0" />
-              <span>💬 {match.betmanMatchNo}번 실시간 라이브 톡 (야구 주자점등 & 채팅)</span>
+              <span>💬 {match.betmanMatchNo || match.matchNumber || match.id.replace(/^[a-z]+_/, '')}번 실시간 라이브 톡 (야구 주자점등 & 채팅)</span>
             </span>
             <span className="text-[10px] font-extrabold bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded-full border border-amber-500/40 shrink-0">
               ⚡ 웹소켓 LIVE
