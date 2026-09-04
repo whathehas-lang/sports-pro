@@ -19,9 +19,19 @@ export class MultiSourceBaseballOrchestrator {
         let homeStarter: StarterPitcherInfo | null = null;
         let awayStarter: StarterPitcherInfo | null = null;
 
+        // 현재 시스템 날짜 기준 YYYY-MM-DD 및 MM.DD 계산
+        const now = new Date();
+        const pad = (n: number) => String(n).padStart(2, '0');
+        const todayDateStr = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+        const todayMmDd = `${pad(now.getMonth() + 1)}.${pad(now.getDate())}`;
+        
+        const tmrw = new Date(now.getTime() + 24 * 60 * 60 * 1000);
+        const tmrwDateStr = `${tmrw.getFullYear()}-${pad(tmrw.getMonth() + 1)}-${pad(tmrw.getDate())}`;
+        const tmrwMmDd = `${pad(tmrw.getMonth() + 1)}.${pad(tmrw.getDate())}`;
+
         const matchTime = m.matchTime || '';
-        const isToday = matchTime.includes('09.02');
-        const isTomorrow = matchTime.includes('09.03');
+        const isToday = matchTime.includes(todayMmDd) || matchTime.includes(todayDateStr) || (!matchTime.includes('.') && !matchTime.includes('-'));
+        const isTomorrow = matchTime.includes(tmrwMmDd) || matchTime.includes(tmrwDateStr);
 
         // 1. KBO 경기인 경우 -> 공식 KBO/네이버 공시 수집
         const isKbo = m.league.includes('KBO') || m.countryFlag === '🇰🇷' || 
@@ -33,15 +43,15 @@ export class MultiSourceBaseballOrchestrator {
             homeStarter = kboStarters.homeStarter;
             awayStarter = kboStarters.awayStarter;
           }
-          // 내일/미래 KBO는 공식 발표 전이므로 null 유지
+          // 내일/미래 KBO는 공식 발표 전이므로 null 유지 (선발 미정)
         } else if (m.league.includes('MLB') || m.countryFlag === '🇺🇸') {
           // 2. MLB 경기인 경우 -> MLB 연맹 공식 Stats API 실시간 조회
           if (isToday) {
-            homeStarter = await MlbOfficialStatsService.fetchOfficialProbablePitcher(m.homeTeam.name, '2026-09-01');
-            awayStarter = await MlbOfficialStatsService.fetchOfficialProbablePitcher(m.awayTeam.name, '2026-09-01');
+            homeStarter = await MlbOfficialStatsService.fetchOfficialProbablePitcher(m.homeTeam.name, todayDateStr);
+            awayStarter = await MlbOfficialStatsService.fetchOfficialProbablePitcher(m.awayTeam.name, todayDateStr);
           } else if (isTomorrow) {
-            homeStarter = await MlbOfficialStatsService.fetchOfficialProbablePitcher(m.homeTeam.name, '2026-09-02');
-            awayStarter = await MlbOfficialStatsService.fetchOfficialProbablePitcher(m.awayTeam.name, '2026-09-02');
+            homeStarter = await MlbOfficialStatsService.fetchOfficialProbablePitcher(m.homeTeam.name, tmrwDateStr);
+            awayStarter = await MlbOfficialStatsService.fetchOfficialProbablePitcher(m.awayTeam.name, tmrwDateStr);
           }
         } else if (m.league.includes('NPB') || m.countryFlag === '🇯🇵') {
           // 3. NPB 경기인 경우 -> 공식 홈페이지 공시 수집
