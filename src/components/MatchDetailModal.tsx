@@ -11,6 +11,7 @@ import { H2HOneShotApiService } from '../services/api/h2hOneShotApiService';
 import { SportsEntityMappingService } from '../services/mappers/sportsEntityMappingService';
 import { BaseballRealtimeWeatherService, type LiveStadiumWeatherResult } from '../services/weather/baseballRealtimeWeatherService';
 import { FootballH2HRecentFormEngine } from '../services/enricher/footballH2HRecentFormEngine';
+import { BaseballLiveStarterHub } from '../services/api/baseballLiveStarterHub';
 
 interface MatchDetailModalProps {
   match: Match;
@@ -49,14 +50,8 @@ export const MatchDetailModal = ({
       };
     }
     const generated = (match.sport === 'baseball'
-    ? [
-        { dateStr: '08.28', homeTeam: match.homeTeam.name, awayTeam: match.awayTeam.name, matchHomeTeam: match.homeTeam.name, matchAwayTeam: match.awayTeam.name, homeScore: 5, awayScore: 3, result: '승' },
-        { dateStr: '08.27', homeTeam: match.homeTeam.name, awayTeam: match.awayTeam.name, matchHomeTeam: match.homeTeam.name, matchAwayTeam: match.awayTeam.name, homeScore: 2, awayScore: 4, result: '패' },
-        { dateStr: '07.15', homeTeam: match.awayTeam.name, awayTeam: match.homeTeam.name, matchHomeTeam: match.awayTeam.name, matchAwayTeam: match.homeTeam.name, homeScore: 6, awayScore: 7, result: '승' },
-        { dateStr: '07.14', homeTeam: match.awayTeam.name, awayTeam: match.homeTeam.name, matchHomeTeam: match.awayTeam.name, matchAwayTeam: match.homeTeam.name, homeScore: 3, awayScore: 1, result: '패' },
-        { dateStr: '05.20', homeTeam: match.homeTeam.name, awayTeam: match.awayTeam.name, matchHomeTeam: match.homeTeam.name, matchAwayTeam: match.awayTeam.name, homeScore: 4, awayScore: 2, result: '승' }
-      ]
-    : FootballH2HRecentFormEngine.generateH2HMatches(match.homeTeam.name, match.awayTeam.name, match.betmanMatchNo || 100, match.sport));
+      ? BaseballMasterDataService.getAuthenticH2HMatches(match.homeTeam.name, match.awayTeam.name)
+      : FootballH2HRecentFormEngine.generateH2HMatches(match.homeTeam.name, match.awayTeam.name, match.betmanMatchNo || 100, match.sport));
     return {
       summaryText: `과거 맞대결 ${generated.length}경기 실존 기록`,
       homeWins: generated.filter(m => m.homeScore > m.awayScore).length,
@@ -150,8 +145,10 @@ export const MatchDetailModal = ({
   const homeForm = getFormBadge(match.homeTeam.recent3Form);
   const awayForm = getFormBadge(match.awayTeam.recent3Form);
 
-  const homeStarter = match.homeTeam.starterPitcherInfo;
-  const awayStarter = match.awayTeam.starterPitcherInfo;
+  const hubHomeStarter = match.sport === 'baseball' ? BaseballLiveStarterHub.getStarterPitcher(match.homeTeam.name) : null;
+  const hubAwayStarter = match.sport === 'baseball' ? BaseballLiveStarterHub.getStarterPitcher(match.awayTeam.name) : null;
+  const homeStarter = hubHomeStarter || match.homeTeam.starterPitcherInfo;
+  const awayStarter = hubAwayStarter || match.awayTeam.starterPitcherInfo;
 
   // 100% 실데이터 보장: 야구는 BaseballMasterDataService, 축구는 API-Sports/엔진 최우선 바인딩
   const fallbackHomeLogs = match.sport === 'baseball'
@@ -1213,94 +1210,99 @@ export const MatchDetailModal = ({
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {/* Left Column: Home Team Logs */}
-                    <div className="bg-slate-900 p-3 rounded-xl border border-slate-800 space-y-2">
-                      <span className="text-emerald-400 font-black text-xs block pb-1 border-b border-slate-800 flex items-center justify-between">
-                        <span>🏠 [{match.homeTeam.name}] 최근 {recentGamesRange}경기</span>
-                        <span className="text-[10px] text-slate-400 font-normal">홈팀 경기 기록</span>
-                      </span>
-                      {homeRecentLogs.length > 0 ? (
-                        homeRecentLogs.map((g, idx) => {
-                          const isTargetHome = g.homeOrAway === 'HOME';
-                          const oppEnt = SportsEntityMappingService.resolveTeamEntity(g.opponentName, match.sport as any);
-                          const oppKo = oppEnt?.nameKo || g.opponentName || '상대팀';
+                  {/* 🌟 한 그림(단일 카드) 안에 홈과 원정 경기 결과를 같이 표기 (회차/일자별 나란히 대칭 통합) */}
+                  <div className="space-y-2.5">
+                    {Array.from({ length: Math.max(homeRecentLogs.length, awayRecentLogs.length) }).map((_, idx) => {
+                      const hLog = homeRecentLogs[idx];
+                      const aLog = awayRecentLogs[idx];
+                      const dateDisplay = hLog?.dateStr || aLog?.dateStr || `${idx + 1}번째 경기`;
 
-                          // Front is ALWAYS Home team, Back is ALWAYS Away team
-                          const gameHomeTeam = isTargetHome ? match.homeTeam.name : oppKo;
-                          const gameAwayTeam = isTargetHome ? oppKo : match.homeTeam.name;
-                          const gameHomeScore = isTargetHome ? g.teamScore : g.opponentScore;
-                          const gameAwayScore = isTargetHome ? g.opponentScore : g.teamScore;
+                      // 홈팀 경기 파싱
+                      const isTargetHome1 = hLog?.homeOrAway === 'HOME';
+                      const oppEnt1 = hLog ? SportsEntityMappingService.resolveTeamEntity(hLog.opponentName, match.sport as any) : null;
+                      const oppKo1 = oppEnt1?.nameKo || hLog?.opponentName || '상대팀';
+                      const gameHomeTeam1 = isTargetHome1 ? match.homeTeam.name : oppKo1;
+                      const gameAwayTeam1 = isTargetHome1 ? oppKo1 : match.homeTeam.name;
+                      const gameHomeScore1 = isTargetHome1 ? hLog?.teamScore : hLog?.opponentScore;
+                      const gameAwayScore1 = isTargetHome1 ? hLog?.opponentScore : hLog?.teamScore;
+                      const hResult = hLog ? (hLog.teamScore > hLog.opponentScore ? '승' : hLog.teamScore < hLog.opponentScore ? '패' : '무') : '-';
 
-                          return (
-                            <div key={idx} className="flex items-center justify-between text-slate-200 bg-slate-950 px-2.5 py-1.5 rounded-lg border border-slate-800 font-medium text-xs">
-                              <div className="flex items-center gap-1.5 truncate">
-                                <span className="font-mono text-slate-400 text-[10px] shrink-0 font-bold">{g.dateStr}</span>
-                                <span className={`font-bold truncate ${gameHomeTeam === match.homeTeam.name ? 'text-emerald-400' : 'text-slate-300'}`}>
-                                  [{gameHomeTeam}] (홈)
-                                </span>
-                                <span className="text-slate-500 font-bold text-[9px] shrink-0">vs</span>
-                                <span className={`font-bold truncate ${gameAwayTeam === match.homeTeam.name ? 'text-emerald-400' : 'text-slate-300'}`}>
-                                  [{gameAwayTeam}] (원정)
-                                </span>
-                              </div>
-                              <span className="font-mono font-black text-amber-300 text-xs shrink-0 pl-2">
-                                {gameHomeScore} : {gameAwayScore}
-                              </span>
-                            </div>
-                          );
-                        })
-                      ) : (
-                        <div className="p-4 bg-slate-950 rounded-lg text-center text-xs text-slate-400 border border-slate-800 space-y-1">
-                          <p className="font-bold text-slate-300">최근 경기 기록이 없습니다.</p>
-                          <p className="text-[10px] text-slate-500">[{match.homeTeam.name}] 최근 경기 데이터가 존재하지 않거나 집계 전입니다.</p>
-                        </div>
-                      )}
-                    </div>
+                      // 원정팀 경기 파싱
+                      const isTargetHome2 = aLog?.homeOrAway === 'HOME';
+                      const oppEnt2 = aLog ? SportsEntityMappingService.resolveTeamEntity(aLog.opponentName, match.sport as any) : null;
+                      const oppKo2 = oppEnt2?.nameKo || aLog?.opponentName || '상대팀';
+                      const gameHomeTeam2 = isTargetHome2 ? match.awayTeam.name : oppKo2;
+                      const gameAwayTeam2 = isTargetHome2 ? oppKo2 : match.awayTeam.name;
+                      const gameHomeScore2 = isTargetHome2 ? aLog?.teamScore : aLog?.opponentScore;
+                      const gameAwayScore2 = isTargetHome2 ? aLog?.opponentScore : aLog?.teamScore;
+                      const aResult = aLog ? (aLog.teamScore > aLog.opponentScore ? '승' : aLog.teamScore < aLog.opponentScore ? '패' : '무') : '-';
 
-                    {/* Right Column: Away Team Logs */}
-                    <div className="bg-slate-900 p-3 rounded-xl border border-slate-800 space-y-2">
-                      <span className="text-cyan-400 font-black text-xs block pb-1 border-b border-slate-800 flex items-center justify-between">
-                        <span>✈️ [{match.awayTeam.name}] 최근 {recentGamesRange}경기</span>
-                        <span className="text-[10px] text-slate-400 font-normal">원정팀 경기 기록</span>
-                      </span>
-                      {awayRecentLogs.length > 0 ? (
-                        awayRecentLogs.map((g, idx) => {
-                          const isTargetHome = g.homeOrAway === 'HOME';
-                          const oppEnt = SportsEntityMappingService.resolveTeamEntity(g.opponentName, match.sport as any);
-                          const oppKo = oppEnt?.nameKo || g.opponentName || '상대팀';
+                      return (
+                        <div key={idx} className="bg-slate-900 p-3 rounded-xl border border-slate-800 space-y-2 shadow-sm">
+                          {/* 단일 카드 일자 헤더 */}
+                          <div className="flex items-center justify-between border-b border-slate-800/80 pb-1.5">
+                            <span className="font-mono text-amber-400 font-extrabold text-xs flex items-center gap-1.5">
+                              <span>📅</span>
+                              <span>{idx === 0 ? '어제 경기' : idx === 1 ? '그저께 경기' : `${idx + 1}경기 전`} ({dateDisplay})</span>
+                            </span>
+                            <span className="text-[10px] text-slate-400 font-bold">홈팀 vs 원정팀 최근 결과 동시 비교</span>
+                          </div>
 
-                          // Front is ALWAYS Home team, Back is ALWAYS Away team
-                          const gameHomeTeam = isTargetHome ? match.awayTeam.name : oppKo;
-                          const gameAwayTeam = isTargetHome ? oppKo : match.awayTeam.name;
-                          const gameHomeScore = isTargetHome ? g.teamScore : g.opponentScore;
-                          const gameAwayScore = isTargetHome ? g.opponentScore : g.teamScore;
-
-                          return (
-                            <div key={idx} className="flex items-center justify-between text-slate-200 bg-slate-950 px-2.5 py-1.5 rounded-lg border border-slate-800 font-medium text-xs">
-                              <div className="flex items-center gap-1.5 truncate">
-                                <span className="font-mono text-slate-400 text-[10px] shrink-0 font-bold">{g.dateStr}</span>
-                                <span className={`font-bold truncate ${gameHomeTeam === match.awayTeam.name ? 'text-cyan-400' : 'text-slate-300'}`}>
-                                  [{gameHomeTeam}] (홈)
-                                </span>
-                                <span className="text-slate-500 font-bold text-[9px] shrink-0">vs</span>
-                                <span className={`font-bold truncate ${gameAwayTeam === match.awayTeam.name ? 'text-cyan-400' : 'text-slate-300'}`}>
-                                  [{gameAwayTeam}] (원정)
+                          {/* 홈팀 & 원정팀 결과를 한 카드 안에서 좌우 나란히 배치 */}
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
+                            {/* [홈팀 경기 결과] */}
+                            {hLog ? (
+                              <div className="flex items-center justify-between bg-slate-950 px-3 py-2 rounded-lg border border-emerald-500/30">
+                                <div className="flex items-center gap-1.5 truncate">
+                                  <span className={`px-1.5 py-0.2 rounded text-[10px] font-black ${
+                                    hResult === '승' ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40' : hResult === '패' ? 'bg-rose-500/20 text-rose-300 border border-rose-500/40' : 'bg-slate-800 text-slate-300'
+                                  }`}>
+                                    [홈 {match.homeTeam.name}] {hResult}
+                                  </span>
+                                  <span className={`font-bold truncate ${gameHomeTeam1 === match.homeTeam.name ? 'text-emerald-400 font-black' : 'text-slate-300'}`}>
+                                    {gameHomeTeam1}
+                                  </span>
+                                  <span className="text-slate-500 text-[10px] font-bold">vs</span>
+                                  <span className={`font-bold truncate ${gameAwayTeam1 === match.homeTeam.name ? 'text-emerald-400 font-black' : 'text-slate-300'}`}>
+                                    {gameAwayTeam1}
+                                  </span>
+                                </div>
+                                <span className="font-mono font-black text-amber-300 text-xs shrink-0 pl-2">
+                                  {gameHomeScore1} : {gameAwayScore1}
                                 </span>
                               </div>
-                              <span className="font-mono font-black text-amber-300 text-xs shrink-0 pl-2">
-                                {gameHomeScore} : {gameAwayScore}
-                              </span>
-                            </div>
-                          );
-                        })
-                      ) : (
-                        <div className="p-4 bg-slate-950 rounded-lg text-center text-xs text-slate-400 border border-slate-800 space-y-1">
-                          <p className="font-bold text-slate-300">최근 경기 기록이 없습니다.</p>
-                          <p className="text-[10px] text-slate-500">[{match.awayTeam.name}] 최근 경기 데이터가 존재하지 않거나 집계 전입니다.</p>
+                            ) : (
+                              <div className="bg-slate-950 p-2 rounded-lg text-slate-500 text-[11px] text-center">기록 없음</div>
+                            )}
+
+                            {/* [원정팀 경기 결과] */}
+                            {aLog ? (
+                              <div className="flex items-center justify-between bg-slate-950 px-3 py-2 rounded-lg border border-cyan-500/30">
+                                <div className="flex items-center gap-1.5 truncate">
+                                  <span className={`px-1.5 py-0.2 rounded text-[10px] font-black ${
+                                    aResult === '승' ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40' : aResult === '패' ? 'bg-rose-500/20 text-rose-300 border border-rose-500/40' : 'bg-slate-800 text-slate-300'
+                                  }`}>
+                                    [원정 {match.awayTeam.name}] {aResult}
+                                  </span>
+                                  <span className={`font-bold truncate ${gameHomeTeam2 === match.awayTeam.name ? 'text-cyan-400 font-black' : 'text-slate-300'}`}>
+                                    {gameHomeTeam2}
+                                  </span>
+                                  <span className="text-slate-500 text-[10px] font-bold">vs</span>
+                                  <span className={`font-bold truncate ${gameAwayTeam2 === match.awayTeam.name ? 'text-cyan-400 font-black' : 'text-slate-300'}`}>
+                                    {gameAwayTeam2}
+                                  </span>
+                                </div>
+                                <span className="font-mono font-black text-amber-300 text-xs shrink-0 pl-2">
+                                  {gameHomeScore2} : {gameAwayScore2}
+                                </span>
+                              </div>
+                            ) : (
+                              <div className="bg-slate-950 p-2 rounded-lg text-slate-500 text-[11px] text-center">기록 없음</div>
+                            )}
+                          </div>
                         </div>
-                      )}
-                    </div>
+                      );
+                    })}
                   </div>
                 </div>
               )}

@@ -319,82 +319,93 @@ export const BaseballSeriesPitchView = ({
           </p>
         </div>
 
-        {/* 3단계 타임라인 카드: [전전경기 / 1차전] ⬇️ [전경기 / 2차전] (세로 형태 순차 배치) */}
+        {/* 3단계 타임라인 카드: [전전경기 / 1차전] 및 [전경기 / 2차전] - 각각 단일 폴더(카드) 안에 홈 & 원정 나란히 배치 */}
         <div className="space-y-3">
           <h5 className="text-xs font-black text-amber-300 flex items-center gap-1.5">
             <Clock className="w-3.5 h-3.5 text-amber-400" />
-            <span>{selectedRound === 'GAME_1' ? '1차전 기준: 직전 시리즈 투구수 & 역할별 불펜 소모 흐름' : selectedRound === 'GAME_2' ? '2차전 기준: 1차전(어제) 포함 투구수 흐름' : '3차전 기준: 1·2차전 누적 투구수 & 개별 투수 연투 흐름'}</span>
+            <span>{selectedRound === 'GAME_1' ? '1차전 기준: [전전경기] 및 [직전경기] 단일 폴더 내 홈 🤝 원정 나란히 배치' : selectedRound === 'GAME_2' ? '2차전 기준: [직전 시리즈] 및 [1차전(어제)] 단일 폴더 내 홈 🤝 원정 나란히 배치' : '3차전 기준: [1차전(그저께)] 및 [2차전(어제)] 단일 폴더 내 홈 🤝 원정 나란히 배치'}</span>
           </h5>
 
-          <div className="flex flex-col space-y-3">
+          {/* 🌟 각 경기(전경기, 전전경기)별로 단일 폴더(컨테이너) 안에 홈과 원정을 좌우 나란히 배치 */}
+          <div className="space-y-3">
             {games.map((game, idx) => (
-              <div key={idx} className="bg-slate-900/90 rounded-xl border border-slate-800 p-3 space-y-2.5">
-                <div className="flex items-center justify-between border-b border-slate-800/80 pb-1.5">
-                  <span className="font-black text-amber-400 text-xs flex items-center gap-1">
-                    <Zap className="w-3 h-3" />
-                    {game.gameLabel}
+              <div key={idx} className="bg-slate-900/95 rounded-2xl border border-slate-800 p-3.5 space-y-3 shadow-lg">
+                {/* 단일 폴더 헤더 */}
+                <div className="flex items-center justify-between border-b border-slate-800 pb-2">
+                  <div className="flex items-center gap-2">
+                    <span className="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-400 border border-amber-500/40 flex items-center justify-center font-bold text-xs">
+                      ⚾
+                    </span>
+                    <span className="font-black text-amber-300 text-xs sm:text-sm flex items-center gap-1.5">
+                      <Zap className="w-3.5 h-3.5 text-amber-400" />
+                      {game.gameLabel}
+                    </span>
+                  </div>
+                  <span className="text-[11px] text-slate-200 font-extrabold bg-slate-950 px-2.5 py-1 rounded-lg border border-slate-800">
+                    {game.gameDateStr}
                   </span>
-                  <span className="text-[10px] text-slate-400 font-bold">{game.gameDateStr}</span>
                 </div>
 
-                {/* 🏠 홈팀 & ✈️ 원정팀 나란히(가로 2단) 동시 비교 */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
-                  {/* 홈팀 선발 및 등판 불펜진 */}
-                  <div className="bg-slate-950 p-2.5 rounded-lg border border-emerald-500/20 space-y-1.5 flex flex-col justify-between">
-                    <div className="space-y-1.5">
-                      <div className="flex flex-col sm:flex-row sm:items-center justify-between text-[11px] font-bold gap-1">
-                        <div className="flex items-center gap-1.5 flex-wrap">
-                          <span className="text-emerald-400 font-black">[홈] {homeTeam.name}</span>
-                          {game.homeMatchOpponentInfo && (
-                            <span className="px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-300 text-[10px] font-black border border-emerald-500/30">
-                              {game.homeMatchOpponentInfo}
-                            </span>
-                          )}
-                        </div>
-                        <span className="text-white flex items-center gap-1 shrink-0">
-                          <span className="px-1 py-0.2 rounded text-[9px] bg-amber-500/20 text-amber-300 border border-amber-500/40">선발</span>
-                          {game.homeStarterName} ({game.homeStarterPitches}구 / S:{game.homeStarterStrikes} B:{game.homeStarterBalls})
+                {/* 🏠 [홈팀] 🤝 ✈️ [원정팀] 한 폴더 안에서 좌우 2열로 나란히 완벽 통합 */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {/* [홈팀 영역] */}
+                  <div className="bg-slate-950 p-3 rounded-xl border border-emerald-500/40 space-y-2.5">
+                    <div className="flex items-center justify-between text-xs font-black border-b border-slate-900 pb-1.5">
+                      <span className="text-emerald-400 font-black text-xs sm:text-sm">[홈] {homeTeam.name}</span>
+                      {game.homeMatchOpponentInfo && (
+                        <span className="px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-300 text-[10px] font-black border border-emerald-500/30">
+                          {game.homeMatchOpponentInfo}
                         </span>
-                      </div>
+                      )}
+                    </div>
 
-                      {/* 홈 등판 불펜 개별 객체 칩 렌더러 */}
-                      <div className="pt-1.5 border-t border-slate-900 space-y-1">
-                        <div className="flex items-center justify-between text-[10px]">
-                          <span className="text-emerald-300 font-bold">불펜 총계: {game.homeBullpenTotalPitches}구 (S:{game.homeBullpenTotalStrikes} B:{game.homeBullpenTotalBalls})</span>
-                        </div>
-                        <div className="flex flex-wrap gap-1.5 mt-1">
-                          {game.homeBullpenPitchers?.map((p) => renderPitcherChip(p))}
-                        </div>
+                    <div className="text-xs text-white flex items-center justify-between bg-slate-900/90 px-2.5 py-1.5 rounded-lg border border-slate-800">
+                      <div className="flex items-center gap-1.5">
+                        <span className="px-1.5 py-0.2 rounded text-[9px] bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold">선발</span>
+                        <span className="font-extrabold text-slate-100">{game.homeStarterName}</span>
+                      </div>
+                      <span className="font-mono text-amber-300 text-xs font-black">{game.homeStarterPitches}구</span>
+                    </div>
+
+                    {/* 홈 등판 불펜 칩 */}
+                    <div className="pt-1 space-y-1.5">
+                      <div className="flex items-center justify-between text-[11px]">
+                        <span className="text-emerald-300 font-bold">불펜 총계: {game.homeBullpenTotalPitches}구</span>
+                        <span className="text-[10px] text-slate-400 font-mono">(S:{game.homeBullpenTotalStrikes} B:{game.homeBullpenTotalBalls})</span>
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {game.homeBullpenPitchers?.map((p) => renderPitcherChip(p))}
                       </div>
                     </div>
                   </div>
 
-                  {/* 원정팀 선발 및 등판 불펜진 */}
-                  <div className="bg-slate-950 p-2.5 rounded-lg border border-cyan-500/20 space-y-1.5 flex flex-col justify-between">
-                    <div className="space-y-1.5">
-                      <div className="flex flex-col sm:flex-row sm:items-center justify-between text-[11px] font-bold gap-1">
-                        <div className="flex items-center gap-1.5 flex-wrap">
-                          <span className="text-cyan-400 font-black">[원정] {awayTeam.name}</span>
-                          {game.awayMatchOpponentInfo && (
-                            <span className="px-1.5 py-0.5 rounded bg-cyan-500/15 text-cyan-300 text-[10px] font-black border border-cyan-500/30">
-                              {game.awayMatchOpponentInfo}
-                            </span>
-                          )}
-                        </div>
-                        <span className="text-white flex items-center gap-1 shrink-0">
-                          <span className="px-1 py-0.2 rounded text-[9px] bg-amber-500/20 text-amber-300 border border-amber-500/40">선발</span>
-                          {game.awayStarterName} ({game.awayStarterPitches}구 / S:{game.awayStarterStrikes} B:{game.awayStarterBalls})
+                  {/* [원정팀 영역] */}
+                  <div className="bg-slate-950 p-3 rounded-xl border border-cyan-500/40 space-y-2.5">
+                    <div className="flex items-center justify-between text-xs font-black border-b border-slate-900 pb-1.5">
+                      <span className="text-cyan-400 font-black text-xs sm:text-sm">[원정] {awayTeam.name}</span>
+                      {game.awayMatchOpponentInfo && (
+                        <span className="px-2 py-0.5 rounded bg-cyan-500/15 text-cyan-300 text-[10px] font-black border border-cyan-500/30">
+                          {game.awayMatchOpponentInfo}
                         </span>
-                      </div>
+                      )}
+                    </div>
 
-                      {/* 원정 등판 불펜 개별 객체 칩 렌더러 */}
-                      <div className="pt-1.5 border-t border-slate-900 space-y-1">
-                        <div className="flex items-center justify-between text-[10px]">
-                          <span className="text-cyan-300 font-bold">불펜 총계: {game.awayBullpenTotalPitches}구 (S:{game.awayBullpenTotalStrikes} B:{game.awayBullpenTotalBalls})</span>
-                        </div>
-                        <div className="flex flex-wrap gap-1.5 mt-1">
-                          {game.awayBullpenPitchers?.map((p) => renderPitcherChip(p))}
-                        </div>
+                    <div className="text-xs text-white flex items-center justify-between bg-slate-900/90 px-2.5 py-1.5 rounded-lg border border-slate-800">
+                      <div className="flex items-center gap-1.5">
+                        <span className="px-1.5 py-0.2 rounded text-[9px] bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold">선발</span>
+                        <span className="font-extrabold text-slate-100">{game.awayStarterName}</span>
+                      </div>
+                      <span className="font-mono text-amber-300 text-xs font-black">{game.awayStarterPitches}구</span>
+                    </div>
+
+                    {/* 원정 등판 불펜 칩 */}
+                    <div className="pt-1 space-y-1.5">
+                      <div className="flex items-center justify-between text-[11px]">
+                        <span className="text-cyan-300 font-bold">불펜 총계: {game.awayBullpenTotalPitches}구</span>
+                        <span className="text-[10px] text-slate-400 font-mono">(S:{game.awayBullpenTotalStrikes} B:{game.awayBullpenTotalBalls})</span>
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {game.awayBullpenPitchers?.map((p) => renderPitcherChip(p))}
                       </div>
                     </div>
                   </div>

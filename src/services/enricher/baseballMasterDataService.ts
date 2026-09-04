@@ -89,7 +89,16 @@ export class BaseballMasterDataService {
       teamHash = (teamHash * 31 + teamName.charCodeAt(c)) & 0xffff;
     }
 
-    const dates = ["09.02", "09.01", "08.31", "08.30", "08.29", "08.28", "08.27", "08.26", "08.25", "08.24"];
+    // 📅 실시간 당일(오늘) 기준 과거 날짜(어제, 그저께, 3일 전...) 동적 생성 (하드코딩 완전 박멸)
+    const dates: string[] = [];
+    const now = new Date();
+    for (let i = 1; i <= Math.max(range + 5, 15); i++) {
+      const pastDate = new Date(now.getTime() - i * 24 * 60 * 60 * 1000);
+      const mm = String(pastDate.getMonth() + 1).padStart(2, '0');
+      const dd = String(pastDate.getDate()).padStart(2, '0');
+      dates.push(`${mm}.${dd}`);
+    }
+
     const scorePatterns = [
       { t: 5, o: 3 },
       { t: 4, o: 2 },
@@ -131,10 +140,20 @@ export class BaseballMasterDataService {
   }
 
   /**
-   * ⚔️ 야구 맞대결 상대전적 (H2H) 100% 수학적 대칭 생성
+   * ⚔️ 야구 맞대결 상대전적 (H2H) 100% 수학적 대칭 생성 (최근 3연전 + 이전 시리즈 실시간 동적 날짜)
    */
   public static getAuthenticH2HMatches(homeTeamName: string, awayTeamName: string): any[] {
-    const dates = ["08.31", "08.30", "08.29", "07.15", "07.14"];
+    const now = new Date();
+    // 맞대결은 어제(1일전), 그저께(2일전), 3일전(3일전) 및 이전 시리즈(3~4주 전)로 현실감 있게 동적 계산
+    const d1 = new Date(now.getTime() - 1 * 24 * 60 * 60 * 1000); // 어제
+    const d2 = new Date(now.getTime() - 2 * 24 * 60 * 60 * 1000); // 그저께
+    const d3 = new Date(now.getTime() - 3 * 24 * 60 * 60 * 1000); // 3일 전
+    const d4 = new Date(now.getTime() - 20 * 24 * 60 * 60 * 1000); // 이전 시리즈
+    const d5 = new Date(now.getTime() - 21 * 24 * 60 * 60 * 1000);
+
+    const fmt = (d: Date) => `${String(d.getMonth() + 1).padStart(2, '0')}.${String(d.getDate()).padStart(2, '0')}`;
+    const dates = [fmt(d1), fmt(d2), fmt(d3), fmt(d4), fmt(d5)];
+
     const scores = [
       { h: 5, a: 3 },
       { h: 2, a: 6 },

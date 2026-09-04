@@ -6,6 +6,7 @@ import { REAL_TEAM_STARTERS_DICT, KBO_REAL_STARTERS } from '../mock/realTeamStar
 import { FootballOfficialLineupEngine } from '../services/enricher/footballOfficialLineupEngine';
 import { BaseballRealRosterService } from '../services/enricher/baseballRealRosterService';
 import { BaseballSeriesFatigueEngine } from '../services/enricher/baseballSeriesFatigueEngine';
+import { BaseballLiveStarterHub } from '../services/api/baseballLiveStarterHub';
 
 interface LineupTacticsViewProps {
   match: Match;
@@ -147,14 +148,16 @@ export const LineupTacticsView = ({ match, theme = 'light' }: LineupTacticsViewP
     return { name: fallbackName, num: fallbackNum, val: fallbackVal, form: 'GREEN' as const, isHot: false, stamina: 'GREEN' as const, mins: 0, playerObj: undefined };
   };
 
-  const rawStarterName = activeTeam.starterPitcherInfo?.name || '';
+  // ⚾ 공식 실시간 선발투수 SSOT 연동 (과거 고정 투수 임의 대체 100% 방지)
+  const hubStarter = match.sport === 'baseball' ? BaseballLiveStarterHub.getStarterPitcher(activeTeam.name) : null;
+  const rawStarterName = hubStarter?.name || activeTeam.starterPitcherInfo?.name || '';
   const isPitcherConfirmed = !!rawStarterName && !rawStarterName.includes('선발투수') && !rawStarterName.includes('미정') && rawStarterName !== '선발';
   const pitcherDisplayName = isPitcherConfirmed ? rawStarterName : '선발 미정';
-  const pitcherDisplayVal = isPitcherConfirmed ? (activeTeam.starterPitcherInfo?.era ? `ERA ${activeTeam.starterPitcherInfo.era}` : '선발') : '선발 미정';
+  const pitcherDisplayVal = isPitcherConfirmed ? (hubStarter?.era ? `ERA ${hubStarter.era}` : activeTeam.starterPitcherInfo?.era ? `ERA ${activeTeam.starterPitcherInfo.era}` : '선발') : '선발 미정';
 
   const sp = {
     name: pitcherDisplayName,
-    num: isPitcherConfirmed ? (activeTeam.starterPitcherInfo?.number || 1) : 0,
+    num: isPitcherConfirmed ? (hubStarter?.number || activeTeam.starterPitcherInfo?.number || 1) : 0,
     val: pitcherDisplayVal,
     form: isPitcherConfirmed ? 'GREEN' as const : 'YELLOW' as const,
     isHot: false,

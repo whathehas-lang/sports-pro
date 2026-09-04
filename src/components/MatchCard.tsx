@@ -2,6 +2,7 @@ import React from 'react';
 import { ChevronRight, Star } from 'lucide-react';
 import type { Match, MembershipTier } from '../types/sports';
 import { isMatchCompleted, getMatchScore, calculateWinningPicks } from '../utils/matchResultHelper';
+import { BaseballLiveStarterHub } from '../services/api/baseballLiveStarterHub';
 
 interface MatchCardProps {
   match: Match;
@@ -142,21 +143,30 @@ export const MatchCard = ({ match, membershipTier = 'VVIP', cardDensity = 'DETAI
             </span>
           </div>
 
-          {match.sport === 'baseball' && match.homeTeam.starterPitcherInfo && match.awayTeam.starterPitcherInfo ? (
-            <span className={`text-[10px] font-bold shrink-0 px-2 py-0.5 rounded border ${
-              isLight ? 'bg-white text-slate-800 border-slate-200' : 'bg-slate-900 text-amber-300 border-slate-800'
-            }`}>
-              {match.homeTeam.starterPitcherInfo.name} vs {match.awayTeam.starterPitcherInfo.name}
-            </span>
-          ) : null}
+          {match.sport === 'baseball' ? (() => {
+            const hStarter = BaseballLiveStarterHub.getStarterPitcher(match.homeTeam?.name) || match.homeTeam.starterPitcherInfo;
+            const aStarter = BaseballLiveStarterHub.getStarterPitcher(match.awayTeam?.name) || match.awayTeam.starterPitcherInfo;
+            if (hStarter && aStarter) {
+              return (
+                <span className={`text-[10px] font-bold shrink-0 px-2 py-0.5 rounded border ${
+                  isLight ? 'bg-white text-slate-800 border-slate-200' : 'bg-slate-900 text-amber-300 border-slate-800'
+                }`}>
+                  {hStarter.name} vs {aStarter.name}
+                </span>
+              );
+            }
+            return null;
+          })() : null}
         </div>
       </div>
     );
   }
 
   // 📌 2. 📊 [정밀 상세 카드 모드]
-  const homeStarter = match.homeTeam?.starterPitcherInfo;
-  const awayStarter = match.awayTeam?.starterPitcherInfo;
+  const hubHomeStarter = match.sport === 'baseball' ? BaseballLiveStarterHub.getStarterPitcher(match.homeTeam?.name) : null;
+  const hubAwayStarter = match.sport === 'baseball' ? BaseballLiveStarterHub.getStarterPitcher(match.awayTeam?.name) : null;
+  const homeStarter = hubHomeStarter || match.homeTeam?.starterPitcherInfo;
+  const awayStarter = hubAwayStarter || match.awayTeam?.starterPitcherInfo;
 
   const isHomeStarterConfirmed = !!homeStarter?.name && !homeStarter.name.includes('선발투수') && !homeStarter.name.includes('미정') && homeStarter.name !== '선발';
   const isAwayStarterConfirmed = !!awayStarter?.name && !awayStarter.name.includes('선발투수') && !awayStarter.name.includes('미정') && awayStarter.name !== '선발';

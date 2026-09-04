@@ -1,7 +1,7 @@
 import type { Match, CommunityPost } from '../types/sports';
-import { OFFICIAL_260103_MATCHES } from './official260103Schedule';
+import { OFFICIAL_260105_MATCHES } from './official260105Schedule';
 
-export const INITIAL_MATCHES: Match[] = OFFICIAL_260103_MATCHES;
+export const INITIAL_MATCHES: Match[] = OFFICIAL_260105_MATCHES;
 export const LEGACY_INITIAL_MATCHES: Match[] = [
   {
     id: 'm0',
