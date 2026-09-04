@@ -680,23 +680,11 @@ export default function App() {
 
     if (hidePassedMatches && isMatchPassed(m)) return false;
 
-    // ⚡ 100% 무인 자동 소멸: 시간이 지난 경기는 메인 목록에서 실시간 자동 제거!
-    const passed = isMatchTimePassed(m, nowTicker);
-
+    // ⚡ 시간이 지난 경기라도 숨기지 않고 유지 (LIVE 또는 종료 상태로 표시)
     if (selectedDateFilter === 'PAST') {
-      // DB 경기 데이터인 경우 해당 날짜의 전체 결과 표출
+      const passed = isMatchTimePassed(m, nowTicker);
       if (dbMatchesMap[selectedDbDate]?.length) return true;
       return passed || m.status === 'FINISHED';
-    }
-
-    if (selectedDateFilter === 'ALL') {
-      // 전체 회차 탭: 전 경기 노출 (시간 지난 경기 포함)
-      return true;
-    }
-
-    // 기본(발매예정 / 새벽 / 낮저녁) 화면: 시작 시간 지난 경기는 100% 자동 제거!
-    if (passed && m.status !== 'LIVE') {
-      return false;
     }
 
     if (selectedDateFilter === 'DAWN') {
@@ -710,21 +698,27 @@ export default function App() {
     return true;
   });
   
-  // 📌 100% 자동 스마트 시간순 정렬 (LIVE ➔ 가장 빠른 예정 경기순 ➔ 배트맨 경기번호순)
+  // 📌 100% 스마트 시간순 정렬:
+  // 1순위: 🔴 LIVE 실시간 진행 경기 최상단
+  // 2순위: ⏰ 아직 시작 안 한 미래 경기 (현재 시간 이후 가장 빠른 순서대로)
+  // 3순위: 🏁 이미 끝난 경기 (맨 아래로 배치)
   const sortedMatches = [...rawFiltered].sort((a, b) => {
-    // 1. LIVE 실시간 진행 경기 최우선 (0순위)
     const isLiveA = a.status === 'LIVE' ? 0 : 1;
     const isLiveB = b.status === 'LIVE' ? 0 : 1;
     if (isLiveA !== isLiveB) return isLiveA - isLiveB;
 
-    // 2. 가장 빠른 경기 시작 시간순 (새벽 03:45 ➔ 오전 07:40 ➔ 저녁 18:30)
+    const isFinishedA = isMatchCompleted(a) ? 1 : 0;
+    const isFinishedB = isMatchCompleted(b) ? 1 : 0;
+    if (isFinishedA !== isFinishedB) return isFinishedA - isFinishedB;
+
+    // 경기 시작 시간 순서 정렬
     const tsA = parseMatchTimestamp(a.matchTime);
     const tsB = parseMatchTimestamp(b.matchTime);
     if (tsA !== tsB && tsA > 0 && tsB > 0) {
       return tsA - tsB;
     }
 
-    // 3. 동일 시간대 내에서는 공식 배트맨 경기 번호 오름차순 정렬
+    // 동일 시간 내 경기번호 오름차순
     const noA = a.betmanMatchNo || (a as any).matchNo || 0;
     const noB = b.betmanMatchNo || (b as any).matchNo || 0;
     if (noA !== noB) return noA - noB;
