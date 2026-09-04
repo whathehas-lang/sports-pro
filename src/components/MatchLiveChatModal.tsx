@@ -427,16 +427,16 @@ export const MatchLiveChatModal: React.FC<MatchLiveChatModalProps> = ({
           )}
         </div>
 
-        {/* 💬 2. REAL-TIME CHAT STREAM */}
-        <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 custom-scrollbar">
+        {/* 💬 2. REAL-TIME CHAT STREAM (초고속 텍스트 스트림 모드) */}
+        <div className="flex-1 overflow-y-auto p-2.5 sm:p-3.5 space-y-1.5 custom-scrollbar">
           {messages.map((m) => {
             const isMe = m.sender === myNickname;
             const isSystem = m.sender.includes('시스템');
 
             if (isSystem) {
               return (
-                <div key={m.id} className="flex justify-center my-2">
-                  <div className="bg-amber-500/15 border border-amber-500/30 text-amber-300 px-3 py-1 rounded-full text-[11px] font-bold flex items-center gap-1 shadow-sm">
+                <div key={m.id} className="flex justify-center my-1.5">
+                  <div className="bg-amber-500/10 border border-amber-500/20 text-amber-300 px-3 py-0.5 rounded-full text-[10.5px] font-bold flex items-center gap-1 shadow-sm">
                     <Sparkles className="w-3 h-3 text-amber-400" />
                     <span>{m.text}</span>
                   </div>
@@ -445,28 +445,34 @@ export const MatchLiveChatModal: React.FC<MatchLiveChatModalProps> = ({
             }
 
             return (
-              <div key={m.id} className={`flex flex-col ${isMe ? 'items-end' : 'items-start'}`}>
-                <div className="flex items-center gap-1.5 mb-1 text-[11px]">
-                  <span className={`font-black ${isMe ? 'text-emerald-400' : 'text-slate-300'}`}>
-                    {m.sender}
-                  </span>
-                  {m.badge && (
-                    <span className="text-[9px] font-black px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                      {m.badge}
-                    </span>
-                  )}
-                  <span className="text-[9px] text-slate-500 font-mono">{m.timestamp}</span>
-                </div>
+              <div 
+                key={m.id} 
+                className={`py-1 px-2.5 rounded-xl text-xs sm:text-[13px] leading-relaxed transition-colors flex items-baseline gap-1.5 flex-wrap ${
+                  isMe 
+                    ? isLight ? 'bg-emerald-50/90 text-emerald-950 font-medium' : 'bg-emerald-950/40 text-emerald-100 font-medium'
+                    : isLight ? 'hover:bg-slate-50 text-slate-800' : 'hover:bg-slate-900/40 text-slate-200'
+                }`}
+              >
+                {/* Badge (e.g. 👑 VVIP) */}
+                <span className="text-[9px] font-black px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30 shrink-0 inline-flex items-center gap-0.5">
+                  <Crown className="w-2.5 h-2.5 text-amber-400" />
+                  {m.badge || 'VVIP'}
+                </span>
 
-                <div className={`px-3.5 py-2 rounded-2xl max-w-[82%] text-xs sm:text-sm font-medium leading-relaxed break-words shadow-md ${
-                  isMe
-                    ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-tr-none'
-                    : isLight
-                      ? 'bg-slate-100 text-slate-800 border border-slate-200 rounded-tl-none'
-                      : 'bg-slate-900 text-slate-100 border border-slate-800 rounded-tl-none'
-                }`}>
+                {/* Nickname */}
+                <span className={`font-bold shrink-0 text-[11px] sm:text-xs ${isMe ? 'text-emerald-500 font-black' : 'text-slate-400'}`}>
+                  {m.sender}:
+                </span>
+
+                {/* Chat message content */}
+                <span className="break-words flex-1 min-w-0">
                   {m.text}
-                </div>
+                </span>
+
+                {/* Timestamp */}
+                <span className="text-[9.5px] text-slate-500 font-mono shrink-0 ml-auto select-none opacity-60">
+                  {m.timestamp}
+                </span>
               </div>
             );
           })}
