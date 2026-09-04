@@ -102,6 +102,42 @@ export class MlbLiveGameSyncService {
   }
 
   /**
+   * 홈/원정 구단명을 기반으로 MLB 공식 경기 고유번호(gamePk)를 동적으로 실시간 탐색
+   */
+  public static async findGamePkForTeams(homeTeamName: string, awayTeamName: string): Promise<number | null> {
+    try {
+      const liveGames = await this.fetchActiveLiveGames();
+
+      // 1. 진행 중인 경기 우선 매칭
+      for (const g of liveGames) {
+        const isHome = SportsEntityMappingService.isSameTeam(homeTeamName, g.homeTeamName, 'baseball') ||
+                       SportsEntityMappingService.isSameTeam(homeTeamName, g.awayTeamName, 'baseball');
+        const isAway = SportsEntityMappingService.isSameTeam(awayTeamName, g.awayTeamName, 'baseball') ||
+                       SportsEntityMappingService.isSameTeam(awayTeamName, g.homeTeamName, 'baseball');
+        if (isHome && isAway) {
+          return g.gamePk;
+        }
+      }
+
+      // 2. 부분 일치 매칭 Fallback
+      const hNorm = SportsEntityMappingService.normalize(homeTeamName);
+      const aNorm = SportsEntityMappingService.normalize(awayTeamName);
+      for (const g of liveGames) {
+        const ghNorm = SportsEntityMappingService.normalize(g.homeTeamName);
+        const gaNorm = SportsEntityMappingService.normalize(g.awayTeamName);
+        const matchH = ghNorm.includes(hNorm) || hNorm.includes(ghNorm) || gaNorm.includes(hNorm) || hNorm.includes(gaNorm);
+        const matchA = gaNorm.includes(aNorm) || aNorm.includes(gaNorm) || ghNorm.includes(aNorm) || aNorm.includes(ghNorm);
+        if (matchH && matchA) {
+          return g.gamePk;
+        }
+      }
+    } catch (e) {
+      console.warn('[MlbLiveGameSyncService] findGamePkForTeams error:', e);
+    }
+    return null;
+  }
+
+  /**
    * 베트맨 경기 목록에 MLB 실시간 데이터 1:1 자동 결합
    */
   public static enrichMatchesWithRealtimeMlb(matches: Match[], liveMlbGames: MlbLiveGameInfo[]): Match[] {
@@ -110,18 +146,22 @@ export class MlbLiveGameSyncService {
         return match;
       }
 
-      const matchHome = SportsEntityMappingService.normalize(match.homeTeam.name);
-      const matchAway = SportsEntityMappingService.normalize(match.awayTeam.name);
-
       // 팀명으로 실시간 MLB 경기 탐색 (진행 중인 경기 최우선 매칭)
       const matchedGame = liveMlbGames.find(g => {
+        const isHomeMatch = SportsEntityMappingService.isSameTeam(match.homeTeam.name, g.homeTeamName, 'baseball') ||
+                            SportsEntityMappingService.isSameTeam(match.homeTeam.name, g.awayTeamName, 'baseball');
+        const isAwayMatch = SportsEntityMappingService.isSameTeam(match.awayTeam.name, g.awayTeamName, 'baseball') ||
+                            SportsEntityMappingService.isSameTeam(match.awayTeam.name, g.homeTeamName, 'baseball');
+
+        if (isHomeMatch && isAwayMatch) return true;
+
         const gHome = SportsEntityMappingService.normalize(g.homeTeamName);
         const gAway = SportsEntityMappingService.normalize(g.awayTeamName);
+        const matchHome = SportsEntityMappingService.normalize(match.homeTeam.name);
+        const matchAway = SportsEntityMappingService.normalize(match.awayTeam.name);
 
-        const isHomeMatch = gHome.includes(matchHome) || matchHome.includes(gHome);
-        const isAwayMatch = gAway.includes(matchAway) || matchAway.includes(gAway);
-
-        return isHomeMatch && isAwayMatch;
+        return (gHome.includes(matchHome) || matchHome.includes(gHome)) &&
+               (gAway.includes(matchAway) || matchAway.includes(gAway));
       });
 
       if (!matchedGame) return match;

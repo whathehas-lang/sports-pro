@@ -97,9 +97,16 @@ export class LiveMatchPollingScheduler {
           const gHome = SportsEntityMappingService.normalize(mlbGame.homeTeamName);
           const gAway = SportsEntityMappingService.normalize(mlbGame.awayTeamName);
 
-          // 현재 베트맨 경기 목록 중 일치하는 경기 탐색
+          // 현재 베트맨 경기 목록 중 일치하는 경기 탐색 (한/영 구단명 및 별칭 100% 매칭)
           const targetMatches = this.currentMatches.filter(m => {
             if (m.sport !== 'baseball') return false;
+
+            const isHome = SportsEntityMappingService.isSameTeam(m.homeTeam.name, mlbGame.homeTeamName, 'baseball') ||
+                           SportsEntityMappingService.isSameTeam(m.homeTeam.name, mlbGame.awayTeamName, 'baseball');
+            const isAway = SportsEntityMappingService.isSameTeam(m.awayTeam.name, mlbGame.awayTeamName, 'baseball') ||
+                           SportsEntityMappingService.isSameTeam(m.awayTeam.name, mlbGame.homeTeamName, 'baseball');
+            if (isHome && isAway) return true;
+
             const mHome = SportsEntityMappingService.normalize(m.homeTeam.name);
             const mAway = SportsEntityMappingService.normalize(m.awayTeam.name);
             return (gHome.includes(mHome) || mHome.includes(gHome)) &&

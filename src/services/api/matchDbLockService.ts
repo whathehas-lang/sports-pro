@@ -155,8 +155,8 @@ export class MatchDbLockService {
       isCompleted?: boolean;
     }
   ): Match {
-    // 1. 이미 Lock 상태인 경우 모든 라이브 업데이트 즉시 차단
-    if (currentMatch.isLocked || currentMatch.status === 'FINISHED') {
+    // 1. 이미 Lock 상태인 경우 모든 라이브 업데이트 차단 (단, 공식 피드에서 현재 실시간 진행 중(INP)인 경우 락 해제 및 LIVE 허용)
+    if ((currentMatch.isLocked || currentMatch.status === 'FINISHED') && incomingUpdate.statusCode !== 'INP') {
       return currentMatch;
     }
 
