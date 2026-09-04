@@ -32,6 +32,24 @@ export const MatchCard = ({ match, membershipTier = 'VVIP', cardDensity = 'DETAI
 
   const sportIcon = getSportIcon(match.sport);
 
+  const formatKoreanStatus = (statusStr?: string) => {
+    if (!statusStr) return '';
+    const s = statusStr.trim();
+    if (s.toLowerCase() === 'scheduled' || s === '예정') return '발매중';
+    if (s.toLowerCase() === 'live' || s.toLowerCase() === 'in progress') return '진행 중';
+    if (s.toLowerCase() === 'finished' || s.toLowerCase() === 'final' || s.toLowerCase() === 'completed') return '경기종료';
+    // MLB innings: e.g. "6th 초 진행" -> "6회초", "Top 6th" -> "6회초"
+    let formatted = s
+      .replace(/(\d+)(st|nd|rd|th)\s*초\s*진행/i, '$1회초')
+      .replace(/(\d+)(st|nd|rd|th)\s*말\s*진행/i, '$1회말')
+      .replace(/Top\s*(\d+)(st|nd|rd|th)/i, '$1회초')
+      .replace(/Bottom\s*(\d+)(st|nd|rd|th)/i, '$1회말')
+      .replace(/(\d+)(st|nd|rd|th)/i, '$1회')
+      .replace(/Scheduled/gi, '발매중')
+      .replace(/In Progress/gi, '진행 중');
+    return formatted;
+  };
+
   // 📌 1. 📱 [한눈 콤팩트 카드 모드]
   if (cardDensity === 'COMPACT') {
     return (
@@ -531,47 +549,54 @@ export const MatchCard = ({ match, membershipTier = 'VVIP', cardDensity = 'DETAI
           </button>
 
           {isFinished ? (
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1.5 shrink-0">
               <span className="px-2 py-0.5 rounded-full text-[10px] font-black bg-rose-500/15 text-rose-600 dark:text-rose-400 border border-rose-300 dark:border-rose-800">
                 경기종료
               </span>
               <span className={`font-semibold text-[11px] ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{match.matchTime}</span>
             </div>
           ) : match.status === 'LIVE' ? (
-            <div className="flex items-center gap-1.5">
-              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-400 dark:border-emerald-700 flex items-center gap-1 animate-pulse shadow-sm">
+            <div className="flex items-center gap-1.5 shrink-0">
+              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-rose-500/15 text-rose-600 dark:text-rose-400 border border-rose-400 dark:border-rose-700 flex items-center gap-1 animate-pulse shadow-sm">
                 <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-ping inline-block" />
-                실시간 LIVE
+                LIVE
               </span>
               <span className={`font-bold text-[11px] ${isLight ? 'text-emerald-700' : 'text-emerald-300'}`}>
-                {match.lineupAlertInfo?.publishedTime || '진행 중'}
+                {formatKoreanStatus(match.lineupAlertInfo?.publishedTime) || '진행 중'}
               </span>
             </div>
           ) : (
-            <span className={`font-semibold text-[11px] ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{match.matchTime}</span>
+            <div className="flex items-center gap-1.5 shrink-0">
+              <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold border ${
+                isLight ? 'bg-slate-100 text-slate-600 border-slate-200' : 'bg-slate-800 text-slate-300 border-slate-700'
+              }`}>
+                {formatKoreanStatus(match.status) || '발매중'}
+              </span>
+              <span className={`font-semibold text-[11px] ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>{match.matchTime}</span>
+            </div>
           )}
         </div>
       </div>
 
-      {/* 2. 📌 [팀명 & 스포츠 공 아이콘 - 터치 시 즉시 상세 진입] */}
+      {/* 2. 📌 [팀명 & 스코어 & 스포츠 공 아이콘 - 절대 줄바꿈 없는 깔끔한 레이아웃] */}
       <div 
         onClick={(e) => {
           e.stopPropagation();
           onSelectMatch(match);
         }}
-        className={`p-2.5 rounded-xl border space-y-2 cursor-pointer transition-all hover:border-emerald-500/60 ${
+        className={`p-2.5 sm:p-3 rounded-xl border space-y-2 cursor-pointer transition-all hover:border-emerald-500/60 ${
           isLight ? 'bg-slate-50/90 border-slate-200 hover:bg-slate-100/80' : 'bg-slate-950 border-slate-800/90 hover:bg-slate-900/90'
         }`}
       >
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-2">
           {/* LEFT = HOME TEAM (홈) */}
-          <div className="flex items-center gap-2 w-5/12 min-w-0">
+          <div className="flex items-center gap-2 flex-1 min-w-0">
             <div className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center text-lg sm:text-xl border shrink-0 ${
               isLight ? 'bg-white border-slate-200 shadow-sm' : 'bg-slate-900 border-slate-800'
             }`}>
               {sportIcon}
             </div>
-            <div className="min-w-0">
+            <div className="min-w-0 flex-1">
               <div className="flex items-center gap-1">
                 <span className="text-[9px] font-black bg-emerald-500/20 text-emerald-700 border border-emerald-500/40 px-1 rounded shrink-0">홈</span>
                 <h4 className={`font-black text-sm sm:text-base truncate ${isLight ? 'text-slate-950' : 'text-white'}`}>{match.homeTeam.name}</h4>
@@ -579,28 +604,28 @@ export const MatchCard = ({ match, membershipTier = 'VVIP', cardDensity = 'DETAI
             </div>
           </div>
 
-          {/* VS CENTER */}
-          <div className="flex flex-col items-center justify-center w-2/12 shrink-0">
+          {/* VS & SCORE CENTER (절대 줄바꿈 없이 한 줄로 중앙 고정) */}
+          <div className="flex flex-col items-center justify-center shrink-0 min-w-[84px] px-1">
             {isFinished ? (
               <div className="flex flex-col items-center">
-                <span className="text-[8.5px] font-black text-rose-600 dark:text-rose-400 bg-rose-50 dark:bg-rose-950/80 px-1.5 py-0.2 rounded border border-rose-200 dark:border-rose-900 mb-0.5">
-                  최종결과
+                <span className="text-[9px] font-black text-rose-600 dark:text-rose-400 bg-rose-50 dark:bg-rose-950/80 px-2 py-0.5 rounded border border-rose-200 dark:border-rose-900 mb-0.5 whitespace-nowrap">
+                  종료
                 </span>
-                <div className="text-base sm:text-lg font-black text-rose-600 dark:text-rose-400 tracking-wider font-mono">
+                <div className="text-base sm:text-lg font-black text-rose-600 dark:text-rose-400 tracking-wider font-mono whitespace-nowrap">
                   {homeScore} : {awayScore}
                 </div>
               </div>
             ) : match.status === 'LIVE' ? (
               <div className="flex flex-col items-center">
-                <span className="text-[8.5px] font-black text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/80 px-1.5 py-0.2 rounded border border-emerald-300 dark:border-emerald-700 mb-0.5 animate-pulse">
-                  실시간 스코어
+                <span className="text-[9px] font-black text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-300 dark:border-emerald-700 mb-0.5 animate-pulse whitespace-nowrap">
+                  🔴 {formatKoreanStatus(match.lineupAlertInfo?.publishedTime) || '실시간'}
                 </span>
-                <div className="text-base sm:text-lg font-black text-emerald-600 dark:text-emerald-400 tracking-wider font-mono">
+                <div className="text-base sm:text-lg font-black text-emerald-600 dark:text-emerald-400 tracking-wider font-mono whitespace-nowrap">
                   {match.homeScore ?? 0} : {match.awayScore ?? 0}
                 </div>
               </div>
             ) : (
-              <span className={`px-2.5 py-1 rounded-lg text-xs font-black border shadow-sm ${
+              <span className={`px-2.5 py-1 rounded-lg text-xs font-black border shadow-sm whitespace-nowrap ${
                 isLight ? 'bg-white text-slate-700 border-slate-300' : 'bg-slate-900 text-slate-300 border-slate-800'
               }`}>
                 VS
@@ -609,8 +634,8 @@ export const MatchCard = ({ match, membershipTier = 'VVIP', cardDensity = 'DETAI
           </div>
 
           {/* RIGHT = AWAY TEAM (원정) */}
-          <div className="flex items-center justify-end gap-2 w-5/12 text-right min-w-0">
-            <div className="min-w-0">
+          <div className="flex items-center justify-end gap-2 flex-1 text-right min-w-0">
+            <div className="min-w-0 flex-1">
               <div className="flex items-center justify-end gap-1">
                 <h4 className={`font-black text-sm sm:text-base truncate ${isLight ? 'text-slate-950' : 'text-white'}`}>{match.awayTeam.name}</h4>
                 <span className="text-[9px] font-black bg-cyan-500/20 text-cyan-700 border border-cyan-500/40 px-1 rounded shrink-0">원정</span>
@@ -653,38 +678,38 @@ export const MatchCard = ({ match, membershipTier = 'VVIP', cardDensity = 'DETAI
           </div>
         )}
 
-        {/* 📌 [야구 선발투수 정보 바 - 오피셜 예고 확정 vs 선발 미정] */}
+        {/* 📌 [야구 선발투수 정보 바 - 글자 잘림 방지 flex-1 min-w-0 적용] */}
         {match.sport === 'baseball' && (
           <div className={`px-2.5 py-1.5 rounded-lg border flex items-center justify-between text-[10px] sm:text-[11px] font-bold ${
             isLight ? 'bg-white border-amber-300/80 shadow-sm' : 'bg-slate-900 border-amber-500/30'
           }`}>
-            <div className="text-emerald-700 truncate flex items-center gap-1">
-              <span>⚾ [홈]</span>
-              <span className={`font-black ${isHomeStarterConfirmed ? 'text-emerald-500' : 'text-amber-400'}`}>
+            <div className="flex-1 min-w-0 text-emerald-700 truncate flex items-center gap-1">
+              <span className="shrink-0">⚾ [홈]</span>
+              <span className={`truncate font-black ${isHomeStarterConfirmed ? 'text-emerald-600 dark:text-emerald-400' : 'text-amber-500'}`}>
                 {isHomeStarterConfirmed ? `🟢 ${homeStarterStr}` : `🟡 ${homeStarterStr}`}
               </span>
             </div>
-            <span className="text-amber-500 font-bold mx-1 shrink-0">VS</span>
-            <div className="text-cyan-700 text-right truncate flex items-center gap-1 justify-end">
-              <span className={`font-black ${isAwayStarterConfirmed ? 'text-cyan-400' : 'text-amber-400'}`}>
+            <span className="text-amber-500 font-black mx-2 shrink-0">VS</span>
+            <div className="flex-1 min-w-0 text-cyan-700 text-right truncate flex items-center gap-1 justify-end">
+              <span className={`truncate font-black ${isAwayStarterConfirmed ? 'text-cyan-600 dark:text-cyan-400' : 'text-amber-500'}`}>
                 {isAwayStarterConfirmed ? `${awayStarterStr} 🟢` : `${awayStarterStr} 🟡`}
               </span>
-              <span>[원정] ⚾</span>
+              <span className="shrink-0">[원정] ⚾</span>
             </div>
           </div>
         )}
 
-        {/* ⚔️ [오피셜 맞대결 상대전적 요약 바] */}
+        {/* ⚔️ [오피셜 맞대결 상대전적 요약 바 - 간결하고 깔끔한 표현] */}
         {match.headToHeadRecord && match.headToHeadRecord.last5Matches && match.headToHeadRecord.last5Matches.length > 0 && (
           <div className={`px-2.5 py-1.5 rounded-lg border flex items-center justify-between text-[10px] sm:text-[11px] font-bold ${
             isLight ? 'bg-amber-50/70 border-amber-300 text-slate-800' : 'bg-slate-900 border-amber-500/30 text-amber-200'
           }`}>
-            <div className="flex items-center gap-1.5 truncate">
-              <span className="text-amber-500 font-black shrink-0">⚔️ 상대전적:</span>
-              <span className="truncate font-semibold">{match.headToHeadRecord.summaryText}</span>
+            <div className="flex items-center gap-1.5 truncate flex-1 min-w-0 mr-2">
+              <span className="text-amber-600 dark:text-amber-400 font-black shrink-0">⚔️ 맞대결 5경기:</span>
+              <span className="truncate font-medium">{match.headToHeadRecord.summaryText}</span>
             </div>
-            <span className="font-mono text-[10px] text-amber-400 shrink-0 ml-1 font-bold">
-              [홈 {match.headToHeadRecord.homeWins}승 {match.headToHeadRecord.draws > 0 ? `${match.headToHeadRecord.draws}무 ` : ''}{match.headToHeadRecord.awayWins}패]
+            <span className="font-mono text-[10px] text-amber-600 dark:text-amber-400 shrink-0 font-bold bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-400/30">
+              {match.headToHeadRecord.homeWins}승 {match.headToHeadRecord.draws > 0 ? `${match.headToHeadRecord.draws}무 ` : ''}{match.headToHeadRecord.awayWins}패
             </span>
           </div>
         )}
