@@ -7,6 +7,7 @@ import {
   type LiveMatchStatus 
 } from '../services/websocket/matchChatWebSocketService';
 import { MlbLiveGameSyncService } from '../services/api/mlbLiveGameSyncService';
+import { firebaseService, isFirebaseConfigured } from '../services/firebase/firebaseService';
 
 interface MatchLiveChatModalProps {
   match: Match;
@@ -100,8 +101,34 @@ export const MatchLiveChatModal: React.FC<MatchLiveChatModalProps> = ({
       }
     );
 
+    // 🌐 전 기기(스마트폰-PC) 간 실시간 양방향 파이어베이스 동기화 구독
+    let unsubscribeFirebase = () => {};
+    if (isFirebaseConfigured) {
+      const roomKey = `match_chat_${matchId}`;
+      unsubscribeFirebase = firebaseService.subscribeToRoomMessages(roomKey, (fbMsgs) => {
+        if (fbMsgs && fbMsgs.length > 0) {
+          setMessages((prev) => {
+            const existingIds = new Set(prev.map(m => m.id));
+            const converted: ChatMessageItem[] = fbMsgs.map(f => ({
+              id: f.id,
+              match_id: matchId,
+              sender: f.senderName,
+              text: f.text,
+              timestamp: f.timeStr,
+              is_vip: f.isVvip,
+              badge: f.senderTier
+            }));
+            const added = converted.filter(c => !existingIds.has(c.id));
+            if (added.length === 0) return prev;
+            return [...prev, ...added];
+          });
+        }
+      });
+    }
+
     return () => {
       service.disconnect();
+      unsubscribeFirebase();
     };
   }, [matchId]);
 
@@ -196,6 +223,22 @@ export const MatchLiveChatModal: React.FC<MatchLiveChatModalProps> = ({
     if (!text || !wsServiceRef.current) return;
 
     wsServiceRef.current.sendMessage(myNickname, text, true, 'VVIP');
+
+    // 🌐 실시간 파이어베이스 클라우드로 동시 브로드캐스팅 (다른 폰/PC 기기에서도 즉각 수신)
+    if (isFirebaseConfigured) {
+      const roomKey = `match_chat_${matchId}`;
+      const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      firebaseService.sendRoomMessage(roomKey, {
+        senderName: myNickname,
+        senderTier: 'VVIP',
+        senderAvatar: '👤',
+        text: text,
+        timeStr: timeStr,
+        isVvip: true,
+        color: 'text-amber-300'
+      }).catch(err => console.error('[ChatModal] Firebase broadcast error:', err));
+    }
+
     if (!textToSend) setInputText('');
   };
 
