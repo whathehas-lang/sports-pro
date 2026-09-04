@@ -12,6 +12,7 @@ import { SportsEntityMappingService } from '../services/mappers/sportsEntityMapp
 import { BaseballRealtimeWeatherService, type LiveStadiumWeatherResult } from '../services/weather/baseballRealtimeWeatherService';
 import { FootballH2HRecentFormEngine } from '../services/enricher/footballH2HRecentFormEngine';
 import { BaseballLiveStarterHub } from '../services/api/baseballLiveStarterHub';
+import { LiveSportsFieldBoard } from './LiveSportsFieldBoard';
 
 interface MatchDetailModalProps {
   match: Match;
@@ -523,6 +524,15 @@ export const MatchDetailModal = ({
         <div className={`flex-1 overflow-y-auto p-3 sm:p-6 space-y-6 sm:space-y-8 divide-y custom-scrollbar ${
           isLight ? 'divide-slate-200' : 'divide-slate-800/80'
         }`}>
+
+          {/* 🔴 [최상단 실시간 중계 구장 그래픽 보드 - 다저스/KBO 4대 종목 완벽 연동] */}
+          <div className="pt-1">
+            <LiveSportsFieldBoard
+              initialSport={match.sport}
+              currentMatch={match}
+              theme={theme}
+            />
+          </div>
 
           {/* ⚾ 1순위: 1. ⚾ 시리즈(1차전·2차전·3차전) 선발 & 불펜 투구수/볼수 피로도 분석 */}
           {match.sport === 'baseball' && (

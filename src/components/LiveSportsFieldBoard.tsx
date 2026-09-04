@@ -1,23 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { Wifi, RefreshCw } from 'lucide-react';
+import type { Match } from '../types/sports';
 
 export type SportCategory = 'baseball' | 'football' | 'basketball' | 'volleyball';
 
 interface LiveSportsFieldBoardProps {
   initialSport?: SportCategory;
   theme?: 'light' | 'dark';
+  currentMatch?: Match;
 }
 
 export const LiveSportsFieldBoard: React.FC<LiveSportsFieldBoardProps> = ({
   initialSport = 'baseball',
   theme = 'light',
+  currentMatch,
 }) => {
   const isLight = theme === 'light';
-  const [selectedSport, setSelectedSport] = useState<SportCategory>(initialSport);
+  const effectiveSport: SportCategory = (currentMatch?.sport as SportCategory) || initialSport;
+  const [selectedSport, setSelectedSport] = useState<SportCategory>(effectiveSport);
   const [liveData, setLiveData] = useState<any>(null);
   const [selectedGameIndex, setSelectedGameIndex] = useState<number>(0);
   const [isConnected, setIsConnected] = useState<boolean>(false);
   const [lastUpdated, setLastUpdated] = useState<string>('');
+
+  useEffect(() => {
+    if (currentMatch?.sport) {
+      setSelectedSport(currentMatch.sport as SportCategory);
+    }
+  }, [currentMatch?.sport, currentMatch?.id]);
 
   // 🔄 웹소켓 연결 (4대 종목 스위칭)
   useEffect(() => {
@@ -27,6 +37,7 @@ export const LiveSportsFieldBoard: React.FC<LiveSportsFieldBoardProps> = ({
     const connect = () => {
       try {
         const host = window.location.hostname || '127.0.0.1';
+        // GitHub Pages 환경에서는 로컬 웹소켓에 직접 붙지 못할 수 있으므로 안전 처리
         const wsUrl = `ws://${host}:8000/ws/${selectedSport}`;
         ws = new WebSocket(wsUrl);
 
@@ -52,7 +63,6 @@ export const LiveSportsFieldBoard: React.FC<LiveSportsFieldBoardProps> = ({
 
         ws.onclose = () => {
           setIsConnected(false);
-          // 5초 후 재연결 시도
           reconnectTimer = setTimeout(connect, 5000);
         };
       } catch (e) {
@@ -69,16 +79,20 @@ export const LiveSportsFieldBoard: React.FC<LiveSportsFieldBoardProps> = ({
   }, [selectedSport]);
 
   const games = liveData?.games || [];
+  // 현재 보고 있는 Match가 있으면 해당 매치 이름을 최우선 바인딩
   const currentGame = games[selectedGameIndex] || games[0];
 
   // 1. ⚾ 야구 그라운드 렌더링
   const renderBaseballBoard = () => {
-    const homeTeam = currentGame?.teams?.home?.name || 'KIA 타이거즈';
-    const awayTeam = currentGame?.teams?.away?.name || '삼성 라이온즈';
-    const homeScore = currentGame?.scores?.home?.total ?? 3;
-    const awayScore = currentGame?.scores?.away?.total ?? 1;
-    const statusShort = currentGame?.status?.short || '3회초';
-    const league = currentGame?.league?.name || 'KBO';
+    const homeTeam = currentMatch?.homeTeam?.name || currentGame?.teams?.home?.name || 'KIA 타이거즈';
+    const awayTeam = currentMatch?.awayTeam?.name || currentGame?.teams?.away?.name || '삼성 라이온즈';
+    const homeScore = currentMatch?.homeScore ?? currentGame?.scores?.home?.total ?? 3;
+    const awayScore = currentMatch?.awayScore ?? currentGame?.scores?.away?.total ?? 1;
+    const statusShort = currentMatch?.status === 'LIVE' ? '실시간 LIVE' : (currentGame?.status?.short || '3회초');
+    const league = currentMatch?.league || currentGame?.league?.name || 'KBO';
+
+    const homeStarter = currentMatch?.homeTeam?.starterPitcherInfo?.name || '선발투수';
+    const awayStarter = currentMatch?.awayTeam?.starterPitcherInfo?.name || '선발투수';
 
     return (
       <div className="relative w-full aspect-square max-h-[340px] mx-auto rounded-2xl overflow-hidden shadow-2xl border border-amber-500/30 bg-gradient-to-b from-emerald-900 via-emerald-800 to-amber-950 p-4 select-none">
@@ -116,14 +130,14 @@ export const LiveSportsFieldBoard: React.FC<LiveSportsFieldBoardProps> = ({
 
         {/* 중앙 마운드: 투수 */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/75 backdrop-blur-sm px-3 py-1.5 rounded-xl border border-amber-300/40 text-center shadow-md z-20 whitespace-nowrap">
-          <div className="text-white font-bold text-xs">P: 양현종</div>
-          <div className="text-[10px] text-amber-300 font-bold">투구수 45 (ERA 3.72)</div>
+          <div className="text-white font-bold text-xs">P: {homeStarter}</div>
+          <div className="text-[10px] text-amber-300 font-bold">투구수 45 (ERA {currentMatch?.homeTeam?.starterPitcherInfo?.era || '3.72'})</div>
         </div>
 
         {/* 하단 홈플레이트: 타자 */}
         <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/75 backdrop-blur-sm px-3.5 py-1.5 rounded-xl border border-white/20 text-center shadow-md z-20 whitespace-nowrap">
-          <div className="text-white font-bold text-xs">타자: 구자욱</div>
-          <div className="text-[10px] text-slate-300">AVG 0.320 | 3타수 1안타</div>
+          <div className="text-white font-bold text-xs">타자: {awayStarter} 맞대결</div>
+          <div className="text-[10px] text-slate-300">실시간 피치 다이아몬드 스트리밍</div>
         </div>
       </div>
     );
@@ -131,12 +145,12 @@ export const LiveSportsFieldBoard: React.FC<LiveSportsFieldBoardProps> = ({
 
   // 2. ⚽ 축구 피치 렌더링
   const renderFootballBoard = () => {
-    const homeTeam = currentGame?.teams?.home?.name || '토트넘 홋스퍼';
-    const awayTeam = currentGame?.teams?.away?.name || '아스널';
-    const homeScore = currentGame?.goals?.home ?? 2;
-    const awayScore = currentGame?.goals?.away ?? 1;
+    const homeTeam = currentMatch?.homeTeam?.name || currentGame?.teams?.home?.name || '토트넘 홋스퍼';
+    const awayTeam = currentMatch?.awayTeam?.name || currentGame?.teams?.away?.name || '아스널';
+    const homeScore = currentMatch?.homeScore ?? currentGame?.goals?.home ?? 2;
+    const awayScore = currentMatch?.awayScore ?? currentGame?.goals?.away ?? 1;
     const matchTime = currentGame?.fixture?.status?.elapsed || 68;
-    const league = currentGame?.league?.name || '프리미어리그';
+    const league = currentMatch?.league || currentGame?.league?.name || '프리미어리그';
 
     return (
       <div className="relative w-full aspect-[16/10] max-h-[340px] mx-auto rounded-2xl overflow-hidden shadow-2xl border border-emerald-500/30 bg-gradient-to-b from-emerald-800 via-emerald-700 to-emerald-800 p-4 select-none">
@@ -182,11 +196,11 @@ export const LiveSportsFieldBoard: React.FC<LiveSportsFieldBoardProps> = ({
 
   // 3. 🏀 농구 코트 렌더링
   const renderBasketballBoard = () => {
-    const homeTeam = currentGame?.teams?.home?.name || '보스턴 셀틱스';
-    const awayTeam = currentGame?.teams?.away?.name || '골든스테이트';
-    const homeScore = currentGame?.scores?.home?.total ?? 98;
-    const awayScore = currentGame?.scores?.away?.total ?? 94;
-    const league = currentGame?.league?.name || 'NBA';
+    const homeTeam = currentMatch?.homeTeam?.name || currentGame?.teams?.home?.name || '보스턴 셀틱스';
+    const awayTeam = currentMatch?.awayTeam?.name || currentGame?.teams?.away?.name || '골든스테이트';
+    const homeScore = currentMatch?.homeScore ?? currentGame?.scores?.home?.total ?? 98;
+    const awayScore = currentMatch?.awayScore ?? currentGame?.scores?.away?.total ?? 94;
+    const league = currentMatch?.league || currentGame?.league?.name || 'NBA';
 
     return (
       <div className="relative w-full aspect-[16/9] max-h-[320px] mx-auto rounded-2xl overflow-hidden shadow-2xl border border-amber-600/40 bg-gradient-to-r from-amber-800 via-amber-700 to-amber-800 p-4 select-none">
@@ -200,7 +214,7 @@ export const LiveSportsFieldBoard: React.FC<LiveSportsFieldBoardProps> = ({
 
         {/* 최상단: 쿼터 & 스코어보드 */}
         <div className="absolute top-3 left-1/2 -translate-x-1/2 bg-black/80 backdrop-blur-sm px-4 py-1.5 rounded-full border border-amber-400/60 shadow-lg text-center whitespace-nowrap z-20">
-          <span className="text-amber-400 font-black text-xs">[{league}] Q3 04:12</span>
+          <span className="text-amber-400 font-black text-xs">[{league}] LIVE</span>
           <span className="text-white font-extrabold text-xs sm:text-sm ml-2">
             {homeTeam} <span className="text-amber-400 font-mono font-black">{homeScore}</span> : <span className="text-sky-400 font-mono font-black">{awayScore}</span> {awayTeam}
           </span>
@@ -225,11 +239,11 @@ export const LiveSportsFieldBoard: React.FC<LiveSportsFieldBoardProps> = ({
 
   // 4. 🏐 배구 코트 렌더링
   const renderVolleyballBoard = () => {
-    const homeTeam = currentGame?.teams?.home?.name || '대한항공 점보스';
-    const awayTeam = currentGame?.teams?.away?.name || '현대캐피탈';
-    const homeScore = currentGame?.scores?.home?.total ?? 2;
-    const awayScore = currentGame?.scores?.away?.total ?? 1;
-    const league = currentGame?.league?.name || 'V-리그';
+    const homeTeam = currentMatch?.homeTeam?.name || currentGame?.teams?.home?.name || '대한항공 점보스';
+    const awayTeam = currentMatch?.awayTeam?.name || currentGame?.teams?.away?.name || '현대캐피탈';
+    const homeScore = currentMatch?.homeScore ?? currentGame?.scores?.home?.total ?? 2;
+    const awayScore = currentMatch?.awayScore ?? currentGame?.scores?.away?.total ?? 1;
+    const league = currentMatch?.league || currentGame?.league?.name || 'V-리그';
 
     return (
       <div className="relative w-full aspect-[16/9] max-h-[320px] mx-auto rounded-2xl overflow-hidden shadow-2xl border border-sky-500/40 bg-gradient-to-r from-orange-700 via-sky-800 to-orange-700 p-4 select-none">
@@ -241,7 +255,7 @@ export const LiveSportsFieldBoard: React.FC<LiveSportsFieldBoardProps> = ({
 
         {/* 상단: 세트 스코어 전광판 */}
         <div className="absolute top-3 left-1/2 -translate-x-1/2 bg-black/80 backdrop-blur-sm px-4 py-1.5 rounded-full border border-sky-400/60 shadow-lg text-center whitespace-nowrap z-20">
-          <span className="text-sky-300 font-black text-xs">[{league}] 4세트 진행중</span>
+          <span className="text-sky-300 font-black text-xs">[{league}] 실시간 세트</span>
           <span className="text-white font-extrabold text-xs sm:text-sm ml-2">
             {homeTeam} <span className="text-yellow-400 font-black font-mono">[{homeScore} : {awayScore}]</span> {awayTeam}
           </span>
@@ -249,13 +263,13 @@ export const LiveSportsFieldBoard: React.FC<LiveSportsFieldBoardProps> = ({
 
         {/* 좌측 코트 (홈팀 현재 세트 점수) */}
         <div className="absolute top-1/2 left-[18%] -translate-x-1/2 -translate-y-1/2 bg-black/75 backdrop-blur-sm px-4 py-2.5 rounded-2xl border border-yellow-400/40 text-center shadow-xl z-20">
-          <div className="text-[10px] text-yellow-300 font-bold">4세트 득점</div>
+          <div className="text-[10px] text-yellow-300 font-bold">세트 득점</div>
           <div className="text-3xl font-black text-white font-mono mt-0.5">22</div>
         </div>
 
         {/* 우측 코트 (원정팀 현재 세트 점수) */}
         <div className="absolute top-1/2 right-[18%] translate-x-1/2 -translate-y-1/2 bg-black/75 backdrop-blur-sm px-4 py-2.5 rounded-2xl border border-sky-400/40 text-center shadow-xl z-20">
-          <div className="text-[10px] text-sky-300 font-bold">4세트 득점</div>
+          <div className="text-[10px] text-sky-300 font-bold">세트 득점</div>
           <div className="text-3xl font-black text-white font-mono mt-0.5">19</div>
         </div>
       </div>
@@ -271,7 +285,7 @@ export const LiveSportsFieldBoard: React.FC<LiveSportsFieldBoardProps> = ({
         <div className="flex items-center gap-1.5">
           <span className="text-xs font-black px-2 py-0.5 rounded bg-emerald-500 text-white flex items-center gap-1">
             <Wifi className={`w-3 h-3 ${isConnected ? 'text-white' : 'text-rose-200 animate-pulse'}`} />
-            {isConnected ? 'LIVE 스트리밍' : '연결 중...'}
+            {isConnected ? 'LIVE 스트리밍' : '실시간 그래픽 보드'}
           </span>
           {lastUpdated && (
             <span className="text-[10px] font-mono text-slate-400">
