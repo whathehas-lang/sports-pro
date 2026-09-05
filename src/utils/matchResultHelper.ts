@@ -104,14 +104,14 @@ export function calculateWinningPicks(
 }
 
 /**
- * ⏰ 경기 시작 시간 파싱 헬퍼 (예: '09.03(목) 18:30' -> 타임스탬프)
+ * ⏰ 경기 시작 시간 파싱 헬퍼 (예: '09.05(토) 18:30' -> 타임스탬프)
  */
-export function parseMatchTimestamp(matchTimeStr?: string, refYear: number = 2026): number {
+export function parseMatchTimestamp(matchTimeStr?: string, refYear?: number): number {
   if (!matchTimeStr) return 0;
-  const clean = matchTimeStr.replace(/\([^\)]*\)/g, '').trim();
+  const clean = matchTimeStr.replace(/\([^)]*\)/g, ' ').trim().replace(/\s+/g, ' ');
   const parts = clean.split(' ');
   if (parts.length < 2) return 0;
-  const dateParts = parts[0].split('.');
+  const dateParts = parts[0].split(/[.-]/);
   const timeParts = parts[1].split(':');
   if (dateParts.length < 2 || timeParts.length < 2) return 0;
 
@@ -120,12 +120,13 @@ export function parseMatchTimestamp(matchTimeStr?: string, refYear: number = 202
   const hours = parseInt(timeParts[0], 10);
   const minutes = parseInt(timeParts[1], 10);
 
-  const matchDate = new Date(refYear, month, day, hours, minutes, 0, 0);
+  const year = refYear !== undefined ? refYear : new Date().getFullYear();
+  const matchDate = new Date(year, month, day, hours, minutes, 0, 0);
   return matchDate.getTime();
 }
 
 /**
- * ⏰ 경기 시작 시간이 이미 지났는지 실시간 확인 (LIVE 경기는 제외하고 소멸 대상 감지)
+ * ⏰ 경기 시작 시간이 이미 지났는지 실시간 확인 (LIVE 경기는 제외하고 감지)
  */
 export function isMatchTimePassed(match: Match, nowTs: number = Date.now()): boolean {
   if (match.status === 'FINISHED') return true;

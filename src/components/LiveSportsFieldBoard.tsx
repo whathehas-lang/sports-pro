@@ -36,6 +36,9 @@ export const LiveSportsFieldBoard: React.FC<LiveSportsFieldBoardProps> = ({
 
     const connect = () => {
       try {
+        const isViteDev = typeof import.meta !== 'undefined' && (import.meta as any).env && (import.meta as any).env.DEV;
+        if (!isViteDev) return;
+
         const host = window.location.hostname || '127.0.0.1';
         // GitHub Pages 환경에서는 로컬 웹소켓에 직접 붙지 못할 수 있으므로 안전 처리
         const wsUrl = `ws://${host}:8000/ws/${selectedSport}`;

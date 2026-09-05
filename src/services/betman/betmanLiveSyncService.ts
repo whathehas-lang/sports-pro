@@ -34,7 +34,8 @@ export class BetmanLiveSyncService {
    * 2순위: 오프라인 캐시 및 정적 공식 스케줄 (Fallback)
    */
   public static async getMatchesAsync(gmId: string = 'G101', gmTs?: string): Promise<Match[]> {
-    if (gmId === 'G101') {
+    const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+    if (gmId === 'G101' && isLocal) {
       try {
         const res = await fetch('http://127.0.0.1:8001/api/betman/schedule', {
           signal: AbortSignal.timeout(1500)

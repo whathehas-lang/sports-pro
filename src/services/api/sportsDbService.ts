@@ -20,15 +20,17 @@ export interface SportsDbRawMatch {
   updated_at?: number;
 }
 
-const BACKEND_BASE_URL = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
-  ? 'http://127.0.0.1:8001'
-  : '';
+const isViteDev = typeof import.meta !== 'undefined' && (import.meta as any).env && (import.meta as any).env.DEV;
+const BACKEND_BASE_URL = isViteDev ? 'http://127.0.0.1:8001' : '';
 
 export class SportsDbService {
   /**
    * DB에 저장된 조회 가능한 날짜 목록 조회 (예: ['2026-09-04', '2026-09-03', '2026-09-02', '2026-09-01'])
    */
   public static async getAvailableDates(): Promise<string[]> {
+    if (!BACKEND_BASE_URL) {
+      return ['2026-09-05', '2026-09-04', '2026-09-03', '2026-09-02'];
+    }
     try {
       const res = await fetch(`${BACKEND_BASE_URL}/api/sports/dates`, {
         headers: { 'Cache-Control': 'no-cache' }
@@ -39,16 +41,19 @@ export class SportsDbService {
           return data.dates;
         }
       }
-    } catch (e) {
-      console.warn('[SportsDbService] Could not fetch dates from backend, using default fallback dates:', e);
+    } catch {
+      // quiet fail
     }
-    return ['2026-09-04', '2026-09-03', '2026-09-02', '2026-09-01'];
+    return ['2026-09-05', '2026-09-04', '2026-09-03', '2026-09-02'];
   }
 
   /**
    * 특정 날짜(오늘 또는 과거 3일 전 등)의 실제 경기 목록을 DB에서 조회하여 Match 배열로 변환
    */
   public static async getMatchesByDate(dateStr: string): Promise<Match[]> {
+    if (!BACKEND_BASE_URL) {
+      return [];
+    }
     try {
       const res = await fetch(`${BACKEND_BASE_URL}/api/sports/matches?date=${dateStr}`, {
         headers: { 'Cache-Control': 'no-cache' }
@@ -59,8 +64,8 @@ export class SportsDbService {
           return data.matches.map((raw: SportsDbRawMatch, idx: number) => this.mapRawToMatch(raw, idx + 1));
         }
       }
-    } catch (e) {
-      console.error(`[SportsDbService] Error fetching matches for date ${dateStr}:`, e);
+    } catch {
+      // quiet fail
     }
     return [];
   }

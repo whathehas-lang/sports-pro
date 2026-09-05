@@ -24,8 +24,7 @@ export interface MlbLiveGameInfo {
  */
 export class MlbLiveGameSyncService {
   private static get MLB_SCHEDULE_URL(): string {
-    const isLocalhost = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
-    return isLocalhost ? '/api/mlb/api/v1/schedule' : 'https://statsapi.mlb.com/api/v1/schedule';
+    return 'https://statsapi.mlb.com/api/v1/schedule';
   }
 
   /**

@@ -93,12 +93,12 @@ export const MatchCard = ({
 
   // Subgames finding (other betting lines for this matchup)
   const baseNo = match.betmanMatchNo || 0;
-  const relatedSubgames = allMatches.filter(m => {
-    if (m.id === match.id || m.betmanMatchNo === baseNo) return false;
+  const relatedSubgames = (allMatches || []).filter(m => {
+    if (!m || m.id === match.id || m.betmanMatchNo === baseNo) return false;
     const sameTeams = m.homeTeam?.name === match.homeTeam?.name && m.awayTeam?.name === match.awayTeam?.name;
-    const closeNo = Math.abs(m.betmanMatchNo - baseNo) <= 8;
+    const closeNo = typeof m.betmanMatchNo === 'number' && Math.abs(m.betmanMatchNo - baseNo) <= 8;
     return sameTeams && closeNo;
-  }).sort((a, b) => a.betmanMatchNo - b.betmanMatchNo);
+  }).sort((a, b) => (a.betmanMatchNo || 0) - (b.betmanMatchNo || 0));
 
   // Total betting options count (like TotoCan's "11" badge: win/draw/lose 2 or 3 + subgame options)
   const subgameOptionsCount = (match.sport === 'baseball' ? 2 : 3) + relatedSubgames.length * 2;
@@ -113,6 +113,7 @@ export const MatchCard = ({
 
   const handlePickClick = (e: React.MouseEvent, pick: string) => {
     e.stopPropagation();
+    e.preventDefault();
     if (onTogglePick) {
       onTogglePick(match.id, pick);
     }
@@ -120,6 +121,7 @@ export const MatchCard = ({
 
   const handleFavoriteClick = (e: React.MouseEvent) => {
     e.stopPropagation();
+    e.preventDefault();
     if (onToggleFavorite) {
       onToggleFavorite(match.id);
     }
@@ -127,6 +129,7 @@ export const MatchCard = ({
 
   const handleToggleSubgames = (e: React.MouseEvent) => {
     e.stopPropagation();
+    e.preventDefault();
     setIsExpanded(!isExpanded);
   };
 
@@ -207,7 +210,7 @@ export const MatchCard = ({
           <div className="flex items-center justify-between gap-2 py-0.5">
             {/* Home Team */}
             <div className="flex items-center gap-1.5 min-w-0 flex-1">
-              {match.homeTeam?.logo ? (
+              {typeof match.homeTeam?.logo === 'string' && (match.homeTeam.logo.startsWith('http') || match.homeTeam.logo.startsWith('/')) ? (
                 <img
                   src={match.homeTeam.logo}
                   alt=""
@@ -216,7 +219,7 @@ export const MatchCard = ({
                 />
               ) : (
                 <div className="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-xs shrink-0">
-                  {sportIcon}
+                  {match.homeTeam?.logo || sportIcon}
                 </div>
               )}
               <span className={`font-black text-sm sm:text-base truncate ${isLight ? 'text-slate-950' : 'text-white'}`}>
@@ -236,7 +239,7 @@ export const MatchCard = ({
               <span className={`font-black text-sm sm:text-base truncate ${isLight ? 'text-slate-950' : 'text-white'}`}>
                 {shortAway}
               </span>
-              {match.awayTeam?.logo ? (
+              {typeof match.awayTeam?.logo === 'string' && (match.awayTeam.logo.startsWith('http') || match.awayTeam.logo.startsWith('/')) ? (
                 <img
                   src={match.awayTeam.logo}
                   alt=""
@@ -245,7 +248,7 @@ export const MatchCard = ({
                 />
               ) : (
                 <div className="w-6 h-6 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-xs shrink-0">
-                  {sportIcon}
+                  {match.awayTeam?.logo || sportIcon}
                 </div>
               )}
             </div>
@@ -452,7 +455,11 @@ export const MatchCard = ({
                     {/* Subgame Win Button */}
                     <button
                       type="button"
-                      onClick={() => onTogglePick && onTogglePick(sub.id, subPickKeyWin)}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        onTogglePick && onTogglePick(sub.id, subPickKeyWin);
+                      }}
                       className={`flex-1 py-1 px-1 rounded text-center text-xs font-bold border transition-all ${
                         isSubWinSelected
                           ? 'bg-emerald-500 text-white border-emerald-600'
@@ -471,7 +478,11 @@ export const MatchCard = ({
                     {hasDraw && (
                       <button
                         type="button"
-                        onClick={() => onTogglePick && onTogglePick(sub.id, subPickKeyDraw)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          e.preventDefault();
+                          onTogglePick && onTogglePick(sub.id, subPickKeyDraw);
+                        }}
                         className={`flex-1 py-1 px-1 rounded text-center text-xs font-bold border transition-all ${
                           isSubDrawSelected
                             ? 'bg-emerald-500 text-white border-emerald-600'
@@ -490,7 +501,11 @@ export const MatchCard = ({
                     {/* Subgame Lose Button */}
                     <button
                       type="button"
-                      onClick={() => onTogglePick && onTogglePick(sub.id, subPickKeyLose)}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        onTogglePick && onTogglePick(sub.id, subPickKeyLose);
+                      }}
                       className={`flex-1 py-1 px-1 rounded text-center text-xs font-bold border transition-all ${
                         isSubLoseSelected
                           ? 'bg-emerald-500 text-white border-emerald-600'

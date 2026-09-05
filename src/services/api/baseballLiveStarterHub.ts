@@ -128,33 +128,36 @@ export class BaseballLiveStarterHub {
     }
 
     // 1순위: 로컬 FastAPI 크롤러 백엔드 호출 (KBO 공식 크롤러)
-    try {
-      const res = await fetch('http://127.0.0.1:8001/api/baseball/starters/today', {
-        signal: AbortSignal.timeout(1500)
-      });
-      if (res.ok) {
-        const data = await res.json();
-        if (data && data.starters && Object.keys(data.starters).length > 0) {
-          const mapToSave: Record<string, any> = {};
-          for (const [k, v] of Object.entries(data.starters)) {
-            const val = v as any;
-            const norm = this.normalizeTeam(val.team || k);
-            const item: OfficialBaseballPitcherFact = {
-              teamName: norm,
-              pitcherName: val.pitcher,
-              league: val.league || 'KBO',
-              status: 'CONFIRMED'
-            };
-            this.livePitchersCache.set(`09.05_${norm}`, item);
-            mapToSave[norm] = item;
+    const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+    if (isLocal) {
+      try {
+        const res = await fetch('http://127.0.0.1:8001/api/baseball/starters/today', {
+          signal: AbortSignal.timeout(1500)
+        });
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.starters && Object.keys(data.starters).length > 0) {
+            const mapToSave: Record<string, any> = {};
+            for (const [k, v] of Object.entries(data.starters)) {
+              const val = v as any;
+              const norm = this.normalizeTeam(val.team || k);
+              const item: OfficialBaseballPitcherFact = {
+                teamName: norm,
+                pitcherName: val.pitcher,
+                league: val.league || 'KBO',
+                status: 'CONFIRMED'
+              };
+              this.livePitchersCache.set(`09.05_${norm}`, item);
+              mapToSave[norm] = item;
+            }
+            this.lastSyncTime = now;
+            firebaseService.saveDailyStarters(mapToSave).catch(() => {});
+            return;
           }
-          this.lastSyncTime = now;
-          firebaseService.saveDailyStarters(mapToSave).catch(() => {});
-          return;
         }
+      } catch {
+        // 백엔드 연결 불가 시 계속
       }
-    } catch {
-      // 백엔드 연결 불가 시 계속
     }
 
     // 2순위: Firebase Firestore 실시간 DB 조회

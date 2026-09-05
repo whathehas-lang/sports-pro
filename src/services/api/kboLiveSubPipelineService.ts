@@ -80,6 +80,11 @@ export class KboLiveSubPipelineService {
     const liveKboGames: KboLiveSubGameRecord[] = [];
     const today = new Date().toISOString().slice(0, 10).replace(/-/g, '');
 
+    const isViteDev = typeof import.meta !== 'undefined' && (import.meta as any).env && (import.meta as any).env.DEV;
+    if (!isViteDev) {
+      return liveKboGames;
+    }
+
     try {
       // 1. KBO 공식 센터 및 스포츠 오픈 API 10초 단발 엔드포인트 호출
       const baseUrl = typeof window !== 'undefined' ? '/api/kbo-naver' : 'https://api-gw.sports.naver.com';

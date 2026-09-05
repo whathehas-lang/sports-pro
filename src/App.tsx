@@ -614,10 +614,11 @@ export default function App() {
 
   const [hidePassedMatches, setHidePassedMatches] = useState<boolean>(false);
 
-  // 📌 Handle folder selection with automatic round title synchronization
+  // 📌 Handle folder selection with automatic round title synchronization & match data reload
   const handleSelectFolder = (folder: BetmanFolderCategory) => {
     setSelectedFolder(folder);
     const meta = getDynamicBetmanGamesMetadata();
+    const gmId = folder === 'SEUNGMUBAE' ? 'G011' : folder === 'SEUNG1PAE' ? 'G024' : folder === 'GIROKSIK' ? 'G102' : 'G101';
     const roundTitle = folder === 'SEUNGMUBAE' 
       ? `축구 승무패 ${meta.G011.defaultRoundTs}회차 (betman.co.kr 오피셜 슬립)`
       : folder === 'SEUNG1PAE'
@@ -626,6 +627,30 @@ export default function App() {
       ? `프로토 기록식 ${meta.G102.defaultRoundTs}회차 (betman.co.kr 오피셜 슬립)`
       : `프로토 승부식 ${meta.G101.defaultRoundTs}회차 (betman.co.kr 오피셜 슬립)`;
     setSelectedRound(roundTitle);
+
+    // ⚡ 해당 폴더의 공식 슬립 경기 목록 즉시 동기화 로드
+    const freshMatches = BetmanLiveSyncService.getMatches(gmId);
+    if (freshMatches && freshMatches.length > 0) {
+      setMatches(freshMatches);
+    }
+
+    // 승무패/승1패/기록식은 14경기 공식 발매 슬립이므로 날짜 필터를 'ALL'로 맞춰 14경기가 모두 표출되도록 지원
+    if (folder !== 'SEUNGBUSHIK') {
+      setSelectedDateFilter('ALL');
+    } else {
+      setSelectedDateFilter('09.05');
+    }
+  };
+
+  const handleSelectRound = (roundTitle: string) => {
+    setSelectedRound(roundTitle);
+    const match = roundTitle.match(/\d+/);
+    const roundTs = match ? match[0] : undefined;
+    const gmId = selectedFolder === 'SEUNGMUBAE' ? 'G011' : selectedFolder === 'SEUNG1PAE' ? 'G024' : selectedFolder === 'GIROKSIK' ? 'G102' : 'G101';
+    const freshMatches = BetmanLiveSyncService.getMatches(gmId, roundTs);
+    if (freshMatches && freshMatches.length > 0) {
+      setMatches(freshMatches);
+    }
   };
 
   // 📅 토토캔 스타일 날짜별 스마트 필터 ('09.05' | '09.04' | '09.06' | '09.07' | 'UPCOMING' | 'ALL' | 'PAST')
@@ -710,21 +735,22 @@ export default function App() {
   });
   
   // 📌 100% 스마트 시간순 정렬 (대표님 지시: 앱을 열면 현재 시간 기준 경기부터 즉시 표출! 지난 경기는 스크롤해서 확인):
-  // 1순위: 🔴 LIVE 실시간 진행 중인 경기 최상단
-  // 2순위: ⏰ 현재 시간 이후 아직 시작 안 한 다가오는 경기 (가장 빠른 순서대로 정렬)
-  // 3순위: 🏁 이미 경기 시간이 지났거나 끝난 경기 (맨 아래로 배치하여 스크롤로 확인 가능)
+  // 1순위: 🔴 현재 시간 활성 진행 중인 LIVE 경기 최상단
+  // 2순위: ⏰ 현재 시간 이후 아직 시작 안 한 다가오는 경기 (가장 빠른 순서대로 정렬: 17:00 KBO -> 18:00 NPB -> 저녁 축구)
+  // 3순위: 🏁 이미 경기 시간이 지났거나 끝난 아침/오전 경기 (맨 아래로 배치하여 스크롤로 확인 가능)
   const sortedMatches = [...rawFiltered].sort((a, b) => {
-    const isLiveA = a.status === 'LIVE' ? 0 : 1;
-    const isLiveB = b.status === 'LIVE' ? 0 : 1;
-    if (isLiveA !== isLiveB) return isLiveA - isLiveB;
-
     const tsA = parseMatchTimestamp(a.matchTime);
     const tsB = parseMatchTimestamp(b.matchTime);
     const currentNow = nowTicker;
 
-    // 경기 시작 시간이 이미 지났거나 완료된 경기인지 판단
-    const isPastA = isMatchCompleted(a) || (tsA > 0 && tsA < currentNow);
-    const isPastB = isMatchCompleted(b) || (tsB > 0 && tsB < currentNow);
+    // 경기 시작 후 3.5시간 이상 경과한 경기는 stale 상태로 간주하여 최상단 라이브 핀에서 제외
+    const isLiveA = a.status === 'LIVE' && (tsA === 0 || (currentNow - tsA < 3.5 * 3600 * 1000 && currentNow >= tsA));
+    const isLiveB = b.status === 'LIVE' && (tsB === 0 || (currentNow - tsB < 3.5 * 3600 * 1000 && currentNow >= tsB));
+    if (isLiveA !== isLiveB) return isLiveA ? -1 : 1;
+
+    // 경기 시작 시간이 이미 지났거나 완료된 경기인지 판단 (시작 시간 10분 후부터 지난 경기로 분류)
+    const isPastA = isMatchCompleted(a) || (tsA > 0 && tsA < currentNow - 10 * 60 * 1000 && !isLiveA);
+    const isPastB = isMatchCompleted(b) || (tsB > 0 && tsB < currentNow - 10 * 60 * 1000 && !isLiveB);
 
     // 아직 시작 안 한 다가오는 경기를 지난 경기보다 무조건 먼저 노출 (0: 다가오는 경기, 1: 지난 경기)
     const futureGroupA = isPastA ? 1 : 0;
@@ -733,7 +759,7 @@ export default function App() {
 
     // 같은 그룹 내에서는 시간순 정렬
     if (tsA !== tsB && tsA > 0 && tsB > 0) {
-      // 다가오는 경기는 가장 빠른 시간 순서(오름차순), 지난 경기는 최근 종료 순서(내림차순)
+      // 다가오는 경기는 가장 빠른 시간 순서(오름차순: 17:00 -> 18:00 -> 19:00), 지난 경기는 최근 종료 순서(내림차순)
       return !isPastA ? tsA - tsB : tsB - tsA;
     }
 
@@ -742,7 +768,7 @@ export default function App() {
     const noB = b.betmanMatchNo || (b as any).matchNo || 0;
     if (noA !== noB) return noA - noB;
 
-    return a.id.localeCompare(b.id);
+    return (a.id || '').localeCompare(b.id || '');
   });
 
   // Deduplicate matches so that separate handicap/under-over game cards are hidden, leaving only the main (lowest match number) card
@@ -787,7 +813,7 @@ export default function App() {
         selectedFolder={selectedFolder}
         onSelectFolder={handleSelectFolder}
         selectedRound={selectedRound}
-        onSelectRound={setSelectedRound}
+        onSelectRound={handleSelectRound}
         membershipTier={membershipTier}
         onChangeMembershipTier={setMembershipTier}
         viewMode={viewMode}
