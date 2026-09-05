@@ -174,6 +174,11 @@ export default function App() {
     const unsubscribePolling = LiveMatchPollingScheduler.onScoreUpdate((matchId, homeScore, awayScore, statusLabel, isFinished) => {
       setMatches(prev => prev.map(m => {
         if (m.id === matchId || String(m.betmanMatchNo) === matchId || m.id.includes(matchId)) {
+          // 🛑 미래 경기(시작 30분 이상 남은 경기)는 라이브 점수 오염 원천 차단
+          const matchTs = parseMatchTimestamp(m.matchTime);
+          if (matchTs > 0 && matchTs > Date.now() + 30 * 60 * 1000) {
+            return m;
+          }
           return MatchDbLockService.applyDbLockAndValidation(m, {
             homeScore,
             awayScore,
@@ -194,6 +199,11 @@ export default function App() {
         if (typeof hScore === 'number' && typeof aScore === 'number') {
           setMatches(prev => prev.map(m => {
             if (m.id.includes(String(payload.gameId)) || String(m.betmanMatchNo) === String(payload.gameId)) {
+              // 🛑 미래 경기(시작 30분 이상 남은 경기)는 라이브 점수 오염 원천 차단
+              const matchTs = parseMatchTimestamp(m.matchTime);
+              if (matchTs > 0 && matchTs > Date.now() + 30 * 60 * 1000) {
+                return m;
+              }
               return MatchDbLockService.applyDbLockAndValidation(m, {
                 homeScore: hScore,
                 awayScore: aScore,
@@ -215,6 +225,11 @@ export default function App() {
           const isHome = m.homeTeam.name.includes(kboGame.homeTeam) || kboGame.homeTeam.includes(m.homeTeam.name);
           const isAway = m.awayTeam.name.includes(kboGame.awayTeam) || kboGame.awayTeam.includes(m.awayTeam.name);
           if (isHome && isAway) {
+            // 🛑 미래 경기(시작 30분 이상 남은 경기)는 라이브 점수 오염 원천 차단
+            const matchTs = parseMatchTimestamp(m.matchTime);
+            if (matchTs > 0 && matchTs > Date.now() + 30 * 60 * 1000) {
+              return m;
+            }
             return KboLiveSubPipelineService.crossValidateKboMatch(m, kboGame, m.homeScore, m.awayScore);
           }
         }
@@ -775,8 +790,13 @@ export default function App() {
     if (!filteredMatches || filteredMatches.length === 0) return null;
     const now = Date.now();
 
-    // 1. 현재 LIVE 진행 중인 경기가 있으면 그 경기
-    const liveMatch = filteredMatches.find((m) => m.status === 'LIVE');
+    // 1. 현재 LIVE 진행 중인 경기가 있으면 그 경기 (시작 30분 이상 남은 미래 경기 제외)
+    const liveMatch = filteredMatches.find((m) => {
+      if (m.status !== 'LIVE') return false;
+      const ts = parseMatchTimestamp(m.matchTime);
+      if (ts > 0 && ts > now + 30 * 60 * 1000) return false;
+      return true;
+    });
     if (liveMatch) return liveMatch.id;
 
     // 2. 현재 시각 기준 진행 중(최근 2.5시간 이내 시작)이거나 바로 다음 시작 예정인 첫 번째 경기
@@ -796,12 +816,9 @@ export default function App() {
     if (!currentFocusMatchId) return;
     const el = document.getElementById(`match-card-${currentFocusMatchId}`);
     if (el) {
-      const rect = el.getBoundingClientRect();
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      const targetY = rect.top + scrollTop - 120;
-      window.scrollTo({
-        top: Math.max(0, targetY),
-        behavior: smooth ? 'smooth' : 'auto'
+      el.scrollIntoView({
+        behavior: smooth ? 'smooth' : 'auto',
+        block: 'start'
       });
     }
   };
@@ -810,17 +827,23 @@ export default function App() {
   const hasAutoScrolledMapRef = useRef<Record<string, boolean>>({});
 
   useEffect(() => {
-    if (!currentFocusMatchId) return;
+    if (!currentFocusMatchId || filteredMatches.length === 0) return;
     const filterKey = selectedDateFilter;
     if (hasAutoScrolledMapRef.current[filterKey]) return;
 
     const timer = setTimeout(() => {
-      scrollToCurrentTimeMatch(false);
-      hasAutoScrolledMapRef.current[filterKey] = true;
-    }, 350);
+      const el = document.getElementById(`match-card-${currentFocusMatchId}`);
+      if (el) {
+        el.scrollIntoView({
+          behavior: 'auto',
+          block: 'start'
+        });
+        hasAutoScrolledMapRef.current[filterKey] = true;
+      }
+    }, 500);
 
     return () => clearTimeout(timer);
-  }, [currentFocusMatchId, selectedDateFilter]);
+  }, [currentFocusMatchId, filteredMatches.length, selectedDateFilter]);
 
   // Handle favorite toggle
   const handleToggleFavorite = (matchId: string) => {
@@ -1104,7 +1127,7 @@ export default function App() {
 
                   <div className="flex flex-col space-y-4">
                     {filteredMatches.map((match) => (
-                      <div key={match.id} id={`match-card-${match.id}`} className="w-full">
+                      <div key={match.id} id={`match-card-${match.id}`} className="w-full scroll-mt-28 sm:scroll-mt-32">
                         {match.id === currentFocusMatchId && selectedDateFilter !== 'PAST' && (
                           <div className="mb-2 py-1.5 px-3 rounded-xl bg-gradient-to-r from-amber-500/20 via-amber-500/10 to-transparent border border-amber-500/40 text-amber-300 text-[11px] font-black flex items-center justify-between shadow-xs">
                             <span className="flex items-center gap-1.5">

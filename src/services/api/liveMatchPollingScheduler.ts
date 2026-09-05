@@ -2,6 +2,7 @@ import { sportsApiClient } from './sportsApiClient';
 import { BaseballLiveApiService, type ApiBaseballGame } from './baseballLiveApiService';
 import { MlbLiveGameSyncService } from './mlbLiveGameSyncService';
 import { SportsEntityMappingService } from '../mappers/sportsEntityMappingService';
+import { parseMatchTimestamp } from '../../utils/matchResultHelper';
 import type { Match } from '../../types/sports';
 
 export type LiveScoreUpdateCallback = (matchId: string, homeScore: number, awayScore: number, statusLabel: string, isFinished: boolean) => void;
@@ -97,9 +98,22 @@ export class LiveMatchPollingScheduler {
           const gHome = SportsEntityMappingService.normalize(mlbGame.homeTeamName);
           const gAway = SportsEntityMappingService.normalize(mlbGame.awayTeamName);
 
+          const now = Date.now();
           // 현재 베트맨 경기 목록 중 일치하는 경기 탐색 (한/영 구단명 및 별칭 100% 매칭)
           const targetMatches = this.currentMatches.filter(m => {
             if (m.sport !== 'baseball') return false;
+
+            // 🛑 [치명적 오염 차단] 아직 시작하지 않은 미래 경기(30분 이상 남은 경기)는
+            // 과거/현재 진행 중인 동일 대진(3~4연전) 점수 오염 유입을 100% 원천 차단!
+            const matchTs = parseMatchTimestamp(m.matchTime);
+            if (matchTs > 0 && matchTs > now + 30 * 60 * 1000) {
+              return false;
+            }
+
+            // 경기 시작 후 6시간 이상 경과한 경기(이미 오래전 종료된 경기)도 라이브 오염 제외
+            if (matchTs > 0 && now - matchTs > 6 * 3600 * 1000 && !mlbGame.isLive) {
+              return false;
+            }
 
             const isHome = SportsEntityMappingService.isSameTeam(m.homeTeam.name, mlbGame.homeTeamName, 'baseball') ||
                            SportsEntityMappingService.isSameTeam(m.homeTeam.name, mlbGame.awayTeamName, 'baseball');
@@ -179,8 +193,16 @@ export class LiveMatchPollingScheduler {
             const fbHome = SportsEntityMappingService.normalize(fix.teams?.home?.name || '');
             const fbAway = SportsEntityMappingService.normalize(fix.teams?.away?.name || '');
 
+            const now = Date.now();
             const targetMatches = this.currentMatches.filter(m => {
               if (m.sport !== 'football' && m.sport !== '축구') return false;
+
+              // 🛑 시작 30분 이상 남은 미래 경기 제외
+              const matchTs = parseMatchTimestamp(m.matchTime);
+              if (matchTs > 0 && matchTs > now + 30 * 60 * 1000) {
+                return false;
+              }
+
               if (m.id.includes(fixId) || String(m.betmanMatchNo) === fixId) return true;
               const mHome = SportsEntityMappingService.normalize(m.homeTeam.name);
               const mAway = SportsEntityMappingService.normalize(m.awayTeam.name);

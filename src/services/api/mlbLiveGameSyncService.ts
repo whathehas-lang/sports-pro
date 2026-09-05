@@ -35,13 +35,13 @@ export class MlbLiveGameSyncService {
     const now = new Date();
 
     // 한-미 시차를 극복하기 위해 KST 기준 -1일, 0일, +1일 전수 스캔
-    const datesToScan: string[] = [];
+    const datesToScan: { dateStr: string; offset: number }[] = [];
     for (let offset = -1; offset <= 1; offset++) {
       const d = new Date(now.getTime() + offset * 24 * 60 * 60 * 1000);
-      datesToScan.push(d.toISOString().slice(0, 10));
+      datesToScan.push({ dateStr: d.toISOString().slice(0, 10), offset });
     }
 
-    for (const dateStr of datesToScan) {
+    for (const { dateStr, offset } of datesToScan) {
       try {
         const url = `${this.MLB_SCHEDULE_URL}?sportId=1&hydrate=probablePitcher,linescore,team&date=${dateStr}`;
         const res = await fetch(url);
@@ -65,6 +65,12 @@ export class MlbLiveGameSyncService {
 
             const isLive = abstractState === 'Live' || state === 'In Progress' || state.includes('Inning');
             const isFinal = abstractState === 'Final' || state === 'Final' || state === 'Game Over';
+
+            // 🛑 [치명적 버그 수정]
+            // 1) 아직 시작하지 않은 Scheduled / Preview 경기는 라이브 목록에 절대 포함하지 않음!
+            // 2) 어제(offset === -1) 이미 완전히 종료된 과거 경기 점수가 내일 경기로 유입되지 않도록 제외
+            if (!isLive && !isFinal) continue;
+            if (offset === -1 && isFinal) continue;
 
             let currentInningText = state;
             if (isLive && inning) {
