@@ -43,8 +43,8 @@ export class MultiSourceBaseballOrchestrator {
 
         if (isKbo) {
           if (isToday) {
-            homeStarter = BaseballLiveStarterHub.getStarterPitcher(m.homeTeam.name);
-            awayStarter = BaseballLiveStarterHub.getStarterPitcher(m.awayTeam.name);
+            homeStarter = BaseballLiveStarterHub.getStarterPitcher(m.homeTeam.name, m.matchTime);
+            awayStarter = BaseballLiveStarterHub.getStarterPitcher(m.awayTeam.name, m.matchTime);
             if (!homeStarter || !awayStarter) {
               const kboStarters = await KboOfficialLiveCollector.getOfficialStarterForMatch(m);
               homeStarter = homeStarter || kboStarters.homeStarter;
@@ -65,8 +65,8 @@ export class MultiSourceBaseballOrchestrator {
           ['야쿠르트', '주니치', '히로시마', '요미우리', '라쿠텐', '니혼햄', '오릭스', '지바롯데', '소프트뱅크', '세이부'].some(t => m.homeTeam.name.includes(t) || m.awayTeam.name.includes(t))) {
           // 3. NPB 경기인 경우 -> BaseballLiveStarterHub 및 공식 예고선발 수집
           if (isToday) {
-            homeStarter = BaseballLiveStarterHub.getStarterPitcher(m.homeTeam.name);
-            awayStarter = BaseballLiveStarterHub.getStarterPitcher(m.awayTeam.name);
+            homeStarter = BaseballLiveStarterHub.getStarterPitcher(m.homeTeam.name, m.matchTime);
+            awayStarter = BaseballLiveStarterHub.getStarterPitcher(m.awayTeam.name, m.matchTime);
             if (!homeStarter || !awayStarter) {
               homeStarter = homeStarter || await NpbOfficialStarterService.fetchOfficialStarterByDate(m.homeTeam.name, 'TODAY');
               awayStarter = awayStarter || await NpbOfficialStarterService.fetchOfficialStarterByDate(m.awayTeam.name, 'TODAY');
@@ -75,8 +75,8 @@ export class MultiSourceBaseballOrchestrator {
         }
 
         // 4. 공식 공시가 없을 경우 사전 스케줄의 값 또는 null (미정) 설정
-        const finalHomeStarter = homeStarter || m.homeTeam.starterPitcherInfo || null;
-        const finalAwayStarter = awayStarter || m.awayTeam.starterPitcherInfo || null;
+        const finalHomeStarter = homeStarter || null;
+        const finalAwayStarter = awayStarter || null;
 
         const baseEnriched: Match = {
           ...m,
