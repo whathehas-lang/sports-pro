@@ -36,6 +36,7 @@ export const MatchDetailModal = ({
   const [activeTab, setActiveTab] = useState<'ALL' | 'LIVE' | 'FACTS' | 'SERIES' | 'H2H' | 'RECENT'>('ALL');
   const [recentGamesRange, setRecentGamesRange] = useState<3 | 5 | 10>(10);
   const [isRecentGamesOpen, setIsRecentGamesOpen] = useState<boolean>(true);
+  const [isLiveBoardOpen, setIsLiveBoardOpen] = useState<boolean>(false);
   
   const [h2hRange, setH2hRange] = useState<3 | 5 | 10 | 20>(20);
   const [isH2HOpen, setIsH2HOpen] = useState<boolean>(true);
@@ -555,17 +556,6 @@ export const MatchDetailModal = ({
           isLight ? '' : ''
         }`}>
 
-          {/* 🔴 [최상단 실시간 중계 구장 그래픽 보드 - 다저스/KBO 4대 종목 완벽 연동] */}
-          {(activeTab === 'ALL' || activeTab === 'LIVE') && (
-            <div className="pt-1">
-              <LiveSportsFieldBoard
-                initialSport={match.sport}
-                currentMatch={match}
-                theme={theme}
-              />
-            </div>
-          )}
-
           {/* ⚾ 1순위: 1. ⚾ 오피셜 마운드 실측 상세 기록표 (선발 투구수 & 불펜 등판 일지) */}
           {match.sport === 'baseball' && (activeTab === 'ALL' || activeTab === 'SERIES') && (
             <div className="pt-1">
@@ -573,6 +563,36 @@ export const MatchDetailModal = ({
                 currentMatch={match}
                 theme={theme}
               />
+            </div>
+          )}
+
+          {/* 🔴 2순위: 실시간 구장 다이아몬드 그래픽 중계 (접기/펼치기 토글) */}
+          {(activeTab === 'ALL' || activeTab === 'LIVE') && (
+            <div className="pt-1 space-y-2">
+              <button
+                type="button"
+                onClick={() => setIsLiveBoardOpen(prev => !prev)}
+                className={`w-full py-2 px-3 rounded-xl border text-xs font-bold flex items-center justify-between transition-colors cursor-pointer ${
+                  isLight 
+                    ? 'bg-slate-100 hover:bg-slate-200/80 border-slate-200 text-slate-700' 
+                    : 'bg-slate-900 hover:bg-slate-800 border-slate-800 text-slate-300'
+                }`}
+              >
+                <span className="flex items-center gap-1.5 font-black">
+                  <span>🏟️</span>
+                  <span>실시간 구장 다이아몬드 중계 보드</span>
+                </span>
+                <span className="text-xs text-amber-500 font-bold flex items-center gap-1">
+                  <span>{isLiveBoardOpen ? '접기 ▲' : '펼쳐보기 ▼'}</span>
+                </span>
+              </button>
+              {isLiveBoardOpen && (
+                <LiveSportsFieldBoard
+                  initialSport={match.sport}
+                  currentMatch={match}
+                  theme={theme}
+                />
+              )}
             </div>
           )}
 

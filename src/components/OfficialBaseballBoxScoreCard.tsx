@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Shield, Zap, Award, CheckCircle2, ChevronRight } from 'lucide-react';
 import type { Match } from '../types/sports';
 
 interface OfficialBaseballBoxScoreCardProps {
@@ -141,7 +140,7 @@ export const OfficialBaseballBoxScoreCard: React.FC<OfficialBaseballBoxScoreCard
 }) => {
   const isLight = theme === 'light';
 
-  // 경기 자동 매칭 (LG/삼성 이면 1경기, 롯데/한화 이면 2경기 기본 선택)
+  // 경기 자동 매칭
   const initialIndex = (() => {
     if (!currentMatch) return 0;
     const h = currentMatch.homeTeam?.name || '';
@@ -156,32 +155,22 @@ export const OfficialBaseballBoxScoreCard: React.FC<OfficialBaseballBoxScoreCard
   const game = OFFICIAL_KBO_KEY_GAMES[selectedGameIdx] || OFFICIAL_KBO_KEY_GAMES[0];
 
   return (
-    <div className={`rounded-2xl border-2 p-3 sm:p-4.5 space-y-3.5 shadow-md transition-all ${
+    <div className={`rounded-xl border p-3.5 sm:p-5 font-sans transition-all ${
       isLight 
-        ? 'bg-gradient-to-br from-amber-50/90 via-white to-amber-50/60 border-amber-300 text-slate-900' 
-        : 'bg-gradient-to-br from-slate-900 via-slate-900 to-amber-950/40 border-amber-500/50 text-slate-100'
+        ? 'bg-white border-slate-300 text-slate-900 shadow-sm' 
+        : 'bg-slate-900 border-slate-700 text-slate-100 shadow-sm'
     }`}>
-      {/* 1. 헤더: 탭 선택기 (1경기 LG vs 삼성 / 2경기 롯데 vs 한화) */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b pb-2.5 border-amber-200 dark:border-slate-800">
+      {/* 1. 상단 심플 헤더: 탭 전환기 */}
+      <div className="flex items-center justify-between gap-2 border-b pb-3 border-slate-200 dark:border-slate-800">
         <div className="flex items-center gap-2">
-          <span className="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-500 border border-amber-500/40 flex items-center justify-center font-black text-sm">
-            ⚾
+          <span className="text-base font-black text-amber-600 dark:text-amber-400">⚾ 공식 마운드 실측 일지</span>
+          <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800">
+            공식 확정
           </span>
-          <div>
-            <h4 className="font-black text-xs sm:text-sm tracking-tight text-amber-800 dark:text-amber-300 flex items-center gap-1.5">
-              <span>오피셜 마운드 실측 상세 기록표</span>
-              <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 font-bold border border-emerald-400/40">
-                공식 확정
-              </span>
-            </h4>
-            <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">
-              선발 투구수·볼수 및 불펜 전원 등판 일지
-            </p>
-          </div>
         </div>
 
-        {/* 1경기 / 2경기 스위처 탭 버튼 */}
-        <div className="flex items-center gap-1.5 self-start sm:self-auto">
+        {/* 탭 버튼 (박스 중첩 없는 플랫 탭) */}
+        <div className="flex items-center gap-1.5">
           {OFFICIAL_KBO_KEY_GAMES.map((g, idx) => {
             const isSelected = selectedGameIdx === idx;
             return (
@@ -189,172 +178,101 @@ export const OfficialBaseballBoxScoreCard: React.FC<OfficialBaseballBoxScoreCard
                 key={g.gameNumber}
                 type="button"
                 onClick={() => setSelectedGameIdx(idx)}
-                className={`px-2.5 py-1 rounded-lg text-xs font-black transition-all cursor-pointer flex items-center gap-1 ${
+                className={`px-3 py-1 rounded-lg text-xs font-black transition-all cursor-pointer ${
                   isSelected
-                    ? 'bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 shadow-sm scale-102'
+                    ? 'bg-amber-500 text-slate-950 shadow-xs'
                     : isLight
-                      ? 'bg-white border border-slate-200 text-slate-600 hover:bg-amber-100/50'
-                      : 'bg-slate-800 border border-slate-700 text-slate-300 hover:bg-slate-700'
+                      ? 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                      : 'bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white'
                 }`}
               >
-                <span>{idx === 0 ? '1경기 (LG·삼성)' : '2경기 (롯데·한화)'}</span>
+                {idx === 0 ? '1경기 (LG·삼성)' : '2경기 (롯데·한화)'}
               </button>
             );
           })}
         </div>
       </div>
 
-      {/* 2. 대진 및 최종 스코어 배너 */}
-      <div className={`p-2.5 rounded-xl border flex items-center justify-between text-xs font-black shadow-xs ${
-        isLight ? 'bg-amber-100/60 border-amber-200 text-slate-900' : 'bg-slate-950 border-amber-500/30 text-amber-200'
-      }`}>
-        <div className="flex items-center gap-1.5 truncate min-w-0">
-          <span className="text-amber-600 dark:text-amber-400 font-extrabold">{game.gameLabel}</span>
-        </div>
-        <div className="flex items-center gap-2 shrink-0">
-          <span className="px-2 py-0.5 rounded-md bg-emerald-500 text-white text-[11px] font-black">
-            최종 스코어: {game.finalScore} ({game.winner})
-          </span>
-        </div>
+      {/* 2. 대진 및 최종 스코어 (단일 라인) */}
+      <div className="py-2.5 border-b border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-1.5 text-xs sm:text-sm font-black">
+        <span className="text-slate-950 dark:text-white">{game.gameLabel}</span>
+        <span className="text-emerald-600 dark:text-emerald-400 font-extrabold bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-200 dark:border-emerald-800">
+          최종 스코어: {game.finalScore} ({game.winner})
+        </span>
       </div>
 
-      {/* 3. 홈팀 & 원정팀 2열 상세 카드 그리드 */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-        {/* ======================= [홈팀 영역] ======================= */}
-        <div className={`p-3 rounded-xl border space-y-2.5 ${
-          isLight ? 'bg-white border-emerald-200 shadow-xs' : 'bg-slate-950 border-emerald-500/40'
-        }`}>
-          {/* 홈팀 타이틀 */}
-          <div className="flex items-center justify-between border-b pb-1.5 border-emerald-100 dark:border-slate-900 font-black">
-            <span className="text-emerald-700 dark:text-emerald-400 text-xs sm:text-sm">
-              🏠 홈팀 ({game.homeTeam})
-            </span>
-            <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 font-bold border border-emerald-300 dark:border-emerald-800">
-              {game.winner.includes('LG') || game.winner.includes('롯데') ? '승리팀 🏆' : '패전'}
-            </span>
+      {/* 3. 본문 세로 나열 (중첩 박스 완전 제거: 글머리 기호와 가로 구분선으로만 시원하게 정리) */}
+      <div className="pt-3 space-y-4 text-xs sm:text-[13px] leading-relaxed">
+        
+        {/* ================= 🏠 [홈팀 세로 블록] ================= */}
+        <div className="space-y-1.5">
+          <div className="font-extrabold text-sm text-emerald-700 dark:text-emerald-400 flex items-center gap-2">
+            <span>[ 🏠 홈팀: {game.homeTeam} ({game.winner.includes('LG') || game.winner.includes('롯데') ? '승리 🏆' : '패전'}) ]</span>
           </div>
 
-          {/* 선발 투수 기록 박스 */}
-          <div className={`p-2.5 rounded-lg border space-y-1 ${
-            isLight ? 'bg-emerald-50/50 border-emerald-200' : 'bg-slate-900/90 border-slate-800'
-          }`}>
-            <div className="flex items-center justify-between font-black">
-              <span className="text-slate-900 dark:text-slate-100 flex items-center gap-1.5">
-                <span className="px-1.5 py-0.2 rounded text-[10px] bg-amber-500/20 text-amber-700 dark:text-amber-300 border border-amber-400/40 font-black">선발</span>
-                <span className="text-sm font-extrabold">{game.homePitching.starter}</span>
-              </span>
-              <span className="font-mono text-amber-600 dark:text-amber-300 font-black text-xs">
-                {game.homePitching.innings}이닝 {game.homePitching.pitches}구
-              </span>
-            </div>
-            <p className="text-[11px] text-slate-600 dark:text-slate-300 font-semibold">
-              • (볼 {game.homePitching.balls} / 스트라이크 {game.homePitching.strikes}), {game.homePitching.hits}피안타 {game.homePitching.strikeouts}탈삼진 {game.homePitching.runs}실점
-            </p>
+          {/* 선발 투수 기록 */}
+          <div className="pl-2 font-medium">
+            <span className="font-bold text-slate-900 dark:text-white">• 선발: </span>
+            <span className="font-extrabold text-amber-700 dark:text-amber-300">{game.homePitching.starter}</span>
+            <span className="font-mono font-bold text-slate-800 dark:text-slate-200"> — {game.homePitching.innings}이닝 {game.homePitching.pitches}구</span>
+            <span className="text-slate-600 dark:text-slate-400 font-normal"> (볼 {game.homePitching.balls} / 스트라이크 {game.homePitching.strikes}), {game.homePitching.hits}피안타 {game.homePitching.strikeouts}탈삼진 {game.homePitching.runs}실점</span>
           </div>
 
-          {/* 불펜 등판 명단 */}
-          <div className="space-y-1.5 pt-1">
-            <span className="text-[11px] font-black text-slate-700 dark:text-slate-300 flex items-center gap-1">
-              <span>🛡️ 불펜 등판 일지:</span>
-            </span>
-            <div className="space-y-1">
+          {/* 불펜 등판 일지 */}
+          <div className="pl-2 space-y-1 pt-0.5">
+            <div className="font-bold text-slate-800 dark:text-slate-200">• 불펜:</div>
+            <div className="pl-4 space-y-1 text-slate-700 dark:text-slate-300">
               {game.homePitching.bullpen.map((bp, i) => (
-                <div
-                  key={i}
-                  className={`p-1.5 px-2 rounded-md border flex items-center justify-between text-[11px] font-bold ${
-                    isLight ? 'bg-slate-50 border-slate-200' : 'bg-slate-900 border-slate-800'
-                  }`}
-                >
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-xs">{bp.role === 'VICTORY' ? '🔴' : '⚫'}</span>
-                    <span className="text-slate-900 dark:text-slate-100 font-extrabold">{bp.name}</span>
-                    <span className="text-[10px] text-slate-500 dark:text-slate-400">({bp.order})</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="font-mono text-amber-600 dark:text-amber-300 font-black">
-                      {bp.inning} {bp.pitches}구
-                    </span>
-                    <span className={`px-1 py-0.2 rounded text-[9px] font-black ${
-                      bp.role === 'VICTORY'
-                        ? 'bg-rose-100 text-rose-800 dark:bg-rose-950/80 dark:text-rose-300'
-                        : 'bg-slate-200 text-slate-800 dark:bg-slate-800 dark:text-slate-300'
-                    }`}>
-                      [{bp.roleLabel}{bp.isSave ? ', 세이브' : ''}]
-                    </span>
-                  </div>
+                <div key={i} className="flex items-center gap-2 flex-wrap">
+                  <span className="text-xs">{bp.role === 'VICTORY' ? '🔴' : '⚫'}</span>
+                  <span className="font-bold text-slate-900 dark:text-white">{bp.name}</span>
+                  <span className="text-slate-500 font-medium">({bp.order}):</span>
+                  <span className="font-mono font-extrabold text-slate-800 dark:text-slate-200">{bp.inning} {bp.pitches}구</span>
+                  <span className={`text-[11px] font-bold ${bp.role === 'VICTORY' ? 'text-rose-600 dark:text-rose-400' : 'text-slate-500'}`}>
+                    [{bp.roleLabel}{bp.isSave ? ', 세이브' : ''}]
+                  </span>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        {/* ======================= [원정팀 영역] ======================= */}
-        <div className={`p-3 rounded-xl border space-y-2.5 ${
-          isLight ? 'bg-white border-cyan-200 shadow-xs' : 'bg-slate-950 border-cyan-500/40'
-        }`}>
-          {/* 원정팀 타이틀 */}
-          <div className="flex items-center justify-between border-b pb-1.5 border-cyan-100 dark:border-slate-900 font-black">
-            <span className="text-cyan-700 dark:text-cyan-400 text-xs sm:text-sm">
-              ✈️ 원정팀 ({game.awayTeam})
-            </span>
-            <span className="text-[10px] px-2 py-0.5 rounded bg-cyan-100 dark:bg-cyan-950 text-cyan-800 dark:text-cyan-300 font-bold border border-cyan-300 dark:border-cyan-800">
-              {game.winner.includes('삼성') || game.winner.includes('한화') ? '승리팀 🏆' : '패전'}
-            </span>
+        {/* 얇고 깔끔한 가로 구분선 하나로 홈과 원정 분리 */}
+        <hr className="border-t border-slate-200 dark:border-slate-800 my-3" />
+
+        {/* ================= ✈️ [원정팀 세로 블록] ================= */}
+        <div className="space-y-1.5">
+          <div className="font-extrabold text-sm text-cyan-700 dark:text-cyan-400 flex items-center gap-2">
+            <span>[ ✈️ 원정팀: {game.awayTeam} ({game.winner.includes('삼성') || game.winner.includes('한화') ? '승리 🏆' : '패전'}) ]</span>
           </div>
 
-          {/* 선발 투수 기록 박스 */}
-          <div className={`p-2.5 rounded-lg border space-y-1 ${
-            isLight ? 'bg-cyan-50/50 border-cyan-200' : 'bg-slate-900/90 border-slate-800'
-          }`}>
-            <div className="flex items-center justify-between font-black">
-              <span className="text-slate-900 dark:text-slate-100 flex items-center gap-1.5">
-                <span className="px-1.5 py-0.2 rounded text-[10px] bg-amber-500/20 text-amber-700 dark:text-amber-300 border border-amber-400/40 font-black">선발</span>
-                <span className="text-sm font-extrabold">{game.awayPitching.starter}</span>
-              </span>
-              <span className="font-mono text-amber-600 dark:text-amber-300 font-black text-xs">
-                {game.awayPitching.innings}이닝 {game.awayPitching.pitches}구
-              </span>
-            </div>
-            <p className="text-[11px] text-slate-600 dark:text-slate-300 font-semibold">
-              • (볼 {game.awayPitching.balls} / 스트라이크 {game.awayPitching.strikes}), {game.awayPitching.hits}피안타 {game.awayPitching.strikeouts}탈삼진 {game.awayPitching.runs}실점
-            </p>
+          {/* 선발 투수 기록 */}
+          <div className="pl-2 font-medium">
+            <span className="font-bold text-slate-900 dark:text-white">• 선발: </span>
+            <span className="font-extrabold text-amber-700 dark:text-amber-300">{game.awayPitching.starter}</span>
+            <span className="font-mono font-bold text-slate-800 dark:text-slate-200"> — {game.awayPitching.innings}이닝 {game.awayPitching.pitches}구</span>
+            <span className="text-slate-600 dark:text-slate-400 font-normal"> (볼 {game.awayPitching.balls} / 스트라이크 {game.awayPitching.strikes}), {game.awayPitching.hits}피안타 {game.awayPitching.strikeouts}탈삼진 {game.awayPitching.runs}실점</span>
           </div>
 
-          {/* 불펜 등판 명단 */}
-          <div className="space-y-1.5 pt-1">
-            <span className="text-[11px] font-black text-slate-700 dark:text-slate-300 flex items-center gap-1">
-              <span>🛡️ 불펜 등판 일지:</span>
-            </span>
-            <div className="space-y-1">
+          {/* 불펜 등판 일지 */}
+          <div className="pl-2 space-y-1 pt-0.5">
+            <div className="font-bold text-slate-800 dark:text-slate-200">• 불펜:</div>
+            <div className="pl-4 space-y-1 text-slate-700 dark:text-slate-300">
               {game.awayPitching.bullpen.map((bp, i) => (
-                <div
-                  key={i}
-                  className={`p-1.5 px-2 rounded-md border flex items-center justify-between text-[11px] font-bold ${
-                    isLight ? 'bg-slate-50 border-slate-200' : 'bg-slate-900 border-slate-800'
-                  }`}
-                >
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-xs">{bp.role === 'VICTORY' ? '🔴' : '⚫'}</span>
-                    <span className="text-slate-900 dark:text-slate-100 font-extrabold">{bp.name}</span>
-                    <span className="text-[10px] text-slate-500 dark:text-slate-400">({bp.order})</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="font-mono text-amber-600 dark:text-amber-300 font-black">
-                      {bp.inning} {bp.pitches}구
-                    </span>
-                    <span className={`px-1 py-0.2 rounded text-[9px] font-black ${
-                      bp.role === 'VICTORY'
-                        ? 'bg-rose-100 text-rose-800 dark:bg-rose-950/80 dark:text-rose-300'
-                        : 'bg-slate-200 text-slate-800 dark:bg-slate-800 dark:text-slate-300'
-                    }`}>
-                      [{bp.roleLabel}{bp.isSave ? ', 세이브' : ''}]
-                    </span>
-                  </div>
+                <div key={i} className="flex items-center gap-2 flex-wrap">
+                  <span className="text-xs">{bp.role === 'VICTORY' ? '🔴' : '⚫'}</span>
+                  <span className="font-bold text-slate-900 dark:text-white">{bp.name}</span>
+                  <span className="text-slate-500 font-medium">({bp.order}):</span>
+                  <span className="font-mono font-extrabold text-slate-800 dark:text-slate-200">{bp.inning} {bp.pitches}구</span>
+                  <span className={`text-[11px] font-bold ${bp.role === 'VICTORY' ? 'text-rose-600 dark:text-rose-400' : 'text-slate-500'}`}>
+                    [{bp.roleLabel}{bp.isSave ? ', 세이브' : ''}]
+                  </span>
                 </div>
               ))}
             </div>
           </div>
         </div>
+
       </div>
     </div>
   );
