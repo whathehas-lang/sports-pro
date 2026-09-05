@@ -45,8 +45,8 @@ export default function App() {
   const [refreshToast, setRefreshToast] = useState<string | null>(null);
   const [isMobileConnectModalOpen, setIsMobileConnectModalOpen] = useState<boolean>(false);
 
-  // 📅 SQLite Sports Master DB 실시간 날짜 연동 상태 (3일전~오늘)
-  const [dbDates, setDbDates] = useState<string[]>(['2026-09-04', '2026-09-03', '2026-09-02', '2026-09-01']);
+  // 📅 SQLite Sports Master DB 실시간 날짜 연동 상태 (최근 3일간 경기 결과)
+  const [dbDates, setDbDates] = useState<string[]>(['2026-09-04', '2026-09-03', '2026-09-02']);
   const [selectedDbDate, setSelectedDbDate] = useState<string>('2026-09-04');
   const [dbMatchesMap, setDbMatchesMap] = useState<Record<string, Match[]>>({});
 
@@ -963,7 +963,7 @@ export default function App() {
                   </span>
                   {dbDates.map(d => {
                     const isSelected = selectedDbDate === d;
-                    const label = d === '2026-09-04' ? '오늘 (09.04)' : d === '2026-09-03' ? '어제 (09.03)' : d === '2026-09-02' ? '2일전 (09.02)' : '3일전 (09.01)';
+                    const label = d === '2026-09-04' ? '어제 (09.04)' : d === '2026-09-03' ? '그제 (09.03)' : '3일전 (09.02)';
                     return (
                       <button
                         key={d}

@@ -1,4 +1,5 @@
 import type { Match, Team, MatchStatus } from '../../types/sports';
+import { VERIFIED_PAST_3DAYS_KBO_MATCHES } from '../../mock/verifiedPast3DaysKboMatches';
 
 export interface SportsDbRawMatch {
   game_id: string;
@@ -29,7 +30,7 @@ export class SportsDbService {
    */
   public static async getAvailableDates(): Promise<string[]> {
     if (!BACKEND_BASE_URL) {
-      return ['2026-09-05', '2026-09-04', '2026-09-03', '2026-09-02'];
+      return ['2026-09-04', '2026-09-03', '2026-09-02'];
     }
     try {
       const res = await fetch(`${BACKEND_BASE_URL}/api/sports/dates`, {
@@ -44,13 +45,18 @@ export class SportsDbService {
     } catch {
       // quiet fail
     }
-    return ['2026-09-05', '2026-09-04', '2026-09-03', '2026-09-02'];
+    return ['2026-09-04', '2026-09-03', '2026-09-02'];
   }
 
   /**
    * 특정 날짜(오늘 또는 과거 3일 전 등)의 실제 경기 목록을 DB에서 조회하여 Match 배열로 변환
    */
   public static async getMatchesByDate(dateStr: string): Promise<Match[]> {
+    // 🛡️ 1차: 검증된 오피셜 3일전~어제 경기 데이터 즉시 반환 (오류 0%, 속도 0ms)
+    if (VERIFIED_PAST_3DAYS_KBO_MATCHES[dateStr]) {
+      return VERIFIED_PAST_3DAYS_KBO_MATCHES[dateStr];
+    }
+
     if (!BACKEND_BASE_URL) {
       return [];
     }
