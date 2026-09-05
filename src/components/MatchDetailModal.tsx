@@ -13,6 +13,7 @@ import { BaseballRealtimeWeatherService, type LiveStadiumWeatherResult } from '.
 import { FootballH2HRecentFormEngine } from '../services/enricher/footballH2HRecentFormEngine';
 import { BaseballLiveStarterHub } from '../services/api/baseballLiveStarterHub';
 import { LiveSportsFieldBoard } from './LiveSportsFieldBoard';
+import { OfficialBaseballBoxScoreCard } from './OfficialBaseballBoxScoreCard';
 
 interface MatchDetailModalProps {
   match: Match;
@@ -32,6 +33,7 @@ export const MatchDetailModal = ({
   theme = 'light' 
 }: MatchDetailModalProps) => {
   const isLight = theme === 'light';
+  const [activeTab, setActiveTab] = useState<'ALL' | 'LIVE' | 'FACTS' | 'SERIES' | 'H2H' | 'RECENT'>('ALL');
   const [recentGamesRange, setRecentGamesRange] = useState<3 | 5 | 10>(10);
   const [isRecentGamesOpen, setIsRecentGamesOpen] = useState<boolean>(true);
   
@@ -520,26 +522,66 @@ export const MatchDetailModal = ({
           </button>
         </div>
 
+        {/* 📑 Pro Sports Analysis Category Navigation Bar */}
+        <div className={`px-3 py-2 border-b overflow-x-auto flex items-center gap-1.5 shrink-0 custom-scrollbar ${
+          isLight ? 'bg-slate-50/90 border-slate-200' : 'bg-slate-950 border-slate-800/90'
+        }`}>
+          {[
+            { id: 'ALL', label: '전체 분석' },
+            { id: 'LIVE', label: '🏟️ 실시간 구장' },
+            { id: 'FACTS', label: '👑 VVIP 5대 팩트' },
+            { id: 'SERIES', label: match.sport === 'baseball' ? '⚾ 시리즈/불펜' : match.sport === 'football' ? '✈️ 이동/피로도' : '⚡ 일정/체력' },
+            { id: 'H2H', label: '⚔️ 맞대결 H2H' },
+            { id: 'RECENT', label: '📈 최근 10경기' },
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id as any)}
+              className={`px-3 py-1.5 rounded-xl text-xs font-black transition-all shrink-0 cursor-pointer whitespace-nowrap ${
+                activeTab === tab.id
+                  ? 'bg-emerald-500 text-white shadow-sm scale-[1.02]'
+                  : isLight
+                  ? 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
+                  : 'bg-slate-900 text-slate-300 hover:text-white border border-slate-800'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
         {/* SINGLE CONTINUOUS MOBILE VERTICAL SCROLL BODY */}
-        <div className={`flex-1 overflow-y-auto p-3 sm:p-6 space-y-6 sm:space-y-8 divide-y custom-scrollbar ${
-          isLight ? 'divide-slate-200' : 'divide-slate-800/80'
+        <div className={`flex-1 overflow-y-auto p-3 sm:p-6 space-y-6 sm:space-y-8 custom-scrollbar ${
+          isLight ? '' : ''
         }`}>
 
           {/* 🔴 [최상단 실시간 중계 구장 그래픽 보드 - 다저스/KBO 4대 종목 완벽 연동] */}
-          <div className="pt-1">
-            <LiveSportsFieldBoard
-              initialSport={match.sport}
-              currentMatch={match}
-              theme={theme}
-            />
-          </div>
+          {(activeTab === 'ALL' || activeTab === 'LIVE') && (
+            <div className="pt-1">
+              <LiveSportsFieldBoard
+                initialSport={match.sport}
+                currentMatch={match}
+                theme={theme}
+              />
+            </div>
+          )}
 
-          {/* ⚾ 1순위: 1. ⚾ 시리즈(1차전·2차전·3차전) 선발 & 불펜 투구수/볼수 피로도 분석 */}
-          {match.sport === 'baseball' && (
+          {/* ⚾ 1순위: 1. ⚾ 오피셜 마운드 실측 상세 기록표 (선발 투구수 & 불펜 등판 일지) */}
+          {match.sport === 'baseball' && (activeTab === 'ALL' || activeTab === 'SERIES') && (
+            <div className="pt-1">
+              <OfficialBaseballBoxScoreCard
+                currentMatch={match}
+                theme={theme}
+              />
+            </div>
+          )}
+
+          {/* ⚾ 2순위: 2. ⚾ 시리즈(1차전·2차전·3차전) 선발 & 불펜 투구수/볼수 피로도 분석 */}
+          {match.sport === 'baseball' && (activeTab === 'ALL' || activeTab === 'SERIES') && (
             <div id="section-series" className="space-y-3 pt-2 scroll-mt-6">
               <h3 className="text-sm sm:text-base font-black text-amber-400 flex items-center gap-2">
                 <Zap className="w-5 h-5 text-amber-400" />
-                <span>1. ⚾ 시리즈(1차전·2차전·3차전) 선발 & 불펜 투구수/볼수 피로도 분석</span>
+                <span>2. ⚾ 시리즈(1차전·2차전·3차전) 선발 & 불펜 투구수/볼수 피로도 분석</span>
               </h3>
               <BaseballSeriesPitchView
                 tracker={match.baseballSeriesPitchTracker || {
@@ -569,7 +611,7 @@ export const MatchDetailModal = ({
           )}
 
           {/* 👑 축구 1순위: [5대 핵심 승패 지표] xG/xGA · 빅찬스 · 박스안슈팅 · 필드틸트 · 선제골 성공률 */}
-          {match.sport === 'football' && match.soccerWinFactorMetrics && (
+          {match.sport === 'football' && match.soccerWinFactorMetrics && (activeTab === 'ALL' || activeTab === 'FACTS') && (
             <div id="section-win-factors" className="space-y-4 pt-2 scroll-mt-6">
               <div className="flex items-center justify-between">
                 <h3 className="text-sm sm:text-base font-black text-amber-400 flex items-center gap-2">
@@ -592,7 +634,7 @@ export const MatchDetailModal = ({
           )}
 
           {/* ✈️ ⚽ 축구 2순위: 연전 이동거리(km) & 스케줄 피로도 [원정 ➡️ 원정 / 원정 ➡️ 홈 / 홈 ➡️ 원정 / 홈 ➡️ 홈] */}
-          {match.sport === 'football' && match.footballTravelFatigueTracker && (
+          {match.sport === 'football' && match.footballTravelFatigueTracker && (activeTab === 'ALL' || activeTab === 'SERIES') && (
             <div id="section-football-travel" className="space-y-4 pt-2 scroll-mt-6">
               <div className="flex items-center justify-between">
                 <h3 className="text-sm sm:text-base font-black text-amber-400 flex items-center gap-2">
@@ -663,7 +705,7 @@ export const MatchDetailModal = ({
           )}
 
           {/* 🏀 농구 1순위: 백투백(Back-to-Back) 연투 & 비행 이동거리(km) 과부하 매트릭스 */}
-          {match.sport === 'basketball' && (
+          {match.sport === 'basketball' && (activeTab === 'ALL' || activeTab === 'SERIES') && (
             <div id="section-fatigue" className="space-y-4 pt-2 scroll-mt-6">
               <h3 className="text-sm sm:text-base font-black text-amber-400 flex items-center gap-2">
                 <Zap className="w-5 h-5 text-amber-400" />
@@ -711,32 +753,36 @@ export const MatchDetailModal = ({
           )}
 
           {/* 📊 2순위: 2. 📊 야구/농구/축구 5대 전문 에이전트 팩트 종합 분석 */}
-          <div id="section-fact" className="space-y-3 pt-6 scroll-mt-6">
-            <h3 className="text-sm sm:text-base font-black text-teal-400 flex items-center gap-2">
-              <Activity className="w-5 h-5" />
-              <span>
-                2. 📊 {match.sport === 'baseball' ? '야구 5대 전문 에이전트 팩트 분석' : match.sport === 'basketball' ? '농구 5대 전문 에이전트 팩트 분석' : '축구 5대 전문 에이전트 팩트 분석'}
-              </span>
-            </h3>
+          {(activeTab === 'ALL' || activeTab === 'FACTS') && (
+            <div id="section-fact" className="space-y-3 pt-6 scroll-mt-6">
+              <h3 className="text-sm sm:text-base font-black text-teal-400 flex items-center gap-2">
+                <Activity className="w-5 h-5" />
+                <span>
+                  2. 📊 {match.sport === 'baseball' ? '야구 5대 전문 에이전트 팩트 분석' : match.sport === 'basketball' ? '농구 5대 전문 에이전트 팩트 분석' : '축구 5대 전문 에이전트 팩트 분석'}
+                </span>
+              </h3>
 
-            <div className={`p-5 rounded-2xl border space-y-3 shadow-xl ${isLight ? 'bg-white border-slate-200' : 'bg-slate-950 border-slate-800'}`}>
-              {renderSportSpecific5AgentsFact()}
+              <div className={`p-5 rounded-2xl border space-y-3 shadow-xl ${isLight ? 'bg-white border-slate-200' : 'bg-slate-950 border-slate-800'}`}>
+                {renderSportSpecific5AgentsFact()}
+              </div>
             </div>
-          </div>
+          )}
 
           {/* 🏟️ 3순위: 3. 이미지 / 오피셜 수비 포메이션 그래픽 뷰 (LineupTacticsView) */}
-          <div id="section-lineup" className="space-y-3 pt-6 scroll-mt-6">
-            <h3 className="text-sm sm:text-base font-black text-emerald-400 flex items-center gap-2">
-              <Shield className="w-5 h-5 text-emerald-400" />
-              <span>
-                3. {match.sport === 'baseball' ? '⚾ 오피셜 야구장 9개 수비 포지션 정밀 위치' : match.sport === 'basketball' ? '🏀 오피셜 농구장 마룻바닥 5개 포지션 위치' : '⚽ 오피셜 축구장 잔디밭 포메이션'}
-              </span>
-            </h3>
-            <LineupTacticsView match={match} theme={theme} />
-          </div>
+          {(activeTab === 'ALL' || activeTab === 'LIVE' || activeTab === 'FACTS') && (
+            <div id="section-lineup" className="space-y-3 pt-6 scroll-mt-6">
+              <h3 className="text-sm sm:text-base font-black text-emerald-400 flex items-center gap-2">
+                <Shield className="w-5 h-5 text-emerald-400" />
+                <span>
+                  3. {match.sport === 'baseball' ? '⚾ 오피셜 야구장 9개 수비 포지션 정밀 위치' : match.sport === 'basketball' ? '🏀 오피셜 농구장 마룻바닥 5개 포지션 위치' : '⚽ 오피셜 축구장 잔디밭 포메이션'}
+                </span>
+              </h3>
+              <LineupTacticsView match={match} theme={theme} />
+            </div>
+          )}
 
           {/* ⚾ 4순위: 4. ⚾ 선발투수 날짜별 상대전적 & 시즌 vs 상대전적 방어율 비교 */}
-          {match.sport === 'baseball' && (homeStarter || awayStarter) && (
+          {match.sport === 'baseball' && (homeStarter || awayStarter) && (activeTab === 'ALL' || activeTab === 'SERIES' || activeTab === 'H2H') && (
             <div id="section-starters" className="space-y-4 pt-6 scroll-mt-6">
               <h3 className="text-sm sm:text-base font-black text-amber-400 flex items-center gap-2 flex-wrap">
                 <Target className="w-5 h-5 text-amber-400 shrink-0" />
@@ -878,7 +924,7 @@ export const MatchDetailModal = ({
           )}
 
           {/* ⚽ 축구 4번: [xG 기대 득점 vs xGA 기대 실점] 순수 정규 리그 경기력 체급 지표 */}
-          {match.sport === 'football' && match.homeTeam.xgStats && match.awayTeam.xgStats && (
+          {match.sport === 'football' && match.homeTeam.xgStats && match.awayTeam.xgStats && (activeTab === 'ALL' || activeTab === 'FACTS') && (
             <div id="section-xg" className="space-y-4 pt-6 scroll-mt-6">
               <div className="flex items-center justify-between">
                 <h3 className="text-sm sm:text-base font-black text-amber-400 flex items-center gap-2">
@@ -970,7 +1016,7 @@ export const MatchDetailModal = ({
           )}
 
           {/* ⚽ 축구 선발 11명 몸값 체급 & 14일 누적 출전분(분) 체력 비교 */}
-          {match.sport === 'football' && (
+          {match.sport === 'football' && (activeTab === 'ALL' || activeTab === 'FACTS' || activeTab === 'SERIES') && (
             <div id="section-football-metrics" className="space-y-4 pt-6">
               <h3 className="text-sm sm:text-base font-black text-emerald-400 flex items-center gap-2">
                 <Scale className="w-5 h-5 text-emerald-400" />
@@ -1020,11 +1066,12 @@ export const MatchDetailModal = ({
           )}
 
           {/* ⚔️ 5순위: 5. ⚔️ 과거 맞대결 상대전적 (H2H 과거 맞대결 기록) */}
-          <div id="section-h2h" className="space-y-4 pt-6 scroll-mt-6">
-            <h3 className="text-sm sm:text-base font-black text-amber-400 flex items-center gap-2">
-              <Swords className="w-5 h-5 text-amber-400" />
-              <span>5. ⚔️ 맞대결 상대전적 (과거 실존 기록)</span>
-            </h3>
+          {(activeTab === 'ALL' || activeTab === 'H2H') && (
+            <div id="section-h2h" className="space-y-4 pt-6 scroll-mt-6">
+              <h3 className="text-sm sm:text-base font-black text-amber-400 flex items-center gap-2">
+                <Swords className="w-5 h-5 text-amber-400" />
+                <span>5. ⚔️ 맞대결 상대전적 (과거 실존 기록)</span>
+              </h3>
 
             {/* ⚔️ 맞대결 상대전적 ACCORDION BOX WITH DYNAMIC VARIABLE DATA & EMPTY STATE */}
             {h2hMatches.length > 0 ? (
@@ -1164,8 +1211,10 @@ export const MatchDetailModal = ({
               </div>
             )}
           </div>
+        )}
 
-          {/* 📊 6순위: 6. 📊 최근 경기 결과 & 득실점 스코어 (홈/원정 최근 경기 폼 로그) */}
+        {/* 📊 6순위: 6. 📊 최근 경기 결과 & 득실점 스코어 (홈/원정 최근 경기 폼 로그) */}
+        {(activeTab === 'ALL' || activeTab === 'RECENT') && (
           <div id="section-recent-form" className="space-y-4 pt-6 scroll-mt-6">
             <h3 className="text-sm sm:text-base font-black text-amber-400 flex items-center gap-2">
               <Flame className="w-5 h-5 text-amber-400" />
@@ -1318,8 +1367,10 @@ export const MatchDetailModal = ({
               )}
             </div>
           </div>
+        )}
 
-          {/* 📈 7순위: 7. 📈 언오버 & 평균 득실점 팩트 */}
+        {/* 📈 7순위: 7. 📈 언오버 & 평균 득실점 팩트 */}
+        {(activeTab === 'ALL' || activeTab === 'FACTS') && (
           <div id="section-underover" className="space-y-3 pt-6 scroll-mt-6">
             <h3 className="text-sm sm:text-base font-black text-cyan-400 flex items-center gap-2">
               <BarChart2 className="w-5 h-5" />
@@ -1351,6 +1402,7 @@ export const MatchDetailModal = ({
               </div>
             </div>
           </div>
+        )}
 
         </div>
 

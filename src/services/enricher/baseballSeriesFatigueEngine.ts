@@ -174,20 +174,20 @@ export class BaseballSeriesFatigueEngine {
     prev2: { dateStr: "09.02 (전전 경기)", opponentName: "LG", teamScore: 4, opponentScore: 6, result: "패", starterName: "최원준", innings: "5.1", pitches: 86, balls: 31, strikes: 55, bullpen: [{ name: "김택연", pitches: 20, role: "VICTORY" }] }
   },
   "LG": {
-    prev1: { dateStr: "09.03 (직전 경기)", opponentName: "두산", teamScore: 3, opponentScore: 5, result: "패", starterName: "임찬규", innings: "5.2", pitches: 90, balls: 32, strikes: 58, bullpen: [{ name: "김진성", pitches: 15, role: "VICTORY" }, { name: "유영찬", pitches: 12, role: "VICTORY" }] },
-    prev2: { dateStr: "09.02 (전전 경기)", opponentName: "두산", teamScore: 6, opponentScore: 4, result: "승", starterName: "엔스", innings: "6.0", pitches: 94, balls: 33, strikes: 61, bullpen: [{ name: "정우영", pitches: 18, role: "PURSUIT" }] }
+    prev1: { dateStr: "09.04 (직전 경기)", opponentName: "삼성", teamScore: 5, opponentScore: 3, result: "승", starterName: "카라스코", innings: "6.0", pitches: 88, balls: 31, strikes: 57, bullpen: [{ name: "김진성", pitches: 14, role: "VICTORY" }, { name: "유영찬", pitches: 16, role: "VICTORY" }, { name: "정우영", pitches: 12, role: "VICTORY" }] },
+    prev2: { dateStr: "09.03 (전전 경기)", opponentName: "두산", teamScore: 7, opponentScore: 2, result: "승", starterName: "임찬규", innings: "6.1", pitches: 94, balls: 32, strikes: 62, bullpen: [{ name: "백승현", pitches: 15, role: "VICTORY" }, { name: "정우영", pitches: 14, role: "VICTORY" }] }
   },
   "삼성": {
-    prev1: { dateStr: "09.03 (직전 경기)", opponentName: "KIA", teamScore: 6, opponentScore: 4, result: "승", starterName: "원태인", innings: "6.1", pitches: 95, balls: 31, strikes: 64, bullpen: [{ name: "임창민", pitches: 16, role: "VICTORY" }, { name: "김재윤", pitches: 15, role: "VICTORY" }] },
-    prev2: { dateStr: "09.02 (전전 경기)", opponentName: "KIA", teamScore: 3, opponentScore: 5, result: "패", starterName: "코너", innings: "5.0", pitches: 88, balls: 32, strikes: 56, bullpen: [{ name: "우규민", pitches: 14, role: "PURSUIT" }] }
+    prev1: { dateStr: "09.04 (직전 경기)", opponentName: "LG", teamScore: 3, opponentScore: 5, result: "패", starterName: "페덱", innings: "5.1", pitches: 92, balls: 36, strikes: 56, bullpen: [{ name: "임창민", pitches: 11, role: "PURSUIT" }, { name: "김재윤", pitches: 18, role: "VICTORY" }, { name: "오승환", pitches: 15, role: "VICTORY" }] },
+    prev2: { dateStr: "09.03 (전전 경기)", opponentName: "NC", teamScore: 4, opponentScore: 8, result: "패", starterName: "원태인", innings: "5.0", pitches: 96, balls: 36, strikes: 60, bullpen: [{ name: "우규민", pitches: 19, role: "PURSUIT" }, { name: "이승현", pitches: 17, role: "PURSUIT" }] }
   },
   "롯데": {
-    prev1: { dateStr: "09.03 (직전 경기)", opponentName: "KT", teamScore: 5, opponentScore: 2, result: "승", starterName: "반즈", innings: "7.0", pitches: 98, balls: 30, strikes: 68, bullpen: [{ name: "구승민", pitches: 15, role: "VICTORY" }, { name: "김원중", pitches: 14, role: "VICTORY" }] },
-    prev2: { dateStr: "09.02 (전전 경기)", opponentName: "KT", teamScore: 2, opponentScore: 6, result: "패", starterName: "박세웅", innings: "5.0", pitches: 89, balls: 34, strikes: 55, bullpen: [{ name: "진해수", pitches: 16, role: "PURSUIT" }] }
+    prev1: { dateStr: "09.04 (직전 경기)", opponentName: "한화", teamScore: 4, opponentScore: 2, result: "승", starterName: "김진욱", innings: "5.2", pitches: 91, balls: 34, strikes: 57, bullpen: [{ name: "구승민", pitches: 19, role: "VICTORY" }, { name: "김원중", pitches: 15, role: "VICTORY" }] },
+    prev2: { dateStr: "09.03 (전전 경기)", opponentName: "KT", teamScore: 4, opponentScore: 5, result: "패", starterName: "반즈", innings: "6.0", pitches: 95, balls: 33, strikes: 62, bullpen: [{ name: "진해수", pitches: 11, role: "PURSUIT" }, { name: "김상수", pitches: 20, role: "VICTORY" }] }
   },
   "한화": {
-    prev1: { dateStr: "09.03 (직전 경기)", opponentName: "NC", teamScore: 4, opponentScore: 3, result: "승", starterName: "류현진", innings: "6.2", pitches: 96, balls: 32, strikes: 64, bullpen: [{ name: "한승혁", pitches: 16, role: "PURSUIT" }, { name: "주현상", pitches: 14, role: "VICTORY" }] },
-    prev2: { dateStr: "09.02 (전전 경기)", opponentName: "NC", teamScore: 3, opponentScore: 7, result: "패", starterName: "문동주", innings: "5.0", pitches: 91, balls: 35, strikes: 56, bullpen: [{ name: "박상원", pitches: 18, role: "PURSUIT" }] }
+    prev1: { dateStr: "09.04 (직전 경기)", opponentName: "롯데", teamScore: 2, opponentScore: 4, result: "패", starterName: "박준영", innings: "5.0", pitches: 85, balls: 32, strikes: 53, bullpen: [{ name: "한승혁", pitches: 14, role: "PURSUIT" }, { name: "주현상", pitches: 16, role: "VICTORY" }, { name: "김서현", pitches: 18, role: "VICTORY" }] },
+    prev2: { dateStr: "09.03 (전전 경기)", opponentName: "SSG", teamScore: 6, opponentScore: 3, result: "승", starterName: "문동주", innings: "6.0", pitches: 90, balls: 30, strikes: 60, bullpen: [{ name: "박상원", pitches: 16, role: "VICTORY" }, { name: "주현상", pitches: 15, role: "VICTORY" }] }
   },
   "KT": {
     prev1: { dateStr: "09.03 (직전 경기)", opponentName: "롯데", teamScore: 2, opponentScore: 5, result: "패", starterName: "고영표", innings: "6.0", pitches: 92, balls: 30, strikes: 62, bullpen: [{ name: "김민", pitches: 18, role: "PURSUIT" }, { name: "박영현", pitches: 14, role: "VICTORY" }] },
