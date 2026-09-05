@@ -12,7 +12,7 @@ interface LiveSportsFieldBoardProps {
 
 export const LiveSportsFieldBoard: React.FC<LiveSportsFieldBoardProps> = ({
   initialSport = 'baseball',
-  theme = 'light',
+  theme = 'dark',
   currentMatch,
 }) => {
   const isLight = theme === 'light';

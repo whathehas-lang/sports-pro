@@ -13,7 +13,7 @@ interface LineupTacticsViewProps {
   theme?: 'light' | 'dark';
 }
 
-export const LineupTacticsView = ({ match, theme = 'light' }: LineupTacticsViewProps) => {
+export const LineupTacticsView = ({ match, theme = 'dark' }: LineupTacticsViewProps) => {
   const [selectedTeam, setSelectedTeam] = useState<'home' | 'away'>('home');
   const [isFullMatchupView, setIsFullMatchupView] = useState<boolean>(false);
 

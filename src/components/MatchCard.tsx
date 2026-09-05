@@ -27,7 +27,7 @@ export const MatchCard = ({
   onOpenLiveChat,
   onToggleFavorite,
   onTogglePick,
-  theme = 'light'
+  theme = 'dark'
 }: MatchCardProps) => {
   const isLight = theme === 'light';
   const [isExpanded, setIsExpanded] = useState<boolean>(false);

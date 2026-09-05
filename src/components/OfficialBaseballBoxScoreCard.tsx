@@ -136,7 +136,7 @@ const OFFICIAL_KBO_KEY_GAMES: GameDetailData[] = [
 
 export const OfficialBaseballBoxScoreCard: React.FC<OfficialBaseballBoxScoreCardProps> = ({
   currentMatch,
-  theme = 'light'
+  theme = 'dark'
 }) => {
   const isLight = theme === 'light';
 

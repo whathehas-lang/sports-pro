@@ -30,7 +30,7 @@ export const MatchDetailModal = ({
   onClose, 
   membershipTier = 'VVIP',
   onOpenPaywall,
-  theme = 'light' 
+  theme = 'dark' 
 }: MatchDetailModalProps) => {
   const isLight = theme === 'light';
   const [activeTab, setActiveTab] = useState<'ALL' | 'LIVE' | 'FACTS' | 'SERIES' | 'H2H' | 'RECENT'>('ALL');

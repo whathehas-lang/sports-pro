@@ -9,7 +9,7 @@ interface BaseballTeamHittingCardProps {
 
 export const BaseballTeamHittingCard: React.FC<BaseballTeamHittingCardProps> = ({
   report,
-  theme = 'light'
+  theme = 'dark'
 }) => {
   if (!report) return null;
   const isLight = theme === 'light';

@@ -7,7 +7,7 @@ interface MobileConnectModalProps {
   theme?: 'light' | 'dark';
 }
 
-export const MobileConnectModal = ({ isOpen, onClose, theme = 'light' }: MobileConnectModalProps) => {
+export const MobileConnectModal = ({ isOpen, onClose, theme = 'dark' }: MobileConnectModalProps) => {
   const isLight = theme === 'light';
   const [copied, setCopied] = useState(false);
   const [mobileUrl, setMobileUrl] = useState('http://192.168.219.103:5173');

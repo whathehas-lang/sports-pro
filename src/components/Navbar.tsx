@@ -19,7 +19,6 @@ interface NavbarProps {
   onOpenLoginModal: () => void;
   onLogout: () => void;
   theme?: 'light' | 'dark';
-  onToggleTheme?: () => void;
   hidePassedMatches: boolean;
   setHidePassedMatches: (val: boolean) => void;
   cardDensity: 'COMPACT' | 'DETAILED';
@@ -41,8 +40,7 @@ export const Navbar = ({
   userName = '토큰VVIP회원',
   onOpenLoginModal,
   onLogout,
-  theme = 'light',
-  onToggleTheme,
+  theme = 'dark',
   hidePassedMatches,
   setHidePassedMatches,
   cardDensity,
@@ -125,22 +123,6 @@ export const Navbar = ({
             >
               <span className={`inline-block text-xs ${isRefreshing ? 'animate-spin' : ''}`}>🔄</span>
               <span className="font-extrabold">{isRefreshing ? '갱신중' : '새로고침'}</span>
-            </button>
-          )}
-
-          {/* ☀️/🌙 THEME SWITCHER BUTTON */}
-          {onToggleTheme && (
-            <button
-              onClick={onToggleTheme}
-              className={`p-1.5 sm:px-2.5 sm:py-1 rounded-xl text-[11px] font-black transition-all flex items-center gap-1 cursor-pointer border shadow-sm ${
-                isLight
-                  ? 'bg-slate-100 hover:bg-slate-200 text-slate-800 border-slate-300'
-                  : 'bg-slate-900 hover:bg-slate-800 text-amber-300 border-slate-700'
-              }`}
-              title={isLight ? '어두운 다크 모드로 전환' : '밝은 라이트 모드로 전환'}
-            >
-              <span>{isLight ? '☀️' : '🌙'}</span>
-              <span className="hidden sm:inline">{isLight ? '밝은모드' : '다크모드'}</span>
             </button>
           )}
 

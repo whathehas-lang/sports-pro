@@ -393,10 +393,9 @@ export default function App() {
   // Active Real-Time Match Chat & Baserunner Modal
   const [selectedMatchForChat, setSelectedMatchForChat] = useState<Match | null>(null);
 
-  // 🎨 THEME STATE (☀️ 'light' by default vs 🌙 'dark')
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
-  const handleToggleTheme = () => setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
-  const isLight = theme === 'light';
+  // 🎨 THEME: PERMANENTLY FIXED TO DARK MODE (밝은 모드 완전 제거 및 영구 다크모드 고정)
+  const theme = 'dark' as const;
+  const isLight = false;
 
   // 📌 AUTH LOGIN & LOGOUT STATE MANAGEMENT
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(() => {
@@ -825,7 +824,6 @@ export default function App() {
         onOpenLoginModal={() => setIsLoginModalOpen(true)}
         onLogout={handleLogout}
         theme={theme}
-        onToggleTheme={handleToggleTheme}
         hidePassedMatches={hidePassedMatches}
         setHidePassedMatches={setHidePassedMatches}
         cardDensity={cardDensity}
