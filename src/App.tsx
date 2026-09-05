@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Trophy, Sparkles, MessageSquare, Clock, AlertTriangle, CreditCard, ShieldCheck, Database, CheckCircle2, RefreshCw, X } from 'lucide-react';
 import { Navbar } from './components/Navbar';
 import { MobileConnectModal } from './components/MobileConnectModal';
@@ -733,34 +733,18 @@ export default function App() {
     return true;
   });
   
-  // 📌 100% 스마트 시간순 정렬 (대표님 지시: 앱을 열면 현재 시간 기준 경기부터 즉시 표출! 지난 경기는 스크롤해서 확인):
-  // 1순위: 🔴 현재 시간 활성 진행 중인 LIVE 경기 최상단
-  // 2순위: ⏰ 현재 시간 이후 아직 시작 안 한 다가오는 경기 (가장 빠른 순서대로 정렬: 17:00 KBO -> 18:00 NPB -> 저녁 축구)
-  // 3순위: 🏁 이미 경기 시간이 지났거나 끝난 아침/오전 경기 (맨 아래로 배치하여 스크롤로 확인 가능)
+  // 📌 100% 자연스러운 경기 시간순 정렬 (원상복구: 시간이 지나도 경기가 뒤로 밀리거나 사라지지 않음)
+  // 1순위: 경기 시작 시간 오름차순 (09:00 -> 14:00 -> 17:00 -> 18:00 -> 21:00 순서대로 영구 안정 유지)
+  // 2순위: 동일 시간인 경우 베트맨 공식 경기번호 오름차순
   const sortedMatches = [...rawFiltered].sort((a, b) => {
     const tsA = parseMatchTimestamp(a.matchTime);
     const tsB = parseMatchTimestamp(b.matchTime);
-    const currentNow = nowTicker;
 
-    // 경기 시작 후 3.5시간 이상 경과한 경기는 stale 상태로 간주하여 최상단 라이브 핀에서 제외
-    const isLiveA = a.status === 'LIVE' && (tsA === 0 || (currentNow - tsA < 3.5 * 3600 * 1000 && currentNow >= tsA));
-    const isLiveB = b.status === 'LIVE' && (tsB === 0 || (currentNow - tsB < 3.5 * 3600 * 1000 && currentNow >= tsB));
-    if (isLiveA !== isLiveB) return isLiveA ? -1 : 1;
-
-    // 경기 시작 시간이 이미 지났거나 완료된 경기인지 판단 (시작 시간 10분 후부터 지난 경기로 분류)
-    const isPastA = isMatchCompleted(a) || (tsA > 0 && tsA < currentNow - 10 * 60 * 1000 && !isLiveA);
-    const isPastB = isMatchCompleted(b) || (tsB > 0 && tsB < currentNow - 10 * 60 * 1000 && !isLiveB);
-
-    // 아직 시작 안 한 다가오는 경기를 지난 경기보다 무조건 먼저 노출 (0: 다가오는 경기, 1: 지난 경기)
-    const futureGroupA = isPastA ? 1 : 0;
-    const futureGroupB = isPastB ? 1 : 0;
-    if (futureGroupA !== futureGroupB) return futureGroupA - futureGroupB;
-
-    // 같은 그룹 내에서는 시간순 정렬
     if (tsA !== tsB && tsA > 0 && tsB > 0) {
-      // 다가오는 경기는 가장 빠른 시간 순서(오름차순: 17:00 -> 18:00 -> 19:00), 지난 경기는 최근 종료 순서(내림차순)
-      return !isPastA ? tsA - tsB : tsB - tsA;
+      return tsA - tsB;
     }
+    if (tsA > 0 && (!tsB || tsB === 0)) return -1;
+    if (tsB > 0 && (!tsA || tsA === 0)) return 1;
 
     // 동일 시간 내 경기번호 오름차순
     const noA = a.betmanMatchNo || (a as any).matchNo || 0;
@@ -785,6 +769,58 @@ export default function App() {
     seenMatches.add(key);
     return true;
   });
+
+  // ⏰ 현시간(현재 시각) 기준 첫 번째 노출 대상 경기 식별
+  const currentFocusMatchId = useMemo(() => {
+    if (!filteredMatches || filteredMatches.length === 0) return null;
+    const now = Date.now();
+
+    // 1. 현재 LIVE 진행 중인 경기가 있으면 그 경기
+    const liveMatch = filteredMatches.find((m) => m.status === 'LIVE');
+    if (liveMatch) return liveMatch.id;
+
+    // 2. 현재 시각 기준 진행 중(최근 2.5시간 이내 시작)이거나 바로 다음 시작 예정인 첫 번째 경기
+    const currentOrUpcoming = filteredMatches.find((m) => {
+      const ts = parseMatchTimestamp(m.matchTime);
+      if (!ts) return false;
+      return ts >= now - 2.5 * 3600 * 1000;
+    });
+
+    if (currentOrUpcoming) return currentOrUpcoming.id;
+
+    return filteredMatches[0]?.id || null;
+  }, [filteredMatches, selectedDateFilter]);
+
+  // 🚀 현시간 기준 경기로 스크롤 이동 함수
+  const scrollToCurrentTimeMatch = (smooth: boolean = true) => {
+    if (!currentFocusMatchId) return;
+    const el = document.getElementById(`match-card-${currentFocusMatchId}`);
+    if (el) {
+      const rect = el.getBoundingClientRect();
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const targetY = rect.top + scrollTop - 120;
+      window.scrollTo({
+        top: Math.max(0, targetY),
+        behavior: smooth ? 'smooth' : 'auto'
+      });
+    }
+  };
+
+  // 🚀 앱 접속 / 창 열림 시 현시간 기준 경기가 화면 첫 번째로 보이도록 자동 포커스 스크롤
+  const hasAutoScrolledMapRef = useRef<Record<string, boolean>>({});
+
+  useEffect(() => {
+    if (!currentFocusMatchId) return;
+    const filterKey = selectedDateFilter;
+    if (hasAutoScrolledMapRef.current[filterKey]) return;
+
+    const timer = setTimeout(() => {
+      scrollToCurrentTimeMatch(false);
+      hasAutoScrolledMapRef.current[filterKey] = true;
+    }, 350);
+
+    return () => clearTimeout(timer);
+  }, [currentFocusMatchId, selectedDateFilter]);
 
   // Handle favorite toggle
   const handleToggleFavorite = (matchId: string) => {
@@ -943,9 +979,21 @@ export default function App() {
                 </button>
               </div>
 
-              <div className="hidden sm:flex items-center gap-1.5 text-[11px] text-slate-400 font-bold shrink-0">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                <span>KST 실시간 자동 연동</span>
+              <div className="flex items-center gap-2 shrink-0">
+                <button
+                  type="button"
+                  onClick={() => scrollToCurrentTimeMatch(true)}
+                  className="px-2.5 py-1.5 rounded-xl text-[11px] font-black transition-all flex items-center gap-1 cursor-pointer bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/40 shrink-0 shadow-xs"
+                  title="현재 시간대(KST) 경기 위치로 즉시 스크롤"
+                >
+                  <Clock className="w-3.5 h-3.5 text-amber-400" />
+                  <span>현시간 위치로 ⬇️</span>
+                </button>
+
+                <div className="hidden sm:flex items-center gap-1.5 text-[11px] text-slate-400 font-bold shrink-0">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                  <span>KST 실시간 자동 연동</span>
+                </div>
               </div>
             </div>
 
@@ -1056,19 +1104,31 @@ export default function App() {
 
                   <div className="flex flex-col space-y-4">
                     {filteredMatches.map((match) => (
-                      <MatchCard
-                        key={match.id}
-                        match={match}
-                        membershipTier={membershipTier}
-                        cardDensity={cardDensity}
-                        markedPicks={markedPicks[match.id] || []}
-                        allMatches={matches}
-                        onSelectMatch={(m) => handleOpenDetailModal(m)}
-                        onOpenLiveChat={(m) => setSelectedMatchForChat(m)}
-                        onToggleFavorite={handleToggleFavorite}
-                        onTogglePick={handleTogglePick}
-                        theme={theme}
-                      />
+                      <div key={match.id} id={`match-card-${match.id}`} className="w-full">
+                        {match.id === currentFocusMatchId && selectedDateFilter !== 'PAST' && (
+                          <div className="mb-2 py-1.5 px-3 rounded-xl bg-gradient-to-r from-amber-500/20 via-amber-500/10 to-transparent border border-amber-500/40 text-amber-300 text-[11px] font-black flex items-center justify-between shadow-xs">
+                            <span className="flex items-center gap-1.5">
+                              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                              <span>⏰ [현시간 기준 경기] 현재 시간대와 가장 가까운 경기입니다.</span>
+                            </span>
+                            <span className="text-[10px] text-slate-400 font-normal hidden sm:inline">
+                              (이전 경기는 위로, 이후 경기는 아래로 스크롤)
+                            </span>
+                          </div>
+                        )}
+                        <MatchCard
+                          match={match}
+                          membershipTier={membershipTier}
+                          cardDensity={cardDensity}
+                          markedPicks={markedPicks[match.id] || []}
+                          allMatches={matches}
+                          onSelectMatch={(m) => handleOpenDetailModal(m)}
+                          onOpenLiveChat={(m) => setSelectedMatchForChat(m)}
+                          onToggleFavorite={handleToggleFavorite}
+                          onTogglePick={handleTogglePick}
+                          theme={theme}
+                        />
+                      </div>
                     ))}
                   </div>
 
@@ -1198,19 +1258,31 @@ export default function App() {
               /* MOBILE APP MODE: 1-COLUMN VERTICAL STACK */
               <div className={`flex flex-col w-full ${cardDensity === 'COMPACT' ? 'space-y-2' : 'space-y-4'}`}>
                 {filteredMatches.map((match) => (
-                  <MatchCard
-                    key={match.id}
-                    match={match}
-                    membershipTier={membershipTier}
-                    cardDensity={cardDensity}
-                    markedPicks={markedPicks[match.id] || []}
-                    allMatches={matches}
-                    onSelectMatch={(m) => handleOpenDetailModal(m)}
-                    onOpenLiveChat={(m) => setSelectedMatchForChat(m)}
-                    onToggleFavorite={handleToggleFavorite}
-                    onTogglePick={handleTogglePick}
-                    theme={theme}
-                  />
+                  <div key={match.id} id={`match-card-${match.id}`} className="w-full">
+                    {match.id === currentFocusMatchId && selectedDateFilter !== 'PAST' && (
+                      <div className="mb-2 py-1.5 px-3 rounded-xl bg-gradient-to-r from-amber-500/20 via-amber-500/10 to-transparent border border-amber-500/40 text-amber-300 text-[11px] font-black flex items-center justify-between shadow-xs">
+                        <span className="flex items-center gap-1.5">
+                          <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                          <span>⏰ [현시간 기준 경기] 현재 시간대와 가장 가까운 경기입니다.</span>
+                        </span>
+                        <span className="text-[10px] text-slate-400 font-normal hidden sm:inline">
+                          (이전 경기는 위로, 이후 경기는 아래로 스크롤)
+                        </span>
+                      </div>
+                    )}
+                    <MatchCard
+                      match={match}
+                      membershipTier={membershipTier}
+                      cardDensity={cardDensity}
+                      markedPicks={markedPicks[match.id] || []}
+                      allMatches={matches}
+                      onSelectMatch={(m) => handleOpenDetailModal(m)}
+                      onOpenLiveChat={(m) => setSelectedMatchForChat(m)}
+                      onToggleFavorite={handleToggleFavorite}
+                      onTogglePick={handleTogglePick}
+                      theme={theme}
+                    />
+                  </div>
                 ))}
               </div>
             )}
