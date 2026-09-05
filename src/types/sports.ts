@@ -387,6 +387,12 @@ export interface Match {
   league: string;
   countryFlag: string;
   isFavorite: boolean;
+  isSingleBet?: boolean;
+  overseasOdds?: {
+    win?: number | string | null;
+    draw?: number | string | null;
+    lose?: number | string | null;
+  };
   betmanOdds?: {
     win: number | string;
     draw: number | string;
