@@ -28,7 +28,13 @@ export class SportsApiClient {
     sportType: 'football' | 'baseball' = 'football'
   ): Promise<ApiResponseWrapper<T> | null> {
     if (this.useMockData) {
-      console.warn('[SportsApiClient] Running in MOCK mode.');
+      return null;
+    }
+
+    // 🛡️ Direct browser calls to api-sports.io from static hosting (e.g. GitHub Pages)
+    // are blocked by browser CORS policy. In browser production, fallback immediately to authentic offline SSOT datasets!
+    const isStaticBrowser = typeof window !== 'undefined' && !this.footballBaseUrl.startsWith('/');
+    if (isStaticBrowser) {
       return null;
     }
 
